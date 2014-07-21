@@ -36,6 +36,7 @@
 #include "camorama-stock-items.h"
 #include "filter.h"
 #include "glib-helpers.h"
+#include "support.h"
 
 static GQuark menu_item_filter_type = 0;
 
