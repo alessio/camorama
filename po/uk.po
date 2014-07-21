@@ -1,0 +1,541 @@
+# Ukrainian translation of camorama module.
+# This file is distributed under the same license as the Camorama package.
+# Yuriy Syrota <rasta renome.rovno.ua>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama\n"
+"POT-Creation-Date: 2003-04-01 17:39+0300\n"
+"PO-Revision-Date: 2003-04-01 09:08--500\n"
+"Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
+"Language-Team: Ukrainian <linux@linux.org.ua>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: data/camorama.glade.h:2
+msgid "*"
+msgstr "*"
+
+#: data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Effects</span>"
+msgstr "<span weight=\"bold\">Ефекти</span>"
+
+#: data/camorama.glade.h:4
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Загальне</span>"
+
+#: data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Тип зображення</span>"
+
+#: data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Локальна зйомка</span>"
+
+#: data/camorama.glade.h:7
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Віддалена зйомка</span>"
+
+#: data/camorama.glade.h:8
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Позначка часу</span>"
+
+#: data/camorama.glade.h:9
+msgid "Add a timestamp to captured images"
+msgstr "Додавати позначку часу до знятих зображень"
+
+#: data/camorama.glade.h:10
+msgid "Add timestamp to captured images"
+msgstr "Додавати позначку часу до знятих зображень"
+
+#: data/camorama.glade.h:11
+msgid "Append time to filename"
+msgstr "Додавати час до назви файла"
+
+#: data/camorama.glade.h:12
+msgid "Automatic Capture"
+msgstr "Автоматична зйомка"
+
+#: data/camorama.glade.h:13
+msgid "Black & White"
+msgstr "Чорно-біле"
+
+#: data/camorama.glade.h:14
+msgid "Brightness"
+msgstr "Яскравість"
+
+#: data/camorama.glade.h:15
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: data/camorama.glade.h:16
+msgid "Capture Interval (in minutes):"
+msgstr "Інтервал зйомки (в хвилинах):"
+
+#: data/camorama.glade.h:17
+msgid "Color correction"
+msgstr "Корекція кольору"
+
+#: data/camorama.glade.h:18
+msgid "Color threshold"
+msgstr "Поріг кольору"
+
+#: data/camorama.glade.h:19
+msgid "Colour"
+msgstr "Колір"
+
+#: data/camorama.glade.h:20
+msgid "Contrast"
+msgstr "Контрастність"
+
+#: data/camorama.glade.h:21
+msgid "Draw date and time"
+msgstr "Малювати дату й час"
+
+#: data/camorama.glade.h:22
+msgid "FTP server: "
+msgstr "Сервер FTP: "
+
+#: data/camorama.glade.h:23
+msgid "Filename"
+msgstr "Файл"
+
+#: data/camorama.glade.h:24
+msgid "General"
+msgstr "Загальне"
+
+#: data/camorama.glade.h:25
+msgid "Hue"
+msgstr "Відтінок"
+
+#: data/camorama.glade.h:26
+msgid "Laplace"
+msgstr "Перетворення Лапласа"
+
+#: data/camorama.glade.h:27
+msgid "Local Capture"
+msgstr "Локальна зйомка"
+
+#: data/camorama.glade.h:28
+msgid "Mirror image"
+msgstr "Віддзеркалити зображення"
+
+#: data/camorama.glade.h:29
+msgid "Negative"
+msgstr "Інвертувати"
+
+#: data/camorama.glade.h:30
+msgid "Password:"
+msgstr "Пароль:"
+
+#: data/camorama.glade.h:31
+msgid "Preferences"
+msgstr "Вподобання"
+
+#: data/camorama.glade.h:32
+msgid "Remote Capture"
+msgstr "Віддалена зйомка"
+
+#: data/camorama.glade.h:33
+msgid "Save directory:"
+msgstr "Каталог збереження:"
+
+#: data/camorama.glade.h:34
+msgid "Save files in jpeg format"
+msgstr "Зберігати файли у форматі JPEG"
+
+#: data/camorama.glade.h:35
+msgid "Save files in png format"
+msgstr "Зберігати файли у форматі PNG"
+
+#: data/camorama.glade.h:36
+msgid "Show Adjustments"
+msgstr "Показати регулятори"
+
+#: data/camorama.glade.h:37
+msgid "Smoothing"
+msgstr "Згладжування"
+
+#: data/camorama.glade.h:38
+msgid "Sobel"
+msgstr "Перетворення Собеля"
+
+#: data/camorama.glade.h:39
+msgid "String:"
+msgstr "Рядок:"
+
+#: data/camorama.glade.h:40
+msgid "Take Picture"
+msgstr "Зробити знімок"
+
+#: data/camorama.glade.h:41
+msgid "Threshold"
+msgstr "Поріг"
+
+#: data/camorama.glade.h:42
+msgid "Timestamp"
+msgstr "Позначка часу"
+
+#: data/camorama.glade.h:43
+msgid "Use custom string"
+msgstr "Нетиповий рядок"
+
+#: data/camorama.glade.h:44
+msgid "Username:"
+msgstr "Користувач"
+
+#: data/camorama.glade.h:45
+msgid "Wacky"
+msgstr "Дивне перетворення"
+
+#: data/camorama.glade.h:46
+msgid "White Balance"
+msgstr "Баланс білого"
+
+#: data/camorama.glade.h:47
+msgid "_Directory for captured pics:"
+msgstr "_Каталог для знятих зображень:"
+
+#: data/camorama.glade.h:48
+msgid "_Enable local capture"
+msgstr "_Увімкнути локальну зйомку"
+
+#: data/camorama.glade.h:49
+msgid "_Enable remote capture"
+msgstr "_Увімкнути віддалену зйомку"
+
+#: data/camorama.glade.h:50
+msgid "_Filename for pictures:"
+msgstr "_Назва зображень:"
+
+#: data/camorama.glade.h:51
+msgid "ftp.yourdomain.org"
+msgstr "ftp.ваш_домен.org"
+
+#: data/camorama.glade.h:52
+msgid "path/to/save/to"
+msgstr "шлях/де/зберігати"
+
+#: data/camorama.glade.h:53
+msgid "webcam-capture"
+msgstr "webcam-capture"
+
+#: data/camorama.glade.h:54
+msgid "webcamshot"
+msgstr "webcamshot"
+
+#: data/camorama.glade.h:55
+msgid "your-password"
+msgstr "ваш-пароль"
+
+#: data/camorama.glade.h:56
+msgid "your-username"
+msgstr "ваша-назва"
+
+#: data/camorama.glade.h:57
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "Додати позначку часу до назви файла"
+
+#: data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "Додати позначку часу до назви віддаленого файла"
+
+#: data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Додавати позначку часу в форматі часу UNIX в кінець назв файлів"
+
+#: data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "Додавати позначку часу в форматі часу UNIX в кінець назв віддалений файлів"
+
+#: data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "Нетиповий текст для позначки часу"
+
+#: data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Визначає рядок нетипового тексту, що його буде вставлено у зображення."
+
+#: data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "Назва файла для локальних зйомок"
+
+#: data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr "Назва файла для збереження знятих зображень локально"
+
+#: data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "Тека для локальних зйомок"
+
+#: data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "Тека для віддалених зйомок"
+
+#: data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "Тека для збереження знятих зображень віддалено"
+
+#: data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "Тека для збереження знятих зображень локально"
+
+#: data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "Назва хоста сервера FTP"
+
+#: data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr "Назва хоста сервера FTP для віддалених зйомок."
+
+#: data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr "Інтервал автозйомки"
+
+#: data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "Формат зображень локальних зйомок"
+
+#: data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "Назви файлів для відвантажених зображень."
+
+#: data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "Пароль для сервера FTP"
+
+#: data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "Формат зображень віддалених зйомок"
+
+#: data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "Назва файла для віддаленого збереження"
+
+#: data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Визначає формат зображення для зображень, що зберігаються локально"
+
+#: data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Визначає формат зображення для зображень, що зберігаються віддалено"
+
+#: data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Визначає інтервал для автоматичного знімання."
+
+#: data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "Пароль користувача FTP для віддалений зйомок."
+
+#: data/camorama.schemas.in.h:25
+msgid "Toggles auto-capture"
+msgstr "Перемикнути автозйомку"
+
+#: data/camorama.schemas.in.h:26
+msgid "Toggles automatic capturing of pictures."
+msgstr "Перемикнути автоматичне знімання зображень."
+
+#: data/camorama.schemas.in.h:27
+msgid "Toggles local capture"
+msgstr "Перемикнути локальну зйомку"
+
+#: data/camorama.schemas.in.h:28
+msgid "Toggles remote capture"
+msgstr "Перемикнути віддалену зйомку"
+
+#: data/camorama.schemas.in.h:29
+msgid "Toggles the custom string"
+msgstr "Перемикнути нетиповий рядок"
+
+#: data/camorama.schemas.in.h:30
+msgid "Toggles the datestamp in captures"
+msgstr "Перемикнути позначку дати у зйомках"
+
+#: data/camorama.schemas.in.h:31
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Перемикнути малювання позначки дати у знятих зображеннях"
+
+#: data/camorama.schemas.in.h:32
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Перемикнути вставляння позначки часу в локальні зображення"
+
+#: data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "Перемикнути вставляння позначки часу в зображення для відвантаження на FTP."
+
+#: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "Перемикнути використання нетипового рядка для позначки часу в зображеннях."
+
+#: data/camorama.schemas.in.h:35
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "Перемикнути використання повзунків для регулювання властивостей відео"
+
+#: data/camorama.schemas.in.h:36
+msgid "Toggles the video adjustment sliders"
+msgstr "Перемикнути повзунки регулювання відео"
+
+#: data/camorama.schemas.in.h:37
+msgid "Toggles timestamp for local captures"
+msgstr "Перемикнути позначку часу для локальних зйомок"
+
+#: data/camorama.schemas.in.h:38
+msgid "Toggles timestamp for remote captures"
+msgstr "Перемикнути позначку часу для віддалених зйомок"
+
+#: data/camorama.schemas.in.h:39
+msgid "Username for FTP server"
+msgstr "Користувач сервера FTP"
+
+#: data/camorama.schemas.in.h:40
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "Користувач FTP для відвантажень знятих зображень"
+
+#: data/camorama.schemas.in.h:41
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
+msgstr "Ця клавіша встановлює локальне збереження зображень, що робляться натисненням кнопки \"Зробити знімок\" чи автоматично."
+
+#: data/camorama.schemas.in.h:42
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
+msgstr "Ця клавіша встановлює віддалене збереження зображень, що робляться натисненням кнопки \"Зробити знімок\" чи автоматично."
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/callbacks.c:317
+msgid "translator_credits"
+msgstr "Юрій Сирота <yuriy@beer.com>"
+
+#: src/callbacks.c:324
+#: camorama.desktop.in.h:2
+msgid "View, alter and save images from a webcam"
+msgstr "Показ, зміна і збереження зображень з веб-камери"
+
+#: src/callbacks.c:346
+#: src/callbacks.c:412
+#: src/callbacks.c:453
+#: src/callbacks.c:465
+msgid "Unable to capture image."
+msgstr "Неможливо зробити знімок."
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr "Не вдалось зберегти тимчасовий файл зображення в /tmp."
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Не вдалось створити зображення \"%s\"."
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temporary image file '%s'."
+msgstr "Не вдалось відкрити тимчасовий файл зображення \"%s\"."
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Трапилась помилка під час відкриття \"%s\"."
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Трапилась помилка запису в \"%s\"."
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Не вдалось створити каталог \"%s\"."
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Не вдалось відкрити каталог \"%s\"."
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Не вдалось зберегти зображення \"%s/%s\"."
+
+#: src/main.c:32
+msgid "show version and exit"
+msgstr "показати версію і вийти"
+
+#: src/main.c:33
+msgid "v4l device to use"
+msgstr "пристрій Video4Linux"
+
+#: src/main.c:34
+msgid "enable debuging code"
+msgstr "увімкнути налагоджувальний код"
+
+#: src/main.c:35
+msgid "capture width"
+msgstr "ширина зображення"
+
+#: src/main.c:36
+msgid "capture height"
+msgstr "висота зображення"
+
+#: src/main.c:37
+msgid "maximum capture size"
+msgstr "максимальний розмір знімка"
+
+#: src/main.c:38
+msgid "minimum capture size"
+msgstr "мінімальний розмір знімка"
+
+#: src/main.c:39
+msgid "middle capture size"
+msgstr "середній розмір знімка"
+
+#: src/main.c:57
+msgid "camorama"
+msgstr "camorama"
+
+#: src/main.c:71
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Camorama версії %s\n"
+"\n"
+
+#: src/main.c:173
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "Не вдалось віднайти основний інтерфейсний файл (camorama.glade)."
+
+#: src/v4l.c:83
+#: src/v4l.c:143
+#: src/v4l.c:155
+#: src/v4l.c:179
+#: src/v4l.c:200
+#: src/v4l.c:215
+#, c-format
+msgid "Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr "Не вдалося встановити з'єднання з відеопристроєм (%s).\n"
+"Будь ласка, перевірте з'єднання."
+
+#: src/support.c:66
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Не вдалось віднайти файл зображення: %s"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Робота з веб-камерою"
+

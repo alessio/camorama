@@ -1,0 +1,258 @@
+<gconfschemafile>
+  <schemalist>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/append_ts_to_file</key>
+      <applyto>/apps/camorama/preferences/append_ts_to_file</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Append timestamp to filename</short>
+	<long>Appends a timestamp, in UNIX time, to the ends of filenames</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/auto_capture</key>
+      <applyto>/apps/camorama/preferences/auto_capture</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles auto-capture</short>
+	<long>Toggles automatic capturing of pictures.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/auto_capture_interval</key>
+      <applyto>/apps/camorama/preferences/auto_capture_interval</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>1200000</default>
+      <locale name="C">
+	<short>Interval for auto-capture</short>
+	<long>Specifies the interval for automatic capture of pictures.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/drawdate</key>
+      <applyto>/apps/camorama/preferences/drawdate</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles the datestamp in captures</short>
+	<long>Toggles the drawing of a datestamp within the captured pictures</long>
+      </locale>
+    </schema>
+
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/file_type</key>
+      <applyto>/apps/camorama/preferences/file_type</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>1</default>
+      <locale name="C">
+	<short>Local capture image format</short>
+	<long>Specifies the image format to be used for locally saved pictures</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/hostname</key>
+      <applyto>/apps/camorama/preferences/hostname</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>yourdomain.org</default>
+      <locale name="C">
+	<short>Hostname for FTP server</short>
+	<long>Hostname for the FTP server for remote captures.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/local_capture</key>
+      <applyto>/apps/camorama/preferences/local_capture</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles local capture</short>
+	<long>When capturing pictures via the "Take Picture" button, or with auto capture, this key toggles the saving of pictures locally.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/login</key>
+      <applyto>/apps/camorama/preferences/login</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>your-username</default>
+      <locale name="C">
+	<short>Username for FTP server</short>
+	<long>Username to use for FTP uploads of captured pictures</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/password</key>
+      <applyto>/apps/camorama/preferences/password</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>seeeekrit</default>
+      <locale name="C">
+	<short>Password for FTP server</short>
+	<long>The password for the FTP account for remote captures.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_append_ts_to_file</key>
+      <applyto>/apps/camorama/preferences/remote_append_ts_to_file</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Append timestamp to remote filename</short>
+	<long>Appends a timestamp, in UNIX time, to the ends of remote filenames</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_capture</key>
+      <applyto>/apps/camorama/preferences/remote_capture</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles remote capture</short>
+	<long>When capturing pictures via the "Take Picture" button, or with auto capture, this key toggles the saving of pictures to a remote server.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_file_type</key>
+      <applyto>/apps/camorama/preferences/remote_file_type</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+	<short>Remote capture image format</short>
+	<long>Specifies the image format to be used for remotely saved pictures</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_save_dir</key>
+      <applyto>/apps/camorama/preferences/remote_save_dir</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>your/upload/folder</default>
+      <locale name="C">
+	<short>Folder for remote captures</short>
+	<long>Folder for saving captured pictures remotely</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_save_file</key>
+      <applyto>/apps/camorama/preferences/remote_save_file</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>Webcam</default>
+      <locale name="C">
+	<short>Remote save filename</short>
+	<long>Name for the filename of uploaded images.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_timestamp</key>
+      <applyto>/apps/camorama/preferences/remote_timestamp</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles timestamp for remote captures</short>
+	<long>Toggles the insertion of a timestamp into the images for FTP upload.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/save_dir</key>
+      <applyto>/apps/camorama/preferences/save_dir</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>~/Webcam_Pictures</default>
+      <locale name="C">
+	<short>Folder for local captures</short>
+	<long>Folder for saving captured pictures to locally</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/save_file</key>
+      <applyto>/apps/camorama/preferences/save_file</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>Webcam</default>
+      <locale name="C">
+	<short>Filename for local captures</short>
+	<long>Filename for saving captured pictures to locally</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/timestamp</key>
+      <applyto>/apps/camorama/preferences/timestamp</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles timestamp for local captures</short>
+	<long>Toggles the insertion of a timestamp into local images</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/timestamp_string</key>
+      <applyto>/apps/camorama/preferences/timestamp_string</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>Camorama!</default>
+      <locale name="C">
+	<short>Custom text for the timestamp</short>
+	<long>Defines a string of custom text to be inserted into the image.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/use_custom_string</key>
+      <applyto>/apps/camorama/preferences/use_custom_string</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles the custom string</short>
+	<long>Toggles the use of the custom string for the timestamp in images.</long>
+      </locale>
+    </schema>
+
+<schema>
+      <key>/schemas/apps/camorama/preferences/show_adjustments</key>
+      <applyto>/apps/camorama/preferences/show_adjustments</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles the video adjustment sliders</short>
+	<long>Toggles the use of the sliders to adjust the video properties</long>
+      </locale>
+    </schema>
+
+</schemalist>
+</gconfschemafile>

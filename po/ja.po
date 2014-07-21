@@ -1,0 +1,558 @@
+# camorama ja.po
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# This file is distributed under the same license as the camorama package.
+# KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 20003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama HEAD\n"
+"POT-Creation-Date: 2003-05-06 23:43+0900\n"
+"PO-Revision-Date: 2003-05-06 23:45+0900\n"
+"Last-Translator: KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: data/camorama.glade.h:2
+msgid "*"
+msgstr "*"
+
+#: data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Effects</span>"
+msgstr "<span weight=\"bold\">効果</span>"
+
+#: data/camorama.glade.h:4
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">一般</span>"
+
+#: data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">画像タイプ</span>"
+
+#: data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">ローカルの取り込み</span>"
+
+#: data/camorama.glade.h:7
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">リモートの取り込み</span>"
+
+#: data/camorama.glade.h:8
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">タイムスタンプ</span>"
+
+#: data/camorama.glade.h:9
+msgid "Add a timestamp to captured images"
+msgstr "取り込んだ画像にタイムスタンプを追加"
+
+#: data/camorama.glade.h:10
+msgid "Append time to filename"
+msgstr "ファイル名に時刻を追加"
+
+#: data/camorama.glade.h:11
+msgid "Automatic Capture"
+msgstr "自動取り込み"
+
+#: data/camorama.glade.h:12
+msgid "Black & White"
+msgstr "白黒"
+
+#: data/camorama.glade.h:13
+msgid "Brightness"
+msgstr "明るさ"
+
+#: data/camorama.glade.h:14
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: data/camorama.glade.h:15
+msgid "Capture Interval (in minutes):"
+msgstr "取り込みの間隔 (分): "
+
+#: data/camorama.glade.h:16
+msgid "Color correction"
+msgstr "色の補正"
+
+#: data/camorama.glade.h:17
+msgid "Color threshold"
+msgstr "色の閾値"
+
+#: data/camorama.glade.h:18
+msgid "Colour"
+msgstr "色"
+
+#: data/camorama.glade.h:19
+msgid "Contrast"
+msgstr "コントラスト"
+
+#: data/camorama.glade.h:20
+msgid "Draw date and time"
+msgstr "日付と時刻を記入"
+
+#: data/camorama.glade.h:21
+msgid "FTP server: "
+msgstr "FTPサーバ"
+
+#: data/camorama.glade.h:22
+msgid "Filename"
+msgstr "ファイル名"
+
+#: data/camorama.glade.h:23
+msgid "General"
+msgstr "一般"
+
+#: data/camorama.glade.h:24
+msgid "Hue"
+msgstr "色相"
+
+#: data/camorama.glade.h:25
+msgid "Laplace"
+msgstr "ラプラス"
+
+#: data/camorama.glade.h:26
+msgid "Local Capture"
+msgstr "ローカルの取り込み"
+
+#: data/camorama.glade.h:27
+msgid "Mirror image"
+msgstr "鏡像"
+
+#: data/camorama.glade.h:28
+msgid "Negative"
+msgstr "ネガティブ"
+
+#: data/camorama.glade.h:29
+msgid "Password:"
+msgstr "パスワード:"
+
+#: data/camorama.glade.h:30
+msgid "Preferences"
+msgstr "設定"
+
+#: data/camorama.glade.h:31
+msgid "Remote Capture"
+msgstr "リモートの取り込み"
+
+#: data/camorama.glade.h:32
+msgid "Save directory:"
+msgstr "ディレクトリを保存:"
+
+#: data/camorama.glade.h:33
+msgid "Save files in jpeg format"
+msgstr "ファイルを jpeg 形式で保存"
+
+#: data/camorama.glade.h:34
+msgid "Save files in png format"
+msgstr "ファイルを png 形式で保存"
+
+#: data/camorama.glade.h:35
+msgid "Show Adjustments"
+msgstr "調整スライダーの表示"
+
+#: data/camorama.glade.h:36
+msgid "Smoothing"
+msgstr "スムージング"
+
+#: data/camorama.glade.h:37
+msgid "Sobel"
+msgstr "ゾーベルフィルタ"
+
+#: data/camorama.glade.h:38
+msgid "String:"
+msgstr "文字列:"
+
+#: data/camorama.glade.h:39
+msgid "Take Picture"
+msgstr "写真を撮る"
+
+#: data/camorama.glade.h:40
+msgid "Threshold"
+msgstr "閾値"
+
+#: data/camorama.glade.h:41
+msgid "Timestamp"
+msgstr "タイムスタンプ"
+
+#: data/camorama.glade.h:42
+msgid "Use custom string"
+msgstr "カスタム文字列を使う"
+
+#: data/camorama.glade.h:43
+msgid "Username:"
+msgstr "ユーザ名:"
+
+#: data/camorama.glade.h:44
+msgid "Wacky"
+msgstr "風変り"
+
+#: data/camorama.glade.h:45
+msgid "White Balance"
+msgstr "ホワイトバランス"
+
+#: data/camorama.glade.h:46
+msgid "_Directory for captured pics:"
+msgstr "取り込んだ画像用のディレクトリ (_D)"
+
+#: data/camorama.glade.h:47
+msgid "_Enable local capture"
+msgstr "ローカルの取り込みを有効 (_E)"
+
+#: data/camorama.glade.h:48
+msgid "_Enable remote capture"
+msgstr "リモートの取り込みを有効 (_E)"
+
+#: data/camorama.glade.h:49
+msgid "_Filename for pictures:"
+msgstr "画像のファイル名 (_F):"
+
+#: data/camorama.glade.h:50
+msgid "ftp.yourdomain.org"
+msgstr "あなたの ftp ドメイン"
+
+#: data/camorama.glade.h:51
+msgid "large"
+msgstr "L サイズ"
+
+#: data/camorama.glade.h:52
+msgid "medium"
+msgstr "M サイズ"
+
+#: data/camorama.glade.h:53
+msgid "path/to/save/to"
+msgstr "保存するパス"
+
+#: data/camorama.glade.h:54
+msgid "small"
+msgstr "S サイズ"
+
+#: data/camorama.glade.h:55
+msgid "webcam-capture"
+msgstr "webcam-取り込み"
+
+#: data/camorama.glade.h:56
+msgid "webcamshot"
+msgstr "webcam 撮影"
+
+#: data/camorama.glade.h:57
+msgid "your-password"
+msgstr "パスワード"
+
+#: data/camorama.glade.h:58
+msgid "your-username"
+msgstr "ユーザ名"
+
+#: data/camorama.glade.h:59
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "ファイル名にタイムスタンプを追加"
+
+#: data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "リモートのファイル名にタイムスタンプを追加"
+
+#: data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "ファイル名の末尾に UNIX 時間のタイムスタンプを追加"
+
+#: data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "リモートのファイル名に UNIX 時間のタイムスタンプを追加"
+
+#: data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "タイムスタンプ用のカスタム文字列"
+
+#: data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "画像に挿入するカスタムテキストの文字列を定義"
+
+#: data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "ローカル取り込み用のファイル名"
+
+#: data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr "ローカルで取り込まれた画像の保存に利用するファイル名"
+
+#: data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "ローカル取り込み用のフォルダ"
+
+#: data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "リモート取り込み用のフォルダ"
+
+#: data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "リモートで取り込まれた画像の保存に利用するフォルダ"
+
+#: data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "ローカルで取り込まれた画像の保存に利用するフォルダ"
+
+#: data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "FTP サーバのホスト名"
+
+#: data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr "リモート取り込みで利用する FTP サーバのホスト名"
+
+#: data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr "自動取り込みの間隔"
+
+#: data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "ローカル取り込みの画像フォーマット"
+
+#: data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "アップロードされた画像のファイル名"
+
+#: data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "FTP サーバのパスワード"
+
+#: data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "リモート取り込みの画像フォーマット"
+
+#: data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "リモート保存のファイル名"
+
+#: data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "ローカルで保存する画像に利用する画像フォーマットを指定します"
+
+#: data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "リモートで保存する画像に利用する画像フォーマットを指定します"
+
+#: data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "画像の自動取り込みの時間間隔を指定します。"
+
+#: data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "リモート取り込みの FTP アカウントに対応するパスワード"
+
+#: data/camorama.schemas.in.h:25
+msgid "Toggles auto-capture"
+msgstr "自動取り込みの切り替え"
+
+#: data/camorama.schemas.in.h:26
+msgid "Toggles automatic capturing of pictures."
+msgstr "画像の自動取り込みを切り替えます"
+
+#: data/camorama.schemas.in.h:27
+msgid "Toggles local capture"
+msgstr "ローカル読み込みの切り替え"
+
+#: data/camorama.schemas.in.h:28
+msgid "Toggles remote capture"
+msgstr "リモート取り込みの切り替え"
+
+#: data/camorama.schemas.in.h:29
+msgid "Toggles the custom string"
+msgstr "カスタム文字列の切り替え"
+
+#: data/camorama.schemas.in.h:30
+msgid "Toggles the datestamp in captures"
+msgstr "取り込み画像への日付挿入の有無を切り替えます"
+
+#: data/camorama.schemas.in.h:31
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "取り込んだ画像への日付の挿入の有無を切り替えます"
+
+#: data/camorama.schemas.in.h:32
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "ローカル画像へのタイムスタンプの挿入の有無を切り替えます"
+
+#: data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "FTP アップロード画像へのタイムスタンプ挿入の有無を切り替えます"
+
+#: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "画像へのタイムスタンプのカスタム文字列の使用の有無を切り替えます"
+
+#: data/camorama.schemas.in.h:35
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "ビデオプロパティを調整するスライダーの使用の有無を切り替えます"
+
+#: data/camorama.schemas.in.h:36
+msgid "Toggles the video adjustment sliders"
+msgstr "ビデオ調整スライダーの有無を切り替えます"
+
+#: data/camorama.schemas.in.h:37
+msgid "Toggles timestamp for local captures"
+msgstr "ローカル取り込み画像のタイムスタンプの有無を切り替えます"
+
+#: data/camorama.schemas.in.h:38
+msgid "Toggles timestamp for remote captures"
+msgstr "リモート取り込み画像のタイムスタンプの有無を切り替えます"
+
+#: data/camorama.schemas.in.h:39
+msgid "Username for FTP server"
+msgstr "FTP サーバのユーザ名"
+
+#: data/camorama.schemas.in.h:40
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "取り込んだ画像の FTP アップロードに使用するユーザ名"
+
+#: data/camorama.schemas.in.h:41
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"\"写真を撮る\" ボタンもしくは自動取り込みで画像を取り込んだ場合、このキーは画"
+"像のローカル保存を有効にします。"
+
+#: data/camorama.schemas.in.h:42
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"\"写真を撮る\" ボタンもしくは自動取り込みで画像を取り込んだ場合、このキーは画"
+"像のリモート保存を有効にします。"
+
+#: src/callbacks.c:401
+msgid "translator_credits"
+msgstr "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>"
+
+#: src/callbacks.c:416 camorama.desktop.in.h:2
+msgid "View, alter and save images from a webcam"
+msgstr "webcam からの画像を視聴し、変更してから保存する"
+
+#: src/callbacks.c:513 src/callbacks.c:579 src/callbacks.c:622
+#: src/callbacks.c:634
+msgid "Unable to capture image."
+msgstr "画像を取り込めません。"
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr "テンポラリ画像ファイルを /tmp に保存できませんでした。"
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "画像ファイル '%s' を作成できませんでした。"
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temporary image file '%s'."
+msgstr "テンポラリ画像ファイル '%s' を開けませんでした。"
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr "%s を開くのに失敗しました。"
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "%s への書き込みに失敗しました。"
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "ディレクトリ '%s' を作成できませんでした。"
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "ディレクトリ '%s' に移動できませんでした。"
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "画像ファイル '%s/%s' を保存できません。"
+
+#: src/main.c:35
+msgid "show version and exit"
+msgstr "バージョンを表示し、終了する"
+
+#: src/main.c:36
+msgid "v4l device to use"
+msgstr "v41デバイスを利用"
+
+#: src/main.c:37
+msgid "enable debuging code"
+msgstr "デバッグコードを有効にする"
+
+#: src/main.c:38
+msgid "capture width"
+msgstr "取り込む幅"
+
+#: src/main.c:39
+msgid "capture height"
+msgstr "取り込む高さ"
+
+#: src/main.c:40
+msgid "maximum capture size"
+msgstr "最大取り込みサイズ"
+
+#: src/main.c:41
+msgid "minimum capture size"
+msgstr "最小取り込みサイズ"
+
+#: src/main.c:42
+msgid "middle capture size"
+msgstr "中間の取り込みサイズ"
+
+#: src/main.c:43
+msgid "use read() rather than mmap()"
+msgstr "mmap() ではなく read() を使ってください"
+
+#: src/main.c:63
+msgid "camorama"
+msgstr "camorama"
+
+#: src/main.c:77
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Camorama バージョン %s\n"
+
+#: src/main.c:192
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr ""
+"メインとなるインターフェイスファイル (camorama.glade) が見つかりません。"
+
+#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
+#: src/v4l.c:222
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"ビデオデバイス (%s) に接続できません。\n"
+"接続を確認してください。"
+
+#: src/support.c:66
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "pixmap ファイルが見つかりません: %s"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama ウェブカムビューア"
+
+#~ msgid "Add timestamp to captured images"
+#~ msgstr "取り込んだ画像にタイムスタンプを追加"
