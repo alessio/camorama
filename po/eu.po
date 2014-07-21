@@ -1,25 +1,25 @@
 # translation of eu.po to Basque
-# translation of eu.po to basque
-# translation of camorama.HEAD.eu.po to Basque
 # Basque translation of camorama.HEAD.
 # Copyright (C) 2003 THE camorama.HEAD'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the camorama.HEAD package.
+#
 # Alberto Silva Gago <alberto@nmp.es>, 2003.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2003, 2005, 2006.
-#
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-01 12:01+0100\n"
-"PO-Revision-Date: 2006-03-01 12:02+0100\n"
-"Last-Translator: Iñaki Larrañaga <dooteo@euskalgnu.org>\n"
-"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"POT-Creation-Date: 2007-08-08 20:04+0200\n"
+"PO-Revision-Date: 2007-08-08 20:14+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 
 #: ../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
@@ -422,18 +422,45 @@ msgstr "Alberto Silva <alberto@nmp.es>, 2003"
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:619 ../src/callbacks.c:653 ../src/callbacks.c:703
-#: ../src/callbacks.c:716
+#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:692
 msgid "Unable to capture image."
 msgstr "Ezin izan da irudia eskuratu"
 
-#: ../src/eggtrayicon.c:127
-msgid "Orientation"
-msgstr "Orientazioa"
+#: ../src/callbacks.c:808
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"Kaptura lokala: %d\n"
+"Urruneko kaptura: %d\n"
+"Kaptura-bitartea: %d"
 
-#: ../src/eggtrayicon.c:128
-msgid "The orientation of the tray."
-msgstr "Erretiluaren orientazioa"
+#: ../src/callbacks.c:817
+msgid "Automatic Capture Disabled"
+msgstr "Kaptura automatikoki desgaitua"
+
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "Laplace (4 aldameneko)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "Ispilua"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "Web kamera"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "_Gehitu iragazkia"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "Efektuak"
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -478,47 +505,83 @@ msgstr "'%s' direktorioa ezin izan da sortu."
 msgid "Could not change to directory '%s'."
 msgstr "'%s' direktoriora ezin izan da aldatu"
 
-#: ../src/main.c:53
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "Kolore-zuzenketa"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "Alderantzikatu"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "Atalasea (orokorra)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "Atalasea (kanaleko)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Zoroa"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "Leuna"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "Monokromoa"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "Monokromoa (pisua)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "Sobel"
+
+#: ../src/main.c:76
 msgid "show version and exit"
 msgstr "bertsioa erakutsi eta irten"
 
-#: ../src/main.c:55
+#: ../src/main.c:78
 msgid "v4l device to use"
 msgstr "erabiliko den v4l gailua"
 
-#: ../src/main.c:57
+#: ../src/main.c:80
 msgid "enable debugging code"
 msgstr "gaitu arazketa-kodea"
 
-#: ../src/main.c:58
+#: ../src/main.c:81
 msgid "capture width"
 msgstr "eskuratzearen zabalera"
 
-#: ../src/main.c:60
+#: ../src/main.c:83
 msgid "capture height"
 msgstr "eskuratzearen altuera"
 
-#: ../src/main.c:63
+#: ../src/main.c:86
 msgid "maximum capture size"
 msgstr "gehienezko eskuratze tamainua"
 
-#: ../src/main.c:65
+#: ../src/main.c:88
 msgid "minimum capture size"
 msgstr "gutxienezko eskuratze tamainua"
 
-#: ../src/main.c:67
+#: ../src/main.c:90
 msgid "middle capture size"
 msgstr "ertaineko eskuratze tamainua"
 
-#: ../src/main.c:69
+#: ../src/main.c:92
 msgid "use read() rather than mmap()"
 msgstr "read() erabili mmap()-en ordez"
 
-#: ../src/main.c:91
+#: ../src/main.c:114
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:104
+#: ../src/main.c:130
 #, c-format
 msgid ""
 "\n"
@@ -531,7 +594,7 @@ msgstr ""
 "Camorama bertsioa %s\n"
 "\n"
 
-#: ../src/main.c:238
+#: ../src/main.c:264
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Interfaze nagusiaren fitxategia ezin izan da aurkitu (camorama.glade)."
 

@@ -21,12 +21,17 @@
 
 #include "camorama-filter-chain.h"
 
-#define PICMAX 0
-#define PICMIN 1
-#define PICHALF 2
-#define JPEG 0
-#define PNG 1
-#define PPM 2
+typedef enum {
+	PICMAX = 0,
+	PICMIN = 1,
+	PICHALF = 2
+} CamoImageSize;
+
+enum {
+	JPEG = 0,
+	PNG = 1,
+	PPM = 2
+};
 
 typedef struct camera {
     int dev;
@@ -34,7 +39,7 @@ typedef struct camera {
     int y;
     int depth;
     int desk_depth;
-    int size;
+    CamoImageSize size;
     int contrast, brightness, colour, hue, wb;
     int frame_number;
     struct video_capability vid_cap;
@@ -56,7 +61,6 @@ typedef struct camera {
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
 	GdkPixmap *pixmap;
-	GdkWindow *window;
 	GtkWidget *da, *tray_tooltip, *status;
 	unsigned char *pic_buf, *tmp;
     guint timeout_id, idle_id;

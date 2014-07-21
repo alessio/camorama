@@ -4,14 +4,14 @@
 # Daniel Nylander <po@danielnylander.se>, 2006.
 # Christian Rose <menthos@menthos.com>, 2003.
 #
-# $Id: sv.po,v 1.12 2006/09/14 12:17:35 dnylande Exp $
+# $Id: sv.po,v 1.13 2006/11/18 22:34:25 dnylande Exp $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-14 10:12+0200\n"
-"PO-Revision-Date: 2006-09-14 13:36+0100\n"
+"POT-Creation-Date: 2006-11-18 03:58+0000\n"
+"PO-Revision-Date: 2006-11-18 22:48+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -438,6 +438,26 @@ msgstr ""
 msgid "Automatic Capture Disabled"
 msgstr "Automatisk tagning inaktiverat"
 
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "Laplace (4 grannar)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "Spegel"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "Webbkamera"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "_Lägg till filter"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "Effekter"
+
 #: ../src/fileio.c:120
 #: ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -482,6 +502,42 @@ msgstr "Kunde inte skapa katalogen \"%s\"."
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Kunde inte byta till katalogen \"%s\"."
+
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "Färgkorrigering"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "Invertera"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "Tröskelvärde (övergripande)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "Tröskelvärde (per kanal)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Knäpp"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "Mjuk"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "Monokrom"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "Monokrom (vikt)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "Sobel"
 
 #: ../src/main.c:53
 msgid "show version and exit"
@@ -569,16 +625,10 @@ msgstr ""
 #~ msgstr "<span weight=\"bold\">Effekter</span>"
 #~ msgid "Black & white"
 #~ msgstr "Svartvit"
-#~ msgid "Color correction"
-#~ msgstr "Färgkorrigering"
 #~ msgid "Color threshold"
 #~ msgstr "Färgtröskel"
 #~ msgid "Laplace"
 #~ msgstr "Laplace"
-#~ msgid "Mirror image"
-#~ msgstr "Spegla bild"
 #~ msgid "Negative"
 #~ msgstr "Negativ"
-#~ msgid "Smoothing"
-#~ msgstr "Utjämning"
 

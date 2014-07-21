@@ -1,3 +1,31 @@
+Changes in Camorama 0.19 (from 0.18)
+
+ * non-visible improvements
+   - use PACKAGE_LOCALE_DIR, not GNOMELOCALEDIR
+   - use real enumerations instead of #define
+   - removed unused files
+   - started to refactor the code for easier overview and better extensibility
+ * new and updated translations:
+   ar (Djihed Afifi)
+   pt_BR (Andre Noel)
+   dz (sonam pelden)
+   en_GB (David Lodge)
+   es (Francisco Javier F. Serrador)
+   eu (Inaki Larranaga Murgoitio)
+   fi (Ilkka Tuohela)
+   fr (Jean-Luc Coulon, Stéphane Raimbault)
+   gl (Ignacio Casal Quinteiro)
+   ja (Takeshi AIHANA)
+   ne (Ganesh Ghimire, Jaydeep Bhusal, Shyam Krishna Bal)
+   nl (Wouter Bolsterlee)
+   no (Kjartan Maraas)
+   oc (Yannig Marchegay)
+   pa (ASB)
+   pt (Luis Matos)
+   sl (Matic Žgur)
+   sv (Daniel Nylander)
+   vi (Clytie Siddall)
+
 August 28, 2002
 - released 0.14
 

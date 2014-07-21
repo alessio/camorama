@@ -1,3 +1,28 @@
+2007-09-16  Sven Herzberg  <herzi@gnome-de.org>
+
+	Fix a few translation issues:
+	http://bugzilla.gnome.org/show_bug.cgi?id=476004
+
+	* data/camorama.glade: don't mark empty strings as translatable
+	* src/camorama-filter-mirror.c,
+	* src/filter.c: added translator comments
+
+2007-06-14  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/main.c: replaced GNOMELOCALEDIR by PACKAGE_LOCALE_DIR
+
+2007-03-02  Pema Geyleg <pema.geyleg@gmail.com>
+
+	* configure.in: Added 'dz' to dzongkha translation.
+
+2006-10-31  Matic Zgur  <mr.zgur@gmail.com>
+
+	* configure.in: Added Slovenian ('sl') to ALL_LINGUAS.
+
+2006-10-31  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
+
+	* configure.in: Added 'gl' to ALL_LINGUAS
+
 2006-07-30  Sven Herzberg  <herzi@gnome-de.org>
 
 	* src/callbacks.c,

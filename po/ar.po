@@ -1,28 +1,28 @@
-# camorama ja.po.
-# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the camorama package.
-# KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 20003.
-# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003,2007.
-#
+# Arabic translations for THIS package.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as THIS package.
+# Automatically generated, 2007.
+# Djihed Afifi <djihed@gmail.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: camorama HEAD\n"
+"Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-03 15:21+0900\n"
-"PO-Revision-Date: 2007-05-03 15:21+0900\n"
-"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
-"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"POT-Creation-Date: 2007-04-21 10:46+0100\n"
+"PO-Revision-Date: 2007-04-14 18:49+0100\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"Language-Team: Arabeyes <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../camorama.desktop.in.h:1
+#, fuzzy
 msgid "Camorama Webcam Viewer"
-msgstr "Camorama ウェブカム・ビューア"
+msgstr "عارض المعارِف"
 
 #: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
-msgstr "WebCam の画像の表示や保存を行います"
+msgstr ""
 
 #: ../data/camorama.glade.h:1
 msgid "     "
@@ -30,401 +30,459 @@ msgstr "     "
 
 #: ../data/camorama.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">全般</span>"
+msgstr "<span weight=\"bold\">عام</span>"
 
 #: ../data/camorama.glade.h:3
+#, fuzzy
 msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">画像の種類</span>"
+msgstr "<span weight=\"bold\">الوقت</span>"
 
 #: ../data/camorama.glade.h:4
+#, fuzzy
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">ローカル・キャプチャ</span>"
+msgstr "<span weight=\"bold\">الموقع</span>"
 
 #: ../data/camorama.glade.h:5
+#, fuzzy
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">リモート・キャプチャ</span>"
+msgstr "<span weight=\"bold\">قالب</span>"
 
 #: ../data/camorama.glade.h:6
+#, fuzzy
 msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">タイムスタンプ</span>"
+msgstr "<span weight=\"bold\">الوقت</span>"
 
 #: ../data/camorama.glade.h:7
 msgid "Add a timestamp to captured images"
-msgstr "キャプチャした画像にタイムスタンプを追加する"
+msgstr ""
 
 #: ../data/camorama.glade.h:8
+#, fuzzy
 msgid "Append time to filename"
-msgstr "ファイル名の末尾に時刻を付与する"
+msgstr "أ_لحِق للملف"
 
 #: ../data/camorama.glade.h:9
+#, fuzzy
 msgid "Automatic Capture"
-msgstr "自動キャプチャを有効にする"
+msgstr "المراسَلون التلقائيون"
 
 #: ../data/camorama.glade.h:10
+#, fuzzy
 msgid "Brightness:"
-msgstr "明るさ:"
+msgstr "سطوع"
 
 #: ../data/camorama.glade.h:11
 msgid "Camorama-libglade"
-msgstr "camorama.glade"
+msgstr ""
 
 #: ../data/camorama.glade.h:12
+#, fuzzy
 msgid "Capture Interval (in minutes):"
-msgstr "キャプチャの間隔 (分):"
+msgstr "علامة عدد حقيقي (في السطر)"
 
 #: ../data/camorama.glade.h:13
+#, fuzzy
 msgid "Color:"
-msgstr "色:"
+msgstr "الل_ون:"
 
 #: ../data/camorama.glade.h:14
+#, fuzzy
 msgid "Contrast:"
-msgstr "コントラスト:"
+msgstr "ت_باين:"
 
 #: ../data/camorama.glade.h:15
+#, fuzzy
 msgid "Draw date and time"
-msgstr "日付と時刻を付与する"
+msgstr "التاريخ و الوقت"
 
 #: ../data/camorama.glade.h:16
+#, fuzzy
 msgid "FTP server: "
-msgstr "FTP サーバ: "
+msgstr "خادم NTP"
 
 #: ../data/camorama.glade.h:17
+#, fuzzy
 msgid "Filename"
-msgstr "ファイル名"
+msgstr "اسم الملف:"
 
 #: ../data/camorama.glade.h:18
+#, fuzzy
 msgid "General"
-msgstr "全般"
+msgstr "_عامّ"
 
 #: ../data/camorama.glade.h:19
 msgid "Hue:"
-msgstr "色相:"
+msgstr "التدرج:"
 
 #: ../data/camorama.glade.h:20
 msgid "Large"
-msgstr "大きい"
+msgstr "كبير"
 
 #: ../data/camorama.glade.h:21
+#, fuzzy
 msgid "Local Capture"
-msgstr "ローカル・キャプチャ"
+msgstr "سجّل"
 
 #: ../data/camorama.glade.h:22
 msgid "Medium"
-msgstr "中ぐらい"
+msgstr "متوسط"
 
 #: ../data/camorama.glade.h:23
+#, fuzzy
 msgid "Password:"
-msgstr "パスワード:"
+msgstr "_كلمة السر:"
 
 #: ../data/camorama.glade.h:24
+#, fuzzy
 msgid "Preferences"
-msgstr "設定"
+msgstr "ت_فضيلات"
 
 #: ../data/camorama.glade.h:25
+#, fuzzy
 msgid "Remote Capture"
-msgstr "リモート・キャプチャ"
+msgstr "مراسَلين بعيدين"
 
 #: ../data/camorama.glade.h:26
+#, fuzzy
 msgid "Save directory:"
-msgstr "保存先のフォルダ:"
+msgstr "دليل الحفظ"
 
 #: ../data/camorama.glade.h:27
+#, fuzzy
 msgid "Save files in jpeg format"
-msgstr "JPEG 形式で保存する"
+msgstr "تنسيق ملف سيء"
 
 #: ../data/camorama.glade.h:28
+#, fuzzy
 msgid "Save files in png format"
-msgstr "PNG 形式で保存する"
+msgstr "تنسيق ملف سيء"
 
 #: ../data/camorama.glade.h:29
+#, fuzzy
 msgid "Show Adjustments"
-msgstr "調整エントリ"
+msgstr "اظهر المُرفقات"
 
 #: ../data/camorama.glade.h:30
+#, fuzzy
 msgid "Show Effects"
-msgstr "画像の効果"
+msgstr "مؤ_ثرات"
 
 #: ../data/camorama.glade.h:31
 msgid "Small"
-msgstr "小さい"
+msgstr "صغير"
 
 #: ../data/camorama.glade.h:32
+#, fuzzy
 msgid "String:"
-msgstr "文字列:"
+msgstr "سلسلة2"
 
 #: ../data/camorama.glade.h:33
+#, fuzzy
 msgid "Take Picture"
-msgstr "写真撮影"
+msgstr "_صورة"
 
 #: ../data/camorama.glade.h:34
+#, fuzzy
 msgid "Timestamp"
-msgstr "タイムスタンプ"
+msgstr "خاتم الوقت:"
 
 #: ../data/camorama.glade.h:35
+#, fuzzy
 msgid "Use custom string"
-msgstr "タイムスタンプの文字列を指定する"
+msgstr "إستعمال خطوط مخصّصة"
 
 #: ../data/camorama.glade.h:36
+#, fuzzy
 msgid "Username:"
-msgstr "ユーザ名:"
+msgstr "اسم المستخدم: "
 
 #: ../data/camorama.glade.h:37
+#, fuzzy
 msgid "White Balance:"
-msgstr "ホワイト・バランス:"
+msgstr "الميزان الأبيض"
 
 #: ../data/camorama.glade.h:38
+#, fuzzy
 msgid "_Directory for captured pics:"
-msgstr "保存先のフォルダ(_D):"
+msgstr "خصائص الدليل"
 
 #: ../data/camorama.glade.h:39
+#, fuzzy
 msgid "_Enable local capture"
-msgstr "ローカル・キャプチャを有効にする(_E)"
+msgstr "فعّل رسم حِمْل المعالج"
 
 #: ../data/camorama.glade.h:40
+#, fuzzy
 msgid "_Enable remote capture"
-msgstr "リモート・キャプチャを有効にする(_E)"
+msgstr "ت_ضمين الاختبارات البعيدة"
 
 #: ../data/camorama.glade.h:41
+#, fuzzy
 msgid "_Filename for pictures:"
-msgstr "画像のファイル名(_F):"
+msgstr "اسم الملف المعد للتصدير"
 
 #: ../data/camorama.glade.h:42
 msgid "ftp.yourdomain.org"
-msgstr "使用する FTP ドメイン"
+msgstr ""
 
 #: ../data/camorama.glade.h:43
+#, fuzzy
 msgid "path/to/save/to"
-msgstr "保存先のフォルダ"
+msgstr "/path/to"
 
 #: ../data/camorama.glade.h:44
 msgid "webcam-capture"
-msgstr "WebCam キャプチャ"
+msgstr ""
 
 #: ../data/camorama.glade.h:45
 msgid "webcamshot"
-msgstr "webcamshot"
+msgstr ""
 
 #: ../data/camorama.glade.h:46
+#, fuzzy
 msgid "your-password"
-msgstr "パスワード"
+msgstr "أظهر كلمة السر"
 
 #: ../data/camorama.glade.h:47
+#, fuzzy
 msgid "your-username"
-msgstr "ユーザ名"
+msgstr "اسم المصدر"
 
 #: ../data/camorama.glade.h:48
+#, fuzzy
 msgid "~/.gnome-desktop"
-msgstr "~/Desktop"
+msgstr ".desktop"
 
 #: ../data/camorama.schemas.in.h:1
+#, fuzzy
 msgid "Append timestamp to filename"
-msgstr "ファイル名にタイムスタンプを追加する"
+msgstr "أ_لحِق للملف"
 
 #: ../data/camorama.schemas.in.h:2
+#, fuzzy
 msgid "Append timestamp to remote filename"
-msgstr "リモートのファイル名にタイムスタンプを追加する"
+msgstr "اعادة تسمية الملف البعيد"
 
 #: ../data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "リモート・ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:5
+#, fuzzy
 msgid "Custom text for the timestamp"
-msgstr "タイムスタンプ用のカスタム文字列"
+msgstr "أشرطة مخصصة لهذا النص"
 
 #: ../data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr "画像に挿入するカスタム・テキストの文字列を定義します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:7
+#, fuzzy
 msgid "Filename for local captures"
-msgstr "ローカル・キャプチャ用のファイル名"
+msgstr "اسم الملف المعد للتصدير"
 
 #: ../data/camorama.schemas.in.h:8
 msgid "Filename for saving captured pictures to locally"
-msgstr "ローカルでキャプチャした画像を保存する際に使用するファイル名です。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:9
+#, fuzzy
 msgid "Folder for local captures"
-msgstr "ローカル・キャプチャ用のフォルダ"
+msgstr "مجلد تصدير الصور"
 
 #: ../data/camorama.schemas.in.h:10
+#, fuzzy
 msgid "Folder for remote captures"
-msgstr "リモート・キャプチャ用のフォルダ"
+msgstr "مجلد تصدير الصور"
 
 #: ../data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr "リモートでキャプチャした画像を保存するフォルダです。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr "ローカルでキャプチャした画像を保存するフォルダです。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:13
+#, fuzzy
 msgid "Hostname for FTP server"
-msgstr "FTP サーバのホスト名"
+msgstr "اسم أو عنوان IP لخادم PPTP"
 
 #: ../data/camorama.schemas.in.h:14
 msgid "Hostname for the FTP server for remote captures."
-msgstr "リモート・キャプチャで使用する FTP サーバのホスト名です。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:15
+#, fuzzy
 msgid "Interval for auto-capture"
-msgstr "自動キャプチャの間隔"
+msgstr "إطار داخلي"
 
 #: ../data/camorama.schemas.in.h:16
+#, fuzzy
 msgid "Local capture image format"
-msgstr "ローカル・キャプチャの画像フォーマット"
+msgstr "صيغة Targa للصورة"
 
 #: ../data/camorama.schemas.in.h:17
+#, fuzzy
 msgid "Name for the filename of uploaded images."
-msgstr "アップロードする画像のファイル名です。"
+msgstr "التحويل عند رفع صورة."
 
 #: ../data/camorama.schemas.in.h:18
+#, fuzzy
 msgid "Password for FTP server"
-msgstr "FTP サーバのパスワード"
+msgstr "إنقضت كلمة سر %s"
 
 #: ../data/camorama.schemas.in.h:19
+#, fuzzy
 msgid "Remote capture image format"
-msgstr "リモート・キャプチャの画像フォーマット"
+msgstr "صيغة Targa للصورة"
 
 #: ../data/camorama.schemas.in.h:20
+#, fuzzy
 msgid "Remote save filename"
-msgstr "リモートで保存するファイル名"
+msgstr "حدد إسم الملف"
 
 #: ../data/camorama.schemas.in.h:21
+#, fuzzy
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "ローカルで保存する画像のフォーマットを指定します。"
+msgstr "يحدّد الخط الذي سيستعمل في متن المستند عند طباعة المستندات."
 
 #: ../data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "リモートで保存する画像のフォーマットを指定します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:23
+#, fuzzy
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr "画像を自動キャプチャする時間間隔を指定します。"
+msgstr "تحدد الفترة الزمنيّة لإنعاش ذاكرة GAL المخبّأة."
 
 #: ../data/camorama.schemas.in.h:24
 msgid "The password for the FTP account for remote captures."
-msgstr "リモート・キャプチャの FTP アカウントに対するパスワードです。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:25
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "お使いのカメラに割り当てるデバイスへのパス名です。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:26
+#, fuzzy
 msgid "Toggles auto-capture"
-msgstr "自動キャプチャ"
+msgstr "حالة التحول"
 
 #: ../data/camorama.schemas.in.h:27
+#, fuzzy
 msgid "Toggles automatic capturing of pictures."
-msgstr "画像の自動キャプチャを行うかどうかを設定します。"
+msgstr "تمكين الإضافة التلقائية للأعلام"
 
 #: ../data/camorama.schemas.in.h:28
+#, fuzzy
 msgid "Toggles local capture"
-msgstr "ローカル・キャプチャの切り替え"
+msgstr "بدّل ملأ الشاشة"
 
 #: ../data/camorama.schemas.in.h:29
+#, fuzzy
 msgid "Toggles remote capture"
-msgstr "リモート・キャプチャの切り替え"
+msgstr "حالة التحول"
 
 #: ../data/camorama.schemas.in.h:30
+#, fuzzy
 msgid "Toggles the custom string"
-msgstr "カスタム文字列の切り替え"
+msgstr "تغيير اظهار الثوان"
 
 #: ../data/camorama.schemas.in.h:31
+#, fuzzy
 msgid "Toggles the datestamp in captures"
-msgstr "キャプチャするタイムスタンプの切り替え"
+msgstr "تغيير اظهار اليوم"
 
 #: ../data/camorama.schemas.in.h:32
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "キャプチャした画像にタイムスタンプを付与するかどうかを設定します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr "ローカル画像へタイムスタンプを付与するかどうかを設定します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr ""
-"FTP へアップロードした画像へタイムスタンプを付与するかどうかを設定します。"
 
 #: ../data/camorama.schemas.in.h:35
 msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "ビデオのフィルタを調整するボタンを使用するかどうかを設定します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:36
+#, fuzzy
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "画像へ付与するタイムスタンプをカスタマイズするかどうかを設定します。"
+msgstr "يتحكم في رؤية عمود الثقة في مدير المفاتيح."
 
 #: ../data/camorama.schemas.in.h:37
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "ビデオのプロパティを調整するスライダを使用するかどうかを設定します。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:38
+#, fuzzy
 msgid "Toggles the video adjustment sliders"
-msgstr "ビデオ調整スライダ"
+msgstr "تغيير اظهار اليوم"
 
 #: ../data/camorama.schemas.in.h:39
+#, fuzzy
 msgid "Toggles the video effects buttons"
-msgstr "ビデオ調整ボタン"
+msgstr "حالة التحول للزر"
 
 #: ../data/camorama.schemas.in.h:40
+#, fuzzy
 msgid "Toggles timestamp for local captures"
-msgstr "ローカル・キャプチャのタイムスタンプ"
+msgstr "تحديد ما إذا كنت تريد إظهار الفئات"
 
 #: ../data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
-msgstr "リモート・キャプチャのタイムスタンプ"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:42
+#, fuzzy
 msgid "Username for FTP server"
-msgstr "FTP サーバのユーザ名"
+msgstr "يجب إدخال اسم للخادم."
 
 #: ../data/camorama.schemas.in.h:43
 msgid "Username to use for FTP uploads of captured pictures"
-msgstr "キャプチャした画像をアップロードする FTP のユーザ名です。"
+msgstr ""
 
 #: ../data/camorama.schemas.in.h:44
+#, fuzzy
 msgid "Video device"
-msgstr "ビデオのデバイス"
+msgstr "أجهزة الفيديو"
 
 #: ../data/camorama.schemas.in.h:45
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をロー"
-"カルに保存するかどうかを設定します。"
 
 #: ../data/camorama.schemas.in.h:46
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をリ"
-"モートに保存するかどうかを設定します。"
 
 #: ../src/callbacks.c:500
+#, fuzzy
 msgid "translator_credits"
-msgstr ""
-"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
-"相花 毅 <takeshi.aihana@gmail.com>\n"
-"\n"
-"日本GNOMEユーザー会 http://www.gnome.gr.jp"
+msgstr "المترجمون:"
 
 #: ../src/callbacks.c:509
+#, fuzzy
 msgid "Camorama"
-msgstr "Camorama"
+msgstr "كامبراي"
 
 #: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
 #: ../src/callbacks.c:692
+#, fuzzy
 msgid "Unable to capture image."
-msgstr "画像をキャプチャできません。"
+msgstr "غير قادر على تحليل العنصر"
 
 #: ../src/callbacks.c:823
 #, c-format
@@ -433,181 +491,202 @@ msgid ""
 "Remote Capture: %d\n"
 "Capture Interval: %d"
 msgstr ""
-"ローカルのキャプチャ: %d\n"
-"リモートのキャプチャ: %d\n"
-"    キャプチャの間隔: %d"
 
 #: ../src/callbacks.c:832
+#, fuzzy
 msgid "Automatic Capture Disabled"
-msgstr "自動キャプチャは無効です"
+msgstr "فُعِّل النوم الآلي"
 
 #: ../src/camorama-filter-laplace.c:128
 msgid "Laplace (4 Neighbours)"
-msgstr "ラプラス変換 (4 Neighbours)"
+msgstr ""
 
 #: ../src/camorama-filter-mirror.c:66
+#, fuzzy
 msgid "Mirror"
-msgstr "鏡像"
+msgstr "خطأ"
 
+# #-#-#-#-#  gnome-icon-theme.gnome-2-18.ar.po (gnome-icon-theme.gnome-2-16.ar)  #-#-#-#-#
+# 48x48/emblems/emblem-web.icon.in.h:1
 #: ../src/camorama-stock-items.c:14
+#, fuzzy
 msgid "Webcam"
-msgstr "ウェブカム"
+msgstr "ويب"
 
 #: ../src/camorama-window.c:112
+#, fuzzy
 msgid "_Add Filter"
-msgstr "フィルタの追加(_A)"
+msgstr "أضف ملفات"
 
 #: ../src/camorama-window.c:199
+#, fuzzy
 msgid "Effects"
-msgstr "画像の効果"
+msgstr "مؤ_ثرات"
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
+#, fuzzy
 msgid "Could save temporary image file in /tmp."
-msgstr "/tmp に画像ファイルを一時的に保存しました。"
+msgstr "تعذّر فتح ملف البريد المؤقّت %s: %s"
 
 #: ../src/fileio.c:138
-#, c-format
+#, fuzzy, c-format
 msgid "Unable to create image '%s'."
-msgstr "画像ファイル '%s' を作成できませんでした。"
+msgstr "تعذّر جلب الرّسالة: %s"
 
 #: ../src/fileio.c:147 ../src/fileio.c:430
-#, c-format
+#, fuzzy, c-format
 msgid "Could not save image '%s/%s'."
-msgstr "画像ファイル '%s/%s' を保存できませんでした。"
+msgstr "تعذّر تحميل الصورة '%s'."
 
 #: ../src/fileio.c:274
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
-msgstr ""
-"一時的な画像ファイル '%s' を開けません。\n"
-"画像をアップロードできません。"
+msgstr "فشلت الكتابة في ملف مؤقّت عند تحميل صورة XBM"
 
 #: ../src/fileio.c:312
-#, c-format
+#, fuzzy, c-format
 msgid "An error occurred opening %s."
-msgstr "%s をオープンする際にエラーが発生しました。"
+msgstr "حدث خطأ أثناء تشغيل %s"
 
 #: ../src/fileio.c:324
-#, c-format
+#, fuzzy, c-format
 msgid "An error occurred writing to %s."
-msgstr "%s に書き込む際にエラーが発生しました。"
+msgstr "حدث خطأ أثناء تشغيل %s"
 
 #: ../src/fileio.c:404
-#, c-format
+#, fuzzy, c-format
 msgid "Could not create directory '%s'."
-msgstr "フォルダ '%s' を作成できませんでした。"
+msgstr "لا يمكن إنشاء المجلّد %s:"
 
 #: ../src/fileio.c:415
-#, c-format
+#, fuzzy, c-format
 msgid "Could not change to directory '%s'."
-msgstr "フォルダ '%s' に移動できませんでした。"
+msgstr "لا يمكن إنشاء المجلّد %s:"
 
 #: ../src/filter.c:170
+#, fuzzy
 msgid "Color Correction"
-msgstr "色の補正"
+msgstr "انتقاء اللون"
 
 #: ../src/filter.c:195
+#, fuzzy
 msgid "Invert"
-msgstr "反転"
+msgstr "عكس"
 
 #: ../src/filter.c:234
+#, fuzzy
 msgid "Threshold (Overall)"
-msgstr "境界値変動 (全体)"
+msgstr "العتبة"
 
 #: ../src/filter.c:276
+#, fuzzy
 msgid "Threshold (Per Channel)"
-msgstr "境界値変動 (チャンネル単位)"
+msgstr "انتقال القناة"
 
 #: ../src/filter.c:349
+#, fuzzy
 msgid "Wacky"
-msgstr "ワッキー効果"
+msgstr "واكو"
 
 #: ../src/filter.c:450
+#, fuzzy
 msgid "Smooth"
-msgstr "平滑化"
+msgstr "جنوب"
 
 #: ../src/filter.c:481
+#, fuzzy
 msgid "Monochrome"
-msgstr "モノクロ"
+msgstr "أ_حادي اللون"
 
 #: ../src/filter.c:511
+#, fuzzy
 msgid "Monochrome (Weight)"
-msgstr "モノクロ (ウェイト)"
+msgstr "أ_حادي اللون"
 
 #: ../src/filter.c:562
+#, fuzzy
 msgid "Sobel"
-msgstr "ゾーベル・フィルタ"
+msgstr "ذاته"
 
 #: ../src/main.c:53
+#, fuzzy
 msgid "show version and exit"
-msgstr "バージョンを表示して終了する"
+msgstr "اطبع الإصدار و اخرج"
 
 #: ../src/main.c:55
+#, fuzzy
 msgid "v4l device to use"
-msgstr "v41 (Video for Linux) デバイスを利用する"
+msgstr "جهاز القرص المدمج للاستعمال"
 
 #: ../src/main.c:57
+#, fuzzy
 msgid "enable debugging code"
-msgstr "デバッグ・モードを有効にする"
+msgstr "مكّن التنقيح"
 
 #: ../src/main.c:58
+#, fuzzy
 msgid "capture width"
-msgstr "キャプチャする幅"
+msgstr "عرض اللف"
 
 #: ../src/main.c:60
+#, fuzzy
 msgid "capture height"
-msgstr "キャプチャする高さ"
+msgstr "ارتفاع العمود"
 
 #: ../src/main.c:63
+#, fuzzy
 msgid "maximum capture size"
-msgstr "最大サイズ"
+msgstr "الحجم اﻷ_كبر:"
 
 #: ../src/main.c:65
+#, fuzzy
 msgid "minimum capture size"
-msgstr "最小サイズ"
+msgstr "الحد الأدنى لحجم خط"
 
 #: ../src/main.c:67
+#, fuzzy
 msgid "middle capture size"
-msgstr "中くらいのサイズ"
+msgstr "حجم نص أصغر"
 
 #: ../src/main.c:69
 msgid "use read() rather than mmap()"
-msgstr "mmap() ではなく read() を使う"
+msgstr ""
 
 #: ../src/main.c:91
+#, fuzzy
 msgid "camorama"
-msgstr "camorama"
+msgstr "جاما"
 
 #: ../src/main.c:104
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "\n"
 "Camorama version %s\n"
 "\n"
 msgstr ""
+"%s إصدار %s\n"
 "\n"
-"\n"
-"Camorama のバージョン %s\n"
 
 #: ../src/main.c:238
+#, fuzzy
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr ""
-"Glade インタフェース・ファイル (camorama.glade) が見つかりませんでした。"
+msgstr "لم يمكن تحميل الواجهة الرئيسيّة"
 
 #: ../src/support.c:69
-#, c-format
+#, fuzzy, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Pixmap ファイルが見つかりませんでした: %s"
+msgstr "لا يوجد ملف البكسمب '%s'\n"
 
 #: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
 #: ../src/v4l.c:226 ../src/v4l.c:241
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
-"ビデオ・デバイス (%s) に接続できませんでした。\n"
-"接続を確認して下さい。"
+"تعذّر الاتّصال بالخادم المحدّد.\n"
+"رجاء افحص اسم الخادم و حاوِل مرّة ثانية."
+

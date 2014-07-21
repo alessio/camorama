@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-15 15:33+0300\n"
+"POT-Creation-Date: 2007-08-16 11:30+0300\n"
 "PO-Revision-Date: 2006-09-15 15:34+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -428,7 +428,7 @@ msgstr "Camorama"
 msgid "Unable to capture image."
 msgstr "Kuvaa ei voitu kaapata."
 
-#: ../src/callbacks.c:823
+#: ../src/callbacks.c:808
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -439,9 +439,30 @@ msgstr ""
 "Etäkaappaus: %d\n"
 "Kaappausväli: %d"
 
-#: ../src/callbacks.c:832
+#: ../src/callbacks.c:817
+#, c-format
 msgid "Automatic Capture Disabled"
 msgstr "Automaattinen kuvankaappaus pois käytöstä"
+
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "Laplace (4 naapuria)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "Peilaa"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "Web-kamera"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "_Lisää suodin"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "Tehosteet"
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -486,47 +507,83 @@ msgstr "Hakemistoa '%s' ei voitu luoda."
 msgid "Could not change to directory '%s'."
 msgstr "Hakemistoon '%s' ei voitu siirtyä."
 
-#: ../src/main.c:53
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "Värinkorjaus"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "Käänteinen"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "Herkkyys (yleinen)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "Herkkyys (kanavakohtainen)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Wacky"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "Pehmennys"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "Mustavalkoinen"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "Mustavalkoinen (painotettu)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "Sobel"
+
+#: ../src/main.c:76
 msgid "show version and exit"
 msgstr "näytä versio ja lopeta"
 
-#: ../src/main.c:55
+#: ../src/main.c:78
 msgid "v4l device to use"
 msgstr "v4l-laite on käytössä"
 
-#: ../src/main.c:57
+#: ../src/main.c:80
 msgid "enable debugging code"
 msgstr "ota virheenselvityskoodi käyttöön"
 
-#: ../src/main.c:58
+#: ../src/main.c:81
 msgid "capture width"
 msgstr "kaappauksen leveys"
 
-#: ../src/main.c:60
+#: ../src/main.c:83
 msgid "capture height"
 msgstr "kaappauksen korkeus"
 
-#: ../src/main.c:63
+#: ../src/main.c:86
 msgid "maximum capture size"
 msgstr "kaappauksen maksimikoko"
 
-#: ../src/main.c:65
+#: ../src/main.c:88
 msgid "minimum capture size"
 msgstr "kaappauksen minimikoko"
 
-#: ../src/main.c:67
+#: ../src/main.c:90
 msgid "middle capture size"
 msgstr "kaapauksen keskikoko"
 
-#: ../src/main.c:69
+#: ../src/main.c:92
 msgid "use read() rather than mmap()"
 msgstr "käytä read():ia mmap():in sijasta"
 
-#: ../src/main.c:91
+#: ../src/main.c:114
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:104
+#: ../src/main.c:130
 #, c-format
 msgid ""
 "\n"
@@ -539,7 +596,7 @@ msgstr ""
 "Camorama versio %s\n"
 "\n"
 
-#: ../src/main.c:238
+#: ../src/main.c:264
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Camoraman käyttöliittymätiedostoa (camorama.glade) ei voitu avata."
 
@@ -573,29 +630,11 @@ msgstr ""
 #~ msgid "Black & white"
 #~ msgstr "Mustavalkoinen"
 
-#~ msgid "Color correction"
-#~ msgstr "Värinkorjaus"
-
 #~ msgid "Color threshold"
 #~ msgstr "Värin herkkyys"
 
 #~ msgid "Laplace"
 #~ msgstr "Laplace"
 
-#~ msgid "Mirror image"
-#~ msgstr "Peilaa kuva"
-
 #~ msgid "Negative"
 #~ msgstr "Negatiivi"
-
-#~ msgid "Smoothing"
-#~ msgstr "Pehmennys"
-
-#~ msgid "Sobel"
-#~ msgstr "Sobel"
-
-#~ msgid "Threshold:"
-#~ msgstr "Herkkyys:"
-
-#~ msgid "Wacky"
-#~ msgstr "Wacky"

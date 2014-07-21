@@ -1,0 +1,613 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camora.head.pot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-01 03:33+0000\n"
+"PO-Revision-Date: 2007-03-01 16:30+0530\n"
+"Last-Translator: sonam pelden <sonaa_peldn@yahoo.com>\n"
+"Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-Language: Dzongkha\n"
+"X-Poedit-Country: Bhutan\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "ཀེ་མོ་ར་མ་ཝེབ་ཀེམ་མཐོང་བྱེད་"
+
+#: ../camorama.desktop.in.h:2
+#: ../src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr "ཝེབ་ཀེམ་ཅིག་ལས་  ལྟ་ནི་སོར་ནི་དང་གཟུགས་བརྙན་ཚུ་སྲུང་"
+
+#: ../data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: ../data/camorama.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">ཡོངས་ཁྱབ་</span>"
+
+#: ../data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">གཟུགས་བརྙན་དབྱེ་བ་</span>"
+
+#: ../data/camorama.glade.h:4
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">ཉེ་གནས་འཛིན་བཟུང་</span>"
+
+#: ../data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">ཐག་རིང་གི་འཛིན་བཟུང་</span>"
+
+#: ../data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">དུས་བཀོད་</span>"
+
+#: ../data/camorama.glade.h:7
+msgid "Add a timestamp to captured images"
+msgstr "གཟུགས་བརྙན་ཚུ་འཛིན་བཟུང་འབད་ནི་ལུ་  དུས་བཀོད་ཅིག་ཁ་སྐོང་བརྐྱབ་"
+
+#: ../data/camorama.glade.h:8
+msgid "Append time to filename"
+msgstr "ཡིག་སྣོད་མིང་ལུ་  དུས་ཡུན་མཇུག་བསྣོན་འབད་"
+
+#: ../data/camorama.glade.h:9
+msgid "Automatic Capture"
+msgstr "རང་བཞིན་གཡི་འཛིན་བཟུང་"
+
+#: ../data/camorama.glade.h:10
+msgid "Brightness:"
+msgstr "དཀར་མདངས:"
+
+#: ../data/camorama.glade.h:11
+msgid "Camorama-libglade"
+msgstr "ཀེ་མོ་ར་མ་-ལིབ་གེལེཌི་"
+
+#: ../data/camorama.glade.h:12
+msgid "Capture Interval (in minutes):"
+msgstr "བར་མཚམས་འཛིན་བཟུང་འབད་ (སྐར་མའི་ནང་):"
+
+#: ../data/camorama.glade.h:13
+msgid "Color:"
+msgstr "ཚོས་གཞི:"
+
+#: ../data/camorama.glade.h:14
+msgid "Contrast:"
+msgstr "ཁྱད་པར:"
+
+#: ../data/camorama.glade.h:15
+msgid "Draw date and time"
+msgstr "ཚེས་གྲངས་དང་ཆུ་ཚོད་འབྲི་"
+
+#: ../data/camorama.glade.h:16
+msgid "FTP server: "
+msgstr "ཨེཕ་ཊི་པི་སར་བར:"
+
+#: ../data/camorama.glade.h:17
+msgid "Filename"
+msgstr "ཡིག་སྣོད་མིང་"
+
+#: ../data/camorama.glade.h:18
+msgid "General"
+msgstr "ཡོངས་ཁྱབ་"
+
+#: ../data/camorama.glade.h:19
+msgid "Hue:"
+msgstr "ཚོན་མདངས:"
+
+#: ../data/camorama.glade.h:20
+msgid "Large"
+msgstr "སྦོམ་"
+
+#: ../data/camorama.glade.h:21
+msgid "Local Capture"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་"
+
+#: ../data/camorama.glade.h:22
+msgid "Medium"
+msgstr "འབྲིང་མ་"
+
+#: ../data/camorama.glade.h:23
+msgid "Password:"
+msgstr "ཆོག་ཡིག:"
+
+#: ../data/camorama.glade.h:24
+msgid "Preferences"
+msgstr "དགའ་གདམ་ཚུ་"
+
+#: ../data/camorama.glade.h:25
+msgid "Remote Capture"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་"
+
+#: ../data/camorama.glade.h:26
+msgid "Save directory:"
+msgstr "སྣོད་ཐོ་སྲུང་:"
+
+#: ../data/camorama.glade.h:27
+msgid "Save files in jpeg format"
+msgstr "ཡིག་སྣོད་ཚུ་ཇེ་པི་ཨི་ཇི་རྩ་སྒྲིག་ནང་སྲུང་"
+
+#: ../data/camorama.glade.h:28
+msgid "Save files in png format"
+msgstr "ཡིག་སྣོད་ཚུ་པི་ཨེན་ཇི་རྩ་སྒྲིག་ནང་སྲུང་"
+
+#: ../data/camorama.glade.h:29
+msgid "Show Adjustments"
+msgstr "བདེ་སྒྲིག་ཚུ་སྟོན་"
+
+#: ../data/camorama.glade.h:30
+msgid "Show Effects"
+msgstr "ནུས་པ་ཚུ་སྟོན་"
+
+#: ../data/camorama.glade.h:31
+msgid "Small"
+msgstr "ཆུང་ཀུ་"
+
+#: ../data/camorama.glade.h:32
+msgid "String:"
+msgstr "ཡིག་རྒྱུན:"
+
+#: ../data/camorama.glade.h:33
+msgid "Take Picture"
+msgstr "པར་བཏབ་"
+
+#: ../data/camorama.glade.h:34
+msgid "Timestamp"
+msgstr "དུས་བཀོད་"
+
+#: ../data/camorama.glade.h:35
+msgid "Use custom string"
+msgstr "སྲོལ་སྒྲིག་ཡིག་རྒྱུན་ལག་ལེན་འཐབ་"
+
+#: ../data/camorama.glade.h:36
+msgid "Username:"
+msgstr "ལག་ལེན་པའི་མིང་:"
+
+#: ../data/camorama.glade.h:37
+msgid "White Balance:"
+msgstr "ཚད་སྙོམས་དཀརཔོ:"
+
+#: ../data/camorama.glade.h:38
+msgid "_Directory for captured pics:"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་ སྣོད་ཐོ: (_D)"
+
+#: ../data/camorama.glade.h:39
+msgid "_Enable local capture"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་ལྕོགས་ཅན་བཟོ། (_)"
+
+#: ../data/camorama.glade.h:40
+msgid "_Enable remote capture"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་ལྕོགས་ཅན་བཟོ། (_E)"
+
+#: ../data/camorama.glade.h:41
+msgid "_Filename for pictures:"
+msgstr "པར་ཚུ་གི་དོན་ལུ་ཡིག་སྣོད་མིང་: (_F)"
+
+#: ../data/camorama.glade.h:42
+msgid "ftp.yourdomain.org"
+msgstr "ftp.yourdomain.org"
+
+#: ../data/camorama.glade.h:43
+msgid "path/to/save/to"
+msgstr "འགྲུལ་ལམ་/ལུ་/སྲུང་/ལུ་"
+
+#: ../data/camorama.glade.h:44
+msgid "webcam-capture"
+msgstr "ཝེབ་ཀེམ-འཛིན་བཟུང་"
+
+#: ../data/camorama.glade.h:45
+msgid "webcamshot"
+msgstr "ཝེབ་ཀེམ་ཤོཊི་"
+
+#: ../data/camorama.glade.h:46
+msgid "your-password"
+msgstr "ཁྱོད་རའི་ཆོག་ཡིག་"
+
+#: ../data/camorama.glade.h:47
+msgid "your-username"
+msgstr "ཁྱོད་རའི་ལག་ལེན་པའི་མིང་"
+
+#: ../data/camorama.glade.h:48
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: ../data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "དུས་བཀོད་འདི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་"
+
+#: ../data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "དུས་བཀོད་འདི་ཐག་རིང་གི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་"
+
+#: ../data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "ཡུ་ནིགསི་དུས་ཡུན་ནང་  ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "ཡུ་ནིགསི་དུས་ཡུན་  ཐག་རིང་ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "དུས་བཀོད་འདི་གི་དོན་ལུ་  སྲོལ་སྒྲིག་ཚིག་ཡིག་"
+
+#: ../data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "གཟུགས་བརྙན་ནང་ལུ་བཙུགས་ནི་ཨིན་པའི་སྲོལ་སྒྲིག་ཚིག་ཡིག་གི་ཡིག་རྒྱུན་ཅིག་ངེས་འཛིན་འབདཝ་ཨིན།"
+
+#: ../data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་གི་དོན་ལུ་ཡིག་སྣོད་མིང་"
+
+#: ../data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་ཡིག་སྣོད་མིང་"
+
+#: ../data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: ../data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་གི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: ../data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཐག་རིང་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: ../data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: ../data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ཧོསཊི་མིང་"
+
+#: ../data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་ཨེཕ་ཊི་པི་འདི་གི་དོན་ལུ་ཧོསཊི་མིང་།"
+
+#: ../data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr "རང་བཞིན་-འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་"
+
+#: ../data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་"
+
+#: ../data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "སྐྱེལ་བཙུགས་འབད་དེ་ཡོད་པའི་གཟུགས་བརྙན་ཚུ་གི་ཡིག་སྣོད་མིང་འདི་གི་དོན་ལུ་མིང་།"
+
+#: ../data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "ཨེཕ་ཊི་པི་སར་བར་གི་དོན་ལུ་ཆོག་ཡིག་"
+
+#: ../data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་"
+
+#: ../data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "ཐག་རིང་གི་སྲུང་ཡིག་སྣོད་མིང་"
+
+#: ../data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "ཉེ་གནས་ཀྱི་སྲུང་བཞག་སྟེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིན་མི་  གཟུགས་བརྙན་རྩ་སྒྲིག་འདི་གསལ་བཀོད་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "ཐག་རིང་གི་སྲུང་བཞག་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ཨིན་པའི་གཟུགས་བརྙན་རྩ་སྒརིག་འདི་གསལ་བཀོད་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་འདི་གསལ་བཀོད་འབད།"
+
+#: ../data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་ ཨེཕ་ཊི་པི་རྩིས་ཐོ་འདི་གི་དོན་ལུ་ཆོག་ཡིག།"
+
+#: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "ཡུ་ནིགསི་ཡིག་སྣོད་རིམ་ལུགས་འགྲུལ་ལམ་འདི་  ཁྱོད་རའི་པར་ཆས་ལུ་འགན་སྤྲོད་འབད་ཡོད་པའི་ཐབས་འཕྲུལ་ལུ།"
+
+#: ../data/camorama.schemas.in.h:26
+msgid "Toggles auto-capture"
+msgstr "རང་བཞིན་འཛིན་བཟུང་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:27
+msgid "Toggles automatic capturing of pictures."
+msgstr "པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་འབད་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: ../data/camorama.schemas.in.h:28
+msgid "Toggles local capture"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:29
+msgid "Toggles remote capture"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:30
+msgid "Toggles the custom string"
+msgstr "སྲོལ་སྒྲིག་ཡིག་རྒྱུན་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:31
+msgid "Toggles the datestamp in captures"
+msgstr "ཚེས་གྲངས་བཀོད་པ་འདི་འཛིན་བཟུང་ནང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:32
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "ཚེས་གྲངས་བཀོད་པ་ཅིག་གི་པར་རིས་འདི་  འཛནི་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ནང་འཁོད་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་ཉེ་གནས་གཟུགས་བརྙན་ཚུ་ནང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:34
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཀྱི་དོན་ལུ་  གཟུགས་བརྙན་ནང་ལུ་དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: ../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "ཝི་ཌིའོ་ཚག་མ་ཚུ་བདེ་སྒྲིག་བཟོ་ནི་ལུ་ ཨེབ་རྟ་ཚུ་གི་ལང་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:36
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "གཟུགས་བརྙན་ཚུ་ནང་དུས་བཀོད་ཀྱི་དོན་ལུ་སྲོལ་སྒྲིག་ཡིག་རྒྱུན་གྱི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: ../data/camorama.schemas.in.h:37
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "ཝི་ཌིའོ་རྒྱུ་དངོས་འདི་བདེ་སྒྲིག་བཟོ་ནི་ལུ་  བཤུད་བྱེད་ཚུ་གི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:38
+msgid "Toggles the video adjustment sliders"
+msgstr "ཝི་ཌིའོ་བདེ་སྒྲིག་བཤུད་བྱེད་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:39
+msgid "Toggles the video effects buttons"
+msgstr "ཝི་ཌིའོ་ནུས་ཅན་ཚུ་གི་ཨེབ་རྟ་ཚུ་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:40
+msgid "Toggles timestamp for local captures"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:41
+msgid "Toggles timestamp for remote captures"
+msgstr "ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: ../data/camorama.schemas.in.h:42
+msgid "Username for FTP server"
+msgstr "ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ལག་ལེན་པའི་མིང་"
+
+#: ../data/camorama.schemas.in.h:43
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ལུ་ལག་ལེན་པའི་མིང་"
+
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "ཝི་ཌིའོ་ཐབས་འཕྲུལ་"
+
+#: ../data/camorama.schemas.in.h:45
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
+msgstr "པར་ཚུ་ \"Take Picture\" ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་བཟུང་འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཉེ་གནས་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: ../data/camorama.schemas.in.h:46
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
+msgstr "པར་ཚུ་ \"Take Picture\" ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་བཟུང་འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཐག་རིང་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: ../src/callbacks.c:500
+msgid "translator_credits"
+msgstr "སྐད་བསྒྱུར་པའི་ངོ་བསྟོད་ཚུ། (_c)"
+
+#: ../src/callbacks.c:509
+msgid "Camorama"
+msgstr "ཀེ་མོ་ར་མ་"
+
+#: ../src/callbacks.c:595
+#: ../src/callbacks.c:629
+#: ../src/callbacks.c:679
+#: ../src/callbacks.c:692
+msgid "Unable to capture image."
+msgstr "གཟུགས་བརྙན་འཛིན་བཟུང་འབད་མ་ཚུགས།"
+
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"ཉེ་གནས་འཛིན་བཟུང་: %d\n"
+"ཐག་རིང་གི་འཛིན་བཟུང་: %d\n"
+"བར་མཚམས་འཛིན་བཟུང་འབད: %d"
+
+#: ../src/callbacks.c:832
+msgid "Automatic Capture Disabled"
+msgstr "རང་བཞིན་གྱི་འཛིན་བཟུང་ལྕོགས་མེད་བཟོ་ཡོདཔ་"
+
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "ལ་པེལེསི་ (ཉེ་འདབས་ ༤་)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "ངོ་འཆར་"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "ཝེབ་ཀེམ་"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "ཚགས་མ་ཁ་སྐོང་བརྐྱབ། (_A)"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "ནུས་ཅན་ཚུ་"
+
+#: ../src/fileio.c:120
+#: ../src/fileio.c:266
+msgid "Could save temporary image file in /tmp."
+msgstr "/tmpནང་གནས་སྐབས་ཀྱི་གཟུགས་བརྙན་ཡིག་སྣོད་སྲུང་ཚུགས།"
+
+#: ../src/fileio.c:138
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "'%s'གཟུགས་བརྙན་གསར་བསྐྲུན་འབད་མ་ཚུགས།"
+
+#: ../src/fileio.c:147
+#: ../src/fileio.c:430
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "'%s/%s'གཟུགས་བརྙན་སྲུང་མ་ཚུགས།"
+
+#: ../src/fileio.c:274
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"'%s'གནས་སྐབས་གཟུགས་བརྙན་ཡིག་སྣོད་ཁ་ཕྱེ་མ་ཚུགས།\n"
+"གཟུགས་བརྙན་སྐྱེལ་བཙུགས་འབད་མི་ཚུགས།"
+
+#: ../src/fileio.c:312
+#, c-format
+msgid "An error occurred opening %s."
+msgstr "%sཁ་ཕྱེཝ་ད་འཛོལ་བ་བྱུང་ཡོདཔ།"
+
+#: ../src/fileio.c:324
+#, c-format
+msgid "An error occurred writing to %s."
+msgstr "%sལུ་འབྲིཝ་ད་འཛོལ་བ་བྱུང་ཡོདཔ།"
+
+#: ../src/fileio.c:404
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "'%s'སྣོད་ཐོ་གསར་བསྐྲུན་འབད་མ་ཚུགས།"
+
+#: ../src/fileio.c:415
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "'%s'སྣོད་ཐོ་ལུ་བསྒྱུར་བཅོས་འབད་མ་ཚུགས།"
+
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "ཚོས་གཞི་ནོར་བཅོས་འབད་ནི་"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "གནས་ལོག་འབད་"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "ཐེརེཤ་ཧཱོལ། (སྤྱིར་བཏང་)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "ཐེརེཤ་ཧཱོལ་ (རྒྱུ་ལམ་རེ་རེ་)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "ཝེ་ཀི་"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "ཧུམ་ཁྱུག་ཁྱུག་"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "མོ་ནོ་ཀོརོམ།"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "མོ་ནོ་ཀོརོམ་  (ལྗིད་ཚད་)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "སོ་བེལ་"
+
+#: ../src/main.c:53
+msgid "show version and exit"
+msgstr "ཐོན་རིམ་དང་ཕྱིར་ཐོན་སྟོན་"
+
+#: ../src/main.c:55
+msgid "v4l device to use"
+msgstr "v4l ལག་ལེན་འཐབ་ནི་ཨིན་པའི་ཐབས་འཕྲུལ་"
+
+#: ../src/main.c:57
+msgid "enable debugging code"
+msgstr "རྐྱེན་སེལ་འབད་ནིའི་ཨང་རྟགས་ལྕོགས་ཅན་བཟོ་"
+
+#: ../src/main.c:58
+msgid "capture width"
+msgstr "རྒྱ་ཚད་འཛནི་བཟུང་འབད་"
+
+#: ../src/main.c:60
+msgid "capture height"
+msgstr "མཐོ་ཚད་འཛིན་བཟུང་འབད་"
+
+#: ../src/main.c:63
+msgid "maximum capture size"
+msgstr "འཛིན་བཟུང་ཚད་མང་མཐའ་"
+
+#: ../src/main.c:65
+msgid "minimum capture size"
+msgstr "འཛིན་བཟུང་ཚད་ཉུང་མཐའ་"
+
+#: ../src/main.c:67
+msgid "middle capture size"
+msgstr "འཛིན་བཟུང་ཚད་བར་མ་"
+
+#: ../src/main.c:69
+msgid "use read() rather than mmap()"
+msgstr "ཨེམ་ཨེམ་ཨེ་པི་()མ་ཡིན་པ་ལྷག་()འདི་ལག་ལེན་འཐབ་"
+
+#: ../src/main.c:91
+msgid "camorama"
+msgstr "ཀེ་མོ་ར་མ་"
+
+#: ../src/main.c:104
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"ཀེ་མོ་ར་མ་ཐོན་རིམ་%s\n"
+"\n"
+
+#: ../src/main.c:238
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "ངོས་འདྲ་བའི་ཡིག་སྣོད་ (camorama.glade)ངོ་མ་འདི་ཐོབ་མ་ཚུགས།"
+
+#: ../src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "པར་ཁྲ་ཡིག་སྣོད་ཐོབ་མ་ཚུགས: %s"
+
+#: ../src/v4l.c:94
+#: ../src/v4l.c:168
+#: ../src/v4l.c:180
+#: ../src/v4l.c:205
+#: ../src/v4l.c:226
+#: ../src/v4l.c:241
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"ཝི་ཌིའོ་ཐབས་འཕྲུལ་(%s)ལུ་མཐུད་མ་ཚུགས།\n"
+"མཐུད་ལམ་ཞིབ་དཔྱད་འབད།"
+

@@ -1,20 +1,18 @@
-# camorama: translation to Brazilian Portuguese (pt_BR)
-# Copyright (C) 2003 Free Software Foundation, Inc.
+# Brazilian Portuguese translation of camorama.
+# Copyright (C) 2003-2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the camorama package.
 # Alexandre Folle de Menezes <afmenez@terra.com.br>, 2003, 2006.
 # João Paulo Gomes Vanzuita <joaopaulo99@terra.com.br>, 2003.
-# based on the GNOME 2.2 translation to Portuguese (pt) by
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2003.
 # Alexandre Folle de Menezes <afmenez@terra.com.br>, 2003.
-# 
-# 
+# Andre Noel <andrenoel@ubuntu.com>, 2007.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.2\n"
+"Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-03 02:08+0100\n"
-"PO-Revision-Date: 2006-03-02 23:00-0300\n"
-"Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
+"POT-Creation-Date: 2007-03-09 03:33+0000\n"
+"PO-Revision-Date: 2007-03-09 23:01-0300\n"
+"Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,7 +172,7 @@ msgstr "Usuário:"
 
 #: ../data/camorama.glade.h:37
 msgid "White Balance:"
-msgstr "Equilíbrio de Branco"
+msgstr "Equilíbrio de Branco:"
 
 #: ../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
@@ -270,11 +268,11 @@ msgstr "Pasta para gravar localmente imagens capturadas"
 
 #: ../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
-msgstr "Nome servidor FTP"
+msgstr "Nome do servidor FTP"
 
 #: ../data/camorama.schemas.in.h:14
 msgid "Hostname for the FTP server for remote captures."
-msgstr "Nome servidor FYP para capturas remotas."
+msgstr "Nome do servidor FTP para capturas remotas."
 
 #: ../data/camorama.schemas.in.h:15
 msgid "Interval for auto-capture"
@@ -321,7 +319,9 @@ msgstr "A senha da conta FTP para capturas remotas."
 
 #: ../data/camorama.schemas.in.h:25
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "O caminho no sistema de arquivos Unix para o dispositivo associado à sua câmera."
+msgstr ""
+"O caminho no sistema de arquivos unix para o dispositivo associado à sua "
+"câmera."
 
 #: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
@@ -421,24 +421,52 @@ msgid "translator_credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "baseado na versão em Português Ibérico por\n"
-"Duarte Loreto <happyguy_pt@hotmail.com>"
+"Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"Andre Noel <andrenoel@ubuntu.com>"
 
 #: ../src/callbacks.c:509
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:619 ../src/callbacks.c:653 ../src/callbacks.c:703
-#: ../src/callbacks.c:716
+#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:692
 msgid "Unable to capture image."
 msgstr "Impossível capturar imagem."
 
-#: ../src/eggtrayicon.c:127
-msgid "Orientation"
-msgstr "Orientação"
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"Captura Local: %d\n"
+"Captura Remota: %d\n"
+"Intervalo de Captura: %d"
 
-#: ../src/eggtrayicon.c:128
-msgid "The orientation of the tray."
-msgstr "Orientação da bandeja"
+#: ../src/callbacks.c:832
+msgid "Automatic Capture Disabled"
+msgstr "Captura Automática Desabilitada"
+
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "Laplace (4 Vizinhos)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "Espelho"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "Webcam"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "_Adicionar Filtro"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "Efeitos"
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -461,7 +489,7 @@ msgid ""
 "Cannot upload image."
 msgstr ""
 "Impossível abrir arquivo de imagem temporário '%s'.\n"
-"Não pode enviar imagem"
+"Não é possível enviar imagem."
 
 #: ../src/fileio.c:312
 #, c-format
@@ -482,6 +510,42 @@ msgstr "Impossível criar o diretório '%s'."
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Impossível mudar para o diretório '%s'."
+
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "Correção de Cor"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "Inverter"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "Limiar (Geral)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "Limiar (Por canal)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Maluco"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "Suavizar"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "Monocromático"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "Monocromático (Peso)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "Realçar"
 
 #: ../src/main.c:53
 msgid "show version and exit"
@@ -530,11 +594,7 @@ msgid ""
 "\n"
 "Camorama version %s\n"
 "\n"
-msgstr ""
-"\n"
-"\n"
-"Versão Camorama %s\n"
-"\n"
+msgstr "\n\nVersão %s do Camorama\n\n"
 
 #: ../src/main.c:238
 msgid "Couldn't find the main interface file (camorama.glade)."
@@ -556,6 +616,12 @@ msgstr ""
 "Impossível conectar ao dispositivo de vídeo (%s).\n"
 "Verifique a conexão."
 
+#~ msgid "Orientation"
+#~ msgstr "Orientação"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Orientação da bandeja"
+
 #~ msgid "*"
 #~ msgstr "*"
 
@@ -565,32 +631,14 @@ msgstr ""
 #~ msgid "Black & white"
 #~ msgstr "Preto & Branco"
 
-#~ msgid "Color correction"
-#~ msgstr "Correção de cor"
-
 #~ msgid "Color threshold"
 #~ msgstr "Intervalo de cor"
 
 #~ msgid "Laplace"
 #~ msgstr "Laplace"
 
-#~ msgid "Mirror image"
-#~ msgstr "Imagem espelhada"
-
 #~ msgid "Negative"
 #~ msgstr "Negativo"
-
-#~ msgid "Smoothing"
-#~ msgstr "Suavizar"
-
-#~ msgid "Sobel"
-#~ msgstr "Realçar"
-
-#~ msgid "Threshold:"
-#~ msgstr "Ponto inicial:"
-
-#~ msgid "Wacky"
-#~ msgstr "Maluco"
 
 #~ msgid "Add timestamp to captured images"
 #~ msgstr "Adicionar horÃ¡rio Ã s imagens capturadas"
