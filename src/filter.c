@@ -151,12 +151,12 @@ G_DEFINE_TYPE(CamoramaFilterColor, camorama_filter_color, CAMORAMA_TYPE_FILTER);
 static void
 camorama_filter_color_init(CamoramaFilterColor* self) {}
 
-static void
+void
 camorama_filter_color_filter(CamoramaFilterColor* filter, guchar *image, int x, int y, int depth) {
 	int i;
 	char tmp;
 	i = x * y;
-	while (--i) {
+	while (i--) {
 		tmp = image[0];
 		image[0] = image[2];
 		image[2] = tmp;

@@ -9,6 +9,7 @@
 #include <libgnomeui/gnome-propertybox.h>
 #include <libgnomeui/gnome-window-icon.h>
 #include <pthread.h>
+#include <libv4l1.h>
 
 extern GtkWidget *main_window, *prefswindow;
 //extern state func_state;
@@ -387,13 +388,10 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
         }
     }
 
-    cam->pixmap = gdk_pixmap_new (NULL, cam->x, cam->y, cam->desk_depth);
-    gtk_widget_set_size_request (glade_xml_get_widget (cam->xml, "da"),
-                                 cam->x, cam->y);
 
     /*
      * if(cam->read == FALSE) {
-     *  cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
+     *  cam->pic = v4l1_mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
      *  
      *  if((unsigned char *) -1 == (unsigned char *) cam->pic) {
      *   if(cam->debug == TRUE) {
@@ -404,7 +402,7 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
      *  }
      *  }else{
      *   cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
-     *   read(cam->dev,cam->pic,(cam->x * cam->y * 3));
+     *   v4l1_read(cam->dev,cam->pic,(cam->x * cam->y * 3));
      *  } 
      */
 
@@ -430,7 +428,7 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
      * if(cam->read == FALSE) {
      * * for(frame = 0; frame < cam->vid_buf.frames; frame++) {
      * * cam->vid_map.frame = frame;
-     * * if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
+     * * if(v4l1_ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
      * * if(cam->debug == TRUE) {
      * * fprintf(stderr, "Unable to capture image (VIDIOCMCAPTURE) during resize.\n");
      * * }
@@ -441,6 +439,11 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
      * * } 
      */
     get_win_info (cam);
+
+    cam->pixmap = gdk_pixmap_new (NULL, cam->x, cam->y, cam->desk_depth);
+    gtk_widget_set_size_request (glade_xml_get_widget (cam->xml, "da"),
+                                 cam->x, cam->y);
+
     frame = 0;
     gtk_window_resize (GTK_WINDOW
                        (glade_xml_get_widget (cam->xml, "main_window")), 320,
@@ -520,8 +523,14 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
     gtk_widget_show (about);
 }
 
+void
+camorama_filter_color_filter(void* filter, guchar *image, int x, int y, int depth);
+
 static void
 apply_filters(cam* cam) {
+	/* v4l has reverse rgb order from what camora expect so call the color
+	   filter to fix things up before running the user selected filters */
+	camorama_filter_color_filter(NULL, cam->pic_buf, cam->x, cam->y, cam->depth);
 	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->x, cam->y, cam->depth);
 #warning "FIXME: enable the threshold channel filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
@@ -539,7 +548,7 @@ read_timeout_func(cam* cam) {
     int i, count = 0;
     GdkGC *gc;
 
-    read (cam->dev, cam->pic, (cam->x * cam->y * 3));
+    v4l1_read (cam->dev, cam->pic, (cam->x * cam->y * 3));
     frames2++;
     /*
      * update_rec.x = 0;
@@ -580,7 +589,7 @@ gint timeout_func (cam * cam)
 
     i = -1;
     while (i < 0) {
-        i = ioctl (cam->dev, VIDIOCSYNC, &frame);
+        i = v4l1_ioctl (cam->dev, VIDIOCSYNC, &frame);
 
         if (i < 0 && errno == EINTR) {
             if (cam->debug == TRUE) {
@@ -622,7 +631,7 @@ gint timeout_func (cam * cam)
                                 0, cam->x, cam->y);
 
     cam->vid_map.frame = frame;
-    if (ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
+    if (v4l1_ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
         if (cam->debug == TRUE) {
             fprintf (stderr, "Unable to capture image (VIDIOCMCAPTURE)\n");
         }
@@ -669,7 +678,7 @@ void on_status_show (GtkWidget * sb, cam * cam)
 void init_cam (GtkWidget * capture, cam * cam)
 {
     cam->pic =
-        mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
+        v4l1_mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
               MAP_SHARED, cam->dev, 0);
 
     if ((unsigned char *) -1 == (unsigned char *) cam->pic) {
@@ -684,7 +693,7 @@ void init_cam (GtkWidget * capture, cam * cam)
     cam->vid_map.format = cam->vid_pic.palette;
     for (frame = 0; frame < cam->vid_buf.frames; frame++) {
         cam->vid_map.frame = frame;
-        if (ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
+        if (v4l1_ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
             if (cam->debug == TRUE) {
                 fprintf (stderr,
                          "Unable to capture image (VIDIOCMCAPTURE).\n");

@@ -210,11 +210,7 @@ load_interface(cam* cam) {
 
     logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(glade_xml_get_widget(cam->xml, "main_window"))), CAMORAMA_STOCK_WEBCAM, 24, 0, NULL);
     gtk_window_set_default_icon(logo);
-    logo = (GdkPixbuf *) create_pixbuf (PACKAGE_DATA_DIR "/pixmaps/camorama.png");
-    if (logo == NULL) {
-        printf ("\n\nLOGO NO GO\n\n");
-    }
-
+    logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(glade_xml_get_widget(cam->xml, "main_window"))), "camorama", 48, 0, NULL);
     if (cam->show_adjustments == FALSE) {
         gtk_widget_hide (glade_xml_get_widget
                          (cam->xml, "adjustments_table"));

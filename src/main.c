@@ -9,6 +9,7 @@
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
 #include <locale.h>
+#include <libv4l1.h>
 
 #include "camorama-display.h"
 #include "camorama-stock-items.h"
@@ -206,7 +207,7 @@ main(int argc, char *argv[]) {
     gdk_pixbuf_xlib_init (display, 0);
     cam->desk_depth = xlib_rgb_get_depth ();
 
-    cam->dev = open (cam->video_dev, O_RDWR);
+    cam->dev = v4l1_open (cam->video_dev, O_RDWR);
 
     camera_cap (cam);
     get_win_info (cam);
@@ -224,8 +225,7 @@ main(int argc, char *argv[]) {
 
     /* get picture attributes */
     get_pic_info (cam);
-//	set_pic_info(cam);
-    /* set_pic_info(cam); */
+    set_pic_info (cam);
     cam->contrast = cam->vid_pic.contrast;
     cam->brightness = cam->vid_pic.brightness;
     cam->colour = cam->vid_pic.colour;
@@ -285,5 +285,8 @@ main(int argc, char *argv[]) {
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
     gtk_main ();
+    v4l1_munmap(cam->pic, cam->vid_buf.size);
+    v4l1_close(cam->dev);
+
     return 0;
 }

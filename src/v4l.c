@@ -2,6 +2,7 @@
 #include<time.h>
 #include<errno.h>
 #include<gnome.h>
+#include <libv4l1.h>
 #include "support.h"
 
 extern int frame_number;
@@ -87,7 +88,7 @@ void print_palette(int p)
 void camera_cap(cam * cam)
 {
    char *msg;
-   if(ioctl(cam->dev, VIDIOCGCAP, &cam->vid_cap) == -1) {
+   if(v4l1_ioctl(cam->dev, VIDIOCGCAP, &cam->vid_cap) == -1) {
       if(cam->debug == TRUE) {
          fprintf(stderr, "VIDIOCGCAP  --  could not get camera capabilities, exiting.....\n");
       }
@@ -158,10 +159,10 @@ set_pic_info(cam* cam) {
 	if(cam->debug) {
 		g_message("SET PIC");
 	}
-	//cam->vid_pic.palette = VIDEO_PALETTE_RGB24;
-	//cam->vid_pic.depth = 24;
+	cam->vid_pic.palette = VIDEO_PALETTE_RGB24;
+	cam->vid_pic.depth = 24;
 	//cam->vid_pic.palette = VIDEO_PALETTE_YUV420P;
-	if(ioctl(cam->dev, VIDIOCSPICT, &cam->vid_pic) == -1) {
+	if(v4l1_ioctl(cam->dev, VIDIOCSPICT, &cam->vid_pic) == -1) {
 		if(cam->debug) {
 			g_message("VIDIOCSPICT  --  could not set picture info, exiting....");
 		}
@@ -176,7 +177,7 @@ void get_pic_info(cam * cam){
 //set_pic_info(cam);
    char *msg;
 	
-   if(ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {
+   if(v4l1_ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
       if(cam->debug == TRUE) {
@@ -201,7 +202,7 @@ void get_pic_info(cam * cam){
 void get_win_info(cam * cam)
 {
    gchar *msg;
-   if(ioctl(cam->dev, VIDIOCGWIN, &cam->vid_win) == -1) {
+   if(v4l1_ioctl(cam->dev, VIDIOCGWIN, &cam->vid_win) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
       if(cam->debug == TRUE) {
@@ -222,7 +223,7 @@ void get_win_info(cam * cam)
 void set_win_info(cam * cam)
 {
    gchar *msg;
-   if(ioctl(cam->dev, VIDIOCSWIN, &cam->vid_win) == -1) {
+   if(v4l1_ioctl(cam->dev, VIDIOCSWIN, &cam->vid_win) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
       if(cam->debug == TRUE) {
@@ -232,12 +233,14 @@ void set_win_info(cam * cam)
       exit(0);
    }
 
+   cam->x = cam->vid_win.width;
+   cam->y = cam->vid_win.height;
 }
 
 void set_buffer(cam * cam)
 {
    char *msg;
-   if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
+   if(v4l1_ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
       if(cam->debug == TRUE) {
