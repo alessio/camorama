@@ -2,22 +2,31 @@
 # translation of camorama.HEAD.po to
 # translation of camorama.HEAD.po to Macedonian
 # translation of camorama.HEAD.po to
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2003
+# This file is distributed under the same license as the camorama package.
+# Copyright (C) 2004 THE camorama'S COPYRIGHT HOLDER, 2003
 # Marko Ivanoski <marko@programmer.net>, 2003
-#
+#  <tome@users.ossm.org.mk>, 2004.
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: camorama.HEAD\n"
+"Project-Id-Version: camorama mk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-13 19:53+0200\n"
-"PO-Revision-Date: 2003-06-15 09:46+0200\n"
-"Last-Translator: \n"
-"Language-Team:  <mk@li.org>\n"
+"POT-Creation-Date: 2004-09-08 11:04+0200\n"
+"PO-Revision-Date: 2004-09-17 00:09+0200\n"
+"Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
+"Language-Team: Macedonian <mk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Каморама вебкам прегледувач"
+
+#: camorama.desktop.in.h:2 src/callbacks.c:510
+msgid "View, alter and save images from a webcam"
+msgstr "Поглед, извести и сними слики од вебкамера"
 
 #: data/camorama.glade.h:1
 msgid "     "
@@ -41,15 +50,15 @@ msgstr "<span weight=\"bold\">Тип на слика</span>"
 
 #: data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Локално превземање</span>"
+msgstr "<span weight=\"bold\">Локално преземање</span>"
 
 #: data/camorama.glade.h:7
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Нелокално превземање</span>"
+msgstr "<span weight=\"bold\">Далечно преземање</span>"
 
 #: data/camorama.glade.h:8
 msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Временска марка</span>"
+msgstr "<span weight=\"bold\">Временска мерка</span>"
 
 #: data/camorama.glade.h:9
 msgid "Add a timestamp to captured images"
@@ -61,7 +70,7 @@ msgstr "Припои време на името од датотеката"
 
 #: data/camorama.glade.h:11
 msgid "Automatic Capture"
-msgstr "Автоматско превземање"
+msgstr "Автоматско преземање"
 
 #: data/camorama.glade.h:12
 msgid "Black & white"
@@ -85,10 +94,10 @@ msgstr "Корекција на би"
 
 #: data/camorama.glade.h:17
 msgid "Color threshold"
-msgstr "Treshold на бои"
+msgstr "Праг на бои"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Боја:"
 
 #: data/camorama.glade.h:19
@@ -153,7 +162,7 @@ msgstr "Превземање преку мрежа"
 
 #: data/camorama.glade.h:34
 msgid "Save directory:"
-msgstr "директориум за снимање:"
+msgstr "Директориум за снимање:"
 
 #: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
@@ -165,7 +174,7 @@ msgstr "Сними ги датотеките во png формат"
 
 #: data/camorama.glade.h:37
 msgid "Show Adjustments"
-msgstr "Прикажи подесувања"
+msgstr "Покажи подесувања"
 
 #: data/camorama.glade.h:38
 msgid "Show Effects"
@@ -193,7 +202,7 @@ msgstr "Земи слика"
 
 #: data/camorama.glade.h:44
 msgid "Threshold:"
-msgstr "Treshold"
+msgstr "Праг:"
 
 #: data/camorama.glade.h:45
 msgid "Timestamp"
@@ -213,7 +222,7 @@ msgstr "Шуто"
 
 #: data/camorama.glade.h:49
 msgid "White Balance:"
-msgstr "Баланс на бело"
+msgstr "Баланс на бело:"
 
 #: data/camorama.glade.h:50
 msgid "_Directory for captured pics:"
@@ -241,11 +250,11 @@ msgstr "патека/да/сними/на"
 
 #: data/camorama.glade.h:56
 msgid "webcam-capture"
-msgstr "Превземање од webcam"
+msgstr "Преземање од webcam"
 
 #: data/camorama.glade.h:57
 msgid "webcamshot"
-msgstr "webcamслика"
+msgstr "вебкам слика"
 
 #: data/camorama.glade.h:58
 msgid "your-password"
@@ -269,11 +278,14 @@ msgstr "Припои временска марка на нелокално им�
 
 #: data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Внеси временска марка, во UNIX време, на крајовите од имињата од датотеките"
+msgstr ""
+"Внеси временска марка, во UNIX време, на крајовите од имињата од датотеките"
 
 #: data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Внеси временска марка, во UNIX време, на крајовите од нелокалните имињата од датотеките"
+msgstr ""
+"Внеси временска марка, во UNIX време, на крајовите од нелокалните имињата од "
+"датотеките"
 
 #: data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
@@ -341,11 +353,15 @@ msgstr "Име за нелокално снимање"
 
 #: data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Специфицира форматот на сликата да биде користен само за локално снимени слики"
+msgstr ""
+"Специфицира форматот на сликата да биде користен само за локално снимени "
+"слики"
 
 #: data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Специфицира форматот на сликата да биде користен само за нелокално снимени слики"
+msgstr ""
+"Специфицира форматот на сликата да биде користен само за нелокално снимени "
+"слики"
 
 #: data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
@@ -392,142 +408,164 @@ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "Вклучи го внесувањето на временска марка во сликите за FTP вчитување."
 
 #: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Вклучи го користењето на сопствена низа за временските марко во сликата."
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Вклучи го користењето на копчињата за подесување на видео филтрите"
 
 #: data/camorama.schemas.in.h:35
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Вклучи го користењето на сопствена низа за временските марко во сликата."
+
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Вклучи го користењето на лизгачи за промена на видео својствата"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "Вклучи ги лизгачите за промена на видео својствата"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Вклучи ги копчињата ефекти на сликата"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "Вклучи временска марка за локални превземања"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "Вклучи временска марка за нелокални превземања"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "Корисничко име за FTP сервер"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Корисничко име кое ќе се користи при FTP вчитувањата на превземените слики"
+msgstr ""
+"Корисничко име кое ќе се користи при FTP вчитувањата на превземените слики"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"Кога превземате слики преку \"Земи слика\" копчето, или со авто "
-"превземање, ова копче го вклучува снимањето на сликата локално."
+"Кога превземате слики преку \"Земи слика\" копчето, или со авто превземање, "
+"ова копче го вклучува снимањето на сликата локално."
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"Кога превземате слики преку \"Земи слика\" копчето, или со авто "
-"превземање, ова копче го вклучува снимањето на сликата на нелокален сервер."
+"Кога превземате слики преку \"Земи слика\" копчето, или со авто превземање, "
+"ова копче го вклучува снимањето на сликата на нелокален сервер."
 
-#: src/callbacks.c:410
+#: src/callbacks.c:499
 msgid "translator_credits"
 msgstr "Марко Иваноски (marko@programmer.net)"
 
-#: src/callbacks.c:425 camorama.desktop.in.h:2
-msgid "View, alter and save images from a webcam"
-msgstr "Поглед, извести и сними слики од вебкамера"
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Каморама"
 
-#: src/callbacks.c:524 src/callbacks.c:590 src/callbacks.c:633
-#: src/callbacks.c:645
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
-msgstr "Неможе да превземи слика"
+msgstr "Не може да превземи слика"
 
-#: src/fileio.c:114
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Ориентација"
+
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "Ориентација на иконата за известување."
+
+#: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."
 msgstr "Може да снима привремени датотеки на слики во /tmp."
 
-#: src/fileio.c:129
+#: src/fileio.c:137
 #, c-format
 msgid "Unable to create image '%s'."
-msgstr "Неможе да креира слика '%s'."
+msgstr "Не може да креира слика '%s'."
 
-#: src/fileio.c:142
+#: src/fileio.c:146 src/fileio.c:429
 #, c-format
-msgid "Unable to open temporary image file '%s'."
-msgstr "Неможе да отвори привремена датотека на слика '%s'."
+msgid "Could not save image '%s/%s'."
+msgstr "Не може да сними слика '%s/%s'."
 
-#: src/fileio.c:173
+#: src/fileio.c:273
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"Не можам да отворам привремена слика '%s'.\n"
+"Не можам да ја додадам сликата."
+
+#: src/fileio.c:311
 #, c-format
 msgid "An error occured opening %s."
 msgstr "Грешка при отварањето %s."
 
-#: src/fileio.c:182
+#: src/fileio.c:323
 #, c-format
 msgid "An error occured writing to %s."
 msgstr "Грешка при пишувањето на %s."
 
-#: src/fileio.c:258
+#: src/fileio.c:403
 #, c-format
 msgid "Could not create directory '%s'."
-msgstr "Неможе да креира директориум  '%s'."
+msgstr "Не може да креира директориум  '%s'."
 
-#: src/fileio.c:266
+#: src/fileio.c:414
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr "Неможе да смени во директориум '%s'."
+msgstr "Не може да смени во директориум '%s'."
 
-#: src/fileio.c:279
-#, c-format
-msgid "Could not save image '%s/%s'."
-msgstr "Неможе да сними слика '%s/%s'."
-
-#: src/main.c:193
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "покажи верзија и излези"
 
-#: src/main.c:194
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "v4l уред да се користи"
 
-#: src/main.c:195
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "Овозможи код за дебагирање"
 
-#: src/main.c:196
+#: src/main.c:428
 msgid "capture width"
 msgstr "Ширина на превземањето"
 
-#: src/main.c:197
+#: src/main.c:430
 msgid "capture height"
 msgstr "Висина на превземањето"
 
-#: src/main.c:198
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "Максимум големина при превземање"
 
-#: src/main.c:199
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "Минимум големина при превземање"
 
-#: src/main.c:200
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "Средна големина при превземање"
 
-#: src/main.c:201
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "користи read() отколку mmap()"
 
-#: src/main.c:221
+#: src/main.c:461
 msgid "camorama"
 msgstr "каморама"
 
-#: src/main.c:235
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -540,26 +578,23 @@ msgstr ""
 "Каморама верзија %s\n"
 "\n"
 
-#: src/main.c:350
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "Неможе да ја пронајде главната датотека на интерфејсот (каморама glade)"
+msgstr ""
+"Неможе да ја пронајде главната датотека на интерфејсот (каморама glade)"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Не можам да ја најдам pixmap датотеката: %s"
+
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Неможе да се конектира со видео уредот (%s).\n"
-"Проверете ја вашата конекција."
-
-#: src/support.c:66
-#, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "Неможе да ја пронајде pixmap датотеката: %s"
-
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Каморама вебкам прегледувач"
+"Не можам да се врзе со видео уредот (%s).\n"
+"Проверете ја Вашата конекција."
 

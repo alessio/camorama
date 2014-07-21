@@ -8,13 +8,24 @@ AC_PROG_INTLTOOL([0.21])
 AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
 AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
 
-ALL_LINGUAS="am be cs da de es fa fr ml nl no pl pt pt_BR sr sr@Latn sv uk vi ja"
+ALL_LINGUAS="am az be bg bs ca cs da de en_CA en_GB es eu fa fi fr ga gu hi hr it ja lv mk ml ms nb ne nl pa pl pt pt_BR rw sq sr sr@Latn sv ta tr uk vi zh_CN zh_TW"
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AM_GLIB_GNU_GETTEXT
 
 AC_DEFINE(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", "blah blah blah")
 
+AC_MSG_CHECKING(prefix)
+
+if test "x${prefix}" = "xNONE"; then
+  PACKAGE_PREFIX="${ac_default_prefix}"
+else
+  PACKAGE_PREFIX="${prefix}"
+fi
+AC_MSG_RESULT($PACKAGE_PREFIX)
+
+AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${PACKAGE_PREFIX}/${DATADIRNAME}", "the data dir")
+AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${PACKAGE_PREFIX}/${DATADIRNAME}/locale", "the locale dir")
 
 AC_ISC_POSIX
 AC_PROG_CC
@@ -24,7 +35,7 @@ AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.
 
 GNOME_COMPILE_WARNINGS
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 libgnomeui-2.0 gtk+-2.0 >= 1.3.13 gconf-2.0 libglade-2.0"
+pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 libgnomeui-2.0 gtk+-2.0 >= 2.10 gconf-2.0 libglade-2.0"
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
@@ -35,10 +46,10 @@ AM_GCONF_SOURCE_2
 
 
 AC_OUTPUT([
-Makefile
-src/Makefile
-data/Makefile
-pixmaps/Makefile
-po/Makefile.in
+	Makefile
+	src/Makefile
+	data/Makefile
+	pixmaps/Makefile
+	po/Makefile.in
 ])
 

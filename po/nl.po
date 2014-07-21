@@ -3,13 +3,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.17\n"
-"POT-Creation-Date: 2003-06-13 03:53+0200\n"
-"PO-Revision-Date: 2003-06-14 13:05+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-09-06 11:26+0200\n"
+"PO-Revision-Date: 2003-09-06 20:03+0200\n"
 "Last-Translator: Huib Kleinhout <huib@stack.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama webcamprogramma"
+
+#: camorama.desktop.in.h:2 src/callbacks.c:510
+msgid "View, alter and save images from a webcam"
+msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
 
 #: data/camorama.glade.h:1
 msgid "     "
@@ -80,7 +89,7 @@ msgid "Color threshold"
 msgstr "Kleurdrempel"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Kleur:"
 
 #: data/camorama.glade.h:19
@@ -121,7 +130,7 @@ msgstr "Lokale opname"
 
 #: data/camorama.glade.h:28
 msgid "Medium"
-msgstr "Gemiddeld"
+msgstr "Middel"
 
 #: data/camorama.glade.h:29
 msgid "Mirror image"
@@ -394,40 +403,49 @@ msgstr ""
 "upload in/uit"
 
 #: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+"Schakelt het gebruik van de knoppen om de videofilters aan te passen in/uit"
+
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr ""
 "Schakelt het gebruik van aangepaste tekst als tijdstempel in afbeeldingen in/"
 "uit"
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr ""
 "Schakelt het gebruik van schuifknoppen om de video-eigenschappen aan te "
 "passen in/uit"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "Schakelt de schuifknoppen voor video-instellingen in/uit"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Schakelt de knoppen voor video-effecten in/uit"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "Schakelt de tijdstempel voor lokale opnames in/uit"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "Schakelt de tijdstempel voor opnames op afstand in/uit"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "Gebruikersnaam voor FTP-server"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr ""
 "Gebruikersnaam die gebruikt dient te worden voor FTP-uploads van opgenomen "
 "beelden"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
@@ -436,7 +454,7 @@ msgstr ""
 "automatische opname, schakelt deze toets de lokale opslag van afbeeldingen "
 "in/uit."
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -445,99 +463,111 @@ msgstr ""
 "automatische opname, schakelt deze toets de opslag op afstand van "
 "afbeeldingen in/uit."
 
-#: src/callbacks.c:410
+#: src/callbacks.c:499
 msgid "translator_credits"
 msgstr "Huib Kleinhout <huib@stack.nl>"
 
-#: src/callbacks.c:425 camorama.desktop.in.h:2
-msgid "View, alter and save images from a webcam"
-msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Camorama"
 
-#: src/callbacks.c:524 src/callbacks.c:590 src/callbacks.c:633
-#: src/callbacks.c:645
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
 msgstr "De afbeelding kan niet worden opgeslagen."
 
-#: src/fileio.c:114
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Oriëntatie"
+
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "De oriëntatie van het vakje."
+
+#: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."
 msgstr "Kan geen tijdelijk afbeeldingsbestand opslaan in /tmp."
 
-#: src/fileio.c:129
+#: src/fileio.c:137
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "De afbeelding '%s' kan niet worden aangemaakt."
 
-#: src/fileio.c:142
-#, c-format
-msgid "Unable to open temporary image file '%s'."
-msgstr "Het tijdelijke afbeeldingsbestand '%s' kan niet worden geopend."
-
-#: src/fileio.c:173
-#, c-format
-msgid "An error occured opening %s."
-msgstr "Er is een fout opgetreden tijdens het openen van %s."
-
-#: src/fileio.c:182
-#, c-format
-msgid "An error occured writing to %s."
-msgstr "Er is een fout opgetreden tijdens het schrijven naar %s."
-
-#: src/fileio.c:258
-#, c-format
-msgid "Could not create directory '%s'."
-msgstr "Kan map '%s' niet aanmaken."
-
-#: src/fileio.c:266
-#, c-format
-msgid "Could not change to directory '%s'."
-msgstr "De map '%s' kan niet geopend worden."
-
-#: src/fileio.c:279
+#: src/fileio.c:146 src/fileio.c:429
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Kan afbeelding '%s/%s' niet opslaan."
 
-#: src/main.c:193
+#: src/fileio.c:273
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"Het tijdelijke afbeeldingsbestand '%s' kan niet worden geopend.\n"
+"Het uploaden van de afbeelding is niet mogelijk."
+
+#: src/fileio.c:311
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Er is een fout opgetreden tijdens het openen van %s."
+
+#: src/fileio.c:323
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Er is een fout opgetreden tijdens het schrijven naar %s."
+
+#: src/fileio.c:403
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Kan map '%s' niet aanmaken."
+
+#: src/fileio.c:414
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "De map '%s' kan niet geopend worden."
+
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "Versie weergeven en afsluiten"
 
-#: src/main.c:194
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "v4l-apparaat dat gebruikt dient te worden"
 
-#: src/main.c:195
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "debug-code inschakelen"
 
-#: src/main.c:196
+#: src/main.c:428
 msgid "capture width"
 msgstr "opnamebreedte"
 
-#: src/main.c:197
+#: src/main.c:430
 msgid "capture height"
 msgstr "opnamehoogte"
 
-#: src/main.c:198
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "maximale opnamegrootte"
 
-#: src/main.c:199
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "minimale opnamegrootte"
 
-#: src/main.c:200
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "gemiddelde opnamegrootte"
 
-#: src/main.c:201
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "Gebruik read() in plaats van mmap()"
 
-#: src/main.c:221
+#: src/main.c:461
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:235
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -550,13 +580,18 @@ msgstr ""
 "Camorama versie %s\n"
 "\n"
 
-#: src/main.c:350
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Kan het hoofdbestand voor de gebruikersinterface niet vinden (camorama.glade)"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"
+
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -564,12 +599,3 @@ msgid ""
 msgstr ""
 "Kan geen verbinding maken met video-apparaat (%s).\n"
 "Controleer de verbinding."
-
-#: src/support.c:66
-#, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"
-
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Camorama webcamprogramma"

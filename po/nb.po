@@ -1,0 +1,590 @@
+# Norwegian bokmål translation of camorama.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Kjartan Maraas <kmaraas@gnome.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-13 13:33+0200\n"
+"PO-Revision-Date: 2006-09-13 13:36+0200\n"
+"Last-Translator: Øivind Hoel <oivind.hoel@gmail.com>\n"
+"Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama webkamera-visning"
+
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr "Vis, endre og lagre bilder fra et webkamera"
+
+#: ../data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: ../data/camorama.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Generelt</span>"
+
+#: ../data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Bildetype</span>"
+
+#: ../data/camorama.glade.h:4
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Lokal henting</span>"
+
+#: ../data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Fjernopptak</span>"
+
+#: ../data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Tidsstempel</span>"
+
+#: ../data/camorama.glade.h:7
+msgid "Add a timestamp to captured images"
+msgstr "Legg til tidsstempel på bilder"
+
+#: ../data/camorama.glade.h:8
+msgid "Append time to filename"
+msgstr "Legg til tid i filnavn"
+
+#: ../data/camorama.glade.h:9
+msgid "Automatic Capture"
+msgstr "Automatisk opptak"
+
+#: ../data/camorama.glade.h:10
+msgid "Brightness:"
+msgstr "Lysstyrke:"
+
+#: ../data/camorama.glade.h:11
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: ../data/camorama.glade.h:12
+msgid "Capture Interval (in minutes):"
+msgstr "Opptaksintervall"
+
+#: ../data/camorama.glade.h:13
+msgid "Color:"
+msgstr "Farge:"
+
+#: ../data/camorama.glade.h:14
+msgid "Contrast:"
+msgstr "Kontrast:"
+
+#: ../data/camorama.glade.h:15
+msgid "Draw date and time"
+msgstr "Tegn dato og klokkeslett"
+
+#: ../data/camorama.glade.h:16
+msgid "FTP server: "
+msgstr "FTP-tjener: "
+
+#: ../data/camorama.glade.h:17
+msgid "Filename"
+msgstr "Filnavn"
+
+#: ../data/camorama.glade.h:18
+msgid "General"
+msgstr "Generelt"
+
+#: ../data/camorama.glade.h:19
+msgid "Hue:"
+msgstr "Glød:"
+
+#: ../data/camorama.glade.h:20
+msgid "Large"
+msgstr "Stor"
+
+#: ../data/camorama.glade.h:21
+msgid "Local Capture"
+msgstr "Lokalt opptak"
+
+#: ../data/camorama.glade.h:22
+msgid "Medium"
+msgstr "Middels"
+
+#: ../data/camorama.glade.h:23
+msgid "Password:"
+msgstr "Passord:"
+
+#: ../data/camorama.glade.h:24
+msgid "Preferences"
+msgstr "Brukervalg"
+
+#: ../data/camorama.glade.h:25
+msgid "Remote Capture"
+msgstr "Fjernopptak"
+
+#: ../data/camorama.glade.h:26
+msgid "Save directory:"
+msgstr "Katalog for lagring:"
+
+#: ../data/camorama.glade.h:27
+msgid "Save files in jpeg format"
+msgstr "Lagre filer i jpeg-format"
+
+#: ../data/camorama.glade.h:28
+msgid "Save files in png format"
+msgstr "Lagre filer i png-format"
+
+#: ../data/camorama.glade.h:29
+msgid "Show Adjustments"
+msgstr "Vis justeringer"
+
+#: ../data/camorama.glade.h:30
+msgid "Show Effects"
+msgstr "Vis effekter"
+
+#: ../data/camorama.glade.h:31
+msgid "Small"
+msgstr "Liten"
+
+#: ../data/camorama.glade.h:32
+msgid "String:"
+msgstr "Streng:"
+
+#: ../data/camorama.glade.h:33
+msgid "Take Picture"
+msgstr "Ta bilde"
+
+#: ../data/camorama.glade.h:34
+msgid "Timestamp"
+msgstr "Tidsstempel"
+
+#: ../data/camorama.glade.h:35
+msgid "Use custom string"
+msgstr "Bruk egendefinert streng"
+
+#: ../data/camorama.glade.h:36
+msgid "Username:"
+msgstr "Brukernavn:"
+
+#: ../data/camorama.glade.h:37
+msgid "White Balance:"
+msgstr "Hvit balanse:"
+
+#: ../data/camorama.glade.h:38
+msgid "_Directory for captured pics:"
+msgstr "_Mappe for lagrede bilder:"
+
+#: ../data/camorama.glade.h:39
+msgid "_Enable local capture"
+msgstr "_Slå på lokalt opptak"
+
+#: ../data/camorama.glade.h:40
+msgid "_Enable remote capture"
+msgstr "_Slå på fjernopptak"
+
+#: ../data/camorama.glade.h:41
+msgid "_Filename for pictures:"
+msgstr "_Filnavn for bilder:"
+
+#: ../data/camorama.glade.h:42
+msgid "ftp.yourdomain.org"
+msgstr "ftp.dittdomene.no"
+
+#: ../data/camorama.glade.h:43
+msgid "path/to/save/to"
+msgstr "/sti/for/lagring"
+
+#: ../data/camorama.glade.h:44
+msgid "webcam-capture"
+msgstr "opptak med nettkamera"
+
+#: ../data/camorama.glade.h:45
+msgid "webcamshot"
+msgstr "nettkamerabilde"
+
+#: ../data/camorama.glade.h:46
+msgid "your-password"
+msgstr "ditt-passord"
+
+#: ../data/camorama.glade.h:47
+msgid "your-username"
+msgstr "ditt-brukernavn"
+
+#: ../data/camorama.glade.h:48
+msgid "~/.gnome-desktop"
+msgstr "~/Desktop"
+
+#: ../data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "Legg til tidsstempel i filnavn"
+
+#: ../data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "Legg til tidsstempel i filnavn for fjernopptak"
+
+#: ../data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "Egendefinert tekst til tidsstempelet"
+
+#: ../data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Setter en egendefinert tekst inn i bildet."
+
+#: ../data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "Filnavn for lokale opptak"
+
+#: ../data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "Mappe for lokale opptak"
+
+#: ../data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "Mappe for eksterne opptak"
+
+#: ../data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "Mappe for lagring av opptak eksternt"
+
+#: ../data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "Mappe for lagring av opptak lokalt"
+
+#: ../data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "Vertsnavn for FTP-tjener"
+
+#: ../data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "Bildeformat for lokale opptak"
+
+#: ../data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "Filnavn for bilder som skal lastes opp."
+
+#: ../data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "Passord til FTP-tjeneren"
+
+#: ../data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "Bildeformat for fjernopptak"
+
+#: ../data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "Filnavn for fjernopptak"
+
+#: ../data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "Passord for FTP-konto til bruk for fjernopptak."
+
+#: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:26
+msgid "Toggles auto-capture"
+msgstr "Veksler autoopptak"
+
+#: ../data/camorama.schemas.in.h:27
+msgid "Toggles automatic capturing of pictures."
+msgstr "Veksler automatisk opptak av bilder."
+
+#: ../data/camorama.schemas.in.h:28
+msgid "Toggles local capture"
+msgstr "Veksler lokalt opptak"
+
+#: ../data/camorama.schemas.in.h:29
+msgid "Toggles remote capture"
+msgstr "Veksler fjernopptak"
+
+#: ../data/camorama.schemas.in.h:30
+msgid "Toggles the custom string"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:31
+msgid "Toggles the datestamp in captures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:32
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Veksler innsetting av tidsstempel i lokale bilder"
+
+#: ../data/camorama.schemas.in.h:34
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Veksler innsetting av tidsstempel i bildene som skal lastes opp via FTP."
+
+#: ../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:36
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:37
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:38
+msgid "Toggles the video adjustment sliders"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:39
+msgid "Toggles the video effects buttons"
+msgstr "Veksler knappene for videoeffekter"
+
+#: ../data/camorama.schemas.in.h:40
+msgid "Toggles timestamp for local captures"
+msgstr "Veksler tidsstempel for lokale opptak"
+
+#: ../data/camorama.schemas.in.h:41
+msgid "Toggles timestamp for remote captures"
+msgstr "Veksler tidsstempel for fjernopptak"
+
+#: ../data/camorama.schemas.in.h:42
+msgid "Username for FTP server"
+msgstr "Brukernavn til FTP-tjener"
+
+#: ../data/camorama.schemas.in.h:43
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "Brukernavn til bruk for opplasting av lagrede bilder via FTP"
+
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "Videoutstyr"
+
+#: ../data/camorama.schemas.in.h:45
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Ved opptak av bilder via \"Ta bilde\"-knappen, eller ved autoopptak, slår "
+"denne nøkkelen på/av lagring av bilder lokalt på denne datamaskinen."
+
+#: ../data/camorama.schemas.in.h:46
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Ved opptak av bilder via \"Ta bilde\"-knappen, eller ved autoopptak, slår "
+"denne nøkkelen på/av lagring av bilder til en ekstern tjener."
+
+#: ../src/callbacks.c:500
+msgid "translator_credits"
+msgstr "Kjartan Maraas <kmaraas@gnome.org>"
+
+#: ../src/callbacks.c:509
+msgid "Camorama"
+msgstr "Camorama"
+
+#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:692
+msgid "Unable to capture image."
+msgstr "Kan ikke ta opp bilde."
+
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"Lokalt opptak: %d\n"
+"Eksternt opptak: %d\n"
+"Opptaksintervall: %d"
+
+#: ../src/callbacks.c:832
+msgid "Automatic Capture Disabled"
+msgstr "Automatisk opptak deaktivert"
+
+#: ../src/fileio.c:120 ../src/fileio.c:266
+msgid "Could save temporary image file in /tmp."
+msgstr "Kan ikke lagre mellomlagerbilde i /tmp."
+
+#: ../src/fileio.c:138
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Kan ikke opprette bilde «%s»."
+
+#: ../src/fileio.c:147 ../src/fileio.c:430
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Kunne ikke lagre bilde «%s/%s»."
+
+#: ../src/fileio.c:274
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"Kan ikke åpne mellomlagerbilde (%s)\n"
+"Kan derfor ikke laste opp bildet."
+
+#: ../src/fileio.c:312
+#, c-format
+msgid "An error occurred opening %s."
+msgstr "Fen feil oppsto ved åpning av %s."
+
+#: ../src/fileio.c:324
+#, c-format
+msgid "An error occurred writing to %s."
+msgstr "En feil oppstod under skriving til %s."
+
+#: ../src/fileio.c:404
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Kan ikke opprette mappen %s."
+
+#: ../src/fileio.c:415
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Kan ikke velge mappen %s."
+
+#: ../src/main.c:53
+msgid "show version and exit"
+msgstr "vis versjon og avslutt"
+
+#: ../src/main.c:55
+msgid "v4l device to use"
+msgstr "v4l-enhet som skal brukes"
+
+#: ../src/main.c:57
+msgid "enable debugging code"
+msgstr "slå på avlusingskode"
+
+#: ../src/main.c:58
+msgid "capture width"
+msgstr "bildebredde"
+
+#: ../src/main.c:60
+msgid "capture height"
+msgstr "bildehøyde"
+
+#: ../src/main.c:63
+msgid "maximum capture size"
+msgstr "maksimal opptaksstørrelse"
+
+#: ../src/main.c:65
+msgid "minimum capture size"
+msgstr "minimum opptaksstørrelse"
+
+#: ../src/main.c:67
+msgid "middle capture size"
+msgstr "middels opptaksstørrelse"
+
+#: ../src/main.c:69
+msgid "use read() rather than mmap()"
+msgstr "bruk read() istedenfor mmap()"
+
+#: ../src/main.c:91
+msgid "camorama"
+msgstr "camorama"
+
+#: ../src/main.c:104
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Camorama versjon %s\n"
+"\n"
+
+#: ../src/main.c:238
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "Fant ikke grensesnittfilen (camorama.glade)."
+
+#: ../src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Kunne ikke finne bildefil: %s"
+
+#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
+#: ../src/v4l.c:226 ../src/v4l.c:241
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"Kan ikke koble til videoutstyret %s.\n"
+"Vennligst sjekk tilkoblingen."
+
+#~ msgid "Orientation"
+#~ msgstr "Orientering"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Orientering for trauet."
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Effekter</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "Sort/hvitt"
+
+#~ msgid "Color correction"
+#~ msgstr "Fargekorreksjon"
+
+#~ msgid "Color threshold"
+#~ msgstr "Fargeterskel"
+
+#~ msgid "Laplace"
+#~ msgstr "Laplace"
+
+#~ msgid "Mirror image"
+#~ msgstr "Speilvend bilde"
+
+#~ msgid "Negative"
+#~ msgstr "Negativ"
+
+#~ msgid "Smoothing"
+#~ msgstr "Utjevning"
+
+#~ msgid "Sobel"
+#~ msgstr "Sobel"
+
+#~ msgid "Threshold:"
+#~ msgstr "Terskel:"

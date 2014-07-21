@@ -1,3 +1,4 @@
+autom4te.cache
 config.h
 camorama.desktop
 *.gz
@@ -7,6 +8,7 @@ intltool*
 configure
 config.log
 config.status
+diff
 install-sh
 missing 
 mkinstalldirs
@@ -22,3 +24,6 @@ config.h.in
 depcomp
 stamp-h1
 
+COPYING
+INSTALL
+autom4te.cache

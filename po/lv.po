@@ -1,0 +1,551 @@
+# translation of camorama.HEAD.po to Latvian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Linux Centrs <info@linux.edu.lv>, 2006.
+# Mikus <mikus.saulitis@gmail.com>, 2006.
+# Raivis Dejus <orvils@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-27 15:47+0300\n"
+"PO-Revision-Date: 2006-06-27 15:46+0300\n"
+"Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#: ../camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama vebkameru skatītājs"
+
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr "Skīties, pārveidot un saglabāt attēlus no vebkameras"
+
+#: ../data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: ../data/camorama.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Vispārējs</span>"
+
+#: ../data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Attēla Tips</span>"
+
+#: ../data/camorama.glade.h:4
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Lokāla Tveršana</span>"
+
+#: ../data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Attālināts Tveršana</span>"
+
+#: ../data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Laikaspiedogs</span>"
+
+#: ../data/camorama.glade.h:7
+msgid "Add a timestamp to captured images"
+msgstr "Pievienot laika spiedogu savāktajiem attēliem"
+
+#: ../data/camorama.glade.h:8
+msgid "Append time to filename"
+msgstr "Pievienot laiku failavārdam"
+
+#: ../data/camorama.glade.h:9
+msgid "Automatic Capture"
+msgstr "Automātiskā Tveršana"
+
+#: ../data/camorama.glade.h:10
+msgid "Brightness:"
+msgstr "Spilgtums:"
+
+#: ../data/camorama.glade.h:11
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: ../data/camorama.glade.h:12
+msgid "Capture Interval (in minutes):"
+msgstr "Tveršanas intervāls (minūtēs):"
+
+#: ../data/camorama.glade.h:13
+msgid "Color:"
+msgstr "Krāsa:"
+
+#: ../data/camorama.glade.h:14
+msgid "Contrast:"
+msgstr "Kontrasts:"
+
+#: ../data/camorama.glade.h:15
+msgid "Draw date and time"
+msgstr "Zīmēt datumu un laiku"
+
+#: ../data/camorama.glade.h:16
+msgid "FTP server: "
+msgstr "FTP serveris: "
+
+#: ../data/camorama.glade.h:17
+msgid "Filename"
+msgstr "Faila nosaukums"
+
+#: ../data/camorama.glade.h:18
+msgid "General"
+msgstr "Vispārējs"
+
+#: ../data/camorama.glade.h:19
+msgid "Hue:"
+msgstr "Nokrāsa:"
+
+#: ../data/camorama.glade.h:20
+msgid "Large"
+msgstr "Liels"
+
+#: ../data/camorama.glade.h:21
+msgid "Local Capture"
+msgstr "Lokāla Tveršana"
+
+#: ../data/camorama.glade.h:22
+msgid "Medium"
+msgstr "Vidējs"
+
+#: ../data/camorama.glade.h:23
+msgid "Password:"
+msgstr "Parole:"
+
+#: ../data/camorama.glade.h:24
+msgid "Preferences"
+msgstr "Uzstādījumi"
+
+#: ../data/camorama.glade.h:25
+msgid "Remote Capture"
+msgstr "Attālināta Tveršana"
+
+#: ../data/camorama.glade.h:26
+msgid "Save directory:"
+msgstr "Saglabāšanas direktorija:"
+
+#: ../data/camorama.glade.h:27
+msgid "Save files in jpeg format"
+msgstr "Saglabāt failus jpeg formātā"
+
+#: ../data/camorama.glade.h:28
+msgid "Save files in png format"
+msgstr "Saglabāt failus png formātā"
+
+#: ../data/camorama.glade.h:29
+msgid "Show Adjustments"
+msgstr "Parādīt pielāgojumus"
+
+#: ../data/camorama.glade.h:30
+msgid "Show Effects"
+msgstr "Parādīt Efektus"
+
+#: ../data/camorama.glade.h:31
+msgid "Small"
+msgstr "Mazs"
+
+#: ../data/camorama.glade.h:32
+msgid "String:"
+msgstr "Virkne:"
+
+#: ../data/camorama.glade.h:33
+msgid "Take Picture"
+msgstr "Nofotografēt"
+
+#: ../data/camorama.glade.h:34
+msgid "Timestamp"
+msgstr "Laikaspiedogs"
+
+#: ../data/camorama.glade.h:35
+msgid "Use custom string"
+msgstr "Izmantot pašizvēlētu rindu"
+
+#: ../data/camorama.glade.h:36
+msgid "Username:"
+msgstr "Lietotājvārds:"
+
+#: ../data/camorama.glade.h:37
+msgid "White Balance:"
+msgstr "Baltās krāsas balanss:"
+
+#: ../data/camorama.glade.h:38
+msgid "_Directory for captured pics:"
+msgstr "_Direktorija tvertajiem attēliem:"
+
+#: ../data/camorama.glade.h:39
+msgid "_Enable local capture"
+msgstr "Aktivizēt lokālo tv_eršanu"
+
+#: ../data/camorama.glade.h:40
+msgid "_Enable remote capture"
+msgstr "Aktivizēt attālinātu tv_eršanu"
+
+#: ../data/camorama.glade.h:41
+msgid "_Filename for pictures:"
+msgstr "_Faila nosaukums attēliem:"
+
+#: ../data/camorama.glade.h:42
+msgid "ftp.yourdomain.org"
+msgstr "ftp.yourdomain.org"
+
+#: ../data/camorama.glade.h:43
+msgid "path/to/save/to"
+msgstr "vieta/kur/saglabāt"
+
+#: ../data/camorama.glade.h:44
+msgid "webcam-capture"
+msgstr "web kameras-tveršana"
+
+#: ../data/camorama.glade.h:45
+msgid "webcamshot"
+msgstr "webcamshot "
+
+#: ../data/camorama.glade.h:46
+msgid "your-password"
+msgstr "tava-parole"
+
+#: ../data/camorama.glade.h:47
+msgid "your-username"
+msgstr "tavs-lietotājvārds"
+
+#: ../data/camorama.glade.h:48
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: ../data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "Pievienot laika spiedogu faila vārdam"
+
+#: ../data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "Pievienot laika spiedogu attālinātam faila vārdam"
+
+#: ../data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "pievienot laika spiedogu UNIX laikā, faila vāradu biegās"
+
+#: ../data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "pievienot laika spiedogu UNIX laikā, attālinātu faila vāradu biegās"
+
+#: ../data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "Izvēles teksts priekš laika spiedoga"
+
+#: ../data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Definē rindu no pašizvēlēta teksta lai tiktu ielikts attēlā."
+
+#: ../data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "Lokālās tveršanas faila vārds"
+
+#: ../data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr "Faila nosaukums lai saglabātu tvertos attēlus lokāli"
+
+#: ../data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "Mape lokālai tveršanai"
+
+#: ../data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "Mape attālinātajai tveršanai"
+
+#: ../data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "Mape attālinātai tverto attēlu saglabāšanai"
+
+#: ../data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "Lokālā mape tverto attēlu saglabāšani"
+
+#: ../data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "FTP servera nosaukums"
+
+#: ../data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr "FTP serveris attālināto tveršanu rezultātu saglabāšanai."
+
+#: ../data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr "Intervāls automātiskajai tveršanai"
+
+#: ../data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "Lokālās tveršanas attēla formāts"
+
+#: ../data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "Vārds augšupielādējamo attēlu faila vārdam."
+
+#: ../data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "FTP servera parole"
+
+#: ../data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "Attālinātās tveršanas attēlu formāts"
+
+#: ../data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "Attālinātās saglabāšanas failavārds"
+
+#: ../data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Norāda lokāli saglabājamo attēlu formātu"
+
+#: ../data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Norāda attālināti saglabājamo attēlu formātu"
+
+#: ../data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Norāda attēlu automātiskās tveršanas intervālu."
+
+#: ../data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "parole FTP konta attālinātai tveršanai."
+
+#: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "Unix failu sistēma ceļš uz ierīci, kura ir pievienota tavai kamerai."
+
+#: ../data/camorama.schemas.in.h:26
+msgid "Toggles auto-capture"
+msgstr "automātiskās tveršanas pārslēdzējs"
+
+#: ../data/camorama.schemas.in.h:27
+msgid "Toggles automatic capturing of pictures."
+msgstr "automātiskās tveršanas zīmējumu pārslēdzējs."
+
+#: ../data/camorama.schemas.in.h:28
+msgid "Toggles local capture"
+msgstr "lokālās tveršanas pārslēgs"
+
+#: ../data/camorama.schemas.in.h:29
+msgid "Toggles remote capture"
+msgstr "attālinātās tveršanas pārslēgs"
+
+#: ../data/camorama.schemas.in.h:30
+msgid "Toggles the custom string"
+msgstr "pašizvēlētās rindas pārslēgs"
+
+#: ../data/camorama.schemas.in.h:31
+msgid "Toggles the datestamp in captures"
+msgstr "ieslēdz/izslēdz datestamp tvērējā"
+
+#: ../data/camorama.schemas.in.h:32
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "ieslēdz/izslēdz zīmējumu datestamp ar tvertajiem zīmējumiem"
+
+#: ../data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "ieslēdz/izslēdz laika zīmogu ievietošanu lokālajos zīmējumos"
+
+#: ../data/camorama.schemas.in.h:34
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"ieslēdz/izslēdz laika zīmogu ievietošanu lokālajos zīmējumos priekš FTP "
+"aukšuplādes."
+
+#: ../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "ieslēdz/izslēdz taustiņu lietojumu pārvietojot video filtrus"
+
+#: ../data/camorama.schemas.in.h:36
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "ieslēdz/izslēdz pašizvēlētās rindiņas laika zimogu zīmējumos."
+
+#: ../data/camorama.schemas.in.h:37
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "ieslēdz/izslēdz iespēju izmantot slaidus parvietot video rekvizītus"
+
+#: ../data/camorama.schemas.in.h:38
+msgid "Toggles the video adjustment sliders"
+msgstr "ieslēdz/izslēdz video pārvietojumu slīdni"
+
+#: ../data/camorama.schemas.in.h:39
+msgid "Toggles the video effects buttons"
+msgstr "Ieslēdz/izslēdz video efektu pogas"
+
+#: ../data/camorama.schemas.in.h:40
+msgid "Toggles timestamp for local captures"
+msgstr "Ieslēdz/izslēdz laika zīmogu lokālajam tvērējam"
+
+#: ../data/camorama.schemas.in.h:41
+msgid "Toggles timestamp for remote captures"
+msgstr "Ieslēdz/izslēdz liaka zīmogu attālinātai tveršanai"
+
+#: ../data/camorama.schemas.in.h:42
+msgid "Username for FTP server"
+msgstr "FTP servera lietotājvārds"
+
+#: ../data/camorama.schemas.in.h:43
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "Lietotājvārds lai lietotu FTP augšuplādējamiem zīumējumiem"
+
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "Video iekārta"
+
+#: ../data/camorama.schemas.in.h:45
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"kad tveramie zīmējumi caur \"Nofotogrāfēt\" taustiņu vai ar auto tver šo "
+"taustiņu pārslēdzējs lokāli saglabājot zīmējumu."
+
+#: ../data/camorama.schemas.in.h:46
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"kad tveramie zīmējumi caur \"Nofotogrāfēt\" taustiņu vai ar auto tver šo "
+"taustiņu pārslēdzējs attālināti saglabājot zīmējumu."
+
+#: ../src/callbacks.c:500
+msgid "translator_credits"
+msgstr "LU Studenti"
+
+#: ../src/callbacks.c:509
+msgid "Camorama"
+msgstr "Camorama"
+
+#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:692
+msgid "Unable to capture image."
+msgstr "Nespēj tvert attēlu."
+
+#: ../src/eggtrayicon.c:127
+msgid "Orientation"
+msgstr "Novietojums"
+
+#: ../src/eggtrayicon.c:128
+msgid "The orientation of the tray."
+msgstr "Paplātes novietojums."
+
+#: ../src/fileio.c:120 ../src/fileio.c:266
+msgid "Could save temporary image file in /tmp."
+msgstr "Varēja saglabāt pagaidu faila attēlu /tmp."
+
+#: ../src/fileio.c:138
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Nevar izveidot attēlu '%s'."
+
+#: ../src/fileio.c:147 ../src/fileio.c:430
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Nevar saglabāt attēlu '%s/%s'."
+
+#: ../src/fileio.c:274
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"Nevar atvērt pagaidu attēlu '%s'.\n"
+"Nevar augšuplādēt attēlu."
+
+#: ../src/fileio.c:312
+#, c-format
+msgid "An error occurred opening %s."
+msgstr "Notikusi kļūda atverot %s."
+
+#: ../src/fileio.c:324
+#, c-format
+msgid "An error occurred writing to %s."
+msgstr "Notikusi ķļūda rakstot %s."
+
+#: ../src/fileio.c:404
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Nevar izveidot direktoriju '%s'."
+
+#: ../src/fileio.c:415
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Nevar mainīt uz direktoriju '%s'."
+
+#: ../src/main.c:53
+msgid "show version and exit"
+msgstr "parādīt versiju un iziet"
+
+#: ../src/main.c:55
+msgid "v4l device to use"
+msgstr "v41 ierīce lai lietoru"
+
+#: ../src/main.c:57
+msgid "enable debugging code"
+msgstr "aktivizēt koda atkļūdošanu"
+
+#: ../src/main.c:58
+msgid "capture width"
+msgstr "tver platumu"
+
+#: ../src/main.c:60
+msgid "capture height"
+msgstr "tver augstumu"
+
+#: ../src/main.c:63
+msgid "maximum capture size"
+msgstr "maksimālais tveršanas izmērs"
+
+#: ../src/main.c:65
+msgid "minimum capture size"
+msgstr "minimālais tveršanas izmērs"
+
+#: ../src/main.c:67
+msgid "middle capture size"
+msgstr "vidējasi tveršanas izmērs"
+
+#: ../src/main.c:69
+msgid "use read() rather than mmap()"
+msgstr "izmanto read() retāk nekā mmap()"
+
+#: ../src/main.c:91
+msgid "camorama"
+msgstr "camorama"
+
+#: ../src/main.c:104
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Camorama versija %s\n"
+"\n"
+
+#: ../src/main.c:238
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "nevar atrast galveno faila saskarni (camorama.glade)."
+
+#: ../src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "nevar atrast pixeļksrtes failu: %s"
+
+#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
+#: ../src/v4l.c:226 ../src/v4l.c:241
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"nevar piekļūt video iekārtai (%s).\n"
+"lūdzu pārbaudiet savienojumu."

@@ -25,8 +25,11 @@ user-install: $(app_DATA) $(keys_DATA)
 	cp $(keys_DATA) ~/.gnome/mime-info/
 
 install-data-local:
-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) 
+	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(schema_DATA) 
 	$(GCONFTOOL) --shutdown
 
 EXTRA_DIST = $(glade_DATA) $(schema_in_files) $(stuff_DATA)
+
+CLEANFILES=\
+	$(schema_DATA)
 

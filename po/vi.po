@@ -1,484 +1,541 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Vietnamese translation for Camorama.
+# Copyright © 2003-2006 Gnome i18n Project for Vietnamese.
 # T.M.Thanh <tmthanh@yahoo.com>, 2003.
-#
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2006.
+# 
 msgid ""
-msgstr ""
-"Project-Id-Version: Carmorama VERSION\n"
-"POT-Creation-Date: 2003-02-07 15:53-0500\n"
-"PO-Revision-Date: 2003-01-27 21:50+0700\n"
-"Last-Translator: Trinh Minh Thanh <tmthanh@yahoo.com>\n"
-"Language-Team: Gnome-Vi <Gnomevi-list@lists.sourceforge.net>\n"
+""
+msgstr "Project-Id-Version: camorama Gnome HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-21 02:11+0100\n"
+"PO-Revision-Date: 2006-02-21 17:46+1030\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: LocFactoryEditor 1.6b36\n"
 
-#: data/camorama.glade.h:1
+#:../camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Bộ xem máy ảnh Mạng Camorama"
+
+#:../camorama.desktop.in.h:2 ../src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr "Xem, sửa đổi và lưu ảnh từ máy ảnh Mạng."
+
+#:../data/camorama.glade.h:1
 msgid "     "
 msgstr "     "
 
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Tác động</span>"
-
-#: data/camorama.glade.h:4
+#:../data/camorama.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Tổng quát</span>"
 
-#: data/camorama.glade.h:5
+#:../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Kiểu ảnh</span>"
 
-#: data/camorama.glade.h:6
+#:../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Ghi dữ kiện cục bộ</span>"
+msgstr "<span weight=\"bold\">Bắt ảnh cục bộ</span>"
 
-#: data/camorama.glade.h:7
+#:../data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Ghi dữ kiện ở xa</span>"
+msgstr "<span weight=\"bold\">Bắt ảnh ở xa</span>"
 
-#: data/camorama.glade.h:8
+#:../data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Ghi thời</span>"
 
-#: data/camorama.glade.h:9
+#:../data/camorama.glade.h:7
 msgid "Add a timestamp to captured images"
-msgstr ""
+msgstr "Thêm nhãn thời gian vào ảnh mới bắt."
 
-#: data/camorama.glade.h:10
-msgid "Add timestamp to captured images"
-msgstr ""
-
-#: data/camorama.glade.h:11
+#:../data/camorama.glade.h:8
 msgid "Append time to filename"
-msgstr ""
+msgstr "Phụ thêm thời gian vào tên tập tin."
 
-#: data/camorama.glade.h:12
+#:../data/camorama.glade.h:9
 msgid "Automatic Capture"
-msgstr ""
+msgstr "Tự động bắt"
 
-#: data/camorama.glade.h:13
-msgid "Black & White"
-msgstr "Đen & Trắng"
+#:../data/camorama.glade.h:10
+msgid "Brightness:"
+msgstr "Độ sáng:"
 
-#: data/camorama.glade.h:14
-msgid "Brightness"
-msgstr "Độ sáng"
-
-#: data/camorama.glade.h:15
+#:../data/camorama.glade.h:11
 msgid "Camorama-libglade"
-msgstr ""
+msgstr "Camorama-libglade"
 
-#: data/camorama.glade.h:16
+#:../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
-msgstr ""
+msgstr "Thời gian giữa hai lần bắt (theo phút):"
 
-#: data/camorama.glade.h:17
-msgid "Color correction"
-msgstr "Hiệu chỉnh màu"
+#:../data/camorama.glade.h:13
+msgid "Color:"
+msgstr "Màu :"
 
-#: data/camorama.glade.h:18
-msgid "Color threshold"
-msgstr "Ngưỡng màu"
+#:../data/camorama.glade.h:14
+msgid "Contrast:"
+msgstr "Độ tương phản:"
 
-#: data/camorama.glade.h:19
-msgid "Colour"
-msgstr "Màu"
-
-#: data/camorama.glade.h:20
-msgid "Contrast"
-msgstr "Độ tương phản"
-
-#: data/camorama.glade.h:21
+#:../data/camorama.glade.h:15
 msgid "Draw date and time"
-msgstr ""
+msgstr "Vẽ ngày giờ"
 
-#: data/camorama.glade.h:22
+#:../data/camorama.glade.h:16
 msgid "FTP server: "
-msgstr "Máy chủ FTP: "
+msgstr "Máy phục vụ FTP: "
 
-#: data/camorama.glade.h:23
+#:../data/camorama.glade.h:17
 msgid "Filename"
 msgstr "Tên tập tin"
 
-#: data/camorama.glade.h:24
+#:../data/camorama.glade.h:18
 msgid "General"
 msgstr "Tổng quát"
 
-#: data/camorama.glade.h:25
-msgid "Hue"
-msgstr ""
+#:../data/camorama.glade.h:19
+msgid "Hue:"
+msgstr "Sắc màu :"
 
-#: data/camorama.glade.h:26
-msgid "Laplace"
-msgstr ""
+#:../data/camorama.glade.h:20
+msgid "Large"
+msgstr "Lớn"
 
-#: data/camorama.glade.h:27
+#:../data/camorama.glade.h:21
 msgid "Local Capture"
-msgstr "Ghi dữ liệu cục bộ"
+msgstr "Bắt ảnh cục bộ"
 
-#: data/camorama.glade.h:28
-msgid "Mirror image"
-msgstr "Ảnh phản chiếu"
+#:../data/camorama.glade.h:22
+msgid "Medium"
+msgstr "Vừa"
 
-#: data/camorama.glade.h:29
-msgid "Negative"
-msgstr "Âm bản"
-
-#: data/camorama.glade.h:30
+#:../data/camorama.glade.h:23
 msgid "Password:"
 msgstr "Mật khẩu:"
 
-#: data/camorama.glade.h:31
+#:../data/camorama.glade.h:24
 msgid "Preferences"
 msgstr "Tùy thích"
 
-#: data/camorama.glade.h:32
+#:../data/camorama.glade.h:25
 msgid "Remote Capture"
-msgstr "Ghi dữ liệu ở xa"
+msgstr "Bắt ảnh ở xa"
 
-#: data/camorama.glade.h:33
+#:../data/camorama.glade.h:26
 msgid "Save directory:"
-msgstr "Thư mục lưu:"
+msgstr "Thư mục lưu :"
 
-#: data/camorama.glade.h:34
+#:../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
-msgstr "Lưu tập tin theo định dạng jpeg"
+msgstr "Lưu tập tin dạng JPEG"
 
-#: data/camorama.glade.h:35
+#:../data/camorama.glade.h:28
 msgid "Save files in png format"
-msgstr "Lưu tập tin theo định dạng png"
+msgstr "Lưu tập tin dạng PNG"
 
-#: data/camorama.glade.h:36
+#:../data/camorama.glade.h:29
 msgid "Show Adjustments"
-msgstr ""
+msgstr "Hiện cách điều chỉnh"
 
-#: data/camorama.glade.h:37
-msgid "Smoothing"
-msgstr ""
+#:../data/camorama.glade.h:30
+msgid "Show Effects"
+msgstr "Hiện hiệu ứng"
 
-#: data/camorama.glade.h:38
-msgid "Sobel"
-msgstr ""
+#:../data/camorama.glade.h:31
+msgid "Small"
+msgstr "Nhỏ"
 
-#: data/camorama.glade.h:39
+#:../data/camorama.glade.h:32
 msgid "String:"
-msgstr "Chuỗi:"
+msgstr "Chuỗi :"
 
-#: data/camorama.glade.h:40
+#:../data/camorama.glade.h:33
 msgid "Take Picture"
 msgstr "Chụp ảnh"
 
-#: data/camorama.glade.h:41
-msgid "Threshold"
-msgstr "Ngưỡng"
-
-#: data/camorama.glade.h:42
+#:../data/camorama.glade.h:34
 msgid "Timestamp"
-msgstr ""
+msgstr "Ghi giờ"
 
-#: data/camorama.glade.h:43
+#:../data/camorama.glade.h:35
 msgid "Use custom string"
-msgstr "Dùng chuỗi tùy chọn"
+msgstr "Dùng chuỗi tự chọn"
 
-#: data/camorama.glade.h:44
+#:../data/camorama.glade.h:36
 msgid "Username:"
-msgstr "Tên người dùng: "
+msgstr "Tên người dùng:"
 
-#: data/camorama.glade.h:45
-msgid "Wacky"
-msgstr ""
+#:../data/camorama.glade.h:37
+msgid "White Balance:"
+msgstr "Cân bằng trắng:"
 
-#: data/camorama.glade.h:46
-msgid "White Balance"
-msgstr "Cân bằng trắng"
-
-#: data/camorama.glade.h:47
+#:../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
-msgstr "Th_ư mục chứa ảnh ghi được:"
+msgstr "Th_ư mục chứa ảnh đã bắt:"
 
-#: data/camorama.glade.h:48
+#:../data/camorama.glade.h:39
 msgid "_Enable local capture"
-msgstr "_Bật chạy ghi dữ liệu cục bộ"
+msgstr "_Bật bắt ảnh cục bộ"
 
-#: data/camorama.glade.h:49
+#:../data/camorama.glade.h:40
 msgid "_Enable remote capture"
-msgstr "_Bật chạy ghi dữ liệu từ xa"
+msgstr "_Bật bắt ảnh từ xa"
 
-#: data/camorama.glade.h:50
+#:../data/camorama.glade.h:41
 msgid "_Filename for pictures:"
 msgstr "T_ên tập tin của ảnh:"
 
-#: data/camorama.glade.h:51
+#:../data/camorama.glade.h:42
 msgid "ftp.yourdomain.org"
-msgstr "ftp.yourdomain.org"
+msgstr "ftp.miềnbạn.org"
 
-#: data/camorama.glade.h:52
+#:../data/camorama.glade.h:43
 msgid "path/to/save/to"
-msgstr "path/to/save/to"
+msgstr "đường/dẫn/lưu"
 
-#: data/camorama.glade.h:53
+#:../data/camorama.glade.h:44
 msgid "webcam-capture"
-msgstr ""
+msgstr "bắt ảnh Mạng"
 
-#: data/camorama.glade.h:54
+#:../data/camorama.glade.h:45
 msgid "webcamshot"
-msgstr ""
+msgstr "chụp ảnh Mạng"
 
-#: data/camorama.glade.h:55
+#:../data/camorama.glade.h:46
 msgid "your-password"
 msgstr "mật khẩu của bạn"
 
-#: data/camorama.glade.h:56
+#:../data/camorama.glade.h:47
 msgid "your-username"
 msgstr "tên người dùng của bạn"
 
-#: data/camorama.glade.h:57
+#:../data/camorama.glade.h:48
 msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
+msgstr "<~/.gnome-desktop>"
 
-#: data/camorama.schemas.in.h:1
+#:../data/camorama.schemas.in.h:1
 msgid "Append timestamp to filename"
-msgstr ""
+msgstr "Phụ thêm nhãn thời gian vào tên tập tin"
 
-#: data/camorama.schemas.in.h:2
+#:../data/camorama.schemas.in.h:2
 msgid "Append timestamp to remote filename"
-msgstr ""
+msgstr "Phụ thêm nhãn thời gian vào tên tập tin ở xa"
 
-#: data/camorama.schemas.in.h:3
+#:../data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr ""
+msgstr "Phụ thêm nhãn thời gian, bằng giờ UNIX, vào cuối cùng mọi tên tập tin."
 
-#: data/camorama.schemas.in.h:4
+#:../data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr ""
+msgstr "Phụ thêm nhãn thời gian, bằng giờ UNIX, vào cuối cùng mọi tên tập tin ở xa."
 
-#: data/camorama.schemas.in.h:5
+#:../data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
-msgstr ""
+msgstr "Chuỗi tự chọn ghi giờ"
 
-#: data/camorama.schemas.in.h:6
+#:../data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr ""
+msgstr "Định nghĩa chuỗi tự chọn cần chèn vào ảnh."
 
-#: data/camorama.schemas.in.h:7
+#:../data/camorama.schemas.in.h:7
 msgid "Filename for local captures"
-msgstr ""
+msgstr "Tên tập tin khi bắt cục bộ"
 
-#: data/camorama.schemas.in.h:8
+#:../data/camorama.schemas.in.h:8
 msgid "Filename for saving captured pictures to locally"
-msgstr ""
+msgstr "Tên tập tin khi lưu ảnh đã bắt một cách địa phương."
 
-#: data/camorama.schemas.in.h:9
+#:../data/camorama.schemas.in.h:9
 msgid "Folder for local captures"
-msgstr ""
+msgstr "thư mục khi bắt cục bộ"
 
-#: data/camorama.schemas.in.h:10
+#:../data/camorama.schemas.in.h:10
 msgid "Folder for remote captures"
-msgstr ""
+msgstr "thư mục khi bắt từ xa"
 
-#: data/camorama.schemas.in.h:11
+#:../data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr ""
+msgstr "thư mục nơi cần lưu ảnh đã bắt từ xa."
 
-#: data/camorama.schemas.in.h:12
+#:../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr ""
+msgstr "thư mục nơi cần lưu ảnh đã bắt một cách địa phương."
 
-#: data/camorama.schemas.in.h:13
+#:../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
-msgstr "Hostname cho máy chủ FTP"
+msgstr "Tên máy cho máy phục vụ FTP"
 
-#: data/camorama.schemas.in.h:14
+#:../data/camorama.schemas.in.h:14
 msgid "Hostname for the FTP server for remote captures."
-msgstr ""
+msgstr "Tên máy cho máy phục vụ FTP, khi bắt ảnh từ xa."
 
-#: data/camorama.schemas.in.h:15
+#:../data/camorama.schemas.in.h:15
 msgid "Interval for auto-capture"
-msgstr ""
+msgstr "Thời gian giữa hai lần tự động bắt ảnh"
 
-#: data/camorama.schemas.in.h:16
+#:../data/camorama.schemas.in.h:16
 msgid "Local capture image format"
-msgstr ""
+msgstr "Dạng thức ảnh đã bắt cục bộ"
 
-#: data/camorama.schemas.in.h:17
+#:../data/camorama.schemas.in.h:17
 msgid "Name for the filename of uploaded images."
-msgstr ""
+msgstr "Tên cho tên tập tin của ảnh đã tải lên."
 
-#: data/camorama.schemas.in.h:18
+#:../data/camorama.schemas.in.h:18
 msgid "Password for FTP server"
-msgstr "Mật khẩu cho máy chủ FTP"
+msgstr "Mật khẩu cho máy phục vụ FTP"
 
-#: data/camorama.schemas.in.h:19
+#:../data/camorama.schemas.in.h:19
 msgid "Remote capture image format"
-msgstr ""
+msgstr "Dạng thức ảnh đã bắt từ xa"
 
-#: data/camorama.schemas.in.h:20
+#:../data/camorama.schemas.in.h:20
 msgid "Remote save filename"
-msgstr ""
+msgstr "Tên tập tin lưu từ xa"
 
-#: data/camorama.schemas.in.h:21
+#:../data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr ""
+msgstr "Xác định dạng thức ảnh cần dùng cho mọi ảnh đã lưu một cách địa phương."
 
-#: data/camorama.schemas.in.h:22
+#:../data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr ""
+msgstr "Xác định dạng thức ảnh cần dùng cho mọi ảnh đã lưu từ xa."
 
-#: data/camorama.schemas.in.h:23
+#:../data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr ""
+msgstr "Xáx định thời gian giữa hai lần bắt ảnh một cách tự động."
 
-#: data/camorama.schemas.in.h:24
+#:../data/camorama.schemas.in.h:24
 msgid "The password for the FTP account for remote captures."
-msgstr ""
+msgstr "Mật khẩu cho tài khoản FTP khi bắt ảnh từ xa."
 
-#: data/camorama.schemas.in.h:25
+#:../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "Đường dẫn hệ thống tập tin UNIX đến thiết bị được gán cho máy ảnh của bạn."
+
+#:../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
-msgstr ""
+msgstr "Bật/tắt tự động bắt ảnh"
 
-#: data/camorama.schemas.in.h:26
+#:../data/camorama.schemas.in.h:27
 msgid "Toggles automatic capturing of pictures."
-msgstr ""
+msgstr "Bật/tắt khả năng tự động bắt ảnh."
 
-#: data/camorama.schemas.in.h:27
+#:../data/camorama.schemas.in.h:28
 msgid "Toggles local capture"
-msgstr ""
+msgstr "Bật/tắt bắt ảnh cục bộ"
 
-#: data/camorama.schemas.in.h:28
+#:../data/camorama.schemas.in.h:29
 msgid "Toggles remote capture"
-msgstr ""
+msgstr "Bật/tắt bắt ảnh từ xa"
 
-#: data/camorama.schemas.in.h:29
+#:../data/camorama.schemas.in.h:30
 msgid "Toggles the custom string"
-msgstr ""
+msgstr "Bật/tắt chuỗi tự chọn"
 
-#: data/camorama.schemas.in.h:30
+#:../data/camorama.schemas.in.h:31
 msgid "Toggles the datestamp in captures"
-msgstr ""
+msgstr "Bật/tắt ghi ngày vào ảnh đã bắt"
 
-#: data/camorama.schemas.in.h:31
+#:../data/camorama.schemas.in.h:32
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr ""
+msgstr "Bật/tắt vẽ nhãn ngày trên ảnh đã bắt."
 
-#: data/camorama.schemas.in.h:32
+#:../data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr ""
+msgstr "Bật/tắt chèn nhãn thời gian vào ảnh địa phương."
 
-#: data/camorama.schemas.in.h:33
+#:../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr ""
+msgstr "Bật/tắt chèn nhãn thời gian vào ảnh cần tải lên qua FTP."
 
-#: data/camorama.schemas.in.h:34
+#:../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Bật/tắt dùng cái nút để điều chỉnh bộ lọc ảnh động."
+
+#:../data/camorama.schemas.in.h:36
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr ""
+msgstr "Bật/tắt dùng chuỗi tự chọn cho nhãn thời gian trong ảnh."
 
-#: data/camorama.schemas.in.h:35
+#:../data/camorama.schemas.in.h:37
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
+msgstr "Bật/tắt dùng con trượt để điều chỉnh thuộc tính ảnh động."
 
-#: data/camorama.schemas.in.h:36
+#:../data/camorama.schemas.in.h:38
 msgid "Toggles the video adjustment sliders"
-msgstr ""
+msgstr "Bật/tắt con trượt điều chỉnh ảnh động."
 
-#: data/camorama.schemas.in.h:37
+#:../data/camorama.schemas.in.h:39
+msgid "Toggles the video effects buttons"
+msgstr "Bật/tắt cái nút hiệu ứng ảnh động."
+
+#:../data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for local captures"
-msgstr ""
+msgstr "Bật/tắt ghi giờ vào ảnh đã bắt cục bộ."
 
-#: data/camorama.schemas.in.h:38
+#:../data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
-msgstr ""
+msgstr "Bật/tắt ghi giờ vào ảnh đã bắt từ xa."
 
-#: data/camorama.schemas.in.h:39
+#:../data/camorama.schemas.in.h:42
 msgid "Username for FTP server"
-msgstr "Tên người dùng cho máy chủ FTP"
+msgstr "Tên người dùng cho máy phục vụ FTP"
 
-#: data/camorama.schemas.in.h:40
+#:../data/camorama.schemas.in.h:43
 msgid "Username to use for FTP uploads of captured pictures"
-msgstr ""
+msgstr "Tên người dùng cần dùng khi tải ảnh đã bắt lên qua FTP."
 
-#: data/camorama.schemas.in.h:41
+#:../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "Thiết bị ảnh động"
+
+#:../data/camorama.schemas.in.h:45
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
-msgstr ""
+msgstr "Khi bắt ảnh dùng cái nút « Chụp ảnh », hoặc thông qua khả năng tự động bắt, "
+"phím này bật/tắt lưu ảnh một cách địa phương."
 
-#: data/camorama.schemas.in.h:42
+#:../data/camorama.schemas.in.h:46
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
+msgstr "Khi bắt ảnh dùng cái nút « Chụp ảnh », hoặc thông qua khả năng tự động bắt, "
+"phím này bật/tắt lưu ảnh vào máy phục vụ ở xa."
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:317
+#:../src/callbacks.c:500
 msgid "translator_credits"
-msgstr "Đóng góp dịch thuật"
+msgstr "Nhóm Việt hóa Gnome <gnomevi-list@lists.sourceforge.net>"
 
-#: src/callbacks.c:324
-msgid "View, alter and save images from a webcam"
-msgstr ""
+#:../src/callbacks.c:509
+msgid "Camorama"
+msgstr "Camorama"
 
-#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
-#: src/callbacks.c:465
-#, fuzzy
+#:../src/callbacks.c:619 ../src/callbacks.c:653 ../src/callbacks.c:703
+#:../src/callbacks.c:716
 msgid "Unable to capture image."
-msgstr "_Bật chạy ghi dữ liệu cục bộ"
+msgstr "Không thể bắt ảnh."
 
-#: src/main.c:32
+#:../src/eggtrayicon.c:127
+msgid "Orientation"
+msgstr "Hướng"
+
+#:../src/eggtrayicon.c:128
+msgid "The orientation of the tray."
+msgstr "Hướng khay."
+
+#:../src/fileio.c:120 ../src/fileio.c:266
+msgid "Could save temporary image file in /tmp."
+msgstr "Có thể lưu tập tin ảnh tạm thời vào </tmp>."
+
+#:../src/fileio.c:138
+#,c-format
+msgid "Unable to create image '%s'."
+msgstr "Không thể tạo ảnh « %s »."
+
+#:../src/fileio.c:147 ../src/fileio.c:430
+#,c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Không thể lưu ảnh « %s/%s »."
+
+#:../src/fileio.c:274
+#,c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr "Không thể mở tập tin ảnh tạm thời « %s ».\n"
+"Như thế thì không thể tải ảnh lên."
+
+#:../src/fileio.c:312
+#,c-format
+msgid "An error occurred opening %s."
+msgstr "Gặp lỗi khi mở %s."
+
+#:../src/fileio.c:324
+#,c-format
+msgid "An error occurred writing to %s."
+msgstr "Gặp lỗi khi ghi vào %s."
+
+#:../src/fileio.c:404
+#,c-format
+msgid "Could not create directory '%s'."
+msgstr "Không thể tạo thư mục « %s »."
+
+#:../src/fileio.c:415
+#,c-format
+msgid "Could not change to directory '%s'."
+msgstr "Không thể chuyển đổi sang thư mục « %s »."
+
+#:../src/main.c:53
 msgid "show version and exit"
-msgstr "hiện phiên bản và thoát ra"
+msgstr "hiện phiên bản rồi thoát"
 
-#: src/main.c:33
+#:../src/main.c:55
 msgid "v4l device to use"
-msgstr ""
+msgstr "thiết bị v4l cần dùng"
 
-#: src/main.c:34
-msgid "enable debuging code"
-msgstr ""
+#:../src/main.c:57
+msgid "enable debugging code"
+msgstr "bật mã gỡ lỗi"
 
-#: src/main.c:35
+#:../src/main.c:58
 msgid "capture width"
-msgstr ""
+msgstr "rộng bắt"
 
-#: src/main.c:36
+#:../src/main.c:60
 msgid "capture height"
-msgstr ""
+msgstr "cao bắt"
 
-#: src/main.c:37
+#:../src/main.c:63
 msgid "maximum capture size"
-msgstr ""
+msgstr "kích cỡ bắt tối đa"
 
-#: src/main.c:38
+#:../src/main.c:65
 msgid "minimum capture size"
-msgstr ""
+msgstr "kích cỡ bắt tối thiểu"
 
-#: src/main.c:39
+#:../src/main.c:67
 msgid "middle capture size"
-msgstr ""
+msgstr "kích cỡ bắt vừa"
 
-#: src/main.c:57
+#:../src/main.c:69
+msgid "use read() rather than mmap()"
+msgstr "dùng « read() » hơn là « mmap() »"
+
+#:../src/main.c:91
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:71
-#, c-format
+#:../src/main.c:104
+#,c-format
 msgid ""
 "\n"
 "\n"
 "Camorama version %s\n"
 "\n"
-msgstr ""
+msgstr "\n"
+"\n"
+"Camorama phiên bản %s\n"
+"\n"
 
-#: src/main.c:174
+#:../src/main.c:238
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr ""
+msgstr "Không thể tìm tập tin giao diện chính (camorama.glade)."
 
-#: src/support.c:66
-#, c-format
+#:../src/support.c:69
+#,c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Không tìm thấy tập tin pixmap: %s"
+
+#:../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
+#:../src/v4l.c:226 ../src/v4l.c:241
+#,c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr "Không thể kết nối đến thiết bị ảnh động (%s).\n"
+"Vui lòng kiểm tra lại kết nối hoạt động."

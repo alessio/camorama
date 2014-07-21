@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-06 22:30+0200\n"
-"PO-Revision-Date: 2003-08-06 22:32+0200\n"
+"POT-Creation-Date: 2003-12-27 20:01+0100\n"
+"PO-Revision-Date: 2003-12-27 20:01+0100\n"
 "Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama - netkamerafremviser"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:515
+#: camorama.desktop.in.h:2 src/callbacks.c:510
 msgid "View, alter and save images from a webcam"
 msgstr "Vis, justér og gem billeder fra et netkamera"
 
@@ -84,15 +84,15 @@ msgid "Capture Interval (in minutes):"
 msgstr "Optagelseinterval (i minutter):"
 
 #: data/camorama.glade.h:16
-msgid "Colour correction"
+msgid "Color correction"
 msgstr "Farvekorrigering"
 
 #: data/camorama.glade.h:17
-msgid "Colour threshold"
+msgid "Color threshold"
 msgstr "Farvetærskel"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Farve:"
 
 #: data/camorama.glade.h:19
@@ -396,35 +396,43 @@ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "Om der skal indsættes et tidsstempel i billeder til FTP-serveren."
 
 #: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Om knapperne skal bruges til at justere videofiltrene"
+
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr ""
 "Om den brugerdefinerede tekst skal benyttes til tidsstemplet i billeder."
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Om skyderne skal bruges til at justere videoegenskaberne"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "Videojusteringsskydere"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Videoeffektknapper"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "Tidsstempel i lokale optagelser"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "Tidsstempel i fjerne optagelser"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "Brugernavn til FTP-server"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "Brugernavn som skal bruges til FTP-forsendelser af optagede billeder"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
@@ -432,7 +440,7 @@ msgstr ""
 "Når billeder gemmes vha. knappen \"Gem billede\" eller med automatisk "
 "optagelse, angiver denne nøgle om billederne gemmes lokalt."
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -444,8 +452,12 @@ msgstr ""
 msgid "translator_credits"
 msgstr "Ole Laursen <olau@hardworking.dk>"
 
-#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
-#: src/callbacks.c:757
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Camorama"
+
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
 msgstr "Kan ikke optage billede."
 
@@ -500,47 +512,47 @@ msgstr "Kunne ikke oprette mappen '%s'."
 msgid "Could not change to directory '%s'."
 msgstr "Kunne ikke skifte til mappen '%s'."
 
-#: src/main.c:413
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "Vis versionsnummer og afslut"
 
-#: src/main.c:415
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "v4l-enhed som skal benyttes"
 
-#: src/main.c:417
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "Aktivér fejlsøgningskode"
 
-#: src/main.c:418
+#: src/main.c:428
 msgid "capture width"
 msgstr "Optagelsesbredde"
 
-#: src/main.c:420
+#: src/main.c:430
 msgid "capture height"
 msgstr "Optagelseshøjde"
 
-#: src/main.c:423
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "Største optagelsesstørrelse"
 
-#: src/main.c:425
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "Mindste optagelsesstørrelse"
 
-#: src/main.c:427
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "Mellemste optagelsesstørrelse"
 
-#: src/main.c:429
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "Brug read() i stedet for mmap()"
 
-#: src/main.c:451
+#: src/main.c:461
 msgid "camorama"
 msgstr "Camorama"
 
-#: src/main.c:465
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -553,7 +565,7 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:597
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Kunne ikke finde hovedgrænsefladefilen (camorama.glade)."
 
@@ -563,8 +575,8 @@ msgstr "Kunne ikke finde hovedgrænsefladefilen (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Kunne ikke finde billedfilen: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

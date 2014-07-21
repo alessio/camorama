@@ -1,0 +1,594 @@
+# Catalan translation of Camorama.
+# Copyright © 2003 Free Software Foundation, Inc.
+# This file is distributed under the same license as the camorama package.
+# Francesc Dorca <f.dorca@filnet.es>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama 0.17\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-02 14:04+0100\n"
+"PO-Revision-Date: 2005-02-26 17:37+0100\n"
+"Last-Translator: Francesc Dorca <f.dorca@filnet.es>\n"
+"Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Visualitzador de càmera web Camorama"
+
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr "Visualitza, altera i desa imatges d'una càmera web"
+
+#: ../data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: ../data/camorama.glade.h:2
+msgid "*"
+msgstr "*"
+
+#: ../data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Effects</span>"
+msgstr "<span weight=\"bold\">Efectes</span>"
+
+#: ../data/camorama.glade.h:4
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">General</span>"
+
+#: ../data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Tipus d'imatge</span>"
+
+#: ../data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Captura local</span>"
+
+#: ../data/camorama.glade.h:7
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Captura remota</span>"
+
+#: ../data/camorama.glade.h:8
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Marca horària</span>"
+
+#: ../data/camorama.glade.h:9
+msgid "Add a timestamp to captured images"
+msgstr "Afegeix una marca horària a les imatges capturades"
+
+#: ../data/camorama.glade.h:10
+msgid "Append time to filename"
+msgstr "Annexa el temps al nom de fitxer"
+
+#: ../data/camorama.glade.h:11
+msgid "Automatic Capture"
+msgstr "Captura automàtica"
+
+#: ../data/camorama.glade.h:12
+msgid "Black & white"
+msgstr "Blanc i negre"
+
+#: ../data/camorama.glade.h:13
+msgid "Brightness:"
+msgstr "Brillantor:"
+
+#: ../data/camorama.glade.h:14
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: ../data/camorama.glade.h:15
+msgid "Capture Interval (in minutes):"
+msgstr "Interval de captura (en minuts):"
+
+#: ../data/camorama.glade.h:16
+msgid "Color correction"
+msgstr "Correcció del color"
+
+#: ../data/camorama.glade.h:17
+msgid "Color threshold"
+msgstr "Llindar del color"
+
+#: ../data/camorama.glade.h:18
+msgid "Color:"
+msgstr "Color:"
+
+#: ../data/camorama.glade.h:19
+msgid "Contrast:"
+msgstr "Contrast:"
+
+#: ../data/camorama.glade.h:20
+msgid "Draw date and time"
+msgstr "Dibuixa la data i l'hora"
+
+#: ../data/camorama.glade.h:21
+msgid "FTP server: "
+msgstr "Servidor d'FTP:"
+
+#: ../data/camorama.glade.h:22
+msgid "Filename"
+msgstr "Nom de fitxer"
+
+#: ../data/camorama.glade.h:23
+msgid "General"
+msgstr "General"
+
+#: ../data/camorama.glade.h:24
+msgid "Hue:"
+msgstr "Matís:"
+
+#: ../data/camorama.glade.h:25
+msgid "Laplace"
+msgstr "Laplace"
+
+#: ../data/camorama.glade.h:26
+msgid "Large"
+msgstr "Gran"
+
+#: ../data/camorama.glade.h:27
+msgid "Local Capture"
+msgstr "Captura local"
+
+# És la imatge (josep)
+#: ../data/camorama.glade.h:28
+msgid "Medium"
+msgstr "Mitjana"
+
+#: ../data/camorama.glade.h:29
+msgid "Mirror image"
+msgstr "Imatge especular"
+
+#: ../data/camorama.glade.h:30
+msgid "Negative"
+msgstr "Negatiu"
+
+#: ../data/camorama.glade.h:31
+msgid "Password:"
+msgstr "Contrasenya:"
+
+#: ../data/camorama.glade.h:32
+msgid "Preferences"
+msgstr "Preferències"
+
+#: ../data/camorama.glade.h:33
+msgid "Remote Capture"
+msgstr "Captura remota"
+
+#: ../data/camorama.glade.h:34
+msgid "Save directory:"
+msgstr "Directori on desar:"
+
+#: ../data/camorama.glade.h:35
+msgid "Save files in jpeg format"
+msgstr "Desa els fitxers en format jpeg"
+
+#: ../data/camorama.glade.h:36
+msgid "Save files in png format"
+msgstr "Desa els fitxers en format png"
+
+#: ../data/camorama.glade.h:37
+msgid "Show Adjustments"
+msgstr "Mostra les opcions"
+
+#: ../data/camorama.glade.h:38
+msgid "Show Effects"
+msgstr "Mostra els efectes"
+
+# La imatge (josep)
+#: ../data/camorama.glade.h:39
+msgid "Small"
+msgstr "Petita"
+
+#: ../data/camorama.glade.h:40
+msgid "Smoothing"
+msgstr "Suavitzat"
+
+#: ../data/camorama.glade.h:41
+msgid "Sobel"
+msgstr "Sobel"
+
+#: ../data/camorama.glade.h:42
+msgid "String:"
+msgstr "Cadena:"
+
+# Les fotos es "fan" no es "prenen" (josep)
+#: ../data/camorama.glade.h:43
+msgid "Take Picture"
+msgstr "Fes una captura"
+
+#: ../data/camorama.glade.h:44
+msgid "Threshold:"
+msgstr "Llindar:"
+
+#: ../data/camorama.glade.h:45
+msgid "Timestamp"
+msgstr "Marca horària"
+
+#: ../data/camorama.glade.h:46
+msgid "Use custom string"
+msgstr "Usa una cadena personalitzada"
+
+#: ../data/camorama.glade.h:47
+msgid "Username:"
+msgstr "Nom d'usuari:"
+
+#: ../data/camorama.glade.h:48
+msgid "Wacky"
+msgstr "Boig"
+
+#: ../data/camorama.glade.h:49
+msgid "White Balance:"
+msgstr "Equilibri de blancs:"
+
+#: ../data/camorama.glade.h:50
+msgid "_Directory for captured pics:"
+msgstr "_Directori per a imatges capturades:"
+
+#: ../data/camorama.glade.h:51
+msgid "_Enable local capture"
+msgstr "_Permet la captura local"
+
+#: ../data/camorama.glade.h:52
+msgid "_Enable remote capture"
+msgstr "_Permet la captura remota"
+
+#: ../data/camorama.glade.h:53
+msgid "_Filename for pictures:"
+msgstr "_Nom de fitxer per imatges:"
+
+#: ../data/camorama.glade.h:54
+msgid "ftp.yourdomain.org"
+msgstr "ftp.yourdomain.org"
+
+#: ../data/camorama.glade.h:55
+msgid "path/to/save/to"
+msgstr "camí/on/desar"
+
+#: ../data/camorama.glade.h:56
+msgid "webcam-capture"
+msgstr "captura de càmera web"
+
+#: ../data/camorama.glade.h:57
+msgid "webcamshot"
+msgstr "instantània de càmera web"
+
+#: ../data/camorama.glade.h:58
+msgid "your-password"
+msgstr "la vostra contrasenya"
+
+#: ../data/camorama.glade.h:59
+msgid "your-username"
+msgstr "el-vostre-nom d'usuari"
+
+#: ../data/camorama.glade.h:60
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: ../data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "Annexa la marca horària al nom del fitxer"
+
+#: ../data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "Annexa la marca horària al nom del fitxer remot"
+
+#: ../data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Annexa la marca horària, en temps UNIX, al final dels noms de fitxer"
+
+#: ../data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Annexa la marca horària, en temps UNIX, al final dels noms de fitxer remots"
+
+#: ../data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "Text personalitzat per a la marca horària"
+
+#: ../data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Defineix una cadena de text personalitzada per inserir-la a la imatge"
+
+#: ../data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "Nom de fitxer per a captures locals"
+
+#: ../data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr "Nom del fitxer per a desar les imatges capturades a localment"
+
+#: ../data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "Carpeta per a captures locals"
+
+#: ../data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "Carpeta per a captures remotes"
+
+#: ../data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "Carpeta on desar imatges capturades remotament"
+
+#: ../data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "Carpeta on desar imatges capturades localment"
+
+#: ../data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "Nom de l'ordinador central per al servidor FTP"
+
+#: ../data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr "Nom del servidor d'FTP per a captures remotes."
+
+#: ../data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr "Interval per a captura automàtica"
+
+#: ../data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "Format d'imatge de captura local"
+
+#: ../data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "Nom del nom de fitxer d'imatges pujades."
+
+#: ../data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "Contrasenya del servidor d'FTP"
+
+#: ../data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "Format d'imatge de captura remota"
+
+#: ../data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "Nom de fitxer en desar remotament"
+
+#: ../data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Especifica el format a utilitzar per a imatges desades localment"
+
+#: ../data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Especifica el format a utilitzar per a imatges desades remotament"
+
+#: ../data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Especifica l'interval per a la captura automàtica d'imatges."
+
+#: ../data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "La contrasenya per al compte FTP per a captures remotes."
+
+#: ../data/camorama.schemas.in.h:25
+msgid "Toggles auto-capture"
+msgstr "Commuta a captura automàtica"
+
+#: ../data/camorama.schemas.in.h:26
+msgid "Toggles automatic capturing of pictures."
+msgstr "Commuta a captura automàtica d'imatges."
+
+#: ../data/camorama.schemas.in.h:27
+msgid "Toggles local capture"
+msgstr "Commuta a captura local"
+
+#: ../data/camorama.schemas.in.h:28
+msgid "Toggles remote capture"
+msgstr "Commuta a captura remota"
+
+#: ../data/camorama.schemas.in.h:29
+msgid "Toggles the custom string"
+msgstr "Commuta a cadena personalitzada"
+
+#: ../data/camorama.schemas.in.h:30
+msgid "Toggles the datestamp in captures"
+msgstr "Commuta a marca horària en captures"
+
+#: ../data/camorama.schemas.in.h:31
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Commuta el dibuix d'una marca de data a les imatges capturades"
+
+#: ../data/camorama.schemas.in.h:32
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Commuta la inserció d'una marca horària a les imatges locals"
+
+#: ../data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Commuta la inserció d'una marca horària a les imatges per a la pujada FTP."
+
+#: ../data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Commuta l'ús dels botons per a ajustar els filtres de vídeo"
+
+#: ../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Commuta l'ús de la cadena personalitzada per a la marca horària a les "
+"imatges."
+
+#: ../data/camorama.schemas.in.h:36
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+"Commuta l'ús de controls de desplaçament per a ajustar les propietats del "
+"vídeo"
+
+#: ../data/camorama.schemas.in.h:37
+msgid "Toggles the video adjustment sliders"
+msgstr "Commuta els controls de desplaçament d'ajust de vídeo"
+
+#: ../data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Commuta els bottons d'efectes de vídeo"
+
+#: ../data/camorama.schemas.in.h:39
+msgid "Toggles timestamp for local captures"
+msgstr "Commuta a marca horària per a captures locals"
+
+#: ../data/camorama.schemas.in.h:40
+msgid "Toggles timestamp for remote captures"
+msgstr "Commuta a marca horària per a captures remotes"
+
+#: ../data/camorama.schemas.in.h:41
+msgid "Username for FTP server"
+msgstr "Nom d'usuari per al servidor d'FTP"
+
+#: ../data/camorama.schemas.in.h:42
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "Nom d'usuari a usar per a pujades FTP d'imatges capturades"
+
+#: ../data/camorama.schemas.in.h:43
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"En capturar imatges mitjançant el botó \"Fes una captura\", o amb la captura "
+"automàtica, aquesta tecla commuta el desar imatges localment."
+
+#: ../data/camorama.schemas.in.h:44
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"En capturar imatges mitjançant el botó \"Fes una captura\", o amb la captura "
+"automàtica, aquesta tecla commuta el desar imatges a un servidor remot."
+
+#: ../src/callbacks.c:500
+msgid "translator_credits"
+msgstr "Francesc Dorca i Badia <f.dorca@filnet.es>"
+
+#: ../src/callbacks.c:509
+msgid "Camorama"
+msgstr "Camorama"
+
+#: ../src/callbacks.c:620 ../src/callbacks.c:682 ../src/callbacks.c:732
+#: ../src/callbacks.c:745
+msgid "Unable to capture image."
+msgstr "No s'ha pogut capturar la imatge."
+
+#: ../src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Orientació"
+
+#: ../src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "L'orientació de la safata."
+
+#: ../src/fileio.c:119 ../src/fileio.c:265
+msgid "Could save temporary image file in /tmp."
+msgstr "No s'ha pogut desar el fitxer temporal d'imatge a /tmp."
+
+#: ../src/fileio.c:137
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "No s'ha pogut crear la imatge «%s»."
+
+#: ../src/fileio.c:146 ../src/fileio.c:429
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "No s'ha pogut desar la imatge «%s/%s»."
+
+#: ../src/fileio.c:273
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"No s'ha pogut obrir el fitxer temporal d'imatge «%s».\n"
+"No es pot pujar la imatge."
+
+#: ../src/fileio.c:311
+#, c-format
+msgid "An error occured opening %s."
+msgstr "S'ha produït un error en obrir %s."
+
+#: ../src/fileio.c:323
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "S'ha produït un error en escriure a %s."
+
+#: ../src/fileio.c:403
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "No s'ha pogut crear el directori «%s»."
+
+#: ../src/fileio.c:414
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "No s'ha pogut canviar al directori «%s»."
+
+#: ../src/main.c:421
+msgid "show version and exit"
+msgstr "mostra la versió i surt"
+
+#: ../src/main.c:423
+msgid "v4l device to use"
+msgstr "dispositiu v4l a usar"
+
+#: ../src/main.c:425
+msgid "enable debuging code"
+msgstr "permet depurar el codi"
+
+#: ../src/main.c:426
+msgid "capture width"
+msgstr "amplada de la captura"
+
+# FIXME: hauria de ser "alçària" (josep)
+#: ../src/main.c:428
+msgid "capture height"
+msgstr "alçada de la captura"
+
+#: ../src/main.c:431
+msgid "maximum capture size"
+msgstr "mida de captura màxima"
+
+#: ../src/main.c:433
+msgid "minimum capture size"
+msgstr "mida de captura mínima"
+
+#: ../src/main.c:435
+msgid "middle capture size"
+msgstr "mida de captura mitjana"
+
+#: ../src/main.c:437
+msgid "use read() rather than mmap()"
+msgstr "useu read() millor que mmap()"
+
+#: ../src/main.c:459
+msgid "camorama"
+msgstr "camorama"
+
+#: ../src/main.c:473
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Camorama versió %s\n"
+"\n"
+
+#: ../src/main.c:599
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "No s'ha trobat el fitxer d'interfície principal (camorama.glade)."
+
+#: ../src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "No s'ha trobat el fitxer de mapa de píxels: %s"
+
+#: ../src/v4l.c:94 ../src/v4l.c:164 ../src/v4l.c:177 ../src/v4l.c:202
+#: ../src/v4l.c:223 ../src/v4l.c:238
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"No s'ha pogut connectar al dispositiu de vídeo (%s).\n"
+"Comproveu-ne la connexió."

@@ -2,6 +2,18 @@
   <schemalist>
 
     <schema>
+      <key>/schemas/apps/camorama/device</key>
+      <applyto>/apps/camorama/device</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>/dev/video0</default>
+      <locale name="C">
+	<short>Video device</short>
+	<long>The unix file system path to the device that's assigned to your camera.</long>
+      </locale>
+    </schema>
+
+    <schema>
       <key>/schemas/apps/camorama/preferences/append_ts_to_file</key>
       <applyto>/apps/camorama/preferences/append_ts_to_file</applyto>
       <owner>camorama</owner>
@@ -251,6 +263,17 @@
       <locale name="C">
 	<short>Toggles the video adjustment sliders</short>
 	<long>Toggles the use of the sliders to adjust the video properties</long>
+      </locale>
+    </schema>
+<schema>
+      <key>/schemas/apps/camorama/preferences/show_effects</key>
+      <applyto>/apps/camorama/preferences/show_effects</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles the video effects buttons</short>
+	<long>Toggles the use of the buttons to adjust the video filters</long>
       </locale>
     </schema>
 

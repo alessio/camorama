@@ -1,0 +1,704 @@
+# translation of camorama to Kinyarwanda.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the camorama package.
+# Steve Murphy <murf@e-tools.com>, 2005
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005..
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-04-01 20:27-0700\n"
+"PO-Revision-Date: 2005-03-31 20:55-0700\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"ULL NAME <EMAIL@ADDRESS>\n"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr ""
+
+#: camorama.desktop.in.h:2 src/callbacks.c:511
+#, fuzzy
+msgid "View, alter and save images from a webcam"
+msgstr "Na Kubika Ishusho Bivuye a"
+
+#: data/camorama.glade.h:1
+msgid "     "
+msgstr ""
+
+#: data/camorama.glade.h:2
+msgid "*"
+msgstr "*"
+
+#: data/camorama.glade.h:3
+#, fuzzy
+msgid "<span weight=\"bold\">Effects</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: data/camorama.glade.h:4
+#, fuzzy
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: data/camorama.glade.h:5
+#, fuzzy
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: data/camorama.glade.h:6
+#, fuzzy
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: data/camorama.glade.h:7
+#, fuzzy
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: data/camorama.glade.h:8
+#, fuzzy
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: data/camorama.glade.h:9
+#, fuzzy
+msgid "Add a timestamp to captured images"
+msgstr "a Kuri Ishusho"
+
+#: data/camorama.glade.h:10
+#, fuzzy
+msgid "Append time to filename"
+msgstr "Igihe Kuri Izina ry'idosiye:"
+
+#: data/camorama.glade.h:11
+msgid "Automatic Capture"
+msgstr ""
+
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Impress.xcs:....Misc.Preview..5381.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Impress.xcs:....Print.Other.Quality..2.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Draw.xcs:....Misc.Preview..5381.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Draw.xcs:....Print.Other.Quality..2.text
+#: data/camorama.glade.h:12
+#, fuzzy
+msgid "Black & white"
+msgstr "Umukara/ Umweru"
+
+# sw/source\ui\utlui\attrdesc.src:STR_LUMINANCE.text
+#: data/camorama.glade.h:13
+#, fuzzy
+msgid "Brightness:"
+msgstr "Urumuri:"
+
+#: data/camorama.glade.h:14
+msgid "Camorama-libglade"
+msgstr ""
+
+#: data/camorama.glade.h:15
+#, fuzzy
+msgid "Capture Interval (in minutes):"
+msgstr "in Iminota"
+
+#: data/camorama.glade.h:16
+msgid "Color correction"
+msgstr ""
+
+#: data/camorama.glade.h:17
+msgid "Color threshold"
+msgstr ""
+
+#: data/camorama.glade.h:18
+msgid "Color:"
+msgstr "Ibara:"
+
+# sw/source\ui\utlui\attrdesc.src:STR_CONTRAST.text
+#: data/camorama.glade.h:19
+#, fuzzy
+msgid "Contrast:"
+msgstr "Inyuranyamigaragarire:"
+
+#: data/camorama.glade.h:20
+#, fuzzy
+msgid "Draw date and time"
+msgstr "Itariki Na Igihe"
+
+#: data/camorama.glade.h:21
+#, fuzzy
+msgid "FTP server: "
+msgstr "Seriveri"
+
+#: data/camorama.glade.h:22
+msgid "Filename"
+msgstr "Izina ry'idosiye"
+
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+#: data/camorama.glade.h:23
+msgid "General"
+msgstr "Rusange"
+
+# svtools/source\dialogs\colrdlg.src:DLG_COLOR.FT_HUE.text
+#: data/camorama.glade.h:24
+#, fuzzy
+msgid "Hue:"
+msgstr "Ibara"
+
+#: data/camorama.glade.h:25
+msgid "Laplace"
+msgstr ""
+
+# offmgr/source\offapp\dialog\optgdlg.src:OFA_TP_VIEW.LB_BIG.3.text
+#: data/camorama.glade.h:26
+msgid "Large"
+msgstr "Binini"
+
+#: data/camorama.glade.h:27
+msgid "Local Capture"
+msgstr ""
+
+#: data/camorama.glade.h:28
+msgid "Medium"
+msgstr "Hagati"
+
+#: data/camorama.glade.h:29
+#, fuzzy
+msgid "Mirror image"
+msgstr "Ishusho"
+
+#: data/camorama.glade.h:30
+msgid "Negative"
+msgstr ""
+
+# sc/source\ui\src\scstring.src:SCSTR_PASSWORD.text
+#: data/camorama.glade.h:31
+msgid "Password:"
+msgstr "Ijambobanga:"
+
+# extracted from content/PrefsWindow.xul
+# LOCALIZATION NOTE : FILE UI for the outer parts of the Prefs dialog
+#: data/camorama.glade.h:32
+msgid "Preferences"
+msgstr "Ibyahisemo"
+
+#: data/camorama.glade.h:33
+msgid "Remote Capture"
+msgstr ""
+
+#: data/camorama.glade.h:34
+#, fuzzy
+msgid "Save directory:"
+msgstr "Kubika bushyinguro"
+
+#: data/camorama.glade.h:35
+#, fuzzy
+msgid "Save files in jpeg format"
+msgstr "Kubika Idosiye in JPEG Imiterere"
+
+#: data/camorama.glade.h:36
+#, fuzzy
+msgid "Save files in png format"
+msgstr "Kubika Idosiye in png Imiterere"
+
+#: data/camorama.glade.h:37
+msgid "Show Adjustments"
+msgstr ""
+
+#: data/camorama.glade.h:38
+msgid "Show Effects"
+msgstr ""
+
+# officecfg/registry\schema\org\openoffice\Office\Common.xcs:....View.Window.Flag..02.text
+#: data/camorama.glade.h:39
+msgid "Small"
+msgstr "Gitoya"
+
+#: data/camorama.glade.h:40
+msgid "Smoothing"
+msgstr ""
+
+#: data/camorama.glade.h:41
+msgid "Sobel"
+msgstr ""
+
+# svx/source\options\optcolor.src:RID_SVXPAGE_COLORCONFIG.CT_COLORCONFIG.WN_SCROLL.FT_BASICSTRING.text
+#: data/camorama.glade.h:42
+#, fuzzy
+msgid "String:"
+msgstr "Ikurikiranyanyuguti"
+
+#: data/camorama.glade.h:43
+msgid "Take Picture"
+msgstr ""
+
+#: data/camorama.glade.h:44
+msgid "Threshold:"
+msgstr ""
+
+#: data/camorama.glade.h:45
+msgid "Timestamp"
+msgstr ""
+
+#: data/camorama.glade.h:46
+#, fuzzy
+msgid "Use custom string"
+msgstr "Kunoza Ikurikiranyanyuguti"
+
+#: data/camorama.glade.h:47
+#, fuzzy
+msgid "Username:"
+msgstr "Izina ry'ukoresha"
+
+#: data/camorama.glade.h:48
+msgid "Wacky"
+msgstr ""
+
+#: data/camorama.glade.h:49
+msgid "White Balance:"
+msgstr ""
+
+#: data/camorama.glade.h:50
+#, fuzzy
+msgid "_Directory for captured pics:"
+msgstr "kugirango"
+
+#: data/camorama.glade.h:51
+msgid "_Enable local capture"
+msgstr ""
+
+#: data/camorama.glade.h:52
+msgid "_Enable remote capture"
+msgstr ""
+
+#: data/camorama.glade.h:53
+#, fuzzy
+msgid "_Filename for pictures:"
+msgstr "kugirango Amashusho"
+
+#: data/camorama.glade.h:54
+#, fuzzy
+msgid "ftp.yourdomain.org"
+msgstr "FTP."
+
+#: data/camorama.glade.h:55
+#, fuzzy
+msgid "path/to/save/to"
+msgstr "Inzira Kuri Kubika Kuri"
+
+#: data/camorama.glade.h:56
+msgid "webcam-capture"
+msgstr ""
+
+#: data/camorama.glade.h:57
+msgid "webcamshot"
+msgstr ""
+
+#: data/camorama.glade.h:58
+#, fuzzy
+msgid "your-password"
+msgstr "Ijambobanga..."
+
+#: data/camorama.glade.h:59
+#, fuzzy
+msgid "your-username"
+msgstr "Izina ry'ukoresha"
+
+#: data/camorama.glade.h:60
+#, fuzzy
+msgid "~/.gnome-desktop"
+msgstr ""
+"~/.Project- Id- Version: basctl\n"
+"POT- Creation- Date: 2003- 12- 07 17: 13+ 02\n"
+"PO- Revision- Date: 2004- 11- 04 10: 13- 0700\n"
+"Last- Translator: Language- Team:< en@ li. org> MIME- Version: 1. 0\n"
+"Content- Type: text/ plain; charset= UTF- 8\n"
+"Content- Transfer- Encoding: 8bit\n"
+"X- Generator: KBabel 1. 0\n"
+"."
+
+#: data/camorama.schemas.in.h:1
+#, fuzzy
+msgid "Append timestamp to filename"
+msgstr "Kuri Izina ry'idosiye:"
+
+#: data/camorama.schemas.in.h:2
+#, fuzzy
+msgid "Append timestamp to remote filename"
+msgstr "Kuri Izina ry'idosiye:"
+
+#: data/camorama.schemas.in.h:3
+#, fuzzy
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "a in Igihe Kuri i Bya"
+
+#: data/camorama.schemas.in.h:4
+#, fuzzy
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "a in Igihe Kuri i Bya"
+
+#: data/camorama.schemas.in.h:5
+#, fuzzy
+msgid "Custom text for the timestamp"
+msgstr "Kugena Umwandiko kugirango i"
+
+#: data/camorama.schemas.in.h:6
+#, fuzzy
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "a Ikurikiranyanyuguti Bya Kunoza Umwandiko Kuri Byinjijwemo i Ishusho"
+
+#: data/camorama.schemas.in.h:7
+#, fuzzy
+msgid "Filename for local captures"
+msgstr "kugirango"
+
+#: data/camorama.schemas.in.h:8
+#, fuzzy
+msgid "Filename for saving captured pictures to locally"
+msgstr "kugirango Mu kubika Amashusho Kuri"
+
+#: data/camorama.schemas.in.h:9
+#, fuzzy
+msgid "Folder for local captures"
+msgstr "kugirango"
+
+#: data/camorama.schemas.in.h:10
+#, fuzzy
+msgid "Folder for remote captures"
+msgstr "kugirango"
+
+#: data/camorama.schemas.in.h:11
+#, fuzzy
+msgid "Folder for saving captured pictures remotely"
+msgstr "kugirango Mu kubika Amashusho"
+
+#: data/camorama.schemas.in.h:12
+#, fuzzy
+msgid "Folder for saving captured pictures to locally"
+msgstr "kugirango Mu kubika Amashusho Kuri"
+
+#: data/camorama.schemas.in.h:13
+#, fuzzy
+msgid "Hostname for FTP server"
+msgstr "kugirango Seriveri"
+
+#: data/camorama.schemas.in.h:14
+#, fuzzy
+msgid "Hostname for the FTP server for remote captures."
+msgstr "kugirango i Seriveri kugirango"
+
+#: data/camorama.schemas.in.h:15
+#, fuzzy
+msgid "Interval for auto-capture"
+msgstr "kugirango Ikiyega"
+
+#: data/camorama.schemas.in.h:16
+#, fuzzy
+msgid "Local capture image format"
+msgstr "Ishusho Imiterere"
+
+#: data/camorama.schemas.in.h:17
+#, fuzzy
+msgid "Name for the filename of uploaded images."
+msgstr "kugirango i Izina ry'idosiye: Bya Ishusho"
+
+#: data/camorama.schemas.in.h:18
+#, fuzzy
+msgid "Password for FTP server"
+msgstr "kugirango Seriveri"
+
+#: data/camorama.schemas.in.h:19
+#, fuzzy
+msgid "Remote capture image format"
+msgstr "Ishusho Imiterere"
+
+#: data/camorama.schemas.in.h:20
+#, fuzzy
+msgid "Remote save filename"
+msgstr "Kubika Izina ry'idosiye:"
+
+#: data/camorama.schemas.in.h:21
+#, fuzzy
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "i Ishusho Imiterere Kuri kugirango Amashusho"
+
+#: data/camorama.schemas.in.h:22
+#, fuzzy
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "i Ishusho Imiterere Kuri kugirango Amashusho"
+
+#: data/camorama.schemas.in.h:23
+#, fuzzy
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "i Intera kugirango Byikoresha Bya Amashusho"
+
+#: data/camorama.schemas.in.h:24
+#, fuzzy
+msgid "The password for the FTP account for remote captures."
+msgstr "Ijambobanga... kugirango i Aderesi kugirango"
+
+#: data/camorama.schemas.in.h:25
+#, fuzzy
+msgid "Toggles auto-capture"
+msgstr "Ikiyega"
+
+#: data/camorama.schemas.in.h:26
+#, fuzzy
+msgid "Toggles automatic capturing of pictures."
+msgstr "Byikoresha Bya Amashusho"
+
+#: data/camorama.schemas.in.h:27
+msgid "Toggles local capture"
+msgstr ""
+
+#: data/camorama.schemas.in.h:28
+msgid "Toggles remote capture"
+msgstr ""
+
+#: data/camorama.schemas.in.h:29
+#, fuzzy
+msgid "Toggles the custom string"
+msgstr "i Kunoza Ikurikiranyanyuguti"
+
+#: data/camorama.schemas.in.h:30
+#, fuzzy
+msgid "Toggles the datestamp in captures"
+msgstr "i in"
+
+#: data/camorama.schemas.in.h:31
+#, fuzzy
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "i Igishushanyo Bya a muri i Amashusho"
+
+#: data/camorama.schemas.in.h:32
+#, fuzzy
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "i Iyinjizamo Bya a Ishusho"
+
+#: data/camorama.schemas.in.h:33
+#, fuzzy
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "i Iyinjizamo Bya a i Ishusho kugirango"
+
+#: data/camorama.schemas.in.h:34
+#, fuzzy
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "i Gukoresha Bya i Utubuto Kuri i Videwo... Muyunguruzi"
+
+#: data/camorama.schemas.in.h:35
+#, fuzzy
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "i Gukoresha Bya i Kunoza Ikurikiranyanyuguti kugirango i in Ishusho"
+
+#: data/camorama.schemas.in.h:36
+#, fuzzy
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "i Gukoresha Bya i Kuri i Videwo... Indangakintu..."
+
+#: data/camorama.schemas.in.h:37
+#, fuzzy
+msgid "Toggles the video adjustment sliders"
+msgstr "i Videwo..."
+
+#: data/camorama.schemas.in.h:38
+#, fuzzy
+msgid "Toggles the video effects buttons"
+msgstr "i Videwo... Ingaruka Utubuto"
+
+#: data/camorama.schemas.in.h:39
+#, fuzzy
+msgid "Toggles timestamp for local captures"
+msgstr "kugirango"
+
+#: data/camorama.schemas.in.h:40
+#, fuzzy
+msgid "Toggles timestamp for remote captures"
+msgstr "kugirango"
+
+#: data/camorama.schemas.in.h:41
+#, fuzzy
+msgid "Username for FTP server"
+msgstr "kugirango Seriveri"
+
+#: data/camorama.schemas.in.h:42
+#, fuzzy
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "Kuri Gukoresha kugirango Bya Amashusho"
+
+#: data/camorama.schemas.in.h:43
+#, fuzzy
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Amashusho Biturutse i Akabuto Cyangwa Na: Ikiyega iyi Urufunguzo i Mu kubika "
+"Bya Amashusho"
+
+#: data/camorama.schemas.in.h:44
+#, fuzzy
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Amashusho Biturutse i Akabuto Cyangwa Na: Ikiyega iyi Urufunguzo i Mu kubika "
+"Bya Amashusho Kuri a Seriveri"
+
+#: src/callbacks.c:500
+msgid "translator_credits"
+msgstr ""
+
+#: src/callbacks.c:509
+msgid "Camorama"
+msgstr ""
+
+#: src/callbacks.c:620 src/callbacks.c:682 src/callbacks.c:732
+#: src/callbacks.c:745
+#, fuzzy
+msgid "Unable to capture image."
+msgstr "Kuri Ishusho"
+
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Icyerekezo"
+
+#: src/eggtrayicon.c:119
+#, fuzzy
+msgid "The orientation of the tray."
+msgstr "Icyerekezo Bya i"
+
+#: src/fileio.c:119 src/fileio.c:265
+#, fuzzy
+msgid "Could save temporary image file in /tmp."
+msgstr "Kubika By'igihe gito Ishusho IDOSIYE in"
+
+#: src/fileio.c:137
+#, fuzzy, c-format
+msgid "Unable to create image '%s'."
+msgstr "Kuri Kurema Ishusho"
+
+#: src/fileio.c:146 src/fileio.c:429
+#, fuzzy, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "OYA Kubika Ishusho"
+
+#: src/fileio.c:273
+#, fuzzy, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr "Kuri Gufungura By'igihe gito Ishusho IDOSIYE Ishusho"
+
+#: src/fileio.c:311
+#, fuzzy, c-format
+msgid "An error occured opening %s."
+msgstr "Ikosa Gufungura %s%S"
+
+#: src/fileio.c:323
+#, fuzzy, c-format
+msgid "An error occured writing to %s."
+msgstr "Ikosa Kuri"
+
+#: src/fileio.c:403
+#, fuzzy, c-format
+msgid "Could not create directory '%s'."
+msgstr "OYA Kurema bushyinguro"
+
+#: src/fileio.c:414
+#, fuzzy, c-format
+msgid "Could not change to directory '%s'."
+msgstr "OYA Guhindura>> Kuri bushyinguro"
+
+#: src/main.c:421
+#, fuzzy
+msgid "show version and exit"
+msgstr "Garagaza Verisiyo Na Gusohoka"
+
+#: src/main.c:423
+#, fuzzy
+msgid "v4l device to use"
+msgstr "APAREYE Kuri Gukoresha"
+
+#: src/main.c:425
+#, fuzzy
+msgid "enable debuging code"
+msgstr "Gushoboza ITEGEKONGENGA"
+
+#: src/main.c:426
+#, fuzzy
+msgid "capture width"
+msgstr "Ubugari"
+
+#: src/main.c:428
+#, fuzzy
+msgid "capture height"
+msgstr "Ubuhagarike"
+
+#: src/main.c:431
+#, fuzzy
+msgid "maximum capture size"
+msgstr "Kinini Ingano"
+
+#: src/main.c:433
+#, fuzzy
+msgid "minimum capture size"
+msgstr "Gito Ingano"
+
+#: src/main.c:435
+#, fuzzy
+msgid "middle capture size"
+msgstr "Hagati Ingano"
+
+#: src/main.c:437
+#, fuzzy
+msgid "use read() rather than mmap()"
+msgstr "Gukoresha Gusoma"
+
+#: src/main.c:459
+msgid "camorama"
+msgstr ""
+
+#: src/main.c:473
+#, fuzzy, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr "Verisiyo"
+
+#: src/main.c:599
+#, fuzzy
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "Gushaka i IDOSIYE"
+
+#: src/support.c:69
+#, fuzzy, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Gushaka IDOSIYE"
+
+#: src/v4l.c:94 src/v4l.c:164 src/v4l.c:177 src/v4l.c:202 src/v4l.c:223
+#: src/v4l.c:238
+#, fuzzy, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr "OYA Kwihuza Kuri Videwo... APAREYE Kugenzura... Ukwihuza"

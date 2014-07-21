@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-06 19:30+0200\n"
-"PO-Revision-Date: 2003-08-07 02:39+0200\n"
+"POT-Creation-Date: 2004-01-24 03:22+0100\n"
+"PO-Revision-Date: 2003-08-30 14:23+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Prohlížeč webových kamer Camorama"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:515
+#: camorama.desktop.in.h:2 src/callbacks.c:510
 msgid "View, alter and save images from a webcam"
 msgstr "Prohlížení, úprava a ukládání obrázků z webové kamery"
 
@@ -84,15 +84,15 @@ msgid "Capture Interval (in minutes):"
 msgstr "Interval záznamu (v minutách):"
 
 #: data/camorama.glade.h:16
-msgid "Colour correction"
+msgid "Color correction"
 msgstr "Oprava barev"
 
 #: data/camorama.glade.h:17
-msgid "Colour threshold"
+msgid "Color threshold"
 msgstr "Barevný práh"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Barva:"
 
 #: data/camorama.glade.h:19
@@ -396,34 +396,42 @@ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "Přepíná vkládání časového údaje do obrázků přenášených skrz FTP."
 
 #: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Přepíná použití tlačítek k úpravě filtrů videa"
+
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr "Přepíná použití vlastního řetězce pro časový údaj na obrázcích."
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Přepíná použití posuvníků k úpravě vlastností videa"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "Přepíná posuvníky pro úpravu videa"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Přepíná tlačítka pro efekty videa"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "Přepíná časový údaj lokálních záznamů"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "Přepíná časový údaj vzdálených záznamů"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "Uživatelské jméno pro FTP server"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "Uživatelské jméno, které se má použít pro přenášení obrázků skrz FTP"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
@@ -431,7 +439,7 @@ msgstr ""
 "Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
 "záznamu, tento klíč přepíná ukládání obrázků lokálně."
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -443,8 +451,12 @@ msgstr ""
 msgid "translator_credits"
 msgstr "Michal Bukovjan <bukm@centrum.cz>"
 
-#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
-#: src/callbacks.c:757
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Camorama"
+
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
 msgstr "Nelze zaznamenat obrázek."
 
@@ -499,47 +511,47 @@ msgstr "Nelze vytvořit adresář '%s'."
 msgid "Could not change to directory '%s'."
 msgstr "Nelze se přepnout do adresáře '%s'."
 
-#: src/main.c:413
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "zobrazit verzi a skončit"
 
-#: src/main.c:415
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "zařízení v4l, které se má použít"
 
-#: src/main.c:417
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "povolit ladící kód"
 
-#: src/main.c:418
+#: src/main.c:428
 msgid "capture width"
 msgstr "šířka záznamu"
 
-#: src/main.c:420
+#: src/main.c:430
 msgid "capture height"
 msgstr "výška záznamu"
 
-#: src/main.c:423
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "maximální velikost záznamu"
 
-#: src/main.c:425
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "minimální velikost záznamu"
 
-#: src/main.c:427
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "střední velikost záznamu"
 
-#: src/main.c:429
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "používat read () místo mmap ()"
 
-#: src/main.c:451
+#: src/main.c:461
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:465
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -552,7 +564,7 @@ msgstr ""
 "Camorama verze %s\n"
 "\n"
 
-#: src/main.c:597
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nelze nalézt soubor s hlavním rozhraním (camorama.glade)."
 
@@ -561,8 +573,8 @@ msgstr "Nelze nalézt soubor s hlavním rozhraním (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Nelze nalézt soubor s obrázkem: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
