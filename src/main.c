@@ -127,7 +127,7 @@ main(int argc, char *argv[]) {
 
 
     if (ver) {
-        fprintf (stderr, _("\n\nCamorama version %s\n\n"), VERSION);
+        fprintf (stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);
         exit (0);
     }
     if (max) {
