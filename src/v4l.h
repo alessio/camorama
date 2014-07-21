@@ -13,7 +13,7 @@
 #include <fcntl.h>
 #include <gtk/gtk.h>
 #include <linux/types.h>
-#include <linux/videodev.h>
+#include <libv4l1-videodev.h>
 #include <signal.h>
 #include <png.h>
 #include <glade/glade.h>
