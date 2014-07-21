@@ -559,6 +559,7 @@ camorama_filter_sobel_filter(CamoramaFilter* filter, unsigned char *image, int x
 static void
 camorama_filter_sobel_class_init(CamoramaFilterSobelClass* self_class) {
 	self_class->filter = camorama_filter_sobel_filter;
+	// TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 	self_class->name   = _("Sobel");
 }
 

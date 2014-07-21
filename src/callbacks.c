@@ -744,21 +744,6 @@ gint timeout_capture_func (cam * cam)
     return 1;
 }
 
-gboolean
-on_drawingarea_expose_event (GtkWidget * widget, GdkEventExpose * event,
-                             cam * cam)
-{
-    cam->window = widget->window;
-    gdk_draw_drawable (widget->window,
-                       widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
-                       cam->pixmap,
-                       event->area.x, event->area.y, event->area.x,
-                       event->area.y, event->area.width, event->area.height);
-
-    frames++;
-    return FALSE;
-}
-
 void contrast_change (GtkHScale * sc1, cam * cam)
 {
 

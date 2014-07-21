@@ -10,6 +10,7 @@
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
 #include <locale.h>
 
+#include "camorama-display.h"
 #include "camorama-stock-items.h"
 
 static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
@@ -34,6 +35,28 @@ static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
 
   return true;
 }*/
+
+static GtkWidget*
+camorama_glade_handler (GladeXML* xml,
+			gchar   * func_name,
+			gchar   * name,
+			gchar   * string1,
+			gchar   * string2,
+			gint      int1,
+			gint      int2,
+			gpointer  data)
+{
+	gboolean reached = TRUE;
+#warning "FIXME: move the glade crap into the window class"
+	if (string1 && !strcmp (string1, "CamoDisplay")) {
+		GtkWidget* widget = camo_display_new ((cam*)data);
+		gtk_widget_show (widget);
+		return widget;
+	}
+
+	g_return_val_if_fail (!reached, NULL);
+	return NULL;
+}
 
 int
 main(int argc, char *argv[]) {
@@ -79,7 +102,7 @@ main(int argc, char *argv[]) {
     cam->video_dev = NULL;
     cam->read = FALSE;
 
-    bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+    bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
     textdomain (GETTEXT_PACKAGE);
     setlocale (LC_ALL, "");
@@ -96,9 +119,12 @@ main(int argc, char *argv[]) {
 
     cam->debug = buggery;
 
-    cam->x = x;
-    cam->y = y;
-    glade_gnome_init ();
+	cam->x = x;
+	cam->y = y;
+	glade_gnome_init ();
+	glade_set_custom_handler (camorama_glade_handler,
+				  cam);
+
 
     if (ver) {
         fprintf (stderr, _("\n\nCamorama version %s\n\n"), VERSION);
@@ -238,6 +264,7 @@ main(int argc, char *argv[]) {
                       ("Couldn't find the main interface file (camorama.glade)."));
         exit (1);
     }
+
     //pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama.png", TRUE, NULL);
     //printf("pixfile = %s\n",pixfilename);
     //pixfilename);

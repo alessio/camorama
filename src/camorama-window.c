@@ -313,11 +313,6 @@ load_interface(cam* cam) {
                          (int) (cam->wb / 256));
 
     /* buttons */
-    glade_xml_signal_connect_data (cam->xml,
-                                   "on_drawingarea_expose_event",
-                                   G_CALLBACK
-                                   (on_drawingarea_expose_event),
-                                   (gpointer) cam);
     glade_xml_signal_connect_data (cam->xml, "on_status_show",
                                    G_CALLBACK (on_status_show),
                                    (gpointer) cam);

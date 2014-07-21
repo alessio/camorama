@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-14 06:54+0100\n"
-"PO-Revision-Date: 2006-09-14 06:54-0000\n"
+"POT-Creation-Date: 2007-01-03 20:08+0000\n"
+"PO-Revision-Date: 2007-01-03 20:08-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -433,6 +433,26 @@ msgstr ""
 msgid "Automatic Capture Disabled"
 msgstr "Automatic Capture Disabled"
 
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "Laplace (4 Neighbours)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "Mirror"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "Webcam"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "_Add Filter"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "Effects"
+
 #: ../src/fileio.c:120
 #: ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -477,6 +497,42 @@ msgstr "Could not create directory '%s'."
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Could not change to directory '%s'."
+
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "Colour Correction"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "Invert"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "Threshold (Overall)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "Threshold (Per Channel)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Wacky"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "Smooth"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "Monochrome"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "Monochrome (Weight)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "Sobel"
 
 #: ../src/main.c:53
 msgid "show version and exit"
@@ -560,24 +616,12 @@ msgstr ""
 #~ msgstr "<span weight=\"bold\">Effects</span>"
 #~ msgid "Black & white"
 #~ msgstr "Black & white"
-#~ msgid "Color correction"
-#~ msgstr "Colour correction"
 #~ msgid "Color threshold"
 #~ msgstr "Colour threshold"
 #~ msgid "Laplace"
 #~ msgstr "Laplace"
-#~ msgid "Mirror image"
-#~ msgstr "Mirror image"
 #~ msgid "Negative"
 #~ msgstr "Negative"
-#~ msgid "Smoothing"
-#~ msgstr "Smoothing"
-#~ msgid "Sobel"
-#~ msgstr "Sobel"
-#~ msgid "Threshold:"
-#~ msgstr "Threshold:"
-#~ msgid "Wacky"
-#~ msgstr "Wacky"
 #~ msgid "Orientation"
 #~ msgstr "Orientation"
 #~ msgid "The orientation of the tray."

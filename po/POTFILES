@@ -1,8 +1,0 @@
-	../camorama.desktop.in \
-	../data/camorama.glade \
-	../data/camorama.schemas.in \
-	../src/callbacks.c \
-	../src/fileio.c \
-	../src/main.c \
-	../src/support.c \
-	../src/v4l.c

@@ -63,6 +63,7 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 static void
 camorama_filter_mirror_class_init(CamoramaFilterMirrorClass* self_class) {
 	self_class->filter = camorama_filter_mirror_filter;
+	// TRANSLATORS: This is a noun
 	self_class->name   = _("Mirror");
 }
 

@@ -125,7 +125,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label50">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">     </property>
+			  <property name="label" translatable="no">     </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1960,11 +1960,14 @@
 		  <property name="shadow_type">GTK_SHADOW_IN</property>
 
 		  <child>
-		    <widget class="GtkDrawingArea" id="da">
+		    <widget class="Custom" id="da">
 		      <property name="width_request">320</property>
 		      <property name="height_request">240</property>
 		      <property name="visible">True</property>
-		      <signal name="expose_event" handler="on_drawingarea_expose_event" object="cam" last_modification_time="Tue, 26 Aug 2003 03:13:06 GMT"/>
+		      <property name="string1">CamoDisplay</property>
+		      <property name="int1">0</property>
+		      <property name="int2">0</property>
+		      <property name="last_modification_time">Mon, 18 Jun 2007 12:09:29 GMT</property>
 		    </widget>
 		  </child>
 		</widget>

@@ -10,6 +10,8 @@ bin_PROGRAMS = camorama
 BUILT_SOURCES    = camorama-stock-images.h
 camorama_SOURCES = \
 	callbacks.c \
+	camorama-display.c \
+	camorama-display.h \
 	camorama-filter-chain.c \
 	camorama-filter-chain.h \
 	camorama-filter-laplace.c \
