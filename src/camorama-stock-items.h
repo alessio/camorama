@@ -1,7 +1,7 @@
 #ifndef CAMORAMA_STOCK_ITEMS_H
 #define CAMORAMA_STOCK_ITEMS_H
 
-#include <glib/gmacros.h>
+#include <glib.h>
 
 G_BEGIN_DECLS
 
