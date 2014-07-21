@@ -1,3 +1,234 @@
+2006-07-30  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/callbacks.c,
+	* src/camorama-window.c,
+	* src/v4l.h: fix the status icon code
+
+2006-07-30  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in: depend on GTK+ 2.10 for GtkStatusIcon
+	* src/Makefile.am: updated
+	* src/callbacks.c,
+	* src/main.c: compile fixes
+	* src/eggtrayicon.c,
+	* src/eggtrayicon.h: removed deprecated EggTrayIcon code
+	* src/camorama-window.c,
+	* src/v4l.h: use GtkStatusIcon instead of EggTrayIcon
+
+2006-06-27  Raivis Dejus  <orvils@gmail.co>
+
+	* configure.in: Add lv to ALL_LINGUAS.
+
+2006-04-17  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Remove obsolete Norwegian entry.
+	* po/no.po: And the translation.
+
+2006-03-16  Sven Herzberg  <herzi@gnome-de.org>
+
+	* autogen.sh: updated to pass distcheck
+
+2006-03-16  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in:
+	* data/camorama.glade: fixed wrong initial activation of the radio
+	buttons; updated the horizintal scroll policy of the effects box;
+	updated the expand policy for the horizontal separator
+	* src/Makefile.am: added new source files, cleaned up the file a bit
+	* src/callbacks.c: updated configured paths; removed the comments for
+	completely migrated filters; added depth to new filters
+	* src/camorama-filter-chain.c,
+	* src/camorama-filter-chain.h: added image depth to filters
+	* src/camorama-filter-laplace.c,
+	* src/camorama-filter-mirror.c: extracted filters into their own files
+	* src/camorama-window.c: added filter deletion; updated configure
+	paths
+	* src/filter.c,
+	* src/filter.h: added depth to filter classes, extracted some filters;
+	added some filter names
+	* src/glib-helpers.h: new
+	* src/main.c: updated configures paths
+
+2006-03-01  Daniel Nylander  <po@danielnylander.se>
+
+        * po/sv.po: Updated Swedish translation.
+	
+2006-02-14  Sven Herzberg  <herzi@gnome-de.org>
+
+	* data/camorama.schemas.in: fix a type (fixes bug 325500) patch
+	provided by Thierry Moisan
+	* src/.cvsignore: silence
+
+2006-01-09  Sven Herzberg  <herzi@gnome-de.org>
+
+	* .cvsignore: updated
+	* data/camorama.glade: made the "show effects" and "show adjustments"
+	menu items GtkCheckMenuItems; added a frame around the drawing area;
+	exchanged the box with filter check boxes by a tree view
+	* src/Makefile.am: updated
+	* src/callbacks.c: implemented the "show ..." toggle functions a bit
+	cleaner; aligned the authors better; extracted filter application from
+	read_timeout_func() and timeout_func(), re-implemented with the new
+	filter framework; removed the callbacks for removed widgets
+	* src/callbacks.h: removed the filter constants; removed the filter
+	mask
+	* src/camorama-filter-chain.c,
+	* src/camorama-filter-chain.h: new
+	* src/camorama-globals.h: new
+	* src/camorama-window.c: extracted some code from main.c, implemented
+	the new filter GUI
+	* src/camorama-window.h: extracted from main.c
+	* src/filter.c,
+	* src/filter.h: filters are GObjects now
+	* src/main.c: extracted some code into camorama-window.c
+	* src/v4l.h: added the filter chain
+
+2006-01-08  Sven Herzberg  <herzi@gnome-de.org>
+
+	* pixmaps/Makefile.am: clean up, added new files
+	* pixmaps/camorama-webcam-16.png,
+	* pixmaps/camorama-webcam-24.png: webcam icons
+	* src/Makefile.am: cleanup
+	* src/callbacks.c: whitespace
+	* src/callbacks.h: added ifndef condition
+	* src/camorama-stock-items.c,
+	* src/camorama-stock-items.h: added camorama stock icon
+	* src/filter.c: disable full debugging
+	* src/filters.h: for later
+	* src/main.c: some icon cleanup
+
+2005-12-06  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Add nb to ALL_LINGUAS.
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in: starting to clean up
+	* src/filter.h: cleaned up the file for the first significant
+	improvement
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/fileio.c,
+	* src/fileio.h,
+	* src/filter.c,
+	* src/filter.h,
+	* src/v4l.h: fix type warnings
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/eggtrayicon.c,
+	* src/eggtrayicon.h: update to the current libegg version
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* COPYING,
+	* INSTALL: removed automatically copied files
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* .cvsignore: cvs is silent now
+	* .tm_project.cache: exlude local files
+	* MAINTAINERS: removed, the information is in the authors file too
+	* Makefile.am: make distcheck works now
+	* data/Makefile.am: make distcheck works now
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* AUTHORS: added information about current maintainership
+	* src/filter.c: removed some unwanted output
+	* src/v4l.c: removed some unwanted output
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* data/camorama.schemas.in: added the device path to the schema
+	* src/interface.h: added a key for the device path
+	* src/main.c: try to read the device path from gconf
+	This commit fixes bug 315992
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/fileio.c: fix "occured" => "occurred"
+	* src/main.c: fix "debuging" => "debugging"
+	Patch from Thierry Moisan fixes bug 314766
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/callbacks.c: fix invalid lvalue cast
+	* src/callbacks.h: fix "unsigned gint" to "guint"
+	* src/main.c: fix invalid lvalue cast by deleting the cast for now
+
+2005-11-01  Alexander Shopov  <ash@contact.bg>
+
+	* configure.in: Added "bg" (Bulgarian) to ALL_LINGUAS
+
+2005-07-19  Pawan Chitrakar  <pawan@nplinux.org>
+
+	* configure.in: Added ne in ALL_LINGUAS
+
+2005-04-07  Abel Cheung  <maddog@linuxhall.org>
+
+	* configure.in: Added "bs" "hi" "mk" "tr" "zh_TW" to ALL_LINGUAS.
+
+2005-04-01  Steve Murphy  <murf@e-tools.com>
+
+        * configure.in: Added "rw" to ALL_LINGUAS.
+
+2004-09-08  Jayaradha <njaya@redhat.com>
+
+	* configure.in: Added 'ta' (Tamil) to ALL_LINGUAS.
+2004-09-08  Ankit Patel <ankit@redhat.com>
+
+	* configure.in: Added 'gu' (Gujarati) to ALL_LINGUAS.
+
+2004-09-05  Ilkka Tuohela  <hile@iki.fi>
+
+	* configure.in: Added fi to ALL_LINGUAS.
+
+2004-04-08  Adam Weinberger  <adamw@gnome.org>
+
+	* configure.in: Added en_CA to ALL_LINGUAS.
+
+2004-03-22  Gareth Owen  <gowen72@yahoo.com>
+
+	* configure.in: Added en_GB to ALL_LINGUAS
+
+2004-03-20  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+	* configure.in: Added "pa" (Punjabi) to ALL_LINGUAS.
+
+2004-03-15  Alessio Frusciante  <algol@firenze.linux.it>
+
+	* configure.in: Added "it" (Italian) to ALL_LINGUAS.
+
+2004-02-03 Alastair McKinstry <mckinstry@computer.org>
+
+	* configure.in: Added "ga" (Irish) to ALL_LINGUAS.
+
+2004-02-01  Robert Sedak  <robert.sedak@sk.htnet.hr>
+
+	* configure.in: Added "hr" (Croatian) to ALL_LINGUAS.
+
+2004-01-13  Laurent Dhima  <laurenti@alblinux.net>
+
+	* configure.in: Added "sq" to ALL_LINGUAS.
+
+2003-12-06  Iñaki Larrañaga  <dooteo@euskalgnu.org>
+
+	* configure.in: Added "eu" (Basque) to ALL_LINGUAS.
+
+2003-10-24  Hasbullah Bin Pit <sebol@ikhlas.com>
+                                                                                
+	* configure.in: Added ms (malay) to ALL_LINGUAS.
+
+2003-09-01  Metin Amiroff  <metin@karegen.com>
+
+	configure.in: Added "az" in ALL_LINGUAS.
+
+2003-8-27  Jordi Mallach  <jordi@sindominio.net>
+
+	* configure.in (ALL_LINGUAS): Added "ca" (Catalan).
+
 2003-06-18  Guntupalli Karunakar  <karunakar@freedomink.org>
 
 	* configure.in: Added "ml" in ALL_LINGUAS.

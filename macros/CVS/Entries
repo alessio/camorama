@@ -1,12 +1,12 @@
 /.cvsignore/1.15/Sat Dec 28 04:49:29 2002//
-/ChangeLog/1.272/Sat Jun 28 16:20:00 2003//
+/ChangeLog/1.278/Mon Jun 12 23:03:16 2006//
 /Makefile.am/1.47/Sun Mar 10 15:35:38 2002//
 /README.cvs-commits/1.7/Tue Mar  5 16:57:29 2002//
 /aclocal-include.m4/1.15/Tue Mar  5 16:57:29 2002//
-/autogen.sh/1.74/Sat May  3 11:02:31 2003//
+/autogen.sh/1.75/Fri Feb 18 15:42:46 2005//
 /compiler-flags.m4/1.24/Tue Mar  5 16:57:29 2002//
 /curses.m4/1.17/Tue Mar  5 16:57:29 2002//
-/gnome-bonobo-check.m4/1.18/Tue Mar  5 16:57:29 2002//
+/gnome-bonobo-check.m4/1.19/Sun Aug 21 20:10:24 2005//
 /gnome-common.m4/1.13/Tue Mar  5 16:57:29 2002//
 /gnome-cxx-check.m4/1.13/Tue Mar  5 16:57:29 2002//
 /gnome-fileutils.m4/1.17/Tue Mar  5 16:57:29 2002//

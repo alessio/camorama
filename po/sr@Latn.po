@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
-"POT-Creation-Date: 2003-08-19 01:53+0200\n"
-"PO-Revision-Date: 2003-08-19 01:53+0200\n"
+"POT-Creation-Date: 2003-08-27 13:44+0200\n"
+"PO-Revision-Date: 2003-08-27 13:43+0200\n"
 "Last-Translator: Dejan Matijević <dejan@ns.sympatico.ca>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Kamorama veb kamera pregledač"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:515
+#: camorama.desktop.in.h:2 src/callbacks.c:510
 msgid "View, alter and save images from a webcam"
 msgstr "Pogledaj, izmeni i sačuvaj snimke sa veb kamere"
 
@@ -398,35 +398,43 @@ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "Promena za postavljanje vremenskog trenutka na snimke za FTP natovar."
 
 #: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Promena za upotrebu dugmića za podešavanje video filtera"
+
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr ""
 "Promena za  upotrebu proizvoljnog niza za vremenski trenutak na snimcima."
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Promena za upotrebu klizača za podešavanje video karakteristika"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "Promena za podešavanje video klizača"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Promena za podešavanje dugmića za video efekte"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "Promena za vremenski trenutak za lokalne snimke"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "Promena za vremenski trenutak za daljinske snimke"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "Korisničko ime za FTP server"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "Korisničo ime koje će se koristiti ѕa FTP natovar snimljenih slika"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
@@ -434,7 +442,7 @@ msgstr ""
 "Kada se snimaju slike sa \"Snimi sliku\" dugmetom, ili sa samosnimanjem, ovo "
 "dugme će promeniti čuvanje slika lokalno."
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -449,8 +457,12 @@ msgstr ""
 "\n"
 "Prevod.org — prevod na srpski jezik."
 
-#: src/callbacks.c:625 src/callbacks.c:696 src/callbacks.c:746
-#: src/callbacks.c:759
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Kamorama"
+
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
 msgstr "U nemogućnosti da snima snimke."
 
@@ -505,47 +517,47 @@ msgstr "Nemoguće stvoriti direktorijum '%s'."
 msgid "Could not change to directory '%s'."
 msgstr "Nemoguče promenuti direktorijum '%s'."
 
-#: src/main.c:413
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "Pokaži verziju i izađi"
 
-#: src/main.c:415
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "Upotrebi aparat V4L"
 
-#: src/main.c:417
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "Omogući kod pronalaženja grešaka"
 
-#: src/main.c:418
+#: src/main.c:428
 msgid "capture width"
 msgstr "Širina snimaka"
 
-#: src/main.c:420
+#: src/main.c:430
 msgid "capture height"
 msgstr "Visina snimka"
 
-#: src/main.c:423
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "Najveća dimenzija snimka"
 
-#: src/main.c:425
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "Najmanja dimenzija snimka"
 
-#: src/main.c:427
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "Srednja dimenzija snimka"
 
-#: src/main.c:429
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "Koristi read() bolje nego mmap()"
 
-#: src/main.c:451
+#: src/main.c:461
 msgid "camorama"
 msgstr "Kamorama"
 
-#: src/main.c:465
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -558,7 +570,7 @@ msgstr ""
 "Kamorama verzija %s\n"
 "\n"
 
-#: src/main.c:597
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nemoguće naći glavnu pristupnu datoteku (camorama.glade)."
 

@@ -1,3 +1,6 @@
+#ifndef CAMORAMA_V4L_H
+#define CAMORAMA_V4L_H
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +18,8 @@
 #include <png.h>
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
-#include "eggtrayicon.h"
+
+#include "camorama-filter-chain.h"
 
 #define PICMAX 0
 #define PICMIN 1
@@ -31,7 +35,6 @@ typedef struct camera {
     int depth;
     int desk_depth;
     int size;
-    int dither;
     int contrast, brightness, colour, hue, wb;
     int frame_number;
     struct video_capability vid_cap;
@@ -49,18 +52,20 @@ typedef struct camera {
     gchar *ts_string;
     gchar *date_format;
     gboolean debug, read, hidden;
-    gboolean cap, rcap, acap, show_adjustments;
+    gboolean cap, rcap, acap, show_adjustments, show_effects;
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
-    GdkPixmap *pixmap;
-	 GdkWindow *window;
-    GtkWidget *da, *tooltips, *tray_tooltip, *status;
-    unsigned char *pic_buf, *tmp;
+	GdkPixmap *pixmap;
+	GdkWindow *window;
+	GtkWidget *da, *tray_tooltip, *status;
+	unsigned char *pic_buf, *tmp;
     guint timeout_id, idle_id;
     guint32 timeout_interval;
     GConfClient *gc;
     GladeXML *xml;
-    EggTrayIcon *tray_icon;
+    GtkStatusIcon *tray_icon;
+
+    CamoramaFilterChain* filter_chain;
 } cam;
 
 void camera_cap (cam *);
@@ -69,3 +74,6 @@ void get_pic_info (cam *);
 void set_pic_info (cam *);
 void get_win_info (cam *);
 void set_buffer (cam *);
+
+#endif /* !CAMORAMA_V4L_H */
+

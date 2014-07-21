@@ -1,3 +1,16 @@
+==================== 2.12.0 ====================
+
+==================== 2.11.92 ====================
+
+2005-02-18  Stepan Kasal  <kasal@ucw.cz>
+
+	* macros/autogen.sh: Fix the URL for Automake; don't recommend 1.3
+	  when we need 1.4.
+
+2003-12-09  Carlos Garnacho Parro  <garnacho@tuxerver.net>
+
+	* Release 0.30.0
+
 2003-06-28  Sebastian Rittau  <srittau@jroger.in-berlin.de>
 
 	* gnome-x-checks.m4: Add third argument to AC_DEFINE.

@@ -1,22 +1,14 @@
+#ifndef CAMORAMA_CALLBACKS_H
+#define CAMORAMA_CALLBACKS_H
+
 #include <gtk/gtk.h>
 #include "fileio.h"
 #include <gconf/gconf-client.h>
 
-typedef struct image_state {
-    gboolean wacky;
-    gboolean threshold;
-    gboolean threshold_channel;
-    gboolean sobel;
-    gboolean laplace;
-    gboolean negative;
-    gboolean mirror;
-    gboolean colour;
-    gboolean smooth;
-    gboolean fc;
-} state;
+G_BEGIN_DECLS
 
 void on_change_size_activate (GtkWidget * widget, cam * cam);
-void on_quit1_activate (GtkMenuItem * menuitem, gpointer user_data);
+void on_quit_activate (GtkMenuItem * menuitem, gpointer user_data);
 void gconf_notify_func (GConfClient * client, guint cnxn_id,
                         GConfEntry * entry, char *);
 void gconf_notify_func_bool (GConfClient * client, guint cnxn_id,
@@ -44,8 +36,8 @@ void rpng_func (GtkWidget *, cam *);
 gint (*pt2Function) (cam *);
 void rppm_func (GtkWidget *, cam *);
 void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data);
-void on_about1_activate (GtkMenuItem * menuitem, gpointer user_data);
-void on_show_adjustments1_activate (GtkMenuItem * menuitem, cam *);
+void on_about_activate (GtkMenuItem * menuitem, cam *cam);
+void on_show_adjustments_activate (GtkMenuItem * menuitem, cam *);
 void on_show_effects_activate (GtkMenuItem * menuitem, cam *);
 void prefs_func (GtkWidget *, cam *);
 gint io_func (cam *, gint, GdkInputCondition);
@@ -73,5 +65,10 @@ void brightness_change (GtkHScale *, cam *);
 void colour_change (GtkHScale *, cam *);
 void hue_change (GtkHScale *, cam *);
 void wb_change (GtkHScale *, cam *);
-gboolean on_drawingarea1_expose_event (GtkWidget *, GdkEventExpose *, cam *);
+gboolean on_drawingarea_expose_event (GtkWidget *, GdkEventExpose *, cam *);
 void update_tooltip (cam * cam);
+
+G_END_DECLS
+
+#endif /* !CAMORAMA_CALLBACKS_H */
+

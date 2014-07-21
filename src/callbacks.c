@@ -11,7 +11,8 @@
 #include <pthread.h>
 
 extern GtkWidget *main_window, *prefswindow;
-extern state func_state;
+//extern state func_state;
+//extern gint effect_mask;
 extern int frames;
 extern int frames2;
 extern int seconds;
@@ -349,7 +350,7 @@ void prefs_func (GtkWidget * okbutton, cam * cam)
 
 }
 
-void on_quit1_activate (GtkMenuItem * menuitem, gpointer user_data)
+void on_quit_activate (GtkMenuItem * menuitem, gpointer user_data)
 {
     gtk_main_quit ();
 }
@@ -359,36 +360,20 @@ void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data)
     gtk_widget_show (prefswindow);
 }
 
-void on_show_adjustments1_activate (GtkMenuItem * menuitem, cam * cam)
-{
-
-    if (GTK_WIDGET_VISIBLE (glade_xml_get_widget (cam->xml, "table6"))) {
-        gtk_widget_hide (glade_xml_get_widget (cam->xml, "table6"));
-        gtk_window_resize (GTK_WINDOW
-                           (glade_xml_get_widget
-                            (cam->xml, "window2")), 320, 240);
-        cam->show_adjustments = FALSE;
-
-    } else {
-        gtk_widget_show (glade_xml_get_widget (cam->xml, "table6"));
-        cam->show_adjustments = TRUE;
-    }
-    gconf_client_set_bool (cam->gc, KEY22, cam->show_adjustments, NULL);
-}
-
 void on_change_size_activate (GtkWidget * widget, cam * cam)
 {
-    gchar *name, *title;
+    gchar const *name;
+    gchar       *title;
 
-    (G_CONST_RETURN) name = gtk_widget_get_name (widget);
-
-    if (strcmp (name, "small1") == 0) {
+    name = gtk_widget_get_name (widget);
+    printf("name = %s\n",name);
+    if (strcmp (name, "small") == 0) {
         cam->x = cam->vid_cap.minwidth;
         cam->y = cam->vid_cap.minheight;
         if (cam->debug) {
             printf ("\nsmall\n");
         }
-    } else if (strcmp (name, "medium1") == 0) {
+    } else if (strcmp (name, "medium") == 0) {
         cam->x = cam->vid_cap.maxwidth / 2;
         cam->y = cam->vid_cap.maxheight / 2;
         if (cam->debug) {
@@ -408,19 +393,19 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
 
     /*
      * if(cam->read == FALSE) {
-     * * cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
-     * * 
-     * * if((unsigned char *) -1 == (unsigned char *) cam->pic) {
-     * * if(cam->debug == TRUE) {
-     * * fprintf(stderr, "Unable to capture image (mmap).\n");
-     * * }
-     * * error_dialog(_("Unable to capture image."));
-     * * exit(-1);
-     * * }
-     * * }else{
-     * * cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
-     * * read(cam->dev,cam->pic,(cam->x * cam->y * 3));
-     * * } 
+     *  cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
+     *  
+     *  if((unsigned char *) -1 == (unsigned char *) cam->pic) {
+     *   if(cam->debug == TRUE) {
+     *   fprintf(stderr, "Unable to capture image (mmap).\n");
+     *   }
+     *   error_dialog(_("Unable to capture image."));
+     *   exit(-1);
+     *  }
+     *  }else{
+     *   cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
+     *   read(cam->dev,cam->pic,(cam->x * cam->y * 3));
+     *  } 
      */
 
     cam->vid_win.x = 0;
@@ -458,75 +443,99 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
     get_win_info (cam);
     frame = 0;
     gtk_window_resize (GTK_WINDOW
-                       (glade_xml_get_widget (cam->xml, "window2")), 320,
+                       (glade_xml_get_widget (cam->xml, "main_window")), 320,
                        240);
 
     title = g_strdup_printf ("Camorama - %s - %dx%d", cam->vid_cap.name,
                              cam->x, cam->y);
     gtk_window_set_title (GTK_WINDOW
-                          (glade_xml_get_widget (cam->xml, "window2")),
+                          (glade_xml_get_widget (cam->xml, "main_window")),
                           title);
     g_free (title);
-
 }
 
-void on_show_effects_activate (GtkMenuItem * menuitem, cam * cam)
+void on_show_adjustments_activate (GtkMenuItem * menuitem, cam * cam)
 {
 
-    if (GTK_WIDGET_VISIBLE (glade_xml_get_widget (cam->xml, "vbox37"))) {
-        gtk_widget_hide (glade_xml_get_widget (cam->xml, "vbox37"));
+    if (GTK_WIDGET_VISIBLE (glade_xml_get_widget (cam->xml, "adjustments_table"))) {
+        gtk_widget_hide (glade_xml_get_widget (cam->xml, "adjustments_table"));
         gtk_window_resize (GTK_WINDOW
                            (glade_xml_get_widget
-                            (cam->xml, "window2")), 320, 240);
+                            (cam->xml, "main_window")), 320, 240);
         cam->show_adjustments = FALSE;
 
     } else {
-        gtk_widget_show (glade_xml_get_widget (cam->xml, "vbox37"));
+        gtk_widget_show (glade_xml_get_widget (cam->xml, "adjustments_table"));
         cam->show_adjustments = TRUE;
     }
     gconf_client_set_bool (cam->gc, KEY22, cam->show_adjustments, NULL);
 }
 
-void on_about1_activate (GtkMenuItem * menuitem, gpointer user_data)
+void
+on_show_effects_activate(GtkMenuItem* menuitem, cam* cam) {
+	GtkWidget* effects = glade_xml_get_widget(cam->xml, "scrolledwindow_effects");
+	cam->show_effects = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem));
+	
+	if(!cam->show_effects) {
+		gtk_widget_hide(effects);
+		gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "main_window")), 320, 240);
+	} else {
+		gtk_widget_show(effects);
+	}
+
+	gconf_client_set_bool(cam->gc, KEY23, cam->show_effects, NULL);
+}
+
+void on_about_activate (GtkMenuItem * menuitem, cam * cam)
 {
-    GtkWidget *about1 = NULL;
-    const gchar *authors[] = { "Greg Jones  <greg@fixedgear.org>",
-        "Jens Knutson  <tempest@magusbooks.com>", NULL
+    static GtkWidget *about = NULL;
+    const gchar *authors[] = {
+	"Greg Jones  <greg@fixedgear.org>",
+        "Jens Knutson  <tempest@magusbooks.com>",
+	NULL
     };
     const gchar *documenters[] = { NULL };
     GdkPixbuf *logo =
-        (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
+        (GdkPixbuf *) create_pixbuf (PACKAGE_DATA_DIR "/pixmaps/camorama.png");
     char *translators = _("translator_credits");
 
     if (!strcmp (translators, "translator_credits"))
         translators = NULL;
-
-    if (about1 != NULL) {
-        printf ("before the old return\n");
-        gdk_window_raise (about1->window);
-        gdk_window_show (about1->window);
+    if (about != NULL) {
+        gtk_window_present (GTK_WINDOW (about));
         return;
-        printf ("after the old return\n");
     }
 
-    about1 = gnome_about_new ("Camorama", VERSION,
-                              "Copyright \xc2\xa9 2002 Greg Jones",
-                              _
-                              ("View, alter and save images from a webcam"),
-                              authors, documenters, translators, logo);
+    about = gnome_about_new (_("Camorama"), PACKAGE_VERSION,
+                             "Copyright \xc2\xa9 2002 Greg Jones",
+                             _("View, alter and save images from a webcam"),
+                             (const char **) authors,
+                             (const char **) documenters, translators, logo);
+    gtk_window_set_transient_for (GTK_WINDOW (about),
+                                  GTK_WINDOW (glade_xml_get_widget
+                                              (cam->xml, "main_window")));
 
-    g_signal_connect (G_OBJECT (about1), "destroy",
-                      G_CALLBACK (gtk_widget_destroyed), &about1);
-    g_object_add_weak_pointer (G_OBJECT (about1), (void **) &(about1));
+    g_object_add_weak_pointer (G_OBJECT (about), (void **) &(about));
 
-    gtk_widget_show (about1);
+    gtk_widget_show (about);
+}
+
+static void
+apply_filters(cam* cam) {
+	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->x, cam->y, cam->depth);
+#warning "FIXME: enable the threshold channel filter"
+//	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
+//		threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
+#warning "FIXME: enable the threshold filter"
+//	if((effect_mask & CAMORAMA_FILTER_THRESHOLD)  != 0) 
+//		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
 }
 
 /*
  * get image from cam - does all the work ;) 
  */
-gint read_timeout_func (cam * cam)
-{
+gint
+read_timeout_func(cam* cam) {
     int i, count = 0;
     GdkGC *gc;
 
@@ -534,9 +543,9 @@ gint read_timeout_func (cam * cam)
     frames2++;
     /*
      * update_rec.x = 0;
-     * * update_rec.y = 0;
-     * * update_rec.width = cam->x;
-     * * update_rec.height = cam->y; 
+     * update_rec.y = 0;
+     * update_rec.width = cam->x;
+     * update_rec.height = cam->y; 
      */
     count++;
     /*
@@ -549,46 +558,7 @@ gint read_timeout_func (cam * cam)
         cam->pic_buf = cam->tmp;
     }
 
-    if (func_state.fc == TRUE) {
-        fix_colour (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.threshold_channel == TRUE) {
-        threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
-
-    if (func_state.threshold == TRUE) {
-        threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
-
-    if (func_state.laplace == TRUE) {
-		 
-        laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
-    if (func_state.sobel == TRUE) {
-        sobel (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.wacky == TRUE) {
-        wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
-    if (func_state.negative == TRUE) {
-        negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
-
-    if (func_state.mirror == TRUE) {
-        mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
-
-    if (func_state.colour == TRUE) {
-        bw (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.smooth == TRUE) {
-        smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
+	apply_filters(cam);
 
     gc = gdk_gc_new (cam->pixmap);
     gdk_draw_rgb_image (cam->pixmap,
@@ -636,46 +606,9 @@ gint timeout_func (cam * cam)
         yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
         cam->pic_buf = cam->tmp;
     }
-    if (func_state.fc == TRUE) {
-        fix_colour (cam->pic_buf, cam->x, cam->y);
-    }
 
-    if (func_state.threshold_channel == TRUE) {
-        threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
+	apply_filters(cam);
 
-    if (func_state.threshold == TRUE) {
-        threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
-
-    if (func_state.laplace == TRUE) {
-		 
-        laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
-    if (func_state.sobel == TRUE) {
-        sobel (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.wacky == TRUE) {
-        wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
-    if (func_state.negative == TRUE) {
-        negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
-
-    if (func_state.mirror == TRUE) {
-        mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
-
-    if (func_state.colour == TRUE) {
-        bw (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.smooth == TRUE) {
-        smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
 
     gc = gdk_gc_new (cam->pixmap);
 
@@ -784,17 +717,16 @@ void capture_func (GtkWidget * widget, cam * cam)
 
 gint timeout_capture_func (cam * cam)
 {
-   /* GdkRectangle rect;
-    rect->x = 0; rect->y = 0;
-    rect->width = cam->x; rect->height = cam->y;*/
+    /* GdkRectangle rect;
+     * rect->x = 0; rect->y = 0;
+     * rect->width = cam->x; rect->height = cam->y; */
 
     /* need to return true, or the timeout will be destroyed - don't forget! :) */
     if (cam->hidden == TRUE) {
         /* call timeout_func to get a new picture.   stupid, but it works.
          * also need to add this to capture_func 
          * maybe add a "window_state_event" handler to do the same when window is iconified */
-		 
-      
+
         pt2Function (cam);
         pt2Function (cam);
         pt2Function (cam);
@@ -813,8 +745,8 @@ gint timeout_capture_func (cam * cam)
 }
 
 gboolean
-on_drawingarea1_expose_event (GtkWidget * widget, GdkEventExpose * event,
-                              cam * cam)
+on_drawingarea_expose_event (GtkWidget * widget, GdkEventExpose * event,
+                             cam * cam)
 {
     cam->window = widget->window;
     gdk_draw_drawable (widget->window,
@@ -825,61 +757,6 @@ on_drawingarea1_expose_event (GtkWidget * widget, GdkEventExpose * event,
 
     frames++;
     return FALSE;
-}
-
-void fix_colour_func (GtkToggleButton * tb, char *data)
-{
-    func_state.fc = gtk_toggle_button_get_active (tb);
-}
-
-void edge_func1 (GtkToggleButton * tb, gpointer data)
-{
-    func_state.wacky = gtk_toggle_button_get_active (tb);
-}
-
-void sobel_func (GtkToggleButton * tb, gpointer data)
-{
-    func_state.sobel = gtk_toggle_button_get_active (tb);
-}
-
-void threshold_func1 (GtkToggleButton * tb, gpointer data)
-{
-    func_state.threshold = gtk_toggle_button_get_active (tb);
-}
-
-void threshold_ch_func (GtkToggleButton * tb, gpointer data)
-{
-    func_state.threshold_channel = gtk_toggle_button_get_active (tb);
-}
-
-void edge_func3 (GtkToggleButton * tb, gpointer data)
-{
-    func_state.laplace = gtk_toggle_button_get_active (tb);
-}
-
-void negative_func (GtkToggleButton * tb, gpointer data)
-{
-    func_state.negative = gtk_toggle_button_get_active (tb);
-}
-
-void mirror_func (GtkToggleButton * tb, gpointer data)
-{
-    func_state.mirror = gtk_toggle_button_get_active (tb);
-}
-
-void smooth_func (GtkToggleButton * tb, gpointer data)
-{
-    func_state.smooth = gtk_toggle_button_get_active (tb);
-}
-
-void colour_func (GtkToggleButton * tb, gpointer data)
-{
-    func_state.colour = gtk_toggle_button_get_active (tb);
-}
-
-void on_scale1_drag_data_received (GtkHScale * sc1, cam * cam)
-{
-    cam->dither = (int) gtk_range_get_value ((GtkRange *) sc1);
 }
 
 void contrast_change (GtkHScale * sc1, cam * cam)
@@ -943,7 +820,7 @@ void update_tooltip (cam * cam)
     if (cam->acap == TRUE) {
         tooltip_text =
             g_strdup_printf
-            ("Local Capture: %d\nRemote Capture: %d\nCapture Interval: %d",
+            (_("Local Capture: %d\nRemote Capture: %d\nCapture Interval: %d"),
              cam->cap, cam->rcap, cam->timeout_interval / 60000);
         if (cam->debug == TRUE) {
             printf ("tip - acap on\n");
@@ -952,10 +829,8 @@ void update_tooltip (cam * cam)
         if (cam->debug == TRUE) {
             printf ("tip - acap off\n");
         }
-        tooltip_text = g_strdup_printf ("Automatic Capture Disabled");
+        tooltip_text = g_strdup_printf (_("Automatic Capture Disabled"));
     }
-    gtk_tooltips_set_tip ((GtkTooltips *) cam->tooltips,
-                          (GtkWidget *) cam->tray_icon, tooltip_text,
-                          "private");
+    gtk_status_icon_set_tooltip(cam->tray_icon, tooltip_text);
     g_free (tooltip_text);
 }
