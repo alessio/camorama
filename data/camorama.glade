@@ -251,7 +251,7 @@
 					  <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 					  <property name="snap_to_ticks">False</property>
 					  <property name="wrap">False</property>
-					  <property name="adjustment">1 1 360 1 10 10</property>
+					  <property name="adjustment">1 1 360 1 10 0</property>
 					  <signal name="value_changed" handler="interval_change" object="cam" last_modification_time="Thu, 02 Jan 2003 18:51:37 GMT"/>
 					</widget>
 					<packing>
