@@ -42,7 +42,7 @@ static GQuark menu_item_filter_type = 0;
 
 static void
 add_filter_clicked(GtkMenuItem* menuitem, CamoramaFilterChain* chain) {
-	GType filter_type = GPOINTER_TO_INT(g_object_get_qdata(G_OBJECT(menuitem), menu_item_filter_type));
+	GType filter_type = GPOINTER_TO_SIZE(g_object_get_qdata(G_OBJECT(menuitem), menu_item_filter_type));
 	camorama_filter_chain_append(chain, filter_type);
 }
 
@@ -124,7 +124,7 @@ show_popup(cam* cam, GtkTreeView* treeview, GdkEventButton* ev) {
 		}
 
 		item = gtk_menu_item_new_with_label(filter_name);
-		g_object_set_qdata(G_OBJECT(item), menu_item_filter_type, GINT_TO_POINTER(filters[i]));
+		g_object_set_qdata(G_OBJECT(item), menu_item_filter_type, GSIZE_TO_POINTER(filters[i]));
 		g_signal_connect(item, "activate",
 				 G_CALLBACK(add_filter_clicked), model);
 		gtk_container_add(GTK_CONTAINER(add_filters), item);
