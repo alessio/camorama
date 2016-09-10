@@ -146,8 +146,6 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 	}
 
 	scale = max - min;
-	if(scale == 0)
-		scale = 1;
 
 	for(y = 0; y < height; y++) 
 	{
