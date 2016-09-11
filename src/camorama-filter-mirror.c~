@@ -30,6 +30,7 @@
 #include <glib/gi18n.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /* GType stuff for CamoramaFilterMirror */
 typedef struct _CamoramaFilter      CamoramaFilterMirror;
@@ -40,57 +41,89 @@ G_DEFINE_TYPE(CamoramaFilterMirror, camorama_filter_mirror, CAMORAMA_TYPE_FILTER
 static void
 camorama_filter_mirror_init(CamoramaFilterMirror* self) {}
 
-static char start = 1;
+static gint oldWidth = -1;
+static gint oldHeight = -1;
+static gint oldDepth = -1;
 
-static long *lastSignal;
-static long *lastHigh;
-static long *lastHighThenLow;
-static long *output;
+static long *lastSignal = 0;
+static long *lastHigh = 0;
+static long *lastHighThenLow = 0;
+static long *output = 0;
 
-static int lowPassTC = 10;
-static int highPassTC = 3;
+static int lowPassTC = 4;
+static int highPassTC = 10;
 
 static int count = 0;
+
+char debug = 1;
+
+static void MaybeNewMemory(gint width, gint height, gint depth)
+{
+	long needed, i, memory;
+
+	if(width == oldWidth && height == oldHeight && depth == oldDepth)
+		return;
+
+	if(lastSignal)
+		free(lastSignal);
+	if(lastHigh)
+		free(lastHigh);
+	if(lastHighThenLow)
+		free(lastHighThenLow);
+	if(output)
+		free(output);
+
+	if(debug)
+		printf("\n\nwidth: %d, height: %d, depth: %d\n\n", width, height, depth);
+
+	needed = 5 + (width+1)*(height+1);
+	memory = needed*sizeof(long);
+	lastSignal = (long *)malloc(memory);
+	if (!lastSignal)
+	{
+		printf("ERROR: Cannot malloc image memory for lastSignal\n");
+		return;
+	}
+	lastHigh = (long *)malloc(memory);
+	if (!lastHigh)
+	{
+		printf("ERROR: Cannot malloc image memory for lastHigh\n");
+		return;
+	}
+	lastHighThenLow = (long *)malloc(memory);
+	if (!lastHighThenLow)
+	{
+		printf("ERROR: Cannot malloc image memory for lastHighThenLow\n");
+		return;
+	}
+	output = (long *)malloc(memory);
+	if (!output)
+	{
+		printf("ERROR: Cannot malloc image memory for output\n");
+		return;
+	}
+	for(i=0; i < needed; i++)
+	{
+		lastSignal[i] = 127;
+		lastHigh[i] = 127;
+		lastHighThenLow[i] = 127;
+	}
+
+	oldWidth = width;
+	oldHeight = height;
+	oldDepth = depth;
+}
+
 
 static void
 camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) 
 {
-	gint x, y, z, row_length, row, column, thisPixel, thisXY, thatXY,  memory;
+	gint x, y, z, row_length, row, column, thisPixel, thisXY, thatXY;
 
 	long signal, thisHigh, thisHighThenLow, thatHigh, thatHighThenLow, thatSignal, newValue, max, min, scale;
 
-	if(start)
-	{
+	MaybeNewMemory(width, height, depth);
 
-		printf("\n\nwidth: %d, height: %d, depth: %d\n\n", width, height, depth);
-		memory = (5 + (width+1)*(height+1))*sizeof(long);
-		lastSignal = (long *)malloc(memory);
-		if (!lastSignal)
-		{
-			printf("ERROR: Cannot malloc image memory 1\n");
-			return;
-		}
-		lastHigh = (long *)malloc(memory);
-		if (!lastHigh)
-		{
-			printf("ERROR: Cannot malloc image memory 2\n");
-			return;
-		}
-		lastHighThenLow = (long *)malloc(memory);
-		if (!lastHighThenLow)
-		{
-			printf("ERROR: Cannot malloc image memory 3\n");
-			return;
-		}
-		output = (long *)malloc(memory);
-		if (!output)
-		{
-			printf("ERROR: Cannot malloc image memory 3\n");
-			return;
-		}
-	}
-
-	start = 0;
 	max = LONG_MIN;
 	min = LONG_MAX;
 	thatSignal = 0;
@@ -123,13 +156,12 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 			thatHighThenLow = (thatHigh + lastHighThenLow[thatXY]*lowPassTC)/(lowPassTC + 1);
 
 			newValue = thisHighThenLow*thatHigh - thatHighThenLow*thisHigh;
+			output[thisXY] = newValue;
 
 			if(newValue > max)
 				max = newValue;
 			if(newValue < min)
-				min = newValue;
-
-			output[thisXY] = newValue;
+				min = newValue;			
 
 			// Remember for next time
 
@@ -140,12 +172,14 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 		}
 	}
 	count++;
-	if(!(count%50))
+	if(debug && !(count%50))
 	{
 		printf("\nmax: %ld, min: %ld\n", max, min);
 	}
 
 	scale = max - min;
+	if(scale == 0)
+		scale = 1;
 
 	for(y = 0; y < height; y++) 
 	{
@@ -155,7 +189,7 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 			column = x*depth;
 			thisPixel = row + column;
 			thisXY = y*width+x;
-			signal = (output[thisXY]*255)/scale - min;
+			signal = ((output[thisXY] - min)*255)/scale;
 			if(signal > 255)
 				signal = 255;
 			if(signal < 0)
