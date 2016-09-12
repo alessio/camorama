@@ -1,15 +1,3 @@
-This branch of camorama has been adapted to try out various computer-vision
-filters, starting with a Reichardt motion detection filter.
-
-These filters are added in addition to the ones already in camorama.
-
-Adrian Bowyer
-12 September 2016
-
-----------------------------
-
-
-
 camorama - view, alter and save images from a webcam
 how to build:
 
