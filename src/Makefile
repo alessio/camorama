@@ -50,6 +50,7 @@ am_camorama_OBJECTS = callbacks.$(OBJEXT) camorama-display.$(OBJEXT) \
 	camorama-filter-chain.$(OBJEXT) \
 	camorama-filter-laplace.$(OBJEXT) \
 	camorama-filter-mirror.$(OBJEXT) \
+	camorama-filter-reichardt.$(OBJEXT) \
 	camorama-stock-items.$(OBJEXT) camorama-window.$(OBJEXT) \
 	filter.$(OBJEXT) main.$(OBJEXT) support.$(OBJEXT) \
 	v4l.$(OBJEXT) fileio.$(OBJEXT) $(am__objects_1) \
@@ -227,6 +228,7 @@ camorama_SOURCES = \
 	camorama-filter-chain.h \
 	camorama-filter-laplace.c \
 	camorama-filter-mirror.c \
+	camorama-filter-reichardt.c \
 	camorama-globals.h \
 	camorama-stock-items.c \
 	camorama-stock-items.h \
@@ -322,6 +324,7 @@ include ./$(DEPDIR)/camorama-display.Po
 include ./$(DEPDIR)/camorama-filter-chain.Po
 include ./$(DEPDIR)/camorama-filter-laplace.Po
 include ./$(DEPDIR)/camorama-filter-mirror.Po
+include ./$(DEPDIR)/camorama-filter-reichardt.Po
 include ./$(DEPDIR)/camorama-stock-items.Po
 include ./$(DEPDIR)/camorama-window.Po
 include ./$(DEPDIR)/fileio.Po

@@ -55,6 +55,7 @@ void threshold_func1 (GtkToggleButton *, gpointer);
 void threshold_ch_func (GtkToggleButton *, gpointer);
 void edge_func3 (GtkToggleButton *, gpointer);
 void mirror_func (GtkToggleButton *, gpointer);
+void reichardt_func (GtkToggleButton *, gpointer);
 void colour_func (GtkToggleButton *, gpointer);
 void smooth_func (GtkToggleButton *, gpointer);
 void negative_func (GtkToggleButton *, gpointer);

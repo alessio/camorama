@@ -1,17 +1,16 @@
-# English/Canada translation of camorama.
-# Copyright (C) 2004-2005 Adam Weinberger and the GNOME Foundation
-# This file is distributed under the same licence as the camorama package.
-# Adam Weinberger <adamw@gnome.org>, 2004, 2005.
-# 
-# 
+# English (British) translation.
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the camorama package.
+# Gareth Owen <gowen72@yahoo.com>, 2004.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-28 13:13-0500\n"
-"PO-Revision-Date: 2004-09-11 02:24-0400\n"
-"Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
-"Language-Team: Canadian English <adamw@gnome.org>\n"
+"POT-Creation-Date: 2007-01-03 20:08+0000\n"
+"PO-Revision-Date: 2007-01-03 20:08-0000\n"
+"Last-Translator: David Lodge <dave@cirt.net>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +19,8 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama Webcam Viewer"
 
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+#: ../camorama.desktop.in.h:2
+#: ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
 msgstr "View, alter and save images from a webcam"
 
@@ -130,11 +130,11 @@ msgstr "Save directory:"
 
 #: ../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
-msgstr "Save files in JPEG format"
+msgstr "Save files in jpeg format"
 
 #: ../data/camorama.glade.h:28
 msgid "Save files in png format"
-msgstr "Save files in PNG format"
+msgstr "Save files in png format"
 
 #: ../data/camorama.glade.h:29
 msgid "Show Adjustments"
@@ -202,15 +202,15 @@ msgstr "webcam-capture"
 
 #: ../data/camorama.glade.h:45
 msgid "webcamshot"
-msgstr "webcam shot"
+msgstr "webcamshot"
 
 #: ../data/camorama.glade.h:46
 msgid "your-password"
-msgstr "your password"
+msgstr "your-password"
 
 #: ../data/camorama.glade.h:47
 msgid "your-username"
-msgstr "your username"
+msgstr "your-username"
 
 #: ../data/camorama.glade.h:48
 msgid "~/.gnome-desktop"
@@ -226,11 +226,11 @@ msgstr "Append timestamp to remote filename"
 
 #: ../data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Appends a timestamp, in UNIX time, to the end of filenames"
+msgstr "Appends a timestamp, in UNIX time, to the ends of filenames"
 
 #: ../data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Appends a timestamp, in UNIX time, to the end of remote filenames"
+msgstr "Appends a timestamp, in UNIX time, to the ends of remote filenames"
 
 #: ../data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
@@ -258,11 +258,11 @@ msgstr "Folder for remote captures"
 
 #: ../data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr "Remote folder for saving captured pictures"
+msgstr "Folder for saving captured pictures remotely"
 
 #: ../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr "Local folder for saving captured pictures"
+msgstr "Folder for saving captured pictures to locally"
 
 #: ../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
@@ -314,7 +314,7 @@ msgstr "The password for the FTP account for remote captures."
 
 #: ../data/camorama.schemas.in.h:25
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "The UNIX file system path to the device that's assigned to your camera."
+msgstr "The unix file system path to the device that's assigned to your camera."
 
 #: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
@@ -393,30 +393,27 @@ msgid "Video device"
 msgstr "Video device"
 
 #: ../data/camorama.schemas.in.h:45
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
+msgstr "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
 
 #: ../data/camorama.schemas.in.h:46
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
+msgstr "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
 
 #: ../src/callbacks.c:500
 msgid "translator_credits"
-msgstr "Adam Weinberger <adamw@gnome.org>"
+msgstr ""
+"Abigail Brady <morwen@evilmagi_c.org>\n"
+"Bastien Nocera <hadess@hadess.net>\n"
+"Gareth Owen <gowen72@yahoo.com>"
 
 #: ../src/callbacks.c:509
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:595
+#: ../src/callbacks.c:629
+#: ../src/callbacks.c:679
 #: ../src/callbacks.c:692
 msgid "Unable to capture image."
 msgstr "Unable to capture image."
@@ -444,10 +441,6 @@ msgstr "Laplace (4 Neighbours)"
 msgid "Mirror"
 msgstr "Mirror"
 
-#: ../src/camorama-filter-reichardt.c:66
-msgid "Reichardt"
-msgstr "Reichardt"
-
 #: ../src/camorama-stock-items.c:14
 msgid "Webcam"
 msgstr "Webcam"
@@ -460,16 +453,18 @@ msgstr "_Add Filter"
 msgid "Effects"
 msgstr "Effects"
 
-#: ../src/fileio.c:120 ../src/fileio.c:266
+#: ../src/fileio.c:120
+#: ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
-msgstr "Could not save temporary image file in /tmp."
+msgstr "Could save temporary image file in /tmp."
 
 #: ../src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Unable to create image '%s'."
 
-#: ../src/fileio.c:147 ../src/fileio.c:430
+#: ../src/fileio.c:147
+#: ../src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Could not save image '%s/%s'."
@@ -594,15 +589,19 @@ msgstr ""
 
 #: ../src/main.c:238
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "Could not find the main interface file (camorama.glade)."
+msgstr "Couldn't find the main interface file (camorama.glade)."
 
 #: ../src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Could not find pixmap file: %s"
+msgstr "Couldn't find pixmap file: %s"
 
-#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
-#: ../src/v4l.c:226 ../src/v4l.c:241
+#: ../src/v4l.c:94
+#: ../src/v4l.c:168
+#: ../src/v4l.c:180
+#: ../src/v4l.c:205
+#: ../src/v4l.c:226
+#: ../src/v4l.c:241
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -610,3 +609,21 @@ msgid ""
 msgstr ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
+
+#~ msgid "*"
+#~ msgstr "*"
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Effects</span>"
+#~ msgid "Black & white"
+#~ msgstr "Black & white"
+#~ msgid "Color threshold"
+#~ msgstr "Colour threshold"
+#~ msgid "Laplace"
+#~ msgstr "Laplace"
+#~ msgid "Negative"
+#~ msgstr "Negative"
+#~ msgid "Orientation"
+#~ msgstr "Orientation"
+#~ msgid "The orientation of the tray."
+#~ msgstr "The orientation of the tray."
+

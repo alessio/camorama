@@ -21,6 +21,16 @@
  * USA
  */
 
+/*
+
+  Reichardt movement detection filter coded by Adrian Bowyer
+
+  12 September 2016
+
+  http://adrianbowyer.com
+
+*/
+
 #include "filter.h"
 
 #ifdef HAVE_CONFIG_H
@@ -32,14 +42,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* GType stuff for CamoramaFilterMirror */
-typedef struct _CamoramaFilter      CamoramaFilterMirror;
-typedef struct _CamoramaFilterClass CamoramaFilterMirrorClass;
+/* GType stuff for CamoramaFilterReichardt */
+typedef struct _CamoramaFilter      CamoramaFilterReichardt;
+typedef struct _CamoramaFilterClass CamoramaFilterReichardtClass;
 
-G_DEFINE_TYPE(CamoramaFilterMirror, camorama_filter_mirror, CAMORAMA_TYPE_FILTER);
+G_DEFINE_TYPE(CamoramaFilterReichardt, camorama_filter_reichardt, CAMORAMA_TYPE_FILTER);
 
 static void
-camorama_filter_mirror_init(CamoramaFilterMirror* self) {}
+camorama_filter_reichardt_init(CamoramaFilterReichardt* self) {}
 
 static gint oldWidth = -1;
 static gint oldHeight = -1;
@@ -50,12 +60,12 @@ static long *lastHigh = 0;
 static long *lastHighThenLow = 0;
 static long *output = 0;
 
-static int lowPassTC = 4;
-static int highPassTC = 10;
+static int lowPassTC = 1;
+static int highPassTC = 5;
 
 static int count = 0;
 
-char debug = 1;
+char debug = 0;
 
 static void MaybeNewMemory(gint width, gint height, gint depth)
 {
@@ -116,7 +126,7 @@ static void MaybeNewMemory(gint width, gint height, gint depth)
 
 
 static void
-camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) 
+camorama_filter_reichardt_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) 
 {
 	gint x, y, z, row_length, row, column, thisPixel, thisXY, thatXY;
 
@@ -184,16 +194,17 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 	for(y = 0; y < height; y++) 
 	{
 		row = y*row_length;
+		for (z = 0; z < depth; z++) 
+		{
+			image[thisPixel + z] = 0;
+		}
 		for (x = 1; x < width; x++) 
 		{
 			column = x*depth;
 			thisPixel = row + column;
 			thisXY = y*width+x;
-			signal = ((output[thisXY] - min)*255)/scale;
-			if(signal > 255)
-				signal = 255;
-			if(signal < 0)
-				signal = 0;
+			signal = output[thisXY];
+			signal = ((signal - min)*255)/scale;
 			for (z = 0; z < depth; z++) 
 			{
 				image[thisPixel + z] = (guchar)signal;
@@ -203,10 +214,10 @@ camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width,
 }
 
 static void
-camorama_filter_mirror_class_init(CamoramaFilterMirrorClass* self_class) {
-	self_class->filter = camorama_filter_mirror_filter;
+camorama_filter_reichardt_class_init(CamoramaFilterReichardtClass* self_class) {
+	self_class->filter = camorama_filter_reichardt_filter;
 	// TRANSLATORS: This is a noun
-	self_class->name   = _("Mirror");
+	self_class->name   = _("Reichardt");
 }
 
 

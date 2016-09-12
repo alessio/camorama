@@ -29,9 +29,6 @@
 
 #include <glib/gi18n.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
 /* GType stuff for CamoramaFilterMirror */
 typedef struct _CamoramaFilter      CamoramaFilterMirror;
 typedef struct _CamoramaFilterClass CamoramaFilterMirrorClass;
@@ -41,162 +38,23 @@ G_DEFINE_TYPE(CamoramaFilterMirror, camorama_filter_mirror, CAMORAMA_TYPE_FILTER
 static void
 camorama_filter_mirror_init(CamoramaFilterMirror* self) {}
 
-static gint oldWidth = -1;
-static gint oldHeight = -1;
-static gint oldDepth = -1;
-
-static long *lastSignal = 0;
-static long *lastHigh = 0;
-static long *lastHighThenLow = 0;
-static long *output = 0;
-
-static int lowPassTC = 1;
-static int highPassTC = 10;
-
-static int count = 0;
-
-char debug = 1;
-
-static void MaybeNewMemory(gint width, gint height, gint depth)
-{
-	long needed, i, memory;
-
-	if(width == oldWidth && height == oldHeight && depth == oldDepth)
-		return;
-
-	if(lastSignal)
-		free(lastSignal);
-	if(lastHigh)
-		free(lastHigh);
-	if(lastHighThenLow)
-		free(lastHighThenLow);
-	if(output)
-		free(output);
-
-	if(debug)
-		printf("\n\nwidth: %d, height: %d, depth: %d\n\n", width, height, depth);
-
-	needed = 5 + (width+1)*(height+1);
-	memory = needed*sizeof(long);
-	lastSignal = (long *)malloc(memory);
-	if (!lastSignal)
-	{
-		printf("ERROR: Cannot malloc image memory for lastSignal\n");
-		return;
-	}
-	lastHigh = (long *)malloc(memory);
-	if (!lastHigh)
-	{
-		printf("ERROR: Cannot malloc image memory for lastHigh\n");
-		return;
-	}
-	lastHighThenLow = (long *)malloc(memory);
-	if (!lastHighThenLow)
-	{
-		printf("ERROR: Cannot malloc image memory for lastHighThenLow\n");
-		return;
-	}
-	output = (long *)malloc(memory);
-	if (!output)
-	{
-		printf("ERROR: Cannot malloc image memory for output\n");
-		return;
-	}
-	for(i=0; i < needed; i++)
-	{
-		lastSignal[i] = 127;
-		lastHigh[i] = 127;
-		lastHighThenLow[i] = 127;
-	}
-
-	oldWidth = width;
-	oldHeight = height;
-	oldDepth = depth;
-}
-
-
 static void
-camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) 
-{
-	gint x, y, z, row_length, row, column, thisPixel, thisXY, thatXY;
-
-	long signal, thisHigh, thisHighThenLow, thatHigh, thatHighThenLow, thatSignal, newValue, max, min, scale;
-
-	MaybeNewMemory(width, height, depth);
-
-	max = LONG_MIN;
-	min = LONG_MAX;
-	thatSignal = 0;
+camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) {
+	gint x, y, z, row_length, image_length, new_row, next_row, half_row, index1, index2;
+	guchar temp;
 
 	row_length   = width * depth;
-	for(y = 0; y < height; y++) 
-	{
-		row = y*row_length;
-		for (x = 1; x < width; x++) 
-		{
-			column = x*depth;
-			thisPixel = row + column;
-			thisXY = y*width+x;
-			thatXY = thisXY - 1; 
-
-			// Go to grey
-
-			signal = 0;
-			for (z = 0; z < depth; z++) 
-			{
-				signal += image[thisPixel + z];
-			}
-			signal = signal/depth;
-
-			// Apply Reichardt
-			
-			thisHigh = (highPassTC*(lastHigh[thisXY] + signal - lastSignal[thisXY]))/(highPassTC + 1);
-			thisHighThenLow = (thisHigh + lastHighThenLow[thisXY]*lowPassTC)/(lowPassTC + 1);
-			thatHigh = (highPassTC*(lastHigh[thatXY] + thatSignal - lastSignal[thatXY]))/(highPassTC + 1);
-			thatHighThenLow = (thatHigh + lastHighThenLow[thatXY]*lowPassTC)/(lowPassTC + 1);
-
-			newValue = thisHighThenLow*thatHigh - thatHighThenLow*thisHigh;
-			output[thisXY] = newValue;
-
-			if(newValue > max)
-				max = newValue;
-			if(newValue < min)
-				min = newValue;			
-
-			// Remember for next time
-
-			thatSignal = signal;
-			lastHigh[thisXY] = thisHigh;
-			lastHighThenLow[thisXY] = thisHighThenLow;
-			lastSignal[thisXY] = signal;
-		}
-	}
-	count++;
-	if(debug && !(count%50))
-	{
-		printf("\nmax: %ld, min: %ld\n", max, min);
-	}
-
-	scale = max - min;
-	if(scale == 0)
-		scale = 1;
-
-	for(y = 0; y < height; y++) 
-	{
-		row = y*row_length;
-		for (x = 1; x < width; x++) 
-		{
-			column = x*depth;
-			thisPixel = row + column;
-			thisXY = y*width+x;
-			signal = ((output[thisXY] - min)*255)/scale;
-			if(signal > 255)
-				signal = 255;
-			if(signal < 0)
-				signal = 0;
-			for (z = 0; z < depth; z++) 
-			{
-				image[thisPixel + z] = (guchar)signal;
+	image_length = row_length * height;
+	half_row     = ((width+1)/2)*depth;
+	for(new_row = 0; new_row < image_length; new_row = next_row) { // 0, 320*depth, 640*depth, 960*depth, ...
+		next_row = new_row + row_length;
+		for (x = 0; x < half_row; x+=depth) { // 0, 3, 6, ..., 160*depth
+			index1 = new_row  + x;        //   0,   3,   6, ..., 160*depth
+			index2 = next_row - x - depth;// 320, 319, 318, ..., 161*depth
+			for (z = 0; z < depth; z++) { // 0, ..., depth
+				temp              = image[index1 + z];
+				image[index1 + z] = image[index2 + z];
+				image[index2 + z] = temp;
 			}
 		}
 	}
