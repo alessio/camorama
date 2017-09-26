@@ -23,14 +23,21 @@
 
 /*
 
-  Reichardt movement detection filter coded by Adrian Bowyer
+  Hassenstein-Reichardt movement detection filter written by Adrian Bowyer
 
   12 September 2016
 
   http://adrianbowyer.com
+  https://reprapltd.com
+
+  For an introduction to how this works in biological vision (fly's eyes and yours) see:
+
+  https://en.wikipedia.org/wiki/Motion_sensing_in_vision#The_Reichardt-Hassenstein_model
+
 
 */
 
+#include <math.h> // We just need one square root
 #include "filter.h"
 
 #ifdef HAVE_CONFIG_H
@@ -51,21 +58,33 @@ G_DEFINE_TYPE(CamoramaFilterReichardt, camorama_filter_reichardt, CAMORAMA_TYPE_
 static void
 camorama_filter_reichardt_init(CamoramaFilterReichardt* self) {}
 
+static int count = 0;
+
 static gint oldWidth = -1;
 static gint oldHeight = -1;
 static gint oldDepth = -1;
+
+// Arrays for holding processed image memories
 
 static long *lastSignal = 0;
 static long *lastHigh = 0;
 static long *lastHighThenLow = 0;
 static long *output = 0;
 
+// Low and high pass filter time constants
+
 static int lowPassTC = 1;
 static int highPassTC = 5;
 
-static int count = 0;
+// Set to 1 to print debugging info on standard output
 
-char debug = 0;
+char debug = 0; 
+
+//---------------------------------------------------------------------------------------
+
+
+// When we start, or when the image size changes, we need to malloc some space to put the
+// frame to frame calculations in.
 
 static void MaybeNewMemory(gint width, gint height, gint depth)
 {
@@ -125,18 +144,29 @@ static void MaybeNewMemory(gint width, gint height, gint depth)
 }
 
 
+//--------------------------------------------------------------------------------------------------------------
+
+// This is the function that implements the filter
+
+
 static void
 camorama_filter_reichardt_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) 
 {
 	gint x, y, z, row_length, row, column, thisPixel, thisXY, thatXY;
 
-	long signal, thisHigh, thisHighThenLow, thatHigh, thatHighThenLow, thatSignal, newValue, max, min, scale;
+	long signal, thisHigh, thisHighThenLow, thatHigh, thatHighThenLow, thatSignal, newValue, max, min, scale, mean, var;
 
 	MaybeNewMemory(width, height, depth);
 
 	max = LONG_MIN;
 	min = LONG_MAX;
 	thatSignal = 0;
+	mean = 0;
+	var = 0;
+
+	// Run through each pixel doing the filter calculation with the one
+	// immediately to its left.  Note that this means that the extreme
+        // left (x=0) column of pixels is not filtered.
 
 	row_length   = width * depth;
 	for(y = 0; y < height; y++) 
@@ -149,7 +179,7 @@ camorama_filter_reichardt_filter(CamoramaFilter* filter, guchar *image, gint wid
 			thisXY = y*width+x;
 			thatXY = thisXY - 1; 
 
-			// Go to grey
+			// Go from colour to grey
 
 			signal = 0;
 			for (z = 0; z < depth; z++) 
@@ -171,7 +201,10 @@ camorama_filter_reichardt_filter(CamoramaFilter* filter, guchar *image, gint wid
 			if(newValue > max)
 				max = newValue;
 			if(newValue < min)
-				min = newValue;			
+				min = newValue;
+
+			mean += newValue;
+			var += newValue*newValue;		
 
 			// Remember for next time
 
@@ -181,33 +214,77 @@ camorama_filter_reichardt_filter(CamoramaFilter* filter, guchar *image, gint wid
 			lastSignal[thisXY] = signal;
 		}
 	}
+
+	mean = mean/(height*width);
+	var = var/(height*width) - mean*mean;
+	var = (long)(sqrt((double)var));
+
+	// If debugging, print stats every 50 frames
+
 	count++;
 	if(debug && !(count%50))
 	{
-		printf("\nmax: %ld, min: %ld\n", max, min);
+		printf("\nmax: %ld, min: %ld mean: %ld, sd: %ld\n", max, min, mean, var);
 	}
 
-	scale = max - min;
-	if(scale == 0)
-		scale = 1;
 
-	for(y = 0; y < height; y++) 
+	// If anything's going on (var > 10, say) let's see it
+	// This scales the filtered output to the range 0-255
+	// The range scaled is four standard deviations (i.e. mean +/- 2 SD).
+	// Anything outside that range is clipped to 0 or 255.
+
+	if(var > 10)
 	{
-		row = y*row_length;
-		for (z = 0; z < depth; z++) 
+
+	/*
+
+		NB - if you are just concerned to detect movement (wildlife camera trap, burglar alarm etc)
+		put the call to start recording (or phone the police) in at this point.
+
+
+	*/
+		scale = 4*var;
+
+		for(y = 0; y < height; y++) 
 		{
-			image[thisPixel + z] = 0;
-		}
-		for (x = 1; x < width; x++) 
-		{
-			column = x*depth;
-			thisPixel = row + column;
-			thisXY = y*width+x;
-			signal = output[thisXY];
-			signal = ((signal - min)*255)/scale;
+			row = y*row_length;
 			for (z = 0; z < depth; z++) 
 			{
-				image[thisPixel + z] = (guchar)signal;
+				image[row + z] = 0;
+			}
+			for (x = 1; x < width; x++) 
+			{
+				column = x*depth;
+				thisPixel = row + column;
+				thisXY = y*width+x;
+				signal = output[thisXY];
+				signal = ((2*var + signal - mean)*255)/scale;
+				if(signal < 0)
+					signal = 0;
+				if(signal > 255)
+					signal = 255;
+				for (z = 0; z < depth; z++) 
+				{
+					image[thisPixel + z] = (guchar)signal;
+				}
+			}
+		}
+	} else 
+
+// Nothing to see here, move on.
+
+	{
+		for(y = 0; y < height; y++) 
+		{
+			row = y*row_length;
+			for (x = 0; x < width; x++) 
+			{
+				column = x*depth;
+				thisPixel = row + column;
+				for (z = 0; z < depth; z++) 
+				{
+					image[thisPixel + z] = 127;
+				}
 			}
 		}
 	}
