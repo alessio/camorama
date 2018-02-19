@@ -571,6 +571,7 @@ camorama_filters_init(void) {
 	camorama_filter_threshold_get_type();
 	camorama_filter_threshold_channel_get_type();
 	camorama_filter_mirror_get_type();
+	camorama_filter_reichardt_get_type();
 	camorama_filter_wacky_get_type();
 	camorama_filter_smooth_get_type();
 	camorama_filter_laplace_get_type();

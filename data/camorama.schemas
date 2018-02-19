@@ -1,0 +1,4651 @@
+<gconfschemafile>
+  <schemalist>
+
+    <schema>
+      <key>/schemas/apps/camorama/device</key>
+      <applyto>/apps/camorama/device</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>/dev/video0</default>
+      <locale name="C">
+	<short>Video device</short>
+	<long>The unix file system path to the device that's assigned to your camera.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Видео устройство</short>
+	<long>Системен път по UNIX до устройството, което отговаря за уеб камерата.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Video-Gerät</short>
+	<long>Der Unix-Dateisystempfad zu dem Gerät, das Ihrer Kamera zugeordnet ist.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཝི་ཌིའོ་ཐབས་འཕྲུལ་</short>
+	<long>ཡུ་ནིགསི་ཡིག་སྣོད་རིམ་ལུགས་འགྲུལ་ལམ་འདི་  ཁྱོད་རའི་པར་ཆས་ལུ་འགན་སྤྲོད་འབད་ཡོད་པའི་ཐབས་འཕྲུལ་ལུ།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Video device</short>
+	<long>The UNIX file system path to the device that&apos;s assigned to your camera.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Video device</short>
+	<long>The unix file system path to the device that&apos;s assigned to your camera.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Dispositivo de vídeo</short>
+	<long>La ruta del sistema de archivos unix al dispositivo que está asignado a su cámara.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Bideo-gailua</short>
+	<long>Gailuaren UNIX fitxategi-sistemaren bide-izena (kamerari esleitu zaiona).</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Videolaite</short>
+	<long>Kameraasi liittyvän unix-laitetiedoston polku tiedostojärjestelmässä.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Périphérique vidéo</short>
+	<long>Chemin d&apos;accès unix au périphérique assigné à votre caméra.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Dispositivo de vídeo</short>
+	<long>A ruta do sistema de ficheiros unix·unix· apunta ao dispositivo asignado pola cámara.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ビデオのデバイス</short>
+	<long>お使いのカメラに割り当てるデバイスへのパス名です。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Video iekārta</short>
+	<long>Unix failu sistēma ceļš uz ierīci, kura ir pievienota tavai kamerai.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Videoutstyr</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>भिडियो यन्त्र</short>
+	<long>यन्त्रमा युनिक्स फाइल प्रणाली बाटो जसले तपाईँको क्यामेरामा मानाङ्कन गर्दछ।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Video-apparaat</short>
+	<long>De unix-bestandsnaam van het camera-apparaat</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Equipamento de vídeo</short>
+	<long>O caminho para o ficheiro unix cujo dispositivo está atribuído à sua câmara.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Dispositivo de vídeo</short>
+	<long>O caminho no sistema de arquivos unix para o dispositivo associado à sua câmera.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Video naprava</short>
+	<long>Unix sistemska pot do naprave dodeljene kameri.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Videoenhet</short>
+	<long>Sökvägen i UNIX-filsystemet till den enhet som är tilldelad till din kamera.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Thiết bị ảnh động</short>
+	<long>Đường dẫn hệ thống tập tin UNIX đến thiết bị được gán cho máy ảnh của bạn.</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>視訊裝置</short>
+	
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/append_ts_to_file</key>
+      <applyto>/apps/camorama/preferences/append_ts_to_file</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Append timestamp to filename</short>
+	<long>Appends a timestamp, in UNIX time, to the ends of filenames</long>
+      </locale>
+
+      <locale name="az">
+	<short>Vaxt mühürünü fayl adına əlavə et</short>
+	<long>UNIX vaxtını fayl adlarının sonuna əlavə edir</long>
+      </locale>
+
+      <locale name="be">
+	<short>Дадаць часавую адмеціну да назвы файла</short>
+	<long>Дадаць часаваю адмеціну, у UNIX фармаце, у канец назвы файла</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Добавяне на маркер за време към името на файла</short>
+	<long>Добавяне на маркер за време във формат UNIX към името на файла</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Dodaj vremensku oznaku imenu datoteke</short>
+	<long>Dodaj vremensku oznaku, u UNIX vremenu, na kraju imena datoteke</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Annexa la marca horària al nom del fitxer</short>
+	<long>Annexa la marca horària, en temps UNIX, al final dels noms de fitxer</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Připojit časový údaj k souboru</short>
+	<long>Připojí časový údaj, ve tvaru UNIX, na konce názvů souborů</long>
+      </locale>
+
+      <locale name="da">
+	<short>Tilføj tidsstempel til filnavn</short>
+	<long>Tilføjer et tidsstempel i Unix-tid til slutningen af filnavne</long>
+      </locale>
+
+      <locale name="de">
+	<short>Zeitstempel an Dateiname anhängen</short>
+	<long>Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der Dateinamen</long>
+      </locale>
+
+      <locale name="dz">
+	<short>དུས་བཀོད་འདི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་</short>
+	<long>ཡུ་ནིགསི་དུས་ཡུན་ནང་  ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Append timestamp to filename</short>
+	<long>Appends a timestamp, in UNIX time, to the end of filenames</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Append timestamp to filename</short>
+	<long>Appends a timestamp, in UNIX time, to the ends of filenames</long>
+      </locale>
+
+      <locale name="es">
+	<short>Agregar una marca de tiempo al nombre de archivo</short>
+	<long>Agrega una marca de tiempo, en formato de tiempo UNIX, al final de los nombres de archivos</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Fitxategi-izenari data-zigilua gehitu</short>
+	<long>Fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Lisää aikaleima tiedostonimeen</short>
+	<long>Lisää aikaleima UNIX-ajan muodossa tiedostonimien loppuun</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Apposer un horodatage au nom des fichiers</short>
+	<long>Apposer un horodatage, en temps UNIX, à la fin des noms de fichiers</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Engadir a marca de tempo ao ficheiro</short>
+	<long>Engadir·a·marca de tempo, en formato UNIX,·ao·final do nome dos ficheiros</long>
+      </locale>
+
+      <locale name="gu">
+	<short>ફાઈલના નામમાં સમયનોંધ ઉમેરો</short>
+	<long>સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, ફાઈલના નામના અંતે</long>
+      </locale>
+
+      <locale name="it">
+	<short>Aggiunge data e ora al nome del file</short>
+	<long>Aggiunge data e ora, come orario UNIX, alla fine dei nomi dei file</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ファイル名にタイムスタンプを追加する</short>
+	<long>ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Pievienot laika spiedogu faila vārdam</short>
+	<long>pievienot laika spiedogu UNIX laikā, faila vāradu biegās</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Припои временска марка на името од датотеките</short>
+	<long>Внеси временска марка, во UNIX време, на крајовите од имињата од датотеките</long>
+      </locale>
+
+      <locale name="ms">
+	<short>Tambah setemmasa ke namafail</short>
+	<long>Tambah setemmasa, dalam masa UNIX, ke hujung namafail</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Legg til tidsstempel i filnavn</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>फाइलनामका लागि सङ्लग्न टाइमस्ट्याम्प</short>
+	<long>टाइमस्ट्याम्प सङ्लग्न गर्नुहोस्, UNIX समयमा, फाइलनामहरूको अन्तिममा</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Tijdstempel aan bestandsnaam toevoegen</short>
+	<long>Voegt aan het eind van een bestandsnaam een UNIX-tijdstempel toe</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਫਾਈਲ ਦੇ ਅੰਤ ਵਿਚ timestamp ਜੋੜੋ</short>
+	<long>ਫਾਈਲਾਂ ਦੇ ਨਾਉਂ ਦੇ ਅੰਤ ਤੇ,UNIX ਸਮੇਂ ਵਿਚ timestamp ਜੋੜਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Dodanie datownika do nazwy pliku</short>
+	<long>Dodaje na końcu nazwy pliku datownik, w formacie czasu UNIX</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Acrescentar a data e hora ao nome do ficheiro</short>
+	<long>Acrescenta a data e hora, em hora UNIX, ao final dos nomes dos ficheiros</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Acrescentar horário ao nome arquivo</short>
+	<long>Acrescenta horário, em hora UNIX, ao final dos nomes arquivos</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Pripni časovni žig datoteki</short>
+	<long>Pripne časovni žig, v UNIX času, koncu imena datoteke</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Shton datën dhe orën emrit të file</short>
+	<long>Shton datën dhe orën, si orar UNIX, në fund të emrit të file</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Додати временски тренутак датотеци</short>
+	<long>Додајти временски тренутак, у Уникс бремену, на крајеве датотека</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Dodati vremenski trenutak datoteci</short>
+	<long>Dodajti vremenski trenutak, u Uniks bremenu, na krajeve datoteka</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Lägg till tidsstämpel till filnamn</short>
+	<long>Lägger till en tidsstämpel, i UNIX-tid, till sluten på filnamn</long>
+      </locale>
+
+      <locale name="ta">
+	<short>timestampஐ கோப்புப் பெயருடன் இணை</short>
+	<long>UNIX நேரத்தில் இருக்கும் timestampஐ கோப்புப் பெயரின் கடைசியில் இணை</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Dosya adına zaman damgası ekle</short>
+	<long>Dosya adlarının sonuna, UNIX zamanı olarak, zaman damgası ekle</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Додати позначку часу до назви файла</short>
+	<long>Додавати позначку часу в форматі часу UNIX в кінець назв файлів</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Phụ thêm nhãn thời gian vào tên tập tin</short>
+	<long>Phụ thêm nhãn thời gian, theo giờ UNIX, vào cuối cùng mọi tên tập tin</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>在文件名后追加时间戳</short>
+	<long>在文件名结尾处填加 UNIX 时间戳</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>在檔案名稱中加入時間戳記</short>
+	<long>在檔案名稱結尾加入 UNIX 式時間戳記</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/auto_capture</key>
+      <applyto>/apps/camorama/preferences/auto_capture</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles auto-capture</short>
+	<long>Toggles automatic capturing of pictures.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Avtomatik çəkimi fəallaşdırır</short>
+	<long>Rəsmlərin avtomatik çəkimini fəallaşdırır.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае аўтаматычны захоп</short>
+	<long>Пераключае рэжым аўтаматычнага захопу відарысаў.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на автоматични снимки</short>
+	<long>Превключване на автоматични снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje auto hvatanje</short>
+	<long>Prebacuje automatsko slikanje slika</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a captura automàtica</short>
+	<long>Commuta a captura automàtica d&apos;imatges.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná automatický záznam</short>
+	<long>Přepíná automatické zaznamenávání obrázků.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Automatisk optagelse</short>
+	<long>Aktiverer automatisk optagelse af billeder.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Auto-Mitschneiden?</short>
+	<long>Sollen Bilder automatisch mitgeschnitten werden?</long>
+      </locale>
+
+      <locale name="dz">
+	<short>རང་བཞིན་འཛིན་བཟུང་འདི་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་འབད་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles auto-capture</short>
+	<long>Toggles automatic capturing of pictures.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles auto-capture</short>
+	<long>Toggles automatic capturing of pictures.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la captura automática</short>
+	<long>Activar la captura automática de imágenes.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze automatikoa gaitu</short>
+	<long>Irudien eskuratze automatikoa gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee automaattista kaappaustilaa</short>
+	<long>Vaihtelee, onko automaattinen kuvankaappaus käytössä.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer la capture automatique</short>
+	<long>Active la capture automatique des images</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar valor da captura automática.</short>
+	<long>Modificar a captura automática de fotos.</long>
+      </locale>
+
+      <locale name="gu">
+	<short>આપોઆપ મેળવવા માટે ફેરબદલી કરે છે</short>
+	<long>ચિત્રોને આપોઆપ મેળવવા માટે ફેરબદલી કરે છે.</long>
+      </locale>
+
+      <locale name="it">
+	<short>Abilita acquisizione automatica</short>
+	<long>Abilita l&apos;acquisizione automatica di immagini.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>自動キャプチャ</short>
+	<long>画像の自動キャプチャを行うかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>automātiskās tveršanas pārslēdzējs</short>
+	<long>automātiskās tveršanas zīmējumu pārslēdzējs.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучува авто-превземање</short>
+	<long>Вклучи автоматско превземање на слики.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Veksler autoopptak</short>
+	<long>Veksler automatisk opptak av bilder.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>स्वत:-क्याप्चर टगल गर्दछ</short>
+	<long>चित्रहरूको स्वाचालित क्याप्चर टगल गर्दछ।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt automatische opname in/uit</short>
+	<long>Schakelt automatische opname van beelden in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸ੍ਵੈ-ਪ੍ਾਪਤੀ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਤਸਵੀਰਾਂ ਦੀ ਸ੍ਵੈ-ਪ੍ਾਪਤੀ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Przechwytywanie automatyczne</short>
+	<long>Określa, czy jest aktywne automatyczne przechwytywanie obrazów.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna auto-captura</short>
+	<long>Alterna a captura automática de imagens.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna auto-captura</short>
+	<long>Alterna a captura automática de imagens.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop samodejnega zajemanja</short>
+	<long>Preklaplja samodejno zajemanje slik</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon marrjen automatike</short>
+	<long>Aktivon marrjen automatike të figurave.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за само снимање</short>
+	<long>Промена за само снимање слика.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za samo snimanje</short>
+	<long>Promena za samo snimanje slika.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar automatisk tagning</short>
+	<long>Växlar automatisk tagning av bilder.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>¾ýÉ¡§Ä-கைப்பற்றுதலுக்கு மாற்று</short>
+	<long>படங்களை தானியங்கி கைப்பற்றுதலுக்கு மாற்று</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Otomatik yakalamayı açıp/kapatır</short>
+	<long>Resimlerin otomatik yakalanmasını açıp/kapatır.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути автозйомку</short>
+	<long>Перемикнути автоматичне знімання зображень.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt tự động bắt ảnh</short>
+	<long>Bật/tắt khả năng tự động bắt ảnh.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>切换自动抓取</short>
+	<long>切换自动抓取图片。</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換自動擷取</short>
+	<long>切換自動擷取相片</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/auto_capture_interval</key>
+      <applyto>/apps/camorama/preferences/auto_capture_interval</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>1200000</default>
+      <locale name="C">
+	<short>Interval for auto-capture</short>
+	<long>Specifies the interval for automatic capture of pictures.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Səs qeydi üçün aralıq</short>
+	<long>Rəsmlərin avtomatik çəkilməsi üçün vaxt aralığını müəyyən edir.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Інтэрвал для аўтаматычнага захопу</short>
+	<long>Пазначае інтэрвал для аўтаматычнага захопу відарысаў.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Времеви интервал за автоматични снимки</short>
+	<long>Определяне интервал за автоматични снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Vremenski razmal za automatsko pravljenje slika</short>
+	<long>Navodi interval vremena automatskog slikanja.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Interval per a captura automàtica</short>
+	<long>Especifica l&apos;interval per a la captura automàtica d&apos;imatges.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Interval automatického záznamu</short>
+	<long>Udává interval pro automatické ukládání obrázků.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Interval for automatisk optagelse</short>
+	<long>Angiver intervallet for automatisk optagelse af billeder.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Intervall für Auto-Mitschneiden</short>
+	<long>Gibt das Intervall für das automatische Mitschneiden von Bildern an.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>རང་བཞིན་-འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་</short>
+	<long>པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་འདི་གསལ་བཀོད་འབད།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Interval for auto-capture</short>
+	<long>Specifies the interval for automatic capture of pictures.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Interval for auto-capture</short>
+	<long>Specifies the interval for automatic capture of pictures.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Intervalo para la captura automática</short>
+	<long>Especifica el intervalo para la captura automática de imágenes.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze automatikorako tartea</short>
+	<long>Irudien eskuratze automatikoaren tartea zehazten du</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Automaattisen kuvankaappauksen aikaväli</short>
+	<long>Määrittelee aikavälin automaattiselle kuvankaappaukselle.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Intervalle pour la capture automatique</short>
+	<long>Indique l&apos;intervalle pour la capture automatique des images</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Intervalo para capturas automáticas</short>
+	<long>Especifica o intervalo para a captura automática das fotos.</long>
+      </locale>
+
+      <locale name="gu">
+	<short>આપોઆપ મેળવવા માટેનો અંતરાલ</short>
+	<long>ચિત્રોને આપોઆપ મેળવવા માટેનો અંતરાલ સ્પષ્ટ કરે છે.</long>
+      </locale>
+
+      <locale name="it">
+	<short>Intervallo per acquisizione automatica</short>
+	<long>Specifica l&apos;intervallo per l&apos;acquisizione automatica delle immagini.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>自動キャプチャの間隔</short>
+	<long>画像を自動キャプチャする時間間隔を指定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Intervāls automātiskajai tveršanai</short>
+	<long>Norāda attēlu automātiskās tveršanas intervālu.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Интервал за авто-превземања</short>
+	<long>Специфицира интервал за автоматско превземање на слики</long>
+      </locale>
+
+      <locale name="ne">
+	<short>स्वत-क्याप्चरका लागि अन्तराल</short>
+	<long>चित्रहरूको स्वत: क्याप्चर अन्तराल निर्दिष्ट गर्नुहोस्।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Interval van automatisch opname</short>
+	<long>Specificeert het interval voor automatische opname van beelden.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸ੍ਵੈ ਪ੍ਾਪਤੀ ਲਈ ਅੰਤਰਾਲ</short>
+	<long>ਤਸਵੀਰਾਂ ਦੀ ਸ੍ਵੈ ਪ੍ਾਪਤੀ ਲਈ ਅੰਤਰਾਲ  ਨੂੰ ਬਿਆਨ ਕਰਦਾ ਹੈ। </long>
+      </locale>
+
+      <locale name="pl">
+	<short>Okres czasu automatycznego przechwytywania</short>
+	<long>Określa okres czasu automatycznego przechwytywania obrazów.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Intervalo de auto-captura</short>
+	<long>Especifica o intervalo para as imagens capturadas automaticamente.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Intreval de auto-captura</short>
+	<long>Especifica o intervalo para imagens capturadas automaticamente.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Interval za samodejno zajemanje</short>
+	<long>Določi interval za samodejno zajemanje slik.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Intervali për marrjet automatike</short>
+	<long>Përcakton intervalin për marrjen automatike të figurave.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Трајање за само снимање</short>
+	<long>Одреди трајање за само снимање слика.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Trajanje za samo snimanje</short>
+	<long>Odredi trajanje za samo snimanje slika.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Intervall för automatisk tagning</short>
+	<long>Anger intervallet för automatisk tagning av bilder.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>தானியங்கி கைப்பற்றுதலினுடைய இடைவேளை</short>
+	<long>தானாகவே கைப்பற்றப்பட்டப் படங்களின் இடைவேளையைச் சொல்</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Otomatik yakalama aralığı</short>
+	<long>Resimlerin otomatik yakalama aralığını belirtir.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Інтервал автозйомки</short>
+	<long>Визначає інтервал для автоматичного знімання.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Khoảng tự động bắt ảnh</short>
+	<long>Xáx định thời gian giữa hai lần bắt ảnh một cách tự động.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>自动抓取的间隔</short>
+	<long>指定自动抓取图像的间隔。</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>自動擷取的間隔</short>
+	<long>指定自動擷取相片的間隔</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/drawdate</key>
+      <applyto>/apps/camorama/preferences/drawdate</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles the datestamp in captures</short>
+	<long>Toggles the drawing of a datestamp within the captured pictures</long>
+      </locale>
+
+      <locale name="az">
+	<short>Çəkimlər üçün vaxt mühürünü fəallaşdırır</short>
+	<long>Çəkilən rəsimlərdə vaxt mühürünün göstərilməsini fəallaşdırır</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае часаваю адмеціну ў захопе</short>
+	<long>Пераключае вывад часавае адмеціны ў межах захопленых відарысаў</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на маркер за време в снимките</short>
+	<long>Превключване на изчертаването на маркер за време в снимките</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje oznaku datuma u hvatanjima</short>
+	<long>Prebacuje slikanje oznake datuma sa uslikanim slikama</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a marca horària en captures</short>
+	<long>Commuta el dibuix d&apos;una marca de data a les imatges capturades</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná časový údaj v záznamech</short>
+	<long>Přepíná vykreslování časového údaje do zaznamenaných obrázků</long>
+      </locale>
+
+      <locale name="da">
+	<short>Tidsstempel i optagelser</short>
+	<long>Om et tidsstempel skal skrives i de optagede billeder</long>
+      </locale>
+
+      <locale name="de">
+	<short>Den Datumsstempel zu Mitschnitten hinzufügen/nicht hinzufügen</short>
+	<long>Den Datumsstempel in den gespeicherten Bildern zeichnen/nicht zeichnen</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཚེས་གྲངས་བཀོད་པ་འདི་འཛིན་བཟུང་ནང་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>ཚེས་གྲངས་བཀོད་པ་ཅིག་གི་པར་རིས་འདི་  འཛནི་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ནང་འཁོད་སོར་སྟོན་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles the datestamp in captures</short>
+	<long>Toggles the drawing of a datestamp within the captured pictures</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles the datestamp in captures</short>
+	<long>Toggles the drawing of a datestamp within the captured pictures</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la marca de fecha en las capturas</short>
+	<long>Activar el dibujado de la marca de fecha dentro de las imágenes capturadas</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Data-zigilua irudietan gaitu</short>
+	<long>Eskuratutako irudietan data-zigiluaren marrazketa gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee aikaleimaa kuvankaappauksissa</short>
+	<long>Vaihtelee, piirretäänkö kaapattuihin kuviin päiväys ja aikaleima</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer la date dans les captures</short>
+	<long>Active l&apos;impression de la date sur les images enregistrées</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar a data incrustada nas capturas</short>
+	<long>Modificar o debuxado da data incrustada sen a captura de imaxes</long>
+      </locale>
+
+      <locale name="gu">
+	<short>મેળવાયેલા માટે તારીખનોંધ ફેરબદલી કરે છે</short>
+	<long>મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે</long>
+      </locale>
+
+      <locale name="it">
+	<short>Abilita l&apos;inserimento della data nelle acquisizioni</short>
+	<long>Abilita l&apos;inserimento della data nelle immagini acquisite</long>
+      </locale>
+
+      <locale name="ja">
+	<short>キャプチャするタイムスタンプの切り替え</short>
+	<long>キャプチャした画像にタイムスタンプを付与するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>ieslēdz/izslēdz datestamp tvērējā</short>
+	<long>ieslēdz/izslēdz zīmējumu datestamp ar tvertajiem zīmējumiem</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи марка на датумот во превземањата</short>
+	<long>Вклучи го цртањето на дата марки во заробените слики</long>
+      </locale>
+
+      <locale name="ne">
+	<short>मितिस्ट्याम्प क्याप्चरमा टगल</short>
+	<long>सङ्कलित छविहरू बीचमा मितिस्ट्याम्पको निर्मित टगलहरू</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt de datumstempel bij opnames in/uit</short>
+	<long>Schakelt de weergave van een datumstempel bij opgenomen beelden in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਪ੍ਾਪਤੀਅ੾ ਵਿਚ ਮਿਤੀ-ਸੰਕੇਤ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਵਿਚ ਮਿਤੀ-ਸੰਕੇਤ ਦੇ ਉਲੀਕਣ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Data w przechwyconych obrazach</short>
+	<long>Określa, czy na przechwyconych obrazach ma być umieszczona data</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna o campo de data e hora nas capturas</short>
+	<long>Alterna o desenho da data dentro das imagens capturadas</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna o campo de data nas capturas</short>
+	<long>Alterna o desenho da data dentro das imagens capturadas</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop časovnega žiga slik</short>
+	<long>Preklop izpisovanja časovnega žiga znotraj zajetih slik</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon datën dhe orën në marrje</short>
+	<long>Aktivon shtimin e datës dhe orës në figurat e marra</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за временски тренутак на снимцима</short>
+	<long>Промена за цртање временског тренутка на сниманим сликама</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za vremenski trenutak na snimcima</short>
+	<long>Promena za crtanje vremenskog trenutka na snimanim slikama</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar tidsstämpeln i tagningar</short>
+	<long>Växlar ritandet av en tidsstämpel i de tagna bilderna</long>
+      </locale>
+
+      <locale name="ta">
+	<short>கைப்பற்றுதலின் datestampஐ மாற்று</short>
+	<long>கைப்பற்றப்பட்ட படங்களின் உள்-ளே datestamp வரைதலை மாற்று</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Yakalamalardaki tarih damgasını açıp/kapatır</short>
+	<long>Yakalanan resimlerin içine tarih damgası çizilmesini açıp/kapatır</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути позначку дати у зйомках</short>
+	<long>Перемикнути малювання позначки дати у знятих зображеннях</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt ghi ngày vào ảnh đã bắt</short>
+	<long>Bật/tắt vẽ nhãn ngày trên ảnh đã bắt</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>切换抓取中的时间戳</short>
+	
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換擷取中的日期戳記</short>
+	<long>切換擷取的相片中繪出的日期戳記</long>
+      </locale>
+    </schema>
+
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/file_type</key>
+      <applyto>/apps/camorama/preferences/file_type</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>1</default>
+      <locale name="C">
+	<short>Local capture image format</short>
+	<long>Specifies the image format to be used for locally saved pictures</long>
+      </locale>
+
+      <locale name="az">
+	<short>Yerli çəkim üçün rəsm formatı</short>
+	<long>Yerli olaraq qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını müəyyən edir</long>
+      </locale>
+
+      <locale name="be">
+	<short>Фармат відарысаў мясцовага захопу</short>
+	<long>Пазначае фармат відарыса для захаваньня мясцовых відарысаў</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Формат на изображението за локални снимки</short>
+	<long>Определяне формат на изображението за локално записани снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Tip slike za lokalno slikanje</short>
+	<long>Navodi tip slike koji će biti korišten za lokalno snimljene slike</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Format d&apos;imatge de captura local</short>
+	<long>Especifica el format a utilitzar per a imatges desades localment</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Formát obrázků lokálního záznamu</short>
+	<long>Udává formát obrázku, který se má použít pro lokálně ukládané obrázky</long>
+      </locale>
+
+      <locale name="da">
+	<short>Billedformat til lokale optagelser</short>
+	<long>Angiver det billedformat der skal benyttes til lokalt gemte billeder</long>
+      </locale>
+
+      <locale name="de">
+	<short>Bildformat lokaler Mitschnitte</short>
+	<long>Welches Bildformat soll für lokal gespeicherte Bilder verwendet werden?</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་</short>
+	<long>ཉེ་གནས་ཀྱི་སྲུང་བཞག་སྟེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིན་མི་  གཟུགས་བརྙན་རྩ་སྒྲིག་འདི་གསལ་བཀོད་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Local capture image format</short>
+	<long>Specifies the image format to be used for locally saved pictures</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Local capture image format</short>
+	<long>Specifies the image format to be used for locally saved pictures</long>
+      </locale>
+
+      <locale name="es">
+	<short>Formato de la imagen de la captura local</short>
+	<long>Especifica el formato de imagen a ser utilizado para las imágenes guardadas localmente</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze lokalaren irudi-formatua</short>
+	<long>Lokalean gordeko diren irudien formatua zehazten du</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Paikallinen kaapattujen kuvien tallennusmuoto</short>
+	<long>Määrittelee kuvaformaatin, jota käytetään paikallisesti tallennetuille kuville</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Format de capture des images locales</short>
+	<long>Indique le format à utiliser pour les images enregistrées localement</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Formato de imaxe para captura local</short>
+	<long>Especifica o formato de imaxe que será usada para gardar localmente as fotos</long>
+      </locale>
+
+      <locale name="gu">
+	<short>ચિત્રના બંધારણ માટે સ્થાનિક મેળવવાનું</short>
+	<long>સ્થાનિક રીતે સંગ્રહાયેલ ચિત્રો માટે વપરાતા ચિત્રનું બંધારણ સ્પષ્ટ કરે છે</long>
+      </locale>
+
+      <locale name="it">
+	<short>Formato per l&apos;immagine acquisita da locale</short>
+	<long>Specifica il formato di immagine che verrà usato per le immagini salvate in locale</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ローカル・キャプチャの画像フォーマット</short>
+	<long>ローカルで保存する画像のフォーマットを指定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Lokālās tveršanas attēla formāts</short>
+	<long>Norāda lokāli saglabājamo attēlu formātu</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Формат на локално превземените слики</short>
+	<long>Специфицира форматот на сликата да биде користен само за локално снимени слики</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Bildeformat for lokale opptak</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>स्थानीय सङ्कलित छवि ढाँचा</short>
+	<long>स्थानीय बचत छविहरूका लागि छवि ढाँचा प्रयोगको निर्दिष्ट गर्नुहोस्</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Afbeeldingsformaat van lokale opnames</short>
+	<long>Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor lokaal opgeslagen beelden.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸਥਾਨਿਕ ਪ੍ਾਪਤ ਚਿੱਤਰ ਫਾਰਮਿਟ</short>
+	<long>ਸਥਾਨਿਕ ਸੰਭਾਲੀਅ੾ ਤਸਵੀਰਾਂ ਵਾਸਤੇ ਵਰਤੇ ਜਾਂਦੇ ਚਿੱਤਰ ਫਾਰਮਿਟ ਨੂੰ ਬਿਆਨ ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Format lokalnego przechwyconego obrazu</short>
+	<long>Określa format lokalnie zapisywanych obrazów</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Formato da imagem de captura local</short>
+	<long>Especifica o formato de imagem a ser utilizado para as imagens gravadas localmente</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Formato imagem captura local</short>
+	<long>Especifica o formato de imagem a ser utilizado para imagens salvas localmente</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Format slik za lokalno zajemanje</short>
+	<long>Določi format slik za lokalno shranjene slike</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Formati për figurën e marrë në lokale</short>
+	<long>Përcakton formatin që do të përdoret për figurat e ruajtura lokalisht</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Облик слика за локално снимање</short>
+	<long>Одреди облик снимка кији ће бити кориштен за локално чуване слике</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Oblik slika za lokalno snimanje</short>
+	<long>Odredi oblik snimka kiji će biti korišten za lokalno čuvane slike</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Bildformat för lokal tagning</short>
+	<long>Anger bildformatet som ska användas för lokalt sparade bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>உள் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்</short>
+	<long>உள் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Yerel yakalama görüntü biçimi</short>
+	<long>Yerel kaydedilen resimlerde kullanacak görüntü biçimini belirtir</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Формат зображень локальних зйомок</short>
+	<long>Визначає формат зображення для зображень, що зберігаються локально</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Định dạng ảnh bắt cục bộ</short>
+	<long>Xác định định dạng ảnh cần dùng cho mọi ảnh đã lưu cục bộ</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>本地抓取图像格式</short>
+	<long>指定在本地保存图片时所用的图像格式</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>本地端擷取影像格式</short>
+	<long>指定在本地端儲存相片時使用的影像格式</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/hostname</key>
+      <applyto>/apps/camorama/preferences/hostname</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>yourdomain.org</default>
+      <locale name="C">
+	<short>Hostname for FTP server</short>
+	<long>Hostname for the FTP server for remote captures.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Qovşaq adı ya da FTP vericisi</short>
+	<long>Uzaq çəkimlər üçün FTP vericisinin qovşaq adı.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Назва вузла для FTP паслужніка</short>
+	<long>Назва вузла для FTP паслужніка для адаленых захопаў.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Име на сървъра за FTP</short>
+	<long>Име на сървъра за FTP за отдалечените снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Ime računara za FTP server</short>
+	<long>Ime računara za FTP server za slike napravljene na udaljenim računarima</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Nom de l&apos;ordinador central per al servidor FTP</short>
+	<long>Nom del servidor d&apos;FTP per a captures remotes.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Název počítače FTP serveru</short>
+	<long>Název počítače FTP serveru pro vzdálené záznamy.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Værtsnavn til FTP-server</short>
+	<long>Værtsnavn til FTP-server til fjerne optagelser.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Rechnername des FTP-Servers</short>
+	<long>Der Rechnername des FTP-Servers für entfernte Mitschnitte.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ཧོསཊི་མིང་</short>
+	<long>ཐག་རིང་གི་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་ཨེཕ་ཊི་པི་འདི་གི་དོན་ལུ་ཧོསཊི་མིང་།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Hostname for FTP server</short>
+	<long>Hostname for the FTP server for remote captures.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Hostname for FTP server</short>
+	<long>Hostname for the FTP server for remote captures.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Nombre de equipo para el servidor FTP</short>
+	<long>Nombre de equipo para el servidor FTP para las capturas remotas.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>FTP-zerbitzariaren izena</short>
+	<long>Urruenako eskuratzeentzako FTP-zerbitzariaren izena.</long>
+      </locale>
+
+      <locale name="fa">
+	<short>نام میزبان کارگزار FTP</short>
+	
+      </locale>
+
+      <locale name="fi">
+	<short>FTP-palvelimen isäntänimi</short>
+	<long>Isäntänimi FTP-palvelimelle, johon etäkuvankaappaukset tallennetaan.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Nom d&apos;hôte du serveur FTP</short>
+	<long>Nom d&apos;hôte du serveur FTP pour les captures distantes.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Nome de Host para o servidor FTP</short>
+	<long>Nome·de·Host·para·o·servidor·FTP para capturas remotas</long>
+      </locale>
+
+      <locale name="gu">
+	<short>FTP સર્વર માટે યજમાન નામ</short>
+	<long>દૂરનું મેળવવા માટે FTP સર્વર માટે યજમાન નામ.</long>
+      </locale>
+
+      <locale name="it">
+	<short>Nome host per il server FTP</short>
+	<long>Nome host per il server FTP per le acquisizioni da remoto.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>FTP サーバのホスト名</short>
+	<long>リモート・キャプチャで使用する FTP サーバのホスト名です。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>FTP servera nosaukums</short>
+	<long>FTP serveris attālināto tveršanu rezultātu saglabāšanai.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Име на компјутер за FTP сервер</short>
+	<long>Име на компјутер за FTP сервер за нелокални превземања.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Vertsnavn for FTP-tjener</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>FTP सर्भरका लागि होस्टनाम</short>
+	<long>दूर क्याप्चरका लागि FTP सर्भरको होस्टनाम।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Computernaam van de FTP-server</short>
+	<long>Computernaam van de FTP-server voor opnames op afstand</long>
+      </locale>
+
+      <locale name="pa">
+	<short>FTP ਸਰਵਰ ਲਈ ਮੇਜ਼ਬਾਨ ਦਾ ਨਾਉਂ।</short>
+	<long>ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਵਾਸਤੇ FTP ਸਰਵਰ ਲਈ ਮੇਜ਼ਬਾਨ ਦਾ ਨਾਉਂ।</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Nazwa komputera serwera FTP</short>
+	<long>Nazwa serwera FTP przechwytującego zdalnie obrazy.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Nome do servidor FTP</short>
+	<long>Nome do servidor FTP para capturas remotas.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Nome do servidor FTP</short>
+	<long>Nome do servidor FTP para capturas remotas.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Ime gostitelja za FTP strežnik</short>
+	<long>Ime gostitelja za FTP strežnik za oddaljeno zajemanje</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Emri i host për server-in FTP</short>
+	<long>Emri i Host i serverit FTP për filmime remote.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Назив за домаћински ФТП сервер</short>
+	<long>Име за домаћински ФТП сервер за даљинске снимке.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Naziv za domaćinski FTP server</short>
+	<long>Ime za domaćinski FTP server za daljinske snimke.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Värdnamn för FTP-server</short>
+	<long>Värdnamn för FTP-servern för fjärrtagningar.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>FTP சேவகனுடைய புரவலப் பெயர்</short>
+	<long>FTP சேவகனுடைய தொலைக் கைப்பற்றுதலுக்கான புரவலப் பெயர்</long>
+      </locale>
+
+      <locale name="tr">
+	<short>FTP sunucu için makina adı</short>
+	<long>Uzak yakalamalar için FTP sunucusu adı.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Назва хоста сервера FTP</short>
+	<long>Назва хоста сервера FTP для віддалених зйомок.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Tên máy cho máy phục vụ FTP</short>
+	<long>Tên máy cho máy phục vụ FTP, khi bắt ảnh từ xa.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>FTP 服务器的主机名</short>
+	<long>远程抓取的 FTP 服务器主机名。</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>FTP 伺服器的主機名稱</short>
+	<long>遠端擷取所用的 FTP 伺服器主機名稱</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/local_capture</key>
+      <applyto>/apps/camorama/preferences/local_capture</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles local capture</short>
+	<long>When capturing pictures via the "Take Picture" button, or with auto capture, this key toggles the saving of pictures locally.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Yerli çəkimi fəallaşdırır</short>
+	<long>&quot;Şəkil Çək&quot; düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə rəsmlərin yerli olaraq qeyd edilməsini fəallaşdırır.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае мясцовы захоп</short>
+	<long>Калі відарысы захопленыя кнопкай &quot;Узяць відарыс&quot;, ці аўтазахопам, гэты ключ пераключае мясцовае захаваньне відарысаў.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на локални снимки</short>
+	<long>Когато използвате бутона „Снимка“ или функцията за автоматично заснемане, този клавиш превключва дали изображението да се записва локално.</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje lokalno hvatanje</short>
+	<long>Kada pravim slike sa &quot;Take Picture&quot; dugmetom, ili sa automatskim slikanjem, ovaj ključ prebacuje snimanje slike lokalno.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a captura local</short>
+	<long>En capturar imatges mitjançant el botó &quot;Fes una captura&quot;, o amb la captura automàtica, aquesta tecla commuta el desar imatges localment.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná lokální záznam</short>
+	<long>Při záznamu obrázků pomocí tlačítka &quot;Vyfotit&quot;nebo při automatickém záznamu, tento klíč přepíná ukládání obrázků lokálně.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Lokal optagelse</short>
+	<long>Når billeder gemmes vha. knappen &quot;Gem billede&quot; eller med automatisk optagelse, angiver denne nøgle om billederne gemmes lokalt.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Lokal mitschneiden?</short>
+	<long>Beim Mitschneiden von Bildern mittels des »Bild aufnehmen«-Knopfes oder mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder lokal gespeichert werden.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཉེ་གནས་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>པར་ཚུ་ &quot;Take Picture&quot; ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་བཟུང་འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཉེ་གནས་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles local capture</short>
+	<long>When capturing pictures via the &quot;Take Picture&quot; button, or with auto capture, this key toggles the saving of pictures locally.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles local capture</short>
+	<long>When capturing pictures via the &quot;Take Picture&quot; button, or with auto capture, this key toggles the saving of pictures locally.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la captura local</short>
+	<long>Al capturar imágenes por medio del botón «Tomar fotografía», o con la captura automática, esta clave activa el guardado de las imágenes localmente.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze lokala gaitu</short>
+	<long>&quot;Argazkia hartu&quot; botoia erabiliz irudiak eskuratzen direnean, edo eskuratze automatikoarekin, gako honek irudien eskuratze lokala gaitzen du.</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee paikallista kuvankaappausta</short>
+	<long>Kun kuvia kaapataan &quot;Ota Kuva&quot; napilla tai automaattisesti, tämä näppäin vaihtelee tallennetaanko kuvat paikallisesti.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer les captures locales</short>
+	<long>Lors d&apos;une capture d&apos;image via le bouton « Prendre une photo », ou avec la capture automatique, cette clé active l&apos;enregistrement local des images.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar a captura local</short>
+	<long>Cando captures imaxes por medio do botón &quot;Capturar imaxe&quot;, ou con auto captura, esta chave cambia a maneira de gardar as imaxes localmente.</long>
+      </locale>
+
+      <locale name="gu">
+	<short>સ્થાનિક આપોઆપ મેળવવા માટે ફેરબદલી કરે છે</short>
+	
+      </locale>
+
+      <locale name="it">
+	<short>Abilita l&apos;acquisizione da locale</short>
+	<long>Durante l&apos;acquisizione delle immagini tramite il pulsante «Scatta foto» o con l&apos;acquisizione automatica questo tasto consente di salvare le immagini localmente.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ローカル・キャプチャの切り替え</short>
+	<long>&quot;写真撮影&quot; ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をローカルに保存するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>lokālās tveršanas pārslēgs</short>
+	<long>kad tveramie zīmējumi caur &quot;Nofotogrāfēt&quot; taustiņu vai ar auto tver šo taustiņu pārslēdzējs lokāli saglabājot zīmējumu.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи локално превземање</short>
+	<long>Кога превземате слики преку &quot;Земи слика&quot; копчето, или со авто превземање, ова копче го вклучува снимањето на сликата локално.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Veksler lokalt opptak</short>
+	<long>Ved opptak av bilder via &quot;Ta bilde&quot;-knappen, eller ved autoopptak, slår denne nøkkelen på/av lagring av bilder lokalt på denne datamaskinen.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>स्थानीय क्याप्चर टगल गर्दछ</short>
+	<long>जब छविहरू क्याप्चर गर्दा &quot;Take Picture&quot; बटन मार्फत, वा स्वत: क्याप्चरबाट, यो कुञ्जीले बचत भएको स्थानीय छविहरूको टगल गर्दछ।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt lokale opname in/uit</short>
+	<long>Tijdens de opname van beelden met behulp van de &quot;Foto maken&quot;-knop of automatische opname, schakelt deze toets de lokale opslag van afbeeldingen in/uit.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਅ੾ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਜਦੋਂ  &quot;ਤਸਵੀਰ ਲਓ&quot; ਬਟਨ ਰਾਹੀਂ ਜਾਂ ਸਵੈ-ਪ੍ਾਪਤੀ ਨਾਲ ਤਸਵੀਰ ਲੈਂਦੇ ਹਾਂ ਤਾਂ  ਇਹ ਸਵਿੱਚ ਤਸਵੀਰਾਂ ਨੂੰ ਸਥਾਨਿਕ ਸੰਭਾਲਣ ਨੂੰ toggle ਕਰਦੀ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Przechwytywanie lokalne</short>
+	<long>Opcja ta przełącza zapisywanie lokalne obrazów przechwyconych automatycznie lub po użyciu przycisku &quot;Zrób zdjęcie&quot;.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna a captura local</short>
+	<long>Ao capturar imagens através do botão &quot;Tirar Fotografia&quot;, ou com auto-captura, esta tecla alterna a gravação local das imagens.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna captura local</short>
+	<long>Ao capturar imagens através do botão &quot;Tirar Fotografia&quot;, ou com auto-captura, esta tecla alterna a gravação local das imagens.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop lokalnega zajemanja</short>
+	<long>Ob zajemanju slik preko gumba &quot;Zajem slike&quot; ali s samodejnim zajemanjem, ta možnost dovoli preklop shranjevanja na lokalni disk.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon marrjen lokale</short>
+	<long>Gjatë marrjes së figurave me anë të pulsantit &quot;Fotografo&quot; ose me marrjen automatike, ky tast mundëson ruajtjen lokale të figurave.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за локално снимање</short>
+	<long>Када се снимају слике са &quot;Сними слику&quot; дугметом, или са самоснимањем, ово дугме ће променити чување слика локално.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za lokalno snimanje</short>
+	<long>Kada se snimaju slike sa &quot;Snimi sliku&quot; dugmetom, ili sa samosnimanjem, ovo dugme će promeniti čuvanje slika lokalno.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar lokal tagning</short>
+	<long>När bilder tas via knappen &quot;Ta bild&quot; eller automatisk tagning växlar denna nyckel det lokala sparandet av bilder.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>உள் கைப்பற்றுதலை மாற்று</short>
+	<long>&quot;Take picture&quot; என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் கைபற்றும் பொழுது,&apos;&apos;இந்த விசை பிம்பங்களின் சேமிப்பை உள்ளேயே மாற்றிவிடும்.</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Yerel yakalamayı açıp/kapatır.</short>
+	<long>&quot;Resim Çek&quot; düğmesi kullanılarak resimler yakalandığında, ya da otomatik yakalama sırasında, bu anahtar, resimlerin yerel kaydedilmesini açıp/kapatır.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути локальну зйомку</short>
+	<long>Ця клавіша встановлює локальне збереження зображень, що робляться натисненням кнопки &quot;Зробити знімок&quot; чи автоматично.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt bắt ảnh cục bộ</short>
+	<long>Khi bắt ảnh bằng cái nút « Chụp ảnh », hoặc thông qua khả năng tự động bắt, phím này bật/tắt khả năng lưu ảnh một cách địa phương.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>切换本地抓取</short>
+	
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換本地端擷取</short>
+	<long>當透過“照相”按鈕或自動擷取來擷取相片時，此選項會切換使用本地端儲存相片。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/login</key>
+      <applyto>/apps/camorama/preferences/login</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>your-username</default>
+      <locale name="C">
+	<short>Username for FTP server</short>
+	<long>Username to use for FTP uploads of captured pictures</long>
+      </locale>
+
+      <locale name="az">
+	<short>FTP vericisinin istifadəçi adı</short>
+	<long>Çəkilən rəsmlərin FTP ilə göndərilməsi üçün FTP istifadəçi adı</long>
+      </locale>
+
+      <locale name="be">
+	<short>Імя карыстальніка для FTP паслужніка</short>
+	<long>Імя карыстальніка для выкарыстаньня загрузкі захопленых відарысаў на FTP</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Потребителско име за сървъра за FTP</short>
+	<long>Потребителско име за сървъра за FTP при качване на изображения</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Korisničko ime za FTP server</short>
+	<long>Korisničko ime za FTP postavljanja na mrežu uslikanih slika.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Nom d&apos;usuari per al servidor d&apos;FTP</short>
+	<long>Nom d&apos;usuari a usar per a pujades FTP d&apos;imatges capturades</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Uživatelské jméno pro FTP server</short>
+	<long>Uživatelské jméno, které se má použít pro přenášení obrázků skrz FTP</long>
+      </locale>
+
+      <locale name="da">
+	<short>Brugernavn til FTP-server</short>
+	<long>Brugernavn som skal bruges til FTP-forsendelser af optagede billeder</long>
+      </locale>
+
+      <locale name="de">
+	<short>Benutzername für FTP-Server</short>
+	<long>Der für FTP-Uploads mitgeschnittener Bilder zu verwendende Benutzername</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ལག་ལེན་པའི་མིང་</short>
+	<long>འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ལུ་ལག་ལེན་པའི་མིང་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Username for FTP server</short>
+	<long>Username to use for FTP uploads of captured pictures</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Username for FTP server</short>
+	<long>Username to use for FTP uploads of captured pictures</long>
+      </locale>
+
+      <locale name="es">
+	<short>Nombre de usuario para el servidor FTP</short>
+	<long>Nombre de usuario a utilizar para los envíos al FTP de las imágenes capturadas</long>
+      </locale>
+
+      <locale name="eu">
+	<short>FTP-zerbitzariaren erabiltzaile-izena</short>
+	<long>Eskuratutako irudiak FTP-zerbitzarira igotzeko erabilitzaile-izena</long>
+      </locale>
+
+      <locale name="fa">
+	<short>نام کاربر برای کارگزار FTP</short>
+	
+      </locale>
+
+      <locale name="fi">
+	<short>Käyttäjätunnus FTP-palvelimella</short>
+	<long>Käyttäjätunnus FTP-palvelimelle, johon kaapatut kuvat siirretään</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Nom d&apos;utilisateur pour le serveur FTP</short>
+	<long>Nom d&apos;utilisateur à utiliser pour envoyer par FTP les images capturées</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Nome de usuario para o servidor FTP</short>
+	<long>Nome de usuario a usar para as subidas FTP de fotos capturadas</long>
+      </locale>
+
+      <locale name="it">
+	<short>Nome utente per il server FTP</short>
+	<long>Nome utente da usare per l&apos;upload FTP delle immagini acquisite</long>
+      </locale>
+
+      <locale name="ja">
+	<short>FTP サーバのユーザ名</short>
+	<long>キャプチャした画像をアップロードする FTP のユーザ名です。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>FTP servera lietotājvārds</short>
+	<long>Lietotājvārds lai lietotu FTP augšuplādējamiem zīumējumiem</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Корисничко име за FTP сервер</short>
+	<long>Корисничко име кое ќе се користи при FTP вчитувањата на превземените слики</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Brukernavn til FTP-tjener</short>
+	<long>Brukernavn til bruk for opplasting av lagrede bilder via FTP</long>
+      </locale>
+
+      <locale name="ne">
+	<short>FTP सर्भरका लागि प्रयोगकर्तानाम</short>
+	<long>प्रयोगकर्तानाम FTP अपलोडहरू सङ्कलित छविहरू प्रयोगका लागि</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Gebruikersnaam voor FTP-server</short>
+	<long>Gebruikersnaam die gebruikt dient te worden voor FTP-uploads van opgenomen beelden</long>
+      </locale>
+
+      <locale name="pa">
+	<short>FTP ਸਰਵਰ ਲਈ ਉਪਯੋਗੀ ਦਾ ਨਾਉਂ</short>
+	<long>ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਦਾ FTP ਨਿਰਯਾਤ ਕਰਨ ਲਈ ਵਰਤਣ ਵਾਲਾ ਉਪਯੋਗੀ ਦਾ ਨਾਉਂ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Nazwa użytkownika serwera FTP</short>
+	<long>Nazwa użytkownika serwera FTP na który zostaną wysłane obrazy</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Utilizador para o servidor FTP</short>
+	<long>Nome de utilizador a utilizar nos envios por FTP de imagens capturadas</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Usuário para servidor FTP</short>
+	<long>Nome usuário a usar nos envios FTP de imagens capturadas</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Uporabniško ime za FTP strežnik</short>
+	<long>Uporabniško ime za FTP prenos zajetih slik</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Emri i përdoruesit për serverin FTP</short>
+	<long>Emri i përdoruesit për tu përdorur për upload FTP të figurave të marra</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Корисничко име за ФТП сервер</short>
+	<long>Корисничо име које ће се користити ѕа ФТП натовар снимљених слика</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Korisničko ime za FTP server</short>
+	<long>Korisničo ime koje će se koristiti ѕa FTP natovar snimljenih slika</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Användarnamn för FTP-server</short>
+	<long>Användarnamn att använda för FTP-lämnande av tagna bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>FTP சேவகனுடைய ÀÂýÀÎòÐÀÅரின் ¦ÀÂ÷</short>
+	<long>கைப்பற்றப்பட்ட படங்களின் FTP ஏற்றத்தை உபயோகப்படுத்துபவரின் </long>
+      </locale>
+
+      <locale name="tr">
+	<short>FTP sunucusu için kullanıcı adı</short>
+	<long>Yakalanan resimlerin FTP yüklemesi için kullanılacak kullanıcı adı</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Користувач сервера FTP</short>
+	<long>Користувач FTP для відвантажень знятих зображень</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Tên người dùng cho máy phục vụ FTP</short>
+	<long>Tên người dùng cần dùng khi tải ảnh đã bắt lên qua FTP</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>FTP 服务器的用户名</short>
+	
+      </locale>
+
+      <locale name="zh_TW">
+	<short>FTP 伺服器使用者名稱</short>
+	<long>用於 FTP 上傳擷取的照片的使用者名稱</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/password</key>
+      <applyto>/apps/camorama/preferences/password</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>seeeekrit</default>
+      <locale name="C">
+	<short>Password for FTP server</short>
+	<long>The password for the FTP account for remote captures.</long>
+      </locale>
+
+      <locale name="az">
+	<short>FTP vericisinin şifrəsi</short>
+	<long>Uzaq çəkimlər üçün FTP hesabının şifrəsi.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пароль для FTP паслужніка</short>
+	<long>Пароль для уліковага запіса FTP для адаленага захопу.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Парола за сървъра за FTP</short>
+	<long>Парола за FTP при отдалечени снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Šifra za FTP server</short>
+	<long>Šifra za FTP za udaljena slikanja.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Contrasenya del servidor d&apos;FTP</short>
+	<long>La contrasenya per al compte FTP per a captures remotes.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Heslo pro FTP server</short>
+	<long>Heslo k účtu FTP pro vzdálené záznamy.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Adgangskode til FTP-server</short>
+	<long>Adgangskoden til FTP-kontoen for fjerne optagelser.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Passwort des FTP-Servers</short>
+	<long>Das Passwort für den FTP-Zugang für entfernte Mitschnitte.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཨེཕ་ཊི་པི་སར་བར་གི་དོན་ལུ་ཆོག་ཡིག་</short>
+	<long>ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་ ཨེཕ་ཊི་པི་རྩིས་ཐོ་འདི་གི་དོན་ལུ་ཆོག་ཡིག།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Password for FTP server</short>
+	<long>The password for the FTP account for remote captures.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Password for FTP server</short>
+	<long>The password for the FTP account for remote captures.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Contraseña para el servidor FTP</short>
+	<long>La contraseña para la cuenta FTP para las capturas remotas</long>
+      </locale>
+
+      <locale name="eu">
+	<short>FTP-zerbitzariaren pasahitza</short>
+	<long>Urruneko eskuratzeak egiteko erabiliko den FTP-kontuaren pasahitza</long>
+      </locale>
+
+      <locale name="fa">
+	<short>گذرواژه‌ی کارگزار FTP</short>
+	
+      </locale>
+
+      <locale name="fi">
+	<short>Salasana FTP-palvelimelle</short>
+	<long>Salasana FTP-tunnukselle, jota käytetään etäkuvankaappauksissa</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Mot de passe pour le serveur FTP</short>
+	<long>Mot de passe pour le serveur FTP pour les captures distantes.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Contrasinal para o servidor FTP</short>
+	<long>A contrasinal para a conta FTP para as capturas remotas.</long>
+      </locale>
+
+      <locale name="gu">
+	<short>FTP સર્વર માટે પાસવર્ડ</short>
+	<long>દૂરસ્થ મેળવવા માટે FTP ખાતાનો પાસવર્ડ.</long>
+      </locale>
+
+      <locale name="it">
+	<short>La password per il server FTP</short>
+	<long>La password dell&apos;account FTP per le acquisizioni da remoto.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>FTP サーバのパスワード</short>
+	<long>リモート・キャプチャの FTP アカウントに対するパスワードです。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>FTP servera parole</short>
+	<long>parole FTP konta attālinātai tveršanai.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Лозинка за FTP серверот</short>
+	<long>Лозинката за FTP сметката за нелокално превземање.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Passord til FTP-tjeneren</short>
+	<long>Passord for FTP-konto til bruk for fjernopptak.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>FTP सर्भरका लागि पासवर्ड</short>
+	<long>दूर क्याप्चरहरूका लागि FTP खाताका लागि पासवर्ड।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Wachtwoord van de FTP-server</short>
+	<long>Het wachtwoord van het FTP-account voor opnames op afstand.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>FTP ਸਰਵਰ ਲਈ ਗੁਪਤ-ਕੋਡ</short>
+	<long>ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਵਾਸਤੇ FTP ਅਕਾਊਂਟ ਲਈ ਗੁਪਤ-ਕੋਡ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Hasło serwera FTP</short>
+	<long>Hasło konta FTP dla zdalnie zapisywanych obrazów.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Senha do servidor FTP</short>
+	<long>A senha da conta FTP para as capturas remotas.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Senha do servidor FTP</short>
+	<long>A senha da conta FTP para capturas remotas.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Geslo za FTP strežnik</short>
+	<long>Uporabniško ime za FTP strežnik za oddaljene slike.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Fjalëkalimi për serverin FTP</short>
+	<long>Fjalëkalimi për llogarinë FTP për marrjet në remot.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Лозинка за ФТП сервер</short>
+	<long>Лозинка за ФТП рачун за даљинске снимке.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Lozinka za FTP server</short>
+	<long>Lozinka za FTP račun za daljinske snimke.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Lösenord för FTP-server</short>
+	<long>Lösenordet för FTP-kontot för fjärrtagningar.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>FTP சேவகனுடைய கடவுச் சொல்</short>
+	<long>தொலைக் கைப்பற்றப்பட்டப் படங்களுக்கான FTP கணக்கினுடைய ¸¼×î¦º¡ø</long>
+      </locale>
+
+      <locale name="tr">
+	<short>FTP sunucu şifresi</short>
+	<long>Uzak yakalamalar için kullanılan FTP hesabının şifresi. </long>
+      </locale>
+
+      <locale name="uk">
+	<short>Пароль для сервера FTP</short>
+	<long>Пароль користувача FTP для віддалений зйомок.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Mật khẩu cho máy phục vụ FTP</short>
+	<long>Mật khẩu cho tài khoản FTP khi bắt ảnh từ xa.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>FTP 服务器的密码</short>
+	<long>远程抓取的 FTP 账户密码。</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>FTP 伺服器密碼</short>
+	<long>遠端擷取的 FTP 帳號密碼</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_append_ts_to_file</key>
+      <applyto>/apps/camorama/preferences/remote_append_ts_to_file</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Append timestamp to remote filename</short>
+	<long>Appends a timestamp, in UNIX time, to the ends of remote filenames</long>
+      </locale>
+
+      <locale name="az">
+	<short>Vaxt mühürünü uzaqdakı fayl adına əlavə et</short>
+	<long>UNIX vaxtını uzaqdakı fayl adlarının sonuna əlavə edir</long>
+      </locale>
+
+      <locale name="be">
+	<short>Дадаць часаваю адмеціну да назвы аддаленага файла</short>
+	<long>Дадаць часаваю адмеціну, у UNIX фармаце, у канец назвы аддаленага файла</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Добавяне на маркер за време към името на отдалечения файл</short>
+	<long>Добавяне на маркер за време във формат UNIX към името на отдалечения файл</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Dodaj vremensku oznaku udaljenoj datoteci</short>
+	<long>Dodaj vremensku oznaku,u UNIX vremenu na kraj udaljenih imena datoteka</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Annexa la marca horària al nom del fitxer remot</short>
+	<long>Annexa la marca horària, en temps UNIX, al final dels noms de fitxer remots</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Připojit časový údaj ke vzdálenému souboru</short>
+	<long>Připojí časový údaj, ve tvaru UNIX, na konce názvů vzdálených souborů</long>
+      </locale>
+
+      <locale name="da">
+	<short>Tilføj tidsstempel til fjernt filnavn</short>
+	<long>Tilføjer et tidsstempel i Unix-tid til slutningen af fjerne filnavne</long>
+      </locale>
+
+      <locale name="de">
+	<short>Zeitstempel an entfernten Dateinamen anhängen</short>
+	<long>Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der entfernten Dateinamen</long>
+      </locale>
+
+      <locale name="dz">
+	<short>དུས་བཀོད་འདི་ཐག་རིང་གི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་</short>
+	<long>ཡུ་ནིགསི་དུས་ཡུན་  ཐག་རིང་ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Append timestamp to remote filename</short>
+	<long>Appends a timestamp, in UNIX time, to the end of remote filenames</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Append timestamp to remote filename</short>
+	<long>Appends a timestamp, in UNIX time, to the ends of remote filenames</long>
+      </locale>
+
+      <locale name="es">
+	<short>Agregar una marca de tiempo al nombre de archivo remoto</short>
+	<long>Agrega una marca de tiempo, en formato de tiempo UNIX, al final de los nombres de archivos remotos</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Urruneko fitxategi-izenari data-zigilua gehitu</short>
+	<long>Urruneko fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Lisää aikaleima etätiedostonimeen</short>
+	<long>Lisää aikaleima UNIX-ajan muodossa etätiedostonimien loppuun</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Apposer un horodatage aux fichiers distants</short>
+	<long>Apposer un horodatage, en temps UNIX, à la fin des noms de fichiers distants</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Engadir·a·marca de tempo·ao·ficheiro remoto</short>
+	<long>Engadir a marca de tempo,·en·formato·UNIX, ao final·do·nome·dos·ficheiros remotos</long>
+      </locale>
+
+      <locale name="gu">
+	<short>દૂરસ્થ ફાઈલનામમાં સમયનોંધ ઉમેરો</short>
+	<long>સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, દૂરસ્થ ફાઈલના નામના અંતે</long>
+      </locale>
+
+      <locale name="it">
+	<short>Aggiunge data e ora al nome del file remoto</short>
+	<long>Aggiunge data e ora, come orario UNIX, alla fine dei nomi dei file remoti</long>
+      </locale>
+
+      <locale name="ja">
+	<short>リモートのファイル名にタイムスタンプを追加する</short>
+	<long>リモート・ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Pievienot laika spiedogu attālinātam faila vārdam</short>
+	<long>pievienot laika spiedogu UNIX laikā, attālinātu faila vāradu biegās</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Припои временска марка на нелокално име на датотека</short>
+	<long>Внеси временска марка, во UNIX време, на крајовите од нелокалните имињата од датотеките</long>
+      </locale>
+
+      <locale name="ms">
+	<short>Tambah setemmasa ke namafail jauh</short>
+	<long>Tambah setemmasa, dalam masa UNIX, ke hujung namafail jauh </long>
+      </locale>
+
+      <locale name="nb">
+	<short>Legg til tidsstempel i filnavn for fjernopptak</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>दूर फाइलनामका लागि सङ्लग्न टाइमस्ट्याम्प</short>
+	<long>टाइमस्ट्याम्पलाई सङ्लग्न गर्नुहोस्, UNIX समयमा, दूर फाइलनामहरूको अन्तिममा</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Tijdstempel aan bestandsnaam op afstand toevoegen</short>
+	<long>Voegt aan het eind van een bestandsnaam op afstand een UNIX-tijdstempel toe</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਰਿਮੋਟ ਫਾਈਲ ਦੇ ਅੰਤ ਵਿਚ timestamp ਜੋੜੋ</short>
+	<long>ਰਿਮੋਟ ਫਾਈਲਾਂ ਦੇ ਨਾਉਂ ਦੇ ਅੰਤ ਤੇ,UNIX ਸਮੇਂ ਵਿਚ timestamp ਜੋੜਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Dodanie datownika do nazwy zdalnego pliku</short>
+	<long>Dodaje na końcu nazwy zdalnego pliku datownik, w formacie czasu UNIX</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Acrescentar a data e hora ao nome do ficheiro remoto</short>
+	<long>Acrescenta a data e hora, em hora UNIX, ao final dos nomes dos ficheiros remotos</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Acrescentar horário ao nome arquivo remoto</short>
+	<long>Acrescenta horário, em hora UNIX, ao final dos nomes arquivos remotos</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Pripni časovni žig oddaljeni datoteki</short>
+	<long>Pripne časovni žig, v UNIX času, koncu imena oddaljene datoteke</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Shton datën dhe orën emrit të file remot</short>
+	<long>Shton datën dhe orën, si orar UNIX, në fund të emrit të file remot</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Додати временски тренутак на даљинску датотеку</short>
+	<long>Додајти временски тренутак, у Уникс бремену, на крајеве од даљинских датотека</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Dodati vremenski trenutak na daljinsku datoteku</short>
+	<long>Dodajti vremenski trenutak, u Uniks bremenu, na krajeve od daljinskih datoteka</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Lägg till tidsstämpel till fjärrfilnamn</short>
+	<long>Lägger till en tidsstämpel, i UNIX-tid, till sluten på fjärrfilnamn</long>
+      </locale>
+
+      <locale name="ta">
+	<short>timestampஐ தொலைக் கோப்புப் பெயருடன் இணை</short>
+	<long>UNIX நேரத்தில் இருக்கும் timestampஐ தொலைக் கோப்புப் பெயரின் கடைசியில் இணை</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Uzak dosya adına zaman damgası ekle</short>
+	<long>Uzak dosya adlarının sonuna, UNIX zamanı olarak, zaman damgası ekle</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Додати позначку часу до назви віддаленого файла</short>
+	<long>Додавати позначку часу в форматі часу UNIX в кінець назв віддалений файлів</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Phụ thêm nhãn thời gian vào tên tập tin ở xa</short>
+	<long>Phụ thêm nhãn thời gian, theo giờ UNIX, vào cuối cùng mọi tên tập tin ở xa</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>在远程文件名后追加时间戳</short>
+	<long>在远程文件名结尾处填加 UNIX 时间戳</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>在遠端檔案名稱中加入時間戳記</short>
+	<long>在遠端檔案名稱結尾加入 UNIX 式時間戳記</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_capture</key>
+      <applyto>/apps/camorama/preferences/remote_capture</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles remote capture</short>
+	<long>When capturing pictures via the "Take Picture" button, or with auto capture, this key toggles the saving of pictures to a remote server.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Uzaq çəkimi fəallaşdırır</short>
+	<long>&quot;Şəkil Çək&quot; düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə rəsmlərin uzaq vericiyə qeyd edilməsini fəallaşdırır.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае аддалены захоп</short>
+	<long>Калі відарысы захопленыя кнопкай &quot;Узяць відарыс&quot;, ці аўтазахопам, гэты ключ пераключае аддаленае захаваньне відарысаў на паслужніке.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на отдалечени снимки</short>
+	<long>Когато използвате бутона „Снимка“ или функцията за автоматично заснемане, този клавиш превключва дали изображението да се записва на отдалечен сървър.</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje udaljeno hvatanje </short>
+	<long>Kada pravim slike sa &quot;Take Picture&quot; dugmetom, ili sa automatskim slikanjem, ovaj ključ prebacuje snimanje slike na udaljeni server.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a captura remota</short>
+	<long>En capturar imatges mitjançant el botó &quot;Fes una captura&quot;, o amb la captura automàtica, aquesta tecla commuta el desar imatges a un servidor remot.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná vzdálený záznam</short>
+	<long>Při záznamu obrázků pomocí tlačítka &quot;Vyfotit&quot;nebo při automatickém záznamu, tento klíč přepíná ukládání obrázků na vzdálený server.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Fjern optagelse</short>
+	<long>Når billeder gemmes vha. knappen &quot;Gem billede&quot; eller med automatisk optagelse, angiver denne nøgle om billederne gemmes på en server.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Entfernt mitschneiden?</short>
+	<long>Beim Mitschneiden von Bildern mittels des »Bild aufnehmen«-Knopfes oder mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder auf einem entfernten Rechner gespeichert werden.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཐག་རིང་གི་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>པར་ཚུ་ &quot;Take Picture&quot; ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་བཟུང་འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཐག་རིང་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles remote capture</short>
+	<long>When capturing pictures via the &quot;Take Picture&quot; button, or with auto capture, this key toggles the saving of pictures to a remote server.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles remote capture</short>
+	<long>When capturing pictures via the &quot;Take Picture&quot; button, or with auto capture, this key toggles the saving of pictures to a remote server.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la captura remota</short>
+	<long>Al capturar imágenes por medio del botón «Tomar fotografía», o con la captura automática, esta clave activa el guardado de las imágenes en un servidor remoto.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Urruneko eskuratzea gaitu</short>
+	<long>&quot;Argazkia hartu&quot; botoia erabiliz irudiak eskuratzen direnean, edo eskuratze automatikoarekin, gako honek urruneko zerbitzari batean irudien eskuratzea gaitzen du</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee etäkuvankaappausta</short>
+	<long>Kun kuvia kaapataan &quot;Ota Kuva&quot; napilla tai automaattisesti, tämä näppäin vaihtelee tallennetaanko kuvat etäpalvelimelle.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer les captures distantes</short>
+	<long>Lors d&apos;une capture d&apos;image via le bouton « Prendre une photo », ou avec la capture automatique, cette clé active l&apos;enregistrement des images vers le serveur distant.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar a captura remota</short>
+	<long>Cando captures imaxes por medio do botón &quot;Coller Imaxe&quot;, ou con auto captura, esta chave cambia a maneira de gardar as imaxes no servidor remoto.</long>
+      </locale>
+
+      <locale name="gu">
+	<short>દૂરસ્થ મેળવવા માટે ફેરબદલી કરે છે</short>
+	
+      </locale>
+
+      <locale name="it">
+	<short>Abilita l&apos;acquisizione da remoto</short>
+	<long>Durante l&apos;acquisizione delle immagini tramite il pulsante «Scatta foto» o con l&apos;acquisizione automatica questo tasto consente di salvare le immagini in un server remoto.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>リモート・キャプチャの切り替え</short>
+	<long>&quot;写真撮影&quot; ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をリモートに保存するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>attālinātās tveršanas pārslēgs</short>
+	<long>kad tveramie zīmējumi caur &quot;Nofotogrāfēt&quot; taustiņu vai ar auto tver šo taustiņu pārslēdzējs attālināti saglabājot zīmējumu.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи нелокално превземање</short>
+	<long>Кога превземате слики преку &quot;Земи слика&quot; копчето, или со авто превземање, ова копче го вклучува снимањето на сликата на нелокален сервер.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Veksler fjernopptak</short>
+	<long>Ved opptak av bilder via &quot;Ta bilde&quot;-knappen, eller ved autoopptak, slår denne nøkkelen på/av lagring av bilder til en ekstern tjener.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>दूर क्याप्चर टगल गर्दछ</short>
+	<long>जब छविहरू क्याप्चर गर्दा &quot;Take Picture&quot; बटन मार्फत, वा स्वत: क्याप्चरबाट, यो कुञ्जीले बचत छविहरू दूर सर्भरमा टगल गर्दछ।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt opname op afstand in/uit</short>
+	<long>Tijdens de opname van beelden met behulp van de &quot;Foto maken&quot;-knop of automatische opname, schakelt deze toets de opslag op afstand van afbeeldingen in/uit.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਜਦੋਂ  &quot;ਤਸਵੀਰ ਲਓ&quot; ਬਟਨ ਰਾਹੀਂ ਜਾਂ ਸਵੈ-ਪ੍ਾਪਤੀ ਨਾਲ ਤਸਵੀਰ ਲੈਂਦੇ ਹਾਂ ਤਾਂ ਇਹ ਸਵਿਚ ਰੀਮੋਟ ਸਰਵਰ ਉਪਰ ਤਸਵੀਰ ਸੰਭਾਲਣ ਨੂੰ toggle ਕਰਦੀ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Przechwytywanie zdalne</short>
+	<long>Opcja ta, przełącza zapisywanie na zdalny serwer obrazów przechwyconych automatycznie lub przy użyciu przycisku &quot;Zrób zdjęcie&quot;.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna a captura remota</short>
+	<long>Ao capturar imagens através do botão &quot;Tirar Fotografia&quot;, ou com auto-captura, esta tecla alterna a gravação das imagens num servidor remoto.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna captura remota</short>
+	<long>Ao capturar imagens através do botão &quot;Tirar Fotografia&quot;, ou com auto-captura, esta tecla alterna a gravação das imagens num servidor remoto.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop oddaljenega zajemanja</short>
+	<long>Ob zajemanju slik preko gumba &quot;Zajem slike&quot; ali s samodejnim zajemanjem, ta možnost dovoli preklop shranjevanja na oddaljeno povezavo.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon marrjen remote</short>
+	<long>Gjatë marrjes së figurave me anë të pulsantit &quot;Fotografo&quot; ose me marrjen automatike, ky tast mundëson ruajtjen remote të figurave.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за даљинско сликање</short>
+	<long>Када се снимају слике са &quot;Сними слику&quot; дугметом, или са самоснимањем, ово дугме ће променити чување слика на даљински сервер.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za daljinsko slikanje</short>
+	<long>Kada se snimaju slike sa &quot;Snimi sliku&quot; dugmetom, ili sa samosnimanjem, ovo dugme će promeniti čuvanje slika na daljinski server.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar fjärrtagning</short>
+	<long>När bilder tas via knappen &quot;Ta bild&quot; eller automatisk tagning växlar denna nyckel sparandet av bilder på en fjärrserver.</long>
+      </locale>
+
+      <locale name="ta">
+	<short> தொலைக் கைப்பற்றுதலை மாற்று</short>
+	<long>&quot;Take picture&quot; என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் கைபற்றும் பொழுது,இந்த விசை பிம்பங்களின் சேமிப்-பை தொலை சேவகனுக்கு மாற்றவும்.</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Uzak yakalamayı açıp/kapatır</short>
+	<long>&quot;Resim Çek&quot; düğmesi kullanılarak resimler yakalandığında, ya da otomatik yakalama sırasında, bu anahtar, resimlerin uzağa kaydedilmesini açıp/kapatır.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути віддалену зйомку</short>
+	<long>Ця клавіша встановлює віддалене збереження зображень, що робляться натисненням кнопки &quot;Зробити знімок&quot; чи автоматично.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt bắt ảnh từ xa</short>
+	<long>Khi bắt ảnh bằng cái nút « Chụp ảnh », hoặc thông qua khả năng tự động bắt, phím này bật/tắt khả năng lưu ảnh lên máy phục vụ ở xa.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>切换远程抓取</short>
+	
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換遠端擷取</short>
+	<long>當透過“照相”按鈕或自動擷取來擷取相片時，此選項會切換使用遠端伺服器儲存相片。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_file_type</key>
+      <applyto>/apps/camorama/preferences/remote_file_type</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+	<short>Remote capture image format</short>
+	<long>Specifies the image format to be used for remotely saved pictures</long>
+      </locale>
+
+      <locale name="az">
+	<short>Uzaq çəkim üçün rəsm formatı</short>
+	<long>Uzaqda qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını müəyyən edir</long>
+      </locale>
+
+      <locale name="be">
+	<short>Фармат відарысаў аддаленага захопу</short>
+	<long>Пазначае фармат відарыса для захаваньня аддаленых відарысаў</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Формат на отдалечената снимка</short>
+	<long>Определяне формат на изображението за отдалечено записани снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Tip slike za udaljene slike</short>
+	<long>Navodi tip slike koji će biti korišten za udaljene snimljene slike</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Format d&apos;imatge de captura remota</short>
+	<long>Especifica el format a utilitzar per a imatges desades remotament</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Formát obrázků vzdáleného záznamu</short>
+	<long>Udává formát obrázku, který se má použít pro vzdáleně ukládané obrázky</long>
+      </locale>
+
+      <locale name="da">
+	<short>Billedformat til fjerne optagelser</short>
+	<long>Angiver det billedformat der skal benyttes til fjernt gemte billeder</long>
+      </locale>
+
+      <locale name="de">
+	<short>Bildformat ntfernter Mitschnitte</short>
+	<long>Welches Bildformat soll für entfernt gespeicherte Bilder verwendet werden?</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་</short>
+	<long>ཐག་རིང་གི་སྲུང་བཞག་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ཨིན་པའི་གཟུགས་བརྙན་རྩ་སྒརིག་འདི་གསལ་བཀོད་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Remote capture image format</short>
+	<long>Specifies the image format to be used for remotely saved pictures</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Remote capture image format</short>
+	<long>Specifies the image format to be used for remotely saved pictures</long>
+      </locale>
+
+      <locale name="es">
+	<short>Formato de la imagen de la captura remota</short>
+	<long>Especifica el formato de imagen a ser utilizado para las imágenes guardadas remotamente</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Urruneko eskuratzearen irudi-formatua</short>
+	<long>Urrunean gordeko diren irudien formatua zehazten du</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Etäkaapattujen tiedostojen tallennusmuoto</short>
+	<long>Määrittelee kuvaformaatin, jota käytetään etäpalvelimelle tallennetuille kuville</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Format des images distantes</short>
+	<long>Indique le format à utiliser pour les images enregistrées à distance</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Formato de imaxe para captura remota</short>
+	<long>Especifica o formato de imaxe que será usado para gardar remotamente as fotos</long>
+      </locale>
+
+      <locale name="gu">
+	<short>દૂરસ્થ મેળવવા માટેના ચિત્રનું બંધારણ</short>
+	<long>દૂરસ્થ રીતે સંગ્રહાયેલા ચિત્રો માટે ચિત્રનું બંધારણ સ્પષ્ટ કરે છે</long>
+      </locale>
+
+      <locale name="it">
+	<short>Formato per l&apos;immagine catturata in remoto</short>
+	<long>Specifica il formato di immagine che verrà usato per le immagini salvate in remoto</long>
+      </locale>
+
+      <locale name="ja">
+	<short>リモート・キャプチャの画像フォーマット</short>
+	<long>リモートで保存する画像のフォーマットを指定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Attālinātās tveršanas attēlu formāts</short>
+	<long>Norāda attālināti saglabājamo attēlu formātu</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Формат за нелокално заробените слики</short>
+	<long>Специфицира форматот на сликата да биде користен само за нелокално снимени слики</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Bildeformat for fjernopptak</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>दूर सङ्कलित छवि ढाँचा</short>
+	<long>दूर बचत चित्रहरू छवि ढाँचाको प्रयोग गर्ने निर्दिष्ट गर्दछ</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Afbeeldingsformaat van opnames op afstand</short>
+	<long>Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor op afstand opgeslagen afbeeldingen.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਰਿਮੋਟ ਪ੍ਾਪਤ ਚਿੱਤਰ ਫਾਰਮਿਟ</short>
+	<long>ਰਿਮੋਟ ਸੰਭਾਲੀਅ੾ ਤਸਵੀਰਾਂ ਵਾਸਤੇ ਵਰਤੇ ਜਾਂਦੇ ਚਿੱਤਰ ਫਾਰਮਿਟ ਨੂੰ ਬਿਆਨ ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Format zdalnego przechwyconego obrazu</short>
+	<long>Określa format zdalnie zapisywanych obrazów</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Formato de imagem de captura remota</short>
+	<long>Especifica o formato de imagem a ser utilizado para as imagens gravadas remotamente</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Formato imagem captura remota</short>
+	<long>Especifica o formato de imagem a ser utilizado para imagens salvas remotamente</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Format slik za oddaljeno zajemanje</short>
+	<long>Določi format slik za oddaljeno shranjene slike</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Formati për figurat e marra në remot</short>
+	<long>Përcakton formatin që do të përdoret për figurat e ruajtura në remot</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Облик слика за даљинско снимање</short>
+	<long>Одреди облик снимка кији ће бити кориштен за даљински чуване слике</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Oblik slika za daljinsko snimanje</short>
+	<long>Odredi oblik snimka kiji će biti korišten za daljinski čuvane slike</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Bildformat för fjärrtagning</short>
+	<long>Anger bildformatet som ska användas för fjärrsparade bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>தொலைக் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்</short>
+	<long>தெ¡லைக் கே¡டியில் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Uzak yakalama görüntü biçimi</short>
+	<long>Uzağa kaydedilen resimlerde kullanacak görüntü biçimini belirtir</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Формат зображень віддалених зйомок</short>
+	<long>Визначає формат зображення для зображень, що зберігаються віддалено</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Định dạng ảnh bắt từ xa</short>
+	<long>Xác định định dạng ảnh cần dùng cho mọi ảnh đã lưu từ xa</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>远程抓取图像格式</short>
+	<long>指定在远程保存图片时所用的图像格式</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>遠端擷取影像格式</short>
+	<long>指定在遠端儲存相片時使用的影像格式</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_save_dir</key>
+      <applyto>/apps/camorama/preferences/remote_save_dir</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>your/upload/folder</default>
+      <locale name="C">
+	<short>Folder for remote captures</short>
+	<long>Folder for saving captured pictures remotely</long>
+      </locale>
+
+      <locale name="az">
+	<short>Uzaq çəkimlər üçün qovluq</short>
+	<long>Çəkilən rəsmlərin uzaqda qeyd edilməsi üçün qovluq</long>
+      </locale>
+
+      <locale name="be">
+	<short>Тэчка для аддаленага захопу</short>
+	<long>Тэчка для захаваньня відарысаў захопленых аддалена</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Папка за отдалечените снимки</short>
+	<long>Папка за отдалечено запазване на снимките</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Direktorij za udaljene slike</short>
+	<long>Direktorij za snimanje uslikanih slika sa udaljenih računara</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Carpeta per a captures remotes</short>
+	<long>Carpeta on desar imatges capturades remotament</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Adresář pro vzdálené záznamy</short>
+	<long>Adresář pro ukládání zaznamenaných obrázků vzdáleně</long>
+      </locale>
+
+      <locale name="da">
+	<short>Mappe til fjerne optagelser</short>
+	<long>Mappe til gemning af optagede billeder fjernt</long>
+      </locale>
+
+      <locale name="de">
+	<short>Ordner für entfernte Mitschnitte</short>
+	<long>Ordner zum entfernten Speichern mitgeschnittener Bilder</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཐག་རིང་གི་འཛིན་བཟུང་གི་དོན་ལུ་སྣོད་འཛིན་</short>
+	<long>འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཐག་རིང་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Folder for remote captures</short>
+	<long>Remote folder for saving captured pictures</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Folder for remote captures</short>
+	<long>Folder for saving captured pictures remotely</long>
+      </locale>
+
+      <locale name="es">
+	<short>Carpeta para las capturas remotas</short>
+	<long>Carpeta para guardar las imágenes capturadas remotamente</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Urruneko eskuratzeentako direktorioa</short>
+	<long>Eskuratutako irudiak urrunean gordetzeko direktorioa</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Etäkansio</short>
+	<long>Kansio, johon kuvat tallennetaan etääjärjestelmässä</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Dossier pour les captures distantes</short>
+	<long>Dossier d&apos;enregistrement des images capturées à distance</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Cartafol para capturas remotas</short>
+	<long>Cartafol para gardar imaxes capturadas remotamente</long>
+      </locale>
+
+      <locale name="gu">
+	<short>દૂરસ્થ મેળવાયેલા માટે ફોલ્ડર</short>
+	<long>મેળવાયેલ ચિત્રોને દૂરસ્થ રીતે સંગ્રહવા માટેનું ફોલ્ડર</long>
+      </locale>
+
+      <locale name="it">
+	<short>Cartella per le acquisizioni remote</short>
+	<long>Cartella per la memorizzazione delle immagini acquisite da remoto</long>
+      </locale>
+
+      <locale name="ja">
+	<short>リモート・キャプチャ用のフォルダ</short>
+	<long>リモートでキャプチャした画像を保存するフォルダです。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Mape attālinātajai tveršanai</short>
+	<long>Mape attālinātai tverto attēlu saglabāšanai</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Папка за нелокални превземања</short>
+	<long>Папка за снимање на нелокални превземени слики</long>
+      </locale>
+
+      <locale name="ms">
+	<short>Folder bagi cekupan jauh</short>
+	<long>Folder untuk menyimpan gambar secara jauuh</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Mappe for eksterne opptak</short>
+	<long>Mappe for lagring av opptak eksternt</long>
+      </locale>
+
+      <locale name="ne">
+	<short>दूर क्याप्चरहरूका लागि फोल्डर</short>
+	<long>दूर छविहरू क्याप्चर बचतका लागि फोल्डर</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Map voor opnames op afstand</short>
+	<long>Bestandsnaam voor het op afstand opslaan van opgenomen beelden</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਰਿਮੋਟ ਪ੍ਾਪਤੀਆਂ ਲਈ ਫਾਈਲ</short>
+	<long>ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਨੂੰ ਰਿਮੋਟ ਤੌਰ ਤੇ ਸੰਭਾਲਣ ਲਈ ਫਾਈਲ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Zdalny folder dla przechwyconych obrazów</short>
+	<long>Folder do zdalnego zapisu przechwyconych obrazów</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Pasta para as capturas remotas</short>
+	<long>Pasta onde gravar remotamente imagens capturadas</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Pasta para capturas remotas</short>
+	<long>Pasta para gravar imagens capturadas remotamente</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Mapa za oddaljeno zajemanje</short>
+	<long>Mapa za shranjevanje zajetih slik na oddaljene povezave</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Kartela për marrjet remote</short>
+	<long>Kartela për të ruajtur fotot e marra në remot</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Директоријум за даљинске снимке</short>
+	<long>Директоријум за чување снимљених слика даљински</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Direktorijum za daljinske snimke</short>
+	<long>Direktorijum za čuvanje snimljenih slika daljinski</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Mapp för fjärrtagningar</short>
+	<long>Mapp för fjärrsparande av tagna bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>தொலைக் கைப்பற்றுதலுக்கான ஆவணம்</short>
+	<long>தொலைக் கைப்பற்றப்பட்ட படங்களை சேமிப்பதற்கான அடைவு</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Uzak yakalamalar için dizin</short>
+	<long>Yakalanan resimleri uzağa kaydetmek için dizin</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Тека для віддалених зйомок</short>
+	<long>Тека для збереження знятих зображень віддалено</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Thư mục khi bắt từ xa</short>
+	<long>Thư mục vào đó cần lưu ảnh đã bắt từ xa</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>远程抓取的文件夹</short>
+	<long>保存远程抓取图片的文件夹</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>遠端擷取的資料夾</short>
+	<long>將擷取的照片儲存在遠端時所用的資料夾</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_save_file</key>
+      <applyto>/apps/camorama/preferences/remote_save_file</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>Webcam</default>
+      <locale name="C">
+	<short>Remote save filename</short>
+	<long>Name for the filename of uploaded images.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Uzaq qeyd üçün fayl adı</short>
+	<long>Göndərilən rəsmlər üçün fayl adı.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Назва файла адааленага захопу</short>
+	<long>Назва для файла які будзе загружацца.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Файлово име при отдалечено записване</short>
+	<long>Име на файла за качените отдалечено изображения</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Remote save filename</short>
+	<long>Ime za ime datoteke slika postavljenih na mrežu</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Nom de fitxer en desar remotament</short>
+	<long>Nom del nom de fitxer d&apos;imatges pujades.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Název souboru vzdáleného ukládání</short>
+	<long>Název souboru přenášených obrázků.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Filnavn til fjerngemning</short>
+	<long>Navn til filnavnet på billeder der sendes.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Dateiname für entferntes Speichern</short>
+	<long>Ein Name für die Datei hochgeladener Bilder.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཐག་རིང་གི་སྲུང་ཡིག་སྣོད་མིང་</short>
+	<long>སྐྱེལ་བཙུགས་འབད་དེ་ཡོད་པའི་གཟུགས་བརྙན་ཚུ་གི་ཡིག་སྣོད་མིང་འདི་གི་དོན་ལུ་མིང་།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Remote save filename</short>
+	<long>Name for the filename of uploaded images.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Remote save filename</short>
+	<long>Name for the filename of uploaded images.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Nombre de archivo para guardar remotamente</short>
+	<long>Nombre del archivo de la imágenes subidas.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Urrunean gordetzeko fitxategi-izena</short>
+	<long>Zerbitzarira igotako irudien fitxategi-izena</long>
+      </locale>
+
+      <locale name="fa">
+	<short>نام پرونده برای ذخیره‌ی دوردست</short>
+	
+      </locale>
+
+      <locale name="fi">
+	<short>Tiedostonimi etäpalvelimella</short>
+	<long>Palvelimelle vietyjen tiedostojen tiedostonimi.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Nom du fichier distant à enregistrer</short>
+	<long>Nom de fichier des images envoyées.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Gardar remotamente o nome de ficheiro</short>
+	<long>Nome para o ficheiro de imaxes subidas</long>
+      </locale>
+
+      <locale name="gu">
+	<short>સંગ્રહવા માટે દૂરસ્થ ફાઈલનું નામ</short>
+	<long>અપલોડ થયેલ ચિત્રોની ફાઈલના નામો માટેનું નામ.</long>
+      </locale>
+
+      <locale name="it">
+	<short>Nome file per la memorizzazione remota</short>
+	<long>Nome per il file di immagini salvate in remoto.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>リモートで保存するファイル名</short>
+	<long>アップロードする画像のファイル名です。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Attālinātās saglabāšanas failavārds</short>
+	<long>Vārds augšupielādējamo attēlu faila vārdam.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Име за нелокално снимање</short>
+	<long>Име на датотеката за вчитани слики</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Filnavn for fjernopptak</short>
+	<long>Filnavn for bilder som skal lastes opp.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>दूर बचत फाइलनाम</short>
+	<long>अपलोड भएको छविहरूको फाइलनामका लागि नाम।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Bestandsnaam op afstand</short>
+	<long>Bestandsnaam van de ge-uploade afbeeldingen.</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਰਿਮੋਟ ਸੰਭਾਲੀ ਫਾਈਲ ਦਾ ਨਾਉਂ</short>
+	<long>ਨਿਰਯਾਤ ਚਿੱਤਰਾਂ ਦੀ ਫਾਈਲ ਵਾਸਤੇ ਨਾਉਂ।</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Nazwa zdalnego zapisywanego pliku</short>
+	<long>Nazwa pliku wysyłanych obrazów.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Nome do ficheiro de gravação remota</short>
+	<long>Nome do ficheiro para as imagens enviadas.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Nome arquivo gravação remota</short>
+	<long>Nome do arquivo para imagens enviadas.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Ime datoteke za oddaljeno zajemanje</short>
+	<long>Ime datoteke za poslane slike.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Emri i file për ruajtjen remote</short>
+	<long>Emri për files të ruajtur në remot.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Име датотеке за даљинско чување</short>
+	<long>Име за датотеку од пренесених снимака.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Ime datoteke za daljinsko čuvanje</short>
+	<long>Ime za datoteku od prenesenih snimaka.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Filnamn för fjärrsparande</short>
+	<long>Namn för filnamnet på lämnade bilder.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>தெ¡லைக் கே¡டி கோப்புபெயரைச் சேமி</short>
+	<long>uploaded பிம்பத்திற்கான கோப்புபெயரினுடைய பெயர் </long>
+      </locale>
+
+      <locale name="tr">
+	<short>Uzak saklama dosya adı</short>
+	<long>Yüklenen görüntüleri için dosya adı.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Назва файла для віддаленого збереження</short>
+	<long>Назви файлів для відвантажених зображень.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Tên tập tin lưu từ xa</short>
+	<long>Tên cho tên tập tin của ảnh đã tải lên.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>远程保存文件名</short>
+	<long>上传图像的名称。</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>遠端儲存檔案名稱</short>
+	<long>已上傳影像的檔案名稱</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_timestamp</key>
+      <applyto>/apps/camorama/preferences/remote_timestamp</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles timestamp for remote captures</short>
+	<long>Toggles the insertion of a timestamp into the images for FTP upload.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Uzaq çəkimlər üçün vaxt mühürünü fəallaşdırır</short>
+	<long>FTP ilə göndərilən rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае часавыя адмеціны для аддаленага захопу</short>
+	<long>Пераключае ўстаўку часавае адмеціны ў відарысы для загрузкі на FTP </long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на маркер за време за отдалечените заснемания</short>
+	<long>Превключване на вмъкването на маркер за време в снимките за FTP</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacivanje vremenske oznake na udaljena hvatanja</short>
+	<long>Prebacuje ubacivanje vremenske oznake u slikama za FTP postavljanje na mrežu.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a marca horària per a captures remotes</short>
+	<long>Commuta la inserció d&apos;una marca horària a les imatges per a la pujada FTP.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná časový údaj vzdálených záznamů</short>
+	<long>Přepíná vkládání časového údaje do obrázků přenášených skrz FTP.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Tidsstempel i fjerne optagelser</short>
+	<long>Om der skal indsættes et tidsstempel i billeder til FTP-serveren.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Zeitstempel für entfernte Mitschnitte?</short>
+	<long>Einen Zeitstempel in die per FTP hochgeladenen Bilder einfügen/nicht einfügen</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཀྱི་དོན་ལུ་  གཟུགས་བརྙན་ནང་ལུ་དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་སོར་སྟོན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles timestamp for remote captures</short>
+	<long>Toggles the insertion of a timestamp into the images for FTP upload.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles timestamp for remote captures</short>
+	<long>Toggles the insertion of a timestamp into the images for FTP upload.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la marca de tiempo para las capturas remotas</short>
+	<long>Activar la inserción de la marca de tiempo en la imágenes a enviar al servidor FTP.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Urruneko eskuratzeentzat data-zigilua gaitu</short>
+	<long>FTP bitartze igoko diren irudietan data-zigiluaren txertaketa gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee aikaleimaa etäkaappauksille</short>
+	<long>Vaihtelee, lisätäänkö aikaleima FTP-palvelimelle vietäviin kuviin</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer l&apos;horodatage pour les captures distantes</short>
+	<long>Active l&apos;insertion d&apos;un horodatage sur les images destinées à l&apos;envoi FTP.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar a hora incrustada nas capturas remotas</short>
+	<long>Modificar a introducción do incrustado da data nas imaxes para a subida FTP.</long>
+      </locale>
+
+      <locale name="it">
+	<short>Abilita l&apos;inserimento della data per le acquisizioni da remoto</short>
+	<long>Abilita l&apos;inserimento dell&apos;orario nelle immagini per l&apos;upload FTP.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>リモート・キャプチャのタイムスタンプ</short>
+	<long>FTP へアップロードした画像へタイムスタンプを付与するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Ieslēdz/izslēdz liaka zīmogu attālinātai tveršanai</short>
+	<long>ieslēdz/izslēdz laika zīmogu ievietošanu lokālajos zīmējumos priekš FTP aukšuplādes.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи временска марка за нелокални превземања</short>
+	<long>Вклучи го внесувањето на временска марка во сликите за FTP вчитување.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Veksler tidsstempel for fjernopptak</short>
+	<long>Veksler innsetting av tidsstempel i bildene som skal lastes opp via FTP.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>दूर क्याप्चरका लागि टाइमस्ट्याम्प टगल गर्दछ</short>
+	<long>FTP अपलोडका लागि घुसाइएको टाइमस्ट्याम्प छविहरूमाको टगल्स।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt de tijdstempel voor opnames op afstand in/uit</short>
+	<long>Schakelt de toevoeging van een tijdstempel bij opgenomen beelden voor FTP-upload in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਲਈ  ਸਮ੾-ਸੰਕੇਤ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>FTP ਨਿਰਯਾਤ ਲਈ ਚਿੱਤਰ ਵਿਚ ਸਮ੾-ਸੰਕੇਤ ਪ੍ਰਵੇਸ਼ ਕਰਨ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Znacznik czasu dla przechwytywania zdalnego</short>
+	<long>Określa, czy na obrazach wysyłanych poprzez FTP ma być umieszczony znacznik czasu.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna data e hora para as capturas remotas</short>
+	<long>Alterna o desenho da data dentro das imagens para envio por FTP.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna horário para capturas remotas</short>
+	<long>Alterna o desenho do horário dentro das imagens para envio FTP.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop časovnega žiga za oddaljene slike</short>
+	<long>Preklop vnosa časovnega žiga v slike za FTP prenos.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon datën dhe orën për marrjet remote</short>
+	<long>Aktivon shtimin e datës dhe orës në figurat për upload FTP.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за временски тренутак за даљинске снимке</short>
+	<long>Промена за постављање временског тренутка на снимке за ФТП натовар.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za vremenski trenutak za daljinske snimke</short>
+	<long>Promena za postavljanje vremenskog trenutka na snimke za FTP natovar.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar tidsstämpel för fjärrtagningar</short>
+	<long>Växlar infogandet av en tidsstämpel i bilderna för FTP-lämnande.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>தொலை கைப்பற்றுதலினுடைய timestampஐ மாற்று</short>
+	<long>FTP uploadற்காக பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Uzak yakalamalar için zaman damgasını açıp/kapatır</short>
+	<long>FTP yüklemesi için görüntülerin içerisine zaman damgası yerleştirilmesini açıp/kapatır.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути позначку часу для віддалених зйомок</short>
+	<long>Перемикнути вставляння позначки часу в зображення для відвантаження на FTP.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt ghi giờ vào ảnh bắt từ xa</short>
+	<long>Bật/tắt chèn nhãn thời gian vào ảnh cần tải lên qua FTP.</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換遠端擷取時間戳記</short>
+	<long>切換插入時間戳記至 FTP 上傳的影像</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/save_dir</key>
+      <applyto>/apps/camorama/preferences/save_dir</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>~/Webcam_Pictures</default>
+      <locale name="C">
+	<short>Folder for local captures</short>
+	<long>Folder for saving captured pictures to locally</long>
+      </locale>
+
+      <locale name="az">
+	<short>Yerli rəsmlər üçün qovluq</short>
+	<long>Çəkilən rəsmlərin yerli olaraq qeyd edilməsi üçün qovluq</long>
+      </locale>
+
+      <locale name="be">
+	<short>Тэчка для мясцовых відарысаў</short>
+	<long>Тэчка для захаваньня відарысаў захопленых мясцова</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Папка за локалните снимки</short>
+	<long>Папка за локално запазване на снимките</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Direktorij za lokalne slike</short>
+	<long>Direltorij za snimanje uslikalnih slika u lokalu</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Carpeta per a captures locals</short>
+	<long>Carpeta on desar imatges capturades localment</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Adresář pro lokální záznamy</short>
+	<long>Adresář pro ukládání zaznamenaných obrázků lokálně</long>
+      </locale>
+
+      <locale name="da">
+	<short>Mappe til lokale optagelser</short>
+	<long>Mappe til gemning af optagede billeder lokalt</long>
+      </locale>
+
+      <locale name="de">
+	<short>Ordner für lokale Mitschnitte</short>
+	<long>Ordner zum lokalen Speichern mitgeschnittener Bilder</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་སྣོད་འཛིན་</short>
+	<long>འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Folder for local captures</short>
+	<long>Local folder for saving captured pictures</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Folder for local captures</short>
+	<long>Folder for saving captured pictures to locally</long>
+      </locale>
+
+      <locale name="es">
+	<short>Carpeta para las capturas locales</short>
+	<long>Carpeta para guardar las imágenes capturadas localmente</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze lokalentzako direktorioa</short>
+	<long>Eskuratutako irudiak lokalean gordetzeko direktorioa</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Paikallinen kansio</short>
+	<long>Kansio, johon kuva tallennetaan paikallisesti</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Dossier pour les capture locales</short>
+	<long>Dossier d&apos;enregistrement des images capturées localement</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Cartafol para capturas locais</short>
+	<long>Cartafol·para·gardar·imaxes·capturadas·localmente</long>
+      </locale>
+
+      <locale name="gu">
+	<short>સ્થાનિક મેળવાયેલા માટે ફોલ્ડર</short>
+	<long>મેળવાયેલ ચિત્રોને સ્થાનીય રીતે સંગ્રહવા માટેનું ફોલ્ડર</long>
+      </locale>
+
+      <locale name="it">
+	<short>Cartella per le acquisizioni locali</short>
+	<long>Cartella per la memorizzazione delle immagini acquisite da locale</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ローカル・キャプチャ用のフォルダ</short>
+	<long>ローカルでキャプチャした画像を保存するフォルダです。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Mape lokālai tveršanai</short>
+	<long>Lokālā mape tverto attēlu saglabāšani</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Папка за локални превземања</short>
+	<long>Папка за снимање на превземени локални слики</long>
+      </locale>
+
+      <locale name="ms">
+	<short>Folder untuk cekupan lokal</short>
+	
+      </locale>
+
+      <locale name="nb">
+	<short>Mappe for lokale opptak</short>
+	<long>Mappe for lagring av opptak lokalt</long>
+      </locale>
+
+      <locale name="ne">
+	<short>स्थानीय क्याप्चरहरूका लागि फोल्डर</short>
+	<long>स्थानीय सङ्कलित छविहरू बचतका लागि फोल्डर</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Map voor lokale opnames</short>
+	<long>Map voor het lokaal opslaan van opgenomen beelden</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਆਂ ਲਈ ਫਾਈਲ</short>
+	<long>ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਨੂੰ ਸਥਾਨਿਕ ਤੌਰ ਤੇ ਸੰਭਾਲਣ ਲਈ ਫਾਈਲ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Lokalny folder dla przechwyconych obrazów</short>
+	<long>Folder do lokalnego zapisu przechwyconych obrazów</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Pasta para as capturas locais</short>
+	<long>Pasta onde gravar localmente imagens capturadas</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Pasta para capturas locais</short>
+	<long>Pasta para gravar localmente imagens capturadas</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Mapa za lokalno zajemanje</short>
+	<long>Mapa za shranjevanje zajetih slik na lokalne povezave</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Kartela për marrjet lokale</short>
+	<long>Kartela për të ruajtur fotot e marra në lokal</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Директоријум за локалне снимке</short>
+	<long>Директоријум за чување снимљених слика локално</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Direktorijum za lokalne snimke</short>
+	<long>Direktorijum za čuvanje snimljenih slika lokalno</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Mapp för lokala tagningar</short>
+	<long>Mapp för lokalt sparande av tagna bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>உள் கைப்பற்றுதலுக்கான ஆவணம்</short>
+	<long>உள் கைப்பற்றப்பட்ட  படங்களை சேமிப்பதற்கான அடைவு</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Yerel yakalamalar için dizin</short>
+	<long>Yakalanan resimleri yerel kaydetmek için dizin</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Тека для локальних зйомок</short>
+	<long>Тека для збереження знятих зображень локально</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Thư mục khi bắt cục bộ</short>
+	<long>Thư mục vào đó cần lưu ảnh đã bắt cục bộ</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>本地抓取的文件夹</short>
+	<long>将抓取的图片保存到本地所用的文件夹</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>本地端擷取的資料夾</short>
+	<long>將擷取的照片儲存在本地端時所用的資料夾</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/save_file</key>
+      <applyto>/apps/camorama/preferences/save_file</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>Webcam</default>
+      <locale name="C">
+	<short>Filename for local captures</short>
+	<long>Filename for saving captured pictures to locally</long>
+      </locale>
+
+      <locale name="az">
+	<short>Yerli çəkimlər üçün fayl adı</short>
+	<long>Çəkilən rəsmlərin yerli olaraq qeyd edilməsi üçün fayl adı</long>
+      </locale>
+
+      <locale name="be">
+	<short>Назва файла для мясцовага захопу</short>
+	<long>Назва файла для захаваньня відарысаў захопленых мясцова</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Име на файл за локалните снимки</short>
+	<long>Име на файл, в който да се запазват снимките локално</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Ime datoteke za lokalne prijenose</short>
+	<long>Ime za snimanje napravljenih slika u lokalu</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Nom de fitxer per a captures locals</short>
+	<long>Nom del fitxer per a desar les imatges capturades a localment</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Název souboru pro lokální záznamy</short>
+	<long>Název souboru pro ukládání zaznamenaných obrázků lokálně</long>
+      </locale>
+
+      <locale name="da">
+	<short>Filnavn til lokale optagelser</short>
+	<long>Filnavn til gemning af optagelser lokalt</long>
+      </locale>
+
+      <locale name="de">
+	<short>Dateiname für lokale Mitschnitte</short>
+	<long>Dateiname für das lokale Speichern mitgeschnittener Bilder</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཉེ་གནས་འཛིན་བཟུང་གི་དོན་ལུ་ཡིག་སྣོད་མིང་</short>
+	<long>འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་ཡིག་སྣོད་མིང་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Filename for local captures</short>
+	<long>Filename for saving captured pictures to locally</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Filename for local captures</short>
+	<long>Filename for saving captured pictures to locally</long>
+      </locale>
+
+      <locale name="es">
+	<short>Nombre de archivo para las capturas locales</short>
+	<long>Nombre de archivo para guardar las imágenes capturadas localmente</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze lokalentzako fitxategi-izena</short>
+	<long>Eskuratutako irudiak lokalean gordetzeko fitxategi-izena</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Tiedostonimi paikallisille kaappauksille</short>
+	<long>Tiedostonimi kaapattujen kuvien paikallista tallennusta varten</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Nom de ficher pour les capture locale</short>
+	<long>Nom de fichier des images capturées localement</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Nome de ficheiro para capturas locais</short>
+	<long>Nome de ficheiro para capturas de imaxes gardadas localmente</long>
+      </locale>
+
+      <locale name="gu">
+	<short>સ્થાનિક મેળવાયેલા માટે ફાઈલનામ</short>
+	<long>મેળવાયેલ ચિત્રોને સ્થાનિક રીતે સંગ્રહવા માટે ફાઈલનામ</long>
+      </locale>
+
+      <locale name="it">
+	<short>Nome file per le acquisizioni locali</short>
+	<long>Nome file per la memorizzazione delle immagini acquisite da locale</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ローカル・キャプチャ用のファイル名</short>
+	<long>ローカルでキャプチャした画像を保存する際に使用するファイル名です。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Lokālās tveršanas faila vārds</short>
+	<long>Faila nosaukums lai saglabātu tvertos attēlus lokāli</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Име на датотеката за ликални превземања</short>
+	<long>Име на датотека за снимање на локалните превземени слики</long>
+      </locale>
+
+      <locale name="ms">
+	<short>Namafail bagi cekupan lokal</short>
+	<long>Namafail untuk menyimpan gambar yg dicekup secara lokal</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Filnavn for lokale opptak</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>स्थानीय क्याप्चरहरूका लागि फाइलनाम</short>
+	<long>स्थानीय रूपमा क्याप्चर छविहरू बचत गर्नका लागि फाइलनाम</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Bestandsnaam voor lokale opnames</short>
+	<long>Bestandsnaam voor het lokaal opslaan van opgenomen beelden</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਅ੾ ਲਈ ਫਾਈਲ ਦਾ ਨਾਉਂ</short>
+	<long>ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਨੂੰ ਸਥਾਨਿਕ ਤੌਰ ਤੇ ਸੰਭਾਲਣ ਲਈ ਫਾਈਲ ਦਾ ਨਾਉਂ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Nazwa lokalnego pliku przechwyconych obrazów</short>
+	<long>Nazwa lokalnego pliku do zapisu przechwyconych obrazów</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Nome do ficheiro para capturas locais</short>
+	<long>Nome do ficheiro para gravar localmente imagens capturadas</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Nome arquivo para capturas locais</short>
+	<long>Nome arquivo para gravar localmente imagens capturadas</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Ime datoteke lokalnih slik</short>
+	<long>Ime datoteke za shranjevanje lokalno</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Emri i file për marrjet lokale</short>
+	<long>Emri i file për të ruajtur fotot e marra lokalisht</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Име датотеке за локалне снимке</short>
+	<long>Датотека за чување снимљених слика локално</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Ime datoteke za lokalne snimke</short>
+	<long>Datoteka za čuvanje snimljenih slika lokalno</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Filnamn för lokala tagningar</short>
+	<long>Filnamn för lokalt sparande av tagna bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>உள்-கைப்பற்றப்பட்ட படங்களுக்கான கோப்புப் பெயர்</short>
+	<long>கைப்பற்றப்பட்ட படங்களை உள் சேமிப்பதற்கான கோப்புப் பெயர்</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Yerel yakalamalar için dosya adı</short>
+	<long>Yakalanan resimleri yerel olarak kaydetmek için dosya adı</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Назва файла для локальних зйомок</short>
+	<long>Назва файла для збереження знятих зображень локально</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Tên tập tin khi bắt cục bộ</short>
+	<long>Tên tập tin khi lưu ảnh đã bắt một cách địa phương</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>本地抓取的文件名</short>
+	<long>将抓取的图片保存到本地时所用文件名</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>本地端擷取的檔案名稱</short>
+	<long>將擷取的照片儲存在本地端時所用的檔案名稱</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/timestamp</key>
+      <applyto>/apps/camorama/preferences/timestamp</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles timestamp for local captures</short>
+	<long>Toggles the insertion of a timestamp into local images</long>
+      </locale>
+
+      <locale name="az">
+	<short>Yerli çəkimlər üçün vaxt mühürünü fəallaşdırır</short>
+	<long>Yerli rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае часавыя адмеціны для мясцовага захопу</short>
+	<long>Пераключае ўстаўку часавае адмеціны ў мясцовыя відарысы</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на маркер за време за локалните заснемания</short>
+	<long>Превключване на вмъкването на маркер за време в локалните снимки</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacivanje vremenskog znaka na lokalna hvatanja</short>
+	<long>Prebacuje ubacivanje vremenske oznake u lokalne slike</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a marca horària per a captures locals</short>
+	<long>Commuta la inserció d&apos;una marca horària a les imatges locals</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná časový údaj lokálních záznamů</short>
+	<long>Přepíná vkládání časového údaje do lokálních obrázků</long>
+      </locale>
+
+      <locale name="da">
+	<short>Tidsstempel i lokale optagelser</short>
+	<long>Om der skal indsættes et tidsstempel i lokale billeder</long>
+      </locale>
+
+      <locale name="de">
+	<short>Zeitstempel für lokale Mitschnitte?</short>
+	<long>Einen Zeitstempel in lokale Bilder einfügen/nicht einfügen</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་ཉེ་གནས་གཟུགས་བརྙན་ཚུ་ནང་སོར་སྟོན་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles timestamp for local captures</short>
+	<long>Toggles the insertion of a timestamp into local images</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles timestamp for local captures</short>
+	<long>Toggles the insertion of a timestamp into local images</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la marca de tiempo para las capturas locales</short>
+	<long>Activar la inserción de la marca de tiempo en las imágenes locales</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Eskuratze lokalentzat data-zigilua gaitu</short>
+	<long>Irudi lokaletan data-zigiluaren txertaketa gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee aikaleimaa paikallisille kaappauksille</short>
+	<long>Vaihtelee, lisätäänkö aikaleima paikallisiin kuviin</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer l&apos;horodatage pour les captures locales</short>
+	<long>Active l&apos;insertion d&apos;horodatage dans les images locales</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar o incrutado da hora nas capturas locais</short>
+	<long>Modificar a introducción da data incrustada nas imaxes locais</long>
+      </locale>
+
+      <locale name="it">
+	<short>Abilita l&apos;inserimento della data per le acquisizioni da locale</short>
+	<long>Abilita l&apos;inserimento dell&apos;orario nelle immagini locali</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ローカル・キャプチャのタイムスタンプ</short>
+	<long>ローカル画像へタイムスタンプを付与するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Ieslēdz/izslēdz laika zīmogu lokālajam tvērējam</short>
+	<long>ieslēdz/izslēdz laika zīmogu ievietošanu lokālajos zīmējumos</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи временска марка за локални превземања</short>
+	<long>Вклучи го внесувањето на временска марка во локалните слики</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Veksler tidsstempel for lokale opptak</short>
+	<long>Veksler innsetting av tidsstempel i lokale bilder</long>
+      </locale>
+
+      <locale name="ne">
+	<short>टाइमस्ट्याम्प स्थानीय क्याप्चर टगल गर्दछ</short>
+	<long>स्थानीय छविहरूमा टाइमस्ट्याम्पको घुसाउनमा टगल्स</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt de tijdstempel voor lokale opnames in/uit</short>
+	<long>Schakelt de toevoeging van een tijdstempel bij opgenomen beelden in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਅ੾ ਲਈ  ਸਮ੾-ਸੰਕੇਤ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਸਥਾਨਿਕ ਚਿੱਤਰ ਵਿਚ ਸਮ੾-ਸੰਕੇਤ ਪ੍ਰਵੇਸ਼ ਕਰਨ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Znacznik czasu dla przechwytywania lokalnego</short>
+	<long>Określa, czy na na lokalnie zapisywanych obrazach jest umieszczony znacznik czasu</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna a data e hora para as capturas locais</short>
+	<long>Alterna o desenho da data dentro das imagens locais</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna horário para capturas locais</short>
+	<long>Alterna o desenho do horário dentro das imagens locais</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop časovnega žiga za lokalne slike</short>
+	<long>Preklop vnosa časovnega žiga v lokalne slike</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon datën dhe orën për marrjet lokale</short>
+	<long>Aktivon shtimin e datës dhe orës në figurat lokale</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за временски тренутак за локалне снимке</short>
+	<long>Промена за постављање временског тренутка на локалне снимке</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za vremenski trenutak za lokalne snimke</short>
+	<long>Promena za postavljanje vremenskog trenutka na lokalne snimke</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar tidsstämpel för lokala tagningar</short>
+	<long>Växlar infogandet av en tidsstämpel i lokala bilder</long>
+      </locale>
+
+      <locale name="ta">
+	<short>உள் கைப்பற்றுதலினுடைய timestampஐ மாற்று</short>
+	<long>உள் பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Yerel yakalamalar için zaman damgasını açıp/kapatır</short>
+	<long>Yerel görüntülerin içine zaman damgası yerleştirilmesini açıp/kapatır </long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути позначку часу для локальних зйомок</short>
+	<long>Перемикнути вставляння позначки часу в локальні зображення</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt ghi giờ vào ảnh bắt cục bộ</short>
+	<long>Bật/tắt chèn nhãn thời gian vào ảnh cục bộ</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換本地端擷取時間戳記</short>
+	<long>切換插入時間戳記至本地端影像</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/timestamp_string</key>
+      <applyto>/apps/camorama/preferences/timestamp_string</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>Camorama!</default>
+      <locale name="C">
+	<short>Custom text for the timestamp</short>
+	<long>Defines a string of custom text to be inserted into the image.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Vaxt mühürü üçün xüsusi mətn</short>
+	<long>Rəsmə daxil ediləcək xüsusi kəlmələri müəyyən edir.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Тэкст які вызначае карыстальнік для часавае адмеціны</short>
+	<long>Пазначае радок тэкста карыстальніка для ўстаўкі ў відарыс.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Свободен текст за маркера за време</short>
+	<long>Дефиниране на низ от свободен текст за вмъкване в изображението</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Korisnički tekst za vremensku oznaku</short>
+	<long>Definiši niz korisničkog teksta koji će biti ubaćen u sliku.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Text personalitzat per a la marca horària</short>
+	<long>Defineix una cadena de text personalitzada per inserir-la a la imatge</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Vlastní text pro časový údaj</short>
+	<long>Definuje řetězec s vlastním textem pro vložení do obrázku.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Brugerdefineret tekst til tidsstemplet</short>
+	<long>Definerer en egen tekst som indsættes i billedet.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Benutzerdefinierter Zeitstempel-Text</short>
+	<long>Legt eine benutzerdefinierte Zeichenkette fest, die in&apos;s Bild eingefügt wird.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>དུས་བཀོད་འདི་གི་དོན་ལུ་  སྲོལ་སྒྲིག་ཚིག་ཡིག་</short>
+	<long>གཟུགས་བརྙན་ནང་ལུ་བཙུགས་ནི་ཨིན་པའི་སྲོལ་སྒྲིག་ཚིག་ཡིག་གི་ཡིག་རྒྱུན་ཅིག་ངེས་འཛིན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Custom text for the timestamp</short>
+	<long>Defines a string of custom text to be inserted into the image.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Custom text for the timestamp</short>
+	<long>Defines a string of custom text to be inserted into the image.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Texto personalizado para la marca de tiempo</short>
+	<long>Define una cadena de texto personalizado para ser insertada en la imagen.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Data-zigilurako testu pertsonalizatua</short>
+	<long>Irudiaren barruan sartuko den testu-kate pertsonalizatua zehazten du</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Oma teksti aikaleimalle</short>
+	<long>Määrittelee oman merkkijonon, joka lisätään kuviin.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Texte de remplacement pour l&apos;horodatage</short>
+	<long>Définit une chaîne de texte personnalisée à insérer dans l&apos;image.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Personalizar o texto da hora incrustada</short>
+	<long>Define a cadea de texto personalizada para ser incrustada dentro da imaxe</long>
+      </locale>
+
+      <locale name="gu">
+	<short>સમયનોંધ માટે કસ્ટમ લખાણ</short>
+	<long>ચિત્રમાં ઉમેરવા માટે કસ્ટમ લખાણની શબ્દમાળા વ્યાખ્યાયિત કરે છે.</long>
+      </locale>
+
+      <locale name="it">
+	<short>Testo personalizzato per il timestamp</short>
+	<long>Definisce una stringa di testo personalizzato da inserire nell&apos;immagine.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>タイムスタンプ用のカスタム文字列</short>
+	<long>画像に挿入するカスタム・テキストの文字列を定義します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Izvēles teksts priekš laika spiedoga</short>
+	<long>Definē rindu no pašizvēlēta teksta lai tiktu ielikts attēlā.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Сопствен текст за временска марка</short>
+	<long>Дефинира низа од сопствен текст за да биде внесен во сликата</long>
+      </locale>
+
+      <locale name="ms">
+	<short>Teks sendiri bagi setemmasa</short>
+	<long>Takrifkan satu rentetan bagi teks tersendiri untuk diselitkan ke imej.</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Egendefinert tekst til tidsstempelet</short>
+	<long>Setter en egendefinert tekst inn i bildet.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>अनूकुलन पाठ टाइमस्ट्याम्पका लागि</short>
+	<long>छविमा घुसाउनका लागि अनूकुलन पाठको स्ट्रिङ परिभाषित गर्दछ।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Aangepaste tekst als tijdstempel</short>
+	<long>Definieert een aangepaste tekst die aan de afbeelding toegevoegd dient te worden</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸਮ੾-ਸੰਕੇਤ ਲਈ ਸੋਧਿਅਾ ਪਾਠ</short>
+	<long>ਚਿੱਤਰ ਵਿਚ ਦਿੱਤਾ ਹੋਣ ਵਾਲੇ ਸੋਧ ਪਾਠ ਦੀ ਸਤਰ ਨੂੰ ਪ੍ਭਾਸ਼ਿਤ ਕਰਦਾ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Własny tekst datownika</short>
+	<long>Definiuje własny tekst umieszczany na obrazie.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Texto personalizado para a data e hora</short>
+	<long>Define uma expressão de texto personalizado para ser inserido na imagem.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Texto customizado para o horário</short>
+	<long>Define uma expressão de texto customizado para ser inserido na imagem.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Prilagojeno besedilo časovnega žiga</short>
+	<long>Določi izraz za prilagojeno besedilo prilepljeno na sliko.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Teksti i personalizuar për datën dhe orën</short>
+	<long>Përcakton një varg të personalizuar teksti për t&apos;u shtuar në figurë.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Произвољни текст за временски тренутак</short>
+	<long>Дефинише низ произвољног текста који ће бити убачен у снимак.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Proizvoljni tekst za vremenski trenutak</short>
+	<long>Definiše niz proizvoljnog teksta koji će biti ubačen u snimak.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Egen text för tidsstämpeln</short>
+	<long>Anger en sträng med egen text som sätts in i bilden.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>timestampன் உரையை ஆயத்தமாக்கு</short>
+	<long>¦¾¡¼÷îசியினுடைய ஆயத்த உரையை ஒரு பிம்பத்தில் இணைப்பதற்கான விளக்கம்</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Zaman damgası için özel yazı</short>
+	<long>Görüntüye eklenecek özel bir yazı tanımlar.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Нетиповий текст для позначки часу</short>
+	<long>Визначає рядок нетипового тексту, що його буде вставлено у зображення.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Chuỗi riêng ghi giờ</short>
+	<long>Xác định chuỗi riêng cần chèn vào ảnh.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>自定义时间戳文本</short>
+	<long>定义要插入到图像的自定义文本字符串。</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>自訂時間戳記文字</short>
+	<long>定義要插入影像中的自訂文字字串。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/use_custom_string</key>
+      <applyto>/apps/camorama/preferences/use_custom_string</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+	<short>Toggles the custom string</short>
+	<long>Toggles the use of the custom string for the timestamp in images.</long>
+      </locale>
+
+      <locale name="az">
+	<short>Bu xüsusi qatarı fəallaşdırır</short>
+	<long>Rəsimlərə vaxt mühürünün vurulması üçün xüsusi qatarı istifadəyə açır.</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае радок карыстальніка</short>
+	<long>Пераключае выкарыстаньне радка карыстальніка для часавае адмеціны ў відарысах.</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на свободен текст</short>
+	<long>Превключване на използването на свободен текст за маркер време в снимките</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje pojedinačni string</short>
+	<long>Prebacuje korištenje pojedinačnih stringova za vremenske oznake u slikama.</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta a cadena personalitzada</short>
+	<long>Commuta l&apos;ús de la cadena personalitzada per a la marca horària a les imatges.</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná vlastní řetězec</short>
+	<long>Přepíná použití vlastního řetězce pro časový údaj na obrázcích.</long>
+      </locale>
+
+      <locale name="da">
+	<short>Brugerdefineret tekst</short>
+	<long>Om den brugerdefinerede tekst skal benyttes til tidsstemplet i billeder.</long>
+      </locale>
+
+      <locale name="de">
+	<short>Eine benutzerdefinierte Zeichenkette verwenden/nicht verwenden</short>
+	<long>Eine benutzerdefinierte Zeichenkette für den Zeitstempel in Bildern verwenden/nicht verwenden.</long>
+      </locale>
+
+      <locale name="dz">
+	<short>སྲོལ་སྒྲིག་ཡིག་རྒྱུན་འདི་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>གཟུགས་བརྙན་ཚུ་ནང་དུས་བཀོད་ཀྱི་དོན་ལུ་སྲོལ་སྒྲིག་ཡིག་རྒྱུན་གྱི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles the custom string</short>
+	<long>Toggles the use of the custom string for the timestamp in images.</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles the custom string</short>
+	<long>Toggles the use of the custom string for the timestamp in images.</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar la cadena personalizada</short>
+	<long>Activar el uso de la cadena personalizada para la marca de tiempo en las imágenes.</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Textu-kate pertsonalizatua gaitu</short>
+	<long>Irudien data-zigiluan testu-kate pertsonalizatuaren erabilpena gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee omaa merkkijonoa</short>
+	<long>Vaihtelee oman merkkijonon käyttöä aikaleimana kuvissa.</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer la chaîne personnalisée</short>
+	<long>Active l&apos;utilisation d&apos;une chaîne personnalisée pour l&apos;horodatage des images.</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar a cadea personalizada</short>
+	<long>Modificar·o·uso·das·cadeas personalizadas para incrustar a hora nas imaxes.</long>
+      </locale>
+
+      <locale name="gu">
+	<short>કસ્ટમ શબ્દમાળા ફેરબદલી કરે છે</short>
+	
+      </locale>
+
+      <locale name="it">
+	<short>Abilita la stringa personalizzata</short>
+	<long>Abilita l&apos;uso di una stringa personalizzata per l&apos;inserimento della data nelle immagini.</long>
+      </locale>
+
+      <locale name="ja">
+	<short>カスタム文字列の切り替え</short>
+	<long>画像へ付与するタイムスタンプをカスタマイズするかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>pašizvēlētās rindas pārslēgs</short>
+	<long>ieslēdz/izslēdz pašizvēlētās rindiņas laika zimogu zīmējumos.</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи сопствена низа</short>
+	<long>Вклучи го користењето на сопствена низа за временските марко во сликата.</long>
+      </locale>
+
+      <locale name="ne">
+	<short>अनूकुलन स्ट्रिङ टगल गर्दछ</short>
+	<long>टाइमस्ट्याम्प छविहरूमा अनुकूलन स्ट्रिङ प्रयोग गर्न टगल गर्दछ।</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt de aangepaste tekst in/uit</short>
+	<long>Schakelt het gebruik van aangepaste tekst als tijdstempel in afbeeldingen in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਸੋਧ ਸਤਰ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਚਿੱਤਰ ਵਿਚ ਸਮ੾-ਸੰਕੇਤ ਲਈ ਸੋਧ ਸਤਰ ਦੀ ਵਰਤੋਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Dowolny napis</short>
+	<long>Określa, czy ma być użyty własny tekst dla datownika umieszczanego na obrazach.</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna a expressão personalizada</short>
+	<long>Alterna a utilização da expressão personalizada na data e hora em imagens.</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna a expressão customizada</short>
+	<long>Alterna a uso da expressão customizada no horário em imagens.</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop prilagojenega izraza</short>
+	<long>Preklop uporabe prilagojenih izrazov za časovni žig slik.</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon tekstin e personalizuar</short>
+	<long>Aktivon përdorimin e tekstit të personalizuar për datën dhe orën në figura.</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за произвољни низ</short>
+	<long>Промена за  употребу произвољног низа за временски тренутак на снимцима.</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za proizvoljni niz</short>
+	<long>Promena za  upotrebu proizvoljnog niza za vremenski trenutak na snimcima.</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar den egna strängen</short>
+	<long>Växlar användandet av den egna strängen för tidsstämpeln i bilder.</long>
+      </locale>
+
+      <locale name="ta">
+	<short>ஆயத்த தொடர்ச்சியை மாற்று</short>
+	<long>பிம்பங்களில் உள்ள timestampனுடைய ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Özel yazıyı açıp/kapatır</short>
+	<long>Görüntülerdeki zaman damgası için özel yazı kullanımını açıp/kapatır.</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути нетиповий рядок</short>
+	<long>Перемикнути використання нетипового рядка для позначки часу в зображеннях.</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt chuỗi riêng</short>
+	<long>Bật/tắt dùng chuỗi riêng cho nhãn thời gian trên ảnh.</long>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>切换自定义字符串</short>
+	
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換自訂字串</short>
+	<long>切換使用影像中時間戳記的自訂字串。</long>
+      </locale>
+    </schema>
+
+<schema>
+      <key>/schemas/apps/camorama/preferences/show_adjustments</key>
+      <applyto>/apps/camorama/preferences/show_adjustments</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles the video adjustment sliders</short>
+	<long>Toggles the use of the sliders to adjust the video properties</long>
+      </locale>
+
+      <locale name="az">
+	<short>Video sazlama çubuqlarını fəallaşdırır</short>
+	<long>Video qurğularını sazlamaq üçün çubuqların istifadəsini fəallaşdırır</long>
+      </locale>
+
+      <locale name="be">
+	<short>Пераключае кіраваньне відыё</short>
+	<long>Пераключае выкарыстаньне кіраваньня ўласьцівасьцямі відыё</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на плъзгачите за видео настройките</short>
+	<long>Превключване на използването на плъзгачи при настройката на видеото</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje klizać video prilagođavanja</short>
+	<long>Prebacuje korištenje klizača za prilagođavanje video osobina</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta els controls de desplaçament d&apos;ajust de vídeo</short>
+	<long>Commuta l&apos;ús de controls de desplaçament per a ajustar les propietats del vídeo</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná posuvníky pro úpravu videa</short>
+	<long>Přepíná použití posuvníků k úpravě vlastností videa</long>
+      </locale>
+
+      <locale name="da">
+	<short>Videojusteringsskydere</short>
+	<long>Om skyderne skal bruges til at justere videoegenskaberne</long>
+      </locale>
+
+      <locale name="de">
+	<short>Die Schieber zur Video-Anpassung anzeigen/verbergen</short>
+	<long>Die Schieber zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཝི་ཌིའོ་བདེ་སྒྲིག་བཤུད་བྱེད་འདི་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>ཝི་ཌིའོ་རྒྱུ་དངོས་འདི་བདེ་སྒྲིག་བཟོ་ནི་ལུ་  བཤུད་བྱེད་ཚུ་གི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles the video adjustment sliders</short>
+	<long>Toggles the use of the sliders to adjust the video properties</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles the video adjustment sliders</short>
+	<long>Toggles the use of the sliders to adjust the video properties</long>
+      </locale>
+
+      <locale name="es">
+	<short>Activar los deslizadores de ajuste de vídeo</short>
+	<long>Activar el uso de los deslizadores para ajustar las propiedades del vídeo</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Bideoa egokitzeko graduatzaileak gaitu</short>
+	<long>Bideoaren ezaugarriak egokitzeko graduatzaileen erabilera gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee videosäätimiä</short>
+	<long>Vaihtelee säätimien käyttöä videon ominaisuuksien säätöön</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer l&apos;utilisation d&apos;ascenseurs d&apos;ajustement de la vidéo</short>
+	<long>Active l&apos;utilisation d&apos;ascenseurs pour ajuster les propriétés de la vidéo</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar o desprazamento dos axustes de vídeo</short>
+	<long>Modificar o uso do desprazamento para o axuste das propiedades de vídeo</long>
+      </locale>
+
+      <locale name="it">
+	<short>Abilita i cursori di scorrimento per le correzioni del video</short>
+	<long>Abilita l&apos;uso dei cursori di scorrimento per la correzione delle proprietà del video</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ビデオ調整スライダ</short>
+	<long>ビデオのプロパティを調整するスライダを使用するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>ieslēdz/izslēdz video pārvietojumu slīdni</short>
+	<long>ieslēdz/izslēdz iespēju izmantot slaidus parvietot video rekvizītus</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи ги лизгачите за промена на видео својствата</short>
+	<long>Вклучи го користењето на лизгачи за промена на видео својствата</long>
+      </locale>
+
+      <locale name="ne">
+	<short>भिडियो समायोजन स्लाइडरहरू टगल गर्दछ</short>
+	<long>भिडियो गुण समायोजन गर्नका लागि स्लाइडरहरूको प्रयोग टगल गर्दछ</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt de schuifknoppen voor video-instellingen in/uit</short>
+	<long>Schakelt het gebruik van schuifknoppen om de video-eigenschappen aan te passen in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਆਵਾਜ਼ ਠੀਕ ਕਰਨ ਵਾਲੇ ਸਲਾਈਡਰ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਆਵਾਜ਼ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਠੀਕ ਕਰਨ ਵਾਲੇ ਸਲਾਈਡਰ ਦੀ ਵਰਤੋਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Paski przewijania dopasowania obrazu</short>
+	<long>Określa, czy używać paski przewijania przy dostosowywaniu właściwości wideo</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna as barras deslizantes de ajuste vídeo</short>
+	<long>Alterna a utilização de barras deslizantes para ajustar as propriedades de vídeo</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna as barras deslizantes de ajuste vídeo</short>
+	<long>Alterna a uso de barras deslizantes para ajustar as propriedades de vídeo</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop drsnikov za ureditev videa</short>
+	<long>Preklop uporabe drsnikov za ureditev video lastnosti</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e videos</short>
+	<long>Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e pronësive video</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за подешавање видео клизача</short>
+	<long>Промена за употребу клизача за подешавање видео карактеристика</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za podešavanje video klizača</short>
+	<long>Promena za upotrebu klizača za podešavanje video karakteristika</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar skjutreglagen för videojustering</short>
+	<long>Växlar användandet av skjutreglagen för justering av videoegenskaperna</long>
+      </locale>
+
+      <locale name="ta">
+	<short>காட்சி சீரமைப்பு சருக்குதல்களை மாற்று</short>
+	<long>காட்சி பண்புகளை சீரமைப்பதற்காக சருக்குதல் உபயோகத்தை மாற்று</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Video ayar slider larını açıp/kapatır</short>
+	<long>Video özelliklerini ayarlamak için slider kullanımını açıp/kapatır</long>
+      </locale>
+
+      <locale name="uk">
+	<short>Перемикнути повзунки регулювання відео</short>
+	<long>Перемикнути використання повзунків для регулювання властивостей відео</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt con trượt điều chỉnh ảnh động</short>
+	<long>Bật/tắt dùng con trượt để điều chỉnh các thuộc tính ảnh động</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換視訊調整滑動鈕</short>
+	<long>切換使用視訊屬性調整滑動鈕</long>
+      </locale>
+    </schema>
+<schema>
+      <key>/schemas/apps/camorama/preferences/show_effects</key>
+      <applyto>/apps/camorama/preferences/show_effects</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles the video effects buttons</short>
+	<long>Toggles the use of the buttons to adjust the video filters</long>
+      </locale>
+
+      <locale name="az">
+	<short>Video effektlər düymələrini fəallaşdırır</short>
+	<long>Video filtrlərini sazlamaq üçün düymələri fəallaşdırır</long>
+      </locale>
+
+      <locale name="bg">
+	<short>Превключване на бутоните за визуални ефекти</short>
+	<long>Превключване на използването на бутоните за настройка на видео филтрите</long>
+      </locale>
+
+      <locale name="bs">
+	<short>Prebacuje dugmad video efekata</short>
+	<long>Prebacuje korištenje dugmadi za prilagođavanje video filtera</long>
+      </locale>
+
+      <locale name="ca">
+	<short>Commuta els bottons d&apos;efectes de vídeo</short>
+	<long>Commuta l&apos;ús dels botons per a ajustar els filtres de vídeo</long>
+      </locale>
+
+      <locale name="cs">
+	<short>Přepíná tlačítka pro efekty videa</short>
+	<long>Přepíná použití tlačítek k úpravě filtrů videa</long>
+      </locale>
+
+      <locale name="da">
+	<short>Videoeffektknapper</short>
+	<long>Om knapperne skal bruges til at justere videofiltrene</long>
+      </locale>
+
+      <locale name="de">
+	<short>Die Knöpfe zur Video-Anpassung anzeigen/verbergen</short>
+	<long>Die Knöpfe zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden</long>
+      </locale>
+
+      <locale name="dz">
+	<short>ཝི་ཌིའོ་ནུས་ཅན་ཚུ་གི་ཨེབ་རྟ་ཚུ་སོར་སྟོན་འབདཝ་ཨིན་</short>
+	<long>ཝི་ཌིའོ་ཚག་མ་ཚུ་བདེ་སྒྲིག་བཟོ་ནི་ལུ་ ཨེབ་རྟ་ཚུ་གི་ལང་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་</long>
+      </locale>
+
+      <locale name="en_CA">
+	<short>Toggles the video effects buttons</short>
+	<long>Toggles the use of the buttons to adjust the video filters</long>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Toggles the video effects buttons</short>
+	<long>Toggles the use of the buttons to adjust the video filters</long>
+      </locale>
+
+      <locale name="es">
+	<short>Conmutar los botones de efectos de vídeo</short>
+	<long>Conmutar el uso de los botones para ajustar los filtros de vídeo</long>
+      </locale>
+
+      <locale name="eu">
+	<short>Bideoaren efektuen botoiak gaitu</short>
+	<long>Bideo-iragazkiak egokitzeko botoien erabilpena gaitu</long>
+      </locale>
+
+      <locale name="fi">
+	<short>Vaihtelee videotehosteiden nappeja</short>
+	<long>Vaihtelee näppäinten käyttö videosuodattimien säätöön</long>
+      </locale>
+
+      <locale name="fr">
+	<short>Activer les boutons d&apos;effets vidéo</short>
+	<long>Active l&apos;utilisation des boutons pour ajuster les filtres vidéo</long>
+      </locale>
+
+      <locale name="gl">
+	<short>Modificar os efectos de vídeo dos botóns</short>
+	<long>Modificar o uso dos botóns ao axuste dos filtros de vídeo</long>
+      </locale>
+
+      <locale name="it">
+	<short>Abilita i pulsanti degli effetti video</short>
+	<long>Abilita l&apos;uso dei pulsanti per le correzioni ai filtri video</long>
+      </locale>
+
+      <locale name="ja">
+	<short>ビデオ調整ボタン</short>
+	<long>ビデオのフィルタを調整するボタンを使用するかどうかを設定します。</long>
+      </locale>
+
+      <locale name="lv">
+	<short>Ieslēdz/izslēdz video efektu pogas</short>
+	<long>ieslēdz/izslēdz taustiņu lietojumu pārvietojot video filtrus</long>
+      </locale>
+
+      <locale name="mk">
+	<short>Вклучи ги копчињата ефекти на сликата</short>
+	<long>Вклучи го користењето на копчињата за подесување на видео филтрите</long>
+      </locale>
+
+      <locale name="nb">
+	<short>Veksler knappene for videoeffekter</short>
+	
+      </locale>
+
+      <locale name="ne">
+	<short>भिडियो प्रभाव बटनहरू टगल गर्दछ</short>
+	<long>भिडियो फिल्टरहरू समायोजन गर्नका लागि बटन प्रयोग टगल गर्दछ</long>
+      </locale>
+
+      <locale name="nl">
+	<short>Schakelt de knoppen voor video-effecten in/uit</short>
+	<long>Schakelt het gebruik van de knoppen om de videofilters aan te passen in/uit</long>
+      </locale>
+
+      <locale name="pa">
+	<short>ਆਵਾਜ਼ ਵਾਲੇ ਬਟਨਾਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</short>
+	<long>ਆਵਾਜ਼ ਦੇ ਫਿਲਟਰ ਨੂੰ ਠੀਕ ਕਰਨ ਵਾਲੇ ਬਟਨਾਂ ਦੀ ਵਰਤੋਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ</long>
+      </locale>
+
+      <locale name="pl">
+	<short>Przyciski efektów wideo</short>
+	<long>Określa, czy używać przycisków przy dostosowywaniu filtrów wideo</long>
+      </locale>
+
+      <locale name="pt">
+	<short>Alterna os botões de efeitos vídeo</short>
+	<long>Alterna a utilização de botões para ajustar os filtros de vídeo</long>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Alterna o botão de efeitos de vídeo</short>
+	<long>Alterna o use do botão para ajustar os filtros de vídeo</long>
+      </locale>
+
+      <locale name="sl">
+	<short>Preklop gumbov za video efekte</short>
+	<long>Preklop uporabe gumbov za ureditev video filtrov</long>
+      </locale>
+
+      <locale name="sq">
+	<short>Aktivon pulsantët e efekteve video</short>
+	<long>Aktivon përdorimin e pulsantëve për rregullimin e filtrave video</long>
+      </locale>
+
+      <locale name="sr">
+	<short>Промена за подешавање дугмића за видео ефекте</short>
+	<long>Промена за употребу дугмића за подешавање видео филтера</long>
+      </locale>
+
+      <locale name="sr@Latn">
+	<short>Promena za podešavanje dugmića za video efekte</short>
+	<long>Promena za upotrebu dugmića za podešavanje video filtera</long>
+      </locale>
+
+      <locale name="sv">
+	<short>Växlar knapparna för videoeffekter</short>
+	<long>Växlar användandet av knapparna för justering av videofiltren</long>
+      </locale>
+
+      <locale name="ta">
+	<short>காட்சி விளைவு பொத்தான்களை மாற்று</short>
+	<long>காட்சி வடிகட்டியை சீரமைப்பதற்காக பொத்தான்களின் உபயோகத்-தை மாற்று</long>
+      </locale>
+
+      <locale name="tr">
+	<short>Video etki düğmelerini açıp/kapatır</short>
+	<long>Video filtrelerini ayarlamak için düğme kullanımını açıp/kapatır</long>
+      </locale>
+
+      <locale name="vi">
+	<short>Bật/tắt cái nút hiệu ứng ảnh động</short>
+	<long>Bật/tắt dùng cái nút để điều chỉnh bộ lọc ảnh động</long>
+      </locale>
+
+      <locale name="zh_TW">
+	<short>切換視訊效果按鈕</short>
+	<long>切換使用影像過濾器調整鈕</long>
+      </locale>
+    </schema>
+
+</schemalist>
+</gconfschemafile>

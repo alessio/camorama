@@ -1,4 +1,4 @@
-/* This file is part of camorama
+/* This file  is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <herzi@gnome-de.org>

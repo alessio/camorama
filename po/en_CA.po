@@ -444,6 +444,10 @@ msgstr "Laplace (4 Neighbours)"
 msgid "Mirror"
 msgstr "Mirror"
 
+#: ../src/camorama-filter-reichardt.c:66
+msgid "Reichardt"
+msgstr "Reichardt"
+
 #: ../src/camorama-stock-items.c:14
 msgid "Webcam"
 msgstr "Webcam"
