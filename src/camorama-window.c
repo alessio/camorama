@@ -243,8 +243,8 @@ load_interface(cam* cam) {
      * glade_xml_signal_autoconnect(xml);
      * this won't work, can't pass data to callbacks.  have to do it individually :(*/
 
-    title = g_strdup_printf ("Camorama - %s - %dx%d", cam->vid_cap.name,
-                             cam->x, cam->y);
+    title = g_strdup_printf ("Camorama - %s - %dx%d", cam->name,
+                             cam->width, cam->height);
     gtk_window_set_title (GTK_WINDOW
                           (glade_xml_get_widget (cam->xml, "main_window")),
                           title);
@@ -459,7 +459,7 @@ load_interface(cam* cam) {
                               (cam->xml, "string_entry"), cam->usestring);
 
     gtk_widget_set_size_request (glade_xml_get_widget (cam->xml, "da"),
-                                 cam->x, cam->y);
+                                 cam->width, cam->height);
 
     prefswindow = glade_xml_get_widget (cam->xml, "prefswindow");
 }

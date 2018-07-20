@@ -11,7 +11,7 @@
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
 #include <locale.h>
-#include <libv4l1.h>
+#include <libv4l2.h>
 
 #include "camorama-display.h"
 #include "camorama-stock-items.h"
@@ -73,6 +73,7 @@ main(int argc, char *argv[]) {
     gboolean buggery = FALSE;
     GtkWidget *button;
     GConfClient *gc;
+    unsigned int bufsize;
 
     const struct poptOption popt_options[] = {
         {"version", 'V', POPT_ARG_NONE, &ver, 0,
@@ -99,11 +100,12 @@ main(int argc, char *argv[]) {
     cam = &cam_object;
     /* set some default values */
     cam->frame_number = 0;
-    cam->pic = NULL;
     cam->pixmap = NULL;
     cam->size = PICHALF;
     cam->video_dev = NULL;
     cam->read = FALSE;
+    cam->width = 0;
+    cam->height = 0;
 
     bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -122,8 +124,8 @@ main(int argc, char *argv[]) {
 
     cam->debug = buggery;
 
-	cam->x = x;
-	cam->y = y;
+	cam->width = x;
+	cam->height = y;
 	glade_gnome_init ();
 	glade_set_custom_handler (camorama_glade_handler,
 				  cam);
@@ -143,7 +145,7 @@ main(int argc, char *argv[]) {
         cam->size = PICHALF;
     }
     if (use_read) {
-        printf ("gah!\n");
+        printf ("Forcing read mode\n");
         cam->read = TRUE;
     }
     gc = gconf_client_get_default ();
@@ -200,7 +202,7 @@ main(int argc, char *argv[]) {
     cam->acap = gconf_client_get_bool (cam->gc, KEY20, NULL);
     cam->timeout_interval = gconf_client_get_int (cam->gc, KEY21, NULL);
     cam->show_adjustments = gconf_client_get_bool (cam->gc, KEY22, NULL);
-	 cam->show_effects = gconf_client_get_bool (cam->gc, KEY23, NULL);
+    cam->show_effects = gconf_client_get_bool (cam->gc, KEY23, NULL);
 
 
     /* get desktop depth */
@@ -209,18 +211,10 @@ main(int argc, char *argv[]) {
     gdk_pixbuf_xlib_init (display, 0);
     cam->desk_depth = xlib_rgb_get_depth ();
 
-    cam->dev = v4l1_open (cam->video_dev, O_RDWR);
+    cam->dev = v4l2_open (cam->video_dev, O_RDWR | O_NONBLOCK);
 
     camera_cap (cam);
     get_win_info (cam);
-
-    /* query/set window attributes */
-    cam->vid_win.x = 0;
-    cam->vid_win.y = 0;
-    cam->vid_win.width = cam->x;
-    cam->vid_win.height = cam->y;
-    cam->vid_win.chromakey = 0;
-    cam->vid_win.flags = 0;
 
     set_win_info (cam);
     get_win_info (cam);
@@ -228,34 +222,27 @@ main(int argc, char *argv[]) {
     /* get picture attributes */
     get_pic_info (cam);
     set_pic_info (cam);
-    cam->contrast = cam->vid_pic.contrast;
-    cam->brightness = cam->vid_pic.brightness;
-    cam->colour = cam->vid_pic.colour;
-    cam->hue = cam->vid_pic.hue;
-    cam->wb = cam->vid_pic.whiteness;
-    cam->depth = cam->vid_pic.depth / 8;
-    cam->pic_buf = malloc (cam->x * cam->y * cam->depth);
-    cam->tmp =
-        malloc (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * cam->depth);
-    //cam->tmp = NULL;
-    /* set the buffer size */
-    if (cam->read == FALSE) {
-        set_buffer (cam);
+
+    bufsize = cam->max_width * cam->max_height * cam->depth / 8;
+    cam->pic_buf = malloc (bufsize);
+    cam->tmp = malloc (bufsize);
+
+    if (!cam->pic_buf || !cam->tmp) {
+       printf("Failed to allocate memory for buffers\n");
+       exit(0);
     }
+
     //cam->read = FALSE;
     /* initialize cam and create the window */
 
     if (cam->read == FALSE) {
         pt2Function = timeout_func;
-        init_cam (NULL, cam);
+        start_streaming (cam);
     } else {
         printf ("using read()\n");
-        cam->pic =
-            realloc (cam->pic,
-                     (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * 3));
         pt2Function = read_timeout_func;
     }
-    cam->pixmap = gdk_pixmap_new (NULL, cam->x, cam->y, cam->desk_depth);
+    cam->pixmap = gdk_pixmap_new (NULL, cam->width, cam->height, cam->desk_depth);
 
     filename =
         gnome_program_locate_file (NULL,
@@ -287,8 +274,10 @@ main(int argc, char *argv[]) {
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
     gtk_main ();
-    v4l1_munmap(cam->pic, cam->vid_buf.size);
-    v4l1_close(cam->dev);
+    if (cam->read == FALSE) {
+       stop_streaming(cam);
+    }
+    v4l2_close(cam->dev);
 
     return 0;
 }
