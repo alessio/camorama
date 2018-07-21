@@ -161,24 +161,6 @@ void camera_cap(cam * cam)
    }
 }
 
-void
-set_pic_info(cam* cam) {
-   int result;
-   unsigned int v4l2_pixfmt;
-   struct v4l2_format fmt;
-
-   char *msg;
-   if(cam->debug) {
-      g_message("SET PIC");
-   }
-
-   v4l2_set_control(cam->dev, V4L2_CID_BRIGHTNESS, cam->brightness);
-   v4l2_set_control(cam->dev, V4L2_CID_HUE, cam->hue);
-   v4l2_set_control(cam->dev, V4L2_CID_CONTRAST, cam->contrast);
-   v4l2_set_control(cam->dev, V4L2_CID_SATURATION, cam->colour);
-   v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
-}
-
 void get_pic_info(cam * cam){
    char *msg;
    int i;

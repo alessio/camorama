@@ -641,35 +641,35 @@ void contrast_change (GtkHScale * sc1, cam * cam)
 {
 
     cam->contrast = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
-    set_pic_info (cam);
+    v4l2_set_control(cam->dev, V4L2_CID_CONTRAST, cam->contrast);
 }
 
 void brightness_change (GtkHScale * sc1, cam * cam)
 {
 
     cam->brightness = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
-    set_pic_info (cam);
+    v4l2_set_control(cam->dev, V4L2_CID_BRIGHTNESS, cam->brightness);
 }
 
 void colour_change (GtkHScale * sc1, cam * cam)
 {
 
     cam->colour = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
-    set_pic_info (cam);
+    v4l2_set_control(cam->dev, V4L2_CID_SATURATION, cam->colour);
 }
 
 void hue_change (GtkHScale * sc1, cam * cam)
 {
 
     cam->hue = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
-    set_pic_info (cam);
+    v4l2_set_control(cam->dev, V4L2_CID_HUE, cam->hue);
 }
 
 void wb_change (GtkHScale * sc1, cam * cam)
 {
 
     cam->whiteness = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
-    set_pic_info (cam);
+    v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
 }
 
 void help_cb (GtkWidget * widget, gpointer data)
