@@ -2,6 +2,8 @@
 #include "interface.h"
 
 #include "callbacks.h"
+#include "filter.h"
+#include "camorama-window.h"
 #include "support.h"
 #include <config.h>
 
