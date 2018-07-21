@@ -37,7 +37,7 @@ camorama_SOURCES = \
 	filter.h	\
 	$(BUILT_SOURCES)\
 	$(NULL)
-camorama_LDADD = $(PACKAGE_LIBS) -lv4l1
+camorama_LDADD = $(PACKAGE_LIBS) -lv4l1 -lm
 
 DISTCLEANFILES=$(BUILT_SOURCES)
 
