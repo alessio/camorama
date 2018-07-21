@@ -384,10 +384,11 @@ void start_streaming(cam * cam)
    }
 }
 
-void capture_buffers(cam * cam, char *outbuf, int len)
+void capture_buffers(cam * cam, unsigned char *outbuf, int len)
 {
    char *msg;
-   int r;
+   unsigned char *inbuf;
+   int r, y;
    fd_set fds;
    struct v4l2_buffer buf;
    struct timeval tv;
@@ -418,7 +419,12 @@ void capture_buffers(cam * cam, char *outbuf, int len)
    if (len > buf.bytesused)
       len = buf.bytesused;
 
-   memcpy(outbuf, cam->buffers[buf.index].start, len);
+   inbuf = cam->buffers[buf.index].start;
+   for (y = 0; y < cam->height; y++) {
+      memcpy(outbuf, inbuf, cam->width * cam->depth / 8);
+      outbuf += cam->width * cam->depth / 8;
+      inbuf += cam->bytesperline;
+   }
 
    v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf);
 }

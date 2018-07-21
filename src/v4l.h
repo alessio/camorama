@@ -90,7 +90,7 @@ void set_win_info (cam * cam);
 void get_pic_info (cam *);
 void get_win_info (cam *);
 void start_streaming(cam * cam);
-void capture_buffers(cam * cam, char *outbuf, int len);
+void capture_buffers(cam * cam, unsigned char *outbuf, int len);
 void stop_streaming(cam * cam);
 
 #endif /* !CAMORAMA_V4L_H */
