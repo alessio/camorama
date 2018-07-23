@@ -43,7 +43,6 @@ void prefs_func (GtkWidget *, cam *);
 gint io_func (cam *, gint, GdkInputCondition);
 void capture_func2 (GtkWidget *, cam *);
 void capture_func (GtkWidget *, cam *);
-void init_cam (GtkWidget * capture, cam * cam);
 gint timeout_capture_func (cam *);
 gint fps (GtkWidget *);
 gint timeout_func (cam *);

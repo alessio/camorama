@@ -2239,7 +2239,7 @@
 	      <property name="column_spacing">6</property>
 
 	      <child>
-		<widget class="GtkHScale" id="slider2">
+		<widget class="GtkHScale" id="contrast_slider">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="draw_value">True</property>
@@ -2260,7 +2260,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkHScale" id="slider3">
+		<widget class="GtkHScale" id="brightness_slider">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="draw_value">True</property>
@@ -2282,7 +2282,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkHScale" id="slider4">
+		<widget class="GtkHScale" id="color_slider">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="draw_value">True</property>
@@ -2304,7 +2304,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkHScale" id="slider5">
+		<widget class="GtkHScale" id="hue_slider">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="draw_value">True</property>
@@ -2326,7 +2326,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkHScale" id="slider6">
+		<widget class="GtkHScale" id="balance_slider">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="draw_value">True</property>
@@ -2348,7 +2348,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkLabel" id="label64">
+		<widget class="GtkLabel" id="contrast_label">
 		  <property name="visible">True</property>
 		  <property name="label" translatable="yes">Contrast:</property>
 		  <property name="use_underline">False</property>
@@ -2376,7 +2376,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkLabel" id="label65">
+		<widget class="GtkLabel" id="brightness_label">
 		  <property name="visible">True</property>
 		  <property name="label" translatable="yes">Brightness:</property>
 		  <property name="use_underline">False</property>
@@ -2404,7 +2404,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkLabel" id="label66">
+		<widget class="GtkLabel" id="color_label">
 		  <property name="visible">True</property>
 		  <property name="label" translatable="yes">Color:</property>
 		  <property name="use_underline">False</property>
@@ -2432,7 +2432,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkLabel" id="label67">
+		<widget class="GtkLabel" id="hue_label">
 		  <property name="visible">True</property>
 		  <property name="label" translatable="yes">Hue:</property>
 		  <property name="use_underline">False</property>
@@ -2460,7 +2460,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkLabel" id="label68">
+		<widget class="GtkLabel" id="balance_label">
 		  <property name="visible">True</property>
 		  <property name="label" translatable="yes">White Balance:</property>
 		  <property name="use_underline">False</property>

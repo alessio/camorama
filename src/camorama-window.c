@@ -243,8 +243,8 @@ load_interface(cam* cam) {
      * glade_xml_signal_autoconnect(xml);
      * this won't work, can't pass data to callbacks.  have to do it individually :(*/
 
-    title = g_strdup_printf ("Camorama - %s - %dx%d", cam->vid_cap.name,
-                             cam->x, cam->y);
+    title = g_strdup_printf ("Camorama - %s - %dx%d", cam->name,
+                             cam->width, cam->height);
     gtk_window_set_title (GTK_WINDOW
                           (glade_xml_get_widget (cam->xml, "main_window")),
                           title);
@@ -283,31 +283,61 @@ load_interface(cam* cam) {
                                    G_CALLBACK (delete_event), NULL);
 
     /* sliders */
-    glade_xml_signal_connect_data (cam->xml, "contrast_change",
-                                   G_CALLBACK (contrast_change), cam);
-    gtk_range_set_value ((GtkRange *)
-                         glade_xml_get_widget (cam->xml, "slider2"),
-                         (int) (cam->contrast / 256));
-    glade_xml_signal_connect_data (cam->xml, "brightness_change",
-                                   G_CALLBACK (brightness_change), cam);
-    gtk_range_set_value ((GtkRange *)
-                         glade_xml_get_widget (cam->xml, "slider3"),
-                         (int) (cam->brightness / 256));
-    glade_xml_signal_connect_data (cam->xml, "colour_change",
-                                   G_CALLBACK (colour_change), cam);
-    gtk_range_set_value ((GtkRange *)
-                         glade_xml_get_widget (cam->xml, "slider4"),
-                         (int) (cam->colour / 256));
-    glade_xml_signal_connect_data (cam->xml, "hue_change",
-                                   G_CALLBACK (hue_change), cam);
-    gtk_range_set_value ((GtkRange *)
-                         glade_xml_get_widget (cam->xml, "slider5"),
-                         (int) (cam->hue / 256));
-    glade_xml_signal_connect_data (cam->xml, "wb_change",
-                                   G_CALLBACK (wb_change), cam);
-    gtk_range_set_value ((GtkRange *)
-                         glade_xml_get_widget (cam->xml, "slider6"),
-                         (int) (cam->wb / 256));
+    if (cam->contrast < 0) {
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "contrast_icon"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "contrast_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "contrast_slider"));
+    } else {
+        glade_xml_signal_connect_data (cam->xml, "contrast_change",
+                                    G_CALLBACK (contrast_change), cam);
+        gtk_range_set_value ((GtkRange *)
+                             glade_xml_get_widget (cam->xml, "contrast_slider"),
+                             (int) (cam->contrast / 256));
+    }
+    if (cam->brightness < 0) {
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "brightness_icon"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "brightness_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "brightness_slider"));
+    } else {
+        glade_xml_signal_connect_data (cam->xml, "brightness_change",
+                                    G_CALLBACK (brightness_change), cam);
+        gtk_range_set_value ((GtkRange *)
+                            glade_xml_get_widget (cam->xml, "brightness_slider"),
+                            (int) (cam->brightness / 256));
+    }
+    if (cam->colour < 1) {
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "color_icon"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "color_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "color_slider"));
+    } else {
+        glade_xml_signal_connect_data (cam->xml, "colour_change",
+                                    G_CALLBACK (colour_change), cam);
+        gtk_range_set_value ((GtkRange *)
+                            glade_xml_get_widget (cam->xml, "color_slider"),
+                            (int) (cam->colour / 256));
+    }
+    if (cam->hue < 0) {
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "hue_icon"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "hue_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "hue_slider"));
+    } else {
+        glade_xml_signal_connect_data (cam->xml, "hue_change",
+                                    G_CALLBACK (hue_change), cam);
+        gtk_range_set_value ((GtkRange *)
+                             glade_xml_get_widget (cam->xml, "hue_slider"),
+                             (int) (cam->hue / 256));
+    }
+    if (cam->whiteness < 0) {
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "balance_icon"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "balance_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "balance_slider"));
+    } else {
+        glade_xml_signal_connect_data (cam->xml, "wb_change",
+                                    G_CALLBACK (wb_change), cam);
+        gtk_range_set_value ((GtkRange *)
+                            glade_xml_get_widget (cam->xml, "balance_slider"),
+                            (int) (cam->whiteness / 256));
+    }
 
     /* buttons */
     glade_xml_signal_connect_data (cam->xml, "on_status_show",
@@ -459,7 +489,7 @@ load_interface(cam* cam) {
                               (cam->xml, "string_entry"), cam->usestring);
 
     gtk_widget_set_size_request (glade_xml_get_widget (cam->xml, "da"),
-                                 cam->x, cam->y);
+                                 cam->width, cam->height);
 
     prefswindow = glade_xml_get_widget (cam->xml, "prefswindow");
 }

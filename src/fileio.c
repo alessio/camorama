@@ -112,7 +112,7 @@ void remote_save (cam * cam)
     //cam->tmp = NULL;
 
     if (cam->rtimestamp == TRUE) {
-        add_rgb_text (cam->tmp, cam->x, cam->y, cam->ts_string,
+        add_rgb_text (cam->tmp, cam->width, cam->height, cam->ts_string,
                       cam->date_format, cam->usestring, cam->usedate);
     }
 
@@ -129,8 +129,8 @@ void remote_save (cam * cam)
     filename = g_strdup_printf ("camorama.%s", ext);
     //g_free(ext);
     pb = gdk_pixbuf_new_from_data (cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
-                                   cam->x, cam->y,
-                                   cam->x * cam->vid_pic.depth / 8, NULL,
+                                   cam->width, cam->height,
+                                   cam->width * cam->depth / 8, NULL,
                                    NULL);
  
     if (pb == NULL) {
@@ -174,10 +174,10 @@ void remote_save (cam * cam)
      * exit (0);
      * }
      * 
-     * tmp = malloc (sizeof (char) * cam->x * cam->y * cam->depth * 2);
+     * tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2);
      * while (!feof (fp))
      * {
-     * bytes += fread (tmp, 1, cam->x * cam->y * cam->depth, fp);
+     * bytes += fread (tmp, 1, cam->width * cam->height * cam->depth, fp);
      * }
      * fclose (fp);
      * 
@@ -280,9 +280,9 @@ void save_thread (cam * cam)
         //exit (0);
     }
 
-    tmp = malloc (sizeof (char) * cam->x * cam->y * cam->depth * 2);
+    tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2);
     while (!feof (fp)) {
-        bytes += fread (tmp, 1, cam->x * cam->y * cam->depth, fp);
+        bytes += fread (tmp, 1, cam->width * cam->height * cam->depth, fp);
     }
     fclose (fp);
 
@@ -367,10 +367,10 @@ int local_save (cam * cam)
         ext = g_strdup ((gchar *) "jpeg");
     }
     //cam->tmp = NULL;
-    //memcpy (cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
+    //memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth);
 
     if (cam->timestamp == TRUE) {
-        add_rgb_text (cam->tmp, cam->x, cam->y, cam->ts_string,
+        add_rgb_text (cam->tmp, cam->width, cam->height, cam->ts_string,
                       cam->date_format, cam->usestring, cam->usedate);
     }
 
@@ -421,8 +421,8 @@ int local_save (cam * cam)
     }
 
     pb = gdk_pixbuf_new_from_data (cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
-                                   cam->x, cam->y,
-                                   (cam->x * cam->vid_pic.depth / 8), NULL,
+                                   cam->width, cam->height,
+                                   (cam->width * cam->depth / 8), NULL,
                                    NULL);
     pbs = gdk_pixbuf_save (pb, filename, ext, NULL, NULL);
      if (pbs == FALSE) {

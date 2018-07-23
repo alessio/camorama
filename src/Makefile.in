@@ -250,7 +250,7 @@ camorama_SOURCES = \
 	$(BUILT_SOURCES)\
 	$(NULL)
 
-camorama_LDADD = $(PACKAGE_LIBS) -lv4l1
+camorama_LDADD = $(PACKAGE_LIBS) -lv4l2 -lm
 DISTCLEANFILES = $(BUILT_SOURCES)
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
