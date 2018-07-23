@@ -285,57 +285,57 @@ load_interface(cam* cam) {
     /* sliders */
     if (cam->contrast < 0) {
         gtk_widget_hide(glade_xml_get_widget (cam->xml, "contrast_icon"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "label64"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "slider2"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "contrast_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "contrast_slider"));
     } else {
         glade_xml_signal_connect_data (cam->xml, "contrast_change",
                                     G_CALLBACK (contrast_change), cam);
         gtk_range_set_value ((GtkRange *)
-                             glade_xml_get_widget (cam->xml, "slider2"),
+                             glade_xml_get_widget (cam->xml, "contrast_slider"),
                              (int) (cam->contrast / 256));
     }
     if (cam->brightness < 0) {
         gtk_widget_hide(glade_xml_get_widget (cam->xml, "brightness_icon"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "label65"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "slider3"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "brightness_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "brightness_slider"));
     } else {
         glade_xml_signal_connect_data (cam->xml, "brightness_change",
                                     G_CALLBACK (brightness_change), cam);
         gtk_range_set_value ((GtkRange *)
-                            glade_xml_get_widget (cam->xml, "slider3"),
+                            glade_xml_get_widget (cam->xml, "brightness_slider"),
                             (int) (cam->brightness / 256));
     }
     if (cam->colour < 1) {
         gtk_widget_hide(glade_xml_get_widget (cam->xml, "color_icon"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "label66"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "slider4"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "color_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "color_slider"));
     } else {
         glade_xml_signal_connect_data (cam->xml, "colour_change",
                                     G_CALLBACK (colour_change), cam);
         gtk_range_set_value ((GtkRange *)
-                            glade_xml_get_widget (cam->xml, "slider4"),
+                            glade_xml_get_widget (cam->xml, "color_slider"),
                             (int) (cam->colour / 256));
     }
     if (cam->hue < 0) {
         gtk_widget_hide(glade_xml_get_widget (cam->xml, "hue_icon"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "label67"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "slider5"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "hue_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "hue_slider"));
     } else {
         glade_xml_signal_connect_data (cam->xml, "hue_change",
                                     G_CALLBACK (hue_change), cam);
         gtk_range_set_value ((GtkRange *)
-                             glade_xml_get_widget (cam->xml, "slider5"),
+                             glade_xml_get_widget (cam->xml, "hue_slider"),
                              (int) (cam->hue / 256));
     }
     if (cam->whiteness < 0) {
         gtk_widget_hide(glade_xml_get_widget (cam->xml, "balance_icon"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "label68"));
-        gtk_widget_hide(glade_xml_get_widget (cam->xml, "slider6"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "balance_label"));
+        gtk_widget_hide(glade_xml_get_widget (cam->xml, "balance_slider"));
     } else {
         glade_xml_signal_connect_data (cam->xml, "wb_change",
                                     G_CALLBACK (wb_change), cam);
         gtk_range_set_value ((GtkRange *)
-                            glade_xml_get_widget (cam->xml, "slider6"),
+                            glade_xml_get_widget (cam->xml, "balance_slider"),
                             (int) (cam->whiteness / 256));
     }
 
