@@ -47,7 +47,7 @@ typedef struct camera {
    int desk_depth;
    CamoImageSize size;
    char name[32];
-   int contrast, brightness, whiteness, colour, hue, wb, bytesperline;
+   int contrast, brightness, whiteness, colour, hue, bytesperline;
    unsigned int pixformat;
    int frame_number;
 

@@ -173,30 +173,40 @@ void get_pic_info(cam * cam){
       cam->hue = i;
       if(cam->debug == TRUE)
          printf("hue = %d\n", cam->hue);
+   } else {
+      cam->hue = -1;
    }
    i = v4l2_get_control(cam->dev, V4L2_CID_SATURATION);
    if (i >= 0) {
       cam->colour = i;
       if(cam->debug == TRUE)
          printf("colour = %d\n", cam->colour);
+   } else {
+      cam->colour = -1;
    }
    i = v4l2_get_control(cam->dev, V4L2_CID_CONTRAST);
    if (i >= 0) {
       cam->contrast = i;
       if(cam->debug == TRUE)
          printf("contrast = %d\n", cam->contrast);
+   } else {
+      cam->contrast = -1;
    }
    i = v4l2_get_control(cam->dev, V4L2_CID_WHITENESS);
    if (i >= 0) {
       cam->whiteness = i;
       if(cam->debug == TRUE)
          printf("whiteness = %d\n", cam->whiteness);
+   } else {
+      cam->whiteness = -1;
    }
    i = v4l2_get_control(cam->dev, V4L2_CID_BRIGHTNESS);
    if (i >= 0) {
       cam->brightness = i;
       if(cam->debug == TRUE)
          printf("brightness = %d\n", cam->brightness);
+   } else {
+      cam->brightness = -1;
    }
 }
 
