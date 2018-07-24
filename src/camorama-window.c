@@ -183,12 +183,16 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
         }
 }
 
+static guint resolution_signals[8] = { 0 };
+
+
 void
 load_interface(cam* cam) {
     gchar *title;
     GdkPixbuf *logo = NULL;
     GtkTreeView* treeview = GTK_TREE_VIEW(glade_xml_get_widget(cam->xml, "treeview_effects"));
     GtkCellRenderer* cell;
+    GtkWidget *small_res, *new_res;
 
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 
@@ -269,12 +273,30 @@ load_interface(cam* cam) {
                                    G_CALLBACK
                                    (on_show_adjustments_activate), cam);
 
-    glade_xml_signal_connect_data (cam->xml, "on_large_activate",
+
+    /*
+     * Just one resolution is at the XML files. The other ones are
+     * dynamically-created
+     */
+
+    glade_xml_signal_connect_data (cam->xml, "activate",
                                    G_CALLBACK (on_change_size_activate), cam);
-    glade_xml_signal_connect_data (cam->xml, "on_medium_activate",
-                                   G_CALLBACK (on_change_size_activate), cam);
-    glade_xml_signal_connect_data (cam->xml, "on_small_activate",
-                                   G_CALLBACK (on_change_size_activate), cam);
+
+    small_res = glade_xml_get_widget (cam->xml, "small");
+
+    new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Medium");
+    gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
+    gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
+    gtk_widget_show (new_res);
+    g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
+    gtk_widget_set_name(new_res, "medium");
+
+    new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Large");
+    gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
+    gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
+    gtk_widget_show (new_res);
+    g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
+    gtk_widget_set_name(new_res, "large");
 
     //glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
     glade_xml_signal_connect_data (cam->xml, "capture_func",
