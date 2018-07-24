@@ -275,28 +275,57 @@ load_interface(cam* cam) {
 
 
     /*
-     * Just one resolution is at the XML files. The other ones are
-     * dynamically-created
+     * Dynamically generate the resolutions based on what the camera
+     * actually supports. Provide a fallback method, if the camera driver
+     * is too old and doesn't support formats enumeration.
      */
-
-    glade_xml_signal_connect_data (cam->xml, "activate",
-                                   G_CALLBACK (on_change_size_activate), cam);
 
     small_res = glade_xml_get_widget (cam->xml, "small");
 
-    new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Medium");
-    gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
-    gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
-    gtk_widget_show (new_res);
-    g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
-    gtk_widget_set_name(new_res, "medium");
+    /* Get all supported resolutions by cam->pixformat */
+    get_supported_resolutions(cam);
 
-    new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Large");
-    gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
-    gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
-    gtk_widget_show (new_res);
-    g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
-    gtk_widget_set_name(new_res, "large");
+    if (cam->n_res > 0) {
+        int i;
+
+        for (i = 0; i < cam->n_res; i++) {
+            char name[32];
+
+            sprintf(name, "%dx%d", cam->res[i].x, cam->res[i].y);
+
+            new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), name);
+            gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
+            gtk_widget_show (new_res);
+            g_signal_connect(new_res, "activate",
+                             G_CALLBACK (on_change_size_activate), cam);
+            gtk_widget_set_name(new_res, name);
+
+            if (cam->width == cam->res[i].x && cam->height == cam->res[i].y)
+                gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), TRUE);
+            else
+                gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
+        }
+
+        /* We won't actually use the small res */
+        gtk_widget_hide (small_res);
+    } else {
+        glade_xml_signal_connect_data (cam->xml, "activate",
+                                       G_CALLBACK (on_change_size_activate), cam);
+
+        new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Medium");
+        gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
+        gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
+        gtk_widget_show (new_res);
+        g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
+        gtk_widget_set_name(new_res, "medium");
+
+        new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Large");
+        gtk_menu_append(GTK_MENU(glade_xml_get_widget (cam->xml, "menuitem4_menu")), new_res);
+        gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
+        gtk_widget_show (new_res);
+        g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
+        gtk_widget_set_name(new_res, "large");
+    }
 
     //glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
     glade_xml_signal_connect_data (cam->xml, "capture_func",

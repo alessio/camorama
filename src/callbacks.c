@@ -364,7 +364,7 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
 {
     gchar const *name;
     gchar       *title;
-    int         width, height;
+    int         width = 0, height = 0;
 
     name = gtk_widget_get_name (widget);
 
@@ -374,9 +374,11 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
     } else if (strcmp (name, "medium") == 0) {
         width = cam->max_width / 2;
         height = cam->max_height / 2;
-    } else {
+    } else if (strcmp (name, "large") == 0) {
         width = cam->max_width;
         height = cam->max_height;
+    } else {
+        sscanf(name, "%dx%d", &width, &height);
     }
 
     try_set_win_info(cam, &width, &height);
