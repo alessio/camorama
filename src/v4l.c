@@ -258,6 +258,22 @@ void get_win_info(cam * cam)
    }
 }
 
+void try_set_win_info(cam * cam, int *x, int *y)
+{
+   gchar *msg;
+   struct v4l2_format fmt;
+
+   memset(&fmt, 0, sizeof(fmt));
+   fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+   fmt.fmt.pix.pixelformat = cam->pixformat;
+   fmt.fmt.pix.width  = *x;
+   fmt.fmt.pix.height = *y;
+   if (!v4l2_ioctl(cam->dev, VIDIOC_TRY_FMT, &fmt)) {
+      *x = fmt.fmt.pix.width;
+      *y = fmt.fmt.pix.height;
+   }
+}
+
 void set_win_info(cam * cam)
 {
    gchar *msg;

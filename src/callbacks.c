@@ -364,28 +364,31 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
 {
     gchar const *name;
     gchar       *title;
+    int         width, height;
 
     name = gtk_widget_get_name (widget);
-    printf("name = %s\n",name);
+
     if (strcmp (name, "small") == 0) {
-        cam->width = cam->min_width;
-        cam->height = cam->min_height;
-        if (cam->debug) {
-            printf ("\nsmall\n");
-        }
+        width = cam->min_width;
+        height = cam->min_height;
     } else if (strcmp (name, "medium") == 0) {
-        cam->width = cam->max_width / 2;
-        cam->height = cam->max_height / 2;
-        if (cam->debug) {
-            printf ("\nmed\n");
-        }
+        width = cam->max_width / 2;
+        height = cam->max_height / 2;
     } else {
-        cam->width = cam->max_width;
-        cam->height = cam->max_height;
-        if (cam->debug) {
-            printf ("\nlarge\n");
-        }
+        width = cam->max_width;
+        height = cam->max_height;
     }
+
+    try_set_win_info(cam, &width, &height);
+
+    /* Nothing to do, so just return */
+    if (width == cam->width && height == cam->height)
+        return;
+
+    cam->width = width;
+    cam->height = height;
+
+    printf("name = %s\n",name);
 
     if (cam->read == FALSE)
        stop_streaming(cam);
