@@ -106,6 +106,8 @@ main(int argc, char *argv[]) {
     cam->read = FALSE;
     cam->width = 0;
     cam->height = 0;
+    cam->res = NULL;
+    cam->n_res = 0;
 
     bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");

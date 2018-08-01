@@ -2,6 +2,7 @@
 #include<time.h>
 #include<errno.h>
 #include<gnome.h>
+#include<stdlib.h>
 #include <sys/select.h>
 #include "support.h"
 
@@ -18,6 +19,73 @@ void print_cam(cam *cam){
    printf("remote host = %s, remote login = %s\n",cam->rhost,cam->rlogin);
    printf("timestamp = %s\n\n",cam->ts_string);
 
+}
+
+void insert_resolution(cam * cam, int x, int y)
+{
+   int i;
+
+   try_set_win_info(cam, &x, &y);
+   for (i = 0; i++; i < cam->n_res) {
+      if (cam->res[i].x == x && cam->res[i].y == y)
+         return;
+   }
+
+   cam->res = realloc(cam->res, (cam->n_res + 1) * sizeof(struct resolutions));
+
+   cam->res[cam->n_res].x = x;
+   cam->res[cam->n_res].y = y;
+   cam->n_res++;
+}
+
+static int sort_func(const void *__b,
+                     const void *__a)
+{
+   const struct resolutions *a = __a;
+   const struct resolutions *b = __b;
+   int r;
+
+   r = b->x - a->x;
+   if (!r)
+        r = b->y - a->y;
+
+   return r;
+}
+
+void get_supported_resolutions(cam * cam)
+{
+   struct v4l2_fmtdesc fmt;
+   struct v4l2_frmsizeenum frmsize;
+   struct v4l2_frmivalenum frmival;
+   int i, x, y;
+
+   fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+
+   for (fmt.index = 0;
+        !v4l2_ioctl(cam->dev, VIDIOC_ENUM_FMT, &fmt);
+        fmt.index++) {
+      if (cam->pixformat != fmt.pixelformat)
+          continue;
+
+      frmsize.pixel_format = fmt.pixelformat;
+      frmsize.index = 0;
+      while (!v4l2_ioctl(cam->dev, VIDIOC_ENUM_FRAMESIZES, &frmsize)) {
+            if (frmsize.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
+               insert_resolution(cam, frmsize.discrete.width,
+                                 frmsize.discrete.height);
+            } else if (frmsize.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
+               for (i = 0; i < 4; i++) {
+                   x = frmsize.stepwise.min_width +
+                       i * (frmsize.stepwise.max_width - frmsize.stepwise.min_width) / 4;
+                   y = frmsize.stepwise.min_height +
+                       i * (frmsize.stepwise.max_height - frmsize.stepwise.min_height) / 4;
+                   insert_resolution(cam, x, y);
+               }
+            }
+            frmsize.index++;
+      }
+   }
+   qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
 }
 
 void camera_cap(cam * cam)
@@ -255,6 +323,22 @@ void get_win_info(cam * cam)
       cam->width = fmt.fmt.pix.width;
       cam->height = fmt.fmt.pix.height;
       cam->bytesperline = fmt.fmt.pix.bytesperline;
+   }
+}
+
+void try_set_win_info(cam * cam, int *x, int *y)
+{
+   gchar *msg;
+   struct v4l2_format fmt;
+
+   memset(&fmt, 0, sizeof(fmt));
+   fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+   fmt.fmt.pix.pixelformat = cam->pixformat;
+   fmt.fmt.pix.width  = *x;
+   fmt.fmt.pix.height = *y;
+   if (!v4l2_ioctl(cam->dev, VIDIOC_TRY_FMT, &fmt)) {
+      *x = fmt.fmt.pix.width;
+      *y = fmt.fmt.pix.height;
    }
 }
 

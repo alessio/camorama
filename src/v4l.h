@@ -39,6 +39,10 @@ struct buffer_start_len {
    size_t length;
 };
 
+struct resolutions {
+    int x, y;
+};
+
 typedef struct camera {
    int dev;
    int width;
@@ -52,6 +56,9 @@ typedef struct camera {
    int frame_number;
 
    int min_width, min_height, max_width, max_height;
+
+   int n_res;
+   struct resolutions *res;
 
    char *video_dev;
    unsigned char *image;
@@ -86,9 +93,11 @@ typedef struct camera {
 } cam;
 
 void camera_cap (cam *);
+void try_set_win_info(cam * cam, int *x, int *y);
 void set_win_info (cam * cam);
 void get_pic_info (cam *);
 void get_win_info (cam *);
+void get_supported_resolutions(cam * cam);
 void start_streaming(cam * cam);
 void capture_buffers(cam * cam, unsigned char *outbuf, int len);
 void stop_streaming(cam * cam);
