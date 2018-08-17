@@ -462,7 +462,7 @@ void start_streaming(cam * cam)
       buf.memory = V4L2_MEMORY_MMAP;
       buf.index = i;
       if (v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf)) {
-         msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not enqueu buffers (%s), exiting...."), cam->video_dev);
+         msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."), cam->video_dev);
          error_dialog(msg);
          g_free(msg);
          exit(0);
