@@ -274,6 +274,10 @@ main(int argc, char *argv[]) {
     cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
+
+    if (cam->debug == TRUE)
+       print_cam(cam);
+
     gtk_main ();
     if (cam->read == FALSE) {
        stop_streaming(cam);
