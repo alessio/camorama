@@ -109,9 +109,9 @@ main(int argc, char *argv[]) {
     cam->res = NULL;
     cam->n_res = 0;
 
-    bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
-    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-    textdomain (GETTEXT_PACKAGE);
+    bindtextdomain (PACKAGE_NAME, PACKAGE_LOCALE_DIR);
+    bind_textdomain_codeset (PACKAGE_NAME, "UTF-8");
+    textdomain (PACKAGE_NAME);
     setlocale (LC_ALL, "");
 
     /* gnome_program_init  - initialize everything (gconf, threads, etc) */

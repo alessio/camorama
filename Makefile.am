@@ -1,7 +1,6 @@
 desktopdir = $(datadir)/applications
 desktop_in_files = camorama.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
 
 SUBDIRS = src pixmaps data po
 
@@ -13,7 +12,8 @@ EXTRA_DIST =   autogen.sh     \
 	intltool-update.in
 
 CLEANFILES=\
-	camorama.desktop
+	camorama.desktop \
+	po/camorama.pot
 
 DISTCLEANFILES=\
 	intltool-extract\
