@@ -1,7 +1,7 @@
 AC_PREREQ(2.53)
 AC_INIT(camorama,0.19, https://github.com/alessio/camorama)
 AC_CONFIG_SRCDIR(src/main.c)
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
 AC_PROG_INTLTOOL([0.21])
 
