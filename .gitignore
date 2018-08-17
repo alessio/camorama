@@ -13,11 +13,14 @@ intltool-merge
 intltool-update
 Makefile
 pixmaps/Makefile
+po/camorama.pot
 po/.intltool-merge-cache
 po/Makefile
 po/Makefile.in
 po/POTFILES
+po/remove-potcdate.sed
 po/stamp-it
+po/stamp-po
 src/camorama
 src/camorama-stock-images.h
 src/.deps/
