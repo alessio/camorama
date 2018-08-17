@@ -174,10 +174,10 @@ void remote_save (cam * cam)
      * exit (0);
      * }
      * 
-     * tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2);
+     * tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2 / 8);
      * while (!feof (fp))
      * {
-     * bytes += fread (tmp, 1, cam->width * cam->height * cam->depth, fp);
+     * bytes += fread (tmp, 1, cam->width * cam->height * cam->depth / 8, fp);
      * }
      * fclose (fp);
      * 
@@ -280,9 +280,9 @@ void save_thread (cam * cam)
         //exit (0);
     }
 
-    tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2);
+    tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2 / 8);
     while (!feof (fp)) {
-        bytes += fread (tmp, 1, cam->width * cam->height * cam->depth, fp);
+        bytes += fread (tmp, 1, cam->width * cam->height * cam->depth / 8, fp);
     }
     fclose (fp);
 
@@ -367,7 +367,7 @@ int local_save (cam * cam)
         ext = g_strdup ((gchar *) "jpeg");
     }
     //cam->tmp = NULL;
-    //memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth);
+    //memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth / 8);
 
     if (cam->timestamp == TRUE) {
         add_rgb_text (cam->tmp, cam->width, cam->height, cam->ts_string,

@@ -487,8 +487,8 @@ static void
 apply_filters(cam* cam) {
 	/* v4l has reverse rgb order from what camora expect so call the color
 	   filter to fix things up before running the user selected filters */
-	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->depth);
-	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->depth);
+	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->depth / 8);
+	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->depth / 8);
 #warning "FIXME: enable the threshold channel filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
 //		threshold_channel (cam->pic_buf, cam->width, cam->height, cam->dither);
@@ -520,7 +520,7 @@ read_timeout_func(cam* cam) {
      */
 
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth);
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth / 8);
         pic_buf = cam->tmp;
     }
 
@@ -552,7 +552,7 @@ gint timeout_func (cam * cam)
      * refer the frame 
      */
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth);
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth / 8);
         pic_buf = cam->tmp;
     }
 
