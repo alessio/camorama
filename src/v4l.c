@@ -13,7 +13,7 @@ void print_cam(cam *cam){
    printf("\nCamera Info\n");
    printf("-------------\n");
    printf("device = %s, x = %d, y = %d\n",cam->video_dev, cam->width,cam->height);
-   printf("depth = %d, desk_depth = %d, size = %d\n",cam->depth,cam->desk_depth,cam->size);
+   printf("bits per pixel = %d, desk_depth = %d, size = %d\n", cam->bpp, cam->desk_depth, cam->size);
    printf("capture directory = %s, capture file = %s\n",cam->pixdir, cam->capturefile);
    printf("remote capture directory = %s, remote capture file = %s\n",cam->rpixdir, cam->rcapturefile);
    printf("remote host = %s, remote login = %s\n",cam->rhost,cam->rlogin);
@@ -319,7 +319,7 @@ void get_win_info(cam * cam)
        fmt.fmt.pix.pixelformat == V4L2_PIX_FMT_YUV420) {
 
       cam->pixformat = fmt.fmt.pix.pixelformat;
-      cam->depth = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
+      cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
       cam->width = fmt.fmt.pix.width;
       cam->height = fmt.fmt.pix.height;
       cam->bytesperline = fmt.fmt.pix.bytesperline;
@@ -403,7 +403,7 @@ void set_win_info(cam * cam)
    cam->pixformat = fmt.fmt.pix.pixelformat;
    cam->bytesperline = fmt.fmt.pix.bytesperline;
 
-   cam->depth = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
+   cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
 
    cam->width = fmt.fmt.pix.width;
    cam->height = fmt.fmt.pix.height;
@@ -515,8 +515,8 @@ void capture_buffers(cam * cam, unsigned char *outbuf, int len)
 
    inbuf = cam->buffers[buf.index].start;
    for (y = 0; y < cam->height; y++) {
-      memcpy(outbuf, inbuf, cam->width * cam->depth / 8);
-      outbuf += cam->width * cam->depth / 8;
+      memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
+      outbuf += cam->width * cam->bpp / 8;
       inbuf += cam->bytesperline;
    }
 
