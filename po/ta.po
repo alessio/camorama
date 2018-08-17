@@ -8,554 +8,433 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-07 11:04+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-28 07:45-0300\n"
 "PO-Revision-Date: 2004-09-13 10:32+0530\n"
 "Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Camorama Å¨ÄôÀ¼ì¸ÕÅ¢ À¡÷¨ÅÂ¡Ç÷ ¸¡ðÊ"
-
-#: camorama.desktop.in.h:2 src/callbacks.c:510
-msgid "View, alter and save images from a webcam"
-msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢யில் இருக்கும் பிம்ப பார்க்க, மாற்ற மற்றும் சேமிக்கலாம்"
-
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
-
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">விளைவுகள்</span>"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">பொது</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">பிம்பங்களின் வகை</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">விளைவுகள்</span>"
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">விளைவுகள்</span>"
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">விளைவுகள்</span>"
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr "ஒரு விளைவை பிம்பங்களில் சேர்"
-
-#: data/camorama.glade.h:10
-msgid "Append time to filename"
-msgstr "கோப்பு பெயரில் நேரத்தை இணை"
-
-#: data/camorama.glade.h:11
-msgid "Automatic Capture"
-msgstr "¾¡É¢ÂíÌõ "
-
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "கருப்பு & வெள்ளை"
-
-#: data/camorama.glade.h:13
-msgid "Brightness:"
-msgstr "À¢Ã¸¡ºõ"
-
-#: data/camorama.glade.h:14
-msgid "Camorama-libglade"
-msgstr "கமோராமா-லிப்கிளேட்"
-
-#: data/camorama.glade.h:15
-msgid "Capture Interval (in minutes):"
-msgstr "இடைவேளையை கைப்பற்று(நிமிடங்களில்)"
-
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "நிறத்-தை சரிசெய்"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "நிறத்-தை Å¢Ç¢õÒ"
-
-#: data/camorama.glade.h:18
-msgid "Color:"
-msgstr "நிறம்:"
-
-#: data/camorama.glade.h:19
-msgid "Contrast:"
-msgstr "Å¢ò¾¢Â¡ºõ:"
-
-#: data/camorama.glade.h:20
-msgid "Draw date and time"
-msgstr "தேதி மற்றும் நேரத்-தை Å¨Ã"
-
-#: data/camorama.glade.h:21
-msgid "FTP server: "
-msgstr "FTP §ºÅ¸ý:"
-
-#: data/camorama.glade.h:22
-msgid "Filename"
-msgstr "கோப்பு பெயர்"
-
-#: data/camorama.glade.h:23
-msgid "General"
-msgstr "பொது"
-
-#: data/camorama.glade.h:24
-msgid "Hue:"
-msgstr "Åñ½õ"
-
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "லாப்லாஸ்"
-
-#: data/camorama.glade.h:26
-msgid "Large"
-msgstr "பெரியது"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr "உள் கைப்பற்று"
-
-#: data/camorama.glade.h:28
-msgid "Medium"
-msgstr "°¼¸õ"
-
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "கண்ண¡டி பிம்பம்"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "நெகட்டிவ்-எதிர்"
-
-#: data/camorama.glade.h:31
-msgid "Password:"
-msgstr "¸¼×î¦º¡ø"
-
-#: data/camorama.glade.h:32
-msgid "Preferences"
-msgstr "முன்னுருமை"
-
-#: data/camorama.glade.h:33
-msgid "Remote Capture"
-msgstr "தெ¡லைக் கே¡டி"
-
-#: data/camorama.glade.h:34
-msgid "Save directory:"
-msgstr "«¨¼வைச் சேமி:"
-
-#: data/camorama.glade.h:35
-msgid "Save files in jpeg format"
-msgstr "கோப்புகளை jpeg வடிவத்தில் சேமி"
-
-#: data/camorama.glade.h:36
-msgid "Save files in png format"
-msgstr "கோப்புகளை png வடிவத்தில் சேமி"
-
-#: data/camorama.glade.h:37
-msgid "Show Adjustments"
-msgstr "அனுசரிப்-பைக் காட்டு"
-
-#: data/camorama.glade.h:38
-msgid "Show Effects"
-msgstr "Å¢¨Ç×¸ளை க¡மி"
-
-#: data/camorama.glade.h:39
-msgid "Small"
-msgstr "சிறியது"
-
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Á¢ÕÐவ¡க்கு"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "சோபல்"
-
-#: data/camorama.glade.h:42
-msgid "String:"
-msgstr "¦¾¡¼÷îº¢:"
-
-#: data/camorama.glade.h:43
-msgid "Take Picture"
-msgstr "படத்-தை எடு"
-
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Å¢Ç¢õÒ:"
-
-#: data/camorama.glade.h:45
-msgid "Timestamp"
-msgstr "timestamp"
-
-#: data/camorama.glade.h:46
-msgid "Use custom string"
-msgstr "¬Âò¾ ¦¾¡¼÷îº¢யை பயன்படுத்து"
-
-#: data/camorama.glade.h:47
-msgid "Username:"
-msgstr "ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷:"
-
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "வேக்கி"
-
-#: data/camorama.glade.h:49
-msgid "White Balance:"
-msgstr "Á¢îº வெள்ளை:"
-
-#: data/camorama.glade.h:50
-msgid "_Directory for captured pics:"
-msgstr "கைப்பற்றப்பட்ட படங்களுக்கான அடைவு:"
-
-#: data/camorama.glade.h:51
-msgid "_Enable local capture"
-msgstr "உள் கைப்பற்றுதலைச் ¦ºÂøÀÎòÐ"
-
-#: data/camorama.glade.h:52
-msgid "_Enable remote capture"
-msgstr "தொலை கைப்பற்றுதலைச் ¦ºÂøÀÎòÐ"
-
-#: data/camorama.glade.h:53
-msgid "_Filename for pictures:"
-msgstr "படங்களுக்க¡ன கோப்பு பெயர்:"
-
-#: data/camorama.glade.h:54
-msgid "ftp.yourdomain.org"
-msgstr "ftp.உங்கள்களம்.org"
-
-#: data/camorama.glade.h:55
-msgid "path/to/save/to"
-msgstr "À¡¨¾/¦ÀÚÅÐ/சேமி/¦ÀÚÅÐ"
-
-#: data/camorama.glade.h:56
-msgid "webcam-capture"
-msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢-கைப்பற்றல்"
-
-#: data/camorama.glade.h:57
-msgid "webcamshot"
-msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢க்குண்டு"
-
-#: data/camorama.glade.h:58
-msgid "your-password"
-msgstr "உங்கள்-¸¼×î¦º¡ø"
-
-#: data/camorama.glade.h:59
-msgid "your-username"
-msgstr "உங்கள்-ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷"
-
-#: data/camorama.glade.h:60
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-§Á¨º"
-
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "timestampஐ கோப்புப் பெயருடன் இணை"
-
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "timestampஐ தொலைக் கோப்புப் பெயருடன் இணை"
-
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ கோப்புப் பெயரின் கடைசியில் இணை"
-
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ தொலைக் கோப்புப் பெயரின் கடைசியில் இணை"
-
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "timestampன் உரையை ஆயத்தமாக்கு"
-
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "¦¾¡¼÷îசியினுடைய ஆயத்த உரையை ஒரு பிம்பத்தில் இணைப்பதற்கான விளக்கம்"
-
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "உள்-கைப்பற்றப்பட்ட படங்களுக்கான கோப்புப் பெயர்"
-
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "கைப்பற்றப்பட்ட படங்களை உள் சேமிப்பதற்கான கோப்புப் பெயர்"
-
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "உள் கைப்பற்றுதலுக்கான ஆவணம்"
-
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "தொலைக் கைப்பற்றுதலுக்கான ஆவணம்"
-
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "தொலைக் கைப்பற்றப்பட்ட படங்களை சேமிப்பதற்கான அடைவு"
-
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "உள் கைப்பற்றப்பட்ட  படங்களை சேமிப்பதற்கான அடைவு"
-
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "FTP சேவகனுடைய புரவலப் பெயர்"
-
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "FTP சேவகனுடைய தொலைக் கைப்பற்றுதலுக்கான புரவலப் பெயர்"
-
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "தானியங்கி கைப்பற்றுதலினுடைய இடைவேளை"
-
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "உள் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
-
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "uploaded பிம்பத்திற்கான கோப்புபெயரினுடைய பெயர் "
-
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "FTP சேவகனுடைய கடவுச் சொல்"
-
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "தொலைக் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
-
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "தெ¡லைக் கே¡டி கோப்புபெயரைச் சேமி"
-
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "உள் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
-
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "தெ¡லைக் கே¡டியில் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
-
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "தானாகவே கைப்பற்றப்பட்டப் படங்களின் இடைவேளையைச் சொல்"
-
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "தொலைக் கைப்பற்றப்பட்டப் படங்களுக்கான FTP கணக்கினுடைய ¸¼×î¦º¡ø"
-
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr "¾ýÉ¡§Ä-கைப்பற்றுதலுக்கு மாற்று"
-
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr "படங்களை தானியங்கி கைப்பற்றுதலுக்கு மாற்று"
-
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr "உள் கைப்பற்றுதலை மாற்று"
-
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr " தொலைக் கைப்பற்றுதலை மாற்று"
-
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr "ஆயத்த தொடர்ச்சியை மாற்று"
-
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr "கைப்பற்றுதலின் datestampஐ மாற்று"
-
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "கைப்பற்றப்பட்ட படங்களின் உள்-ளே datestamp வரைதலை மாற்று"
-
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr "உள் பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
-
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "FTP uploadற்காக பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
-
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "காட்சி வடிகட்டியை சீரமைப்பதற்காக பொத்தான்களின் உபயோகத்-தை மாற்று"
-
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "பிம்பங்களில் உள்ள timestampனுடைய ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷"
-
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "காட்சி பண்புகளை சீரமைப்பதற்காக சருக்குதல் உபயோகத்தை மாற்று"
-
-#: data/camorama.schemas.in.h:37
-msgid "Toggles the video adjustment sliders"
-msgstr "காட்சி சீரமைப்பு சருக்குதல்களை மாற்று"
-
-#: data/camorama.schemas.in.h:38
-msgid "Toggles the video effects buttons"
-msgstr "காட்சி விளைவு பொத்தான்களை மாற்று"
-
-#: data/camorama.schemas.in.h:39
-msgid "Toggles timestamp for local captures"
-msgstr "உள் கைப்பற்றுதலினுடைய timestampஐ மாற்று"
-
-#: data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for remote captures"
-msgstr "தொலை கைப்பற்றுதலினுடைய timestampஐ மாற்று"
-
-#: data/camorama.schemas.in.h:41
-msgid "Username for FTP server"
-msgstr "FTP சேவகனுடைய ÀÂýÀÎòÐÀÅரின் ¦ÀÂ÷"
-
-#: data/camorama.schemas.in.h:42
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr "கைப்பற்றப்பட்ட படங்களின் FTP ஏற்றத்தை உபயோகப்படுத்துபவரின் "
-
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் கைபற்றும் பொழுது,"
-"''இந்த விசை பிம்பங்களின் சேமிப்பை உள்ளேயே மாற்றிவிடும்."
-
-#: data/camorama.schemas.in.h:44
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் கைபற்றும் பொழுது,"
-"இந்த விசை பிம்பங்களின் சேமிப்-பை தொலை சேவகனுக்கு மாற்றவும்."
-
-#: src/callbacks.c:499
-msgid "translator_credits"
-msgstr "மொழிபெயர்ப்பாளர்_நம்பிக்-கை"
-
-#: src/callbacks.c:508
+#: camorama.appdata.xml.in:6
 msgid "Camorama"
 msgstr "Camorama"
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
-msgid "Unable to capture image."
-msgstr "பிம்பத்-தைக் கைப்பற்ற இயலாது."
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama Å¨ÄôÀ¼ì¸ÕÅ¢ À¡÷¨ÅÂ¡Ç÷ ¸¡ðÊ"
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "திசை"
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
+msgstr ""
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "தட்டின் அமைவு"
+#: camorama.desktop.in:4 src/callbacks.c:510
+msgid "View, alter and save images from a webcam"
+msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢யில் இருக்கும் பிம்ப பார்க்க, மாற்ற மற்றும் சேமிக்கலாம்"
 
-#: src/fileio.c:119 src/fileio.c:265
+#: camorama.desktop.in:8
+#, fuzzy
+msgid "camorama.png"
+msgstr "கமொராமா"
+
+#: data/camorama.ui:35
+msgid "Preferences"
+msgstr "முன்னுருமை"
+
+#: data/camorama.ui:107
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">பொது</span>"
+
+#: data/camorama.ui:139
+msgid "Automatic Capture"
+msgstr "¾¡É¢ÂíÌõ "
+
+#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
+#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
+#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
+msgid "     "
+msgstr "     "
+
+#: data/camorama.ui:183
+msgid "Capture Interval (in minutes):"
+msgstr "இடைவேளையை கைப்பற்று(நிமிடங்களில்)"
+
+#: data/camorama.ui:257
+msgid "General"
+msgstr "பொது"
+
+#: data/camorama.ui:279
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">விளைவுகள்</span>"
+
+#: data/camorama.ui:311
+msgid "_Enable local capture"
+msgstr "உள் கைப்பற்றுதலைச் ¦ºÂøÀÎòÐ"
+
+#: data/camorama.ui:360
+msgid "_Directory for captured pics:"
+msgstr "கைப்பற்றப்பட்ட படங்களுக்கான அடைவு:"
+
+#: data/camorama.ui:373
+msgid "_Filename for pictures:"
+msgstr "படங்களுக்க¡ன கோப்பு பெயர்:"
+
+#: data/camorama.ui:388
+msgid "webcam-capture"
+msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢-கைப்பற்றல்"
+
+#: data/camorama.ui:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "«¨¼வைச் சேமி:"
+
+#: data/camorama.ui:424 data/camorama.ui:813
+msgid "Append time to filename"
+msgstr "கோப்பு பெயரில் நேரத்தை இணை"
+
+#: data/camorama.ui:441 data/camorama.ui:829
+msgid "Add a timestamp to captured images"
+msgstr "ஒரு விளைவை பிம்பங்களில் சேர்"
+
+#: data/camorama.ui:500 data/camorama.ui:888
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">பிம்பங்களின் வகை</span>"
+
+#: data/camorama.ui:531 data/camorama.ui:919
+msgid "Save files in jpeg format"
+msgstr "கோப்புகளை jpeg வடிவத்தில் சேமி"
+
+#: data/camorama.ui:548 data/camorama.ui:936
+msgid "Save files in png format"
+msgstr "கோப்புகளை png வடிவத்தில் சேமி"
+
+#: data/camorama.ui:593
+msgid "Local Capture"
+msgstr "உள் கைப்பற்று"
+
+#: data/camorama.ui:616
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">விளைவுகள்</span>"
+
+#: data/camorama.ui:648
+msgid "_Enable remote capture"
+msgstr "தொலை கைப்பற்றுதலைச் ¦ºÂøÀÎòÐ"
+
+#: data/camorama.ui:696
+#, fuzzy
+msgid "Server:"
+msgstr "FTP §ºÅ¸ý:"
+
+#: data/camorama.ui:708
+msgid "Type:"
+msgstr ""
+
+#: data/camorama.ui:720
+msgid "Save directory:"
+msgstr "«¨¼வைச் சேமி:"
+
+#: data/camorama.ui:732
+#, fuzzy
+msgid "Filename:"
+msgstr "கோப்பு பெயர்"
+
+#: data/camorama.ui:745
+msgid "ftp.yourdomain.org"
+msgstr "ftp.உங்கள்களம்.org"
+
+#: data/camorama.ui:790
+msgid "webcamshot"
+msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢க்குண்டு"
+
+#: data/camorama.ui:981
+msgid "Remote Capture"
+msgstr "தெ¡லைக் கே¡டி"
+
+#: data/camorama.ui:1004
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">விளைவுகள்</span>"
+
+#: data/camorama.ui:1036
+msgid "Use custom string"
+msgstr "¬Âò¾ ¦¾¡¼÷îº¢யை பயன்படுத்து"
+
+#: data/camorama.ui:1080
+msgid "String:"
+msgstr "¦¾¡¼÷îº¢:"
+
+#: data/camorama.ui:1126
+msgid "Draw date and time"
+msgstr "தேதி மற்றும் நேரத்-தை Å¨Ã"
+
+#: data/camorama.ui:1170
+msgid "Timestamp"
+msgstr "timestamp"
+
+#: data/camorama.ui:1199
+msgid "Camorama-libglade"
+msgstr "கமோராமா-லிப்கிளேட்"
+
+#: data/camorama.ui:1216
+#, fuzzy
+msgid "_File"
+msgstr "கோப்பு பெயர்"
+
+#: data/camorama.ui:1223 data/camorama.ui:1523
+msgid "Take Picture"
+msgstr "படத்-தை எடு"
+
+#: data/camorama.ui:1258
+msgid "_Edit"
+msgstr ""
+
+#: data/camorama.ui:1282
+msgid "_View"
+msgstr ""
+
+#: data/camorama.ui:1291 data/camorama.ui:1464
+msgid "Show Adjustments"
+msgstr "அனுசரிப்-பைக் காட்டு"
+
+#: data/camorama.ui:1301
+msgid "Show Effects"
+msgstr "Å¢¨Ç×¸ளை க¡மி"
+
+#: data/camorama.ui:1317
+msgid "Small"
+msgstr "சிறியது"
+
+#: data/camorama.ui:1330
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.ui:1654
+msgid "Contrast:"
+msgstr "Å¢ò¾¢Â¡ºõ:"
+
+#: data/camorama.ui:1668
+msgid "Brightness:"
+msgstr "À¢Ã¸¡ºõ"
+
+#: data/camorama.ui:1684
+msgid "Color:"
+msgstr "நிறம்:"
+
+#: data/camorama.ui:1700
+msgid "Hue:"
+msgstr "Åñ½õ"
+
+#: data/camorama.ui:1716
+msgid "White Balance:"
+msgstr "Á¢îº வெள்ளை:"
+
+#: src/callbacks.c:497
+msgid "translator_credits"
+msgstr "மொழிபெயர்ப்பாளர்_நம்பிக்-கை"
+
+#: src/callbacks.c:706
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
+
+#: src/callbacks.c:826
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+
+#: src/callbacks.c:835
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "¾¡É¢ÂíÌõ "
+
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "கண்ண¡டி பிம்பம்"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:11
+#, fuzzy
+msgid "Webcam"
+msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢க்குண்டு"
+
+#: src/camorama-window.c:116
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:210
+#, fuzzy
+msgid "Effects"
+msgstr "Å¢¨Ç×¸ளை க¡மி"
+
+#: src/fileio.c:116 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr "\tmpஇல் தற்காலிக பிம்பத்-தை சேமிக்க இயலும்"
 
-#: src/fileio.c:137
+#: src/fileio.c:128
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "'%s' என்ற பிம்பத்-தை உருவாக்க இயலாது"
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:136 src/fileio.c:419
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "'%s/%s' என்ற பிம்பத்-தை சேமிக்க இயலாது."
 
-#: src/fileio.c:273
+#: src/fileio.c:174
+#, fuzzy, c-format
+msgid "An error occurred mounting %s:%s."
+msgstr "%sஐ திறக்-கையில் பிழை ஏற்பட்டது"
+
+#: src/fileio.c:211
+#, fuzzy, c-format
+msgid "An error occurred accessing %s."
+msgstr "%sஐ திறக்-கையில் பிழை ஏற்பட்டது"
+
+#: src/fileio.c:265
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
-msgstr ""
-"'%s' என்ற தற்காலிக பிம்பக் கோப்பைத் திறக்க இயலாது"
-"பிம்பத்-தை ஏற்றம் செய்ய இயலாது"
+msgstr "'%s' என்ற தற்காலிக பிம்பக் கோப்பைத் திறக்க இயலாதுபிம்பத்-தை ஏற்றம் செய்ய இயலாது"
 
-#: src/fileio.c:311
-#, c-format
-msgid "An error occured opening %s."
+#: src/fileio.c:295
+#, fuzzy, c-format
+msgid "An error occurred opening %s."
 msgstr "%sஐ திறக்-கையில் பிழை ஏற்பட்டது"
 
-#: src/fileio.c:323
-#, c-format
-msgid "An error occured writing to %s."
+#: src/fileio.c:306
+#, fuzzy, c-format
+msgid "An error occurred opening %s for write: %s."
+msgstr "%sஐ திறக்-கையில் பிழை ஏற்பட்டது"
+
+#: src/fileio.c:317
+#, fuzzy, c-format
+msgid "An error occurred writing to %s: %s."
 msgstr "%sஇல் எழுதுகையில் பிழை ஏற்பட்டது"
 
-#: src/fileio.c:403
+#: src/fileio.c:325
+#, fuzzy, c-format
+msgid "An error occurred closing %s: %s."
+msgstr "%sஐ திறக்-கையில் பிழை ஏற்பட்டது"
+
+#: src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "'%s' என்ற அடைவை உருவாக்க இயலாது."
 
-#: src/fileio.c:414
+#: src/fileio.c:404
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "'%s' என்ற அடைவுக்கு மாற்ற இயலாது."
 
-#: src/main.c:423
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "நிறத்-தை சரிசெய்"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "Å¢Ç¢õÒ:"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr "வேக்கி"
+
+#: src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "Á¢ÕÐவ¡க்கு"
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr "சோபல்"
+
+#: src/main.c:26
 msgid "show version and exit"
 msgstr "பதிப்-பைக் காட்டிவிட்டு வெளியேறு"
 
-#: src/main.c:425
+#: src/main.c:28
 msgid "v4l device to use"
 msgstr "v4I சாதனம் உபயோகத்திற்கு"
 
-#: src/main.c:427
-msgid "enable debuging code"
+#: src/main.c:30
+#, fuzzy
+msgid "enable debugging code"
 msgstr "codeஐ பிழை திருத்த இயலும்"
 
-#: src/main.c:428
+#: src/main.c:32
 msgid "capture width"
 msgstr "அகலத்-தைக் கைப்பற்று"
 
-#: src/main.c:430
+#: src/main.c:34
 msgid "capture height"
 msgstr "உயரத்-தைக் கைப்பற்று"
 
-#: src/main.c:433
+#: src/main.c:36
 msgid "maximum capture size"
 msgstr "அதிகப்பட்சமான  கைப்பற்றும் அளவு"
 
-#: src/main.c:435
+#: src/main.c:38
 msgid "minimum capture size"
 msgstr "குறைந்தபட்சமான  கைப்பற்றும் அளவு"
 
-#: src/main.c:437
+#: src/main.c:40
 msgid "middle capture size"
 msgstr "நடுநிலைமையான கைப்பற்றும் அளவு"
 
-#: src/main.c:439
+#: src/main.c:42
 msgid "use read() rather than mmap()"
 msgstr "mmap()க்கு பதிலாக read()ஐ உபயோகி"
 
-#: src/main.c:461
+#: src/main.c:73
 msgid "camorama"
 msgstr "கமொராமா"
 
-#: src/main.c:475
+#: src/main.c:75
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+
+#: src/main.c:89
 #, c-format
 msgid ""
 "\n"
@@ -568,22 +447,248 @@ msgstr ""
 "கமொராமா பதிப்பு %s\n"
 "\n"
 
-#: src/main.c:609
-msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "பிரதான இடைவிளிம்புக் கோப்பை(camorama.glade) கண்டுபிடிக்க இயலவில்லை"
-
-#: src/support.c:69
-#, c-format
-msgid "Couldn't find pixmap file: %s"
+#: src/main.c:210
+#, fuzzy
+msgid "Couldn't load builder file"
 msgstr "%s என்ற pixmap கோப்பைத் திறக்க இயலவில்லை"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
+#: src/v4l.c:410
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
-msgstr ""
-"(%s) என்ற காட்சி சாதனத்தை இணைக்க இயலவில்லை"
-"தயவு செய்து  இணைப்-பை சரிபாக்கவும்"
+msgstr "(%s) என்ற காட்சி சாதனத்தை இணைக்க இயலவில்லைதயவு செய்து  இணைப்-பை சரிபாக்கவும்"
 
+#: src/v4l.c:438
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:453
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:466
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:479
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:488
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:516
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:576
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "Username:"
+#~ msgstr "ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷:"
+
+#~ msgid "Password:"
+#~ msgstr "¸¼×î¦º¡ø"
+
+#~ msgid "your-username"
+#~ msgstr "உங்கள்-ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷"
+
+#~ msgid "your-password"
+#~ msgstr "உங்கள்-¸¼×î¦º¡ø"
+
+#~ msgid "path/to/save/to"
+#~ msgstr "À¡¨¾/¦ÀÚÅÐ/சேமி/¦ÀÚÅÐ"
+
+#~ msgid "Couldn't find the main interface file (camorama.glade)."
+#~ msgstr "பிரதான இடைவிளிம்புக் கோப்பை(camorama.glade) கண்டுபிடிக்க இயலவில்லை"
+
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "%s என்ற pixmap கோப்பைத் திறக்க இயலவில்லை"
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.gnome-§Á¨º"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">விளைவுகள்</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "கருப்பு & வெள்ளை"
+
+#~ msgid "Color threshold"
+#~ msgstr "நிறத்-தை Å¢Ç¢õÒ"
+
+#~ msgid "Laplace"
+#~ msgstr "லாப்லாஸ்"
+
+#~ msgid "Large"
+#~ msgstr "பெரியது"
+
+#~ msgid "Medium"
+#~ msgstr "°¼¸õ"
+
+#~ msgid "Negative"
+#~ msgstr "நெகட்டிவ்-எதிர்"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "timestampஐ கோப்புப் பெயருடன் இணை"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "timestampஐ தொலைக் கோப்புப் பெயருடன் இணை"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ கோப்புப் பெயரின் கடைசியில் இணை"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ தொலைக் கோப்புப் பெயரின் கடைசியில் இணை"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "timestampன் உரையை ஆயத்தமாக்கு"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr "¦¾¡¼÷îசியினுடைய ஆயத்த உரையை ஒரு பிம்பத்தில் இணைப்பதற்கான விளக்கம்"
+
+#~ msgid "Filename for local captures"
+#~ msgstr "உள்-கைப்பற்றப்பட்ட படங்களுக்கான கோப்புப் பெயர்"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "கைப்பற்றப்பட்ட படங்களை உள் சேமிப்பதற்கான கோப்புப் பெயர்"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "உள் கைப்பற்றுதலுக்கான ஆவணம்"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "தொலைக் கைப்பற்றுதலுக்கான ஆவணம்"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "தொலைக் கைப்பற்றப்பட்ட படங்களை சேமிப்பதற்கான அடைவு"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "உள் கைப்பற்றப்பட்ட  படங்களை சேமிப்பதற்கான அடைவு"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "FTP சேவகனுடைய புரவலப் பெயர்"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "FTP சேவகனுடைய தொலைக் கைப்பற்றுதலுக்கான புரவலப் பெயர்"
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "தானியங்கி கைப்பற்றுதலினுடைய இடைவேளை"
+
+#~ msgid "Local capture image format"
+#~ msgstr "உள் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "uploaded பிம்பத்திற்கான கோப்புபெயரினுடைய பெயர் "
+
+#~ msgid "Password for FTP server"
+#~ msgstr "FTP சேவகனுடைய கடவுச் சொல்"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "தொலைக் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
+
+#~ msgid "Remote save filename"
+#~ msgstr "தெ¡லைக் கே¡டி கோப்புபெயரைச் சேமி"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr "உள் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr ""
+#~ "தெ¡லைக் கே¡டியில் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "தானாகவே கைப்பற்றப்பட்டப் படங்களின் இடைவேளையைச் சொல்"
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "தொலைக் கைப்பற்றப்பட்டப் படங்களுக்கான FTP கணக்கினுடைய ¸¼×î¦º¡ø"
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "¾ýÉ¡§Ä-கைப்பற்றுதலுக்கு மாற்று"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "படங்களை தானியங்கி கைப்பற்றுதலுக்கு மாற்று"
+
+#~ msgid "Toggles local capture"
+#~ msgstr "உள் கைப்பற்றுதலை மாற்று"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr " தொலைக் கைப்பற்றுதலை மாற்று"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "ஆயத்த தொடர்ச்சியை மாற்று"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "கைப்பற்றுதலின் datestampஐ மாற்று"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "கைப்பற்றப்பட்ட படங்களின் உள்-ளே datestamp வரைதலை மாற்று"
+
+#~ msgid "Toggles the insertion of a timestamp into local images"
+#~ msgstr "உள் பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
+
+#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+#~ msgstr "FTP uploadற்காக பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
+
+#~ msgid "Toggles the use of the buttons to adjust the video filters"
+#~ msgstr "காட்சி வடிகட்டியை சீரமைப்பதற்காக பொத்தான்களின் உபயோகத்-தை மாற்று"
+
+#~ msgid "Toggles the use of the custom string for the timestamp in images."
+#~ msgstr "பிம்பங்களில் உள்ள timestampனுடைய ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷"
+
+#~ msgid "Toggles the use of the sliders to adjust the video properties"
+#~ msgstr "காட்சி பண்புகளை சீரமைப்பதற்காக சருக்குதல் உபயோகத்தை மாற்று"
+
+#~ msgid "Toggles the video adjustment sliders"
+#~ msgstr "காட்சி சீரமைப்பு சருக்குதல்களை மாற்று"
+
+#~ msgid "Toggles the video effects buttons"
+#~ msgstr "காட்சி விளைவு பொத்தான்களை மாற்று"
+
+#~ msgid "Toggles timestamp for local captures"
+#~ msgstr "உள் கைப்பற்றுதலினுடைய timestampஐ மாற்று"
+
+#~ msgid "Toggles timestamp for remote captures"
+#~ msgstr "தொலை கைப்பற்றுதலினுடைய timestampஐ மாற்று"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "FTP சேவகனுடைய ÀÂýÀÎòÐÀÅரின் ¦ÀÂ÷"
+
+#~ msgid "Username to use for FTP uploads of captured pictures"
+#~ msgstr "கைப்பற்றப்பட்ட படங்களின் FTP ஏற்றத்தை உபயோகப்படுத்துபவரின் "
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures locally."
+#~ msgstr ""
+#~ "\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் "
+#~ "கைபற்றும் பொழுது,''இந்த விசை பிம்பங்களின் சேமிப்பை உள்ளேயே மாற்றிவிடும்."
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures to a remote server."
+#~ msgstr ""
+#~ "\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் "
+#~ "கைபற்றும் பொழுது,இந்த விசை பிம்பங்களின் சேமிப்-பை தொலை சேவகனுக்கு மாற்றவும்."
+
+#~ msgid "Unable to capture image."
+#~ msgstr "பிம்பத்-தைக் கைப்பற்ற இயலாது."
+
+#~ msgid "Orientation"
+#~ msgstr "திசை"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "தட்டின் அமைவு"
