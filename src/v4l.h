@@ -93,6 +93,7 @@ typedef struct camera {
 } cam;
 
 void camera_cap (cam *);
+void print_cam (cam *);
 void try_set_win_info(cam * cam, int *x, int *y);
 void set_win_info (cam * cam);
 void get_pic_info (cam *);
