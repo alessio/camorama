@@ -224,7 +224,7 @@ main(int argc, char *argv[]) {
     /* get picture attributes */
     get_pic_info (cam);
 
-    bufsize = cam->max_width * cam->max_height * cam->depth / 8;
+    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
     cam->pic_buf = malloc (bufsize);
     cam->tmp = malloc (bufsize);
 
@@ -274,6 +274,10 @@ main(int argc, char *argv[]) {
     cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
+
+    if (cam->debug == TRUE)
+       print_cam(cam);
+
     gtk_main ();
     if (cam->read == FALSE) {
        stop_streaming(cam);

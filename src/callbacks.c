@@ -487,8 +487,8 @@ static void
 apply_filters(cam* cam) {
 	/* v4l has reverse rgb order from what camora expect so call the color
 	   filter to fix things up before running the user selected filters */
-	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->depth);
-	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->depth);
+	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
+	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
 #warning "FIXME: enable the threshold channel filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
 //		threshold_channel (cam->pic_buf, cam->width, cam->height, cam->dither);
@@ -506,7 +506,7 @@ read_timeout_func(cam* cam) {
     GdkGC *gc;
     unsigned char *pic_buf = cam->pic_buf;
 
-    v4l2_read (cam->dev, cam->pic_buf, (cam->width * cam->height * cam->depth / 8));
+    v4l2_read (cam->dev, cam->pic_buf, (cam->width * cam->height * cam->bpp / 8));
     frames2++;
     /*
      * update_rec.x = 0;
@@ -520,7 +520,7 @@ read_timeout_func(cam* cam) {
      */
 
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth);
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
         pic_buf = cam->tmp;
     }
 
@@ -531,7 +531,7 @@ read_timeout_func(cam* cam) {
                         gc, 0, 0,
                         cam->width, cam->height,
                         GDK_RGB_DITHER_NORMAL, pic_buf,
-                        cam->width * cam->depth / 8);
+                        cam->width * cam->bpp / 8);
 
     gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
                                 0, cam->width, cam->height);
@@ -552,7 +552,7 @@ gint timeout_func (cam * cam)
      * refer the frame 
      */
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth);
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
         pic_buf = cam->tmp;
     }
 
@@ -565,7 +565,7 @@ gint timeout_func (cam * cam)
                         gc, 0, 0,
                         cam->width, cam->height,
                         GDK_RGB_DITHER_NORMAL, pic_buf,
-                        cam->width * cam->depth / 8);
+                        cam->width * cam->bpp / 8);
 
     gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
                                 0, cam->width, cam->height);
@@ -599,10 +599,10 @@ void capture_func (GtkWidget * widget, cam * cam)
     if (cam->debug == TRUE) {
         printf
             ("capture_func\nx = %d, y = %d, depth = %d, realloc size = %d\n",
-             cam->width, cam->height, cam->depth, (cam->width * cam->height * cam->depth / 8));
+             cam->width, cam->height, cam->bpp, (cam->width * cam->height * cam->bpp / 8));
     }
 
-    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth / 8);
+    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->bpp / 8);
 
     if (cam->rcap == TRUE) {
         remote_save (cam);
@@ -631,7 +631,7 @@ gint timeout_capture_func (cam * cam)
         pt2Function (cam);
 
     }
-    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth / 8);
+    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->bpp / 8);
 
     if (cam->cap == TRUE) {
         local_save (cam);
