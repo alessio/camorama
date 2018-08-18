@@ -580,7 +580,7 @@ gint fps (GtkWidget * sb)
     gchar *stat;
 
     seconds++;
-    stat = g_strdup_printf ("%.2f fps - current     %.2f fps - average",
+    stat = g_strdup_printf (_("%.2f fps - current     %.2f fps - average"),
                             (float) frames / (float) (2),
                             (float) frames2 / (float) (seconds * 2));
     frames = 0;
