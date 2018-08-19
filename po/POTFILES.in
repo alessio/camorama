@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
 camorama.appdata.xml
-camorama.desktop
+camorama.desktop.in
 data/camorama.glade
 data/camorama.schemas
 src/callbacks.c
