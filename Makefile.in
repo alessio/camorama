@@ -99,7 +99,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES = camorama.desktop
+CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -187,11 +187,10 @@ ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/camorama.desktop.in \
-	$(srcdir)/config.h.in ABOUT-NLS AUTHORS COPYING ChangeLog \
-	INSTALL NEWS README THANKS TODO compile config.guess \
-	config.rpath config.sub depcomp install-sh missing \
-	mkinstalldirs
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+	ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS \
+	TODO compile config.guess config.rpath config.sub depcomp \
+	install-sh missing mkinstalldirs
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -362,20 +361,14 @@ desktop_in_files = camorama.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 SUBDIRS = src pixmaps data po
 EXTRA_DIST = autogen.sh     \
-	camorama.desktop     \
 	camorama.desktop.in  \
 	intltool-extract.in     \
 	intltool-merge.in    \
 	intltool-update.in
 
 CLEANFILES = \
-	camorama.desktop \
+	camorama.desktop     \
 	po/camorama.pot
-
-DISTCLEANFILES = \
-	intltool-extract\
-	intltool-merge	\
-	intltool-update
 
 pixmapdir = $(datadir)/pixmaps
 all: config.h
@@ -430,8 +423,6 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-camorama.desktop: $(top_builddir)/config.status $(srcdir)/camorama.desktop.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 install-desktopDATA: $(desktop_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
@@ -786,7 +777,6 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
-	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -888,12 +878,12 @@ install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(pixmapdir); \
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/camorama/pixmaps; \
 	for pixmap in $(srcdir)/pixmaps/*.png; do \
-												if test -f $$pixmap; then \
-												$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pixmapdir); \
-												$(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/camorama/pixmaps; \
-												fi \
-												done \
-												fi
+		if test -f $$pixmap; then \
+			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pixmapdir); \
+			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/camorama/pixmaps; \
+		fi \
+	done \
+fi
 
 dist-hook:
 	if test -d pixmaps; then \
@@ -904,6 +894,9 @@ dist-hook:
 	fi \
 	done \
 fi
+
+camorama.desktop: camorama.desktop.in
+	msgfmt --desktop -d $(top_srcdir)/po --template $< -o $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

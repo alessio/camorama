@@ -5,21 +5,15 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 SUBDIRS = src pixmaps data po
 
 EXTRA_DIST =   autogen.sh     \
-	camorama.desktop     \
 	camorama.desktop.in  \
 	intltool-extract.in     \
 	intltool-merge.in    \
 	intltool-update.in
 
 CLEANFILES=\
-	camorama.desktop \
+	camorama.desktop     \
 	po/camorama.pot
 
-DISTCLEANFILES=\
-	intltool-extract\
-	intltool-merge	\
-	intltool-update
-					
 pixmapdir   = $(datadir)/pixmaps
 
 install-data-local:
@@ -28,12 +22,12 @@ install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(pixmapdir); \
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/camorama/pixmaps; \
 	for pixmap in $(srcdir)/pixmaps/*.png; do \
-												if test -f $$pixmap; then \
-												$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pixmapdir); \
-												$(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/camorama/pixmaps; \
-												fi \
-												done \
-												fi
+		if test -f $$pixmap; then \
+			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pixmapdir); \
+			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/camorama/pixmaps; \
+		fi \
+	done \
+fi
 
 dist-hook:
 	if test -d pixmaps; then \
@@ -45,4 +39,5 @@ dist-hook:
 	done \
 fi
 
-
+camorama.desktop: camorama.desktop.in
+	msgfmt --desktop -d $(top_srcdir)/po --template $< -o $@

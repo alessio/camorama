@@ -7,7 +7,6 @@ AM_CONFIG_HEADER(config.h)
 AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
 AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
 
-ALL_LINGUAS="am ar az be bg bs ca cs da de dz en_CA en_GB es eu fa fi fr ga gl gu hi hr it ja lv mk ml ms nb ne nl pa pl pt pt_BR rw sl sq sr sr@Latn sv ta tr uk vi zh_CN zh_TW"
 AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
@@ -50,7 +49,6 @@ AC_OUTPUT([
 	src/Makefile
 	data/Makefile
 	data/camorama.schemas
-	camorama.desktop
 	pixmaps/Makefile
 	po/Makefile.in
 ])

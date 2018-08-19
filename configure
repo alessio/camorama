@@ -2780,7 +2780,6 @@ $as_echo "#define PACKAGE camorama" >>confdefs.h
 $as_echo "#define VERSION 0.19" >>confdefs.h
 
 
-ALL_LINGUAS="am ar az be bg bs ca cs da de dz en_CA en_GB es eu fa fi fr ga gl gu hi hr it ja lv mk ml ms nb ne nl pa pl pt pt_BR rw sl sq sr sr@Latn sv ta tr uk vi zh_CN zh_TW"
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a sed that does not truncate output" >&5
 $as_echo_n "checking for a sed that does not truncate output... " >&6; }
@@ -8430,7 +8429,7 @@ fi
 
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile data/Makefile data/camorama.schemas camorama.desktop pixmaps/Makefile po/Makefile.in"
+ac_config_files="$ac_config_files Makefile src/Makefile data/Makefile data/camorama.schemas pixmaps/Makefile po/Makefile.in"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -9182,7 +9181,6 @@ do
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
     "data/camorama.schemas") CONFIG_FILES="$CONFIG_FILES data/camorama.schemas" ;;
-    "camorama.desktop") CONFIG_FILES="$CONFIG_FILES camorama.desktop" ;;
     "pixmaps/Makefile") CONFIG_FILES="$CONFIG_FILES pixmaps/Makefile" ;;
     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
 
