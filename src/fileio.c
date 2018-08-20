@@ -223,7 +223,7 @@ void remote_save (cam * cam)
      * } */
 
     remote_thread =
-        g_thread_create ((GThreadFunc) save_thread, cam, FALSE, NULL);
+        g_thread_new ("remote", (GThreadFunc) save_thread, cam);
     g_free (ext);
     //free (tmp);
 
