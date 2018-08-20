@@ -25,7 +25,7 @@
 #ifndef CAMORAMA_GLOBALS_H
 #define CAMORAMA_GLOBALS_H
 
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
