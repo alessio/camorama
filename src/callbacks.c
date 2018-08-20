@@ -578,13 +578,14 @@ gint timeout_func (cam * cam)
 gint fps (GtkWidget * sb)
 {
     gchar *stat;
+    guint cont = gtk_statusbar_get_context_id (GTK_STATUSBAR(sb), "context");
 
     seconds++;
     stat = g_strdup_printf (_("%.2f fps - current     %.2f fps - average"),
                             (float) frames / (float) (2),
                             (float) frames2 / (float) (seconds * 2));
     frames = 0;
-    gnome_appbar_push (GNOME_APPBAR (sb), stat);
+    gtk_statusbar_push (GTK_STATUSBAR(sb), cont, stat);
     g_free (stat);
     return 1;
 }
