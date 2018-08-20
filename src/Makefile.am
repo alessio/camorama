@@ -9,8 +9,6 @@ bin_PROGRAMS = camorama
 
 camorama_SOURCES = \
 	callbacks.c \
-	camorama-display.c \
-	camorama-display.h \
 	camorama-filter-chain.c \
 	camorama-filter-chain.h \
 	camorama-filter-laplace.c \

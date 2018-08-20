@@ -4,6 +4,7 @@
 #include "callbacks.h"
 #include "filter.h"
 #include "camorama-window.h"
+#include "camorama-globals.h"
 #include "support.h"
 #include <config.h>
 
@@ -13,7 +14,6 @@
 #include <locale.h>
 #include <libv4l2.h>
 
-#include "camorama-display.h"
 #include "camorama-stock-items.h"
 
 static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
@@ -39,26 +39,19 @@ static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
   return true;
 }*/
 
-static GtkWidget*
-camorama_glade_handler (GladeXML* xml,
-			gchar   * func_name,
-			gchar   * name,
-			gchar   * string1,
-			gchar   * string2,
-			gint      int1,
-			gint      int2,
-			gpointer  data)
+gboolean
+draw_camera_callback (GtkWidget *widget, GdkEventExpose *event, gpointer data)
 {
-	gboolean reached = TRUE;
-#warning "FIXME: move the glade crap into the window class"
-	if (string1 && !strcmp (string1, "CamoDisplay")) {
-		GtkWidget* widget = camo_display_new ((cam*)data);
-		gtk_widget_show (widget);
-		return widget;
-	}
+	cam* camera = data;
 
-	g_return_val_if_fail (!reached, NULL);
-	return NULL;
+	gdk_draw_drawable (widget->window,
+			   widget->style->fg_gc[gtk_widget_get_state (widget)],
+			   camera->pixmap,
+			   event->area.x, event->area.y, event->area.x,
+			   event->area.y, event->area.width, event->area.height);
+
+	frames++;
+  return TRUE;
 }
 
 int
@@ -129,9 +122,6 @@ main(int argc, char *argv[]) {
 	cam->width = x;
 	cam->height = y;
 	glade_gnome_init ();
-	glade_set_custom_handler (camorama_glade_handler,
-				  cam);
-
 
     if (ver) {
         fprintf (stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);
@@ -270,6 +260,11 @@ main(int argc, char *argv[]) {
      * gtk_container_add (GTK_CONTAINER (tray_icon), button);
      * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface (cam);
+
+    GtkWidget *widget = glade_xml_get_widget(cam->xml, "da");
+    gtk_widget_show (widget);
+    g_signal_connect (widget, "expose_event",
+                      G_CALLBACK (draw_camera_callback), cam);
 
     cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
 
