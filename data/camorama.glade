@@ -1,167 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glade-interface>
-  <requires lib="bonobo"/>
-  <!-- interface-requires bonobo 33664.49840 -->
   <requires lib="gnome"/>
   <!-- interface-requires gnome 33664.49840 -->
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy toplevel-contextual -->
-  <widget class="GnomeApp" id="main_window">
+  <widget class="GtkWindow" id="main_window">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Camorama-libglade</property>
-    <property name="enable_layout_config">True</property>
     <signal name="delete_event" handler="gtk_main_quit"/>
-    <child internal-child="dock">
-      <widget class="BonoboDock" id="bonobodock1">
+    <child>
+      <widget class="GtkVBox" id="vbox36">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="allow_floating">True</property>
         <child>
-          <widget class="BonoboDockItem" id="bonobodockitem1">
+          <widget class="GtkMenuBar" id="menubar3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <widget class="GtkMenuBar" id="menubar3">
+              <widget class="GtkMenuItem" id="menuitem1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_File</property>
+                <property name="use_underline">True</property>
                 <child>
-                  <widget class="GtkMenuItem" id="menuitem1">
-                    <property name="visible">True</property>
+                  <widget class="GtkMenu" id="menuitem1_menu">
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">_File</property>
-                    <property name="use_underline">True</property>
                     <child>
-                      <widget class="GtkMenu" id="menuitem1_menu">
+                      <widget class="GtkImageMenuItem" id="imagemenuitem1">
+                        <property name="label" translatable="yes">Take Picture</property>
+                        <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <child>
-                          <widget class="GtkImageMenuItem" id="imagemenuitem1">
-                            <property name="label" translatable="yes">Take Picture</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="capture_func"/>
+                        <accelerator key="t" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image21">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="use_underline">True</property>
-                            <property name="use_stock">False</property>
-                            <signal name="activate" handler="capture_func"/>
-                            <accelerator key="t" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                            <child internal-child="image">
-                              <widget class="GtkImage" id="image21">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="pixbuf">snap-icon-small.xpm</property>
-                              </widget>
-                            </child>
-                          </widget>
-                        </child>
-                        <child>
-                          <widget class="GtkSeparatorMenuItem" id="menuitem2">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                          </widget>
-                        </child>
-                        <child>
-                          <widget class="GtkImageMenuItem" id="quit">
-                            <property name="label">gtk-quit</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="use_underline">True</property>
-                            <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_quit_activate"/>
+                            <property name="pixbuf">snap-icon-small.xpm</property>
                           </widget>
                         </child>
                       </widget>
                     </child>
-                  </widget>
-                </child>
-                <child>
-                  <widget class="GtkMenuItem" id="menuitem3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">_Edit</property>
-                    <property name="use_underline">True</property>
                     <child>
-                      <widget class="GtkMenu" id="menuitem3_menu">
+                      <widget class="GtkSeparatorMenuItem" id="menuitem2">
+                        <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <child>
-                          <widget class="GtkImageMenuItem" id="imagemenuitem3">
-                            <property name="label">gtk-preferences</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="use_underline">True</property>
-                            <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_preferences1_activate"/>
-                          </widget>
-                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="quit">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_quit_activate"/>
                       </widget>
                     </child>
                   </widget>
                 </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Edit</property>
+                <property name="use_underline">True</property>
                 <child>
-                  <widget class="GtkMenuItem" id="menuitem4">
-                    <property name="visible">True</property>
+                  <widget class="GtkMenu" id="menuitem3_menu">
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">_View</property>
-                    <property name="use_underline">True</property>
                     <child>
-                      <widget class="GtkMenu" id="menuitem4_menu">
+                      <widget class="GtkImageMenuItem" id="imagemenuitem3">
+                        <property name="label">gtk-preferences</property>
+                        <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <child>
-                          <widget class="GtkCheckMenuItem" id="showadjustment_item">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Show Adjustments</property>
-                            <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_show_adjustments_activate"/>
-                            <accelerator key="a" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                          </widget>
-                        </child>
-                        <child>
-                          <widget class="GtkCheckMenuItem" id="show_effects">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Show Effects</property>
-                            <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_show_effects_activate"/>
-                            <accelerator key="e" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                          </widget>
-                        </child>
-                        <child>
-                          <widget class="GtkSeparatorMenuItem" id="separator1">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                          </widget>
-                        </child>
-                        <child>
-                          <widget class="GtkRadioMenuItem" id="small">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Small</property>
-                            <property name="use_underline">True</property>
-                            <signal name="activate" handler="activate"/>
-                          </widget>
-                        </child>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_preferences1_activate"/>
                       </widget>
                     </child>
                   </widget>
                 </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_View</property>
+                <property name="use_underline">True</property>
                 <child>
-                  <widget class="GtkMenuItem" id="menuitem6">
-                    <property name="visible">True</property>
+                  <widget class="GtkMenu" id="menuitem4_menu">
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">_Help</property>
-                    <property name="use_underline">True</property>
                     <child>
-                      <widget class="GtkMenu" id="menuitem6_menu">
+                      <widget class="GtkCheckMenuItem" id="showadjustment_item">
+                        <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <child>
-                          <widget class="GtkImageMenuItem" id="imagemenuitem4">
-                            <property name="label">gtk-about</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="use_underline">True</property>
-                            <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_about_activate"/>
-                          </widget>
-                        </child>
+                        <property name="label" translatable="yes">Show Adjustments</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_show_adjustments_activate"/>
+                        <accelerator key="a" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkCheckMenuItem" id="show_effects">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Show Effects</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_show_effects_activate"/>
+                        <accelerator key="e" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkSeparatorMenuItem" id="separator1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkRadioMenuItem" id="small">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Small</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem6">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menuitem6_menu">
+                    <property name="can_focus">False</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem4">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_about_activate"/>
                       </widget>
                     </child>
                   </widget>
@@ -170,58 +160,30 @@
             </child>
           </widget>
           <packing>
-            <property name="behavior">BONOBO_DOCK_ITEM_BEH_EXCLUSIVE | BONOBO_DOCK_ITEM_BEH_NEVER_VERTICAL | BONOBO_DOCK_ITEM_BEH_LOCKED</property>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <widget class="GtkVBox" id="vbox36">
+          <widget class="GtkHBox" id="hbox25">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="border_width">6</property>
+            <property name="spacing">6</property>
             <child>
-              <widget class="GtkHBox" id="hbox25">
+              <widget class="GtkFrame" id="frame1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="border_width">6</property>
-                <property name="spacing">6</property>
+                <property name="label_xalign">0</property>
+                <property name="shadow_type">in</property>
                 <child>
-                  <widget class="GtkFrame" id="frame1">
+                  <widget class="GtkDrawingArea" id="da">
+                    <property name="width_request">320</property>
+                    <property name="height_request">240</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label_xalign">0</property>
-                    <property name="shadow_type">in</property>
-                    <child>
-                      <widget class="GtkDrawingArea" id="da">
-                        <property name="width_request">320</property>
-                        <property name="height_request">240</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                      </widget>
-                    </child>
                   </widget>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkScrolledWindow" id="scrolledwindow_effects">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="hscrollbar_policy">never</property>
-                    <property name="shadow_type">in</property>
-                    <child>
-                      <widget class="GtkTreeView" id="treeview_effects">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                      </widget>
-                    </child>
-                  </widget>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
                 </child>
               </widget>
               <packing>
@@ -231,408 +193,433 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkHSeparator" id="hseparator1">
+              <widget class="GtkScrolledWindow" id="scrolledwindow_effects">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
+                <property name="hscrollbar_policy">never</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <widget class="GtkTreeView" id="treeview_effects">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                  </widget>
+                </child>
               </widget>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
                 <property name="position">1</property>
               </packing>
             </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHSeparator" id="hseparator1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHBox" id="hbox31">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="border_width">6</property>
+            <property name="spacing">6</property>
             <child>
-              <widget class="GtkHBox" id="hbox31">
+              <widget class="GtkAlignment" id="alignment1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="border_width">6</property>
-                <property name="spacing">6</property>
                 <child>
-                  <widget class="GtkAlignment" id="alignment1">
+                  <widget class="GtkToggleButton" id="togglebutton1">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <signal name="toggled" handler="on_show_adjustments_activate"/>
                     <child>
-                      <widget class="GtkToggleButton" id="togglebutton1">
+                      <widget class="GtkAlignment" id="alignment3">
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <signal name="toggled" handler="on_show_adjustments_activate"/>
+                        <property name="can_focus">False</property>
+                        <property name="xscale">0</property>
+                        <property name="yscale">0</property>
                         <child>
-                          <widget class="GtkAlignment" id="alignment3">
+                          <widget class="GtkHBox" id="hbox32">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xscale">0</property>
-                            <property name="yscale">0</property>
+                            <property name="spacing">2</property>
                             <child>
-                              <widget class="GtkHBox" id="hbox32">
+                              <widget class="GtkImage" id="image19">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="spacing">2</property>
-                                <child>
-                                  <widget class="GtkImage" id="image19">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="stock">gtk-select-color</property>
-                                  </widget>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <widget class="GtkLabel" id="label75">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="label" translatable="yes">Show Adjustments</property>
-                                    <property name="use_underline">True</property>
-                                  </widget>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
+                                <property name="stock">gtk-select-color</property>
                               </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label75">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Show Adjustments</property>
+                                <property name="use_underline">True</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">1</property>
+                              </packing>
                             </child>
                           </widget>
                         </child>
                       </widget>
                     </child>
                   </widget>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkAlignment" id="alignment2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <child>
-                      <widget class="GtkButton" id="button1">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <signal name="clicked" handler="capture_func" object="cam"/>
-                        <child>
-                          <widget class="GtkAlignment" id="alignment4">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="xscale">0</property>
-                            <property name="yscale">0</property>
-                            <child>
-                              <widget class="GtkHBox" id="hbox33">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="spacing">2</property>
-                                <child>
-                                  <widget class="GtkImage" id="image20">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="pixbuf">snap-icon-small.xpm</property>
-                                  </widget>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <widget class="GtkLabel" id="label76">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="label" translatable="yes">Take Picture</property>
-                                    <property name="use_underline">True</property>
-                                  </widget>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                              </widget>
-                            </child>
-                          </widget>
-                        </child>
-                      </widget>
-                    </child>
-                  </widget>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="pack_type">end</property>
-                    <property name="position">1</property>
-                  </packing>
                 </child>
               </widget>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">2</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <widget class="GtkTable" id="adjustments_table">
+              <widget class="GtkAlignment" id="alignment2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="border_width">12</property>
-                <property name="n_rows">5</property>
-                <property name="n_columns">3</property>
-                <property name="column_spacing">6</property>
-                <property name="row_spacing">6</property>
                 <child>
-                  <widget class="GtkHScale" id="contrast_slider">
+                  <widget class="GtkButton" id="button1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="adjustment">0 0 255 1 0 0</property>
-                    <property name="digits">0</property>
-                    <property name="value_pos">left</property>
-                    <signal name="value_changed" handler="contrast_change" object="cam"/>
+                    <property name="receives_default">False</property>
+                    <signal name="clicked" handler="capture_func"/>
+                    <child>
+                      <widget class="GtkAlignment" id="alignment4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xscale">0</property>
+                        <property name="yscale">0</property>
+                        <child>
+                          <widget class="GtkHBox" id="hbox33">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="spacing">2</property>
+                            <child>
+                              <widget class="GtkImage" id="image20">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="pixbuf">snap-icon-small.xpm</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label76">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Take Picture</property>
+                                <property name="use_underline">True</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
                   </widget>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkHScale" id="brightness_slider">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="adjustment">0 0 255 1 0 0</property>
-                    <property name="digits">0</property>
-                    <property name="value_pos">left</property>
-                    <signal name="value_changed" handler="brightness_change" object="cam"/>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkHScale" id="color_slider">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="adjustment">0 0 255 1 0 0</property>
-                    <property name="digits">0</property>
-                    <property name="value_pos">left</property>
-                    <signal name="value_changed" handler="colour_change" object="cam"/>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkHScale" id="hue_slider">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="adjustment">0 0 255 1 0 0</property>
-                    <property name="digits">0</property>
-                    <property name="value_pos">left</property>
-                    <signal name="value_changed" handler="hue_change" object="cam"/>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkHScale" id="balance_slider">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="adjustment">0 0 255 1 0 0</property>
-                    <property name="digits">0</property>
-                    <property name="value_pos">left</property>
-                    <signal name="value_changed" handler="wb_change" object="cam"/>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkLabel" id="contrast_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
-                    <property name="label" translatable="yes">Contrast:</property>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options"/>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkLabel" id="brightness_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
-                    <property name="label" translatable="yes">Brightness:</property>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options"/>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkLabel" id="color_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
-                    <property name="label" translatable="yes">Color:</property>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options"/>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkLabel" id="hue_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
-                    <property name="label" translatable="yes">Hue:</property>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options"/>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkLabel" id="balance_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
-                    <property name="label" translatable="yes">White Balance:</property>
-                  </widget>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options"/>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkImage" id="brightness_icon">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="pixbuf">brightness.png</property>
-                  </widget>
-                  <packing>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkImage" id="color_icon">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="pixbuf">colourness.png</property>
-                  </widget>
-                  <packing>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkImage" id="hue_icon">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="pixbuf">stock-tool-hue-saturation-16.png</property>
-                  </widget>
-                  <packing>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkImage" id="balance_icon">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="pixbuf">whiteness.png</property>
-                  </widget>
-                  <packing>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkImage" id="contrast_icon">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="pixbuf">contrast.png</property>
-                  </widget>
-                  <packing>
-                    <property name="x_options">GTK_FILL</property>
-                    <property name="y_options">GTK_FILL</property>
-                  </packing>
                 </child>
               </widget>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">3</property>
+                <property name="pack_type">end</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkTable" id="adjustments_table">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="border_width">12</property>
+            <property name="n_rows">5</property>
+            <property name="n_columns">3</property>
+            <property name="column_spacing">6</property>
+            <property name="row_spacing">6</property>
+            <child>
+              <widget class="GtkHScale" id="contrast_slider">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="adjustment">0 0 255 1 0 0</property>
+                <property name="digits">0</property>
+                <property name="value_pos">left</property>
+                <signal name="value_changed" handler="contrast_change"/>
+              </widget>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="right_attach">3</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkHScale" id="brightness_slider">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="adjustment">0 0 255 1 0 0</property>
+                <property name="digits">0</property>
+                <property name="value_pos">left</property>
+                <signal name="value_changed" handler="brightness_change"/>
+              </widget>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="right_attach">3</property>
+                <property name="top_attach">1</property>
+                <property name="bottom_attach">2</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkHScale" id="color_slider">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="adjustment">0 0 255 1 0 0</property>
+                <property name="digits">0</property>
+                <property name="value_pos">left</property>
+                <signal name="value_changed" handler="colour_change"/>
+              </widget>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="right_attach">3</property>
+                <property name="top_attach">2</property>
+                <property name="bottom_attach">3</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkHScale" id="hue_slider">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="adjustment">0 0 255 1 0 0</property>
+                <property name="digits">0</property>
+                <property name="value_pos">left</property>
+                <signal name="value_changed" handler="hue_change"/>
+              </widget>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="right_attach">3</property>
+                <property name="top_attach">3</property>
+                <property name="bottom_attach">4</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkHScale" id="balance_slider">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="adjustment">0 0 255 1 0 0</property>
+                <property name="digits">0</property>
+                <property name="value_pos">left</property>
+                <signal name="value_changed" handler="wb_change"/>
+              </widget>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="right_attach">3</property>
+                <property name="top_attach">4</property>
+                <property name="bottom_attach">5</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="contrast_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">Contrast:</property>
+              </widget>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options"/>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="brightness_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">Brightness:</property>
+              </widget>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">1</property>
+                <property name="bottom_attach">2</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options"/>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="color_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">Color:</property>
+              </widget>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">2</property>
+                <property name="bottom_attach">3</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options"/>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="hue_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">Hue:</property>
+              </widget>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">3</property>
+                <property name="bottom_attach">4</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options"/>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="balance_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">White Balance:</property>
+              </widget>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">4</property>
+                <property name="bottom_attach">5</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options"/>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkImage" id="brightness_icon">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">brightness.png</property>
+              </widget>
+              <packing>
+                <property name="top_attach">1</property>
+                <property name="bottom_attach">2</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkImage" id="color_icon">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">colourness.png</property>
+              </widget>
+              <packing>
+                <property name="top_attach">2</property>
+                <property name="bottom_attach">3</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkImage" id="hue_icon">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">stock-tool-hue-saturation-16.png</property>
+              </widget>
+              <packing>
+                <property name="top_attach">3</property>
+                <property name="bottom_attach">4</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkImage" id="balance_icon">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">whiteness.png</property>
+              </widget>
+              <packing>
+                <property name="top_attach">4</property>
+                <property name="bottom_attach">5</property>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkImage" id="contrast_icon">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">contrast.png</property>
+              </widget>
+              <packing>
+                <property name="x_options">GTK_FILL</property>
+                <property name="y_options">GTK_FILL</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GnomeAppBar" id="status">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="spacing">4</property>
+            <property name="has_progress">True</property>
+            <property name="has_status">True</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
         </child>
       </widget>
-    </child>
-    <child internal-child="appbar">
-      <widget class="GnomeAppBar" id="status">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="spacing">4</property>
-        <property name="has_progress">True</property>
-        <property name="has_status">True</property>
-      </widget>
-      <packing>
-        <property name="expand">True</property>
-        <property name="fill">True</property>
-      </packing>
     </child>
   </widget>
   <widget class="GtkDialog" id="prefswindow">
@@ -674,7 +661,7 @@
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
                 <property name="use_stock">True</property>
-                <signal name="clicked" handler="prefs_func" object="cam"/>
+                <signal name="clicked" handler="prefs_func"/>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -749,7 +736,7 @@
                                 <property name="receives_default">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="acap_func" object="cam"/>
+                                <signal name="toggled" handler="acap_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -805,7 +792,7 @@
                                             <property name="secondary_icon_sensitive">True</property>
                                             <property name="adjustment">1 1 360 1 10 0</property>
                                             <property name="climb_rate">1</property>
-                                            <signal name="value_changed" handler="interval_change" object="cam"/>
+                                            <signal name="value_changed" handler="interval_change"/>
                                           </widget>
                                           <packing>
                                             <property name="expand">False</property>
@@ -923,7 +910,7 @@
                                 <property name="use_underline">True</property>
                                 <property name="active">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="cap_func" object="cam"/>
+                                <signal name="toggled" handler="cap_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1048,7 +1035,7 @@
                                         <property name="use_underline">True</property>
                                         <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="append_func" object="cam"/>
+                                        <signal name="toggled" handler="append_func"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1064,7 +1051,7 @@
                                         <property name="receives_default">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="ts_func" object="cam"/>
+                                        <signal name="toggled" handler="ts_func"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1155,7 +1142,7 @@
                                 <property name="use_underline">True</property>
                                 <property name="active">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="jpg_func" object="cam"/>
+                                <signal name="toggled" handler="jpg_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1172,7 +1159,7 @@
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
                                 <property name="group">jpgb</property>
-                                <signal name="toggled" handler="png_func" object="cam"/>
+                                <signal name="toggled" handler="png_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1272,7 +1259,7 @@
                                 <property name="receives_default">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="rcap_func" object="cam"/>
+                                <signal name="toggled" handler="rcap_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1481,7 +1468,7 @@
                                         <property name="receives_default">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="rappend_func" object="cam"/>
+                                        <signal name="toggled" handler="rappend_func"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1497,7 +1484,7 @@
                                         <property name="receives_default">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="rts_func" object="cam"/>
+                                        <signal name="toggled" handler="rts_func"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1588,7 +1575,7 @@
                                 <property name="use_underline">True</property>
                                 <property name="active">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="rjpg_func" object="cam"/>
+                                <signal name="toggled" handler="rjpg_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1605,7 +1592,7 @@
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
                                 <property name="group">fjpgb</property>
-                                <signal name="toggled" handler="rpng_func" object="cam"/>
+                                <signal name="toggled" handler="rpng_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1705,7 +1692,7 @@
                                 <property name="receives_default">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="customstring_func" object="cam"/>
+                                <signal name="toggled" handler="customstring_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1795,7 +1782,7 @@
                                 <property name="receives_default">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="drawdate_func" object="cam"/>
+                                <signal name="toggled" handler="drawdate_func"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
