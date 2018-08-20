@@ -102,7 +102,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__objects_1 =
-am_camorama_OBJECTS = callbacks.$(OBJEXT) camorama-display.$(OBJEXT) \
+am_camorama_OBJECTS = callbacks.$(OBJEXT) \
 	camorama-filter-chain.$(OBJEXT) \
 	camorama-filter-laplace.$(OBJEXT) \
 	camorama-filter-mirror.$(OBJEXT) \
@@ -301,8 +301,6 @@ AM_CPPFLAGS = \
 
 camorama_SOURCES = \
 	callbacks.c \
-	camorama-display.c \
-	camorama-display.h \
 	camorama-filter-chain.c \
 	camorama-filter-chain.h \
 	camorama-filter-laplace.c \
@@ -418,7 +416,6 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-display.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-filter-chain.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-filter-laplace.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-filter-mirror.Po@am__quote@

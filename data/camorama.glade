@@ -190,12 +190,11 @@
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">in</property>
                     <child>
-                      <widget class="Custom" id="da">
+                      <widget class="GtkDrawingArea" id="da">
                         <property name="width_request">320</property>
                         <property name="height_request">240</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="string1">CamoDisplay</property>
                       </widget>
                     </child>
                   </widget>
