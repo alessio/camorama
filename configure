@@ -8119,7 +8119,7 @@ $as_echo "$complCFLAGS" >&6; }
 
 
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 libgnomeui-2.0 gtk+-2.0 >= 2.10 gconf-2.0 libglade-2.0"
+pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 libgnomeui-2.0 gtk+-2.0 >= 2.10 gconf-2.0"
 
 
 

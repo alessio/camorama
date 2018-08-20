@@ -121,7 +121,6 @@ main(int argc, char *argv[]) {
 
 	cam->width = x;
 	cam->height = y;
-	glade_gnome_init ();
 
     if (ver) {
         fprintf (stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);
@@ -249,7 +248,12 @@ main(int argc, char *argv[]) {
     //printf("pixfile = %s\n",pixfilename);
     //pixfilename);
     //printf("pixfile = %s\n",pixfilename);
-    cam->xml = glade_xml_new (filename, NULL, NULL);
+    cam->xml = gtk_builder_new ();
+    if (!gtk_builder_add_from_file (cam->xml, filename, NULL)) {
+	error_dialog (_("Couldn't load builder file"));
+        exit(1);
+    }
+
     /*eggtray */
 
     /*tray_icon = egg_tray_icon_new ("Our other cool tray icon");
@@ -261,7 +265,7 @@ main(int argc, char *argv[]) {
      * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface (cam);
 
-    GtkWidget *widget = glade_xml_get_widget(cam->xml, "da");
+    GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
     gtk_widget_show (widget);
     g_signal_connect (widget, "expose_event",
                       G_CALLBACK (draw_camera_callback), cam);
