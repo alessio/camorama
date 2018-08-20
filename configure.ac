@@ -34,7 +34,7 @@ AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.
 
 GNOME_COMPILE_WARNINGS
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 libgnomeui-2.0 gtk+-2.0 >= 2.10 gconf-2.0 libglade-2.0"
+pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 libgnomeui-2.0 gtk+-2.0 >= 2.10 gconf-2.0"
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)

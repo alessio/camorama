@@ -37,7 +37,7 @@ gint (*pt2Function) (cam *);
 void rppm_func (GtkWidget *, cam *);
 void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data);
 void on_about_activate (GtkMenuItem * menuitem, cam *cam);
-void on_show_adjustments_activate (GtkMenuItem * menuitem, cam *);
+void on_show_adjustments_activate (GtkToggleButton * button, cam *);
 void on_show_effects_activate (GtkMenuItem * menuitem, cam *);
 void prefs_func (GtkWidget *, cam *);
 gint io_func (cam *, gint, GdkInputCondition);
