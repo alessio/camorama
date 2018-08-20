@@ -1773,6 +1773,7 @@
 		<widget class="GtkMenuItem" id="menuitem1">
 		  <property name="visible">True</property>
 		  <property name="stock_item">GNOMEUIINFO_MENU_FILE_TREE</property>
+		  <property name="label" translatable="yes">_File</property>
 
 		  <child>
 		    <widget class="GtkMenu" id="menuitem1_menu">
@@ -1808,6 +1809,8 @@
 			<widget class="GtkImageMenuItem" id="quit">
 			  <property name="visible">True</property>
 			  <property name="stock_item">GNOMEUIINFO_MENU_EXIT_ITEM</property>
+			  <property name="label" translatable="yes">_Exit</property>
+
 			  <signal name="activate" handler="on_quit_activate" last_modification_time="Tue, 26 Aug 2003 03:10:03 GMT"/>
 			</widget>
 		      </child>
@@ -1820,6 +1823,7 @@
 		<widget class="GtkMenuItem" id="menuitem3">
 		  <property name="visible">True</property>
 		  <property name="stock_item">GNOMEUIINFO_MENU_EDIT_TREE</property>
+		  <property name="label" translatable="yes">_Edit</property>
 
 		  <child>
 		    <widget class="GtkMenu" id="menuitem3_menu">
@@ -1828,6 +1832,8 @@
 			<widget class="GtkImageMenuItem" id="imagemenuitem3">
 			  <property name="visible">True</property>
 			  <property name="stock_item">GNOMEUIINFO_MENU_PREFERENCES_ITEM</property>
+			  <property name="label" translatable="yes">_Preferences</property>
+
 			  <signal name="activate" handler="on_preferences1_activate" last_modification_time="Wed, 08 Jan 2003 17:08:01 GMT"/>
 			</widget>
 		      </child>
@@ -1840,6 +1846,7 @@
 		<widget class="GtkMenuItem" id="menuitem4">
 		  <property name="visible">True</property>
 		  <property name="stock_item">GNOMEUIINFO_MENU_VIEW_TREE</property>
+		  <property name="label" translatable="yes">_View</property>
 
 		  <child>
 		    <widget class="GtkMenu" id="menuitem4_menu">
@@ -1890,6 +1897,7 @@
 		<widget class="GtkMenuItem" id="menuitem6">
 		  <property name="visible">True</property>
 		  <property name="stock_item">GNOMEUIINFO_MENU_HELP_TREE</property>
+		  <property name="label" translatable="yes">_Help</property>
 
 		  <child>
 		    <widget class="GtkMenu" id="menuitem6_menu">
@@ -1898,6 +1906,7 @@
 			<widget class="GtkImageMenuItem" id="imagemenuitem4">
 			  <property name="visible">True</property>
 			  <property name="stock_item">GNOMEUIINFO_MENU_ABOUT_ITEM</property>
+			  <property name="label" translatable="yes">_About</property>
 			  <signal name="activate" handler="on_about_activate" last_modification_time="Tue, 26 Aug 2003 04:24:46 GMT"/>
 			</widget>
 		      </child>
