@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camora.head.pot\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-21 09:13-0300\n"
+"POT-Creation-Date: 2018-08-21 09:41-0300\n"
 "PO-Revision-Date: 2007-03-01 16:30+0530\n"
 "Last-Translator: sonam pelden <sonaa_peldn@yahoo.com>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Country: Bhutan\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: camorama.appdata.xml.in:6 src/callbacks.c:469
+#: camorama.appdata.xml.in:6 src/callbacks.c:467
 msgid "Camorama"
 msgstr "ཀེ་མོ་ར་མ་"
 
@@ -34,7 +34,7 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:471
+#: camorama.desktop.in:4 src/callbacks.c:469
 msgid "View, alter and save images from a webcam"
 msgstr "ཝེབ་ཀེམ་ཅིག་ལས་  ལྟ་ནི་སོར་ནི་དང་གཟུགས་བརྙན་ཚུ་སྲུང་"
 
@@ -43,202 +43,220 @@ msgstr "ཝེབ་ཀེམ་ཅིག་ལས་  ལྟ་ནི་སོ�
 msgid "camorama.png"
 msgstr "ཀེ་མོ་ར་མ་"
 
-#: data/camorama.glade:9
+#: data/camorama.glade:35
 msgid "Preferences"
 msgstr "དགའ་གདམ་ཚུ་"
 
-#: data/camorama.glade:97
+#: data/camorama.glade:107
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">ཡོངས་ཁྱབ་</span>"
 
-#: data/camorama.glade:160
+#: data/camorama.glade:139
 msgid "Automatic Capture"
 msgstr "རང་བཞིན་གཡི་འཛིན་བཟུང་"
 
-#: data/camorama.glade:185 data/camorama.glade:382 data/camorama.glade:439
-#: data/camorama.glade:709 data/camorama.glade:875 data/camorama.glade:932
-#: data/camorama.glade:1336 data/camorama.glade:1502 data/camorama.glade:1559
+#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
+#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
+#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
 msgid "     "
 msgstr "     "
 
-#: data/camorama.glade:222
+#: data/camorama.glade:183
 msgid "Capture Interval (in minutes):"
 msgstr "བར་མཚམས་འཛིན་བཟུང་འབད་ (སྐར་མའི་ནང་):"
 
-#: data/camorama.glade:315
+#: data/camorama.glade:257
 msgid "General"
 msgstr "ཡོངས་ཁྱབ་"
 
-#: data/camorama.glade:351
+#: data/camorama.glade:279
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">ཉེ་གནས་འཛིན་བཟུང་</span>"
 
-#: data/camorama.glade:414
+#: data/camorama.glade:311
 msgid "_Enable local capture"
 msgstr "ཉེ་གནས་འཛིན་བཟུང་ལྕོགས་ཅན་བཟོ། (_)"
 
-#: data/camorama.glade:479
+#: data/camorama.glade:360
 msgid "_Directory for captured pics:"
 msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་ སྣོད་ཐོ: (_D)"
 
-#: data/camorama.glade:508
+#: data/camorama.glade:373
 msgid "_Filename for pictures:"
 msgstr "པར་ཚུ་གི་དོན་ལུ་ཡིག་སྣོད་མིང་: (_F)"
 
-#: data/camorama.glade:541
+#: data/camorama.glade:388
 msgid "webcam-capture"
 msgstr "ཝེབ་ཀེམ-འཛིན་བཟུང་"
 
-#: data/camorama.glade:571
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
+#: data/camorama.glade:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "སྣོད་ཐོ་སྲུང་:"
 
-#: data/camorama.glade:598 data/camorama.glade:1225
+#: data/camorama.glade:424 data/camorama.glade:857
 msgid "Append time to filename"
 msgstr "ཡིག་སྣོད་མིང་ལུ་  དུས་ཡུན་མཇུག་བསྣོན་འབད་"
 
-#: data/camorama.glade:618 data/camorama.glade:1245
+#: data/camorama.glade:441 data/camorama.glade:873
 msgid "Add a timestamp to captured images"
 msgstr "གཟུགས་བརྙན་ཚུ་འཛིན་བཟུང་འབད་ནི་ལུ་  དུས་བཀོད་ཅིག་ཁ་སྐོང་བརྐྱབ་"
 
-#: data/camorama.glade:678 data/camorama.glade:1305
+#: data/camorama.glade:500 data/camorama.glade:932
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">གཟུགས་བརྙན་དབྱེ་བ་</span>"
 
-#: data/camorama.glade:741 data/camorama.glade:1368
+#: data/camorama.glade:531 data/camorama.glade:963
 msgid "Save files in jpeg format"
 msgstr "ཡིག་སྣོད་ཚུ་ཇེ་པི་ཨི་ཇི་རྩ་སྒྲིག་ནང་སྲུང་"
 
-#: data/camorama.glade:761 data/camorama.glade:1388
+#: data/camorama.glade:548 data/camorama.glade:980
 msgid "Save files in png format"
 msgstr "ཡིག་སྣོད་ཚུ་པི་ཨེན་ཇི་རྩ་སྒྲིག་ནང་སྲུང་"
 
-#: data/camorama.glade:808
+#: data/camorama.glade:593
 msgid "Local Capture"
 msgstr "ཉེ་གནས་འཛིན་བཟུང་"
 
-#: data/camorama.glade:844
+#: data/camorama.glade:616
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">ཐག་རིང་གི་འཛིན་བཟུང་</span>"
 
-#: data/camorama.glade:907
+#: data/camorama.glade:648
 msgid "_Enable remote capture"
 msgstr "ཐག་རིང་གི་འཛིན་བཟུང་ལྕོགས་ཅན་བཟོ། (_E)"
 
-#: data/camorama.glade:972
+#: data/camorama.glade:696
 msgid "FTP server: "
 msgstr "ཨེཕ་ཊི་པི་སར་བར:"
 
-#: data/camorama.glade:1000
+#: data/camorama.glade:708
 msgid "Username:"
 msgstr "ལག་ལེན་པའི་མིང་:"
 
-#: data/camorama.glade:1028
+#: data/camorama.glade:722
 msgid "Password:"
 msgstr "ཆོག་ཡིག:"
 
-#: data/camorama.glade:1056
+#: data/camorama.glade:736
 msgid "Save directory:"
 msgstr "སྣོད་ཐོ་སྲུང་:"
 
-#: data/camorama.glade:1084
+#: data/camorama.glade:750
 msgid "Filename"
 msgstr "ཡིག་སྣོད་མིང་"
 
-#: data/camorama.glade:1116
+#: data/camorama.glade:763
 msgid "ftp.yourdomain.org"
 msgstr "ftp.yourdomain.org"
 
-#: data/camorama.glade:1137
+#: data/camorama.glade:779
 msgid "your-username"
 msgstr "ཁྱོད་རའི་ལག་ལེན་པའི་མིང་"
 
-#: data/camorama.glade:1158
+#: data/camorama.glade:798
 msgid "your-password"
 msgstr "ཁྱོད་རའི་ཆོག་ཡིག་"
 
-#: data/camorama.glade:1179
+#: data/camorama.glade:816
 msgid "path/to/save/to"
 msgstr "འགྲུལ་ལམ་/ལུ་/སྲུང་/ལུ་"
 
-#: data/camorama.glade:1200
+#: data/camorama.glade:834
 msgid "webcamshot"
 msgstr "ཝེབ་ཀེམ་ཤོཊི་"
 
-#: data/camorama.glade:1435
+#: data/camorama.glade:1025
 msgid "Remote Capture"
 msgstr "ཐག་རིང་གི་འཛིན་བཟུང་"
 
-#: data/camorama.glade:1471
+#: data/camorama.glade:1048
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">དུས་བཀོད་</span>"
 
-#: data/camorama.glade:1534
+#: data/camorama.glade:1080
 msgid "Use custom string"
 msgstr "སྲོལ་སྒྲིག་ཡིག་རྒྱུན་ལག་ལེན་འཐབ་"
 
-#: data/camorama.glade:1596
+#: data/camorama.glade:1124
 msgid "String:"
 msgstr "ཡིག་རྒྱུན:"
 
-#: data/camorama.glade:1662
+#: data/camorama.glade:1170
 msgid "Draw date and time"
 msgstr "ཚེས་གྲངས་དང་ཆུ་ཚོད་འབྲི་"
 
-#: data/camorama.glade:1708
+#: data/camorama.glade:1214
 msgid "Timestamp"
 msgstr "དུས་བཀོད་"
 
-#: data/camorama.glade:1740
+#: data/camorama.glade:1243
 msgid "Camorama-libglade"
 msgstr "ཀེ་མོ་ར་མ་-ལིབ་གེལེཌི་"
 
-#: data/camorama.glade:1783 data/camorama.glade:2166
+#: data/camorama.glade:1260
+#, fuzzy
+msgid "_File"
+msgstr "ཡིག་སྣོད་མིང་"
+
+#: data/camorama.glade:1267 data/camorama.glade:1567
 msgid "Take Picture"
 msgstr "པར་བཏབ་"
 
-#: data/camorama.glade:1850 data/camorama.glade:2074
+#: data/camorama.glade:1302
+msgid "_Edit"
+msgstr ""
+
+#: data/camorama.glade:1326
+msgid "_View"
+msgstr ""
+
+#: data/camorama.glade:1335 data/camorama.glade:1508
 msgid "Show Adjustments"
 msgstr "བདེ་སྒྲིག་ཚུ་སྟོན་"
 
-#: data/camorama.glade:1861
+#: data/camorama.glade:1345
 msgid "Show Effects"
 msgstr "ནུས་པ་ཚུ་སྟོན་"
 
-#: data/camorama.glade:1878
+#: data/camorama.glade:1361
 msgid "Small"
 msgstr "ཆུང་ཀུ་"
 
-#: data/camorama.glade:2331
+#: data/camorama.glade:1374
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.glade:1698
 msgid "Contrast:"
 msgstr "ཁྱད་པར:"
 
-#: data/camorama.glade:2359
+#: data/camorama.glade:1712
 msgid "Brightness:"
 msgstr "དཀར་མདངས:"
 
-#: data/camorama.glade:2387
+#: data/camorama.glade:1728
 msgid "Color:"
 msgstr "ཚོས་གཞི:"
 
-#: data/camorama.glade:2415
+#: data/camorama.glade:1744
 msgid "Hue:"
 msgstr "ཚོན་མདངས:"
 
-#: data/camorama.glade:2443
+#: data/camorama.glade:1760
 msgid "White Balance:"
 msgstr "ཚད་སྙོམས་དཀརཔོ:"
 
-#: src/callbacks.c:460
+#: src/callbacks.c:458
 msgid "translator_credits"
 msgstr "སྐད་བསྒྱུར་པའི་ངོ་བསྟོད་ཚུ། (_c)"
 
-#: src/callbacks.c:583
+#: src/callbacks.c:582
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:703
+#: src/callbacks.c:702
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -249,7 +267,7 @@ msgstr ""
 "ཐག་རིང་གི་འཛིན་བཟུང་: %d\n"
 "བར་མཚམས་འཛིན་བཟུང་འབད: %d"
 
-#: src/callbacks.c:712
+#: src/callbacks.c:711
 msgid "Automatic Capture Disabled"
 msgstr "རང་བཞིན་གྱི་འཛིན་བཟུང་ལྕོགས་མེད་བཟོ་ཡོདཔ་"
 
@@ -267,7 +285,7 @@ msgstr "ངོ་འཆར་"
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:14
+#: src/camorama-stock-items.c:12
 msgid "Webcam"
 msgstr "ཝེབ་ཀེམ་"
 
@@ -275,7 +293,7 @@ msgstr "ཝེབ་ཀེམ་"
 msgid "_Add Filter"
 msgstr "ཚགས་མ་ཁ་སྐོང་བརྐྱབ། (_A)"
 
-#: src/camorama-window.c:204
+#: src/camorama-window.c:206
 msgid "Effects"
 msgstr "ནུས་ཅན་ཚུ་"
 
@@ -359,47 +377,47 @@ msgstr "མོ་ནོ་ཀོརོམ་  (ལྗིད་ཚད་)"
 msgid "Sobel"
 msgstr "སོ་བེལ་"
 
-#: src/main.c:80
+#: src/main.c:73
 msgid "show version and exit"
 msgstr "ཐོན་རིམ་དང་ཕྱིར་ཐོན་སྟོན་"
 
-#: src/main.c:82
+#: src/main.c:75
 msgid "v4l device to use"
 msgstr "v4l ལག་ལེན་འཐབ་ནི་ཨིན་པའི་ཐབས་འཕྲུལ་"
 
-#: src/main.c:84
+#: src/main.c:77
 msgid "enable debugging code"
 msgstr "རྐྱེན་སེལ་འབད་ནིའི་ཨང་རྟགས་ལྕོགས་ཅན་བཟོ་"
 
-#: src/main.c:85
+#: src/main.c:78
 msgid "capture width"
 msgstr "རྒྱ་ཚད་འཛནི་བཟུང་འབད་"
 
-#: src/main.c:87
+#: src/main.c:80
 msgid "capture height"
 msgstr "མཐོ་ཚད་འཛིན་བཟུང་འབད་"
 
-#: src/main.c:90
+#: src/main.c:83
 msgid "maximum capture size"
 msgstr "འཛིན་བཟུང་ཚད་མང་མཐའ་"
 
-#: src/main.c:92
+#: src/main.c:85
 msgid "minimum capture size"
 msgstr "འཛིན་བཟུང་ཚད་ཉུང་མཐའ་"
 
-#: src/main.c:94
+#: src/main.c:87
 msgid "middle capture size"
 msgstr "འཛིན་བཟུང་ཚད་བར་མ་"
 
-#: src/main.c:96
+#: src/main.c:89
 msgid "use read() rather than mmap()"
 msgstr "ཨེམ་ཨེམ་ཨེ་པི་()མ་ཡིན་པ་ལྷག་()འདི་ལག་ལེན་འཐབ་"
 
-#: src/main.c:121
+#: src/main.c:114
 msgid "camorama"
 msgstr "ཀེ་མོ་ར་མ་"
 
-#: src/main.c:137
+#: src/main.c:126
 #, c-format
 msgid ""
 "\n"
@@ -412,17 +430,22 @@ msgstr ""
 "ཀེ་མོ་ར་མ་ཐོན་རིམ་%s\n"
 "\n"
 
-#: src/main.c:254
+#: src/main.c:243
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "ངོས་འདྲ་བའི་ཡིག་སྣོད་ (camorama.glade)ངོ་མ་འདི་ཐོབ་མ་ཚུགས།"
+
+#: src/main.c:253
+#, fuzzy
+msgid "Couldn't load builder file"
+msgstr "པར་ཁྲ་ཡིག་སྣོད་ཐོབ་མ་ཚུགས: %s"
 
 #: src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "པར་ཁྲ་ཡིག་སྣོད་ཐོབ་མ་ཚུགས: %s"
 
-#: src/v4l.c:104 src/v4l.c:208 src/v4l.c:289 src/v4l.c:358 src/v4l.c:376
-#: src/v4l.c:396
+#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
+#: src/v4l.c:412
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -431,40 +454,43 @@ msgstr ""
 "ཝི་ཌིའོ་ཐབས་འཕྲུལ་(%s)ལུ་མཐུད་མ་ཚུགས།\n"
 "མཐུད་ལམ་ཞིབ་དཔྱད་འབད།"
 
-#: src/v4l.c:424
+#: src/v4l.c:440
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:439
+#: src/v4l.c:455
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:452
+#: src/v4l.c:468
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:465
+#: src/v4l.c:481
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:474
+#: src/v4l.c:490
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:502
+#: src/v4l.c:518
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:562
+#: src/v4l.c:578
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.gnome-desktop"
 
 #~ msgid "Large"
 #~ msgstr "སྦོམ་"

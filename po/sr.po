@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-21 09:13-0300\n"
+"POT-Creation-Date: 2018-08-21 09:41-0300\n"
 "PO-Revision-Date: 2003-08-27 13:43+0200\n"
 "Last-Translator: Дејан Матијевић <dejan@ns.sympatico.ca>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: camorama.appdata.xml.in:6 src/callbacks.c:469
+#: camorama.appdata.xml.in:6 src/callbacks.c:467
 msgid "Camorama"
 msgstr "Каморама"
 
@@ -32,7 +32,7 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:471
+#: camorama.desktop.in:4 src/callbacks.c:469
 msgid "View, alter and save images from a webcam"
 msgstr "Погледај, измени и сачувај снимке са веб камере"
 
@@ -41,205 +41,223 @@ msgstr "Погледај, измени и сачувај снимке са ве�
 msgid "camorama.png"
 msgstr "Каморама"
 
-#: data/camorama.glade:9
+#: data/camorama.glade:35
 msgid "Preferences"
 msgstr "Карактеристике"
 
-#: data/camorama.glade:97
+#: data/camorama.glade:107
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Опште</span>"
 
-#: data/camorama.glade:160
+#: data/camorama.glade:139
 msgid "Automatic Capture"
 msgstr "Само снимање"
 
-#: data/camorama.glade:185 data/camorama.glade:382 data/camorama.glade:439
-#: data/camorama.glade:709 data/camorama.glade:875 data/camorama.glade:932
-#: data/camorama.glade:1336 data/camorama.glade:1502 data/camorama.glade:1559
+#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
+#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
+#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
 msgid "     "
 msgstr "     "
 
-#: data/camorama.glade:222
+#: data/camorama.glade:183
 msgid "Capture Interval (in minutes):"
 msgstr "Трајање снимања (у минутама):"
 
-#: data/camorama.glade:315
+#: data/camorama.glade:257
 msgid "General"
 msgstr "Опште"
 
-#: data/camorama.glade:351
+#: data/camorama.glade:279
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">Локални снимци</span>"
 
-#: data/camorama.glade:414
+#: data/camorama.glade:311
 msgid "_Enable local capture"
 msgstr "Омогући локално сликање"
 
-#: data/camorama.glade:479
+#: data/camorama.glade:360
 msgid "_Directory for captured pics:"
 msgstr "Директоријум за снимљене слике"
 
-#: data/camorama.glade:508
+#: data/camorama.glade:373
 msgid "_Filename for pictures:"
 msgstr "Име датотеке ѕа слике:"
 
-#: data/camorama.glade:541
+#: data/camorama.glade:388
 msgid "webcam-capture"
 msgstr "Снимање веб камером"
 
-#: data/camorama.glade:571
-msgid "~/.gnome-desktop"
-msgstr "~/.ГНОМ - радно окружење"
+#: data/camorama.glade:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "Сачувајте фајлове у директоријум:"
 
-#: data/camorama.glade:598 data/camorama.glade:1225
+#: data/camorama.glade:424 data/camorama.glade:857
 msgid "Append time to filename"
 msgstr "Додати време датотеци"
 
-#: data/camorama.glade:618 data/camorama.glade:1245
+#: data/camorama.glade:441 data/camorama.glade:873
 msgid "Add a timestamp to captured images"
 msgstr "Додајте временски тренутак сликама"
 
-#: data/camorama.glade:678 data/camorama.glade:1305
+#: data/camorama.glade:500 data/camorama.glade:932
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Облик снимка</span>"
 
-#: data/camorama.glade:741 data/camorama.glade:1368
+#: data/camorama.glade:531 data/camorama.glade:963
 msgid "Save files in jpeg format"
 msgstr "Сачувајте фајлове у JPEG облику"
 
-#: data/camorama.glade:761 data/camorama.glade:1388
+#: data/camorama.glade:548 data/camorama.glade:980
 msgid "Save files in png format"
 msgstr "Сачувајте фајлове у PNG облику"
 
-#: data/camorama.glade:808
+#: data/camorama.glade:593
 msgid "Local Capture"
 msgstr "Локалне датотеке"
 
-#: data/camorama.glade:844
+#: data/camorama.glade:616
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">Даљински снимци</span>"
 
-#: data/camorama.glade:907
+#: data/camorama.glade:648
 msgid "_Enable remote capture"
 msgstr "Омогући даљинско сликање"
 
-#: data/camorama.glade:972
+#: data/camorama.glade:696
 msgid "FTP server: "
 msgstr "ФТП сервер:"
 
-#: data/camorama.glade:1000
+#: data/camorama.glade:708
 msgid "Username:"
 msgstr "Корисник:"
 
-#: data/camorama.glade:1028
+#: data/camorama.glade:722
 msgid "Password:"
 msgstr "Лозинка:"
 
-#: data/camorama.glade:1056
+#: data/camorama.glade:736
 msgid "Save directory:"
 msgstr "Сачувајте фајлове у директоријум:"
 
-#: data/camorama.glade:1084
+#: data/camorama.glade:750
 msgid "Filename"
 msgstr "Име датотеке"
 
-#: data/camorama.glade:1116
+#: data/camorama.glade:763
 msgid "ftp.yourdomain.org"
 msgstr "ftp.ваш_домен.org"
 
-#: data/camorama.glade:1137
+#: data/camorama.glade:779
 msgid "your-username"
 msgstr "Ваше корисничко име"
 
-#: data/camorama.glade:1158
+#: data/camorama.glade:798
 msgid "your-password"
 msgstr "Ваша лозинка"
 
-#: data/camorama.glade:1179
+#: data/camorama.glade:816
 msgid "path/to/save/to"
 msgstr "Сачувај поруку у "
 
-#: data/camorama.glade:1200
+#: data/camorama.glade:834
 msgid "webcamshot"
 msgstr "снимак веб камером"
 
-#: data/camorama.glade:1435
+#: data/camorama.glade:1025
 msgid "Remote Capture"
 msgstr "Даљинско снимање"
 
-#: data/camorama.glade:1471
+#: data/camorama.glade:1048
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">Временски тренутак</span>"
 
-#: data/camorama.glade:1534
+#: data/camorama.glade:1080
 msgid "Use custom string"
 msgstr "Употреби произвољан низ"
 
-#: data/camorama.glade:1596
+#: data/camorama.glade:1124
 msgid "String:"
 msgstr "Низ:"
 
-#: data/camorama.glade:1662
+#: data/camorama.glade:1170
 msgid "Draw date and time"
 msgstr "Допиши датум и време"
 
-#: data/camorama.glade:1708
+#: data/camorama.glade:1214
 msgid "Timestamp"
 msgstr "Ознака тренутка"
 
-#: data/camorama.glade:1740
+#: data/camorama.glade:1243
 msgid "Camorama-libglade"
 msgstr "Каморама - либгладе"
 
-#: data/camorama.glade:1783 data/camorama.glade:2166
+#: data/camorama.glade:1260
+#, fuzzy
+msgid "_File"
+msgstr "Име датотеке"
+
+#: data/camorama.glade:1267 data/camorama.glade:1567
 msgid "Take Picture"
 msgstr "Направи слику"
 
-#: data/camorama.glade:1850 data/camorama.glade:2074
+#: data/camorama.glade:1302
+msgid "_Edit"
+msgstr ""
+
+#: data/camorama.glade:1326
+msgid "_View"
+msgstr ""
+
+#: data/camorama.glade:1335 data/camorama.glade:1508
 msgid "Show Adjustments"
 msgstr "Прикажи подешавања"
 
-#: data/camorama.glade:1861
+#: data/camorama.glade:1345
 msgid "Show Effects"
 msgstr "Покажи ефекте"
 
-#: data/camorama.glade:1878
+#: data/camorama.glade:1361
 msgid "Small"
 msgstr "Мали"
 
-#: data/camorama.glade:2331
+#: data/camorama.glade:1374
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.glade:1698
 msgid "Contrast:"
 msgstr "Контраст:"
 
-#: data/camorama.glade:2359
+#: data/camorama.glade:1712
 msgid "Brightness:"
 msgstr "Осветљење:"
 
-#: data/camorama.glade:2387
+#: data/camorama.glade:1728
 msgid "Color:"
 msgstr "Боја:"
 
-#: data/camorama.glade:2415
+#: data/camorama.glade:1744
 msgid "Hue:"
 msgstr "Нијанса:"
 
-#: data/camorama.glade:2443
+#: data/camorama.glade:1760
 msgid "White Balance:"
 msgstr "Подешавање белине:"
 
-#: src/callbacks.c:460
+#: src/callbacks.c:458
 msgid "translator_credits"
 msgstr ""
 "Дејан Матијевић <dejan@ns.sympatico.ca>\n"
 "\n"
 "Prevod.org — превод на српски језик."
 
-#: src/callbacks.c:583
+#: src/callbacks.c:582
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:703
+#: src/callbacks.c:702
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -247,7 +265,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:712
+#: src/callbacks.c:711
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "Само снимање"
@@ -267,7 +285,7 @@ msgstr "Слика из огледала"
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:14
+#: src/camorama-stock-items.c:12
 #, fuzzy
 msgid "Webcam"
 msgstr "снимак веб камером"
@@ -276,7 +294,7 @@ msgstr "снимак веб камером"
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:204
+#: src/camorama-window.c:206
 #, fuzzy
 msgid "Effects"
 msgstr "Покажи ефекте"
@@ -364,48 +382,48 @@ msgstr ""
 msgid "Sobel"
 msgstr "Собелова"
 
-#: src/main.c:80
+#: src/main.c:73
 msgid "show version and exit"
 msgstr "Покажи верзију и изађи"
 
-#: src/main.c:82
+#: src/main.c:75
 msgid "v4l device to use"
 msgstr "Употреби апарат В4Л"
 
-#: src/main.c:84
+#: src/main.c:77
 #, fuzzy
 msgid "enable debugging code"
 msgstr "Омогући код проналажења грешака"
 
-#: src/main.c:85
+#: src/main.c:78
 msgid "capture width"
 msgstr "Ширина снимака"
 
-#: src/main.c:87
+#: src/main.c:80
 msgid "capture height"
 msgstr "Висина снимка"
 
-#: src/main.c:90
+#: src/main.c:83
 msgid "maximum capture size"
 msgstr "Највећа димензија снимка"
 
-#: src/main.c:92
+#: src/main.c:85
 msgid "minimum capture size"
 msgstr "Најмања димензија снимка"
 
-#: src/main.c:94
+#: src/main.c:87
 msgid "middle capture size"
 msgstr "Средња димензија снимка"
 
-#: src/main.c:96
+#: src/main.c:89
 msgid "use read() rather than mmap()"
 msgstr "Користи read() боље него mmap()"
 
-#: src/main.c:121
+#: src/main.c:114
 msgid "camorama"
 msgstr "Каморама"
 
-#: src/main.c:137
+#: src/main.c:126
 #, c-format
 msgid ""
 "\n"
@@ -418,17 +436,22 @@ msgstr ""
 "Каморама верзија %s\n"
 "\n"
 
-#: src/main.c:254
+#: src/main.c:243
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nemoguће наћи главну приступну датотеку (camorama.glade)."
+
+#: src/main.c:253
+#, fuzzy
+msgid "Couldn't load builder file"
+msgstr "Немогуће наћи пиксмап датотеку: %s"
 
 #: src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Немогуће наћи пиксмап датотеку: %s"
 
-#: src/v4l.c:104 src/v4l.c:208 src/v4l.c:289 src/v4l.c:358 src/v4l.c:376
-#: src/v4l.c:396
+#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
+#: src/v4l.c:412
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -437,40 +460,43 @@ msgstr ""
 "Немогуће се конектовати на видео апарат (%s).\n"
 "Проверите конекцију."
 
-#: src/v4l.c:424
+#: src/v4l.c:440
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:439
+#: src/v4l.c:455
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:452
+#: src/v4l.c:468
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:465
+#: src/v4l.c:481
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:474
+#: src/v4l.c:490
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:502
+#: src/v4l.c:518
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:562
+#: src/v4l.c:578
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.ГНОМ - радно окружење"
 
 #~ msgid "*"
 #~ msgstr "*"
