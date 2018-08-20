@@ -109,8 +109,7 @@ am_camorama_OBJECTS = callbacks.$(OBJEXT) camorama-display.$(OBJEXT) \
 	camorama-filter-reichardt.$(OBJEXT) \
 	camorama-stock-items.$(OBJEXT) camorama-window.$(OBJEXT) \
 	filter.$(OBJEXT) main.$(OBJEXT) support.$(OBJEXT) \
-	v4l.$(OBJEXT) fileio.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_1)
+	v4l.$(OBJEXT) fileio.$(OBJEXT) $(am__objects_1)
 camorama_OBJECTS = $(am_camorama_OBJECTS)
 am__DEPENDENCIES_1 =
 camorama_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -300,7 +299,6 @@ AM_CPPFLAGS = \
 	-g \
 	$(NULL)
 
-BUILT_SOURCES = camorama-stock-images.h
 camorama_SOURCES = \
 	callbacks.c \
 	camorama-display.c \
@@ -333,8 +331,7 @@ camorama_SOURCES = \
 
 camorama_LDADD = $(PACKAGE_LIBS) -lv4l2 -lm
 DISTCLEANFILES = $(BUILT_SOURCES)
-all: $(BUILT_SOURCES)
-	$(MAKE) $(AM_MAKEFLAGS) all-am
+all: all-am
 
 .SUFFIXES:
 .SUFFIXES: .c .o .obj
@@ -531,15 +528,13 @@ distdir: $(DISTFILES)
 	  fi; \
 	done
 check-am: all-am
-check: $(BUILT_SOURCES)
-	$(MAKE) $(AM_MAKEFLAGS) check-am
+check: check-am
 all-am: Makefile $(PROGRAMS)
 installdirs:
 	for dir in "$(DESTDIR)$(bindir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
-install: $(BUILT_SOURCES)
-	$(MAKE) $(AM_MAKEFLAGS) install-am
+install: install-am
 install-exec: install-exec-am
 install-data: install-data-am
 uninstall: uninstall-am
@@ -570,7 +565,6 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
@@ -640,7 +634,7 @@ ps-am:
 
 uninstall-am: uninstall-binPROGRAMS
 
-.MAKE: all check install install-am install-strip
+.MAKE: install-am install-strip
 
 .PHONY: CTAGS GTAGS TAGS all all-am check check-am clean \
 	clean-binPROGRAMS clean-generic cscopelist-am ctags ctags-am \
@@ -658,12 +652,6 @@ uninstall-am: uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
-
-camorama-stock-images.h:
-	gdk-pixbuf-csource --raw --build-list \
-		camorama_webcam_16 ../pixmaps/camorama-webcam-16.png \
-		camorama_webcam_24 ../pixmaps/camorama-webcam-24.png \
-	> $@ || (rm -f $@)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

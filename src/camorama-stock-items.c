@@ -4,18 +4,17 @@
 #include <config.h>
 #endif
 
+#include <gnome.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-
-#include "camorama-stock-images.h"
 
 static GtkStockItem camorama_items[] = {
 	{CAMORAMA_STOCK_WEBCAM, N_("Webcam"), 0, 0, "camorama"}
 };
 
 static void
-add_default_image(const gchar* stock_id, gint size, const guchar* inline_data) {
-	GdkPixbuf* buf = gdk_pixbuf_new_from_inline(-1, inline_data, FALSE, NULL);
+add_default_image(const gchar* stock_id, gint size, gchar *pixfilename) {
+	GdkPixbuf* buf = gdk_pixbuf_new_from_file(pixfilename, NULL);
 	g_return_if_fail(buf);
 
 	gtk_icon_theme_add_builtin_icon(stock_id, size, buf);
@@ -24,6 +23,7 @@ add_default_image(const gchar* stock_id, gint size, const guchar* inline_data) {
 
 void
 camorama_stock_init(void) {
+	gchar *pixfilename;
 	GtkIconFactory* factory = gtk_icon_factory_new();
 	GtkIconSet    * set = gtk_icon_set_new ();
 	GtkIconSource * source = gtk_icon_source_new();
@@ -39,8 +39,11 @@ camorama_stock_init(void) {
 
 	gtk_icon_factory_add(factory, CAMORAMA_STOCK_WEBCAM, set);
 
-	add_default_image(CAMORAMA_STOCK_WEBCAM, 16, camorama_webcam_16);
-	add_default_image(CAMORAMA_STOCK_WEBCAM, 24, camorama_webcam_24);
+	pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama-webcam-16.png", TRUE, NULL);
+	add_default_image(CAMORAMA_STOCK_WEBCAM, 16, pixfilename);
+
+	pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama-webcam-24.png", TRUE, NULL);
+	add_default_image(CAMORAMA_STOCK_WEBCAM, 24, pixfilename);
 
 	gtk_icon_factory_add_default(factory);
 	

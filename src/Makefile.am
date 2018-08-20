@@ -7,7 +7,6 @@ AM_CPPFLAGS=\
 
 bin_PROGRAMS = camorama
 
-BUILT_SOURCES    = camorama-stock-images.h
 camorama_SOURCES = \
 	callbacks.c \
 	camorama-display.c \
@@ -40,10 +39,4 @@ camorama_SOURCES = \
 camorama_LDADD = $(PACKAGE_LIBS) -lv4l2 -lm
 
 DISTCLEANFILES=$(BUILT_SOURCES)
-
-camorama-stock-images.h:
-	gdk-pixbuf-csource --raw --build-list \
-		camorama_webcam_16 ../pixmaps/camorama-webcam-16.png \
-		camorama_webcam_24 ../pixmaps/camorama-webcam-24.png \
-	> $@ || (rm -f $@)
 

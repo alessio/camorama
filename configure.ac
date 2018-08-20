@@ -49,7 +49,6 @@ AC_OUTPUT([
 	src/Makefile
 	data/Makefile
 	data/camorama.schemas
-	pixmaps/Makefile
 	po/Makefile.in
 ])
 

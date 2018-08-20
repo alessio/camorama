@@ -6,7 +6,7 @@ appdatadir = $(datadir)/metainfo
 appdata_in_files = camorama.appdata.xml.in
 nodist_appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 
-SUBDIRS = src pixmaps data po
+SUBDIRS = src data po
 
 EXTRA_DIST =                     \
 	autogen.sh               \
