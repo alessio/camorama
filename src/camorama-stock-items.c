@@ -5,8 +5,7 @@
 #endif
 
 #include <glib/gi18n.h>
-#include <gtk/gtkiconfactory.h>
-#include <gtk/gtkstock.h>
+#include <gtk/gtk.h>
 
 #include "camorama-stock-images.h"
 

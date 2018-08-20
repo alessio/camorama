@@ -24,7 +24,7 @@
 #ifndef CAMORAMA_FILTER_CHAIN_H
 #define CAMORAMA_FILTER_CHAIN_H
 
-#include <gtk/gtkliststore.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 

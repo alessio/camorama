@@ -24,7 +24,7 @@
 #ifndef CAMORAMA_DISPLAY_H
 #define CAMORAMA_DISPLAY_H
 
-#include <gtk/gtkdrawingarea.h>
+#include <gtk/gtk.h>
 
 #include "v4l.h"
 
