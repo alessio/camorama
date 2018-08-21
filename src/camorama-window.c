@@ -39,6 +39,10 @@
 
 static GQuark menu_item_filter_type = 0;
 
+/* Supported URI protocol schemas */
+const gchar * const protos[] = { "ftp", "sftp", "smb" };
+
+
 static void
 add_filter_clicked(GtkMenuItem* menuitem, CamoramaFilterChain* chain) {
 	GType filter_type = GPOINTER_TO_SIZE(g_object_get_qdata(G_OBJECT(menuitem), menu_item_filter_type));
@@ -187,9 +191,10 @@ static guint resolution_signals[8] = { 0 };
 
 void
 load_interface(cam* cam) {
+    int i;
     gchar *title;
     GdkPixbuf *logo = NULL;
-    GtkCellRenderer* cell;
+    GtkCellRenderer*     cell;
     GtkWidget *small_res, *new_res;
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "main_window"));
@@ -275,8 +280,6 @@ load_interface(cam* cam) {
     get_supported_resolutions(cam);
 
     if (cam->n_res > 0) {
-        int i;
-
         for (i = 0; i < cam->n_res; i++) {
             char name[32];
 
@@ -459,22 +462,36 @@ load_interface(cam* cam) {
                                   cam->timestamp);
 
     /* remote */
-    login_entry = GTK_WIDGET(gtk_builder_get_object(cam->xml, "login_entry"));
     host_entry = GTK_WIDGET(gtk_builder_get_object(cam->xml, "host_entry"));
-    pw_entry = GTK_WIDGET(gtk_builder_get_object(cam->xml, "pw_entry"));
-    directory_entry = GTK_WIDGET(gtk_builder_get_object(cam->xml, "directory_entry"));
+    protocol = GTK_WIDGET(gtk_builder_get_object(cam->xml, "remote_protocol"));
+    rdir_entry = GTK_WIDGET(gtk_builder_get_object(cam->xml, "rdir_entry"));
     filename_entry = GTK_WIDGET(gtk_builder_get_object(cam->xml, "filename_entry"));
-    gtk_entry_set_text (GTK_ENTRY (host_entry), cam->rhost);
-    gtk_entry_set_text (GTK_ENTRY (login_entry), cam->rlogin);
-    gtk_entry_set_text (GTK_ENTRY (pw_entry), cam->rpw);
-    gtk_entry_set_text (GTK_ENTRY (directory_entry), cam->rpixdir);
+
+    gtk_entry_set_text (GTK_ENTRY (host_entry), cam->host);
+    gtk_entry_set_text (GTK_ENTRY (rdir_entry), cam->rdir);
     gtk_entry_set_text (GTK_ENTRY (filename_entry), cam->rcapturefile);
+
+    if (!cam->proto)
+        cam->proto = g_strdup(protos[0]);
+
+    for (i = 0; i < G_N_ELEMENTS (protos); i++) {
+        gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT(protocol), protos[i]);
+        if (!strcmp(cam->proto, protos[i]))
+            gtk_combo_box_set_active(GTK_COMBO_BOX(protocol), i);
+    }
+
+    if (cam->host && cam->proto && cam->rdir) {
+        cam->uri = volume_uri(cam->host, cam->proto, cam->rdir);
+        mount_volume(cam);
+    } else {
+        cam->uri = NULL;
+    }
 
     g_signal_connect (gtk_builder_get_object(cam->xml, "timecb"),
                       "toggled", G_CALLBACK (rappend_func), cam);
     gtk_toggle_button_set_active ((GtkToggleButton *)
                                   gtk_builder_get_object (cam->xml,
-                                                        "timecb"),
+                                                          "timecb"),
                                   cam->rtimefn);
 
     g_signal_connect (gtk_builder_get_object(cam->xml, "fjpgb"),

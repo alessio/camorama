@@ -91,6 +91,7 @@ main(int argc, char *argv[]) {
     };
 
     cam = &cam_object;
+
     /* set some default values */
     cam->frame_number = 0;
     cam->pixmap = NULL;
@@ -145,8 +146,6 @@ main(int argc, char *argv[]) {
     gconf_client_add_dir (cam->gc, PATH, GCONF_CLIENT_PRELOAD_NONE, NULL);
     gconf_client_notify_add (cam->gc, KEY1, (void *) gconf_notify_func,
                              cam->pixdir, NULL, NULL);
-    gconf_client_notify_add (cam->gc, KEY5, (void *) gconf_notify_func,
-                             cam->rhost, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY2, (void *) gconf_notify_func,
                              cam->capturefile, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY3,
@@ -155,6 +154,14 @@ main(int argc, char *argv[]) {
     gconf_client_notify_add (cam->gc, KEY4,
                              (void *) gconf_notify_func_bool,
                              &cam->timestamp, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY5, (void *) gconf_notify_func,
+                             cam->host, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY6, (void *) gconf_notify_func,
+                             cam->proto, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY8, (void *) gconf_notify_func,
+                             cam->rdir, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY9, (void *) gconf_notify_func,
+                             cam->rcapturefile, NULL, NULL);
 
     if (!poopoo) {
 	gchar const* gconf_device = gconf_client_get_string(cam->gc, KEY_DEVICE, NULL);
@@ -170,13 +177,11 @@ main(int argc, char *argv[]) {
     cam->pixdir = g_strdup (gconf_client_get_string (cam->gc, KEY1, NULL));
     cam->capturefile =
         g_strdup (gconf_client_get_string (cam->gc, KEY2, NULL));
-    cam->rhost = g_strdup (gconf_client_get_string (cam->gc, KEY5, NULL));
-    cam->rlogin = g_strdup (gconf_client_get_string (cam->gc, KEY6, NULL));
-    cam->rpw = g_strdup (gconf_client_get_string (cam->gc, KEY7, NULL));
-    cam->rpixdir = g_strdup (gconf_client_get_string (cam->gc, KEY8, NULL));
-    cam->rcapturefile =
-        g_strdup (gconf_client_get_string (cam->gc, KEY9, NULL));
     cam->savetype = gconf_client_get_int (cam->gc, KEY3, NULL);
+    cam->host = g_strdup (gconf_client_get_string (cam->gc, KEY5, NULL));
+    cam->proto = g_strdup (gconf_client_get_string (cam->gc, KEY6, NULL));
+    cam->rdir = g_strdup (gconf_client_get_string (cam->gc, KEY8, NULL));
+    cam->rcapturefile = g_strdup (gconf_client_get_string (cam->gc, KEY9, NULL));
     cam->rsavetype = gconf_client_get_int (cam->gc, KEY10, NULL);
     cam->ts_string =
         g_strdup (gconf_client_get_string (cam->gc, KEY16, NULL));
