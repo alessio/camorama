@@ -1,9 +1,11 @@
 #include <errno.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <glib/gi18n.h>
 #include <time.h>
 #include <stdio.h>
 
+#include "interface.h"
 #include "support.h"
 #include "fileio.h"
 
@@ -11,8 +13,6 @@
 # define CHAR_WIDTH   6
 # define CHAR_START   4
 # include "font_6x11.h"
-
-static int print_error (GnomeVFSResult result, const char *uri_string);
 
 /* add timestamp/text to image - "borrowed" from gspy */
 int
@@ -83,12 +83,8 @@ add_rgb_text (guchar *image, int width, int height, char *cstring, char *format,
 void remote_save (cam * cam)
 {
     GThread *remote_thread;
-    GnomeVFSHandle **write_handle;
     char *output_uri_string, *input_uri_string;
-    GnomeVFSFileSize bytes_written;
-    GnomeVFSURI *uri_1;
     unsigned char *tmp;
-    GnomeVFSResult result = 0;
     gboolean test;
     char *filename, *error_message;
     FILE *fp;
@@ -110,7 +106,6 @@ void remote_save (cam * cam)
     default:
         ext = g_strdup ((gchar *) "jpeg");
     }
-    //cam->tmp = NULL;
 
     if (cam->rtimestamp == TRUE) {
         add_rgb_text (cam->tmp, cam->width, cam->height, cam->ts_string,
@@ -120,7 +115,6 @@ void remote_save (cam * cam)
     if (chdir ("/tmp") != 0) {
         error_dialog (_("Could save temporary image file in /tmp."));
         g_free (ext);
-        //g_thread_exit (NULL);
     }
 
     time (&t);
@@ -128,7 +122,6 @@ void remote_save (cam * cam)
     strftime (timenow, sizeof (timenow) - 1, "%s", tm);
 
     filename = g_strdup_printf ("camorama.%s", ext);
-    //g_free(ext);
     pb = gdk_pixbuf_new_from_data (cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
                                    cam->width, cam->height,
                                    cam->width * cam->bpp / 8, NULL,
@@ -139,105 +132,104 @@ void remote_save (cam * cam)
             g_strdup_printf (_("Unable to create image '%s'."), filename);
         error_dialog (error_message);
         g_free (error_message);
-        //g_thread_exit (NULL);
     }
 
-    pbs = gdk_pixbuf_save (pb, filename, ext, NULL, NULL);      //&error);//, NULL);
+    pbs = gdk_pixbuf_save (pb, filename, ext, NULL, NULL);
     if (pbs == FALSE) {
         error_message =
             g_strdup_printf (_("Could not save image '%s/%s'."),
                              cam->pixdir, filename);
         error_dialog (error_message);
         g_free (filename);
-        //g_free (error_message);
-        //return -1;
     }
 
-    /*if (cam->debug == TRUE)
-     * {
-     * fprintf (stderr, "bytes to file %s: %d\n", filename, fc);
-     * } */
-
     g_free (filename);
-    /* from here :) */
-    /* open tmp file and read it */
-    /*input_uri_string = g_strdup_printf ("camorama.%s", ext);
-     * 
-     * if (!(fp = fopen (input_uri_string, "rb")))
-     * {
-     * error_message =
-     * g_strdup_printf (_
-     * ("Unable to open temporary image file '%s'."),
-     * filename);
-     * error_dialog (error_message);
-     * g_free (input_uri_string);
-     * g_free (error_message);
-     * exit (0);
-     * }
-     * 
-     * tmp = malloc (sizeof (char) * cam->width * cam->height * cam->bpp * 2 / 8);
-     * while (!feof (fp))
-     * {
-     * bytes += fread (tmp, 1, cam->width * cam->height * cam->bpp / 8, fp);
-     * }
-     * fclose (fp);
-     * 
-     * time (&t);
-     * tm = localtime (&t);
-     * strftime (timenow, sizeof (timenow) - 1, "%s", tm);
-     * if (cam->rtimefn == TRUE)
-     * {
-     * output_uri_string = g_strdup_printf ("ftp://%s/%s/%s-%s.%s",
-     * cam->rhost, cam->rpixdir,
-     * cam->rcapturefile,
-     * timenow, ext);
-     * }
-     * else
-     * {
-     * output_uri_string =
-     * g_strdup_printf ("ftp://%s/%s/%s.%s", cam->rhost,
-     * cam->rpixdir, cam->rcapturefile,
-     * ext);
-     * }
-     * uri_1 = gnome_vfs_uri_new (output_uri_string);
-     * 
-     * test = gnome_vfs_uri_exists (uri_1);
-     * 
-     * gnome_vfs_uri_set_user_name (uri_1, cam->rlogin);
-     * gnome_vfs_uri_set_password (uri_1, cam->rpw);
-     */
-    /* start here? */
-    /*result = gnome_vfs_open_uri((GnomeVFSHandle **) & write_handle, uri_1, GNOME_VFS_OPEN_WRITE);
-     * if(result != GNOME_VFS_OK) {
-     * error_message = g_strdup_printf(_("An error occurred opening %s."), output_uri_string);
-     * error_dialog(error_message);
-     * g_free(error_message);
-     * g_thread_exit(NULL);
-     * } */
-
-    /*  write the data */
-    /*result = gnome_vfs_write((GnomeVFSHandle *) write_handle, tmp, bytes, &bytes_written);
-     * if(result != GNOME_VFS_OK) {
-     * error_message = g_strdup_printf(_("An error occurred writing to %s."), output_uri_string);
-     * error_dialog(error_message);
-     * g_free(error_message);
-     * } */
 
     remote_thread =
         g_thread_new ("remote", (GThreadFunc) save_thread, cam);
     g_free (ext);
-    //free (tmp);
+}
 
+struct mount_params {
+    GFile *rdir_file;
+    GMountOperation *mop;
+    gchar *uri;
+};
+
+static void mount_cb (GObject * obj, GAsyncResult * res, gpointer user_data)
+{
+    cam *cam = user_data;
+    gboolean ret;
+    GError *err = NULL;
+
+    ret = g_file_mount_enclosing_volume_finish (G_FILE (obj), res, &err);
+
+    /* Ignore G_IO_ERROR_ALREADY_MOUNTED */
+    if (g_error_matches (err, G_IO_ERROR, G_IO_ERROR_ALREADY_MOUNTED))
+        ret = 1;
+
+    if (ret) {
+        cam->rdir_ok = TRUE;
+        gconf_client_set_string(cam->gc, KEY5, cam->host, NULL);
+        gconf_client_set_string(cam->gc, KEY6, cam->proto, NULL);
+        gconf_client_set_string(cam->gc, KEY8, cam->rdir, NULL);
+        gconf_client_set_string(cam->gc, KEY9, cam->rcapturefile, NULL);
+    } else {
+        gchar *error_message = g_strdup_printf (_("An error occurred mounting %s:%s."),
+                                                cam->uri, err->message);
+        error_dialog (error_message);
+        g_free (error_message);
+    }
+}
+
+gchar *volume_uri(gchar *host, gchar *proto, gchar *rdir)
+{
+    return g_strdup_printf ("%s://%s/%s", proto, host, rdir);
+}
+
+void umount_volume(cam *cam)
+{
+    struct mount_params mount;
+
+    /* Unmount previous volume */
+    if (!cam->rdir_ok)
+        return;
+
+    cam->rdir_ok = FALSE;
+    g_file_unmount_mountable_with_operation(cam->rdir_file,
+                                            G_MOUNT_UNMOUNT_NONE,
+                                            cam->rdir_mop, NULL,
+                                            NULL, cam);
+}
+
+void mount_volume(cam *cam)
+{
+    /* Prepare a mount operation */
+    cam->rdir_file = g_file_new_for_uri(cam->uri);
+    if (cam->rdir_file)
+        cam->rdir_mop = gtk_mount_operation_new(NULL);
+    else
+        cam->rdir_mop = NULL;
+
+    if (!cam->rdir_mop) {
+        gchar *error_message = g_strdup_printf (_("An error occurred accessing %s."),
+                                                cam->uri);
+        error_dialog (error_message);
+        g_free (error_message);
+
+        return;
+    }
+
+    g_file_mount_enclosing_volume(cam->rdir_file,  G_MOUNT_MOUNT_NONE,
+                                  cam->rdir_mop, NULL, mount_cb, cam);
 }
 
 void save_thread (cam * cam)
 {
-    GnomeVFSHandle **write_handle;
     char *output_uri_string, *input_uri_string;
-    GnomeVFSFileSize bytes_written;
-    GnomeVFSURI *uri_1;
+    GFile *uri_1;
+    GFileOutputStream *fout;
     unsigned char *tmp;
-    GnomeVFSResult result = 0;
     gboolean test;
     char *filename, *error_message;
     FILE *fp;
@@ -247,9 +239,11 @@ void save_thread (cam * cam)
     struct tm *tm;
     gboolean pbs;
     GdkPixbuf *pb;
-    /*GnomeVFSResult result = 0;
-     * GnomeVFSHandle **write_handle;
-     * char *error_message; */
+    GError *error = NULL;
+
+    /* Check if it is ready to mount */
+    if (!cam->rdir_ok)
+        return;
 
     switch (cam->rsavetype) {
     case JPEG:
@@ -291,24 +285,16 @@ void save_thread (cam * cam)
     tm = localtime (&t);
     strftime (timenow, sizeof (timenow) - 1, "%s", tm);
     if (cam->rtimefn == TRUE) {
-        output_uri_string = g_strdup_printf ("ftp://%s/%s/%s-%s.%s",
-                                             cam->rhost, cam->rpixdir,
-                                             cam->rcapturefile, timenow, ext);
+        output_uri_string = g_strdup_printf ("%s/%s-%s.%s", cam->uri,
+                                             cam->capturefile,
+                                             timenow, ext);
     } else {
-        output_uri_string =
-            g_strdup_printf ("ftp://%s/%s/%s.%s", cam->rhost,
-                             cam->rpixdir, cam->rcapturefile, ext);
+        output_uri_string = g_strdup_printf ("%s/%s.%s", cam->uri,
+                                             cam->capturefile, ext);
     }
-    uri_1 = gnome_vfs_uri_new (output_uri_string);
 
-    //test = gnome_vfs_uri_exists (uri_1);
-    gnome_vfs_uri_set_user_name (uri_1, cam->rlogin);
-    gnome_vfs_uri_set_password (uri_1, cam->rpw);
-    
-
-    result = gnome_vfs_open_uri ((GnomeVFSHandle **) & write_handle,
-                                 uri_1, GNOME_VFS_OPEN_WRITE);
-    if (result != GNOME_VFS_OK) {
+    uri_1 = g_file_new_for_uri (output_uri_string);
+    if (!uri_1) {
         error_message =
             g_strdup_printf (_("An error occurred opening %s."),
                              output_uri_string);
@@ -317,30 +303,38 @@ void save_thread (cam * cam)
         g_thread_exit (NULL);
     }
 
-    /*  write the data */
-    result = gnome_vfs_write ((GnomeVFSHandle *) write_handle, tmp, bytes,
-                              &bytes_written);
-    if (result != GNOME_VFS_OK) {
+    fout = g_file_replace (uri_1, NULL, FALSE,
+                           G_FILE_CREATE_REPLACE_DESTINATION, NULL, &error);
+    if (error) {
         error_message =
-            g_strdup_printf (_("An error occurred writing to %s."),
-                             output_uri_string);
+            g_strdup_printf (_("An error occurred opening %s for write: %s."),
+                             output_uri_string, error->message);
+        error_dialog (error_message);
+        g_free (error_message);
+        g_thread_exit (NULL);
+    }
+
+    /*  write the data */
+    g_output_stream_write(G_OUTPUT_STREAM(fout), tmp, bytes, NULL, &error);
+    if (error) {
+        error_message =
+            g_strdup_printf (_("An error occurred writing to %s: %s."),
+                             output_uri_string, error->message);
         error_dialog (error_message);
         g_free (error_message);
     }
-    gnome_vfs_close ((GnomeVFSHandle *) write_handle);
-    gnome_vfs_shutdown ();
+    g_output_stream_close(G_OUTPUT_STREAM(fout), NULL, &error);
+    if (error) {
+        error_message =
+            g_strdup_printf (_("An error occurred closing %s: %s."),
+                             output_uri_string, error->message);
+        error_dialog (error_message);
+        g_free (error_message);
+    }
+
+    g_object_unref(uri_1);
     free (tmp);
 	 g_thread_exit (NULL);
-}
-
-static int print_error (GnomeVFSResult result, const char *uri_string)
-{
-    const char *error_string;
-    /* get the string corresponding to this GnomeVFSResult value */
-    error_string = gnome_vfs_result_to_string (result);
-    printf ("Error %s occurred opening location %s\n", error_string,
-            uri_string);
-    return 1;
 }
 
 int local_save (cam * cam)
@@ -367,8 +361,6 @@ int local_save (cam * cam)
     default:
         ext = g_strdup ((gchar *) "jpeg");
     }
-    //cam->tmp = NULL;
-    //memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->bpp / 8);
 
     if (cam->timestamp == TRUE) {
         add_rgb_text (cam->tmp, cam->width, cam->height, cam->ts_string,

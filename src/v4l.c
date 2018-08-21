@@ -29,10 +29,7 @@ void print_cam(cam *cam){
       }
    }
    printf("capture directory = %s, capture file = %s\n",cam->pixdir, cam->capturefile);
-   if (strcmp(cam->rhost, "yourdomain.org")) {
-      printf("remote host = %s, remote login = %s\n",cam->rhost,cam->rlogin);
-      printf("remote capture directory = %s, remote capture file = %s\n",cam->rpixdir, cam->rcapturefile);
-   }
+   printf("remote host = %s\n",cam->uri);
    if (strcmp(cam->ts_string, "Camorama!"))
       printf("timestamp = %s\n\n",cam->ts_string);
 }
@@ -125,6 +122,7 @@ void camera_cap(cam * cam)
 
    /* Query supported resolutions */
 
+   cam->rdir_ok = FALSE;
    cam->min_width = -1;
    cam->min_height = -1;
    cam->max_width = 0;

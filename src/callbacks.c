@@ -15,8 +15,8 @@ extern int frames;
 extern int frames2;
 extern int seconds;
 extern GtkWidget *dentry, *entry2, *string_entry;
-extern GtkWidget *host_entry,
-    *directory_entry, *filename_entry, *login_entry, *pw_entry;
+extern GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
+extern const gchar * const protos[];
 
 /*
  * pref callbacks
@@ -281,24 +281,90 @@ int delete_event (GtkWidget * widget, gpointer data)
     return FALSE;
 }
 
+static int apply_remote_pref(cam *cam)
+{
+    if (!strlen (gtk_entry_get_text ((GtkEntry *) host_entry)))
+        return 0;
+
+    int index = gtk_combo_box_get_active(GTK_COMBO_BOX(protocol));
+
+    gchar *host = g_strdup (gtk_entry_get_text ((GtkEntry *) host_entry));
+    gchar *rdir = g_strdup (gtk_entry_get_text ((GtkEntry *) rdir_entry));
+    gchar *proto = g_strdup (protos[index]);
+    gchar *rfile = g_strdup (gtk_entry_get_text ((GtkEntry *) filename_entry));
+
+    if (!host || !proto || !rdir || !rfile) {
+        if (host)
+            g_free(host);
+        if (proto)
+            g_free(proto);
+        if (rdir)
+            g_free(rdir);
+        if (rfile)
+            g_free(rfile);
+        return 0;
+    }
+
+    gchar *uri = volume_uri(host, proto, rdir);
+
+    if (cam->rdir_ok) {
+        /* unmount/mount can spend time. Do only if URI changed */
+        if (strcmp(uri, cam->uri)) {
+            umount_volume(cam);
+        } else {
+            g_free(host);
+            g_free(proto);
+            g_free(rdir);
+            g_free(rfile);
+            g_free(uri);
+
+            return 0;
+        }
+    }
+
+    if (cam->host)
+        g_free(cam->host);
+    if (cam->proto)
+        g_free(cam->proto);
+    if (cam->rdir)
+        g_free(cam->rdir);
+    if (cam->rcapturefile)
+        g_free(cam->rcapturefile);
+    if (cam->uri)
+        g_free(cam->uri);
+
+    cam->host = host;
+    cam->rdir = rdir;
+    cam->proto = proto;
+    cam->rcapturefile = rfile;
+    cam->uri = uri;
+
+    mount_volume(cam);
+
+    return 1;
+}
+
 /*
  * apply preferences
  */
 void prefs_func (GtkWidget * okbutton, cam * cam)
 {
     GConfClient *client;
-    gchar *dir;
+    gchar *rdir;
 
     client = gconf_client_get_default ();
 
     if (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry)) {
         cam->pixdir = g_strdup (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry));
         gconf_client_set_string (cam->gc, KEY1, cam->pixdir, NULL);
-
     } else {
         if (cam->debug == TRUE) {
             fprintf (stderr, "null directory\ndirectory unchanged.");
         }
+    }
+
+    if (!apply_remote_pref(cam) && cam->debug == TRUE) {
+        fprintf (stderr, "remote directory params wrong\ndirectory unchanged.");
     }
 
     /*
@@ -310,29 +376,6 @@ void prefs_func (GtkWidget * okbutton, cam * cam)
         gconf_client_set_string (cam->gc, KEY2, cam->capturefile, NULL);
     }
 
-    if (strlen (gtk_entry_get_text ((GtkEntry *) host_entry)) > 0) {
-        cam->rhost = g_strdup (gtk_entry_get_text ((GtkEntry *) host_entry));
-        gconf_client_set_string (cam->gc, KEY5, cam->rhost, NULL);
-    }
-    if (strlen (gtk_entry_get_text ((GtkEntry *) login_entry)) > 0) {
-        cam->rlogin =
-            g_strdup (gtk_entry_get_text ((GtkEntry *) login_entry));
-        gconf_client_set_string (cam->gc, KEY6, cam->rlogin, NULL);
-    }
-    if (strlen (gtk_entry_get_text ((GtkEntry *) pw_entry)) > 0) {
-        cam->rpw = g_strdup (gtk_entry_get_text ((GtkEntry *) pw_entry));
-        gconf_client_set_string (cam->gc, KEY7, cam->rpw, NULL);
-    }
-    if (strlen (gtk_entry_get_text ((GtkEntry *) directory_entry)) > 0) {
-        cam->rpixdir =
-            g_strdup (gtk_entry_get_text ((GtkEntry *) directory_entry));
-        gconf_client_set_string (cam->gc, KEY8, cam->rpixdir, NULL);
-    }
-    if (strlen (gtk_entry_get_text ((GtkEntry *) filename_entry)) > 0) {
-        cam->rcapturefile =
-            g_strdup (gtk_entry_get_text ((GtkEntry *) filename_entry));
-        gconf_client_set_string (cam->gc, KEY9, cam->rcapturefile, NULL);
-    }
     if (strlen (gtk_entry_get_text ((GtkEntry *) string_entry)) > 0) {
         cam->ts_string =
             g_strdup (gtk_entry_get_text ((GtkEntry *) string_entry));

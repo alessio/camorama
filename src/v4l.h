@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <getopt.h>
+#include <gio/gio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -62,9 +63,8 @@ typedef struct camera {
    char *video_dev;
    unsigned char *image;
    gchar *capturefile, *rcapturefile;
-   gchar *pixdir, *rpixdir;
+   gchar *pixdir, *host, *proto, *rdir, *uri;
    int savetype, rsavetype;
-   gchar *rhost, *rlogin, *rpw;
    gchar *ts_string;
    gchar *date_format;
    gboolean debug, read, hidden;
@@ -81,6 +81,10 @@ typedef struct camera {
    GtkStatusIcon *tray_icon;
 
    CamoramaFilterChain* filter_chain;
+
+   gboolean rdir_ok;
+   GFile *rdir_file;
+   GMountOperation *rdir_mop;
 
    /* Buffer handling - should be used only inside v4l.c */
    struct v4l2_requestbuffers req;
