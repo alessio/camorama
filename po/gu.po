@@ -6,548 +6,418 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-08 11:04+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-21 09:41-0300\n"
 "PO-Revision-Date: 2004-09-08 18:14+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati\n"
+"Language: gu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "કેમોરામા વેબકેમ દર્શક"
-
-#: camorama.desktop.in.h:2 src/callbacks.c:510
-msgid "View, alter and save images from a webcam"
-msgstr "વેબકેમમાંથી ચિત્રો જુઓ, બદલો અને સંગ્રહો"
-
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
-
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">અસરો</span>"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">સામાન્ય</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">ચિત્રનો પ્રકાર</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">સ્થાનિક મેળવો</span>"
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">દૂરનું મેળવો</span>"
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">સમયનોંધ</span>"
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr "મેળવાયેલ ચિત્રો પર સમયનોંધ કરો"
-
-#: data/camorama.glade.h:10
-msgid "Append time to filename"
-msgstr "ફાઈલના નામમાં સમય ઉમેરો"
-
-#: data/camorama.glade.h:11
-msgid "Automatic Capture"
-msgstr "આપોઆપ મેળવો"
-
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "કાળું અને સફેદ"
-
-#: data/camorama.glade.h:13
-msgid "Brightness:"
-msgstr "તેજસ્વીતા:"
-
-#: data/camorama.glade.h:14
-msgid "Camorama-libglade"
-msgstr "Camorama-libglade"
-
-#: data/camorama.glade.h:15
-msgid "Capture Interval (in minutes):"
-msgstr "અંતરાલો મેળવો (મિનિટોમાં):"
-
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "રંગનો સુધારો"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "રંગનો થ્રેશોલ્ડ"
-
-#: data/camorama.glade.h:18
-msgid "Color:"
-msgstr "રંગ:"
-
-#: data/camorama.glade.h:19
-msgid "Contrast:"
-msgstr "વિરોધાભાસ:"
-
-#: data/camorama.glade.h:20
-msgid "Draw date and time"
-msgstr "તારીખ અને સમય દોરો"
-
-#: data/camorama.glade.h:21
-msgid "FTP server: "
-msgstr "FTP સર્વર: "
-
-#: data/camorama.glade.h:22
-msgid "Filename"
-msgstr "ફાઈલનું નામ"
-
-#: data/camorama.glade.h:23
-msgid "General"
-msgstr "સામાન્ય"
-
-#: data/camorama.glade.h:24
-msgid "Hue:"
-msgstr "હ્યુ:"
-
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "લાપ્લાસ"
-
-#: data/camorama.glade.h:26
-msgid "Large"
-msgstr "મોટું"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr "સ્થાનિક મેળવો"
-
-#: data/camorama.glade.h:28
-msgid "Medium"
-msgstr "મધ્યમ"
-
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "પ્રતિબિંબ ચિત્ર"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "ઋણ"
-
-#: data/camorama.glade.h:31
-msgid "Password:"
-msgstr "પાસવર્ડ:"
-
-#: data/camorama.glade.h:32
-msgid "Preferences"
-msgstr "પસંદગીઓ"
-
-#: data/camorama.glade.h:33
-msgid "Remote Capture"
-msgstr "દૂરસ્થ મેળવો"
-
-#: data/camorama.glade.h:34
-msgid "Save directory:"
-msgstr "ડિરેક્ટરી સંગ્રહો:"
-
-#: data/camorama.glade.h:35
-msgid "Save files in jpeg format"
-msgstr "ફાઈલોને jpeg બંધારણમાં સંગ્રહો"
-
-#: data/camorama.glade.h:36
-msgid "Save files in png format"
-msgstr "ફાઈલોને png બંધારણમાં સંગ્રહો"
-
-#: data/camorama.glade.h:37
-msgid "Show Adjustments"
-msgstr "સમતોલનો બતાવો"
-
-#: data/camorama.glade.h:38
-msgid "Show Effects"
-msgstr "અસરો બતાવો"
-
-#: data/camorama.glade.h:39
-msgid "Small"
-msgstr "નાનુ"
-
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "લીસું કરી રહ્યા છીએ"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "સોબલ"
-
-#: data/camorama.glade.h:42
-msgid "String:"
-msgstr "શબ્દમાળા:"
-
-#: data/camorama.glade.h:43
-msgid "Take Picture"
-msgstr "ચિત્ર લો"
-
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "થ્રેશોલ્ડ:"
-
-#: data/camorama.glade.h:45
-msgid "Timestamp"
-msgstr "સમયનોંધ"
-
-#: data/camorama.glade.h:46
-msgid "Use custom string"
-msgstr "કસ્ટમ શબ્દમાળા વાપરો"
-
-#: data/camorama.glade.h:47
-msgid "Username:"
-msgstr "વપરાશકર્તા નામ:"
-
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "વેકી"
-
-#: data/camorama.glade.h:49
-msgid "White Balance:"
-msgstr "સફેદનું સમતોલન:"
-
-#: data/camorama.glade.h:50
-msgid "_Directory for captured pics:"
-msgstr "મેળવાયેલ ચિત્રો માટેની ડિરેક્ટરી (_D):"
-
-#: data/camorama.glade.h:51
-msgid "_Enable local capture"
-msgstr "સ્થાનિક મેળવવાનું સક્રિય કરો (_E)"
-
-#: data/camorama.glade.h:52
-msgid "_Enable remote capture"
-msgstr "દૂરસ્થ મેળવવાનું સક્રિય કરો (_E)"
-
-#: data/camorama.glade.h:53
-msgid "_Filename for pictures:"
-msgstr "ચિત્રો માટે ફાઈલોના નામ (_F):"
-
-#: data/camorama.glade.h:54
-msgid "ftp.yourdomain.org"
-msgstr "ftp.yourdomain.org"
-
-#: data/camorama.glade.h:55
-msgid "path/to/save/to"
-msgstr "path/to/save/to"
-
-#: data/camorama.glade.h:56
-msgid "webcam-capture"
-msgstr "વેબકેમ-મેળવનાર"
-
-#: data/camorama.glade.h:57
-msgid "webcamshot"
-msgstr "વેબકેમશોટ"
-
-#: data/camorama.glade.h:58
-msgid "your-password"
-msgstr "તમારો-પાસવર્ડ"
-
-#: data/camorama.glade.h:59
-msgid "your-username"
-msgstr "તમારુ-વપરાશકર્તાનામ"
-
-#: data/camorama.glade.h:60
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
-
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "ફાઈલના નામમાં સમયનોંધ ઉમેરો"
-
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "દૂરસ્થ ફાઈલનામમાં સમયનોંધ ઉમેરો"
-
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, ફાઈલના નામના અંતે"
-
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, દૂરસ્થ ફાઈલના નામના અંતે"
-
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "સમયનોંધ માટે કસ્ટમ લખાણ"
-
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "ચિત્રમાં ઉમેરવા માટે કસ્ટમ લખાણની શબ્દમાળા વ્યાખ્યાયિત કરે છે."
-
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "સ્થાનિક મેળવાયેલા માટે ફાઈલનામ"
-
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "મેળવાયેલ ચિત્રોને સ્થાનિક રીતે સંગ્રહવા માટે ફાઈલનામ"
-
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "સ્થાનિક મેળવાયેલા માટે ફોલ્ડર"
-
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "દૂરસ્થ મેળવાયેલા માટે ફોલ્ડર"
-
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "મેળવાયેલ ચિત્રોને દૂરસ્થ રીતે સંગ્રહવા માટેનું ફોલ્ડર"
-
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "મેળવાયેલ ચિત્રોને સ્થાનીય રીતે સંગ્રહવા માટેનું ફોલ્ડર"
-
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "FTP સર્વર માટે યજમાન નામ"
-
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "દૂરનું મેળવવા માટે FTP સર્વર માટે યજમાન નામ."
-
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "આપોઆપ મેળવવા માટેનો અંતરાલ"
-
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "ચિત્રના બંધારણ માટે સ્થાનિક મેળવવાનું"
-
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "અપલોડ થયેલ ચિત્રોની ફાઈલના નામો માટેનું નામ."
-
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "FTP સર્વર માટે પાસવર્ડ"
-
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "દૂરસ્થ મેળવવા માટેના ચિત્રનું બંધારણ"
-
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "સંગ્રહવા માટે દૂરસ્થ ફાઈલનું નામ"
-
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "સ્થાનિક રીતે સંગ્રહાયેલ ચિત્રો માટે વપરાતા ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
-
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "દૂરસ્થ રીતે સંગ્રહાયેલા ચિત્રો માટે ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
-
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "ચિત્રોને આપોઆપ મેળવવા માટેનો અંતરાલ સ્પષ્ટ કરે છે."
-
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "દૂરસ્થ મેળવવા માટે FTP ખાતાનો પાસવર્ડ."
-
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr "આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
-
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr "ચિત્રોને આપોઆપ મેળવવા માટે ફેરબદલી કરે છે."
-
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr "સ્થાનિક આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
-
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr "દૂરસ્થ મેળવવા માટે ફેરબદલી કરે છે"
-
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr "કસ્ટમ શબ્દમાળા ફેરબદલી કરે છે"
-
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr "મેળવાયેલા માટે તારીખનોંધ ફેરબદલી કરે છે"
-
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે"
-
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr ""
-
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr ""
-
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr ""
-
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr ""
-
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
-
-#: data/camorama.schemas.in.h:37
-msgid "Toggles the video adjustment sliders"
-msgstr ""
-
-#: data/camorama.schemas.in.h:38
-msgid "Toggles the video effects buttons"
-msgstr ""
-
-#: data/camorama.schemas.in.h:39
-msgid "Toggles timestamp for local captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for remote captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:41
-msgid "Username for FTP server"
-msgstr ""
-
-#: data/camorama.schemas.in.h:42
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-
-#: data/camorama.schemas.in.h:44
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-
-#: src/callbacks.c:499
-msgid "translator_credits"
-msgstr ""
-
-#: src/callbacks.c:508
+#: camorama.appdata.xml.in:6 src/callbacks.c:467
 msgid "Camorama"
 msgstr ""
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
-msgid "Unable to capture image."
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+msgid "Camorama Webcam Viewer"
+msgstr "કેમોરામા વેબકેમ દર્શક"
+
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
 msgstr ""
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
+#: camorama.desktop.in:4 src/callbacks.c:469
+msgid "View, alter and save images from a webcam"
+msgstr "વેબકેમમાંથી ચિત્રો જુઓ, બદલો અને સંગ્રહો"
+
+#: camorama.desktop.in:8
+msgid "camorama.png"
 msgstr ""
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
+#: data/camorama.glade:35
+msgid "Preferences"
+msgstr "પસંદગીઓ"
+
+#: data/camorama.glade:107
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">સામાન્ય</span>"
+
+#: data/camorama.glade:139
+msgid "Automatic Capture"
+msgstr "આપોઆપ મેળવો"
+
+#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
+#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
+#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
+msgid "     "
+msgstr "     "
+
+#: data/camorama.glade:183
+msgid "Capture Interval (in minutes):"
+msgstr "અંતરાલો મેળવો (મિનિટોમાં):"
+
+#: data/camorama.glade:257
+msgid "General"
+msgstr "સામાન્ય"
+
+#: data/camorama.glade:279
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">સ્થાનિક મેળવો</span>"
+
+#: data/camorama.glade:311
+msgid "_Enable local capture"
+msgstr "સ્થાનિક મેળવવાનું સક્રિય કરો (_E)"
+
+#: data/camorama.glade:360
+msgid "_Directory for captured pics:"
+msgstr "મેળવાયેલ ચિત્રો માટેની ડિરેક્ટરી (_D):"
+
+#: data/camorama.glade:373
+msgid "_Filename for pictures:"
+msgstr "ચિત્રો માટે ફાઈલોના નામ (_F):"
+
+#: data/camorama.glade:388
+msgid "webcam-capture"
+msgstr "વેબકેમ-મેળવનાર"
+
+#: data/camorama.glade:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "ડિરેક્ટરી સંગ્રહો:"
+
+#: data/camorama.glade:424 data/camorama.glade:857
+msgid "Append time to filename"
+msgstr "ફાઈલના નામમાં સમય ઉમેરો"
+
+#: data/camorama.glade:441 data/camorama.glade:873
+msgid "Add a timestamp to captured images"
+msgstr "મેળવાયેલ ચિત્રો પર સમયનોંધ કરો"
+
+#: data/camorama.glade:500 data/camorama.glade:932
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">ચિત્રનો પ્રકાર</span>"
+
+#: data/camorama.glade:531 data/camorama.glade:963
+msgid "Save files in jpeg format"
+msgstr "ફાઈલોને jpeg બંધારણમાં સંગ્રહો"
+
+#: data/camorama.glade:548 data/camorama.glade:980
+msgid "Save files in png format"
+msgstr "ફાઈલોને png બંધારણમાં સંગ્રહો"
+
+#: data/camorama.glade:593
+msgid "Local Capture"
+msgstr "સ્થાનિક મેળવો"
+
+#: data/camorama.glade:616
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">દૂરનું મેળવો</span>"
+
+#: data/camorama.glade:648
+msgid "_Enable remote capture"
+msgstr "દૂરસ્થ મેળવવાનું સક્રિય કરો (_E)"
+
+#: data/camorama.glade:696
+msgid "FTP server: "
+msgstr "FTP સર્વર: "
+
+#: data/camorama.glade:708
+msgid "Username:"
+msgstr "વપરાશકર્તા નામ:"
+
+#: data/camorama.glade:722
+msgid "Password:"
+msgstr "પાસવર્ડ:"
+
+#: data/camorama.glade:736
+msgid "Save directory:"
+msgstr "ડિરેક્ટરી સંગ્રહો:"
+
+#: data/camorama.glade:750
+msgid "Filename"
+msgstr "ફાઈલનું નામ"
+
+#: data/camorama.glade:763
+msgid "ftp.yourdomain.org"
+msgstr "ftp.yourdomain.org"
+
+#: data/camorama.glade:779
+msgid "your-username"
+msgstr "તમારુ-વપરાશકર્તાનામ"
+
+#: data/camorama.glade:798
+msgid "your-password"
+msgstr "તમારો-પાસવર્ડ"
+
+#: data/camorama.glade:816
+msgid "path/to/save/to"
+msgstr "path/to/save/to"
+
+#: data/camorama.glade:834
+msgid "webcamshot"
+msgstr "વેબકેમશોટ"
+
+#: data/camorama.glade:1025
+msgid "Remote Capture"
+msgstr "દૂરસ્થ મેળવો"
+
+#: data/camorama.glade:1048
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">સમયનોંધ</span>"
+
+#: data/camorama.glade:1080
+msgid "Use custom string"
+msgstr "કસ્ટમ શબ્દમાળા વાપરો"
+
+#: data/camorama.glade:1124
+msgid "String:"
+msgstr "શબ્દમાળા:"
+
+#: data/camorama.glade:1170
+msgid "Draw date and time"
+msgstr "તારીખ અને સમય દોરો"
+
+#: data/camorama.glade:1214
+msgid "Timestamp"
+msgstr "સમયનોંધ"
+
+#: data/camorama.glade:1243
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: data/camorama.glade:1260
+#, fuzzy
+msgid "_File"
+msgstr "ફાઈલનું નામ"
+
+#: data/camorama.glade:1267 data/camorama.glade:1567
+msgid "Take Picture"
+msgstr "ચિત્ર લો"
+
+#: data/camorama.glade:1302
+msgid "_Edit"
 msgstr ""
 
-#: src/fileio.c:119 src/fileio.c:265
+#: data/camorama.glade:1326
+msgid "_View"
+msgstr ""
+
+#: data/camorama.glade:1335 data/camorama.glade:1508
+msgid "Show Adjustments"
+msgstr "સમતોલનો બતાવો"
+
+#: data/camorama.glade:1345
+msgid "Show Effects"
+msgstr "અસરો બતાવો"
+
+#: data/camorama.glade:1361
+msgid "Small"
+msgstr "નાનુ"
+
+#: data/camorama.glade:1374
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.glade:1698
+msgid "Contrast:"
+msgstr "વિરોધાભાસ:"
+
+#: data/camorama.glade:1712
+msgid "Brightness:"
+msgstr "તેજસ્વીતા:"
+
+#: data/camorama.glade:1728
+msgid "Color:"
+msgstr "રંગ:"
+
+#: data/camorama.glade:1744
+msgid "Hue:"
+msgstr "હ્યુ:"
+
+#: data/camorama.glade:1760
+msgid "White Balance:"
+msgstr "સફેદનું સમતોલન:"
+
+#: src/callbacks.c:458
+msgid "translator_credits"
+msgstr ""
+
+#: src/callbacks.c:582
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
+
+#: src/callbacks.c:702
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+
+#: src/callbacks.c:711
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "આપોઆપ મેળવો"
+
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "પ્રતિબિંબ ચિત્ર"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:12
+#, fuzzy
+msgid "Webcam"
+msgstr "વેબકેમશોટ"
+
+#: src/camorama-window.c:113
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:206
+#, fuzzy
+msgid "Effects"
+msgstr "અસરો બતાવો"
+
+#: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr ""
 
-#: src/fileio.c:137
+#: src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr ""
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:147 src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr ""
 
-#: src/fileio.c:273
+#: src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr ""
 
-#: src/fileio.c:311
+#: src/fileio.c:312
 #, c-format
-msgid "An error occured opening %s."
+msgid "An error occurred opening %s."
 msgstr ""
 
-#: src/fileio.c:323
+#: src/fileio.c:324
 #, c-format
-msgid "An error occured writing to %s."
+msgid "An error occurred writing to %s."
 msgstr ""
 
-#: src/fileio.c:403
+#: src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr ""
 
-#: src/fileio.c:414
+#: src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr ""
 
-#: src/main.c:423
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "રંગનો સુધારો"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "થ્રેશોલ્ડ:"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr "વેકી"
+
+#: src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "લીસું કરી રહ્યા છીએ"
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr "સોબલ"
+
+#: src/main.c:73
 msgid "show version and exit"
 msgstr ""
 
-#: src/main.c:425
+#: src/main.c:75
 msgid "v4l device to use"
 msgstr ""
 
-#: src/main.c:427
-msgid "enable debuging code"
+#: src/main.c:77
+msgid "enable debugging code"
 msgstr ""
 
-#: src/main.c:428
+#: src/main.c:78
 msgid "capture width"
 msgstr ""
 
-#: src/main.c:430
+#: src/main.c:80
 msgid "capture height"
 msgstr ""
 
-#: src/main.c:433
+#: src/main.c:83
 msgid "maximum capture size"
 msgstr ""
 
-#: src/main.c:435
+#: src/main.c:85
 msgid "minimum capture size"
 msgstr ""
 
-#: src/main.c:437
+#: src/main.c:87
 msgid "middle capture size"
 msgstr ""
 
-#: src/main.c:439
+#: src/main.c:89
 msgid "use read() rather than mmap()"
 msgstr ""
 
-#: src/main.c:461
+#: src/main.c:114
 msgid "camorama"
 msgstr ""
 
-#: src/main.c:475
+#: src/main.c:126
 #, c-format
 msgid ""
 "\n"
@@ -556,8 +426,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:609
+#: src/main.c:243
 msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr ""
+
+#: src/main.c:253
+msgid "Couldn't load builder file"
 msgstr ""
 
 #: src/support.c:69
@@ -565,11 +439,165 @@ msgstr ""
 msgid "Couldn't find pixmap file: %s"
 msgstr ""
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
+#: src/v4l.c:412
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
 
+#: src/v4l.c:440
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:455
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:468
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:481
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:490
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:518
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:578
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.gnome-desktop"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">અસરો</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "કાળું અને સફેદ"
+
+#~ msgid "Color threshold"
+#~ msgstr "રંગનો થ્રેશોલ્ડ"
+
+#~ msgid "Laplace"
+#~ msgstr "લાપ્લાસ"
+
+#~ msgid "Large"
+#~ msgstr "મોટું"
+
+#~ msgid "Medium"
+#~ msgstr "મધ્યમ"
+
+#~ msgid "Negative"
+#~ msgstr "ઋણ"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "ફાઈલના નામમાં સમયનોંધ ઉમેરો"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "દૂરસ્થ ફાઈલનામમાં સમયનોંધ ઉમેરો"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, ફાઈલના નામના અંતે"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, દૂરસ્થ ફાઈલના નામના અંતે"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "સમયનોંધ માટે કસ્ટમ લખાણ"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr "ચિત્રમાં ઉમેરવા માટે કસ્ટમ લખાણની શબ્દમાળા વ્યાખ્યાયિત કરે છે."
+
+#~ msgid "Filename for local captures"
+#~ msgstr "સ્થાનિક મેળવાયેલા માટે ફાઈલનામ"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "મેળવાયેલ ચિત્રોને સ્થાનિક રીતે સંગ્રહવા માટે ફાઈલનામ"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "સ્થાનિક મેળવાયેલા માટે ફોલ્ડર"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "દૂરસ્થ મેળવાયેલા માટે ફોલ્ડર"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "મેળવાયેલ ચિત્રોને દૂરસ્થ રીતે સંગ્રહવા માટેનું ફોલ્ડર"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "મેળવાયેલ ચિત્રોને સ્થાનીય રીતે સંગ્રહવા માટેનું ફોલ્ડર"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "FTP સર્વર માટે યજમાન નામ"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "દૂરનું મેળવવા માટે FTP સર્વર માટે યજમાન નામ."
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "આપોઆપ મેળવવા માટેનો અંતરાલ"
+
+#~ msgid "Local capture image format"
+#~ msgstr "ચિત્રના બંધારણ માટે સ્થાનિક મેળવવાનું"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "અપલોડ થયેલ ચિત્રોની ફાઈલના નામો માટેનું નામ."
+
+#~ msgid "Password for FTP server"
+#~ msgstr "FTP સર્વર માટે પાસવર્ડ"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "દૂરસ્થ મેળવવા માટેના ચિત્રનું બંધારણ"
+
+#~ msgid "Remote save filename"
+#~ msgstr "સંગ્રહવા માટે દૂરસ્થ ફાઈલનું નામ"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr "સ્થાનિક રીતે સંગ્રહાયેલ ચિત્રો માટે વપરાતા ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr "દૂરસ્થ રીતે સંગ્રહાયેલા ચિત્રો માટે ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "ચિત્રોને આપોઆપ મેળવવા માટેનો અંતરાલ સ્પષ્ટ કરે છે."
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "દૂરસ્થ મેળવવા માટે FTP ખાતાનો પાસવર્ડ."
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "ચિત્રોને આપોઆપ મેળવવા માટે ફેરબદલી કરે છે."
+
+#~ msgid "Toggles local capture"
+#~ msgstr "સ્થાનિક આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr "દૂરસ્થ મેળવવા માટે ફેરબદલી કરે છે"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "કસ્ટમ શબ્દમાળા ફેરબદલી કરે છે"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "મેળવાયેલા માટે તારીખનોંધ ફેરબદલી કરે છે"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે"

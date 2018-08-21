@@ -4,6 +4,7 @@
 #include "callbacks.h"
 #include "filter.h"
 #include "camorama-window.h"
+#include "camorama-globals.h"
 #include "support.h"
 #include <config.h>
 
@@ -13,7 +14,6 @@
 #include <locale.h>
 #include <libv4l2.h>
 
-#include "camorama-display.h"
 #include "camorama-stock-items.h"
 
 static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
@@ -39,26 +39,19 @@ static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
   return true;
 }*/
 
-static GtkWidget*
-camorama_glade_handler (GladeXML* xml,
-			gchar   * func_name,
-			gchar   * name,
-			gchar   * string1,
-			gchar   * string2,
-			gint      int1,
-			gint      int2,
-			gpointer  data)
+gboolean
+draw_camera_callback (GtkWidget *widget, GdkEventExpose *event, gpointer data)
 {
-	gboolean reached = TRUE;
-#warning "FIXME: move the glade crap into the window class"
-	if (string1 && !strcmp (string1, "CamoDisplay")) {
-		GtkWidget* widget = camo_display_new ((cam*)data);
-		gtk_widget_show (widget);
-		return widget;
-	}
+	cam* camera = data;
 
-	g_return_val_if_fail (!reached, NULL);
-	return NULL;
+	gdk_draw_drawable (widget->window,
+			   widget->style->fg_gc[gtk_widget_get_state (widget)],
+			   camera->pixmap,
+			   event->area.x, event->area.y, event->area.x,
+			   event->area.y, event->area.width, event->area.height);
+
+	frames++;
+  return TRUE;
 }
 
 int
@@ -109,9 +102,9 @@ main(int argc, char *argv[]) {
     cam->res = NULL;
     cam->n_res = 0;
 
-    bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
-    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-    textdomain (GETTEXT_PACKAGE);
+    bindtextdomain (PACKAGE_NAME, PACKAGE_LOCALE_DIR);
+    bind_textdomain_codeset (PACKAGE_NAME, "UTF-8");
+    textdomain (PACKAGE_NAME);
     setlocale (LC_ALL, "");
 
     /* gnome_program_init  - initialize everything (gconf, threads, etc) */
@@ -128,10 +121,6 @@ main(int argc, char *argv[]) {
 
 	cam->width = x;
 	cam->height = y;
-	glade_gnome_init ();
-	glade_set_custom_handler (camorama_glade_handler,
-				  cam);
-
 
     if (ver) {
         fprintf (stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);
@@ -224,7 +213,7 @@ main(int argc, char *argv[]) {
     /* get picture attributes */
     get_pic_info (cam);
 
-    bufsize = cam->max_width * cam->max_height * cam->depth / 8;
+    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
     cam->pic_buf = malloc (bufsize);
     cam->tmp = malloc (bufsize);
 
@@ -259,7 +248,12 @@ main(int argc, char *argv[]) {
     //printf("pixfile = %s\n",pixfilename);
     //pixfilename);
     //printf("pixfile = %s\n",pixfilename);
-    cam->xml = glade_xml_new (filename, NULL, NULL);
+    cam->xml = gtk_builder_new ();
+    if (!gtk_builder_add_from_file (cam->xml, filename, NULL)) {
+	error_dialog (_("Couldn't load builder file"));
+        exit(1);
+    }
+
     /*eggtray */
 
     /*tray_icon = egg_tray_icon_new ("Our other cool tray icon");
@@ -271,9 +265,18 @@ main(int argc, char *argv[]) {
      * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface (cam);
 
+    GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
+    gtk_widget_show (widget);
+    g_signal_connect (widget, "expose_event",
+                      G_CALLBACK (draw_camera_callback), cam);
+
     cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
+
+    if (cam->debug == TRUE)
+       print_cam(cam);
+
     gtk_main ();
     if (cam->read == FALSE) {
        stop_streaming(cam);

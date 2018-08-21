@@ -41,8 +41,8 @@ void customstring_func (GtkWidget * rb, cam * cam)
     client = gconf_client_get_default ();
     cam->usestring = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY18, cam->usestring, NULL);
-    gtk_widget_set_sensitive (glade_xml_get_widget
-                              (cam->xml, "string_entry"), cam->usestring);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object
+                              (cam->xml, "string_entry")), cam->usestring);
 }
 
 void drawdate_func (GtkWidget * rb, cam * cam)
@@ -104,28 +104,28 @@ void ppm_func (GtkWidget * rb, cam * cam)
 
 void set_sensitive (cam * cam)
 {
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "table4"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "table4")),
                               cam->cap);
 
-    gtk_widget_set_sensitive (glade_xml_get_widget
-                              (cam->xml, "appendbutton"), cam->cap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "tsbutton"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object
+                              (cam->xml, "appendbutton")), cam->cap);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "tsbutton")),
                               cam->cap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "jpgb"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "jpgb")),
                               cam->cap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "pngb"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "pngb")),
                               cam->cap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "table5"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "table5")),
                               cam->rcap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "timecb"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "timecb")),
                               cam->rcap);
-    gtk_widget_set_sensitive (glade_xml_get_widget
-                              (cam->xml, "tsbutton2"), cam->rcap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "fjpgb"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object
+                              (cam->xml, "tsbutton2")), cam->rcap);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "fjpgb")),
                               cam->rcap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "fpngb"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "fpngb")),
                               cam->rcap);
-    gtk_widget_set_sensitive (glade_xml_get_widget (cam->xml, "hbox20"),
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox20")),
                               cam->acap);
 
 }
@@ -285,18 +285,17 @@ int delete_event (GtkWidget * widget, gpointer data)
 }
 
 /*
- * apply preferences 
+ * apply preferences
  */
 void prefs_func (GtkWidget * okbutton, cam * cam)
 {
     GConfClient *client;
+    gchar *dir;
 
     client = gconf_client_get_default ();
 
-    if (gnome_file_entry_get_full_path ((GnomeFileEntry *) dentry, TRUE)
-        != NULL) {
-        cam->pixdir = g_strdup ((gchar *)
-                                gnome_file_entry_get_full_path ((GnomeFileEntry *) dentry, FALSE));
+    if (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry)) {
+        cam->pixdir = g_strdup (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry));
         gconf_client_set_string (cam->gc, KEY1, cam->pixdir, NULL);
 
     } else {
@@ -399,33 +398,32 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
        start_streaming(cam);
 
     cam->pixmap = gdk_pixmap_new (NULL, cam->width, cam->height, cam->desk_depth);
-    gtk_widget_set_size_request (glade_xml_get_widget (cam->xml, "da"),
+    gtk_widget_set_size_request (GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
                                  cam->width, cam->height);
 
     gtk_window_resize (GTK_WINDOW
-                       (glade_xml_get_widget (cam->xml, "main_window")), 320,
+                       (GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))), 320,
                        240);
 
     title = g_strdup_printf ("Camorama - %s - %dx%d", cam->name,
                              cam->width, cam->height);
     gtk_window_set_title (GTK_WINDOW
-                          (glade_xml_get_widget (cam->xml, "main_window")),
+                          (GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                           title);
     g_free (title);
 }
 
-void on_show_adjustments_activate (GtkMenuItem * menuitem, cam * cam)
+void on_show_adjustments_activate (GtkToggleButton * button, cam * cam)
 {
-
-    if (GTK_WIDGET_VISIBLE (glade_xml_get_widget (cam->xml, "adjustments_table"))) {
-        gtk_widget_hide (glade_xml_get_widget (cam->xml, "adjustments_table"));
+    if (GTK_WIDGET_VISIBLE (GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")))) {
+        gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")));
         gtk_window_resize (GTK_WINDOW
-                           (glade_xml_get_widget
-                            (cam->xml, "main_window")), 320, 240);
+                           (GTK_WIDGET(gtk_builder_get_object
+                            (cam->xml, "main_window"))), 320, 240);
         cam->show_adjustments = FALSE;
 
     } else {
-        gtk_widget_show (glade_xml_get_widget (cam->xml, "adjustments_table"));
+        gtk_widget_show (GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")));
         cam->show_adjustments = TRUE;
     }
     gconf_client_set_bool (cam->gc, KEY22, cam->show_adjustments, NULL);
@@ -433,12 +431,12 @@ void on_show_adjustments_activate (GtkMenuItem * menuitem, cam * cam)
 
 void
 on_show_effects_activate(GtkMenuItem* menuitem, cam* cam) {
-	GtkWidget* effects = glade_xml_get_widget(cam->xml, "scrolledwindow_effects");
+	GtkWidget* effects = GTK_WIDGET(gtk_builder_get_object(cam->xml, "scrolledwindow_effects"));
 	cam->show_effects = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem));
 	
 	if(!cam->show_effects) {
 		gtk_widget_hide(effects);
-		gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "main_window")), 320, 240);
+		gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))), 320, 240);
 	} else {
 		gtk_widget_show(effects);
 	}
@@ -472,8 +470,8 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
                              (const char **) authors,
                              (const char **) documenters, translators, logo);
     gtk_window_set_transient_for (GTK_WINDOW (about),
-                                  GTK_WINDOW (glade_xml_get_widget
-                                              (cam->xml, "main_window")));
+                                  GTK_WINDOW (GTK_WIDGET(gtk_builder_get_object
+                                              (cam->xml, "main_window"))));
 
     g_object_add_weak_pointer (G_OBJECT (about), (void **) &(about));
 
@@ -487,8 +485,8 @@ static void
 apply_filters(cam* cam) {
 	/* v4l has reverse rgb order from what camora expect so call the color
 	   filter to fix things up before running the user selected filters */
-	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->depth);
-	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->depth);
+	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
+	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
 #warning "FIXME: enable the threshold channel filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
 //		threshold_channel (cam->pic_buf, cam->width, cam->height, cam->dither);
@@ -506,7 +504,7 @@ read_timeout_func(cam* cam) {
     GdkGC *gc;
     unsigned char *pic_buf = cam->pic_buf;
 
-    v4l2_read (cam->dev, cam->pic_buf, (cam->width * cam->height * cam->depth / 8));
+    v4l2_read (cam->dev, cam->pic_buf, (cam->width * cam->height * cam->bpp / 8));
     frames2++;
     /*
      * update_rec.x = 0;
@@ -520,7 +518,7 @@ read_timeout_func(cam* cam) {
      */
 
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth);
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
         pic_buf = cam->tmp;
     }
 
@@ -531,9 +529,9 @@ read_timeout_func(cam* cam) {
                         gc, 0, 0,
                         cam->width, cam->height,
                         GDK_RGB_DITHER_NORMAL, pic_buf,
-                        cam->width * cam->depth / 8);
+                        cam->width * cam->bpp / 8);
 
-    gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
+    gtk_widget_queue_draw_area (GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")), 0,
                                 0, cam->width, cam->height);
     return 1;
 
@@ -552,7 +550,7 @@ gint timeout_func (cam * cam)
      * refer the frame 
      */
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->depth);
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
         pic_buf = cam->tmp;
     }
 
@@ -565,9 +563,9 @@ gint timeout_func (cam * cam)
                         gc, 0, 0,
                         cam->width, cam->height,
                         GDK_RGB_DITHER_NORMAL, pic_buf,
-                        cam->width * cam->depth / 8);
+                        cam->width * cam->bpp / 8);
 
-    gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
+    gtk_widget_queue_draw_area (GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")), 0,
                                 0, cam->width, cam->height);
 
     frames2++;
@@ -578,13 +576,14 @@ gint timeout_func (cam * cam)
 gint fps (GtkWidget * sb)
 {
     gchar *stat;
+    guint cont = gtk_statusbar_get_context_id (GTK_STATUSBAR(sb), "context");
 
     seconds++;
-    stat = g_strdup_printf ("%.2f fps - current     %.2f fps - average",
+    stat = g_strdup_printf (_("%.2f fps - current     %.2f fps - average"),
                             (float) frames / (float) (2),
                             (float) frames2 / (float) (seconds * 2));
     frames = 0;
-    gnome_appbar_push (GNOME_APPBAR (sb), stat);
+    gtk_statusbar_push (GTK_STATUSBAR(sb), cont, stat);
     g_free (stat);
     return 1;
 }
@@ -599,10 +598,10 @@ void capture_func (GtkWidget * widget, cam * cam)
     if (cam->debug == TRUE) {
         printf
             ("capture_func\nx = %d, y = %d, depth = %d, realloc size = %d\n",
-             cam->width, cam->height, cam->depth, (cam->width * cam->height * cam->depth / 8));
+             cam->width, cam->height, cam->bpp, (cam->width * cam->height * cam->bpp / 8));
     }
 
-    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth / 8);
+    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->bpp / 8);
 
     if (cam->rcap == TRUE) {
         remote_save (cam);
@@ -631,7 +630,7 @@ gint timeout_capture_func (cam * cam)
         pt2Function (cam);
 
     }
-    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth / 8);
+    memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->bpp / 8);
 
     if (cam->cap == TRUE) {
         local_save (cam);

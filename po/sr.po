@@ -1,494 +1,319 @@
 # Serbian translation of camorama
 # Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003.
-# 
+#
 # This file is distributed under the same license as the camorama package.
-# 
+#
 # Maintainer: Дејан Матијевић <dejan@ns.sympatico.ca>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
-"POT-Creation-Date: 2003-08-27 13:44+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-21 09:41-0300\n"
 "PO-Revision-Date: 2003-08-27 13:43+0200\n"
 "Last-Translator: Дејан Матијевић <dejan@ns.sympatico.ca>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: camorama.desktop.in.h:1
+#: camorama.appdata.xml.in:6 src/callbacks.c:467
+msgid "Camorama"
+msgstr "Каморама"
+
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
 msgid "Camorama Webcam Viewer"
 msgstr "Каморама веб камера прегледач"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:510
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
+msgstr ""
+
+#: camorama.desktop.in:4 src/callbacks.c:469
 msgid "View, alter and save images from a webcam"
 msgstr "Погледај, измени и сачувај снимке са веб камере"
 
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
+#: camorama.desktop.in:8
+#, fuzzy
+msgid "camorama.png"
+msgstr "Каморама"
 
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Ефекат</span"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">Опште</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Облик снимка</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Локални снимци</span>"
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Даљински снимци</span>"
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Временски тренутак</span>"
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr "Додајте временски тренутак сликама"
-
-#: data/camorama.glade.h:10
-msgid "Append time to filename"
-msgstr "Додати време датотеци"
-
-#: data/camorama.glade.h:11
-msgid "Automatic Capture"
-msgstr "Само снимање"
-
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "Црно и бело"
-
-#: data/camorama.glade.h:13
-msgid "Brightness:"
-msgstr "Осветљење:"
-
-#: data/camorama.glade.h:14
-msgid "Camorama-libglade"
-msgstr "Каморама - либгладе"
-
-#: data/camorama.glade.h:15
-msgid "Capture Interval (in minutes):"
-msgstr "Трајање снимања (у минутама):"
-
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "Подешавање боје"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "Праг боје"
-
-#: data/camorama.glade.h:18
-msgid "Color:"
-msgstr "Боја:"
-
-#: data/camorama.glade.h:19
-msgid "Contrast:"
-msgstr "Контраст:"
-
-#: data/camorama.glade.h:20
-msgid "Draw date and time"
-msgstr "Допиши датум и време"
-
-#: data/camorama.glade.h:21
-msgid "FTP server: "
-msgstr "ФТП сервер:"
-
-#: data/camorama.glade.h:22
-msgid "Filename"
-msgstr "Име датотеке"
-
-#: data/camorama.glade.h:23
-msgid "General"
-msgstr "Опште"
-
-#: data/camorama.glade.h:24
-msgid "Hue:"
-msgstr "Нијанса:"
-
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Лапласова"
-
-#: data/camorama.glade.h:26
-msgid "Large"
-msgstr "Велики"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr "Локалне датотеке"
-
-#: data/camorama.glade.h:28
-msgid "Medium"
-msgstr "Осредњи"
-
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "Слика из огледала"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "Негатив"
-
-#: data/camorama.glade.h:31
-msgid "Password:"
-msgstr "Лозинка:"
-
-#: data/camorama.glade.h:32
+#: data/camorama.glade:35
 msgid "Preferences"
 msgstr "Карактеристике"
 
-#: data/camorama.glade.h:33
-msgid "Remote Capture"
-msgstr "Даљинско снимање"
+#: data/camorama.glade:107
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Опште</span>"
 
-#: data/camorama.glade.h:34
-msgid "Save directory:"
-msgstr "Сачувајте фајлове у директоријум:"
+#: data/camorama.glade:139
+msgid "Automatic Capture"
+msgstr "Само снимање"
 
-#: data/camorama.glade.h:35
-msgid "Save files in jpeg format"
-msgstr "Сачувајте фајлове у JPEG облику"
+#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
+#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
+#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
+msgid "     "
+msgstr "     "
 
-#: data/camorama.glade.h:36
-msgid "Save files in png format"
-msgstr "Сачувајте фајлове у PNG облику"
+#: data/camorama.glade:183
+msgid "Capture Interval (in minutes):"
+msgstr "Трајање снимања (у минутама):"
 
-#: data/camorama.glade.h:37
-msgid "Show Adjustments"
-msgstr "Прикажи подешавања"
+#: data/camorama.glade:257
+msgid "General"
+msgstr "Опште"
 
-#: data/camorama.glade.h:38
-msgid "Show Effects"
-msgstr "Покажи ефекте"
+#: data/camorama.glade:279
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Локални снимци</span>"
 
-#: data/camorama.glade.h:39
-msgid "Small"
-msgstr "Мали"
-
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Равномерност"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Собелова"
-
-#: data/camorama.glade.h:42
-msgid "String:"
-msgstr "Низ:"
-
-#: data/camorama.glade.h:43
-msgid "Take Picture"
-msgstr "Направи слику"
-
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Праг:"
-
-#: data/camorama.glade.h:45
-msgid "Timestamp"
-msgstr "Ознака тренутка"
-
-#: data/camorama.glade.h:46
-msgid "Use custom string"
-msgstr "Употреби произвољан низ"
-
-#: data/camorama.glade.h:47
-msgid "Username:"
-msgstr "Корисник:"
-
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "Чудно"
-
-#: data/camorama.glade.h:49
-msgid "White Balance:"
-msgstr "Подешавање белине:"
-
-#: data/camorama.glade.h:50
-msgid "_Directory for captured pics:"
-msgstr "Директоријум за снимљене слике"
-
-#: data/camorama.glade.h:51
+#: data/camorama.glade:311
 msgid "_Enable local capture"
 msgstr "Омогући локално сликање"
 
-#: data/camorama.glade.h:52
-msgid "_Enable remote capture"
-msgstr "Омогући даљинско сликање"
+#: data/camorama.glade:360
+msgid "_Directory for captured pics:"
+msgstr "Директоријум за снимљене слике"
 
-#: data/camorama.glade.h:53
+#: data/camorama.glade:373
 msgid "_Filename for pictures:"
 msgstr "Име датотеке ѕа слике:"
 
-#: data/camorama.glade.h:54
-msgid "ftp.yourdomain.org"
-msgstr "ftp.ваш_домен.org"
-
-#: data/camorama.glade.h:55
-msgid "path/to/save/to"
-msgstr "Сачувај поруку у "
-
-#: data/camorama.glade.h:56
+#: data/camorama.glade:388
 msgid "webcam-capture"
 msgstr "Снимање веб камером"
 
-#: data/camorama.glade.h:57
-msgid "webcamshot"
-msgstr "снимак веб камером"
+#: data/camorama.glade:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "Сачувајте фајлове у директоријум:"
 
-#: data/camorama.glade.h:58
-msgid "your-password"
-msgstr "Ваша лозинка"
+#: data/camorama.glade:424 data/camorama.glade:857
+msgid "Append time to filename"
+msgstr "Додати време датотеци"
 
-#: data/camorama.glade.h:59
+#: data/camorama.glade:441 data/camorama.glade:873
+msgid "Add a timestamp to captured images"
+msgstr "Додајте временски тренутак сликама"
+
+#: data/camorama.glade:500 data/camorama.glade:932
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Облик снимка</span>"
+
+#: data/camorama.glade:531 data/camorama.glade:963
+msgid "Save files in jpeg format"
+msgstr "Сачувајте фајлове у JPEG облику"
+
+#: data/camorama.glade:548 data/camorama.glade:980
+msgid "Save files in png format"
+msgstr "Сачувајте фајлове у PNG облику"
+
+#: data/camorama.glade:593
+msgid "Local Capture"
+msgstr "Локалне датотеке"
+
+#: data/camorama.glade:616
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Даљински снимци</span>"
+
+#: data/camorama.glade:648
+msgid "_Enable remote capture"
+msgstr "Омогући даљинско сликање"
+
+#: data/camorama.glade:696
+msgid "FTP server: "
+msgstr "ФТП сервер:"
+
+#: data/camorama.glade:708
+msgid "Username:"
+msgstr "Корисник:"
+
+#: data/camorama.glade:722
+msgid "Password:"
+msgstr "Лозинка:"
+
+#: data/camorama.glade:736
+msgid "Save directory:"
+msgstr "Сачувајте фајлове у директоријум:"
+
+#: data/camorama.glade:750
+msgid "Filename"
+msgstr "Име датотеке"
+
+#: data/camorama.glade:763
+msgid "ftp.yourdomain.org"
+msgstr "ftp.ваш_домен.org"
+
+#: data/camorama.glade:779
 msgid "your-username"
 msgstr "Ваше корисничко име"
 
-#: data/camorama.glade.h:60
-msgid "~/.gnome-desktop"
-msgstr "~/.ГНОМ - радно окружење"
+#: data/camorama.glade:798
+msgid "your-password"
+msgstr "Ваша лозинка"
 
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "Додати временски тренутак датотеци"
+#: data/camorama.glade:816
+msgid "path/to/save/to"
+msgstr "Сачувај поруку у "
 
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "Додати временски тренутак на даљинску датотеку"
+#: data/camorama.glade:834
+msgid "webcamshot"
+msgstr "снимак веб камером"
 
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Додајти временски тренутак, у Уникс бремену, на крајеве датотека"
+#: data/camorama.glade:1025
+msgid "Remote Capture"
+msgstr "Даљинско снимање"
 
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#: data/camorama.glade:1048
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Временски тренутак</span>"
+
+#: data/camorama.glade:1080
+msgid "Use custom string"
+msgstr "Употреби произвољан низ"
+
+#: data/camorama.glade:1124
+msgid "String:"
+msgstr "Низ:"
+
+#: data/camorama.glade:1170
+msgid "Draw date and time"
+msgstr "Допиши датум и време"
+
+#: data/camorama.glade:1214
+msgid "Timestamp"
+msgstr "Ознака тренутка"
+
+#: data/camorama.glade:1243
+msgid "Camorama-libglade"
+msgstr "Каморама - либгладе"
+
+#: data/camorama.glade:1260
+#, fuzzy
+msgid "_File"
+msgstr "Име датотеке"
+
+#: data/camorama.glade:1267 data/camorama.glade:1567
+msgid "Take Picture"
+msgstr "Направи слику"
+
+#: data/camorama.glade:1302
+msgid "_Edit"
 msgstr ""
-"Додајти временски тренутак, у Уникс бремену, на крајеве од даљинских датотека"
 
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "Произвољни текст за временски тренутак"
-
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Дефинише низ произвољног текста који ће бити убачен у снимак."
-
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "Име датотеке за локалне снимке"
-
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "Датотека за чување снимљених слика локално"
-
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "Директоријум за локалне снимке"
-
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "Директоријум за даљинске снимке"
-
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "Директоријум за чување снимљених слика даљински"
-
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "Директоријум за чување снимљених слика локално"
-
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "Назив за домаћински ФТП сервер"
-
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "Име за домаћински ФТП сервер за даљинске снимке."
-
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "Трајање за само снимање"
-
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "Облик слика за локално снимање"
-
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "Име за датотеку од пренесених снимака."
-
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "Лозинка за ФТП сервер"
-
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "Облик слика за даљинско снимање"
-
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "Име датотеке за даљинско чување"
-
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Одреди облик снимка кији ће бити кориштен за локално чуване слике"
-
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Одреди облик снимка кији ће бити кориштен за даљински чуване слике"
-
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Одреди трајање за само снимање слика."
-
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "Лозинка за ФТП рачун за даљинске снимке."
-
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr "Промена за само снимање"
-
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr "Промена за само снимање слика."
-
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr "Промена за локално снимање"
-
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr "Промена за даљинско сликање"
-
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr "Промена за произвољни низ"
-
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr "Промена за временски тренутак на снимцима"
-
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Промена за цртање временског тренутка на сниманим сликама"
-
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Промена за постављање временског тренутка на локалне снимке"
-
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "Промена за постављање временског тренутка на снимке за ФТП натовар."
-
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "Промена за употребу дугмића за подешавање видео филтера"
-
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the custom string for the timestamp in images."
+#: data/camorama.glade:1326
+msgid "_View"
 msgstr ""
-"Промена за  употребу произвољног низа за временски тренутак на снимцима."
 
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Промена за употребу клизача за подешавање видео карактеристика"
+#: data/camorama.glade:1335 data/camorama.glade:1508
+msgid "Show Adjustments"
+msgstr "Прикажи подешавања"
 
-#: data/camorama.schemas.in.h:37
-msgid "Toggles the video adjustment sliders"
-msgstr "Промена за подешавање видео клизача"
+#: data/camorama.glade:1345
+msgid "Show Effects"
+msgstr "Покажи ефекте"
 
-#: data/camorama.schemas.in.h:38
-msgid "Toggles the video effects buttons"
-msgstr "Промена за подешавање дугмића за видео ефекте"
+#: data/camorama.glade:1361
+msgid "Small"
+msgstr "Мали"
 
-#: data/camorama.schemas.in.h:39
-msgid "Toggles timestamp for local captures"
-msgstr "Промена за временски тренутак за локалне снимке"
-
-#: data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for remote captures"
-msgstr "Промена за временски тренутак за даљинске снимке"
-
-#: data/camorama.schemas.in.h:41
-msgid "Username for FTP server"
-msgstr "Корисничко име за ФТП сервер"
-
-#: data/camorama.schemas.in.h:42
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Корисничо име које ће се користити ѕа ФТП натовар снимљених слика"
-
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
+#: data/camorama.glade:1374
+msgid "_Help"
 msgstr ""
-"Када се снимају слике са \"Сними слику\" дугметом, или са самоснимањем, ово "
-"дугме ће променити чување слика локално."
 
-#: data/camorama.schemas.in.h:44
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"Када се снимају слике са \"Сними слику\" дугметом, или са самоснимањем, ово "
-"дугме ће променити чување слика на даљински сервер."
+#: data/camorama.glade:1698
+msgid "Contrast:"
+msgstr "Контраст:"
 
-#: src/callbacks.c:499
+#: data/camorama.glade:1712
+msgid "Brightness:"
+msgstr "Осветљење:"
+
+#: data/camorama.glade:1728
+msgid "Color:"
+msgstr "Боја:"
+
+#: data/camorama.glade:1744
+msgid "Hue:"
+msgstr "Нијанса:"
+
+#: data/camorama.glade:1760
+msgid "White Balance:"
+msgstr "Подешавање белине:"
+
+#: src/callbacks.c:458
 msgid "translator_credits"
 msgstr ""
 "Дејан Матијевић <dejan@ns.sympatico.ca>\n"
 "\n"
 "Prevod.org — превод на српски језик."
 
-#: src/callbacks.c:508
-msgid "Camorama"
-msgstr "Каморама"
+#: src/callbacks.c:582
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
-msgid "Unable to capture image."
-msgstr "У немогућности да снима снимке."
+#: src/callbacks.c:702
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Усмерење"
+#: src/callbacks.c:711
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "Само снимање"
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "Усмерење/оријентација фиоке."
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
 
-#: src/fileio.c:119 src/fileio.c:265
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "Слика из огледала"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:12
+#, fuzzy
+msgid "Webcam"
+msgstr "снимак веб камером"
+
+#: src/camorama-window.c:113
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:206
+#, fuzzy
+msgid "Effects"
+msgstr "Покажи ефекте"
+
+#: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Могу сачувати привремену датотеку од снимка у /tmp."
 
-#: src/fileio.c:137
+#: src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "У немогућности да створи снимак '%s'."
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:147 src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Не може да сачува снимак „%s/%s“."
 
-#: src/fileio.c:273
+#: src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -497,67 +322,108 @@ msgstr ""
 "Не може да отвори привремену датотеку снимка „%s“.\n"
 "Не може да набаци слику."
 
-#: src/fileio.c:311
-#, c-format
-msgid "An error occured opening %s."
+#: src/fileio.c:312
+#, fuzzy, c-format
+msgid "An error occurred opening %s."
 msgstr "Грешка при отварању %s."
 
-#: src/fileio.c:323
-#, c-format
-msgid "An error occured writing to %s."
+#: src/fileio.c:324
+#, fuzzy, c-format
+msgid "An error occurred writing to %s."
 msgstr "Грешка при писању на %s."
 
-#: src/fileio.c:403
+#: src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Немогуће створити директоријум '%s'."
 
-#: src/fileio.c:414
+#: src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Немогуче променути директоријум '%s'."
 
-#: src/main.c:423
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "Подешавање боје"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "Праг:"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr "Чудно"
+
+#: src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "Равномерност"
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr "Собелова"
+
+#: src/main.c:73
 msgid "show version and exit"
 msgstr "Покажи верзију и изађи"
 
-#: src/main.c:425
+#: src/main.c:75
 msgid "v4l device to use"
 msgstr "Употреби апарат В4Л"
 
-#: src/main.c:427
-msgid "enable debuging code"
+#: src/main.c:77
+#, fuzzy
+msgid "enable debugging code"
 msgstr "Омогући код проналажења грешака"
 
-#: src/main.c:428
+#: src/main.c:78
 msgid "capture width"
 msgstr "Ширина снимака"
 
-#: src/main.c:430
+#: src/main.c:80
 msgid "capture height"
 msgstr "Висина снимка"
 
-#: src/main.c:433
+#: src/main.c:83
 msgid "maximum capture size"
 msgstr "Највећа димензија снимка"
 
-#: src/main.c:435
+#: src/main.c:85
 msgid "minimum capture size"
 msgstr "Најмања димензија снимка"
 
-#: src/main.c:437
+#: src/main.c:87
 msgid "middle capture size"
 msgstr "Средња димензија снимка"
 
-#: src/main.c:439
+#: src/main.c:89
 msgid "use read() rather than mmap()"
 msgstr "Користи read() боље него mmap()"
 
-#: src/main.c:461
+#: src/main.c:114
 msgid "camorama"
 msgstr "Каморама"
 
-#: src/main.c:475
+#: src/main.c:126
 #, c-format
 msgid ""
 "\n"
@@ -570,17 +436,22 @@ msgstr ""
 "Каморама верзија %s\n"
 "\n"
 
-#: src/main.c:609
+#: src/main.c:243
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nemoguће наћи главну приступну датотеку (camorama.glade)."
+
+#: src/main.c:253
+#, fuzzy
+msgid "Couldn't load builder file"
+msgstr "Немогуће наћи пиксмап датотеку: %s"
 
 #: src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Немогуће наћи пиксмап датотеку: %s"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
+#: src/v4l.c:412
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -588,3 +459,217 @@ msgid ""
 msgstr ""
 "Немогуће се конектовати на видео апарат (%s).\n"
 "Проверите конекцију."
+
+#: src/v4l.c:440
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:455
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:468
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:481
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:490
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:518
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:578
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.ГНОМ - радно окружење"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Ефекат</span"
+
+#~ msgid "Black & white"
+#~ msgstr "Црно и бело"
+
+#~ msgid "Color threshold"
+#~ msgstr "Праг боје"
+
+#~ msgid "Laplace"
+#~ msgstr "Лапласова"
+
+#~ msgid "Large"
+#~ msgstr "Велики"
+
+#~ msgid "Medium"
+#~ msgstr "Осредњи"
+
+#~ msgid "Negative"
+#~ msgstr "Негатив"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "Додати временски тренутак датотеци"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "Додати временски тренутак на даљинску датотеку"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "Додајти временски тренутак, у Уникс бремену, на крајеве датотека"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr ""
+#~ "Додајти временски тренутак, у Уникс бремену, на крајеве од даљинских "
+#~ "датотека"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "Произвољни текст за временски тренутак"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr "Дефинише низ произвољног текста који ће бити убачен у снимак."
+
+#~ msgid "Filename for local captures"
+#~ msgstr "Име датотеке за локалне снимке"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "Датотека за чување снимљених слика локално"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "Директоријум за локалне снимке"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "Директоријум за даљинске снимке"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "Директоријум за чување снимљених слика даљински"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "Директоријум за чување снимљених слика локално"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "Назив за домаћински ФТП сервер"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "Име за домаћински ФТП сервер за даљинске снимке."
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "Трајање за само снимање"
+
+#~ msgid "Local capture image format"
+#~ msgstr "Облик слика за локално снимање"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "Име за датотеку од пренесених снимака."
+
+#~ msgid "Password for FTP server"
+#~ msgstr "Лозинка за ФТП сервер"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "Облик слика за даљинско снимање"
+
+#~ msgid "Remote save filename"
+#~ msgstr "Име датотеке за даљинско чување"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr "Одреди облик снимка кији ће бити кориштен за локално чуване слике"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr "Одреди облик снимка кији ће бити кориштен за даљински чуване слике"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "Одреди трајање за само снимање слика."
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "Лозинка за ФТП рачун за даљинске снимке."
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "Промена за само снимање"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "Промена за само снимање слика."
+
+#~ msgid "Toggles local capture"
+#~ msgstr "Промена за локално снимање"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr "Промена за даљинско сликање"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "Промена за произвољни низ"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "Промена за временски тренутак на снимцима"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "Промена за цртање временског тренутка на сниманим сликама"
+
+#~ msgid "Toggles the insertion of a timestamp into local images"
+#~ msgstr "Промена за постављање временског тренутка на локалне снимке"
+
+#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+#~ msgstr "Промена за постављање временског тренутка на снимке за ФТП натовар."
+
+#~ msgid "Toggles the use of the buttons to adjust the video filters"
+#~ msgstr "Промена за употребу дугмића за подешавање видео филтера"
+
+#~ msgid "Toggles the use of the custom string for the timestamp in images."
+#~ msgstr ""
+#~ "Промена за  употребу произвољног низа за временски тренутак на снимцима."
+
+#~ msgid "Toggles the use of the sliders to adjust the video properties"
+#~ msgstr "Промена за употребу клизача за подешавање видео карактеристика"
+
+#~ msgid "Toggles the video adjustment sliders"
+#~ msgstr "Промена за подешавање видео клизача"
+
+#~ msgid "Toggles the video effects buttons"
+#~ msgstr "Промена за подешавање дугмића за видео ефекте"
+
+#~ msgid "Toggles timestamp for local captures"
+#~ msgstr "Промена за временски тренутак за локалне снимке"
+
+#~ msgid "Toggles timestamp for remote captures"
+#~ msgstr "Промена за временски тренутак за даљинске снимке"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "Корисничко име за ФТП сервер"
+
+#~ msgid "Username to use for FTP uploads of captured pictures"
+#~ msgstr "Корисничо име које ће се користити ѕа ФТП натовар снимљених слика"
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures locally."
+#~ msgstr ""
+#~ "Када се снимају слике са \"Сними слику\" дугметом, или са самоснимањем, "
+#~ "ово дугме ће променити чување слика локално."
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures to a remote server."
+#~ msgstr ""
+#~ "Када се снимају слике са \"Сними слику\" дугметом, или са самоснимањем, "
+#~ "ово дугме ће променити чување слика на даљински сервер."
+
+#~ msgid "Unable to capture image."
+#~ msgstr "У немогућности да снима снимке."
+
+#~ msgid "Orientation"
+#~ msgstr "Усмерење"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Усмерење/оријентација фиоке."

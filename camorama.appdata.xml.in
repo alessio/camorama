@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>camorama.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>Camorama</name>
+  <summary>Camorama Webcam Viewer</summary>
+  <description>
+    <p>
+      Camorama is a simple webcam viewer, with the ability to apply some
+      video effects.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/alessio/camorama/</url>
+  <screenshots>
+    <screenshot>http://screenshots.ubuntu.com/screenshots/000/000/842/large.png</screenshot>
+  </screenshots>
+  <updatecontact>quadrispro_at_ubuntu.com</updatecontact>
+</component>

@@ -1,15 +1,19 @@
-/* config.h.in.  Generated from configure.in by autoheader.  */
+/* config.h.in.  Generated from configure.ac by autoheader.  */
 
-/* always defined to indicate that i18n is enabled */
+/* Define to 1 if translation of program messages to the user's native
+   language is requested. */
 #undef ENABLE_NLS
 
-/* "blah blah blah" */
-#undef GETTEXT_PACKAGE
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
+   CoreFoundation framework. */
+#undef HAVE_CFLOCALECOPYCURRENT
 
-/* Define to 1 if you have the `bind_textdomain_codeset' function. */
-#undef HAVE_BIND_TEXTDOMAIN_CODESET
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
+   the CoreFoundation framework. */
+#undef HAVE_CFPREFERENCESCOPYAPPVALUE
 
-/* Define to 1 if you have the `dcgettext' function. */
+/* Define if the GNU dcgettext() function is already present or preinstalled.
+   */
 #undef HAVE_DCGETTEXT
 
 /* Define to 1 if you have the <fcntl.h> header file. */
@@ -24,17 +28,14 @@
 /* Define to 1 if you have the <glade/glade.h> header file. */
 #undef HAVE_GLADE_GLADE_H
 
+/* Define if you have the iconv() function and it works. */
+#undef HAVE_ICONV
+
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
-/* Define if your <locale.h> file defines LC_MESSAGES. */
-#undef HAVE_LC_MESSAGES
-
 /* Define to 1 if you have the <linux/videodev.h> header file. */
 #undef HAVE_LINUX_VIDEODEV_H
-
-/* Define to 1 if you have the <locale.h> header file. */
-#undef HAVE_LOCALE_H
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -86,6 +87,9 @@
 
 /* Define to the one symbol short name of this package. */
 #undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
 
 /* Define to the version of this package. */
 #undef PACKAGE_VERSION

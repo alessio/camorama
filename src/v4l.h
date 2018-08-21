@@ -17,7 +17,6 @@
 #include <libv4l2.h>
 #include <signal.h>
 #include <png.h>
-#include <glade/glade.h>
 #include <gconf/gconf-client.h>
 
 #include "camorama-filter-chain.h"
@@ -47,7 +46,7 @@ typedef struct camera {
    int dev;
    int width;
    int height;
-   int depth;
+   int bpp;
    int desk_depth;
    CamoImageSize size;
    char name[32];
@@ -78,7 +77,7 @@ typedef struct camera {
    guint timeout_id, idle_id;
    guint32 timeout_interval;
    GConfClient *gc;
-   GladeXML *xml;
+   GtkBuilder *xml;
    GtkStatusIcon *tray_icon;
 
    CamoramaFilterChain* filter_chain;
@@ -93,6 +92,7 @@ typedef struct camera {
 } cam;
 
 void camera_cap (cam *);
+void print_cam (cam *);
 void try_set_win_info(cam * cam, int *x, int *y);
 void set_win_info (cam * cam);
 void get_pic_info (cam *);

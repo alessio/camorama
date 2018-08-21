@@ -11,14 +11,30 @@ extern int errno;
 
 void print_cam(cam *cam){
    printf("\nCamera Info\n");
-   printf("-------------\n");
+   printf("-----------\n");
    printf("device = %s, x = %d, y = %d\n",cam->video_dev, cam->width,cam->height);
-   printf("depth = %d, desk_depth = %d, size = %d\n",cam->depth,cam->desk_depth,cam->size);
+   printf("bits per pixel = %d, desk_depth = %d\n", cam->bpp, cam->desk_depth);
+   if(cam->width <= 0 || cam->height <= 0) {
+      switch (cam->size) {
+      case PICMAX:
+         printf("size = PICMAX\n");
+         break;
+      case PICMIN:
+         printf("size = PICMIN\n");
+         break;
+      case PICHALF:
+      default:
+         printf("size = PICHALF\n");
+         break;
+      }
+   }
    printf("capture directory = %s, capture file = %s\n",cam->pixdir, cam->capturefile);
-   printf("remote capture directory = %s, remote capture file = %s\n",cam->rpixdir, cam->rcapturefile);
-   printf("remote host = %s, remote login = %s\n",cam->rhost,cam->rlogin);
-   printf("timestamp = %s\n\n",cam->ts_string);
-
+   if (strcmp(cam->rhost, "yourdomain.org")) {
+      printf("remote host = %s, remote login = %s\n",cam->rhost,cam->rlogin);
+      printf("remote capture directory = %s, remote capture file = %s\n",cam->rpixdir, cam->rcapturefile);
+   }
+   if (strcmp(cam->ts_string, "Camorama!"))
+      printf("timestamp = %s\n\n",cam->ts_string);
 }
 
 void insert_resolution(cam * cam, int x, int y)
@@ -319,7 +335,7 @@ void get_win_info(cam * cam)
        fmt.fmt.pix.pixelformat == V4L2_PIX_FMT_YUV420) {
 
       cam->pixformat = fmt.fmt.pix.pixelformat;
-      cam->depth = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
+      cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
       cam->width = fmt.fmt.pix.width;
       cam->height = fmt.fmt.pix.height;
       cam->bytesperline = fmt.fmt.pix.bytesperline;
@@ -403,7 +419,7 @@ void set_win_info(cam * cam)
    cam->pixformat = fmt.fmt.pix.pixelformat;
    cam->bytesperline = fmt.fmt.pix.bytesperline;
 
-   cam->depth = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
+   cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
 
    cam->width = fmt.fmt.pix.width;
    cam->height = fmt.fmt.pix.height;
@@ -462,7 +478,7 @@ void start_streaming(cam * cam)
       buf.memory = V4L2_MEMORY_MMAP;
       buf.index = i;
       if (v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf)) {
-         msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not enqueu buffers (%s), exiting...."), cam->video_dev);
+         msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."), cam->video_dev);
          error_dialog(msg);
          g_free(msg);
          exit(0);
@@ -515,8 +531,8 @@ void capture_buffers(cam * cam, unsigned char *outbuf, int len)
 
    inbuf = cam->buffers[buf.index].start;
    for (y = 0; y < cam->height; y++) {
-      memcpy(outbuf, inbuf, cam->width * cam->depth / 8);
-      outbuf += cam->width * cam->depth / 8;
+      memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
+      outbuf += cam->width * cam->bpp / 8;
       inbuf += cam->bytesperline;
    }
 

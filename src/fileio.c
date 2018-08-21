@@ -130,7 +130,7 @@ void remote_save (cam * cam)
     //g_free(ext);
     pb = gdk_pixbuf_new_from_data (cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
                                    cam->width, cam->height,
-                                   cam->width * cam->depth / 8, NULL,
+                                   cam->width * cam->bpp / 8, NULL,
                                    NULL);
  
     if (pb == NULL) {
@@ -174,10 +174,10 @@ void remote_save (cam * cam)
      * exit (0);
      * }
      * 
-     * tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2);
+     * tmp = malloc (sizeof (char) * cam->width * cam->height * cam->bpp * 2 / 8);
      * while (!feof (fp))
      * {
-     * bytes += fread (tmp, 1, cam->width * cam->height * cam->depth, fp);
+     * bytes += fread (tmp, 1, cam->width * cam->height * cam->bpp / 8, fp);
      * }
      * fclose (fp);
      * 
@@ -223,7 +223,7 @@ void remote_save (cam * cam)
      * } */
 
     remote_thread =
-        g_thread_create ((GThreadFunc) save_thread, cam, FALSE, NULL);
+        g_thread_new ("remote", (GThreadFunc) save_thread, cam);
     g_free (ext);
     //free (tmp);
 
@@ -280,9 +280,9 @@ void save_thread (cam * cam)
         //exit (0);
     }
 
-    tmp = malloc (sizeof (char) * cam->width * cam->height * cam->depth * 2);
+    tmp = malloc (sizeof (char) * cam->width * cam->height * cam->bpp * 2 / 8);
     while (!feof (fp)) {
-        bytes += fread (tmp, 1, cam->width * cam->height * cam->depth, fp);
+        bytes += fread (tmp, 1, cam->width * cam->height * cam->bpp / 8, fp);
     }
     fclose (fp);
 
@@ -367,7 +367,7 @@ int local_save (cam * cam)
         ext = g_strdup ((gchar *) "jpeg");
     }
     //cam->tmp = NULL;
-    //memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->depth);
+    //memcpy (cam->tmp, cam->pic_buf, cam->width * cam->height * cam->bpp / 8);
 
     if (cam->timestamp == TRUE) {
         add_rgb_text (cam->tmp, cam->width, cam->height, cam->ts_string,
@@ -422,7 +422,7 @@ int local_save (cam * cam)
 
     pb = gdk_pixbuf_new_from_data (cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
                                    cam->width, cam->height,
-                                   (cam->width * cam->depth / 8), NULL,
+                                   (cam->width * cam->bpp / 8), NULL,
                                    NULL);
     pbs = gdk_pixbuf_save (pb, filename, ext, NULL, NULL);
      if (pbs == FALSE) {

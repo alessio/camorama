@@ -5,486 +5,309 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-19 11:03+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-21 09:41-0300\n"
 "PO-Revision-Date: 2004-05-18 11:15+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Camorama, shikuesi për webcam"
-
-#: camorama.desktop.in.h:2 src/callbacks.c:510
-msgid "View, alter and save images from a webcam"
-msgstr "Shiko, ndrysho dhe ruaj imazhet nga një webcam"
-
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
-
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Efektet</span>"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">E përgjithshme</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Lloji i Imazhit</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Marrja lokale</span>"
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Marrja remote</span>"
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Timestamp</span>"
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr "Shto kohën tek imazhet e marra"
-
-#: data/camorama.glade.h:10
-msgid "Append time to filename"
-msgstr "Shtoi orën dhe datën emrit të file"
-
-#: data/camorama.glade.h:11
-msgid "Automatic Capture"
-msgstr "Marrje automatike"
-
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "Bardhë & e zi"
-
-#: data/camorama.glade.h:13
-msgid "Brightness:"
-msgstr "Ndriçimi:"
-
-#: data/camorama.glade.h:14
-msgid "Camorama-libglade"
-msgstr "Camorama-libglade"
-
-#: data/camorama.glade.h:15
-msgid "Capture Interval (in minutes):"
-msgstr "Intervali i marrjes (në minuta):"
-
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "Rregullimi i ngjyrës"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "Kufiri i ngjyrës"
-
-#: data/camorama.glade.h:18
-msgid "Color:"
-msgstr "Ngjyra:"
-
-#: data/camorama.glade.h:19
-msgid "Contrast:"
-msgstr "Kontrasti:"
-
-#: data/camorama.glade.h:20
-msgid "Draw date and time"
-msgstr "Krijo datën dhe orën"
-
-#: data/camorama.glade.h:21
-msgid "FTP server: "
-msgstr "Serveri FTP: "
-
-#: data/camorama.glade.h:22
-msgid "Filename"
-msgstr "Emri i file"
-
-#: data/camorama.glade.h:23
-msgid "General"
-msgstr "Të përgjithshme"
-
-#: data/camorama.glade.h:24
-msgid "Hue:"
-msgstr "Tonaliteti:"
-
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Laplace"
-
-#: data/camorama.glade.h:26
-msgid "Large"
-msgstr "E madhe"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr "Marrja lokale"
-
-#: data/camorama.glade.h:28
-msgid "Medium"
-msgstr "Mesatare"
-
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "Figura e reflektuar"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "Negativi"
-
-#: data/camorama.glade.h:31
-msgid "Password:"
-msgstr "Fjalëkalimi:"
-
-#: data/camorama.glade.h:32
-msgid "Preferences"
-msgstr "Preferimet"
-
-#: data/camorama.glade.h:33
-msgid "Remote Capture"
-msgstr "Marrja remote"
-
-#: data/camorama.glade.h:34
-msgid "Save directory:"
-msgstr "Directory e ruajtjes:"
-
-#: data/camorama.glade.h:35
-msgid "Save files in jpeg format"
-msgstr "Ruaj files në formatin jpeg"
-
-#: data/camorama.glade.h:36
-msgid "Save files in png format"
-msgstr "Ruaj files në formatin png"
-
-#: data/camorama.glade.h:37
-msgid "Show Adjustments"
-msgstr "Trego rregullimet"
-
-#: data/camorama.glade.h:38
-msgid "Show Effects"
-msgstr "Trego efektet"
-
-#: data/camorama.glade.h:39
-msgid "Small"
-msgstr "E vogël"
-
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Smusim"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Sobel"
-
-#: data/camorama.glade.h:42
-msgid "String:"
-msgstr "Fraza:"
-
-#: data/camorama.glade.h:43
-msgid "Take Picture"
-msgstr "Merr foto"
-
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Kufiri:"
-
-#: data/camorama.glade.h:45
-msgid "Timestamp"
-msgstr "Koha"
-
-#: data/camorama.glade.h:46
-msgid "Use custom string"
-msgstr "Përdor një frazë të personalizuar"
-
-#. GRUT modified this item
-#: data/camorama.glade.h:47
-msgid "Username:"
-msgstr "Përdoruesi:"
-
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "Wacky"
-
-#: data/camorama.glade.h:49
-msgid "White Balance:"
-msgstr "Ballancimi i të bardhës:"
-
-#: data/camorama.glade.h:50
-msgid "_Directory for captured pics:"
-msgstr "_Directory për fotot e marra:"
-
-#: data/camorama.glade.h:51
-msgid "_Enable local capture"
-msgstr "_Aktivo marrjen lokale"
-
-#: data/camorama.glade.h:52
-msgid "_Enable remote capture"
-msgstr "_Aktivo marrjen remote"
-
-#: data/camorama.glade.h:53
-msgid "_Filename for pictures:"
-msgstr "_Emri i file për fotot:"
-
-#: data/camorama.glade.h:54
-msgid "ftp.yourdomain.org"
-msgstr "ftp.domain_juaj.org"
-
-#: data/camorama.glade.h:55
-msgid "path/to/save/to"
-msgstr "pozicioni/ku/duhen/ruajtur"
-
-#: data/camorama.glade.h:56
-msgid "webcam-capture"
-msgstr "marrja-webcam"
-
-#: data/camorama.glade.h:57
-msgid "webcamshot"
-msgstr "webcamshot"
-
-#: data/camorama.glade.h:58
-msgid "your-password"
-msgstr "passwordi-juaj"
-
-#: data/camorama.glade.h:59
-msgid "your-username"
-msgstr "username-juaj"
-
-#: data/camorama.glade.h:60
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
-
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "Shton datën dhe orën emrit të file"
-
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "Shton datën dhe orën emrit të file remot"
-
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Shton datën dhe orën, si orar UNIX, në fund të emrit të file"
-
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Shton datën dhe orën, si orar UNIX, në fund të emrit të file remot"
-
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "Teksti i personalizuar për datën dhe orën"
-
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Përcakton një varg të personalizuar teksti për t'u shtuar në figurë."
-
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "Emri i file për marrjet lokale"
-
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "Emri i file për të ruajtur fotot e marra lokalisht"
-
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "Kartela për marrjet lokale"
-
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "Kartela për marrjet remote"
-
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "Kartela për të ruajtur fotot e marra në remot"
-
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "Kartela për të ruajtur fotot e marra në lokal"
-
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "Emri i host për server-in FTP"
-
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "Emri i Host i serverit FTP për filmime remote."
-
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "Intervali për marrjet automatike"
-
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "Formati për figurën e marrë në lokale"
-
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "Emri për files të ruajtur në remot."
-
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "Fjalëkalimi për serverin FTP"
-
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "Formati për figurat e marra në remot"
-
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "Emri i file për ruajtjen remote"
-
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Përcakton formatin që do të përdoret për figurat e ruajtura lokalisht"
-
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Përcakton formatin që do të përdoret për figurat e ruajtura në remot"
-
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Përcakton intervalin për marrjen automatike të figurave."
-
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "Fjalëkalimi për llogarinë FTP për marrjet në remot."
-
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr "Aktivon marrjen automatike"
-
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr "Aktivon marrjen automatike të figurave."
-
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr "Aktivon marrjen lokale"
-
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr "Aktivon marrjen remote"
-
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr "Aktivon tekstin e personalizuar"
-
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr "Aktivon datën dhe orën në marrje"
-
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Aktivon shtimin e datës dhe orës në figurat e marra"
-
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Aktivon shtimin e datës dhe orës në figurat lokale"
-
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "Aktivon shtimin e datës dhe orës në figurat për upload FTP."
-
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "Aktivon përdorimin e pulsantëve për rregullimin e filtrave video"
-
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr ""
-"Aktivon përdorimin e tekstit të personalizuar për datën dhe orën në figura."
-
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
-"Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e pronësive video"
-
-#: data/camorama.schemas.in.h:37
-msgid "Toggles the video adjustment sliders"
-msgstr "Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e videos"
-
-#: data/camorama.schemas.in.h:38
-msgid "Toggles the video effects buttons"
-msgstr "Aktivon pulsantët e efekteve video"
-
-#: data/camorama.schemas.in.h:39
-msgid "Toggles timestamp for local captures"
-msgstr "Aktivon datën dhe orën për marrjet lokale"
-
-#: data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for remote captures"
-msgstr "Aktivon datën dhe orën për marrjet remote"
-
-#: data/camorama.schemas.in.h:41
-msgid "Username for FTP server"
-msgstr "Emri i përdoruesit për serverin FTP"
-
-#: data/camorama.schemas.in.h:42
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Emri i përdoruesit për tu përdorur për upload FTP të figurave të marra"
-
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"Gjatë marrjes së figurave me anë të pulsantit \"Fotografo\" ose me marrjen "
-"automatike, ky tast mundëson ruajtjen lokale të figurave."
-
-#: data/camorama.schemas.in.h:44
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"Gjatë marrjes së figurave me anë të pulsantit \"Fotografo\" ose me marrjen "
-"automatike, ky tast mundëson ruajtjen remote të figurave."
-
-#: src/callbacks.c:499
-msgid "translator_credits"
-msgstr "Laurent Dhima <laurenti@alblinux.net>"
-
-#: src/callbacks.c:508
+#: camorama.appdata.xml.in:6 src/callbacks.c:467
 msgid "Camorama"
 msgstr "Camorama"
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
-msgid "Unable to capture image."
-msgstr "E pamundur marrja e figurës."
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama, shikuesi për webcam"
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Orientimi"
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
+msgstr ""
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "Orientimi i sirtarit."
+#: camorama.desktop.in:4 src/callbacks.c:469
+msgid "View, alter and save images from a webcam"
+msgstr "Shiko, ndrysho dhe ruaj imazhet nga një webcam"
 
-#: src/fileio.c:119 src/fileio.c:265
+#: camorama.desktop.in:8
+#, fuzzy
+msgid "camorama.png"
+msgstr "camorama"
+
+#: data/camorama.glade:35
+msgid "Preferences"
+msgstr "Preferimet"
+
+#: data/camorama.glade:107
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">E përgjithshme</span>"
+
+#: data/camorama.glade:139
+msgid "Automatic Capture"
+msgstr "Marrje automatike"
+
+#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
+#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
+#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
+msgid "     "
+msgstr "     "
+
+#: data/camorama.glade:183
+msgid "Capture Interval (in minutes):"
+msgstr "Intervali i marrjes (në minuta):"
+
+#: data/camorama.glade:257
+msgid "General"
+msgstr "Të përgjithshme"
+
+#: data/camorama.glade:279
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Marrja lokale</span>"
+
+#: data/camorama.glade:311
+msgid "_Enable local capture"
+msgstr "_Aktivo marrjen lokale"
+
+#: data/camorama.glade:360
+msgid "_Directory for captured pics:"
+msgstr "_Directory për fotot e marra:"
+
+#: data/camorama.glade:373
+msgid "_Filename for pictures:"
+msgstr "_Emri i file për fotot:"
+
+#: data/camorama.glade:388
+msgid "webcam-capture"
+msgstr "marrja-webcam"
+
+#: data/camorama.glade:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "Directory e ruajtjes:"
+
+#: data/camorama.glade:424 data/camorama.glade:857
+msgid "Append time to filename"
+msgstr "Shtoi orën dhe datën emrit të file"
+
+#: data/camorama.glade:441 data/camorama.glade:873
+msgid "Add a timestamp to captured images"
+msgstr "Shto kohën tek imazhet e marra"
+
+#: data/camorama.glade:500 data/camorama.glade:932
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Lloji i Imazhit</span>"
+
+#: data/camorama.glade:531 data/camorama.glade:963
+msgid "Save files in jpeg format"
+msgstr "Ruaj files në formatin jpeg"
+
+#: data/camorama.glade:548 data/camorama.glade:980
+msgid "Save files in png format"
+msgstr "Ruaj files në formatin png"
+
+#: data/camorama.glade:593
+msgid "Local Capture"
+msgstr "Marrja lokale"
+
+#: data/camorama.glade:616
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Marrja remote</span>"
+
+#: data/camorama.glade:648
+msgid "_Enable remote capture"
+msgstr "_Aktivo marrjen remote"
+
+#: data/camorama.glade:696
+msgid "FTP server: "
+msgstr "Serveri FTP: "
+
+#: data/camorama.glade:708
+msgid "Username:"
+msgstr "Përdoruesi:"
+
+#: data/camorama.glade:722
+msgid "Password:"
+msgstr "Fjalëkalimi:"
+
+#: data/camorama.glade:736
+msgid "Save directory:"
+msgstr "Directory e ruajtjes:"
+
+#: data/camorama.glade:750
+msgid "Filename"
+msgstr "Emri i file"
+
+#: data/camorama.glade:763
+msgid "ftp.yourdomain.org"
+msgstr "ftp.domain_juaj.org"
+
+#: data/camorama.glade:779
+msgid "your-username"
+msgstr "username-juaj"
+
+#: data/camorama.glade:798
+msgid "your-password"
+msgstr "passwordi-juaj"
+
+#: data/camorama.glade:816
+msgid "path/to/save/to"
+msgstr "pozicioni/ku/duhen/ruajtur"
+
+#: data/camorama.glade:834
+msgid "webcamshot"
+msgstr "webcamshot"
+
+#: data/camorama.glade:1025
+msgid "Remote Capture"
+msgstr "Marrja remote"
+
+#: data/camorama.glade:1048
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Timestamp</span>"
+
+#: data/camorama.glade:1080
+msgid "Use custom string"
+msgstr "Përdor një frazë të personalizuar"
+
+#: data/camorama.glade:1124
+msgid "String:"
+msgstr "Fraza:"
+
+#: data/camorama.glade:1170
+msgid "Draw date and time"
+msgstr "Krijo datën dhe orën"
+
+#: data/camorama.glade:1214
+msgid "Timestamp"
+msgstr "Koha"
+
+#: data/camorama.glade:1243
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: data/camorama.glade:1260
+#, fuzzy
+msgid "_File"
+msgstr "Emri i file"
+
+#: data/camorama.glade:1267 data/camorama.glade:1567
+msgid "Take Picture"
+msgstr "Merr foto"
+
+#: data/camorama.glade:1302
+msgid "_Edit"
+msgstr ""
+
+#: data/camorama.glade:1326
+msgid "_View"
+msgstr ""
+
+#: data/camorama.glade:1335 data/camorama.glade:1508
+msgid "Show Adjustments"
+msgstr "Trego rregullimet"
+
+#: data/camorama.glade:1345
+msgid "Show Effects"
+msgstr "Trego efektet"
+
+#: data/camorama.glade:1361
+msgid "Small"
+msgstr "E vogël"
+
+#: data/camorama.glade:1374
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.glade:1698
+msgid "Contrast:"
+msgstr "Kontrasti:"
+
+#: data/camorama.glade:1712
+msgid "Brightness:"
+msgstr "Ndriçimi:"
+
+#: data/camorama.glade:1728
+msgid "Color:"
+msgstr "Ngjyra:"
+
+#: data/camorama.glade:1744
+msgid "Hue:"
+msgstr "Tonaliteti:"
+
+#: data/camorama.glade:1760
+msgid "White Balance:"
+msgstr "Ballancimi i të bardhës:"
+
+#: src/callbacks.c:458
+msgid "translator_credits"
+msgstr "Laurent Dhima <laurenti@alblinux.net>"
+
+#: src/callbacks.c:582
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
+
+#: src/callbacks.c:702
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+
+#: src/callbacks.c:711
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "Marrje automatike"
+
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "Figura e reflektuar"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:12
+#, fuzzy
+msgid "Webcam"
+msgstr "webcamshot"
+
+#: src/camorama-window.c:113
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:206
+#, fuzzy
+msgid "Effects"
+msgstr "Trego efektet"
+
+#: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Është e mundur ruajtja e file të figurave të përkohshme në /tmp."
 
-#: src/fileio.c:137
+#: src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "I pamundur krijimi i figurës '%s'."
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:147 src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "E pamundur ruajtja e figurës '%s/%s'."
 
-#: src/fileio.c:273
+#: src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -493,67 +316,108 @@ msgstr ""
 "E pamundur hapja e file të figurës së përkohshme '%s'.\n"
 "Upload i figurës nuk është i mundur."
 
-#: src/fileio.c:311
-#, c-format
-msgid "An error occured opening %s."
+#: src/fileio.c:312
+#, fuzzy, c-format
+msgid "An error occurred opening %s."
 msgstr "Gabim gjatë hapjes së %s."
 
-#: src/fileio.c:323
-#, c-format
-msgid "An error occured writing to %s."
+#: src/fileio.c:324
+#, fuzzy, c-format
+msgid "An error occurred writing to %s."
 msgstr "Gabim gjatë shkrimit tek %s."
 
-#: src/fileio.c:403
+#: src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "I pamundur krijimi i directory '%s'."
 
-#: src/fileio.c:414
+#: src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "E pamundur lëvizja tek directory '%s'."
 
-#: src/main.c:423
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "Rregullimi i ngjyrës"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "Kufiri:"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr "Wacky"
+
+#: src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "Smusim"
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr "Sobel"
+
+#: src/main.c:73
 msgid "show version and exit"
 msgstr "shfaq versionin dhe del"
 
-#: src/main.c:425
+#: src/main.c:75
 msgid "v4l device to use"
 msgstr "dispozitivi v4l që duhet përdorur"
 
-#: src/main.c:427
-msgid "enable debuging code"
+#: src/main.c:77
+#, fuzzy
+msgid "enable debugging code"
 msgstr "aktivon kodin për debug"
 
-#: src/main.c:428
+#: src/main.c:78
 msgid "capture width"
 msgstr "gjerësia e marrjes"
 
-#: src/main.c:430
+#: src/main.c:80
 msgid "capture height"
 msgstr "lartësia e marrjes"
 
-#: src/main.c:433
+#: src/main.c:83
 msgid "maximum capture size"
 msgstr "madhësia maksimum e marrjes"
 
-#: src/main.c:435
+#: src/main.c:85
 msgid "minimum capture size"
 msgstr "madhësia minimum e marrjes"
 
-#: src/main.c:437
+#: src/main.c:87
 msgid "middle capture size"
 msgstr "madhësia e marrjes mesatare"
 
-#: src/main.c:439
+#: src/main.c:89
 msgid "use read() rather than mmap()"
 msgstr "përdor read() në vend të mmap()"
 
-#: src/main.c:461
+#: src/main.c:114
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:475
+#: src/main.c:126
 #, c-format
 msgid ""
 "\n"
@@ -566,17 +430,22 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:609
+#: src/main.c:243
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "E pamundur gjetja e file të interfaqes kryesore (camorama.glade)"
+
+#: src/main.c:253
+#, fuzzy
+msgid "Couldn't load builder file"
+msgstr "E pamundur gjetja e file pixmap: %s"
 
 #: src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "E pamundur gjetja e file pixmap: %s"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
+#: src/v4l.c:412
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -585,3 +454,221 @@ msgstr ""
 "Nuk arrij të lidhem me dispozitivin video (%s).\n"
 "Kontrollo lidhjen."
 
+#: src/v4l.c:440
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:455
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:468
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:481
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:490
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:518
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:578
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.gnome-desktop"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Efektet</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "Bardhë & e zi"
+
+#~ msgid "Color threshold"
+#~ msgstr "Kufiri i ngjyrës"
+
+#~ msgid "Laplace"
+#~ msgstr "Laplace"
+
+#~ msgid "Large"
+#~ msgstr "E madhe"
+
+#~ msgid "Medium"
+#~ msgstr "Mesatare"
+
+#~ msgid "Negative"
+#~ msgstr "Negativi"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "Shton datën dhe orën emrit të file"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "Shton datën dhe orën emrit të file remot"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "Shton datën dhe orën, si orar UNIX, në fund të emrit të file"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr "Shton datën dhe orën, si orar UNIX, në fund të emrit të file remot"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "Teksti i personalizuar për datën dhe orën"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr ""
+#~ "Përcakton një varg të personalizuar teksti për t'u shtuar në figurë."
+
+#~ msgid "Filename for local captures"
+#~ msgstr "Emri i file për marrjet lokale"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "Emri i file për të ruajtur fotot e marra lokalisht"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "Kartela për marrjet lokale"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "Kartela për marrjet remote"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "Kartela për të ruajtur fotot e marra në remot"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "Kartela për të ruajtur fotot e marra në lokal"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "Emri i host për server-in FTP"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "Emri i Host i serverit FTP për filmime remote."
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "Intervali për marrjet automatike"
+
+#~ msgid "Local capture image format"
+#~ msgstr "Formati për figurën e marrë në lokale"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "Emri për files të ruajtur në remot."
+
+#~ msgid "Password for FTP server"
+#~ msgstr "Fjalëkalimi për serverin FTP"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "Formati për figurat e marra në remot"
+
+#~ msgid "Remote save filename"
+#~ msgstr "Emri i file për ruajtjen remote"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr ""
+#~ "Përcakton formatin që do të përdoret për figurat e ruajtura lokalisht"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr ""
+#~ "Përcakton formatin që do të përdoret për figurat e ruajtura në remot"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "Përcakton intervalin për marrjen automatike të figurave."
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "Fjalëkalimi për llogarinë FTP për marrjet në remot."
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "Aktivon marrjen automatike"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "Aktivon marrjen automatike të figurave."
+
+#~ msgid "Toggles local capture"
+#~ msgstr "Aktivon marrjen lokale"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr "Aktivon marrjen remote"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "Aktivon tekstin e personalizuar"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "Aktivon datën dhe orën në marrje"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "Aktivon shtimin e datës dhe orës në figurat e marra"
+
+#~ msgid "Toggles the insertion of a timestamp into local images"
+#~ msgstr "Aktivon shtimin e datës dhe orës në figurat lokale"
+
+#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+#~ msgstr "Aktivon shtimin e datës dhe orës në figurat për upload FTP."
+
+#~ msgid "Toggles the use of the buttons to adjust the video filters"
+#~ msgstr "Aktivon përdorimin e pulsantëve për rregullimin e filtrave video"
+
+#~ msgid "Toggles the use of the custom string for the timestamp in images."
+#~ msgstr ""
+#~ "Aktivon përdorimin e tekstit të personalizuar për datën dhe orën në "
+#~ "figura."
+
+#~ msgid "Toggles the use of the sliders to adjust the video properties"
+#~ msgstr ""
+#~ "Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e pronësive "
+#~ "video"
+
+#~ msgid "Toggles the video adjustment sliders"
+#~ msgstr "Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e videos"
+
+#~ msgid "Toggles the video effects buttons"
+#~ msgstr "Aktivon pulsantët e efekteve video"
+
+#~ msgid "Toggles timestamp for local captures"
+#~ msgstr "Aktivon datën dhe orën për marrjet lokale"
+
+#~ msgid "Toggles timestamp for remote captures"
+#~ msgstr "Aktivon datën dhe orën për marrjet remote"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "Emri i përdoruesit për serverin FTP"
+
+#~ msgid "Username to use for FTP uploads of captured pictures"
+#~ msgstr ""
+#~ "Emri i përdoruesit për tu përdorur për upload FTP të figurave të marra"
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures locally."
+#~ msgstr ""
+#~ "Gjatë marrjes së figurave me anë të pulsantit \"Fotografo\" ose me "
+#~ "marrjen automatike, ky tast mundëson ruajtjen lokale të figurave."
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures to a remote server."
+#~ msgstr ""
+#~ "Gjatë marrjes së figurave me anë të pulsantit \"Fotografo\" ose me "
+#~ "marrjen automatike, ky tast mundëson ruajtjen remote të figurave."
+
+#~ msgid "Unable to capture image."
+#~ msgstr "E pamundur marrja e figurës."
+
+#~ msgid "Orientation"
+#~ msgstr "Orientimi"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Orientimi i sirtarit."
