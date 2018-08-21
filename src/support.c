@@ -5,7 +5,6 @@
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
-#include <gnome.h>
 #include "callbacks.h"
 #include "interface.h"
 #include "support.h"
@@ -58,9 +57,13 @@ int error_dialog (char *message)
     GtkWidget *dialog;
     int test;
 
-    dialog =
-        gnome_message_box_new (message, GNOME_MESSAGE_BOX_ERROR,
-                               GNOME_STOCK_BUTTON_CLOSE, NULL);
-    test = gnome_dialog_run (GNOME_DIALOG (dialog));
+    dialog = gtk_message_dialog_new(NULL,
+                                    GTK_DIALOG_DESTROY_WITH_PARENT,
+                                    GTK_MESSAGE_ERROR,
+                                    GTK_BUTTONS_CLOSE,
+                                    "%s", message);
+
+    test = gtk_dialog_run (GTK_DIALOG (dialog));
+    gtk_widget_destroy (dialog);
     return test;
 }
