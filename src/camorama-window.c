@@ -29,7 +29,6 @@
 #endif
 
 #include <glib/gi18n.h>
-#include <libgnomeui/gnome-file-entry.h>
 #include "callbacks.h"
 #include "camorama-filter-chain.h"
 #include "camorama-globals.h"
