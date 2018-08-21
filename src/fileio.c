@@ -1,15 +1,16 @@
-#include"fileio.h"
-#include<time.h>
-#include<errno.h>
-#include "support.h"
+#include <errno.h>
+#include <gtk/gtk.h>
+#include <glib/gi18n.h>
+#include <time.h>
+#include <stdio.h>
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
-#include<stdio.h>
+#include "support.h"
+#include "fileio.h"
+
 # define CHAR_HEIGHT  11
 # define CHAR_WIDTH   6
 # define CHAR_START   4
 # include "font_6x11.h"
-#include <gnome.h>
 
 static int print_error (GnomeVFSResult result, const char *uri_string);
 

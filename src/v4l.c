@@ -1,9 +1,9 @@
-#include"v4l.h"
-#include<time.h>
-#include<errno.h>
-#include<gnome.h>
-#include<stdlib.h>
+#include <errno.h>
+#include <glib/gi18n.h>
+#include <stdlib.h>
 #include <sys/select.h>
+#include <time.h>
+#include "v4l.h"
 #include "support.h"
 
 extern int frame_number;
