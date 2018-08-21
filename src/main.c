@@ -1,4 +1,3 @@
-#include <gnome.h>
 #include "interface.h"
 
 #include "callbacks.h"
@@ -11,33 +10,11 @@
 #include <gdk/gdkx.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
+#include <glib/gi18n.h>
 #include <locale.h>
 #include <libv4l2.h>
 
 #include "camorama-stock-items.h"
-
-static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
-    FALSE, use_read = FALSE;
-
-/*static gint tray_icon_destroyed (GtkWidget *tray, gpointer data) 
-{
-  GConfClient *client = gconf_client_get_default ();
-
-    //Somehow the delete_event never got called, so we use "destroy" 
-  if (tray != MyApp->GetMainWindow ()->docklet)
-    return true;
-  GtkWidget *new_tray = gnomemeeting_init_tray ();
-
-  if (gconf_client_get_bool 
-      (client, GENERAL_KEY "do_not_disturb", 0)) 
-    gnomemeeting_tray_set_content (new_tray, 2);
-
-  
-  MyApp->GetMainWindow ()->docklet = GTK_WIDGET (new_tray);
-  gtk_widget_show (gm);
-
-  return true;
-}*/
 
 gboolean
 draw_camera_callback (GtkWidget *widget, GdkEventExpose *event, gpointer data)
@@ -54,41 +31,43 @@ draw_camera_callback (GtkWidget *widget, GdkEventExpose *event, gpointer data)
   return TRUE;
 }
 
+static int ver = 0, max = 0, min = 0;
+static int half = 0, use_read = 0, buggery = 0;
+static gchar *poopoo = NULL;
+static int x = -1, y = -1;
+
+static GOptionEntry options[] = {
+    {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
+      N_("show version and exit"), NULL},
+    {"device", 'd', 0, G_OPTION_ARG_STRING, &poopoo,
+      N_("v4l device to use"), NULL},
+    {"debug", 'D', 0, G_OPTION_ARG_NONE, &buggery,
+      N_("enable debugging code"), NULL},
+    {"width", 'x', 0, G_OPTION_ARG_INT, &x,
+      N_("capture width"), NULL},
+    {"height", 'y', 0, G_OPTION_ARG_INT, &y,
+      N_("capture height"), NULL},
+    {"max", 'M', 0, G_OPTION_ARG_NONE, &max,
+      N_("maximum capture size"), NULL},
+    {"min", 'm', 0, G_OPTION_ARG_NONE, &min,
+      N_("minimum capture size"), NULL},
+    {"half", 'H', 0, G_OPTION_ARG_NONE, &half,
+      N_("middle capture size"), NULL},
+    {"read", 'R', 0, G_OPTION_ARG_NONE, &use_read,
+      N_("use read() rather than mmap()"), NULL},
+    { NULL }
+};
+
 int
 main(int argc, char *argv[]) {
     cam cam_object, *cam;
     Display *display;
     Screen *screen_num;
-    gchar *poopoo = NULL;
     gchar *pixfilename = "camorama/camorama.png";
-    gchar *filename;            //= "/usr/opt/garnome/share/camorama/camorama.glade";
-    int x = -1, y = -1;
-    gboolean buggery = FALSE;
     GtkWidget *button;
     GConfClient *gc;
     unsigned int bufsize;
-
-    const struct poptOption popt_options[] = {
-        {"version", 'V', POPT_ARG_NONE, &ver, 0,
-         N_("show version and exit"), NULL},
-        {"device", 'd', POPT_ARG_STRING, &poopoo, 0,
-         N_("v4l device to use"), NULL},
-        {"debug", 'D', POPT_ARG_NONE, &buggery, 0,
-         N_("enable debugging code"), NULL},
-        {"width", 'x', POPT_ARG_INT, &x, 0, N_("capture width"),
-         NULL},
-        {"height", 'y', POPT_ARG_INT, &y, 0, N_("capture height"),
-         NULL},
-        {"max", 'M', POPT_ARG_NONE, &max, 0,
-         N_("maximum capture size"), NULL},
-        {"min", 'm', POPT_ARG_NONE, &min, 0,
-         N_("minimum capture size"), NULL},
-        {"half", 'H', POPT_ARG_NONE, &half, 0,
-         N_("middle capture size"), NULL},
-        {"read", 'R', POPT_ARG_NONE, &use_read, 0,
-         N_("use read() rather than mmap()"), NULL},
-        POPT_TABLEEND
-    };
+    GError *error = NULL;
 
     cam = &cam_object;
 
@@ -106,13 +85,12 @@ main(int argc, char *argv[]) {
     bindtextdomain (PACKAGE_NAME, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset (PACKAGE_NAME, "UTF-8");
     textdomain (PACKAGE_NAME);
-    setlocale (LC_ALL, "");
 
-    /* gnome_program_init  - initialize everything (gconf, threads, etc) */
-    gnome_program_init (PACKAGE_NAME, PACKAGE_VERSION, LIBGNOMEUI_MODULE, argc, argv,
-                        GNOME_PARAM_APP_DATADIR, PACKAGE_DATA_DIR,
-                        GNOME_PARAM_POPT_TABLE, popt_options,
-                        GNOME_PARAM_HUMAN_READABLE_NAME, _("camorama"), NULL);
+    if (!gtk_init_with_args(&argc, &argv,_("camorama"), options,
+                             PACKAGE_NAME, &error) || error) {
+        g_printerr(_("Invalid argument\nRun '%s --help'\n"), argv[0]);
+        return 1;
+    }
 
     /* gtk is initialized now */
     camorama_stock_init();
@@ -239,22 +217,10 @@ main(int argc, char *argv[]) {
     }
     cam->pixmap = gdk_pixmap_new (NULL, cam->width, cam->height, cam->desk_depth);
 
-    filename =
-        gnome_program_locate_file (NULL,
-                                   GNOME_FILE_DOMAIN_APP_DATADIR,
-                                   "camorama/camorama.glade", TRUE, NULL);
-    if (filename == NULL) {
-        error_dialog (_
-                      ("Couldn't find the main interface file (camorama.glade)."));
-        exit (1);
-    }
-
-    //pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama.png", TRUE, NULL);
-    //printf("pixfile = %s\n",pixfilename);
-    //pixfilename);
-    //printf("pixfile = %s\n",pixfilename);
     cam->xml = gtk_builder_new ();
-    if (!gtk_builder_add_from_file (cam->xml, filename, NULL)) {
+    if (!gtk_builder_add_from_file (cam->xml,
+                                    PACKAGE_DATA_DIR "/camorama/camorama.glade",
+                                    NULL)) {
 	error_dialog (_("Couldn't load builder file"));
         exit(1);
     }
