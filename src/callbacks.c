@@ -1,13 +1,10 @@
 #include <gtk/gtk.h>
+#include <glib/gi18n.h>
 #include <config.h>
 #include "callbacks.h"
 #include "interface.h"
 #include "support.h"
 #include "filter.h"
-#include <gnome.h>
-#include <libgnomeui/gnome-about.h>
-#include <libgnomeui/gnome-propertybox.h>
-#include <libgnomeui/gnome-window-icon.h>
 #include <pthread.h>
 #include <libv4l2.h>
 
@@ -453,8 +450,8 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
 	NULL
     };
     const gchar *documenters[] = { NULL };
-    GdkPixbuf *logo =
-        (GdkPixbuf *) create_pixbuf (PACKAGE_DATA_DIR "/pixmaps/camorama.png");
+    GdkPixbuf *logo = gdk_pixbuf_new_from_file (PACKAGE_DATA_DIR
+                                                "/pixmaps/camorama.png", NULL);
     char *translators = _("translator_credits");
 
     if (!strcmp (translators, "translator_credits"))
@@ -464,17 +461,34 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
         return;
     }
 
-    about = gnome_about_new (_("Camorama"), PACKAGE_VERSION,
-                             "Copyright \xc2\xa9 2002 Greg Jones",
-                             _("View, alter and save images from a webcam"),
-                             (const char **) authors,
-                             (const char **) documenters, translators, logo);
+    about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                          "name", "Camorama",
+                          "version", PACKAGE_VERSION,
+                          "copyright", "Copyright \xc2\xa9 2002 Greg Jones",
+                          "comments", _("View, alter and save images from a webcam"),
+                          "authors", authors,
+                          "documenters", documenters,
+                          "translator-credits", translators,
+                          "logo", logo,
+                          "license", "GPL version 2.\n\n"
+                                    "This program is free software; you can redistribute it and/or modify "
+                                    "it under the terms of the GNU General Public License as published by "
+                                    "the Free Software Foundation version 2 of the License.\n\n"
+                                    "This program is distributed in the hope that it will be useful, "
+                                    "but WITHOUT ANY WARRANTY; without even the implied warranty of "
+                                    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the "
+                                    "GNU General Public License for more details.",
+                          "wrap-license", TRUE,
+                          NULL);
     gtk_window_set_transient_for (GTK_WINDOW (about),
                                   GTK_WINDOW (GTK_WIDGET(gtk_builder_get_object
                                               (cam->xml, "main_window"))));
 
     g_object_add_weak_pointer (G_OBJECT (about), (void **) &(about));
-
+    g_object_unref (logo);
+    g_signal_connect (about, "response",
+                      G_CALLBACK (gtk_widget_destroy),
+                      NULL);
     gtk_widget_show (about);
 }
 
