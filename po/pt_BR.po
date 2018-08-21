@@ -10,14 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-21 09:13-0300\n"
-"PO-Revision-Date: 2007-03-09 23:01-0300\n"
+"POT-Creation-Date: 2018-08-21 08:41-0300\n"
+"PO-Revision-Date: 2018-08-21 09:15-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
 
 #: camorama.appdata.xml.in:6 src/callbacks.c:469
 msgid "Camorama"
@@ -32,15 +33,16 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama é um visualizador simplificado para webcam, com capacidade para "
+"aplicação de alguns efeitos de vídeo."
 
 #: camorama.desktop.in:4 src/callbacks.c:471
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
 #: camorama.desktop.in:8
-#, fuzzy
 msgid "camorama.png"
-msgstr "camorama"
+msgstr "camorama.png"
 
 #: data/camorama.glade:9
 msgid "Preferences"
@@ -74,15 +76,15 @@ msgstr "<span weight=\"bold\">Captura Local</span>"
 
 #: data/camorama.glade:414
 msgid "_Enable local capture"
-msgstr "_Activar captura local"
+msgstr "_Ativar captura local"
 
 #: data/camorama.glade:479
 msgid "_Directory for captured pics:"
-msgstr "_Directório para imagens caputadas:"
+msgstr "_Diretório para imagens capturadas:"
 
 #: data/camorama.glade:508
 msgid "_Filename for pictures:"
-msgstr "Nome _arquivo para imagens:"
+msgstr "Nome do _arquivo para imagens:"
 
 #: data/camorama.glade:541
 msgid "webcam-capture"
@@ -122,7 +124,7 @@ msgstr "<span weight=\"bold\">Captura Remota</span>"
 
 #: data/camorama.glade:907
 msgid "_Enable remote capture"
-msgstr "_Activar captura remota"
+msgstr "_Ativar captura remota"
 
 #: data/camorama.glade:972
 msgid "FTP server: "
@@ -138,11 +140,11 @@ msgstr "Senha:"
 
 #: data/camorama.glade:1056
 msgid "Save directory:"
-msgstr "Directório gravação:"
+msgstr "Diretório para gravação:"
 
 #: data/camorama.glade:1084
 msgid "Filename"
-msgstr "Nome arquivo"
+msgstr "Nome do arquivo"
 
 #: data/camorama.glade:1116
 msgid "ftp.yourdomain.org"
@@ -222,7 +224,7 @@ msgstr "Cor:"
 
 #: data/camorama.glade:2415
 msgid "Hue:"
-msgstr "Coloração:"
+msgstr "Matiz:"
 
 #: data/camorama.glade:2443
 msgid "White Balance:"
@@ -234,12 +236,13 @@ msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "baseado na versão em Português Ibérico por\n"
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"Andre Noel <andrenoel@ubuntu.com>"
+"Andre Noel <andrenoel@ubuntu.com>\n"
+"Mauro Carvalho Chehab <mchehab+samsung@kernel.org>"
 
 #: src/callbacks.c:583
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f quadros/s - atual     %.2f quadros/s - média"
 
 #: src/callbacks.c:703
 #, c-format
@@ -263,12 +266,12 @@ msgstr "Laplace (4 Vizinhos)"
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:67
 msgid "Mirror"
-msgstr "Espelho"
+msgstr "Espelhar"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:297
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-stock-items.c:14
 msgid "Webcam"
@@ -284,7 +287,7 @@ msgstr "Efeitos"
 
 #: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
-msgstr "É possível salvar a imagem temporária em /tmp."
+msgstr "Foi possível salvar a imagem temporária em /tmp."
 
 #: src/fileio.c:138
 #, c-format
@@ -355,7 +358,7 @@ msgstr "Monocromático"
 
 #: src/filter.c:511
 msgid "Monochrome (Weight)"
-msgstr "Monocromático (Peso)"
+msgstr "Monocromático (Ponderado)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:563
@@ -368,7 +371,7 @@ msgstr "mostrar versão e sair"
 
 #: src/main.c:82
 msgid "v4l device to use"
-msgstr "Dispositivo v4l a usar"
+msgstr "dispositivo v4l a ser utilizado"
 
 #: src/main.c:84
 msgid "enable debugging code"
@@ -376,7 +379,7 @@ msgstr "ativar código de depuração"
 
 #: src/main.c:85
 msgid "capture width"
-msgstr "largura captura"
+msgstr "largura da captura"
 
 #: src/main.c:87
 msgid "capture height"
@@ -384,15 +387,15 @@ msgstr "altura captura"
 
 #: src/main.c:90
 msgid "maximum capture size"
-msgstr "tamanho máximo captura"
+msgstr "tamanho máximo de captura"
 
 #: src/main.c:92
 msgid "minimum capture size"
-msgstr "tamanho mínimo captura"
+msgstr "tamanho mínimo de captura"
 
 #: src/main.c:94
 msgid "middle capture size"
-msgstr "tamanho médio captura"
+msgstr "tamanho médio de captura"
 
 #: src/main.c:96
 msgid "use read() rather than mmap()"
@@ -439,36 +442,40 @@ msgstr ""
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_REQBUFS  --  não foi possível requisitar buffers (%s), encerrando...."
 
 #: src/v4l.c:439
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QUERYBUF  --  não foi possível obter informações sobre buffers (%s), "
+"encerrando...."
 
 #: src/v4l.c:452
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "falha ao mapear os buffers na memória (%s), encerrando..."
 
 #: src/v4l.c:465
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF  --  não foi possível enfileirar buffers (%s), encerrando...."
 
 #: src/v4l.c:474
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "falha ao iniciar o fluxo de vídeo (%s), encerrando..."
 
 #: src/v4l.c:502
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Tempo máximo excedido enquanto esperando quadros com imagens (%s)"
 
 #: src/v4l.c:562
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "falha ao interromper o fluxo de vídeo (%s), encerrando..."
 
 #~ msgid "Large"
 #~ msgstr "Grande"
