@@ -2,16 +2,20 @@ desktopdir = $(datadir)/applications
 desktop_in_files = camorama.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+appdatadir = $(datadir)/metainfo
+appdata_in_files = camorama.appdata.xml.in
+nodist_appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+
 SUBDIRS = src pixmaps data po
 
-EXTRA_DIST =   autogen.sh     \
-	camorama.desktop.in  \
-	intltool-extract.in     \
-	intltool-merge.in    \
-	intltool-update.in
+EXTRA_DIST =                     \
+	autogen.sh               \
+	camorama.desktop.in      \
+	camorama.appdata.xml.in
 
 CLEANFILES=\
 	camorama.desktop     \
+	camorama.appdata.xml \
 	po/camorama.pot
 
 pixmapdir   = $(datadir)/pixmaps
@@ -41,3 +45,6 @@ fi
 
 camorama.desktop: camorama.desktop.in
 	msgfmt --desktop -d $(top_srcdir)/po --template $< -o $@
+
+camorama.appdata.xml: camorama.appdata.xml.in
+	msgfmt --xml -d $(top_srcdir)/po --template $< -o $@

@@ -155,8 +155,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(desktopdir)"
-DATA = $(desktop_DATA)
+am__installdirs = "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(appdatadir)"
+DATA = $(desktop_DATA) $(nodist_appdata_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 am__recursive_targets = \
@@ -359,15 +359,18 @@ top_srcdir = @top_srcdir@
 desktopdir = $(datadir)/applications
 desktop_in_files = camorama.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+appdatadir = $(datadir)/metainfo
+appdata_in_files = camorama.appdata.xml.in
+nodist_appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 SUBDIRS = src pixmaps data po
-EXTRA_DIST = autogen.sh     \
-	camorama.desktop.in  \
-	intltool-extract.in     \
-	intltool-merge.in    \
-	intltool-update.in
+EXTRA_DIST = \
+	autogen.sh               \
+	camorama.desktop.in      \
+	camorama.appdata.xml.in
 
 CLEANFILES = \
 	camorama.desktop     \
+	camorama.appdata.xml \
 	po/camorama.pot
 
 pixmapdir = $(datadir)/pixmaps
@@ -444,6 +447,27 @@ uninstall-desktopDATA:
 	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(desktopdir)'; $(am__uninstall_files_from_dir)
+install-nodist_appdataDATA: $(nodist_appdata_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(nodist_appdata_DATA)'; test -n "$(appdatadir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(appdatadir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(appdatadir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(appdatadir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(appdatadir)" || exit $$?; \
+	done
+
+uninstall-nodist_appdataDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(nodist_appdata_DATA)'; test -n "$(appdatadir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(appdatadir)'; $(am__uninstall_files_from_dir)
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -747,7 +771,7 @@ check: check-recursive
 all-am: Makefile $(DATA) config.h
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(desktopdir)"; do \
+	for dir in "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(appdatadir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-recursive
@@ -802,7 +826,8 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-data-local install-desktopDATA
+install-data-am: install-data-local install-desktopDATA \
+	install-nodist_appdataDATA
 
 install-dvi: install-dvi-recursive
 
@@ -848,7 +873,7 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-desktopDATA
+uninstall-am: uninstall-desktopDATA uninstall-nodist_appdataDATA
 
 .MAKE: $(am__recursive_targets) all install-am install-strip
 
@@ -862,12 +887,13 @@ uninstall-am: uninstall-desktopDATA
 	install-data install-data-am install-data-local \
 	install-desktopDATA install-dvi install-dvi-am install-exec \
 	install-exec-am install-html install-html-am install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs installdirs-am maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
-	pdf-am ps ps-am tags tags-am uninstall uninstall-am \
-	uninstall-desktopDATA
+	install-info-am install-man install-nodist_appdataDATA \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am tags \
+	tags-am uninstall uninstall-am uninstall-desktopDATA \
+	uninstall-nodist_appdataDATA
 
 .PRECIOUS: Makefile
 
@@ -897,6 +923,9 @@ fi
 
 camorama.desktop: camorama.desktop.in
 	msgfmt --desktop -d $(top_srcdir)/po --template $< -o $@
+
+camorama.appdata.xml: camorama.appdata.xml.in
+	msgfmt --xml -d $(top_srcdir)/po --template $< -o $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -2,6 +2,7 @@
 *.o
 *.gmo
 autom4te.cache/
+camorama.appdata.xml
 camorama.desktop
 config.h
 config.log
