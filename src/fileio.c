@@ -90,7 +90,7 @@ void remote_save (cam * cam)
     FILE *fp;
     int bytes = 0, fc;
     time_t t;
-    gchar *timenow, *ext;
+    gchar *ext;
     struct tm *tm;
     gboolean pbs;
     GdkPixbuf *pb;
@@ -116,10 +116,6 @@ void remote_save (cam * cam)
         error_dialog (_("Could save temporary image file in /tmp."));
         g_free (ext);
     }
-
-    time (&t);
-    tm = localtime (&t);
-    strftime (timenow, sizeof (timenow) - 1, "%s", tm);
 
     filename = g_strdup_printf ("camorama.%s", ext);
     pb = gdk_pixbuf_new_from_data (cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
@@ -235,7 +231,7 @@ void save_thread (cam * cam)
     FILE *fp;
     int bytes = 0;
     time_t t;
-    gchar *timenow, *ext;
+    char timenow[64], *ext;
     struct tm *tm;
     gboolean pbs;
     GdkPixbuf *pb;
