@@ -219,7 +219,7 @@ main(int argc, char *argv[]) {
 
     cam->xml = gtk_builder_new ();
     if (!gtk_builder_add_from_file (cam->xml,
-                                    PACKAGE_DATA_DIR "/camorama/camorama.glade",
+                                    PACKAGE_DATA_DIR "/camorama/camorama.ui",
                                     NULL)) {
 	error_dialog (_("Couldn't load builder file"));
         exit(1);
