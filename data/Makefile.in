@@ -286,7 +286,7 @@ stuff_DATA = \
 
 gladedir = $(datadir)/camorama
 glade_DATA = \
-	camorama.glade	
+	camorama.ui	
 
 schemadir = @GCONF_SCHEMA_FILE_DIR@
 schema_in_files = camorama.schemas.in
