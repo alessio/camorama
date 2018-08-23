@@ -1,9 +1,22 @@
+2018-08-23  Mauro Carvalho Chehab <mchehab@kernel.org>
+
+	* Convert it to use V4L2 API
+	* Add support for select camera enumerated resolutions
+	* Use new gettext logic to make easier for translators
+	* Update pt_BR Brazilian Portuguese translation
+	* Add camorama.appdata.xml
+	* Use Gtk Builder instead of libglade
+	* Use modern Gtk 2 APIs
+	* Use gio instead of gnomeVFS
+	* Add support for sftp and smb protocols for remote xfers
+	* Add support for building with Gtk 3.
+
 2016-09-12  Adrian Bowyer (http://adrianbowyer.com)
-	Added Reichardt motion-detection filter
+	* Added Reichardt motion-detection filter
 
 2007-09-16  Sven Herzberg  <herzi@gnome-de.org>
 
-	Fix a few translation issues:
+	* Fix a few translation issues:
 	http://bugzilla.gnome.org/show_bug.cgi?id=476004
 
 	* data/camorama.glade: don't mark empty strings as translatable
