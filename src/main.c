@@ -16,21 +16,6 @@
 
 #include "camorama-stock-items.h"
 
-gboolean
-draw_camera_callback (GtkWidget *widget, GdkEventExpose *event, gpointer data)
-{
-	cam* camera = data;
-
-	gdk_draw_drawable (widget->window,
-			   widget->style->fg_gc[gtk_widget_get_state (widget)],
-			   camera->pixmap,
-			   event->area.x, event->area.y, event->area.x,
-			   event->area.y, event->area.width, event->area.height);
-
-	frames++;
-  return TRUE;
-}
-
 static int ver = 0, max = 0, min = 0;
 static int half = 0, use_read = 0, buggery = 0;
 static gchar *poopoo = NULL;
@@ -73,7 +58,6 @@ main(int argc, char *argv[]) {
 
     /* set some default values */
     cam->frame_number = 0;
-    cam->pixmap = NULL;
     cam->size = PICHALF;
     cam->video_dev = NULL;
     cam->read = FALSE;
@@ -218,7 +202,6 @@ main(int argc, char *argv[]) {
         printf ("using read()\n");
         pt2Function = read_timeout_func;
     }
-    cam->pixmap = gdk_pixmap_new (NULL, cam->width, cam->height, cam->desk_depth);
 
     cam->xml = gtk_builder_new ();
     if (!gtk_builder_add_from_file (cam->xml,
@@ -241,8 +224,6 @@ main(int argc, char *argv[]) {
 
     GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
     gtk_widget_show (widget);
-    g_signal_connect (widget, "expose_event",
-                      G_CALLBACK (draw_camera_callback), cam);
 
     cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
 

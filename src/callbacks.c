@@ -437,7 +437,6 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
     if (cam->read == FALSE)
        start_streaming(cam);
 
-    cam->pixmap = gdk_pixmap_new (NULL, cam->width, cam->height, cam->desk_depth);
     gtk_widget_set_size_request (GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
                                  cam->width, cam->height);
 
@@ -552,82 +551,149 @@ apply_filters(cam* cam) {
 //		threshold (cam->pic_buf, cam->width, cam->height, cam->dither);
 }
 
+#define MULT(d,c,a,t) G_STMT_START { t = c * a + 0x7f; d = ((t >> 8) + t) >> 8; } G_STMT_END
+
+/*
+ * As GTK+2 doesn't have gdk_cairo_surface_create_from_pixbuf, we
+ * Borrowed its implementation from
+ *    https://github.com/bratsche/gtk-/blob/master/gdk/gdkcairo.c
+ * With a small backport.
+ */
+cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
+                                    GdkWindow *for_window)
+{
+    gint width = gdk_pixbuf_get_width (pixbuf);
+    gint height = gdk_pixbuf_get_height (pixbuf);
+    guchar *gdk_pixels = gdk_pixbuf_get_pixels (pixbuf);
+    int gdk_rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+    int n_channels = gdk_pixbuf_get_n_channels (pixbuf);
+    int cairo_stride;
+    guchar *cairo_pixels;
+    cairo_format_t format;
+    cairo_surface_t *surface;
+    int j;
+
+    format = CAIRO_FORMAT_RGB24;
+
+    surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24,
+                                          width, height);
+    cairo_stride = cairo_image_surface_get_stride (surface);
+    cairo_pixels = cairo_image_surface_get_data (surface);
+
+  for (j = height; j; j--) {
+      guchar *p = gdk_pixels;
+      guchar *q = cairo_pixels;
+
+      if (n_channels == 3) {
+          guchar *end = p + 3 * width;
+
+          while (p < end) {
+#if G_BYTE_ORDER == G_LITTLE_ENDIAN
+              q[0] = p[2];
+              q[1] = p[1];
+              q[2] = p[0];
+#else
+              q[1] = p[0];
+              q[2] = p[1];
+              q[3] = p[2];
+#endif
+              p += 3;
+              q += 4;
+          }
+      } else {
+          guchar *end = p + 4 * width;
+          guint t1,t2,t3;
+
+          while (p < end) {
+#if G_BYTE_ORDER == G_LITTLE_ENDIAN
+              MULT(q[0], p[2], p[3], t1);
+              MULT(q[1], p[1], p[3], t2);
+              MULT(q[2], p[0], p[3], t3);
+              q[3] = p[3];
+#else
+              q[0] = p[3];
+              MULT(q[1], p[0], p[3], t1);
+              MULT(q[2], p[1], p[3], t2);
+              MULT(q[3], p[2], p[3], t3);
+#endif
+
+              p += 4;
+              q += 4;
+            }
+
+#undef MULT
+        }
+
+      gdk_pixels += gdk_rowstride;
+      cairo_pixels += cairo_stride;
+    }
+
+    cairo_surface_mark_dirty (surface);
+    return surface;
+}
+
+static void show_buffer(cam* cam)
+{
+    int i;
+    GdkPixbuf *pb;
+    unsigned char *pic_buf = cam->pic_buf;
+    const GdkRectangle rect = {
+        .x = 0, .y = 0,
+        .width = cam->width, .height = cam->height
+    };
+
+    /*
+     * refer the frame
+     */
+    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
+        pic_buf = cam->tmp;
+    }
+
+    apply_filters(cam);
+
+    /* Use cairo to display the pixel buffer */
+
+    pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
+                                  cam->width, cam->height,
+                                  (cam->width * cam->bpp / 8), NULL,
+                                  NULL);
+
+    GtkWidget *widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
+
+    cairo_surface_t *surface = create_from_pixbuf(pb, widget->window);
+    cairo_t *cr = gdk_cairo_create(widget->window);
+    cairo_set_source_surface(cr, surface, 0, 0);
+
+    gdk_cairo_rectangle(cr, &rect);
+
+    cairo_fill(cr);
+    cairo_destroy(cr);
+
+    frames++;
+    frames2++;
+}
+
 /*
  * get image from cam - does all the work ;) 
  */
 gint
 read_timeout_func(cam* cam) {
-    int i, count = 0;
-    GdkGC *gc;
-    unsigned char *pic_buf = cam->pic_buf;
+    v4l2_read (cam->dev, cam->pic_buf,
+               (cam->width * cam->height * cam->bpp / 8));
 
-    v4l2_read (cam->dev, cam->pic_buf, (cam->width * cam->height * cam->bpp / 8));
-    frames2++;
-    /*
-     * update_rec.x = 0;
-     * update_rec.y = 0;
-     * update_rec.width = cam->width;
-     * update_rec.height = cam->height;
-     */
-    count++;
-    /*
-     * refer the frame 
-     */
+    show_buffer(cam);
 
-    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
-        pic_buf = cam->tmp;
-    }
-
-	apply_filters(cam);
-
-    gc = gdk_gc_new (cam->pixmap);
-    gdk_draw_rgb_image (cam->pixmap,
-                        gc, 0, 0,
-                        cam->width, cam->height,
-                        GDK_RGB_DITHER_NORMAL, pic_buf,
-                        cam->width * cam->bpp / 8);
-
-    gtk_widget_queue_draw_area (GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")), 0,
-                                0, cam->width, cam->height);
-    return 1;
-
+    return TRUE;
 }
 
 gint timeout_func (cam * cam)
 {
-    int i, count = 0;
-    GdkGC *gc;
-    unsigned char *pic_buf = cam->pic_buf;
-
     capture_buffers(cam, cam->pic_buf, cam->width * cam->height * cam->bytesperline);
 
-    count++;
-    /*
-     * refer the frame 
-     */
-    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->width, cam->height, cam->bpp / 8);
-        pic_buf = cam->tmp;
-    }
+    show_buffer(cam);
 
-	apply_filters(cam);
-
-
-    gc = gdk_gc_new (cam->pixmap);
-
-    gdk_draw_rgb_image (cam->pixmap,
-                        gc, 0, 0,
-                        cam->width, cam->height,
-                        GDK_RGB_DITHER_NORMAL, pic_buf,
-                        cam->width * cam->bpp / 8);
-
-    gtk_widget_queue_draw_area (GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")), 0,
-                                0, cam->width, cam->height);
-
-    frames2++;
-    g_object_unref ((gpointer) gc);
-    return 1;
+    return TRUE;
 }
 
 gint fps (GtkWidget * sb)
