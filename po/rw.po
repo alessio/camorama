@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-21 09:41-0300\n"
+"POT-Creation-Date: 2018-08-23 06:37-0300\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "ULL NAME <EMAIL@ADDRESS>\n"
 
-#: camorama.appdata.xml.in:6 src/callbacks.c:467
+#: camorama.appdata.xml.in:6
 msgid "Camorama"
 msgstr ""
 
@@ -39,7 +39,7 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:469
+#: camorama.desktop.in:4 src/callbacks.c:511
 #, fuzzy
 msgid "View, alter and save images from a webcam"
 msgstr "Na Kubika Ishusho Bivuye a"
@@ -50,26 +50,26 @@ msgstr ""
 
 # extracted from content/PrefsWindow.xul
 # LOCALIZATION NOTE : FILE UI for the outer parts of the Prefs dialog
-#: data/camorama.glade:35
+#: data/camorama.ui:35
 msgid "Preferences"
 msgstr "Ibyahisemo"
 
-#: data/camorama.glade:107
+#: data/camorama.ui:107
 #, fuzzy
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<Uburemere UTSINDAGIYE"
 
-#: data/camorama.glade:139
+#: data/camorama.ui:139
 msgid "Automatic Capture"
 msgstr ""
 
-#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
-#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
-#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
+#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
+#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
+#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
 msgid "     "
 msgstr ""
 
-#: data/camorama.glade:183
+#: data/camorama.ui:183
 #, fuzzy
 msgid "Capture Interval (in minutes):"
 msgstr "in Iminota"
@@ -83,227 +83,207 @@ msgstr "in Iminota"
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
-#: data/camorama.glade:257
+#: data/camorama.ui:257
 msgid "General"
 msgstr "Rusange"
 
-#: data/camorama.glade:279
+#: data/camorama.ui:279
 #, fuzzy
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<Uburemere UTSINDAGIYE"
 
-#: data/camorama.glade:311
+#: data/camorama.ui:311
 msgid "_Enable local capture"
 msgstr ""
 
-#: data/camorama.glade:360
+#: data/camorama.ui:360
 #, fuzzy
 msgid "_Directory for captured pics:"
 msgstr "kugirango"
 
-#: data/camorama.glade:373
+#: data/camorama.ui:373
 #, fuzzy
 msgid "_Filename for pictures:"
 msgstr "kugirango Amashusho"
 
-#: data/camorama.glade:388
+#: data/camorama.ui:388
 msgid "webcam-capture"
 msgstr ""
 
-#: data/camorama.glade:407
+#: data/camorama.ui:407
 #, fuzzy
 msgid "Select a Directory"
 msgstr "Kubika bushyinguro"
 
-#: data/camorama.glade:424 data/camorama.glade:857
+#: data/camorama.ui:424 data/camorama.ui:813
 #, fuzzy
 msgid "Append time to filename"
 msgstr "Igihe Kuri Izina ry'idosiye:"
 
-#: data/camorama.glade:441 data/camorama.glade:873
+#: data/camorama.ui:441 data/camorama.ui:829
 #, fuzzy
 msgid "Add a timestamp to captured images"
 msgstr "a Kuri Ishusho"
 
-#: data/camorama.glade:500 data/camorama.glade:932
+#: data/camorama.ui:500 data/camorama.ui:888
 #, fuzzy
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<Uburemere UTSINDAGIYE"
 
-#: data/camorama.glade:531 data/camorama.glade:963
+#: data/camorama.ui:531 data/camorama.ui:919
 #, fuzzy
 msgid "Save files in jpeg format"
 msgstr "Kubika Idosiye in JPEG Imiterere"
 
-#: data/camorama.glade:548 data/camorama.glade:980
+#: data/camorama.ui:548 data/camorama.ui:936
 #, fuzzy
 msgid "Save files in png format"
 msgstr "Kubika Idosiye in png Imiterere"
 
-#: data/camorama.glade:593
+#: data/camorama.ui:593
 msgid "Local Capture"
 msgstr ""
 
-#: data/camorama.glade:616
+#: data/camorama.ui:616
 #, fuzzy
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<Uburemere UTSINDAGIYE"
 
-#: data/camorama.glade:648
+#: data/camorama.ui:648
 msgid "_Enable remote capture"
 msgstr ""
 
-#: data/camorama.glade:696
+#: data/camorama.ui:696
 #, fuzzy
-msgid "FTP server: "
+msgid "Server:"
 msgstr "Seriveri"
 
-#: data/camorama.glade:708
-#, fuzzy
-msgid "Username:"
-msgstr "Izina ry'ukoresha"
+#: data/camorama.ui:708
+msgid "Type:"
+msgstr ""
 
-# sc/source\ui\src\scstring.src:SCSTR_PASSWORD.text
-#: data/camorama.glade:722
-msgid "Password:"
-msgstr "Ijambobanga:"
-
-#: data/camorama.glade:736
+#: data/camorama.ui:720
 #, fuzzy
 msgid "Save directory:"
 msgstr "Kubika bushyinguro"
 
-#: data/camorama.glade:750
-msgid "Filename"
+#: data/camorama.ui:732
+#, fuzzy
+msgid "Filename:"
 msgstr "Izina ry'idosiye"
 
-#: data/camorama.glade:763
+#: data/camorama.ui:745
 #, fuzzy
 msgid "ftp.yourdomain.org"
 msgstr "FTP."
 
-#: data/camorama.glade:779
-#, fuzzy
-msgid "your-username"
-msgstr "Izina ry'ukoresha"
-
-#: data/camorama.glade:798
-#, fuzzy
-msgid "your-password"
-msgstr "Ijambobanga..."
-
-#: data/camorama.glade:816
-#, fuzzy
-msgid "path/to/save/to"
-msgstr "Inzira Kuri Kubika Kuri"
-
-#: data/camorama.glade:834
+#: data/camorama.ui:790
 msgid "webcamshot"
 msgstr ""
 
-#: data/camorama.glade:1025
+#: data/camorama.ui:981
 msgid "Remote Capture"
 msgstr ""
 
-#: data/camorama.glade:1048
+#: data/camorama.ui:1004
 #, fuzzy
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<Uburemere UTSINDAGIYE"
 
-#: data/camorama.glade:1080
+#: data/camorama.ui:1036
 #, fuzzy
 msgid "Use custom string"
 msgstr "Kunoza Ikurikiranyanyuguti"
 
 # svx/source\options\optcolor.src:RID_SVXPAGE_COLORCONFIG.CT_COLORCONFIG.WN_SCROLL.FT_BASICSTRING.text
-#: data/camorama.glade:1124
+#: data/camorama.ui:1080
 #, fuzzy
 msgid "String:"
 msgstr "Ikurikiranyanyuguti"
 
-#: data/camorama.glade:1170
+#: data/camorama.ui:1126
 #, fuzzy
 msgid "Draw date and time"
 msgstr "Itariki Na Igihe"
 
-#: data/camorama.glade:1214
+#: data/camorama.ui:1170
 msgid "Timestamp"
 msgstr ""
 
-#: data/camorama.glade:1243
+#: data/camorama.ui:1199
 msgid "Camorama-libglade"
 msgstr ""
 
-#: data/camorama.glade:1260
+#: data/camorama.ui:1216
 #, fuzzy
 msgid "_File"
 msgstr "Izina ry'idosiye"
 
-#: data/camorama.glade:1267 data/camorama.glade:1567
+#: data/camorama.ui:1223 data/camorama.ui:1523
 msgid "Take Picture"
 msgstr ""
 
-#: data/camorama.glade:1302
+#: data/camorama.ui:1258
 msgid "_Edit"
 msgstr ""
 
-#: data/camorama.glade:1326
+#: data/camorama.ui:1282
 msgid "_View"
 msgstr ""
 
-#: data/camorama.glade:1335 data/camorama.glade:1508
+#: data/camorama.ui:1291 data/camorama.ui:1464
 msgid "Show Adjustments"
 msgstr ""
 
-#: data/camorama.glade:1345
+#: data/camorama.ui:1301
 msgid "Show Effects"
 msgstr ""
 
 # officecfg/registry\schema\org\openoffice\Office\Common.xcs:....View.Window.Flag..02.text
-#: data/camorama.glade:1361
+#: data/camorama.ui:1317
 msgid "Small"
 msgstr "Gitoya"
 
-#: data/camorama.glade:1374
+#: data/camorama.ui:1330
 msgid "_Help"
 msgstr ""
 
 # sw/source\ui\utlui\attrdesc.src:STR_CONTRAST.text
-#: data/camorama.glade:1698
+#: data/camorama.ui:1654
 #, fuzzy
 msgid "Contrast:"
 msgstr "Inyuranyamigaragarire:"
 
 # sw/source\ui\utlui\attrdesc.src:STR_LUMINANCE.text
-#: data/camorama.glade:1712
+#: data/camorama.ui:1668
 #, fuzzy
 msgid "Brightness:"
 msgstr "Urumuri:"
 
-#: data/camorama.glade:1728
+#: data/camorama.ui:1684
 msgid "Color:"
 msgstr "Ibara:"
 
 # svtools/source\dialogs\colrdlg.src:DLG_COLOR.FT_HUE.text
-#: data/camorama.glade:1744
+#: data/camorama.ui:1700
 #, fuzzy
 msgid "Hue:"
 msgstr "Ibara"
 
-#: data/camorama.glade:1760
+#: data/camorama.ui:1716
 msgid "White Balance:"
 msgstr ""
 
-#: src/callbacks.c:458
+#: src/callbacks.c:498
 msgid "translator_credits"
 msgstr ""
 
-#: src/callbacks.c:582
+#: src/callbacks.c:639
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:702
+#: src/callbacks.c:759
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -311,7 +291,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:711
+#: src/callbacks.c:768
 msgid "Automatic Capture Disabled"
 msgstr ""
 
@@ -330,56 +310,76 @@ msgstr "Ishusho"
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:12
+#: src/camorama-stock-items.c:11
 msgid "Webcam"
 msgstr ""
 
-#: src/camorama-window.c:113
+#: src/camorama-window.c:116
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:206
+#: src/camorama-window.c:210
 msgid "Effects"
 msgstr ""
 
-#: src/fileio.c:120 src/fileio.c:266
+#: src/fileio.c:116 src/fileio.c:257
 #, fuzzy
 msgid "Could save temporary image file in /tmp."
 msgstr "Kubika By'igihe gito Ishusho IDOSIYE in"
 
-#: src/fileio.c:138
+#: src/fileio.c:128
 #, fuzzy, c-format
 msgid "Unable to create image '%s'."
 msgstr "Kuri Kurema Ishusho"
 
-#: src/fileio.c:147 src/fileio.c:430
+#: src/fileio.c:136 src/fileio.c:419
 #, fuzzy, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "OYA Kubika Ishusho"
 
-#: src/fileio.c:274
+#: src/fileio.c:174
+#, fuzzy, c-format
+msgid "An error occurred mounting %s:%s."
+msgstr "Ikosa Gufungura %s%S"
+
+#: src/fileio.c:211
+#, fuzzy, c-format
+msgid "An error occurred accessing %s."
+msgstr "Ikosa Gufungura %s%S"
+
+#: src/fileio.c:265
 #, fuzzy, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr "Kuri Gufungura By'igihe gito Ishusho IDOSIYE Ishusho"
 
-#: src/fileio.c:312
+#: src/fileio.c:295
 #, fuzzy, c-format
 msgid "An error occurred opening %s."
 msgstr "Ikosa Gufungura %s%S"
 
-#: src/fileio.c:324
+#: src/fileio.c:306
 #, fuzzy, c-format
-msgid "An error occurred writing to %s."
+msgid "An error occurred opening %s for write: %s."
+msgstr "Ikosa Gufungura %s%S"
+
+#: src/fileio.c:317
+#, fuzzy, c-format
+msgid "An error occurred writing to %s: %s."
 msgstr "Ikosa Kuri"
 
-#: src/fileio.c:404
+#: src/fileio.c:325
+#, fuzzy, c-format
+msgid "An error occurred closing %s: %s."
+msgstr "Ikosa Gufungura %s%S"
+
+#: src/fileio.c:393
 #, fuzzy, c-format
 msgid "Could not create directory '%s'."
 msgstr "OYA Kurema bushyinguro"
 
-#: src/fileio.c:415
+#: src/fileio.c:404
 #, fuzzy, c-format
 msgid "Could not change to directory '%s'."
 msgstr "OYA Guhindura>> Kuri bushyinguro"
@@ -421,56 +421,63 @@ msgstr ""
 msgid "Sobel"
 msgstr ""
 
-#: src/main.c:73
+#: src/main.c:41
 #, fuzzy
 msgid "show version and exit"
 msgstr "Garagaza Verisiyo Na Gusohoka"
 
-#: src/main.c:75
+#: src/main.c:43
 #, fuzzy
 msgid "v4l device to use"
 msgstr "APAREYE Kuri Gukoresha"
 
-#: src/main.c:77
+#: src/main.c:45
 #, fuzzy
 msgid "enable debugging code"
 msgstr "Gushoboza ITEGEKONGENGA"
 
-#: src/main.c:78
+#: src/main.c:47
 #, fuzzy
 msgid "capture width"
 msgstr "Ubugari"
 
-#: src/main.c:80
+#: src/main.c:49
 #, fuzzy
 msgid "capture height"
 msgstr "Ubuhagarike"
 
-#: src/main.c:83
+#: src/main.c:51
 #, fuzzy
 msgid "maximum capture size"
 msgstr "Kinini Ingano"
 
-#: src/main.c:85
+#: src/main.c:53
 #, fuzzy
 msgid "minimum capture size"
 msgstr "Gito Ingano"
 
-#: src/main.c:87
+#: src/main.c:55
 #, fuzzy
 msgid "middle capture size"
 msgstr "Hagati Ingano"
 
-#: src/main.c:89
+#: src/main.c:57
 #, fuzzy
 msgid "use read() rather than mmap()"
 msgstr "Gukoresha Gusoma"
 
-#: src/main.c:114
+#: src/main.c:89
 msgid "camorama"
 msgstr ""
 
-#: src/main.c:126
+#: src/main.c:91
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+
+#: src/main.c:105
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -479,63 +486,81 @@ msgid ""
 "\n"
 msgstr "Verisiyo"
 
-#: src/main.c:243
-#, fuzzy
-msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "Gushaka i IDOSIYE"
-
-#: src/main.c:253
+#: src/main.c:224
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Gushaka IDOSIYE"
 
-#: src/support.c:69
-#, fuzzy, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "Gushaka IDOSIYE"
-
-#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
-#: src/v4l.c:412
+#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
+#: src/v4l.c:410
 #, fuzzy, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr "OYA Kwihuza Kuri Videwo... APAREYE Kugenzura... Ukwihuza"
 
-#: src/v4l.c:440
+#: src/v4l.c:438
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:455
+#: src/v4l.c:453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:468
+#: src/v4l.c:466
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:481
+#: src/v4l.c:479
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:490
+#: src/v4l.c:488
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:518
+#: src/v4l.c:516
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:578
+#: src/v4l.c:576
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Izina ry'ukoresha"
+
+# sc/source\ui\src\scstring.src:SCSTR_PASSWORD.text
+#~ msgid "Password:"
+#~ msgstr "Ijambobanga:"
+
+#, fuzzy
+#~ msgid "your-username"
+#~ msgstr "Izina ry'ukoresha"
+
+#, fuzzy
+#~ msgid "your-password"
+#~ msgstr "Ijambobanga..."
+
+#, fuzzy
+#~ msgid "path/to/save/to"
+#~ msgstr "Inzira Kuri Kubika Kuri"
+
+#, fuzzy
+#~ msgid "Couldn't find the main interface file (camorama.ui)."
+#~ msgstr "Gushaka i IDOSIYE"
+
+#, fuzzy
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "Gushaka IDOSIYE"
 
 #, fuzzy
 #~ msgid "~/.gnome-desktop"

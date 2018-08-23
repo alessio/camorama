@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-21 09:41-0300\n"
+"POT-Creation-Date: 2018-08-23 06:37-0300\n"
 "PO-Revision-Date: 2005-12-03 20:51+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: camorama.appdata.xml.in:6 src/callbacks.c:467
+#: camorama.appdata.xml.in:6
 msgid "Camorama"
 msgstr "Camorama"
 
@@ -30,7 +30,7 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:469
+#: camorama.desktop.in:4 src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
 msgstr "檢視、交換與儲存網路攝影機的影像"
 
@@ -39,179 +39,165 @@ msgstr "檢視、交換與儲存網路攝影機的影像"
 msgid "camorama.png"
 msgstr "camorama"
 
-#: data/camorama.glade:35
+#: data/camorama.ui:35
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: data/camorama.glade:107
+#: data/camorama.ui:107
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">一般</span>"
 
-#: data/camorama.glade:139
+#: data/camorama.ui:139
 msgid "Automatic Capture"
 msgstr "自動擷取"
 
-#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
-#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
-#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
+#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
+#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
+#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
 msgid "     "
 msgstr "     "
 
-#: data/camorama.glade:183
+#: data/camorama.ui:183
 msgid "Capture Interval (in minutes):"
 msgstr "擷取間隔(以分鐘計):"
 
-#: data/camorama.glade:257
+#: data/camorama.ui:257
 msgid "General"
 msgstr "一般"
 
-#: data/camorama.glade:279
+#: data/camorama.ui:279
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">本地端擷取</span>"
 
-#: data/camorama.glade:311
+#: data/camorama.ui:311
 msgid "_Enable local capture"
 msgstr "啟用本地端擷取(_E)"
 
-#: data/camorama.glade:360
+#: data/camorama.ui:360
 msgid "_Directory for captured pics:"
 msgstr "存放擷取照片的目錄(_D):"
 
-#: data/camorama.glade:373
+#: data/camorama.ui:373
 msgid "_Filename for pictures:"
 msgstr "相片的檔案名稱(_F):"
 
-#: data/camorama.glade:388
+#: data/camorama.ui:388
 msgid "webcam-capture"
 msgstr "網路攝影機-擷取"
 
-#: data/camorama.glade:407
+#: data/camorama.ui:407
 #, fuzzy
 msgid "Select a Directory"
 msgstr "儲存目錄:"
 
-#: data/camorama.glade:424 data/camorama.glade:857
+#: data/camorama.ui:424 data/camorama.ui:813
 msgid "Append time to filename"
 msgstr "在檔案名稱中附加時間"
 
-#: data/camorama.glade:441 data/camorama.glade:873
+#: data/camorama.ui:441 data/camorama.ui:829
 msgid "Add a timestamp to captured images"
 msgstr "在擷取的影像中加入時間戳記"
 
-#: data/camorama.glade:500 data/camorama.glade:932
+#: data/camorama.ui:500 data/camorama.ui:888
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">影像類型</span>"
 
-#: data/camorama.glade:531 data/camorama.glade:963
+#: data/camorama.ui:531 data/camorama.ui:919
 msgid "Save files in jpeg format"
 msgstr "儲存檔案為 jpeg 格式"
 
-#: data/camorama.glade:548 data/camorama.glade:980
+#: data/camorama.ui:548 data/camorama.ui:936
 msgid "Save files in png format"
 msgstr "儲存檔案為 png 格式"
 
-#: data/camorama.glade:593
+#: data/camorama.ui:593
 msgid "Local Capture"
 msgstr "本地端擷取"
 
-#: data/camorama.glade:616
+#: data/camorama.ui:616
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">遠端擷取</span>"
 
-#: data/camorama.glade:648
+#: data/camorama.ui:648
 msgid "_Enable remote capture"
 msgstr "啟用遠端擷取(_E)"
 
-#: data/camorama.glade:696
-msgid "FTP server: "
+#: data/camorama.ui:696
+#, fuzzy
+msgid "Server:"
 msgstr "FTP 伺服器:"
 
-#: data/camorama.glade:708
-msgid "Username:"
-msgstr "使用者名稱:"
+#: data/camorama.ui:708
+msgid "Type:"
+msgstr ""
 
-#: data/camorama.glade:722
-msgid "Password:"
-msgstr "密碼:"
-
-#: data/camorama.glade:736
+#: data/camorama.ui:720
 msgid "Save directory:"
 msgstr "儲存目錄:"
 
-#: data/camorama.glade:750
-msgid "Filename"
+#: data/camorama.ui:732
+#, fuzzy
+msgid "Filename:"
 msgstr "檔案名稱"
 
-#: data/camorama.glade:763
+#: data/camorama.ui:745
 msgid "ftp.yourdomain.org"
 msgstr "ftp.yourdomain.org"
 
-#: data/camorama.glade:779
-msgid "your-username"
-msgstr "您的使用者名稱"
-
-#: data/camorama.glade:798
-msgid "your-password"
-msgstr "您的密碼"
-
-#: data/camorama.glade:816
-msgid "path/to/save/to"
-msgstr "path/to/save/to"
-
-#: data/camorama.glade:834
+#: data/camorama.ui:790
 msgid "webcamshot"
 msgstr "網路攝影機拍照"
 
-#: data/camorama.glade:1025
+#: data/camorama.ui:981
 msgid "Remote Capture"
 msgstr "遠端擷取"
 
-#: data/camorama.glade:1048
+#: data/camorama.ui:1004
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">時間戳記</span>"
 
-#: data/camorama.glade:1080
+#: data/camorama.ui:1036
 msgid "Use custom string"
 msgstr "使用自訂字串"
 
-#: data/camorama.glade:1124
+#: data/camorama.ui:1080
 msgid "String:"
 msgstr "字串:"
 
-#: data/camorama.glade:1170
+#: data/camorama.ui:1126
 msgid "Draw date and time"
 msgstr "繪出時間與日期"
 
-#: data/camorama.glade:1214
+#: data/camorama.ui:1170
 msgid "Timestamp"
 msgstr "時間戳記"
 
-#: data/camorama.glade:1243
+#: data/camorama.ui:1199
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: data/camorama.glade:1260
+#: data/camorama.ui:1216
 #, fuzzy
 msgid "_File"
 msgstr "檔案名稱"
 
-#: data/camorama.glade:1267 data/camorama.glade:1567
+#: data/camorama.ui:1223 data/camorama.ui:1523
 msgid "Take Picture"
 msgstr "拍照"
 
-#: data/camorama.glade:1302
+#: data/camorama.ui:1258
 msgid "_Edit"
 msgstr ""
 
-#: data/camorama.glade:1326
+#: data/camorama.ui:1282
 msgid "_View"
 msgstr ""
 
-#: data/camorama.glade:1335 data/camorama.glade:1508
+#: data/camorama.ui:1291 data/camorama.ui:1464
 msgid "Show Adjustments"
 msgstr "顯示調整鈕"
 
-#: data/camorama.glade:1345
+#: data/camorama.ui:1301
 msgid "Show Effects"
 msgstr "顯示效果"
 
@@ -221,35 +207,35 @@ msgstr "顯示效果"
 # calendar/gui/dialogs/task-editor-dialog.glade.h:13
 # calendar/gui/e-calendar-table.c:346
 # mail/message-list.c:688
-#: data/camorama.glade:1361
+#: data/camorama.ui:1317
 msgid "Small"
 msgstr "小"
 
-#: data/camorama.glade:1374
+#: data/camorama.ui:1330
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.glade:1698
+#: data/camorama.ui:1654
 msgid "Contrast:"
 msgstr "對比:"
 
-#: data/camorama.glade:1712
+#: data/camorama.ui:1668
 msgid "Brightness:"
 msgstr "亮度:"
 
-#: data/camorama.glade:1728
+#: data/camorama.ui:1684
 msgid "Color:"
 msgstr "色彩:"
 
-#: data/camorama.glade:1744
+#: data/camorama.ui:1700
 msgid "Hue:"
 msgstr "色調:"
 
-#: data/camorama.glade:1760
+#: data/camorama.ui:1716
 msgid "White Balance:"
 msgstr "白平衡:"
 
-#: src/callbacks.c:458
+#: src/callbacks.c:498
 msgid "translator_credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -258,12 +244,12 @@ msgstr ""
 "\n"
 "Chao-Hsiung Liao <pesder.liao@msa.hinet.net>, 2005"
 
-#: src/callbacks.c:582
+#: src/callbacks.c:639
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:702
+#: src/callbacks.c:759
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -271,7 +257,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:711
+#: src/callbacks.c:768
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "自動擷取"
@@ -291,35 +277,45 @@ msgstr "鏡射影像"
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:12
+#: src/camorama-stock-items.c:11
 #, fuzzy
 msgid "Webcam"
 msgstr "網路攝影機拍照"
 
-#: src/camorama-window.c:113
+#: src/camorama-window.c:116
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:206
+#: src/camorama-window.c:210
 #, fuzzy
 msgid "Effects"
 msgstr "顯示效果"
 
-#: src/fileio.c:120 src/fileio.c:266
+#: src/fileio.c:116 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr "無法在 /tmp 中儲存暫存影像檔案。"
 
-#: src/fileio.c:138
+#: src/fileio.c:128
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "無法建立影像‘%s’。"
 
-#: src/fileio.c:147 src/fileio.c:430
+#: src/fileio.c:136 src/fileio.c:419
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "無法儲存影像‘%s/%s’。"
 
-#: src/fileio.c:274
+#: src/fileio.c:174
+#, fuzzy, c-format
+msgid "An error occurred mounting %s:%s."
+msgstr "開啟 %s 時發生錯誤。"
+
+#: src/fileio.c:211
+#, fuzzy, c-format
+msgid "An error occurred accessing %s."
+msgstr "開啟 %s 時發生錯誤。"
+
+#: src/fileio.c:265
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -328,22 +324,32 @@ msgstr ""
 "無法開啟暫存影像檔案‘%s’。\n"
 "不能上傳影像。"
 
-#: src/fileio.c:312
+#: src/fileio.c:295
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "開啟 %s 時發生錯誤。"
 
-#: src/fileio.c:324
-#, c-format
-msgid "An error occurred writing to %s."
+#: src/fileio.c:306
+#, fuzzy, c-format
+msgid "An error occurred opening %s for write: %s."
+msgstr "開啟 %s 時發生錯誤。"
+
+#: src/fileio.c:317
+#, fuzzy, c-format
+msgid "An error occurred writing to %s: %s."
 msgstr "寫入至 %s 時發生錯誤。"
 
-#: src/fileio.c:404
+#: src/fileio.c:325
+#, fuzzy, c-format
+msgid "An error occurred closing %s: %s."
+msgstr "開啟 %s 時發生錯誤。"
+
+#: src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "無法建立目錄‘%s’。"
 
-#: src/fileio.c:415
+#: src/fileio.c:404
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "無法變更至目錄‘%s’。"
@@ -388,47 +394,54 @@ msgstr ""
 msgid "Sobel"
 msgstr "Sobel"
 
-#: src/main.c:73
+#: src/main.c:41
 msgid "show version and exit"
 msgstr "顯示版本並離開"
 
-#: src/main.c:75
+#: src/main.c:43
 msgid "v4l device to use"
 msgstr "要使用的 v4l 裝置"
 
-#: src/main.c:77
+#: src/main.c:45
 msgid "enable debugging code"
 msgstr "啟用除錯碼"
 
-#: src/main.c:78
+#: src/main.c:47
 msgid "capture width"
 msgstr "擷取寬度"
 
-#: src/main.c:80
+#: src/main.c:49
 msgid "capture height"
 msgstr "擷取高度"
 
-#: src/main.c:83
+#: src/main.c:51
 msgid "maximum capture size"
 msgstr "最大擷取尺寸"
 
-#: src/main.c:85
+#: src/main.c:53
 msgid "minimum capture size"
 msgstr "最小擷取尺寸"
 
-#: src/main.c:87
+#: src/main.c:55
 msgid "middle capture size"
 msgstr "中等擷取尺寸"
 
-#: src/main.c:89
+#: src/main.c:57
 msgid "use read() rather than mmap()"
 msgstr "使用 read() 而非 mmap()"
 
-#: src/main.c:114
+#: src/main.c:89
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:126
+#: src/main.c:91
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+
+#: src/main.c:105
 #, c-format
 msgid ""
 "\n"
@@ -441,22 +454,13 @@ msgstr ""
 "Camorama 版本 %s\n"
 "\n"
 
-#: src/main.c:243
-msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "找不到主要介面檔案 (camorama.glade)。"
-
-#: src/main.c:253
+#: src/main.c:224
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "找不到點陣檔：%s"
 
-#: src/support.c:69
-#, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "找不到點陣檔：%s"
-
-#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
-#: src/v4l.c:412
+#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
+#: src/v4l.c:410
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -465,40 +469,61 @@ msgstr ""
 "無法連線至視訊裝置 (%s)。\n"
 "請檢查連線。"
 
-#: src/v4l.c:440
+#: src/v4l.c:438
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:455
+#: src/v4l.c:453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:468
+#: src/v4l.c:466
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:481
+#: src/v4l.c:479
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:490
+#: src/v4l.c:488
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:518
+#: src/v4l.c:516
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:578
+#: src/v4l.c:576
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#~ msgid "Username:"
+#~ msgstr "使用者名稱:"
+
+#~ msgid "Password:"
+#~ msgstr "密碼:"
+
+#~ msgid "your-username"
+#~ msgstr "您的使用者名稱"
+
+#~ msgid "your-password"
+#~ msgstr "您的密碼"
+
+#~ msgid "path/to/save/to"
+#~ msgstr "path/to/save/to"
+
+#~ msgid "Couldn't find the main interface file (camorama.ui)."
+#~ msgstr "找不到主要介面檔案 (camorama.ui)。"
+
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "找不到點陣檔：%s"
 
 #~ msgid "~/.gnome-desktop"
 #~ msgstr "~/Desktop"

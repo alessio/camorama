@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD.ne\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-21 09:41-0300\n"
+"POT-Creation-Date: 2018-08-23 06:37-0300\n"
 "PO-Revision-Date: 2006-07-20 02:50+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms: nplurals=2;plural=(n!=1)\n"
 
-#: camorama.appdata.xml.in:6 src/callbacks.c:467
+#: camorama.appdata.xml.in:6
 msgid "Camorama"
 msgstr "कामोरामा"
 
@@ -37,7 +37,7 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:469
+#: camorama.desktop.in:4 src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
 msgstr "दृश्य, वेबक्यामबाट छविहरू परिवर्तन र बचत गर्नुहोस्"
 
@@ -46,222 +46,208 @@ msgstr "दृश्य, वेबक्यामबाट छविहरू �
 msgid "camorama.png"
 msgstr "कामोरामा"
 
-#: data/camorama.glade:35
+#: data/camorama.ui:35
 msgid "Preferences"
 msgstr "प्राथमिकताहरू"
 
-#: data/camorama.glade:107
+#: data/camorama.ui:107
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\"> साधारण</span>"
 
-#: data/camorama.glade:139
+#: data/camorama.ui:139
 msgid "Automatic Capture"
 msgstr "स्वचालित: क्याप्चर"
 
-#: data/camorama.glade:161 data/camorama.glade:296 data/camorama.glade:334
-#: data/camorama.glade:517 data/camorama.glade:633 data/camorama.glade:670
-#: data/camorama.glade:949 data/camorama.glade:1065 data/camorama.glade:1102
+#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
+#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
+#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
 msgid "     "
 msgstr "     "
 
-#: data/camorama.glade:183
+#: data/camorama.ui:183
 msgid "Capture Interval (in minutes):"
 msgstr "क्याप्चर अन्तराल (मिनेटमा):"
 
-#: data/camorama.glade:257
+#: data/camorama.ui:257
 msgid "General"
 msgstr "साधारण"
 
-#: data/camorama.glade:279
+#: data/camorama.ui:279
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">स्थानीय क्याप्चर</span>"
 
-#: data/camorama.glade:311
+#: data/camorama.ui:311
 msgid "_Enable local capture"
 msgstr "स्थानीय क्याप्चर गर्न सक्षम"
 
-#: data/camorama.glade:360
+#: data/camorama.ui:360
 msgid "_Directory for captured pics:"
 msgstr "क्याप्चर गरिएको तस्वीरहरूको लागि डाइरेक्टरी:"
 
-#: data/camorama.glade:373
+#: data/camorama.ui:373
 msgid "_Filename for pictures:"
 msgstr "तस्वीरहरूका लागि फाइलनाम:"
 
-#: data/camorama.glade:388
+#: data/camorama.ui:388
 msgid "webcam-capture"
 msgstr "वेबक्याम-क्याप्चर"
 
-#: data/camorama.glade:407
+#: data/camorama.ui:407
 #, fuzzy
 msgid "Select a Directory"
 msgstr "डाइरेक्टरी बचत गर्नुहोस्:"
 
-#: data/camorama.glade:424 data/camorama.glade:857
+#: data/camorama.ui:424 data/camorama.ui:813
 msgid "Append time to filename"
 msgstr "फाइलनाममा समय थप गर्नुहोस्"
 
-#: data/camorama.glade:441 data/camorama.glade:873
+#: data/camorama.ui:441 data/camorama.ui:829
 msgid "Add a timestamp to captured images"
 msgstr "छविहरू क्याप्चर गर्न टाइमस्ट्याम्प थप्नुहोस्"
 
-#: data/camorama.glade:500 data/camorama.glade:932
+#: data/camorama.ui:500 data/camorama.ui:888
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">छवि प्रकार</span>"
 
-#: data/camorama.glade:531 data/camorama.glade:963
+#: data/camorama.ui:531 data/camorama.ui:919
 msgid "Save files in jpeg format"
 msgstr "जेपिइजि ढाँचामा फाइलहरू बचत गर्नुहोस्"
 
-#: data/camorama.glade:548 data/camorama.glade:980
+#: data/camorama.ui:548 data/camorama.ui:936
 msgid "Save files in png format"
 msgstr "पिएनजि ढाँचामा फाइलहरू बचत गर्नुहोस्"
 
-#: data/camorama.glade:593
+#: data/camorama.ui:593
 msgid "Local Capture"
 msgstr "स्थानीय क्याप्चर"
 
-#: data/camorama.glade:616
+#: data/camorama.ui:616
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">दूर क्याप्चर</span>"
 
-#: data/camorama.glade:648
+#: data/camorama.ui:648
 msgid "_Enable remote capture"
 msgstr "दूर क्याप्चर गर्न सक्षम"
 
-#: data/camorama.glade:696
-msgid "FTP server: "
+#: data/camorama.ui:696
+#, fuzzy
+msgid "Server:"
 msgstr "FTP सर्भर: "
 
-#: data/camorama.glade:708
-msgid "Username:"
-msgstr "प्रयोगकर्ता नाम:"
+#: data/camorama.ui:708
+msgid "Type:"
+msgstr ""
 
-#: data/camorama.glade:722
-msgid "Password:"
-msgstr "पासवर्ड:"
-
-#: data/camorama.glade:736
+#: data/camorama.ui:720
 msgid "Save directory:"
 msgstr "डाइरेक्टरी बचत गर्नुहोस्:"
 
-#: data/camorama.glade:750
-msgid "Filename"
+#: data/camorama.ui:732
+#, fuzzy
+msgid "Filename:"
 msgstr "फाइलनाम"
 
-#: data/camorama.glade:763
+#: data/camorama.ui:745
 msgid "ftp.yourdomain.org"
 msgstr "ftp.yourdomain.org"
 
-#: data/camorama.glade:779
-msgid "your-username"
-msgstr "तपाईँको-पासवर्ड"
-
-#: data/camorama.glade:798
-msgid "your-password"
-msgstr "तपाईँको-पासवर्ड"
-
-#: data/camorama.glade:816
-msgid "path/to/save/to"
-msgstr "path/to/save/to"
-
-#: data/camorama.glade:834
+#: data/camorama.ui:790
 msgid "webcamshot"
 msgstr "वेबक्यामशट"
 
-#: data/camorama.glade:1025
+#: data/camorama.ui:981
 msgid "Remote Capture"
 msgstr "दूर क्याप्चर"
 
-#: data/camorama.glade:1048
+#: data/camorama.ui:1004
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">टाइमस्ट्याम्प</span>"
 
-#: data/camorama.glade:1080
+#: data/camorama.ui:1036
 msgid "Use custom string"
 msgstr "अनुकूल स्ट्रिङ प्रयोग गर्नुहोस्"
 
-#: data/camorama.glade:1124
+#: data/camorama.ui:1080
 msgid "String:"
 msgstr "स्ट्रिङ:"
 
-#: data/camorama.glade:1170
+#: data/camorama.ui:1126
 msgid "Draw date and time"
 msgstr "मिति र समय बनाउनुहोस्"
 
-#: data/camorama.glade:1214
+#: data/camorama.ui:1170
 msgid "Timestamp"
 msgstr "टाइमस्ट्याम्प"
 
-#: data/camorama.glade:1243
+#: data/camorama.ui:1199
 msgid "Camorama-libglade"
 msgstr "कामोरामा-लिब्ग्लेड"
 
-#: data/camorama.glade:1260
+#: data/camorama.ui:1216
 #, fuzzy
 msgid "_File"
 msgstr "फाइलनाम"
 
-#: data/camorama.glade:1267 data/camorama.glade:1567
+#: data/camorama.ui:1223 data/camorama.ui:1523
 msgid "Take Picture"
 msgstr "तस्वीर लिनुहोस्"
 
-#: data/camorama.glade:1302
+#: data/camorama.ui:1258
 msgid "_Edit"
 msgstr ""
 
-#: data/camorama.glade:1326
+#: data/camorama.ui:1282
 msgid "_View"
 msgstr ""
 
-#: data/camorama.glade:1335 data/camorama.glade:1508
+#: data/camorama.ui:1291 data/camorama.ui:1464
 msgid "Show Adjustments"
 msgstr "समायोजनहरू देखाउनुहोस्"
 
-#: data/camorama.glade:1345
+#: data/camorama.ui:1301
 msgid "Show Effects"
 msgstr "प्रभावहरू देखाउनुहोस्"
 
-#: data/camorama.glade:1361
+#: data/camorama.ui:1317
 msgid "Small"
 msgstr "सानो"
 
-#: data/camorama.glade:1374
+#: data/camorama.ui:1330
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.glade:1698
+#: data/camorama.ui:1654
 msgid "Contrast:"
 msgstr "व्यतिरेक:"
 
-#: data/camorama.glade:1712
+#: data/camorama.ui:1668
 msgid "Brightness:"
 msgstr "चम्किलो:"
 
-#: data/camorama.glade:1728
+#: data/camorama.ui:1684
 msgid "Color:"
 msgstr "रङ:"
 
-#: data/camorama.glade:1744
+#: data/camorama.ui:1700
 msgid "Hue:"
 msgstr "ह्यु:"
 
-#: data/camorama.glade:1760
+#: data/camorama.ui:1716
 msgid "White Balance:"
 msgstr "श्वेत सन्तुलन:"
 
-#: src/callbacks.c:458
+#: src/callbacks.c:498
 msgid "translator_credits"
 msgstr ""
 "Ganesh Ghimire<gghimire@gmail.com>Jaydeep Bhusal <zaydeep@hotmail.com>Shyam "
 "Krishna Bal <shyamkrishna_bal@yahoo.com>"
 
-#: src/callbacks.c:582
+#: src/callbacks.c:639
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:702
+#: src/callbacks.c:759
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -269,7 +255,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:711
+#: src/callbacks.c:768
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "स्वचालित: क्याप्चर"
@@ -288,35 +274,45 @@ msgstr ""
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:12
+#: src/camorama-stock-items.c:11
 #, fuzzy
 msgid "Webcam"
 msgstr "वेबक्यामशट"
 
-#: src/camorama-window.c:113
+#: src/camorama-window.c:116
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:206
+#: src/camorama-window.c:210
 #, fuzzy
 msgid "Effects"
 msgstr "प्रभावहरू देखाउनुहोस्"
 
-#: src/fileio.c:120 src/fileio.c:266
+#: src/fileio.c:116 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr "अस्थायि छवि /टिएमपि फाइलमा बचत गर्न सकिन्छ।"
 
-#: src/fileio.c:138
+#: src/fileio.c:128
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "छवि निर्माण गर्न अक्षम '%s'।"
 
-#: src/fileio.c:147 src/fileio.c:430
+#: src/fileio.c:136 src/fileio.c:419
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "छवि बचत गर्न सकिँदैन '%s/%s'।"
 
-#: src/fileio.c:274
+#: src/fileio.c:174
+#, fuzzy, c-format
+msgid "An error occurred mounting %s:%s."
+msgstr "%s खोल्दा त्रुटि भेटियो।"
+
+#: src/fileio.c:211
+#, fuzzy, c-format
+msgid "An error occurred accessing %s."
+msgstr "%s खोल्दा त्रुटि भेटियो।"
+
+#: src/fileio.c:265
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -325,22 +321,32 @@ msgstr ""
 "अस्थायी छवि फाइल खोल्न अक्षम '%s'।\n"
 "छवि अपलोड गर्न सकिँदैन।"
 
-#: src/fileio.c:312
+#: src/fileio.c:295
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "%s खोल्दा त्रुटि भेटियो।"
 
-#: src/fileio.c:324
-#, c-format
-msgid "An error occurred writing to %s."
+#: src/fileio.c:306
+#, fuzzy, c-format
+msgid "An error occurred opening %s for write: %s."
+msgstr "%s खोल्दा त्रुटि भेटियो।"
+
+#: src/fileio.c:317
+#, fuzzy, c-format
+msgid "An error occurred writing to %s: %s."
 msgstr " %s मा लेख्दा त्रुटि भेटियो।"
 
-#: src/fileio.c:404
+#: src/fileio.c:325
+#, fuzzy, c-format
+msgid "An error occurred closing %s: %s."
+msgstr "%s खोल्दा त्रुटि भेटियो।"
+
+#: src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "डाइरेक्टरी सिर्जना गर्न सकिएन '%s'।"
 
-#: src/fileio.c:415
+#: src/fileio.c:404
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "डाइरेक्टरीमा परिवर्तन गर्न सकिएन '%s'।"
@@ -382,47 +388,54 @@ msgstr ""
 msgid "Sobel"
 msgstr ""
 
-#: src/main.c:73
+#: src/main.c:41
 msgid "show version and exit"
 msgstr "संस्करण देखाउनुहोस् र निस्कनुहोस्"
 
-#: src/main.c:75
+#: src/main.c:43
 msgid "v4l device to use"
 msgstr "v4l यन्त्र प्रयोगका लागि"
 
-#: src/main.c:77
+#: src/main.c:45
 msgid "enable debugging code"
 msgstr "डिबगिङ कोड सक्षम पार्नुहोस्"
 
-#: src/main.c:78
+#: src/main.c:47
 msgid "capture width"
 msgstr "क्याप्चर चौडाइ"
 
-#: src/main.c:80
+#: src/main.c:49
 msgid "capture height"
 msgstr "क्याप्चर उचाइ"
 
-#: src/main.c:83
+#: src/main.c:51
 msgid "maximum capture size"
 msgstr "अधिकतम क्याप्चर साइज"
 
-#: src/main.c:85
+#: src/main.c:53
 msgid "minimum capture size"
 msgstr "न्यूनतम क्याप्चर साइज"
 
-#: src/main.c:87
+#: src/main.c:55
 msgid "middle capture size"
 msgstr "मध्यम क्याप्चर साइज"
 
-#: src/main.c:89
+#: src/main.c:57
 msgid "use read() rather than mmap()"
 msgstr "पढ्न प्रयोग गर्नुहोस्() एमम्याप भन्दा पनि()"
 
-#: src/main.c:114
+#: src/main.c:89
 msgid "camorama"
 msgstr "कामोरामा"
 
-#: src/main.c:126
+#: src/main.c:91
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+
+#: src/main.c:105
 #, c-format
 msgid ""
 "\n"
@@ -435,22 +448,13 @@ msgstr ""
 "कामोरामा संस्करण %s\n"
 "\n"
 
-#: src/main.c:243
-msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "मूख्य इन्टरफेस फाइल पत्ता लागेन (कामोरामा.ग्लेड)।"
-
-#: src/main.c:253
+#: src/main.c:224
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "पिक्सम्याप फाइल पत्ता लागेन: %s"
 
-#: src/support.c:69
-#, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "पिक्सम्याप फाइल पत्ता लागेन: %s"
-
-#: src/v4l.c:120 src/v4l.c:224 src/v4l.c:305 src/v4l.c:374 src/v4l.c:392
-#: src/v4l.c:412
+#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
+#: src/v4l.c:410
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -459,40 +463,61 @@ msgstr ""
 "भिडियो यन्त्रमा जडान गर्न सकिएन (%s).\n"
 "कृपया जडान जाँच्नुहोस्।"
 
-#: src/v4l.c:440
+#: src/v4l.c:438
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:455
+#: src/v4l.c:453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:468
+#: src/v4l.c:466
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:481
+#: src/v4l.c:479
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:490
+#: src/v4l.c:488
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:518
+#: src/v4l.c:516
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:578
+#: src/v4l.c:576
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#~ msgid "Username:"
+#~ msgstr "प्रयोगकर्ता नाम:"
+
+#~ msgid "Password:"
+#~ msgstr "पासवर्ड:"
+
+#~ msgid "your-username"
+#~ msgstr "तपाईँको-पासवर्ड"
+
+#~ msgid "your-password"
+#~ msgstr "तपाईँको-पासवर्ड"
+
+#~ msgid "path/to/save/to"
+#~ msgstr "path/to/save/to"
+
+#~ msgid "Couldn't find the main interface file (camorama.ui)."
+#~ msgstr "मूख्य इन्टरफेस फाइल पत्ता लागेन (कामोरामा.ग्लेड)।"
+
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "पिक्सम्याप फाइल पत्ता लागेन: %s"
 
 #~ msgid "~/.gnome-desktop"
 #~ msgstr "~/.जिनोम-डेस्कटप"
