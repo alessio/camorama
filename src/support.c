@@ -46,7 +46,7 @@ GtkWidget *lookup_widget (GtkWidget * widget, const gchar * widget_name)
     }
 
     found_widget =
-        (GtkWidget *) gtk_object_get_data (GTK_OBJECT (widget), widget_name);
+        (GtkWidget *) g_object_get_data (GTK_OBJECT (widget), widget_name);
     if (!found_widget)
         g_warning ("Widget not found: %s", widget_name);
     return found_widget;
