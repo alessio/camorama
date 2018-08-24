@@ -454,7 +454,7 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
 
 void on_show_adjustments_activate (GtkToggleButton * button, cam * cam)
 {
-    if (GTK_WIDGET_VISIBLE (GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")))) {
+    if (gtk_widget_get_visible(GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")))) {
         gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")));
         gtk_window_resize (GTK_WINDOW
                            (GTK_WIDGET(gtk_builder_get_object
