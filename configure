@@ -762,6 +762,7 @@ with_libiconv_prefix
 with_libintl_prefix
 enable_compile_warnings
 enable_iso_c
+enable_gtk3
 with_gconf_source
 with_gconf_schema_file_dir
 enable_schemas_install
@@ -1409,6 +1410,7 @@ Optional Features:
   --enable-compile-warnings=[no/minimum/yes/maximum/error]
                           Turn on compiler warnings
   --enable-iso-c          Try to warn if code is not ISO C
+  --enable-gtk3           Compile against GTK 3.x instead of GTK 2.x
   --disable-schemas-install
                           Disable the schemas installation
 
@@ -8119,7 +8121,22 @@ $as_echo "$complCFLAGS" >&6; }
 
 
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 gtk+-2.0 >= 2.24 gconf-2.0"
+# Check whether --enable-gtk3 was given.
+if test "${enable_gtk3+set}" = set; then :
+  enableval=$enable_gtk3; enable_gtk3=$enableval
+else
+  enable_gtk3="no"
+fi
+
+
+pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 gconf-2.0"
+
+if test "x$enable_gtk3" = xyes; then
+	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
+else
+	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
+fi
+
 
 
 
