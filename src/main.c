@@ -185,7 +185,10 @@ main(int argc, char *argv[]) {
     gdk_pixbuf_xlib_init (display, 0);
     cam->desk_depth = xlib_rgb_get_depth ();
 
-    cam->dev = v4l2_open (cam->video_dev, O_RDWR | O_NONBLOCK);
+    if (use_read)
+        cam->dev = v4l2_open (cam->video_dev, O_RDWR);
+    else
+        cam->dev = v4l2_open (cam->video_dev, O_RDWR | O_NONBLOCK);
 
     camera_cap (cam);
     get_win_info (cam);
