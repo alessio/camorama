@@ -286,7 +286,7 @@ load_interface(cam* cam) {
             sprintf(name, "%dx%d", cam->res[i].x, cam->res[i].y);
 
             new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), name);
-            gtk_menu_append(GTK_MENU(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))), new_res);
+            gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))), new_res);
             gtk_widget_show (new_res);
             g_signal_connect(new_res, "activate",
                              G_CALLBACK (on_change_size_activate), cam);
@@ -305,14 +305,14 @@ load_interface(cam* cam) {
                                        G_CALLBACK (on_change_size_activate), cam);
 
         new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Medium");
-        gtk_menu_append(GTK_MENU(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))), new_res);
+        gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))), new_res);
         gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
         gtk_widget_show (new_res);
         g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
         gtk_widget_set_name(new_res, "medium");
 
         new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), "Large");
-        gtk_menu_append(GTK_MENU(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))), new_res);
+        gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))), new_res);
         gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (new_res), FALSE);
         gtk_widget_show (new_res);
         g_signal_connect(new_res, "activate", G_CALLBACK (on_change_size_activate), cam);
