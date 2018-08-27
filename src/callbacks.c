@@ -660,9 +660,10 @@ static void show_buffer(cam* cam)
                                   NULL);
 
     GtkWidget *widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
+    GdkWindow *window = gtk_widget_get_window(widget);
 
-    cairo_surface_t *surface = create_from_pixbuf(pb, widget->window);
-    cairo_t *cr = gdk_cairo_create(widget->window);
+    cairo_surface_t *surface = create_from_pixbuf(pb, window);
+    cairo_t *cr = gdk_cairo_create(window);
     cairo_set_source_surface(cr, surface, 0, 0);
 
     gdk_cairo_rectangle(cr, &rect);
