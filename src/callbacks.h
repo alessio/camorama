@@ -40,7 +40,6 @@ void on_about_activate (GtkMenuItem * menuitem, cam *cam);
 void on_show_adjustments_activate (GtkToggleButton * button, cam *);
 void on_show_effects_activate (GtkMenuItem * menuitem, cam *);
 void prefs_func (GtkWidget *, cam *);
-gint io_func (cam *, gint, GdkInputCondition);
 void capture_func2 (GtkWidget *, cam *);
 void capture_func (GtkWidget *, cam *);
 gint timeout_capture_func (cam *);
