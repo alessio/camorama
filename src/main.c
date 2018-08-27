@@ -225,9 +225,9 @@ main(int argc, char *argv[]) {
     GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
     gtk_widget_show (widget);
 
-    cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+    cam->idle_id = g_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
 
-    gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
+    g_timeout_add (2000, (GSourceFunc) fps, cam->status);
 
     if (cam->debug == TRUE)
        print_cam(cam);

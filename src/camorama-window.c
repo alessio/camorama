@@ -167,12 +167,12 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
             if (gtk_widget_get_visible
                 (GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window")))) {
                 cam->hidden = TRUE;
-                gtk_idle_remove (cam->idle_id);
+                g_source_remove (cam->idle_id);
                 gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object
                                  (cam->xml, "main_window")));
             } else {
                 cam->idle_id =
-                    gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+                    g_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
                 gtk_widget_show (GTK_WIDGET(gtk_builder_get_object
                                  (cam->xml, "main_window")));
                 cam->hidden = FALSE;

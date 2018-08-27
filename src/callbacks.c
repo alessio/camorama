@@ -163,7 +163,7 @@ void acap_func (GtkWidget * rb, cam * cam)
 
     if (cam->acap == TRUE) {
         cam->timeout_id =
-            gtk_timeout_add (cam->timeout_interval,
+            g_timeout_add (cam->timeout_interval,
                              (GSourceFunc) timeout_capture_func, cam);
         if (cam->debug == TRUE) {
             printf ("add autocap - %d -  timeout_interval = \n",
@@ -174,7 +174,7 @@ void acap_func (GtkWidget * rb, cam * cam)
             printf ("remove autocap - %d -  timeout_interval = \n",
                     cam->timeout_id, cam->timeout_interval);
         }
-        gtk_timeout_remove (cam->timeout_id);
+        g_source_remove (cam->timeout_id);
     }
     update_tooltip (cam);
     set_sensitive (cam);
@@ -194,9 +194,9 @@ void interval_change (GtkWidget * sb, cam * cam)
                 ("interval_change; old timeout_id = %d old interval = %d\n",
                  cam->timeout_id, cam->timeout_interval);
         }
-        gtk_timeout_remove (cam->timeout_id);
+        g_source_remove (cam->timeout_id);
         cam->timeout_id =
-            gtk_timeout_add (cam->timeout_interval,
+            g_timeout_add (cam->timeout_interval,
                              (GSourceFunc) timeout_capture_func, cam);
         if (cam->debug == TRUE) {
             printf ("new timeout_id = %d, new interval = %d\n",
@@ -834,6 +834,6 @@ void update_tooltip (cam * cam)
         }
         tooltip_text = g_strdup_printf (_("Automatic Capture Disabled"));
     }
-    gtk_status_icon_set_tooltip(cam->tray_icon, tooltip_text);
+    gtk_status_icon_set_tooltip_text(cam->tray_icon, tooltip_text);
     g_free (tooltip_text);
 }
