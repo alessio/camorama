@@ -480,7 +480,7 @@ load_interface(cam* cam) {
             gtk_combo_box_set_active(GTK_COMBO_BOX(protocol), i);
     }
 
-    if (cam->host && cam->proto && cam->rdir) {
+    if (cam->cap && cam->host && cam->proto && cam->rdir) {
         cam->uri = volume_uri(cam->host, cam->proto, cam->rdir);
         mount_volume(cam);
     } else {
