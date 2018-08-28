@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <getopt.h>
+#include <gio/gio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -17,7 +18,6 @@
 #include <libv4l2.h>
 #include <signal.h>
 #include <png.h>
-#include <glade/glade.h>
 #include <gconf/gconf-client.h>
 
 #include "camorama-filter-chain.h"
@@ -47,7 +47,7 @@ typedef struct camera {
    int dev;
    int width;
    int height;
-   int depth;
+   int bpp;
    int desk_depth;
    CamoImageSize size;
    char name[32];
@@ -63,9 +63,8 @@ typedef struct camera {
    char *video_dev;
    unsigned char *image;
    gchar *capturefile, *rcapturefile;
-   gchar *pixdir, *rpixdir;
+   gchar *pixdir, *host, *proto, *rdir, *uri;
    int savetype, rsavetype;
-   gchar *rhost, *rlogin, *rpw;
    gchar *ts_string;
    gchar *date_format;
    gboolean debug, read, hidden;
@@ -78,10 +77,14 @@ typedef struct camera {
    guint timeout_id, idle_id;
    guint32 timeout_interval;
    GConfClient *gc;
-   GladeXML *xml;
+   GtkBuilder *xml;
    GtkStatusIcon *tray_icon;
 
    CamoramaFilterChain* filter_chain;
+
+   gboolean rdir_ok;
+   GFile *rdir_file;
+   GMountOperation *rdir_mop;
 
    /* Buffer handling - should be used only inside v4l.c */
    struct v4l2_requestbuffers req;
@@ -93,6 +96,7 @@ typedef struct camera {
 } cam;
 
 void camera_cap (cam *);
+void print_cam (cam *);
 void try_set_win_info(cam * cam, int *x, int *y);
 void set_win_info (cam * cam);
 void get_pic_info (cam *);

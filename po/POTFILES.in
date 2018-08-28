@@ -1,9 +1,11 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+camorama.appdata.xml.in
 camorama.desktop.in
-data/camorama.glade
-data/camorama.schemas.in
+data/camorama.ui
+data/camorama.schemas
 src/callbacks.c
+src/camorama-filter-chain.c
 src/camorama-filter-laplace.c
 src/camorama-filter-mirror.c
 src/camorama-filter-reichardt.c

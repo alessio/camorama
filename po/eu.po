@@ -9,11 +9,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 20:04+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-23 06:37-0300\n"
 "PO-Revision-Date: 2007-08-08 20:14+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <eu@li.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,413 +22,229 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
-#: ../camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Camorama Web camera ikustailea"
-
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
-msgid "View, alter and save images from a webcam"
-msgstr "Irudiak web kamera batetik ikusi, aldatu eta gorde"
-
-#: ../data/camorama.glade.h:1
-msgid "     "
-msgstr "....."
-
-#: ../data/camorama.glade.h:2
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">Orokorra</span>"
-
-#: ../data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Irudi mota</span>"
-
-#: ../data/camorama.glade.h:4
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Eskuratze lokala</span>"
-
-#: ../data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Urruneko eskuratzea</span>"
-
-#: ../data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Data-zigilua</span>"
-
-#: ../data/camorama.glade.h:7
-msgid "Add a timestamp to captured images"
-msgstr "Eskuratutako irudiei data-zigilua gehitu"
-
-#: ../data/camorama.glade.h:8
-msgid "Append time to filename"
-msgstr "Gehitu data fitxategiari"
-
-#: ../data/camorama.glade.h:9
-msgid "Automatic Capture"
-msgstr "Eskuratze automatikoa"
-
-#: ../data/camorama.glade.h:10
-msgid "Brightness:"
-msgstr "Distira:"
-
-#: ../data/camorama.glade.h:11
-msgid "Camorama-libglade"
-msgstr "Camorama-libglade"
-
-#: ../data/camorama.glade.h:12
-msgid "Capture Interval (in minutes):"
-msgstr "Eskuratze-tartea (minututan)"
-
-#: ../data/camorama.glade.h:13
-msgid "Color:"
-msgstr "Kolorea:"
-
-#: ../data/camorama.glade.h:14
-msgid "Contrast:"
-msgstr "Kontrastea:"
-
-#: ../data/camorama.glade.h:15
-msgid "Draw date and time"
-msgstr "Ordua eta data marraztu"
-
-#: ../data/camorama.glade.h:16
-msgid "FTP server: "
-msgstr "FTP zerbitzaria:"
-
-#: ../data/camorama.glade.h:17
-msgid "Filename"
-msgstr "Fitxategi-izena"
-
-#: ../data/camorama.glade.h:18
-msgid "General"
-msgstr "Orokorra"
-
-#: ../data/camorama.glade.h:19
-msgid "Hue:"
-msgstr "�abardura:"
-
-#: ../data/camorama.glade.h:20
-msgid "Large"
-msgstr "Handia"
-
-#: ../data/camorama.glade.h:21
-msgid "Local Capture"
-msgstr "Eskuratze lokala"
-
-#: ../data/camorama.glade.h:22
-msgid "Medium"
-msgstr "Ertaina"
-
-#: ../data/camorama.glade.h:23
-msgid "Password:"
-msgstr "Pasahitza:"
-
-#: ../data/camorama.glade.h:24
-msgid "Preferences"
-msgstr "Hobespenak"
-
-#: ../data/camorama.glade.h:25
-msgid "Remote Capture"
-msgstr "Urruneko eskuratzea"
-
-#: ../data/camorama.glade.h:26
-msgid "Save directory:"
-msgstr "Gordetzeko direktorioa:"
-
-#: ../data/camorama.glade.h:27
-msgid "Save files in jpeg format"
-msgstr "Fitxategiak jpeg formatuan gorde"
-
-#: ../data/camorama.glade.h:28
-msgid "Save files in png format"
-msgstr "Fitxategiak png formatuan gorde"
-
-#: ../data/camorama.glade.h:29
-msgid "Show Adjustments"
-msgstr "Egokipenak erakutsi"
-
-#: ../data/camorama.glade.h:30
-msgid "Show Effects"
-msgstr "Efektuak erakutsi"
-
-#: ../data/camorama.glade.h:31
-msgid "Small"
-msgstr "Txikia"
-
-#: ../data/camorama.glade.h:32
-msgid "String:"
-msgstr "Textu-kate:"
-
-#: ../data/camorama.glade.h:33
-msgid "Take Picture"
-msgstr "Argazki bat hartu"
-
-#: ../data/camorama.glade.h:34
-msgid "Timestamp"
-msgstr "Data-zigilua"
-
-#: ../data/camorama.glade.h:35
-msgid "Use custom string"
-msgstr "Pertsonalizatutako testu-katea erabili"
-
-#: ../data/camorama.glade.h:36
-msgid "Username:"
-msgstr "Erabiltzaile-izena:"
-
-#: ../data/camorama.glade.h:37
-msgid "White Balance:"
-msgstr "Txurien balantzea:"
-
-#: ../data/camorama.glade.h:38
-msgid "_Directory for captured pics:"
-msgstr "Eskuratutako irudien _direktorioa:"
-
-#: ../data/camorama.glade.h:39
-msgid "_Enable local capture"
-msgstr "_Eskuratze lokala gaitu"
-
-#: ../data/camorama.glade.h:40
-msgid "_Enable remote capture"
-msgstr "Urruneko _eskuratze gaitu"
-
-#: ../data/camorama.glade.h:41
-msgid "_Filename for pictures:"
-msgstr "Irudientzako _fitzategi-izena:"
-
-#: ../data/camorama.glade.h:42
-msgid "ftp.yourdomain.org"
-msgstr "ftp.zuredomeinua.org"
-
-#: ../data/camorama.glade.h:43
-msgid "path/to/save/to"
-msgstr "gordetzeko/bidea"
-
-#: ../data/camorama.glade.h:44
-msgid "webcam-capture"
-msgstr "Web kamerarekin eskuratu"
-
-#: ../data/camorama.glade.h:45
-msgid "webcamshot"
-msgstr "Web kamerarekin bat-bateko argazkia"
-
-#: ../data/camorama.glade.h:46
-msgid "your-password"
-msgstr "zure pasahitza"
-
-#: ../data/camorama.glade.h:47
-msgid "your-username"
-msgstr "zure erabiltzaile-izena"
-
-#: ../data/camorama.glade.h:48
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
-
-#: ../data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "Fitxategi-izenari data-zigilua gehitu"
-
-#: ../data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "Urruneko fitxategi-izenari data-zigilua gehitu"
-
-#: ../data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan"
-
-#: ../data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Urruneko fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan"
-
-#: ../data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "Data-zigilurako testu pertsonalizatua"
-
-#: ../data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Irudiaren barruan sartuko den testu-kate pertsonalizatua zehazten du"
-
-#: ../data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "Eskuratze lokalentzako fitxategi-izena"
-
-#: ../data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "Eskuratutako irudiak lokalean gordetzeko fitxategi-izena"
-
-#: ../data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "Eskuratze lokalentzako direktorioa"
-
-#: ../data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "Urruneko eskuratzeentako direktorioa"
-
-#: ../data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "Eskuratutako irudiak urrunean gordetzeko direktorioa"
-
-#: ../data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "Eskuratutako irudiak lokalean gordetzeko direktorioa"
-
-#: ../data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "FTP-zerbitzariaren izena"
-
-#: ../data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "Urruenako eskuratzeentzako FTP-zerbitzariaren izena."
-
-#: ../data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "Eskuratze automatikorako tartea"
-
-#: ../data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "Eskuratze lokalaren irudi-formatua"
-
-#: ../data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "Zerbitzarira igotako irudien fitxategi-izena"
-
-#: ../data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "FTP-zerbitzariaren pasahitza"
-
-#: ../data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "Urruneko eskuratzearen irudi-formatua"
-
-#: ../data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "Urrunean gordetzeko fitxategi-izena"
-
-#: ../data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Lokalean gordeko diren irudien formatua zehazten du"
-
-#: ../data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Urrunean gordeko diren irudien formatua zehazten du"
-
-#: ../data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Irudien eskuratze automatikoaren tartea zehazten du"
-
-#: ../data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "Urruneko eskuratzeak egiteko erabiliko den FTP-kontuaren pasahitza"
-
-#: ../data/camorama.schemas.in.h:25
-msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "Gailuaren UNIX fitxategi-sistemaren bide-izena (kamerari esleitu zaiona)."
-
-#: ../data/camorama.schemas.in.h:26
-msgid "Toggles auto-capture"
-msgstr "Eskuratze automatikoa gaitu"
-
-#: ../data/camorama.schemas.in.h:27
-msgid "Toggles automatic capturing of pictures."
-msgstr "Irudien eskuratze automatikoa gaitu"
-
-#: ../data/camorama.schemas.in.h:28
-msgid "Toggles local capture"
-msgstr "Eskuratze lokala gaitu"
-
-#: ../data/camorama.schemas.in.h:29
-msgid "Toggles remote capture"
-msgstr "Urruneko eskuratzea gaitu"
-
-#: ../data/camorama.schemas.in.h:30
-msgid "Toggles the custom string"
-msgstr "Textu-kate pertsonalizatua gaitu"
-
-#: ../data/camorama.schemas.in.h:31
-msgid "Toggles the datestamp in captures"
-msgstr "Data-zigilua irudietan gaitu"
-
-#: ../data/camorama.schemas.in.h:32
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Eskuratutako irudietan data-zigiluaren marrazketa gaitu"
-
-#: ../data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Irudi lokaletan data-zigiluaren txertaketa gaitu"
-
-#: ../data/camorama.schemas.in.h:34
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "FTP bitartze igoko diren irudietan data-zigiluaren txertaketa gaitu"
-
-#: ../data/camorama.schemas.in.h:35
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "Bideo-iragazkiak egokitzeko botoien erabilpena gaitu"
-
-#: ../data/camorama.schemas.in.h:36
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Irudien data-zigiluan testu-kate pertsonalizatuaren erabilpena gaitu"
-
-#: ../data/camorama.schemas.in.h:37
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Bideoaren ezaugarriak egokitzeko graduatzaileen erabilera gaitu"
-
-#: ../data/camorama.schemas.in.h:38
-msgid "Toggles the video adjustment sliders"
-msgstr "Bideoa egokitzeko graduatzaileak gaitu"
-
-#: ../data/camorama.schemas.in.h:39
-msgid "Toggles the video effects buttons"
-msgstr "Bideoaren efektuen botoiak gaitu"
-
-#: ../data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for local captures"
-msgstr "Eskuratze lokalentzat data-zigilua gaitu"
-
-#: ../data/camorama.schemas.in.h:41
-msgid "Toggles timestamp for remote captures"
-msgstr "Urruneko eskuratzeentzat data-zigilua gaitu"
-
-#: ../data/camorama.schemas.in.h:42
-msgid "Username for FTP server"
-msgstr "FTP-zerbitzariaren erabiltzaile-izena"
-
-#: ../data/camorama.schemas.in.h:43
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Eskuratutako irudiak FTP-zerbitzarira igotzeko erabilitzaile-izena"
-
-#: ../data/camorama.schemas.in.h:44
-msgid "Video device"
-msgstr "Bideo-gailua"
-
-#: ../data/camorama.schemas.in.h:45
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
-"eskuratze automatikoarekin, gako honek irudien eskuratze lokala gaitzen du."
-
-#: ../data/camorama.schemas.in.h:46
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
-"eskuratze automatikoarekin, gako honek urruneko zerbitzari batean irudien "
-"eskuratzea gaitzen du"
-
-#: ../src/callbacks.c:500
-msgid "translator_credits"
-msgstr "Alberto Silva <alberto@nmp.es>, 2003"
-
-#: ../src/callbacks.c:509
+#: camorama.appdata.xml.in:6
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
-#: ../src/callbacks.c:692
-msgid "Unable to capture image."
-msgstr "Ezin izan da irudia eskuratu"
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama Web camera ikustailea"
 
-#: ../src/callbacks.c:808
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
+msgstr ""
+
+#: camorama.desktop.in:4 src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr "Irudiak web kamera batetik ikusi, aldatu eta gorde"
+
+#: camorama.desktop.in:8
+#, fuzzy
+msgid "camorama.png"
+msgstr "camorama"
+
+#: data/camorama.ui:35
+msgid "Preferences"
+msgstr "Hobespenak"
+
+#: data/camorama.ui:107
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Orokorra</span>"
+
+#: data/camorama.ui:139
+msgid "Automatic Capture"
+msgstr "Eskuratze automatikoa"
+
+#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
+#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
+#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
+msgid "     "
+msgstr "....."
+
+#: data/camorama.ui:183
+msgid "Capture Interval (in minutes):"
+msgstr "Eskuratze-tartea (minututan)"
+
+#: data/camorama.ui:257
+msgid "General"
+msgstr "Orokorra"
+
+#: data/camorama.ui:279
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Eskuratze lokala</span>"
+
+#: data/camorama.ui:311
+msgid "_Enable local capture"
+msgstr "_Eskuratze lokala gaitu"
+
+#: data/camorama.ui:360
+msgid "_Directory for captured pics:"
+msgstr "Eskuratutako irudien _direktorioa:"
+
+#: data/camorama.ui:373
+msgid "_Filename for pictures:"
+msgstr "Irudientzako _fitzategi-izena:"
+
+#: data/camorama.ui:388
+msgid "webcam-capture"
+msgstr "Web kamerarekin eskuratu"
+
+#: data/camorama.ui:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "Gordetzeko direktorioa:"
+
+#: data/camorama.ui:424 data/camorama.ui:813
+msgid "Append time to filename"
+msgstr "Gehitu data fitxategiari"
+
+#: data/camorama.ui:441 data/camorama.ui:829
+msgid "Add a timestamp to captured images"
+msgstr "Eskuratutako irudiei data-zigilua gehitu"
+
+#: data/camorama.ui:500 data/camorama.ui:888
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Irudi mota</span>"
+
+#: data/camorama.ui:531 data/camorama.ui:919
+msgid "Save files in jpeg format"
+msgstr "Fitxategiak jpeg formatuan gorde"
+
+#: data/camorama.ui:548 data/camorama.ui:936
+msgid "Save files in png format"
+msgstr "Fitxategiak png formatuan gorde"
+
+#: data/camorama.ui:593
+msgid "Local Capture"
+msgstr "Eskuratze lokala"
+
+#: data/camorama.ui:616
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Urruneko eskuratzea</span>"
+
+#: data/camorama.ui:648
+msgid "_Enable remote capture"
+msgstr "Urruneko _eskuratze gaitu"
+
+#: data/camorama.ui:696
+#, fuzzy
+msgid "Server:"
+msgstr "FTP zerbitzaria:"
+
+#: data/camorama.ui:708
+msgid "Type:"
+msgstr ""
+
+#: data/camorama.ui:720
+msgid "Save directory:"
+msgstr "Gordetzeko direktorioa:"
+
+#: data/camorama.ui:732
+#, fuzzy
+msgid "Filename:"
+msgstr "Fitxategi-izena"
+
+#: data/camorama.ui:745
+msgid "ftp.yourdomain.org"
+msgstr "ftp.zuredomeinua.org"
+
+#: data/camorama.ui:790
+msgid "webcamshot"
+msgstr "Web kamerarekin bat-bateko argazkia"
+
+#: data/camorama.ui:981
+msgid "Remote Capture"
+msgstr "Urruneko eskuratzea"
+
+#: data/camorama.ui:1004
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Data-zigilua</span>"
+
+#: data/camorama.ui:1036
+msgid "Use custom string"
+msgstr "Pertsonalizatutako testu-katea erabili"
+
+#: data/camorama.ui:1080
+msgid "String:"
+msgstr "Textu-kate:"
+
+#: data/camorama.ui:1126
+msgid "Draw date and time"
+msgstr "Ordua eta data marraztu"
+
+#: data/camorama.ui:1170
+msgid "Timestamp"
+msgstr "Data-zigilua"
+
+#: data/camorama.ui:1199
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: data/camorama.ui:1216
+#, fuzzy
+msgid "_File"
+msgstr "Fitxategi-izena"
+
+#: data/camorama.ui:1223 data/camorama.ui:1523
+msgid "Take Picture"
+msgstr "Argazki bat hartu"
+
+#: data/camorama.ui:1258
+msgid "_Edit"
+msgstr ""
+
+#: data/camorama.ui:1282
+msgid "_View"
+msgstr ""
+
+#: data/camorama.ui:1291 data/camorama.ui:1464
+msgid "Show Adjustments"
+msgstr "Egokipenak erakutsi"
+
+#: data/camorama.ui:1301
+msgid "Show Effects"
+msgstr "Efektuak erakutsi"
+
+#: data/camorama.ui:1317
+msgid "Small"
+msgstr "Txikia"
+
+#: data/camorama.ui:1330
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.ui:1654
+msgid "Contrast:"
+msgstr "Kontrastea:"
+
+#: data/camorama.ui:1668
+msgid "Brightness:"
+msgstr "Distira:"
+
+#: data/camorama.ui:1684
+msgid "Color:"
+msgstr "Kolorea:"
+
+#: data/camorama.ui:1700
+msgid "Hue:"
+msgstr "�abardura:"
+
+#: data/camorama.ui:1716
+msgid "White Balance:"
+msgstr "Txurien balantzea:"
+
+#: src/callbacks.c:498
+msgid "translator_credits"
+msgstr "Alberto Silva <alberto@nmp.es>, 2003"
+
+#: src/callbacks.c:639
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
+
+#: src/callbacks.c:759
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -438,45 +255,61 @@ msgstr ""
 "Urruneko kaptura: %d\n"
 "Kaptura-bitartea: %d"
 
-#: ../src/callbacks.c:817
+#: src/callbacks.c:768
 msgid "Automatic Capture Disabled"
 msgstr "Kaptura automatikoki desgaitua"
 
-#: ../src/camorama-filter-laplace.c:128
+#: src/camorama-filter-laplace.c:128
 msgid "Laplace (4 Neighbours)"
 msgstr "Laplace (4 aldameneko)"
 
-#: ../src/camorama-filter-mirror.c:66
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
 msgid "Mirror"
 msgstr "Ispilua"
 
-#: ../src/camorama-stock-items.c:14
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:11
 msgid "Webcam"
 msgstr "Web kamera"
 
-#: ../src/camorama-window.c:112
+#: src/camorama-window.c:116
 msgid "_Add Filter"
 msgstr "_Gehitu iragazkia"
 
-#: ../src/camorama-window.c:199
+#: src/camorama-window.c:210
 msgid "Effects"
 msgstr "Efektuak"
 
-#: ../src/fileio.c:120 ../src/fileio.c:266
+#: src/fileio.c:116 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr "Behin-behineko irudi-fitxategia ezin izan da /tmp direktorioan gorde."
 
-#: ../src/fileio.c:138
+#: src/fileio.c:128
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "'%s' irudia ezin izan da sortu"
 
-#: ../src/fileio.c:147 ../src/fileio.c:430
+#: src/fileio.c:136 src/fileio.c:419
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "'%s/%s' irudia ezin izan da gorde"
 
-#: ../src/fileio.c:274
+#: src/fileio.c:174
+#, fuzzy, c-format
+msgid "An error occurred mounting %s:%s."
+msgstr "Errorea gertatu da %s irekitzean."
+
+#: src/fileio.c:211
+#, fuzzy, c-format
+msgid "An error occurred accessing %s."
+msgstr "Errorea gertatu da %s irekitzean."
+
+#: src/fileio.c:265
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -485,103 +318,121 @@ msgstr ""
 "Behin-behineko '%s' irudi-fitxategia ezin izan da ireki.\n"
 "Irudia ezin da zerbitzarira igo."
 
-#: ../src/fileio.c:312
+#: src/fileio.c:295
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "Errorea gertatu da %s irekitzean."
 
-#: ../src/fileio.c:324
-#, c-format
-msgid "An error occurred writing to %s."
+#: src/fileio.c:306
+#, fuzzy, c-format
+msgid "An error occurred opening %s for write: %s."
+msgstr "Errorea gertatu da %s irekitzean."
+
+#: src/fileio.c:317
+#, fuzzy, c-format
+msgid "An error occurred writing to %s: %s."
 msgstr "Errorea gertatu da %s(e)n idaztean."
 
-#: ../src/fileio.c:404
+#: src/fileio.c:325
+#, fuzzy, c-format
+msgid "An error occurred closing %s: %s."
+msgstr "Errorea gertatu da %s irekitzean."
+
+#: src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "'%s' direktorioa ezin izan da sortu."
 
-#: ../src/fileio.c:415
+#: src/fileio.c:404
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "'%s' direktoriora ezin izan da aldatu"
 
-#: ../src/filter.c:170
+#: src/filter.c:170
 msgid "Color Correction"
 msgstr "Kolore-zuzenketa"
 
-#: ../src/filter.c:195
+#: src/filter.c:195
 msgid "Invert"
 msgstr "Alderantzikatu"
 
-#: ../src/filter.c:234
+#: src/filter.c:234
 msgid "Threshold (Overall)"
 msgstr "Atalasea (orokorra)"
 
-#: ../src/filter.c:276
+#: src/filter.c:276
 msgid "Threshold (Per Channel)"
 msgstr "Atalasea (kanaleko)"
 
-#: ../src/filter.c:349
+#: src/filter.c:349
 msgid "Wacky"
 msgstr "Zoroa"
 
-#: ../src/filter.c:450
+#: src/filter.c:450
 msgid "Smooth"
 msgstr "Leuna"
 
-#: ../src/filter.c:481
+#: src/filter.c:481
 msgid "Monochrome"
 msgstr "Monokromoa"
 
-#: ../src/filter.c:511
+#: src/filter.c:511
 msgid "Monochrome (Weight)"
 msgstr "Monokromoa (pisua)"
 
-#: ../src/filter.c:562
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
 msgid "Sobel"
 msgstr "Sobel"
 
-#: ../src/main.c:76
+#: src/main.c:41
 msgid "show version and exit"
 msgstr "bertsioa erakutsi eta irten"
 
-#: ../src/main.c:78
+#: src/main.c:43
 msgid "v4l device to use"
 msgstr "erabiliko den v4l gailua"
 
-#: ../src/main.c:80
+#: src/main.c:45
 msgid "enable debugging code"
 msgstr "gaitu arazketa-kodea"
 
-#: ../src/main.c:81
+#: src/main.c:47
 msgid "capture width"
 msgstr "eskuratzearen zabalera"
 
-#: ../src/main.c:83
+#: src/main.c:49
 msgid "capture height"
 msgstr "eskuratzearen altuera"
 
-#: ../src/main.c:86
+#: src/main.c:51
 msgid "maximum capture size"
 msgstr "gehienezko eskuratze tamainua"
 
-#: ../src/main.c:88
+#: src/main.c:53
 msgid "minimum capture size"
 msgstr "gutxienezko eskuratze tamainua"
 
-#: ../src/main.c:90
+#: src/main.c:55
 msgid "middle capture size"
 msgstr "ertaineko eskuratze tamainua"
 
-#: ../src/main.c:92
+#: src/main.c:57
 msgid "use read() rather than mmap()"
 msgstr "read() erabili mmap()-en ordez"
 
-#: ../src/main.c:114
+#: src/main.c:89
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:130
+#: src/main.c:91
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+
+#: src/main.c:105
 #, c-format
 msgid ""
 "\n"
@@ -594,17 +445,13 @@ msgstr ""
 "Camorama bertsioa %s\n"
 "\n"
 
-#: ../src/main.c:264
-msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "Interfaze nagusiaren fitxategia ezin izan da aurkitu (camorama.glade)."
-
-#: ../src/support.c:69
-#, c-format
-msgid "Couldn't find pixmap file: %s"
+#: src/main.c:224
+#, fuzzy
+msgid "Couldn't load builder file"
 msgstr "pixmap-fitxategia ezin izan da aurkitu: %s"
 
-#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
-#: ../src/v4l.c:226 ../src/v4l.c:241
+#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
+#: src/v4l.c:410
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -613,3 +460,224 @@ msgstr ""
 "Bideo gailuarekin ezin izan da konektatu (%s).\n"
 "Konexioa aztertu, mesedez."
 
+#: src/v4l.c:438
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:453
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:466
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:479
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:488
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:516
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:576
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "Username:"
+#~ msgstr "Erabiltzaile-izena:"
+
+#~ msgid "Password:"
+#~ msgstr "Pasahitza:"
+
+#~ msgid "your-username"
+#~ msgstr "zure erabiltzaile-izena"
+
+#~ msgid "your-password"
+#~ msgstr "zure pasahitza"
+
+#~ msgid "path/to/save/to"
+#~ msgstr "gordetzeko/bidea"
+
+#~ msgid "Couldn't find the main interface file (camorama.ui)."
+#~ msgstr "Interfaze nagusiaren fitxategia ezin izan da aurkitu (camorama.ui)."
+
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "pixmap-fitxategia ezin izan da aurkitu: %s"
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.gnome-desktop"
+
+#~ msgid "Large"
+#~ msgstr "Handia"
+
+#~ msgid "Medium"
+#~ msgstr "Ertaina"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "Fitxategi-izenari data-zigilua gehitu"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "Urruneko fitxategi-izenari data-zigilua gehitu"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "Fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr ""
+#~ "Urruneko fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data "
+#~ "formatuan"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "Data-zigilurako testu pertsonalizatua"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr ""
+#~ "Irudiaren barruan sartuko den testu-kate pertsonalizatua zehazten du"
+
+#~ msgid "Filename for local captures"
+#~ msgstr "Eskuratze lokalentzako fitxategi-izena"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "Eskuratutako irudiak lokalean gordetzeko fitxategi-izena"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "Eskuratze lokalentzako direktorioa"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "Urruneko eskuratzeentako direktorioa"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "Eskuratutako irudiak urrunean gordetzeko direktorioa"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "Eskuratutako irudiak lokalean gordetzeko direktorioa"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "FTP-zerbitzariaren izena"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "Urruenako eskuratzeentzako FTP-zerbitzariaren izena."
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "Eskuratze automatikorako tartea"
+
+#~ msgid "Local capture image format"
+#~ msgstr "Eskuratze lokalaren irudi-formatua"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "Zerbitzarira igotako irudien fitxategi-izena"
+
+#~ msgid "Password for FTP server"
+#~ msgstr "FTP-zerbitzariaren pasahitza"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "Urruneko eskuratzearen irudi-formatua"
+
+#~ msgid "Remote save filename"
+#~ msgstr "Urrunean gordetzeko fitxategi-izena"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr "Lokalean gordeko diren irudien formatua zehazten du"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr "Urrunean gordeko diren irudien formatua zehazten du"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "Irudien eskuratze automatikoaren tartea zehazten du"
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "Urruneko eskuratzeak egiteko erabiliko den FTP-kontuaren pasahitza"
+
+#~ msgid ""
+#~ "The unix file system path to the device that's assigned to your camera."
+#~ msgstr ""
+#~ "Gailuaren UNIX fitxategi-sistemaren bide-izena (kamerari esleitu zaiona)."
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "Eskuratze automatikoa gaitu"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "Irudien eskuratze automatikoa gaitu"
+
+#~ msgid "Toggles local capture"
+#~ msgstr "Eskuratze lokala gaitu"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr "Urruneko eskuratzea gaitu"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "Textu-kate pertsonalizatua gaitu"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "Data-zigilua irudietan gaitu"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "Eskuratutako irudietan data-zigiluaren marrazketa gaitu"
+
+#~ msgid "Toggles the insertion of a timestamp into local images"
+#~ msgstr "Irudi lokaletan data-zigiluaren txertaketa gaitu"
+
+#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+#~ msgstr "FTP bitartze igoko diren irudietan data-zigiluaren txertaketa gaitu"
+
+#~ msgid "Toggles the use of the buttons to adjust the video filters"
+#~ msgstr "Bideo-iragazkiak egokitzeko botoien erabilpena gaitu"
+
+#~ msgid "Toggles the use of the custom string for the timestamp in images."
+#~ msgstr ""
+#~ "Irudien data-zigiluan testu-kate pertsonalizatuaren erabilpena gaitu"
+
+#~ msgid "Toggles the use of the sliders to adjust the video properties"
+#~ msgstr "Bideoaren ezaugarriak egokitzeko graduatzaileen erabilera gaitu"
+
+#~ msgid "Toggles the video adjustment sliders"
+#~ msgstr "Bideoa egokitzeko graduatzaileak gaitu"
+
+#~ msgid "Toggles the video effects buttons"
+#~ msgstr "Bideoaren efektuen botoiak gaitu"
+
+#~ msgid "Toggles timestamp for local captures"
+#~ msgstr "Eskuratze lokalentzat data-zigilua gaitu"
+
+#~ msgid "Toggles timestamp for remote captures"
+#~ msgstr "Urruneko eskuratzeentzat data-zigilua gaitu"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "FTP-zerbitzariaren erabiltzaile-izena"
+
+#~ msgid "Username to use for FTP uploads of captured pictures"
+#~ msgstr "Eskuratutako irudiak FTP-zerbitzarira igotzeko erabilitzaile-izena"
+
+#~ msgid "Video device"
+#~ msgstr "Bideo-gailua"
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures locally."
+#~ msgstr ""
+#~ "\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
+#~ "eskuratze automatikoarekin, gako honek irudien eskuratze lokala gaitzen "
+#~ "du."
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures to a remote server."
+#~ msgstr ""
+#~ "\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
+#~ "eskuratze automatikoarekin, gako honek urruneko zerbitzari batean irudien "
+#~ "eskuratzea gaitzen du"
+
+#~ msgid "Unable to capture image."
+#~ msgstr "Ezin izan da irudia eskuratu"

@@ -45,6 +45,7 @@ typedef struct _CamoramaFilterClass CamoramaFilterClass;
 GType camorama_filter_get_type        (void);
 GType camorama_filter_mirror_get_type (void);
 GType camorama_filter_laplace_get_type(void);
+GType camorama_filter_reichardt_get_type(void);
 
 void         camorama_filters_init   (void);
 gchar const* camorama_filter_get_name(CamoramaFilter* self);
