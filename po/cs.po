@@ -6,483 +6,291 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-24 03:22+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-21 09:13-0300\n"
 "PO-Revision-Date: 2003-08-30 14:23+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Prohlížeč webových kamer Camorama"
-
-#: camorama.desktop.in.h:2 src/callbacks.c:510
-msgid "View, alter and save images from a webcam"
-msgstr "Prohlížení, úprava a ukládání obrázků z webové kamery"
-
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
-
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Efekty</span>"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">Obecné</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Typ obrázku</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Lokální záznam</span>"
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Vzdálený záznam</span>"
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Časový údaj</span>"
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr "Přidat k zaznamenaným snímkům časový údaj"
-
-#: data/camorama.glade.h:10
-msgid "Append time to filename"
-msgstr "Připojit k názvu souboru čas"
-
-#: data/camorama.glade.h:11
-msgid "Automatic Capture"
-msgstr "Automatický záznam"
-
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "Černobíle"
-
-#: data/camorama.glade.h:13
-msgid "Brightness:"
-msgstr "Jas:"
-
-#: data/camorama.glade.h:14
-msgid "Camorama-libglade"
-msgstr "Camorama-libglade"
-
-#: data/camorama.glade.h:15
-msgid "Capture Interval (in minutes):"
-msgstr "Interval záznamu (v minutách):"
-
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "Oprava barev"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "Barevný práh"
-
-#: data/camorama.glade.h:18
-msgid "Color:"
-msgstr "Barva:"
-
-#: data/camorama.glade.h:19
-msgid "Contrast:"
-msgstr "Kontrast:"
-
-#: data/camorama.glade.h:20
-msgid "Draw date and time"
-msgstr "Vykreslit datum a čas"
-
-#: data/camorama.glade.h:21
-msgid "FTP server: "
-msgstr "FTP server: "
-
-#: data/camorama.glade.h:22
-msgid "Filename"
-msgstr "Název souboru"
-
-#: data/camorama.glade.h:23
-msgid "General"
-msgstr "Obecné"
-
-#: data/camorama.glade.h:24
-msgid "Hue:"
-msgstr "Odstín:"
-
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Laplace"
-
-#: data/camorama.glade.h:26
-msgid "Large"
-msgstr "Velký"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr "Lokální záznam"
-
-#: data/camorama.glade.h:28
-msgid "Medium"
-msgstr "Střední"
-
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "Zrcadlení obrazu"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "Negativ"
-
-#: data/camorama.glade.h:31
-msgid "Password:"
-msgstr "Heslo:"
-
-#: data/camorama.glade.h:32
-msgid "Preferences"
-msgstr "Nastavení"
-
-#: data/camorama.glade.h:33
-msgid "Remote Capture"
-msgstr "Vzdálený záznam"
-
-#: data/camorama.glade.h:34
-msgid "Save directory:"
-msgstr "Uložit do adresáře:"
-
-#: data/camorama.glade.h:35
-msgid "Save files in jpeg format"
-msgstr "Ukládat soubory ve formátu JPEG"
-
-#: data/camorama.glade.h:36
-msgid "Save files in png format"
-msgstr "Ukládat soubory ve formátu PNG"
-
-#: data/camorama.glade.h:37
-msgid "Show Adjustments"
-msgstr "Zobrazit úpravy"
-
-#: data/camorama.glade.h:38
-msgid "Show Effects"
-msgstr "Zobrazit efekty"
-
-#: data/camorama.glade.h:39
-msgid "Small"
-msgstr "Malý"
-
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Vyhlazování"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Sobel"
-
-#: data/camorama.glade.h:42
-msgid "String:"
-msgstr "Řetězec:"
-
-#: data/camorama.glade.h:43
-msgid "Take Picture"
-msgstr "Vyfotit"
-
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Práh:"
-
-#: data/camorama.glade.h:45
-msgid "Timestamp"
-msgstr "Časový údaj"
-
-#: data/camorama.glade.h:46
-msgid "Use custom string"
-msgstr "Použít vlastní řetězec"
-
-#: data/camorama.glade.h:47
-msgid "Username:"
-msgstr "Uživatelské jméno:"
-
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "Nepovedený"
-
-#: data/camorama.glade.h:49
-msgid "White Balance:"
-msgstr "Rovnováha bílé:"
-
-#: data/camorama.glade.h:50
-msgid "_Directory for captured pics:"
-msgstr "A_dresář zaznamenaných obrázků:"
-
-#: data/camorama.glade.h:51
-msgid "_Enable local capture"
-msgstr "Povolit _lokální záznam"
-
-#: data/camorama.glade.h:52
-msgid "_Enable remote capture"
-msgstr "_Povolit vzdálený záznam"
-
-#: data/camorama.glade.h:53
-msgid "_Filename for pictures:"
-msgstr "_Název souboru obrázků:"
-
-#: data/camorama.glade.h:54
-msgid "ftp.yourdomain.org"
-msgstr "ftp.vasedomena.org"
-
-#: data/camorama.glade.h:55
-msgid "path/to/save/to"
-msgstr "cesta/kam/uložit"
-
-#: data/camorama.glade.h:56
-msgid "webcam-capture"
-msgstr "webcam-capture"
-
-#: data/camorama.glade.h:57
-msgid "webcamshot"
-msgstr "webcamshot"
-
-#: data/camorama.glade.h:58
-msgid "your-password"
-msgstr "vaše-heslo"
-
-#: data/camorama.glade.h:59
-msgid "your-username"
-msgstr "vaše-jméno"
-
-#: data/camorama.glade.h:60
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
-
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "Připojit časový údaj k souboru"
-
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "Připojit časový údaj ke vzdálenému souboru"
-
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Připojí časový údaj, ve tvaru UNIX, na konce názvů souborů"
-
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Připojí časový údaj, ve tvaru UNIX, na konce názvů vzdálených souborů"
-
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "Vlastní text pro časový údaj"
-
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Definuje řetězec s vlastním textem pro vložení do obrázku."
-
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "Název souboru pro lokální záznamy"
-
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "Název souboru pro ukládání zaznamenaných obrázků lokálně"
-
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "Adresář pro lokální záznamy"
-
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "Adresář pro vzdálené záznamy"
-
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "Adresář pro ukládání zaznamenaných obrázků vzdáleně"
-
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "Adresář pro ukládání zaznamenaných obrázků lokálně"
-
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "Název počítače FTP serveru"
-
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "Název počítače FTP serveru pro vzdálené záznamy."
-
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "Interval automatického záznamu"
-
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "Formát obrázků lokálního záznamu"
-
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "Název souboru přenášených obrázků."
-
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "Heslo pro FTP server"
-
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "Formát obrázků vzdáleného záznamu"
-
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "Název souboru vzdáleného ukládání"
-
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Udává formát obrázku, který se má použít pro lokálně ukládané obrázky"
-
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Udává formát obrázku, který se má použít pro vzdáleně ukládané obrázky"
-
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Udává interval pro automatické ukládání obrázků."
-
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "Heslo k účtu FTP pro vzdálené záznamy."
-
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr "Přepíná automatický záznam"
-
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr "Přepíná automatické zaznamenávání obrázků."
-
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr "Přepíná lokální záznam"
-
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr "Přepíná vzdálený záznam"
-
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr "Přepíná vlastní řetězec"
-
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr "Přepíná časový údaj v záznamech"
-
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Přepíná vykreslování časového údaje do zaznamenaných obrázků"
-
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Přepíná vkládání časového údaje do lokálních obrázků"
-
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "Přepíná vkládání časového údaje do obrázků přenášených skrz FTP."
-
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "Přepíná použití tlačítek k úpravě filtrů videa"
-
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Přepíná použití vlastního řetězce pro časový údaj na obrázcích."
-
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Přepíná použití posuvníků k úpravě vlastností videa"
-
-#: data/camorama.schemas.in.h:37
-msgid "Toggles the video adjustment sliders"
-msgstr "Přepíná posuvníky pro úpravu videa"
-
-#: data/camorama.schemas.in.h:38
-msgid "Toggles the video effects buttons"
-msgstr "Přepíná tlačítka pro efekty videa"
-
-#: data/camorama.schemas.in.h:39
-msgid "Toggles timestamp for local captures"
-msgstr "Přepíná časový údaj lokálních záznamů"
-
-#: data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for remote captures"
-msgstr "Přepíná časový údaj vzdálených záznamů"
-
-#: data/camorama.schemas.in.h:41
-msgid "Username for FTP server"
-msgstr "Uživatelské jméno pro FTP server"
-
-#: data/camorama.schemas.in.h:42
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Uživatelské jméno, které se má použít pro přenášení obrázků skrz FTP"
-
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
-"záznamu, tento klíč přepíná ukládání obrázků lokálně."
-
-#: data/camorama.schemas.in.h:44
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
-"záznamu, tento klíč přepíná ukládání obrázků na vzdálený server."
-
-#: src/callbacks.c:499
-msgid "translator_credits"
-msgstr "Michal Bukovjan <bukm@centrum.cz>"
-
-#: src/callbacks.c:508
+#: camorama.appdata.xml.in:6 src/callbacks.c:469
 msgid "Camorama"
 msgstr "Camorama"
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
-msgid "Unable to capture image."
-msgstr "Nelze zaznamenat obrázek."
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+msgid "Camorama Webcam Viewer"
+msgstr "Prohlížeč webových kamer Camorama"
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Orientace"
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
+msgstr ""
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "Orientace oznamovací oblasti."
+#: camorama.desktop.in:4 src/callbacks.c:471
+msgid "View, alter and save images from a webcam"
+msgstr "Prohlížení, úprava a ukládání obrázků z webové kamery"
 
-#: src/fileio.c:119 src/fileio.c:265
+#: camorama.desktop.in:8
+#, fuzzy
+msgid "camorama.png"
+msgstr "camorama"
+
+#: data/camorama.glade:9
+msgid "Preferences"
+msgstr "Nastavení"
+
+#: data/camorama.glade:97
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Obecné</span>"
+
+#: data/camorama.glade:160
+msgid "Automatic Capture"
+msgstr "Automatický záznam"
+
+#: data/camorama.glade:185 data/camorama.glade:382 data/camorama.glade:439
+#: data/camorama.glade:709 data/camorama.glade:875 data/camorama.glade:932
+#: data/camorama.glade:1336 data/camorama.glade:1502 data/camorama.glade:1559
+msgid "     "
+msgstr "     "
+
+#: data/camorama.glade:222
+msgid "Capture Interval (in minutes):"
+msgstr "Interval záznamu (v minutách):"
+
+#: data/camorama.glade:315
+msgid "General"
+msgstr "Obecné"
+
+#: data/camorama.glade:351
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">Lokální záznam</span>"
+
+#: data/camorama.glade:414
+msgid "_Enable local capture"
+msgstr "Povolit _lokální záznam"
+
+#: data/camorama.glade:479
+msgid "_Directory for captured pics:"
+msgstr "A_dresář zaznamenaných obrázků:"
+
+#: data/camorama.glade:508
+msgid "_Filename for pictures:"
+msgstr "_Název souboru obrázků:"
+
+#: data/camorama.glade:541
+msgid "webcam-capture"
+msgstr "webcam-capture"
+
+#: data/camorama.glade:571
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: data/camorama.glade:598 data/camorama.glade:1225
+msgid "Append time to filename"
+msgstr "Připojit k názvu souboru čas"
+
+#: data/camorama.glade:618 data/camorama.glade:1245
+msgid "Add a timestamp to captured images"
+msgstr "Přidat k zaznamenaným snímkům časový údaj"
+
+#: data/camorama.glade:678 data/camorama.glade:1305
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Typ obrázku</span>"
+
+#: data/camorama.glade:741 data/camorama.glade:1368
+msgid "Save files in jpeg format"
+msgstr "Ukládat soubory ve formátu JPEG"
+
+#: data/camorama.glade:761 data/camorama.glade:1388
+msgid "Save files in png format"
+msgstr "Ukládat soubory ve formátu PNG"
+
+#: data/camorama.glade:808
+msgid "Local Capture"
+msgstr "Lokální záznam"
+
+#: data/camorama.glade:844
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Vzdálený záznam</span>"
+
+#: data/camorama.glade:907
+msgid "_Enable remote capture"
+msgstr "_Povolit vzdálený záznam"
+
+#: data/camorama.glade:972
+msgid "FTP server: "
+msgstr "FTP server: "
+
+#: data/camorama.glade:1000
+msgid "Username:"
+msgstr "Uživatelské jméno:"
+
+#: data/camorama.glade:1028
+msgid "Password:"
+msgstr "Heslo:"
+
+#: data/camorama.glade:1056
+msgid "Save directory:"
+msgstr "Uložit do adresáře:"
+
+#: data/camorama.glade:1084
+msgid "Filename"
+msgstr "Název souboru"
+
+#: data/camorama.glade:1116
+msgid "ftp.yourdomain.org"
+msgstr "ftp.vasedomena.org"
+
+#: data/camorama.glade:1137
+msgid "your-username"
+msgstr "vaše-jméno"
+
+#: data/camorama.glade:1158
+msgid "your-password"
+msgstr "vaše-heslo"
+
+#: data/camorama.glade:1179
+msgid "path/to/save/to"
+msgstr "cesta/kam/uložit"
+
+#: data/camorama.glade:1200
+msgid "webcamshot"
+msgstr "webcamshot"
+
+#: data/camorama.glade:1435
+msgid "Remote Capture"
+msgstr "Vzdálený záznam"
+
+#: data/camorama.glade:1471
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Časový údaj</span>"
+
+#: data/camorama.glade:1534
+msgid "Use custom string"
+msgstr "Použít vlastní řetězec"
+
+#: data/camorama.glade:1596
+msgid "String:"
+msgstr "Řetězec:"
+
+#: data/camorama.glade:1662
+msgid "Draw date and time"
+msgstr "Vykreslit datum a čas"
+
+#: data/camorama.glade:1708
+msgid "Timestamp"
+msgstr "Časový údaj"
+
+#: data/camorama.glade:1740
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: data/camorama.glade:1783 data/camorama.glade:2166
+msgid "Take Picture"
+msgstr "Vyfotit"
+
+#: data/camorama.glade:1850 data/camorama.glade:2074
+msgid "Show Adjustments"
+msgstr "Zobrazit úpravy"
+
+#: data/camorama.glade:1861
+msgid "Show Effects"
+msgstr "Zobrazit efekty"
+
+#: data/camorama.glade:1878
+msgid "Small"
+msgstr "Malý"
+
+#: data/camorama.glade:2331
+msgid "Contrast:"
+msgstr "Kontrast:"
+
+#: data/camorama.glade:2359
+msgid "Brightness:"
+msgstr "Jas:"
+
+#: data/camorama.glade:2387
+msgid "Color:"
+msgstr "Barva:"
+
+#: data/camorama.glade:2415
+msgid "Hue:"
+msgstr "Odstín:"
+
+#: data/camorama.glade:2443
+msgid "White Balance:"
+msgstr "Rovnováha bílé:"
+
+#: src/callbacks.c:460
+msgid "translator_credits"
+msgstr "Michal Bukovjan <bukm@centrum.cz>"
+
+#: src/callbacks.c:583
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
+
+#: src/callbacks.c:703
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+
+#: src/callbacks.c:712
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "Automatický záznam"
+
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "Zrcadlení obrazu"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:14
+#, fuzzy
+msgid "Webcam"
+msgstr "webcamshot"
+
+#: src/camorama-window.c:113
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:204
+#, fuzzy
+msgid "Effects"
+msgstr "Zobrazit efekty"
+
+#: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Dočasný obrázek uložen do souboru v /tmp."
 
-#: src/fileio.c:137
+#: src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Nelze vytvořit obrázek '%s'."
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:147 src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Nelze uložit obrázek '%s/%s'."
 
-#: src/fileio.c:273
+#: src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -491,67 +299,108 @@ msgstr ""
 "Nelze otevřít dočasný soubor obrázku '%s'.\n"
 "Nelze přenést obrázek."
 
-#: src/fileio.c:311
-#, c-format
-msgid "An error occured opening %s."
+#: src/fileio.c:312
+#, fuzzy, c-format
+msgid "An error occurred opening %s."
 msgstr "Při otevírání %s nastala chyba."
 
-#: src/fileio.c:323
-#, c-format
-msgid "An error occured writing to %s."
+#: src/fileio.c:324
+#, fuzzy, c-format
+msgid "An error occurred writing to %s."
 msgstr "Při zapisování %s nastala chyba."
 
-#: src/fileio.c:403
+#: src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Nelze vytvořit adresář '%s'."
 
-#: src/fileio.c:414
+#: src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Nelze se přepnout do adresáře '%s'."
 
-#: src/main.c:423
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "Oprava barev"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "Práh:"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr "Nepovedený"
+
+#: src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "Vyhlazování"
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr "Sobel"
+
+#: src/main.c:80
 msgid "show version and exit"
 msgstr "zobrazit verzi a skončit"
 
-#: src/main.c:425
+#: src/main.c:82
 msgid "v4l device to use"
 msgstr "zařízení v4l, které se má použít"
 
-#: src/main.c:427
-msgid "enable debuging code"
+#: src/main.c:84
+#, fuzzy
+msgid "enable debugging code"
 msgstr "povolit ladící kód"
 
-#: src/main.c:428
+#: src/main.c:85
 msgid "capture width"
 msgstr "šířka záznamu"
 
-#: src/main.c:430
+#: src/main.c:87
 msgid "capture height"
 msgstr "výška záznamu"
 
-#: src/main.c:433
+#: src/main.c:90
 msgid "maximum capture size"
 msgstr "maximální velikost záznamu"
 
-#: src/main.c:435
+#: src/main.c:92
 msgid "minimum capture size"
 msgstr "minimální velikost záznamu"
 
-#: src/main.c:437
+#: src/main.c:94
 msgid "middle capture size"
 msgstr "střední velikost záznamu"
 
-#: src/main.c:439
+#: src/main.c:96
 msgid "use read() rather than mmap()"
 msgstr "používat read () místo mmap ()"
 
-#: src/main.c:461
+#: src/main.c:121
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:475
+#: src/main.c:137
 #, c-format
 msgid ""
 "\n"
@@ -564,7 +413,7 @@ msgstr ""
 "Camorama verze %s\n"
 "\n"
 
-#: src/main.c:609
+#: src/main.c:254
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nelze nalézt soubor s hlavním rozhraním (camorama.glade)."
 
@@ -573,8 +422,8 @@ msgstr "Nelze nalézt soubor s hlavním rozhraním (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Nelze nalézt soubor s obrázkem: %s"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:104 src/v4l.c:208 src/v4l.c:289 src/v4l.c:358 src/v4l.c:376
+#: src/v4l.c:396
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -582,3 +431,215 @@ msgid ""
 msgstr ""
 "Nelze se připojit k video zařízení (%s).\n"
 "Zkontrolujte prosím připojení."
+
+#: src/v4l.c:424
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:439
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:452
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:465
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:474
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:502
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:562
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Efekty</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "Černobíle"
+
+#~ msgid "Color threshold"
+#~ msgstr "Barevný práh"
+
+#~ msgid "Laplace"
+#~ msgstr "Laplace"
+
+#~ msgid "Large"
+#~ msgstr "Velký"
+
+#~ msgid "Medium"
+#~ msgstr "Střední"
+
+#~ msgid "Negative"
+#~ msgstr "Negativ"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "Připojit časový údaj k souboru"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "Připojit časový údaj ke vzdálenému souboru"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "Připojí časový údaj, ve tvaru UNIX, na konce názvů souborů"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr ""
+#~ "Připojí časový údaj, ve tvaru UNIX, na konce názvů vzdálených souborů"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "Vlastní text pro časový údaj"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr "Definuje řetězec s vlastním textem pro vložení do obrázku."
+
+#~ msgid "Filename for local captures"
+#~ msgstr "Název souboru pro lokální záznamy"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "Název souboru pro ukládání zaznamenaných obrázků lokálně"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "Adresář pro lokální záznamy"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "Adresář pro vzdálené záznamy"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "Adresář pro ukládání zaznamenaných obrázků vzdáleně"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "Adresář pro ukládání zaznamenaných obrázků lokálně"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "Název počítače FTP serveru"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "Název počítače FTP serveru pro vzdálené záznamy."
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "Interval automatického záznamu"
+
+#~ msgid "Local capture image format"
+#~ msgstr "Formát obrázků lokálního záznamu"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "Název souboru přenášených obrázků."
+
+#~ msgid "Password for FTP server"
+#~ msgstr "Heslo pro FTP server"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "Formát obrázků vzdáleného záznamu"
+
+#~ msgid "Remote save filename"
+#~ msgstr "Název souboru vzdáleného ukládání"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr ""
+#~ "Udává formát obrázku, který se má použít pro lokálně ukládané obrázky"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr ""
+#~ "Udává formát obrázku, který se má použít pro vzdáleně ukládané obrázky"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "Udává interval pro automatické ukládání obrázků."
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "Heslo k účtu FTP pro vzdálené záznamy."
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "Přepíná automatický záznam"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "Přepíná automatické zaznamenávání obrázků."
+
+#~ msgid "Toggles local capture"
+#~ msgstr "Přepíná lokální záznam"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr "Přepíná vzdálený záznam"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "Přepíná vlastní řetězec"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "Přepíná časový údaj v záznamech"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "Přepíná vykreslování časového údaje do zaznamenaných obrázků"
+
+#~ msgid "Toggles the insertion of a timestamp into local images"
+#~ msgstr "Přepíná vkládání časového údaje do lokálních obrázků"
+
+#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+#~ msgstr "Přepíná vkládání časového údaje do obrázků přenášených skrz FTP."
+
+#~ msgid "Toggles the use of the buttons to adjust the video filters"
+#~ msgstr "Přepíná použití tlačítek k úpravě filtrů videa"
+
+#~ msgid "Toggles the use of the custom string for the timestamp in images."
+#~ msgstr "Přepíná použití vlastního řetězce pro časový údaj na obrázcích."
+
+#~ msgid "Toggles the use of the sliders to adjust the video properties"
+#~ msgstr "Přepíná použití posuvníků k úpravě vlastností videa"
+
+#~ msgid "Toggles the video adjustment sliders"
+#~ msgstr "Přepíná posuvníky pro úpravu videa"
+
+#~ msgid "Toggles the video effects buttons"
+#~ msgstr "Přepíná tlačítka pro efekty videa"
+
+#~ msgid "Toggles timestamp for local captures"
+#~ msgstr "Přepíná časový údaj lokálních záznamů"
+
+#~ msgid "Toggles timestamp for remote captures"
+#~ msgstr "Přepíná časový údaj vzdálených záznamů"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "Uživatelské jméno pro FTP server"
+
+#~ msgid "Username to use for FTP uploads of captured pictures"
+#~ msgstr ""
+#~ "Uživatelské jméno, které se má použít pro přenášení obrázků skrz FTP"
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures locally."
+#~ msgstr ""
+#~ "Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
+#~ "záznamu, tento klíč přepíná ukládání obrázků lokálně."
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures to a remote server."
+#~ msgstr ""
+#~ "Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
+#~ "záznamu, tento klíč přepíná ukládání obrázků na vzdálený server."
+
+#~ msgid "Unable to capture image."
+#~ msgstr "Nelze zaznamenat obrázek."
+
+#~ msgid "Orientation"
+#~ msgstr "Orientace"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Orientace oznamovací oblasti."

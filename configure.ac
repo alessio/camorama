@@ -1,19 +1,18 @@
 AC_PREREQ(2.53)
-AC_INIT(camorama,0.19, http://bugzilla.gnome.org/enter_bug.cgi?product=camorama)
+AC_INIT(camorama,0.19, https://github.com/alessio/camorama)
 AC_CONFIG_SRCDIR(src/main.c)
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
-AC_PROG_INTLTOOL([0.21])
 
 AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
 AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
 
-ALL_LINGUAS="am ar az be bg bs ca cs da de dz en_CA en_GB es eu fa fi fr ga gl gu hi hr it ja lv mk ml ms nb ne nl pa pl pt pt_BR rw sl sq sr sr@Latn sv ta tr uk vi zh_CN zh_TW"
-GETTEXT_PACKAGE=AC_PACKAGE_NAME
-AC_SUBST(GETTEXT_PACKAGE)
-AM_GLIB_GNU_GETTEXT
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 
-AC_DEFINE(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", "blah blah blah")
+# This is needed for gtk2+ to work with gettext
+DATADIRNAME=share
+AC_SUBST(DATADIRNAME)
 
 AC_MSG_CHECKING(prefix)
 
@@ -49,6 +48,7 @@ AC_OUTPUT([
 	Makefile
 	src/Makefile
 	data/Makefile
+	data/camorama.schemas
 	pixmaps/Makefile
 	po/Makefile.in
 ])

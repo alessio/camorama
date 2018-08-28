@@ -8,451 +8,227 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-13 03:11+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-21 09:13-0300\n"
 "PO-Revision-Date: 2004-06-17 12:25+0300\n"
 "Last-Translator: Mətin Əmirov <metin@karegen.com>\n"
 "Language-Team: Azerbaijani <translation-team-az@lists.sourceforge.net>\n"
+"Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3\n"
 
-#: camorama.desktop.in.h:1
+#: camorama.appdata.xml.in:6 src/callbacks.c:469
+msgid "Camorama"
+msgstr "Camorama"
+
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama Veb Kamera Nümayişçisi"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:510
+#: camorama.appdata.xml.in:9
+msgid ""
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
+msgstr ""
+
+#: camorama.desktop.in:4 src/callbacks.c:471
 msgid "View, alter and save images from a webcam"
 msgstr "Veb kameranızdan rəsmləri nümayiş edin, dəyişdirin və qeyd edin"
 
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
+#: camorama.desktop.in:8
+#, fuzzy
+msgid "camorama.png"
+msgstr "camorama"
 
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Effektlər</span>"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">Ümumi</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\"> Rəsm Növü</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\"> Yerli Çəkim</span>"
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Uzaq Çəkim</span>"
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Vaxt Mühürü</span>"
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr "Çəkilən rəsmlərin üstünə tarixi vur"
-
-#: data/camorama.glade.h:10
-msgid "Append time to filename"
-msgstr "Vaxtı fayl adına əlavə et"
-
-#: data/camorama.glade.h:11
-msgid "Automatic Capture"
-msgstr "Avtomatik Çəkim"
-
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "Ağ & Qara"
-
-#: data/camorama.glade.h:13
-msgid "Brightness:"
-msgstr "Parlaqlıq:"
-
-#: data/camorama.glade.h:14
-msgid "Camorama-libglade"
-msgstr "Camorama-libglade"
-
-#: data/camorama.glade.h:15
-msgid "Capture Interval (in minutes):"
-msgstr "Çəkim Aralığı (dəqiqə olaraq):"
-
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "Rəng düzəltməsi"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "Rəng başlanğıcı"
-
-#: data/camorama.glade.h:18
-msgid "Color:"
-msgstr "Rəng:"
-
-#: data/camorama.glade.h:19
-msgid "Contrast:"
-msgstr "Kontrast:"
-
-#: data/camorama.glade.h:20
-msgid "Draw date and time"
-msgstr "Tarix və vaxtı vur"
-
-#: data/camorama.glade.h:21
-msgid "FTP server: "
-msgstr "FTP vericisi: "
-
-#: data/camorama.glade.h:22
-msgid "Filename"
-msgstr "Fayl adı"
-
-#: data/camorama.glade.h:23
-msgid "General"
-msgstr "Ümumi"
-
-#: data/camorama.glade.h:24
-msgid "Hue:"
-msgstr "Rəng:"
-
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Laplace"
-
-#: data/camorama.glade.h:26
-msgid "Large"
-msgstr "Geniş"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr "Yerli Çəkim"
-
-#: data/camorama.glade.h:28
-msgid "Medium"
-msgstr "Orta"
-
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "Əks rəsmi"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "Neqativ"
-
-#: data/camorama.glade.h:31
-msgid "Password:"
-msgstr "Şifrə:"
-
-#: data/camorama.glade.h:32
+#: data/camorama.glade:9
 msgid "Preferences"
 msgstr "Qurğular"
 
-#: data/camorama.glade.h:33
-msgid "Remote Capture"
-msgstr "Uzaq Çəkim"
+#: data/camorama.glade:97
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Ümumi</span>"
 
-#: data/camorama.glade.h:34
-msgid "Save directory:"
-msgstr "Qeyd cərgəsi:"
+#: data/camorama.glade:160
+msgid "Automatic Capture"
+msgstr "Avtomatik Çəkim"
 
-#: data/camorama.glade.h:35
-msgid "Save files in jpeg format"
-msgstr "Faylları jpeg formatında qeyd et"
+#: data/camorama.glade:185 data/camorama.glade:382 data/camorama.glade:439
+#: data/camorama.glade:709 data/camorama.glade:875 data/camorama.glade:932
+#: data/camorama.glade:1336 data/camorama.glade:1502 data/camorama.glade:1559
+msgid "     "
+msgstr "     "
 
-#: data/camorama.glade.h:36
-msgid "Save files in png format"
-msgstr "Faylları png formatında qeyd et"
+#: data/camorama.glade:222
+msgid "Capture Interval (in minutes):"
+msgstr "Çəkim Aralığı (dəqiqə olaraq):"
 
-#: data/camorama.glade.h:37
-msgid "Show Adjustments"
-msgstr "Qurğuları Göstər"
+#: data/camorama.glade:315
+msgid "General"
+msgstr "Ümumi"
 
-#: data/camorama.glade.h:38
-msgid "Show Effects"
-msgstr "Effektləri Göstər"
+#: data/camorama.glade:351
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\"> Yerli Çəkim</span>"
 
-#: data/camorama.glade.h:39
-msgid "Small"
-msgstr "Kiçik"
-
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Yumuşaltma"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Sobel"
-
-#: data/camorama.glade.h:42
-msgid "String:"
-msgstr "Qatar:"
-
-#: data/camorama.glade.h:43
-msgid "Take Picture"
-msgstr "Şəkil Çək"
-
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Aralıq:"
-
-#: data/camorama.glade.h:45
-msgid "Timestamp"
-msgstr "Vaxt Mühürü"
-
-#: data/camorama.glade.h:46
-msgid "Use custom string"
-msgstr "Xüsusi qatar işlət"
-
-#: data/camorama.glade.h:47
-msgid "Username:"
-msgstr "İstifadəçi Adı:"
-
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "Wacky"
-
-#: data/camorama.glade.h:49
-msgid "White Balance:"
-msgstr "Ağ Tarazlığı:"
-
-#: data/camorama.glade.h:50
-msgid "_Directory for captured pics:"
-msgstr "Çəkilən rəsmlər üçün _cərgə:"
-
-#: data/camorama.glade.h:51
+#: data/camorama.glade:414
 msgid "_Enable local capture"
 msgstr "_Yerli çəkimi fəallaşdır"
 
-#: data/camorama.glade.h:52
-msgid "_Enable remote capture"
-msgstr "_Uzaq çəkimi fəallaşdır"
+#: data/camorama.glade:479
+msgid "_Directory for captured pics:"
+msgstr "Çəkilən rəsmlər üçün _cərgə:"
 
-#: data/camorama.glade.h:53
+#: data/camorama.glade:508
 msgid "_Filename for pictures:"
 msgstr "Rəsmlər üçün _fayl adı:"
 
-#: data/camorama.glade.h:54
-msgid "ftp.yourdomain.org"
-msgstr "ftp.domeniniz.org"
-
-#: data/camorama.glade.h:55
-msgid "path/to/save/to"
-msgstr "qeyd/cığırının/yolu"
-
-#: data/camorama.glade.h:56
+#: data/camorama.glade:541
 msgid "webcam-capture"
 msgstr "vebkam-çəkimi"
 
-#: data/camorama.glade.h:57
-msgid "webcamshot"
-msgstr "vebkamçəkimi"
-
-#: data/camorama.glade.h:58
-msgid "your-password"
-msgstr "şifrəniz"
-
-#: data/camorama.glade.h:59
-msgid "your-username"
-msgstr "istifadəçi adınız"
-
-#: data/camorama.glade.h:60
+#: data/camorama.glade:571
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr "Vaxt mühürünü fayl adına əlavə et"
+#: data/camorama.glade:598 data/camorama.glade:1225
+msgid "Append time to filename"
+msgstr "Vaxtı fayl adına əlavə et"
 
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr "Vaxt mühürünü uzaqdakı fayl adına əlavə et"
+#: data/camorama.glade:618 data/camorama.glade:1245
+msgid "Add a timestamp to captured images"
+msgstr "Çəkilən rəsmlərin üstünə tarixi vur"
 
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "UNIX vaxtını fayl adlarının sonuna əlavə edir"
+#: data/camorama.glade:678 data/camorama.glade:1305
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\"> Rəsm Növü</span>"
 
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "UNIX vaxtını uzaqdakı fayl adlarının sonuna əlavə edir"
+#: data/camorama.glade:741 data/camorama.glade:1368
+msgid "Save files in jpeg format"
+msgstr "Faylları jpeg formatında qeyd et"
 
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr "Vaxt mühürü üçün xüsusi mətn"
+#: data/camorama.glade:761 data/camorama.glade:1388
+msgid "Save files in png format"
+msgstr "Faylları png formatında qeyd et"
 
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Rəsmə daxil ediləcək xüsusi kəlmələri müəyyən edir."
+#: data/camorama.glade:808
+msgid "Local Capture"
+msgstr "Yerli Çəkim"
 
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr "Yerli çəkimlər üçün fayl adı"
+#: data/camorama.glade:844
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">Uzaq Çəkim</span>"
 
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr "Çəkilən rəsmlərin yerli olaraq qeyd edilməsi üçün fayl adı"
+#: data/camorama.glade:907
+msgid "_Enable remote capture"
+msgstr "_Uzaq çəkimi fəallaşdır"
 
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr "Yerli rəsmlər üçün qovluq"
+#: data/camorama.glade:972
+msgid "FTP server: "
+msgstr "FTP vericisi: "
 
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr "Uzaq çəkimlər üçün qovluq"
+#: data/camorama.glade:1000
+msgid "Username:"
+msgstr "İstifadəçi Adı:"
 
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr "Çəkilən rəsmlərin uzaqda qeyd edilməsi üçün qovluq"
+#: data/camorama.glade:1028
+msgid "Password:"
+msgstr "Şifrə:"
 
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr "Çəkilən rəsmlərin yerli olaraq qeyd edilməsi üçün qovluq"
+#: data/camorama.glade:1056
+msgid "Save directory:"
+msgstr "Qeyd cərgəsi:"
 
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "Qovşaq adı ya da FTP vericisi"
+#: data/camorama.glade:1084
+msgid "Filename"
+msgstr "Fayl adı"
 
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr "Uzaq çəkimlər üçün FTP vericisinin qovşaq adı."
+#: data/camorama.glade:1116
+msgid "ftp.yourdomain.org"
+msgstr "ftp.domeniniz.org"
 
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr "Səs qeydi üçün aralıq"
+#: data/camorama.glade:1137
+msgid "your-username"
+msgstr "istifadəçi adınız"
 
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr "Yerli çəkim üçün rəsm formatı"
+#: data/camorama.glade:1158
+msgid "your-password"
+msgstr "şifrəniz"
 
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr "Göndərilən rəsmlər üçün fayl adı."
+#: data/camorama.glade:1179
+msgid "path/to/save/to"
+msgstr "qeyd/cığırının/yolu"
 
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "FTP vericisinin şifrəsi"
+#: data/camorama.glade:1200
+msgid "webcamshot"
+msgstr "vebkamçəkimi"
 
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr "Uzaq çəkim üçün rəsm formatı"
+#: data/camorama.glade:1435
+msgid "Remote Capture"
+msgstr "Uzaq Çəkim"
 
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "Uzaq qeyd üçün fayl adı"
+#: data/camorama.glade:1471
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">Vaxt Mühürü</span>"
 
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr ""
-"Yerli olaraq qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını "
-"müəyyən edir"
+#: data/camorama.glade:1534
+msgid "Use custom string"
+msgstr "Xüsusi qatar işlət"
 
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Uzaqda qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını müəyyən edir"
+#: data/camorama.glade:1596
+msgid "String:"
+msgstr "Qatar:"
 
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Rəsmlərin avtomatik çəkilməsi üçün vaxt aralığını müəyyən edir."
+#: data/camorama.glade:1662
+msgid "Draw date and time"
+msgstr "Tarix və vaxtı vur"
 
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr "Uzaq çəkimlər üçün FTP hesabının şifrəsi."
+#: data/camorama.glade:1708
+msgid "Timestamp"
+msgstr "Vaxt Mühürü"
 
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr "Avtomatik çəkimi fəallaşdırır"
+#: data/camorama.glade:1740
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
 
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr "Rəsmlərin avtomatik çəkimini fəallaşdırır."
+#: data/camorama.glade:1783 data/camorama.glade:2166
+msgid "Take Picture"
+msgstr "Şəkil Çək"
 
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr "Yerli çəkimi fəallaşdırır"
+#: data/camorama.glade:1850 data/camorama.glade:2074
+msgid "Show Adjustments"
+msgstr "Qurğuları Göstər"
 
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr "Uzaq çəkimi fəallaşdırır"
+#: data/camorama.glade:1861
+msgid "Show Effects"
+msgstr "Effektləri Göstər"
 
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr "Bu xüsusi qatarı fəallaşdırır"
+#: data/camorama.glade:1878
+msgid "Small"
+msgstr "Kiçik"
 
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr "Çəkimlər üçün vaxt mühürünü fəallaşdırır"
+#: data/camorama.glade:2331
+msgid "Contrast:"
+msgstr "Kontrast:"
 
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Çəkilən rəsimlərdə vaxt mühürünün göstərilməsini fəallaşdırır"
+#: data/camorama.glade:2359
+msgid "Brightness:"
+msgstr "Parlaqlıq:"
 
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Yerli rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır"
+#: data/camorama.glade:2387
+msgid "Color:"
+msgstr "Rəng:"
 
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "FTP ilə göndərilən rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır."
+#: data/camorama.glade:2415
+msgid "Hue:"
+msgstr "Rəng:"
 
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "Video filtrlərini sazlamaq üçün düymələri fəallaşdırır"
+#: data/camorama.glade:2443
+msgid "White Balance:"
+msgstr "Ağ Tarazlığı:"
 
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Rəsimlərə vaxt mühürünün vurulması üçün xüsusi qatarı istifadəyə açır."
-
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Video qurğularını sazlamaq üçün çubuqların istifadəsini fəallaşdırır"
-
-#: data/camorama.schemas.in.h:37
-msgid "Toggles the video adjustment sliders"
-msgstr "Video sazlama çubuqlarını fəallaşdırır"
-
-#: data/camorama.schemas.in.h:38
-msgid "Toggles the video effects buttons"
-msgstr "Video effektlər düymələrini fəallaşdırır"
-
-#: data/camorama.schemas.in.h:39
-msgid "Toggles timestamp for local captures"
-msgstr "Yerli çəkimlər üçün vaxt mühürünü fəallaşdırır"
-
-#: data/camorama.schemas.in.h:40
-msgid "Toggles timestamp for remote captures"
-msgstr "Uzaq çəkimlər üçün vaxt mühürünü fəallaşdırır"
-
-#: data/camorama.schemas.in.h:41
-msgid "Username for FTP server"
-msgstr "FTP vericisinin istifadəçi adı"
-
-#: data/camorama.schemas.in.h:42
-msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Çəkilən rəsmlərin FTP ilə göndərilməsi üçün FTP istifadəçi adı"
-
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə "
-"rəsmlərin yerli olaraq qeyd edilməsini fəallaşdırır."
-
-#: data/camorama.schemas.in.h:44
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-"\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə "
-"rəsmlərin uzaq vericiyə qeyd edilməsini fəallaşdırır."
-
-#: src/callbacks.c:499
+#: src/callbacks.c:460
 msgid "translator_credits"
 msgstr ""
 "Vasif İsmailoğlu <linuxaz@azerimail.net>\n"
@@ -461,38 +237,68 @@ msgstr ""
 "Tərcümə işləri üzrə yazışma siyahısı ünvanımız:\n"
 "<translation-team-az@lists.sourceforge.net> "
 
-#: src/callbacks.c:508
-msgid "Camorama"
-msgstr "Camorama"
+#: src/callbacks.c:583
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
-msgid "Unable to capture image."
-msgstr "Rəsm çəkilə bilmədi."
+#: src/callbacks.c:703
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "İstiqamət"
+#: src/callbacks.c:712
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "Avtomatik Çəkim"
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "Çubuğun istiqaməti."
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
 
-#: src/fileio.c:119 src/fileio.c:265
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "Əks rəsmi"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:14
+#, fuzzy
+msgid "Webcam"
+msgstr "vebkamçəkimi"
+
+#: src/camorama-window.c:113
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:204
+#, fuzzy
+msgid "Effects"
+msgstr "Effektləri Göstər"
+
+#: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Müvəqqəti rəsm faylı /tmp içinə qeyd edilə bilmədi."
 
-#: src/fileio.c:137
+#: src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "'%s' rəsmi yaradıla bilmədi."
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:147 src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "'%s/%s' rəsmi qeyd edilə bilmədi."
 
-#: src/fileio.c:273
+#: src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -501,67 +307,108 @@ msgstr ""
 "Müvəqqəti '%s' rəsm faylı açıla bilmədi.\n"
 "Rəsm göndərilə bilmir."
 
-#: src/fileio.c:311
-#, c-format
-msgid "An error occured opening %s."
+#: src/fileio.c:312
+#, fuzzy, c-format
+msgid "An error occurred opening %s."
 msgstr "%s açılırkən xəta yarandı."
 
-#: src/fileio.c:323
-#, c-format
-msgid "An error occured writing to %s."
+#: src/fileio.c:324
+#, fuzzy, c-format
+msgid "An error occurred writing to %s."
 msgstr "%s-ə qeyd edərkən xəta yarandı."
 
-#: src/fileio.c:403
+#: src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "'%s' qovluğu yaradıla bilmədi."
 
-#: src/fileio.c:414
+#: src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "'%s' qovluğuna keçə bilmədi."
 
-#: src/main.c:423
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "Rəng düzəltməsi"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "Aralıq:"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr "Wacky"
+
+#: src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "Yumuşaltma"
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr "Sobel"
+
+#: src/main.c:80
 msgid "show version and exit"
 msgstr "buraxılış nömrəsini göstər və çıx"
 
-#: src/main.c:425
+#: src/main.c:82
 msgid "v4l device to use"
 msgstr "işlədiləcək v4l avadanlığı"
 
-#: src/main.c:427
-msgid "enable debuging code"
+#: src/main.c:84
+#, fuzzy
+msgid "enable debugging code"
 msgstr "xəta ayırma kodunu fəallaşdır"
 
-#: src/main.c:428
+#: src/main.c:85
 msgid "capture width"
 msgstr "çəkim eni"
 
-#: src/main.c:430
+#: src/main.c:87
 msgid "capture height"
 msgstr "çəkim hündürlüyü"
 
-#: src/main.c:433
+#: src/main.c:90
 msgid "maximum capture size"
 msgstr "maksimal çəkim böyüklüyü"
 
-#: src/main.c:435
+#: src/main.c:92
 msgid "minimum capture size"
 msgstr "minimal çəkim böyüklüyü"
 
-#: src/main.c:437
+#: src/main.c:94
 msgid "middle capture size"
 msgstr "orta çəkim böyüklüyü"
 
-#: src/main.c:439
+#: src/main.c:96
 msgid "use read() rather than mmap()"
 msgstr "mmap() yerinə read() işlət"
 
-#: src/main.c:461
+#: src/main.c:121
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:475
+#: src/main.c:137
 #, c-format
 msgid ""
 "\n"
@@ -574,7 +421,7 @@ msgstr ""
 "Camorama buraxılış %s\n"
 "\n"
 
-#: src/main.c:609
+#: src/main.c:254
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Əsas ara üz faylı tapıla bilmədi (camorama.glade)."
 
@@ -583,8 +430,8 @@ msgstr "Əsas ara üz faylı tapıla bilmədi (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Poksməp faylı tapıla bilmədi: %s"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:104 src/v4l.c:208 src/v4l.c:289 src/v4l.c:358 src/v4l.c:376
+#: src/v4l.c:396
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -593,3 +440,217 @@ msgstr ""
 "(%s) video avadanlığına bağlana bilmədi.\n"
 "Xahiş edirik, bağlantınızı yoxlayın."
 
+#: src/v4l.c:424
+#, c-format
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:439
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:452
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:465
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:474
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:502
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:562
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Effektlər</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "Ağ & Qara"
+
+#~ msgid "Color threshold"
+#~ msgstr "Rəng başlanğıcı"
+
+#~ msgid "Laplace"
+#~ msgstr "Laplace"
+
+#~ msgid "Large"
+#~ msgstr "Geniş"
+
+#~ msgid "Medium"
+#~ msgstr "Orta"
+
+#~ msgid "Negative"
+#~ msgstr "Neqativ"
+
+#~ msgid "Append timestamp to filename"
+#~ msgstr "Vaxt mühürünü fayl adına əlavə et"
+
+#~ msgid "Append timestamp to remote filename"
+#~ msgstr "Vaxt mühürünü uzaqdakı fayl adına əlavə et"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+#~ msgstr "UNIX vaxtını fayl adlarının sonuna əlavə edir"
+
+#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+#~ msgstr "UNIX vaxtını uzaqdakı fayl adlarının sonuna əlavə edir"
+
+#~ msgid "Custom text for the timestamp"
+#~ msgstr "Vaxt mühürü üçün xüsusi mətn"
+
+#~ msgid "Defines a string of custom text to be inserted into the image."
+#~ msgstr "Rəsmə daxil ediləcək xüsusi kəlmələri müəyyən edir."
+
+#~ msgid "Filename for local captures"
+#~ msgstr "Yerli çəkimlər üçün fayl adı"
+
+#~ msgid "Filename for saving captured pictures to locally"
+#~ msgstr "Çəkilən rəsmlərin yerli olaraq qeyd edilməsi üçün fayl adı"
+
+#~ msgid "Folder for local captures"
+#~ msgstr "Yerli rəsmlər üçün qovluq"
+
+#~ msgid "Folder for remote captures"
+#~ msgstr "Uzaq çəkimlər üçün qovluq"
+
+#~ msgid "Folder for saving captured pictures remotely"
+#~ msgstr "Çəkilən rəsmlərin uzaqda qeyd edilməsi üçün qovluq"
+
+#~ msgid "Folder for saving captured pictures to locally"
+#~ msgstr "Çəkilən rəsmlərin yerli olaraq qeyd edilməsi üçün qovluq"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "Qovşaq adı ya da FTP vericisi"
+
+#~ msgid "Hostname for the FTP server for remote captures."
+#~ msgstr "Uzaq çəkimlər üçün FTP vericisinin qovşaq adı."
+
+#~ msgid "Interval for auto-capture"
+#~ msgstr "Səs qeydi üçün aralıq"
+
+#~ msgid "Local capture image format"
+#~ msgstr "Yerli çəkim üçün rəsm formatı"
+
+#~ msgid "Name for the filename of uploaded images."
+#~ msgstr "Göndərilən rəsmlər üçün fayl adı."
+
+#~ msgid "Password for FTP server"
+#~ msgstr "FTP vericisinin şifrəsi"
+
+#~ msgid "Remote capture image format"
+#~ msgstr "Uzaq çəkim üçün rəsm formatı"
+
+#~ msgid "Remote save filename"
+#~ msgstr "Uzaq qeyd üçün fayl adı"
+
+#~ msgid "Specifies the image format to be used for locally saved pictures"
+#~ msgstr ""
+#~ "Yerli olaraq qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını "
+#~ "müəyyən edir"
+
+#~ msgid "Specifies the image format to be used for remotely saved pictures"
+#~ msgstr ""
+#~ "Uzaqda qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını müəyyən "
+#~ "edir"
+
+#~ msgid "Specifies the interval for automatic capture of pictures."
+#~ msgstr "Rəsmlərin avtomatik çəkilməsi üçün vaxt aralığını müəyyən edir."
+
+#~ msgid "The password for the FTP account for remote captures."
+#~ msgstr "Uzaq çəkimlər üçün FTP hesabının şifrəsi."
+
+#~ msgid "Toggles auto-capture"
+#~ msgstr "Avtomatik çəkimi fəallaşdırır"
+
+#~ msgid "Toggles automatic capturing of pictures."
+#~ msgstr "Rəsmlərin avtomatik çəkimini fəallaşdırır."
+
+#~ msgid "Toggles local capture"
+#~ msgstr "Yerli çəkimi fəallaşdırır"
+
+#~ msgid "Toggles remote capture"
+#~ msgstr "Uzaq çəkimi fəallaşdırır"
+
+#~ msgid "Toggles the custom string"
+#~ msgstr "Bu xüsusi qatarı fəallaşdırır"
+
+#~ msgid "Toggles the datestamp in captures"
+#~ msgstr "Çəkimlər üçün vaxt mühürünü fəallaşdırır"
+
+#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
+#~ msgstr "Çəkilən rəsimlərdə vaxt mühürünün göstərilməsini fəallaşdırır"
+
+#~ msgid "Toggles the insertion of a timestamp into local images"
+#~ msgstr "Yerli rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır"
+
+#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+#~ msgstr ""
+#~ "FTP ilə göndərilən rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır."
+
+#~ msgid "Toggles the use of the buttons to adjust the video filters"
+#~ msgstr "Video filtrlərini sazlamaq üçün düymələri fəallaşdırır"
+
+#~ msgid "Toggles the use of the custom string for the timestamp in images."
+#~ msgstr ""
+#~ "Rəsimlərə vaxt mühürünün vurulması üçün xüsusi qatarı istifadəyə açır."
+
+#~ msgid "Toggles the use of the sliders to adjust the video properties"
+#~ msgstr ""
+#~ "Video qurğularını sazlamaq üçün çubuqların istifadəsini fəallaşdırır"
+
+#~ msgid "Toggles the video adjustment sliders"
+#~ msgstr "Video sazlama çubuqlarını fəallaşdırır"
+
+#~ msgid "Toggles the video effects buttons"
+#~ msgstr "Video effektlər düymələrini fəallaşdırır"
+
+#~ msgid "Toggles timestamp for local captures"
+#~ msgstr "Yerli çəkimlər üçün vaxt mühürünü fəallaşdırır"
+
+#~ msgid "Toggles timestamp for remote captures"
+#~ msgstr "Uzaq çəkimlər üçün vaxt mühürünü fəallaşdırır"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "FTP vericisinin istifadəçi adı"
+
+#~ msgid "Username to use for FTP uploads of captured pictures"
+#~ msgstr "Çəkilən rəsmlərin FTP ilə göndərilməsi üçün FTP istifadəçi adı"
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures locally."
+#~ msgstr ""
+#~ "\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə "
+#~ "rəsmlərin yerli olaraq qeyd edilməsini fəallaşdırır."
+
+#~ msgid ""
+#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
+#~ "capture, this key toggles the saving of pictures to a remote server."
+#~ msgstr ""
+#~ "\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə "
+#~ "rəsmlərin uzaq vericiyə qeyd edilməsini fəallaşdırır."
+
+#~ msgid "Unable to capture image."
+#~ msgstr "Rəsm çəkilə bilmədi."
+
+#~ msgid "Orientation"
+#~ msgstr "İstiqamət"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Çubuğun istiqaməti."
