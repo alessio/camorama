@@ -1,106 +1,63 @@
-#include <gnome.h>
 #include "interface.h"
 
 #include "callbacks.h"
 #include "filter.h"
 #include "camorama-window.h"
+#include "camorama-globals.h"
 #include "support.h"
 #include <config.h>
 
 #include <gdk/gdkx.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
+#include <glib/gi18n.h>
 #include <locale.h>
 #include <libv4l2.h>
 
-#include "camorama-display.h"
 #include "camorama-stock-items.h"
 
-static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
-    FALSE, use_read = FALSE;
+static int ver = 0, max = 0, min = 0;
+static int half = 0, use_read = 0, buggery = 0;
+static gchar *poopoo = NULL;
+static int x = -1, y = -1;
 
-/*static gint tray_icon_destroyed (GtkWidget *tray, gpointer data) 
-{
-  GConfClient *client = gconf_client_get_default ();
-
-    //Somehow the delete_event never got called, so we use "destroy" 
-  if (tray != MyApp->GetMainWindow ()->docklet)
-    return true;
-  GtkWidget *new_tray = gnomemeeting_init_tray ();
-
-  if (gconf_client_get_bool 
-      (client, GENERAL_KEY "do_not_disturb", 0)) 
-    gnomemeeting_tray_set_content (new_tray, 2);
-
-  
-  MyApp->GetMainWindow ()->docklet = GTK_WIDGET (new_tray);
-  gtk_widget_show (gm);
-
-  return true;
-}*/
-
-static GtkWidget*
-camorama_glade_handler (GladeXML* xml,
-			gchar   * func_name,
-			gchar   * name,
-			gchar   * string1,
-			gchar   * string2,
-			gint      int1,
-			gint      int2,
-			gpointer  data)
-{
-	gboolean reached = TRUE;
-#warning "FIXME: move the glade crap into the window class"
-	if (string1 && !strcmp (string1, "CamoDisplay")) {
-		GtkWidget* widget = camo_display_new ((cam*)data);
-		gtk_widget_show (widget);
-		return widget;
-	}
-
-	g_return_val_if_fail (!reached, NULL);
-	return NULL;
-}
+static GOptionEntry options[] = {
+    {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
+      N_("show version and exit"), NULL},
+    {"device", 'd', 0, G_OPTION_ARG_STRING, &poopoo,
+      N_("v4l device to use"), NULL},
+    {"debug", 'D', 0, G_OPTION_ARG_NONE, &buggery,
+      N_("enable debugging code"), NULL},
+    {"width", 'x', 0, G_OPTION_ARG_INT, &x,
+      N_("capture width"), NULL},
+    {"height", 'y', 0, G_OPTION_ARG_INT, &y,
+      N_("capture height"), NULL},
+    {"max", 'M', 0, G_OPTION_ARG_NONE, &max,
+      N_("maximum capture size"), NULL},
+    {"min", 'm', 0, G_OPTION_ARG_NONE, &min,
+      N_("minimum capture size"), NULL},
+    {"half", 'H', 0, G_OPTION_ARG_NONE, &half,
+      N_("middle capture size"), NULL},
+    {"read", 'R', 0, G_OPTION_ARG_NONE, &use_read,
+      N_("use read() rather than mmap()"), NULL},
+    { NULL }
+};
 
 int
 main(int argc, char *argv[]) {
     cam cam_object, *cam;
     Display *display;
     Screen *screen_num;
-    gchar *poopoo = NULL;
     gchar *pixfilename = "camorama/camorama.png";
-    gchar *filename;            //= "/usr/opt/garnome/share/camorama/camorama.glade";
-    int x = -1, y = -1;
-    gboolean buggery = FALSE;
     GtkWidget *button;
     GConfClient *gc;
     unsigned int bufsize;
-
-    const struct poptOption popt_options[] = {
-        {"version", 'V', POPT_ARG_NONE, &ver, 0,
-         N_("show version and exit"), NULL},
-        {"device", 'd', POPT_ARG_STRING, &poopoo, 0,
-         N_("v4l device to use"), NULL},
-        {"debug", 'D', POPT_ARG_NONE, &buggery, 0,
-         N_("enable debugging code"), NULL},
-        {"width", 'x', POPT_ARG_INT, &x, 0, N_("capture width"),
-         NULL},
-        {"height", 'y', POPT_ARG_INT, &y, 0, N_("capture height"),
-         NULL},
-        {"max", 'M', POPT_ARG_NONE, &max, 0,
-         N_("maximum capture size"), NULL},
-        {"min", 'm', POPT_ARG_NONE, &min, 0,
-         N_("minimum capture size"), NULL},
-        {"half", 'H', POPT_ARG_NONE, &half, 0,
-         N_("middle capture size"), NULL},
-        {"read", 'R', POPT_ARG_NONE, &use_read, 0,
-         N_("use read() rather than mmap()"), NULL},
-        POPT_TABLEEND
-    };
+    GError *error = NULL;
 
     cam = &cam_object;
+
     /* set some default values */
     cam->frame_number = 0;
-    cam->pixmap = NULL;
     cam->size = PICHALF;
     cam->video_dev = NULL;
     cam->read = FALSE;
@@ -109,16 +66,15 @@ main(int argc, char *argv[]) {
     cam->res = NULL;
     cam->n_res = 0;
 
-    bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
-    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-    textdomain (GETTEXT_PACKAGE);
-    setlocale (LC_ALL, "");
+    bindtextdomain (PACKAGE_NAME, PACKAGE_LOCALE_DIR);
+    bind_textdomain_codeset (PACKAGE_NAME, "UTF-8");
+    textdomain (PACKAGE_NAME);
 
-    /* gnome_program_init  - initialize everything (gconf, threads, etc) */
-    gnome_program_init (PACKAGE_NAME, PACKAGE_VERSION, LIBGNOMEUI_MODULE, argc, argv,
-                        GNOME_PARAM_APP_DATADIR, PACKAGE_DATA_DIR,
-                        GNOME_PARAM_POPT_TABLE, popt_options,
-                        GNOME_PARAM_HUMAN_READABLE_NAME, _("camorama"), NULL);
+    if (!gtk_init_with_args(&argc, &argv,_("camorama"), options,
+                             PACKAGE_NAME, &error) || error) {
+        g_printerr(_("Invalid argument\nRun '%s --help'\n"), argv[0]);
+        return 1;
+    }
 
     /* gtk is initialized now */
     camorama_stock_init();
@@ -128,10 +84,6 @@ main(int argc, char *argv[]) {
 
 	cam->width = x;
 	cam->height = y;
-	glade_gnome_init ();
-	glade_set_custom_handler (camorama_glade_handler,
-				  cam);
-
 
     if (ver) {
         fprintf (stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);
@@ -156,8 +108,6 @@ main(int argc, char *argv[]) {
     gconf_client_add_dir (cam->gc, PATH, GCONF_CLIENT_PRELOAD_NONE, NULL);
     gconf_client_notify_add (cam->gc, KEY1, (void *) gconf_notify_func,
                              cam->pixdir, NULL, NULL);
-    gconf_client_notify_add (cam->gc, KEY5, (void *) gconf_notify_func,
-                             cam->rhost, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY2, (void *) gconf_notify_func,
                              cam->capturefile, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY3,
@@ -166,6 +116,14 @@ main(int argc, char *argv[]) {
     gconf_client_notify_add (cam->gc, KEY4,
                              (void *) gconf_notify_func_bool,
                              &cam->timestamp, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY5, (void *) gconf_notify_func,
+                             cam->host, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY6, (void *) gconf_notify_func,
+                             cam->proto, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY8, (void *) gconf_notify_func,
+                             cam->rdir, NULL, NULL);
+    gconf_client_notify_add (cam->gc, KEY9, (void *) gconf_notify_func,
+                             cam->rcapturefile, NULL, NULL);
 
     if (!poopoo) {
 	gchar const* gconf_device = gconf_client_get_string(cam->gc, KEY_DEVICE, NULL);
@@ -181,13 +139,11 @@ main(int argc, char *argv[]) {
     cam->pixdir = g_strdup (gconf_client_get_string (cam->gc, KEY1, NULL));
     cam->capturefile =
         g_strdup (gconf_client_get_string (cam->gc, KEY2, NULL));
-    cam->rhost = g_strdup (gconf_client_get_string (cam->gc, KEY5, NULL));
-    cam->rlogin = g_strdup (gconf_client_get_string (cam->gc, KEY6, NULL));
-    cam->rpw = g_strdup (gconf_client_get_string (cam->gc, KEY7, NULL));
-    cam->rpixdir = g_strdup (gconf_client_get_string (cam->gc, KEY8, NULL));
-    cam->rcapturefile =
-        g_strdup (gconf_client_get_string (cam->gc, KEY9, NULL));
     cam->savetype = gconf_client_get_int (cam->gc, KEY3, NULL);
+    cam->host = g_strdup (gconf_client_get_string (cam->gc, KEY5, NULL));
+    cam->proto = g_strdup (gconf_client_get_string (cam->gc, KEY6, NULL));
+    cam->rdir = g_strdup (gconf_client_get_string (cam->gc, KEY8, NULL));
+    cam->rcapturefile = g_strdup (gconf_client_get_string (cam->gc, KEY9, NULL));
     cam->rsavetype = gconf_client_get_int (cam->gc, KEY10, NULL);
     cam->ts_string =
         g_strdup (gconf_client_get_string (cam->gc, KEY16, NULL));
@@ -213,7 +169,10 @@ main(int argc, char *argv[]) {
     gdk_pixbuf_xlib_init (display, 0);
     cam->desk_depth = xlib_rgb_get_depth ();
 
-    cam->dev = v4l2_open (cam->video_dev, O_RDWR | O_NONBLOCK);
+    if (use_read)
+        cam->dev = v4l2_open (cam->video_dev, O_RDWR);
+    else
+        cam->dev = v4l2_open (cam->video_dev, O_RDWR | O_NONBLOCK);
 
     camera_cap (cam);
     get_win_info (cam);
@@ -224,7 +183,7 @@ main(int argc, char *argv[]) {
     /* get picture attributes */
     get_pic_info (cam);
 
-    bufsize = cam->max_width * cam->max_height * cam->depth / 8;
+    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
     cam->pic_buf = malloc (bufsize);
     cam->tmp = malloc (bufsize);
 
@@ -243,23 +202,15 @@ main(int argc, char *argv[]) {
         printf ("using read()\n");
         pt2Function = read_timeout_func;
     }
-    cam->pixmap = gdk_pixmap_new (NULL, cam->width, cam->height, cam->desk_depth);
 
-    filename =
-        gnome_program_locate_file (NULL,
-                                   GNOME_FILE_DOMAIN_APP_DATADIR,
-                                   "camorama/camorama.glade", TRUE, NULL);
-    if (filename == NULL) {
-        error_dialog (_
-                      ("Couldn't find the main interface file (camorama.glade)."));
-        exit (1);
+    cam->xml = gtk_builder_new ();
+    if (!gtk_builder_add_from_file (cam->xml,
+                                    PACKAGE_DATA_DIR "/camorama/camorama.ui",
+                                    NULL)) {
+	error_dialog (_("Couldn't load builder file"));
+        exit(1);
     }
 
-    //pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama.png", TRUE, NULL);
-    //printf("pixfile = %s\n",pixfilename);
-    //pixfilename);
-    //printf("pixfile = %s\n",pixfilename);
-    cam->xml = glade_xml_new (filename, NULL, NULL);
     /*eggtray */
 
     /*tray_icon = egg_tray_icon_new ("Our other cool tray icon");
@@ -271,9 +222,16 @@ main(int argc, char *argv[]) {
      * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface (cam);
 
-    cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+    GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
+    gtk_widget_show (widget);
 
-    gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
+    cam->idle_id = g_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+
+    g_timeout_add (2000, (GSourceFunc) fps, cam->status);
+
+    if (cam->debug == TRUE)
+       print_cam(cam);
+
     gtk_main ();
     if (cam->read == FALSE) {
        stop_streaming(cam);

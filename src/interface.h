@@ -5,8 +5,8 @@
 #define KEY3 "/apps/camorama/preferences/file_type"
 #define KEY4 "/apps/camorama/preferences/timestamp"
 #define KEY5 "/apps/camorama/preferences/hostname"
-#define KEY6 "/apps/camorama/preferences/login"
-#define KEY7 "/apps/camorama/preferences/password"
+#define KEY6 "/apps/camorama/preferences/remote_proto"
+/* KEY7 removed */
 #define KEY8 "/apps/camorama/preferences/remote_save_dir"
 #define KEY9 "/apps/camorama/preferences/remote_save_file"
 #define KEY10 "/apps/camorama/preferences/remote_file_type"

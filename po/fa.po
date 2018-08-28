@@ -5,488 +5,398 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"POT-Creation-Date: 2003-03-16 04:30+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
+"POT-Creation-Date: 2018-08-28 07:45-0300\n"
 "PO-Revision-Date: 2003-03-16 13:47+0330\n"
 "Last-Translator: Roozbeh Pournader <roozbeh@sharif.edu>\n"
 "Language-Team: Persian <farsi@lists.sharif.edu>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/camorama.glade.h:1
-msgid "     "
-msgstr "     "
-
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">جلوه‌ها</span>"
-
-#: data/camorama.glade.h:4
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">عمومی</span>"
-
-#: data/camorama.glade.h:5
-msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">نوع تصویر</span>"
-
-#: data/camorama.glade.h:6
-msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr ""
-
-#: data/camorama.glade.h:7
-msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr ""
-
-#: data/camorama.glade.h:8
-msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr ""
-
-#: data/camorama.glade.h:9
-msgid "Add a timestamp to captured images"
-msgstr ""
-
-#: data/camorama.glade.h:10
-msgid "Add timestamp to captured images"
-msgstr ""
-
-#: data/camorama.glade.h:11
-msgid "Append time to filename"
-msgstr "الحاق زمان به نام پرونده"
-
-#: data/camorama.glade.h:12
-msgid "Automatic Capture"
-msgstr ""
-
-#: data/camorama.glade.h:13
-msgid "Black & White"
-msgstr "سیاه و سفید"
-
-#: data/camorama.glade.h:14
-msgid "Brightness"
-msgstr ""
-
-#: data/camorama.glade.h:15
-msgid "Camorama-libglade"
-msgstr ""
-
-#: data/camorama.glade.h:16
-msgid "Capture Interval (in minutes):"
-msgstr ""
-
-#: data/camorama.glade.h:17
-msgid "Color correction"
-msgstr "تصحیح رنگ"
-
-#: data/camorama.glade.h:18
-msgid "Color threshold"
-msgstr ""
-
-#: data/camorama.glade.h:19
-msgid "Colour"
-msgstr "رنگ"
-
-#: data/camorama.glade.h:20
-msgid "Contrast"
-msgstr ""
-
-#: data/camorama.glade.h:21
-msgid "Draw date and time"
-msgstr ""
-
-#: data/camorama.glade.h:22
-msgid "FTP server: "
-msgstr "کارگزار FTP: "
-
-#: data/camorama.glade.h:23
-msgid "Filename"
-msgstr "نام پرونده"
-
-#: data/camorama.glade.h:24
-msgid "General"
-msgstr "عمومی"
-
-#: data/camorama.glade.h:25
-msgid "Hue"
-msgstr "پرده"
-
-#: data/camorama.glade.h:26
-msgid "Laplace"
-msgstr "لاپلاس"
-
-#: data/camorama.glade.h:27
-msgid "Local Capture"
-msgstr ""
-
-#: data/camorama.glade.h:28
-msgid "Mirror image"
-msgstr "تصویر آینه‌ای"
-
-#: data/camorama.glade.h:29
-msgid "Negative"
-msgstr "نگاتیو"
-
-#: data/camorama.glade.h:30
-msgid "Password:"
-msgstr "گذرواژه:"
-
-#: data/camorama.glade.h:31
-msgid "Preferences"
-msgstr "ترجیحات"
-
-#: data/camorama.glade.h:32
-msgid "Remote Capture"
-msgstr ""
-
-#: data/camorama.glade.h:33
-msgid "Save directory:"
-msgstr "ذخیره‌ی شاخه:"
-
-#: data/camorama.glade.h:34
-msgid "Save files in jpeg format"
-msgstr "ذخیره پرونده‌ها در قالب jpeg"
-
-#: data/camorama.glade.h:35
-msgid "Save files in png format"
-msgstr "ذخیره پرونده‌ها در قالب png"
-
-#: data/camorama.glade.h:36
-msgid "Show Adjustments"
-msgstr ""
-
-#: data/camorama.glade.h:37
-msgid "Smoothing"
-msgstr ""
-
-#: data/camorama.glade.h:38
-msgid "Sobel"
-msgstr ""
-
-#: data/camorama.glade.h:39
-msgid "String:"
-msgstr "رشته:"
-
-#: data/camorama.glade.h:40
-msgid "Take Picture"
-msgstr ""
-
-#: data/camorama.glade.h:41
-msgid "Threshold"
-msgstr "آستانه"
-
-#: data/camorama.glade.h:42
-msgid "Timestamp"
-msgstr ""
-
-#: data/camorama.glade.h:43
-msgid "Use custom string"
-msgstr ""
-
-#: data/camorama.glade.h:44
-msgid "Username:"
-msgstr "نام کاربر:"
-
-#: data/camorama.glade.h:45
-msgid "Wacky"
-msgstr ""
-
-#: data/camorama.glade.h:46
-msgid "White Balance"
-msgstr ""
-
-#: data/camorama.glade.h:47
-msgid "_Directory for captured pics:"
-msgstr ""
-
-#: data/camorama.glade.h:48
-msgid "_Enable local capture"
-msgstr ""
-
-#: data/camorama.glade.h:49
-msgid "_Enable remote capture"
-msgstr ""
-
-#: data/camorama.glade.h:50
-msgid "_Filename for pictures:"
-msgstr "نام پرونده برای عکس‌ها:"
-
-#: data/camorama.glade.h:51
-msgid "ftp.yourdomain.org"
-msgstr "ftp.yourdomain.org"
-
-#: data/camorama.glade.h:52
-msgid "path/to/save/to"
-msgstr ""
-
-#: data/camorama.glade.h:53
-msgid "webcam-capture"
-msgstr ""
-
-#: data/camorama.glade.h:54
-msgid "webcamshot"
-msgstr ""
-
-#: data/camorama.glade.h:55
-msgid "your-password"
-msgstr ""
-
-#: data/camorama.glade.h:56
-msgid "your-username"
-msgstr ""
-
-#: data/camorama.glade.h:57
-msgid "~/.gnome-desktop"
-msgstr "~/.gnome-desktop"
-
-#: data/camorama.schemas.in.h:1
-msgid "Append timestamp to filename"
-msgstr ""
-
-#: data/camorama.schemas.in.h:2
-msgid "Append timestamp to remote filename"
-msgstr ""
-
-#: data/camorama.schemas.in.h:3
-msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr ""
-
-#: data/camorama.schemas.in.h:4
-msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr ""
-
-#: data/camorama.schemas.in.h:5
-msgid "Custom text for the timestamp"
-msgstr ""
-
-#: data/camorama.schemas.in.h:6
-msgid "Defines a string of custom text to be inserted into the image."
-msgstr ""
-
-#: data/camorama.schemas.in.h:7
-msgid "Filename for local captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:8
-msgid "Filename for saving captured pictures to locally"
-msgstr ""
-
-#: data/camorama.schemas.in.h:9
-msgid "Folder for local captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:10
-msgid "Folder for remote captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:11
-msgid "Folder for saving captured pictures remotely"
-msgstr ""
-
-#: data/camorama.schemas.in.h:12
-msgid "Folder for saving captured pictures to locally"
-msgstr ""
-
-#: data/camorama.schemas.in.h:13
-msgid "Hostname for FTP server"
-msgstr "نام میزبان کارگزار FTP"
-
-#: data/camorama.schemas.in.h:14
-msgid "Hostname for the FTP server for remote captures."
-msgstr ""
-
-#: data/camorama.schemas.in.h:15
-msgid "Interval for auto-capture"
-msgstr ""
-
-#: data/camorama.schemas.in.h:16
-msgid "Local capture image format"
-msgstr ""
-
-#: data/camorama.schemas.in.h:17
-msgid "Name for the filename of uploaded images."
-msgstr ""
-
-#: data/camorama.schemas.in.h:18
-msgid "Password for FTP server"
-msgstr "گذرواژه‌ی کارگزار FTP"
-
-#: data/camorama.schemas.in.h:19
-msgid "Remote capture image format"
-msgstr ""
-
-#: data/camorama.schemas.in.h:20
-msgid "Remote save filename"
-msgstr "نام پرونده برای ذخیره‌ی دوردست"
-
-#: data/camorama.schemas.in.h:21
-msgid "Specifies the image format to be used for locally saved pictures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:22
-msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:23
-msgid "Specifies the interval for automatic capture of pictures."
-msgstr ""
-
-#: data/camorama.schemas.in.h:24
-msgid "The password for the FTP account for remote captures."
-msgstr ""
-
-#: data/camorama.schemas.in.h:25
-msgid "Toggles auto-capture"
-msgstr ""
-
-#: data/camorama.schemas.in.h:26
-msgid "Toggles automatic capturing of pictures."
-msgstr ""
-
-#: data/camorama.schemas.in.h:27
-msgid "Toggles local capture"
-msgstr ""
-
-#: data/camorama.schemas.in.h:28
-msgid "Toggles remote capture"
-msgstr ""
-
-#: data/camorama.schemas.in.h:29
-msgid "Toggles the custom string"
-msgstr ""
-
-#: data/camorama.schemas.in.h:30
-msgid "Toggles the datestamp in captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:31
-msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:32
-msgid "Toggles the insertion of a timestamp into local images"
-msgstr ""
-
-#: data/camorama.schemas.in.h:33
-msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr ""
-
-#: data/camorama.schemas.in.h:34
-msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr ""
-
-#: data/camorama.schemas.in.h:35
-msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
-
-#: data/camorama.schemas.in.h:36
-msgid "Toggles the video adjustment sliders"
+#: camorama.appdata.xml.in:6
+msgid "Camorama"
 msgstr ""
-
-#: data/camorama.schemas.in.h:37
-msgid "Toggles timestamp for local captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:38
-msgid "Toggles timestamp for remote captures"
-msgstr ""
-
-#: data/camorama.schemas.in.h:39
-msgid "Username for FTP server"
-msgstr "نام کاربر برای کارگزار FTP"
 
-#: data/camorama.schemas.in.h:40
-msgid "Username to use for FTP uploads of captured pictures"
+#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+msgid "Camorama Webcam Viewer"
 msgstr ""
 
-#: data/camorama.schemas.in.h:41
+#: camorama.appdata.xml.in:9
 msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
+"Camorama is a simple webcam viewer, with the ability to apply some video "
+"effects."
 msgstr ""
 
-#: data/camorama.schemas.in.h:42
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures to a remote server."
-msgstr ""
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:317
-msgid "translator_credits"
-msgstr "روزبه پورنادر <roozbeh@sharif.edu>"
-
-#: src/callbacks.c:324 camorama.desktop.in.h:2
+#: camorama.desktop.in:4 src/callbacks.c:510
 msgid "View, alter and save images from a webcam"
 msgstr ""
 
-#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
-#: src/callbacks.c:465
-msgid "Unable to capture image."
+#: camorama.desktop.in:8
+msgid "camorama.png"
 msgstr ""
 
-#: src/fileio.c:114
+#: data/camorama.ui:35
+msgid "Preferences"
+msgstr "ترجیحات"
+
+#: data/camorama.ui:107
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">عمومی</span>"
+
+#: data/camorama.ui:139
+msgid "Automatic Capture"
+msgstr ""
+
+#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
+#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
+#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
+msgid "     "
+msgstr "     "
+
+#: data/camorama.ui:183
+msgid "Capture Interval (in minutes):"
+msgstr ""
+
+#: data/camorama.ui:257
+msgid "General"
+msgstr "عمومی"
+
+#: data/camorama.ui:279
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr ""
+
+#: data/camorama.ui:311
+msgid "_Enable local capture"
+msgstr ""
+
+#: data/camorama.ui:360
+msgid "_Directory for captured pics:"
+msgstr ""
+
+#: data/camorama.ui:373
+msgid "_Filename for pictures:"
+msgstr "نام پرونده برای عکس‌ها:"
+
+#: data/camorama.ui:388
+msgid "webcam-capture"
+msgstr ""
+
+#: data/camorama.ui:407
+#, fuzzy
+msgid "Select a Directory"
+msgstr "ذخیره‌ی شاخه:"
+
+#: data/camorama.ui:424 data/camorama.ui:813
+msgid "Append time to filename"
+msgstr "الحاق زمان به نام پرونده"
+
+#: data/camorama.ui:441 data/camorama.ui:829
+msgid "Add a timestamp to captured images"
+msgstr ""
+
+#: data/camorama.ui:500 data/camorama.ui:888
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">نوع تصویر</span>"
+
+#: data/camorama.ui:531 data/camorama.ui:919
+msgid "Save files in jpeg format"
+msgstr "ذخیره پرونده‌ها در قالب jpeg"
+
+#: data/camorama.ui:548 data/camorama.ui:936
+msgid "Save files in png format"
+msgstr "ذخیره پرونده‌ها در قالب png"
+
+#: data/camorama.ui:593
+msgid "Local Capture"
+msgstr ""
+
+#: data/camorama.ui:616
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr ""
+
+#: data/camorama.ui:648
+msgid "_Enable remote capture"
+msgstr ""
+
+#: data/camorama.ui:696
+#, fuzzy
+msgid "Server:"
+msgstr "کارگزار FTP: "
+
+#: data/camorama.ui:708
+msgid "Type:"
+msgstr ""
+
+#: data/camorama.ui:720
+msgid "Save directory:"
+msgstr "ذخیره‌ی شاخه:"
+
+#: data/camorama.ui:732
+#, fuzzy
+msgid "Filename:"
+msgstr "نام پرونده"
+
+#: data/camorama.ui:745
+msgid "ftp.yourdomain.org"
+msgstr "ftp.yourdomain.org"
+
+#: data/camorama.ui:790
+msgid "webcamshot"
+msgstr ""
+
+#: data/camorama.ui:981
+msgid "Remote Capture"
+msgstr ""
+
+#: data/camorama.ui:1004
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr ""
+
+#: data/camorama.ui:1036
+msgid "Use custom string"
+msgstr ""
+
+#: data/camorama.ui:1080
+msgid "String:"
+msgstr "رشته:"
+
+#: data/camorama.ui:1126
+msgid "Draw date and time"
+msgstr ""
+
+#: data/camorama.ui:1170
+msgid "Timestamp"
+msgstr ""
+
+#: data/camorama.ui:1199
+msgid "Camorama-libglade"
+msgstr ""
+
+#: data/camorama.ui:1216
+#, fuzzy
+msgid "_File"
+msgstr "نام پرونده"
+
+#: data/camorama.ui:1223 data/camorama.ui:1523
+msgid "Take Picture"
+msgstr ""
+
+#: data/camorama.ui:1258
+msgid "_Edit"
+msgstr ""
+
+#: data/camorama.ui:1282
+msgid "_View"
+msgstr ""
+
+#: data/camorama.ui:1291 data/camorama.ui:1464
+msgid "Show Adjustments"
+msgstr ""
+
+#: data/camorama.ui:1301
+msgid "Show Effects"
+msgstr ""
+
+#: data/camorama.ui:1317
+msgid "Small"
+msgstr ""
+
+#: data/camorama.ui:1330
+msgid "_Help"
+msgstr ""
+
+#: data/camorama.ui:1654
+msgid "Contrast:"
+msgstr ""
+
+#: data/camorama.ui:1668
+msgid "Brightness:"
+msgstr ""
+
+#: data/camorama.ui:1684
+#, fuzzy
+msgid "Color:"
+msgstr "رنگ"
+
+#: data/camorama.ui:1700
+msgid "Hue:"
+msgstr ""
+
+#: data/camorama.ui:1716
+msgid "White Balance:"
+msgstr ""
+
+#: src/callbacks.c:497
+msgid "translator_credits"
+msgstr "روزبه پورنادر <roozbeh@sharif.edu>"
+
+#: src/callbacks.c:706
+#, c-format
+msgid "%.2f fps - current     %.2f fps - average"
+msgstr ""
+
+#: src/callbacks.c:826
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+
+#: src/callbacks.c:835
+msgid "Automatic Capture Disabled"
+msgstr ""
+
+#: src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-mirror.c:67
+#, fuzzy
+msgid "Mirror"
+msgstr "تصویر آینه‌ای"
+
+#. TRANSLATORS: This is a noun
+#: src/camorama-filter-reichardt.c:297
+msgid "Reichardt"
+msgstr ""
+
+#: src/camorama-stock-items.c:11
+msgid "Webcam"
+msgstr ""
+
+#: src/camorama-window.c:116
+msgid "_Add Filter"
+msgstr ""
+
+#: src/camorama-window.c:210
+msgid "Effects"
+msgstr ""
+
+#: src/fileio.c:116 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr ""
 
-#: src/fileio.c:129
+#: src/fileio.c:128
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr ""
 
-#: src/fileio.c:142
-#, c-format
-msgid "Unable to open temorary image file '%s'."
-msgstr ""
-
-#: src/fileio.c:173
-#, c-format
-msgid "An error occured opening %s."
-msgstr ""
-
-#: src/fileio.c:182
-#, c-format
-msgid "An error occured writing to %s."
-msgstr ""
-
-#: src/fileio.c:258
-#, c-format
-msgid "Could not create directory '%s'."
-msgstr ""
-
-#: src/fileio.c:266
-#, c-format
-msgid "Could not change to directory '%s'."
-msgstr ""
-
-#: src/fileio.c:279
+#: src/fileio.c:136 src/fileio.c:419
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr ""
 
-#: src/main.c:32
+#: src/fileio.c:174
+#, c-format
+msgid "An error occurred mounting %s:%s."
+msgstr ""
+
+#: src/fileio.c:211
+#, c-format
+msgid "An error occurred accessing %s."
+msgstr ""
+
+#: src/fileio.c:265
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+
+#: src/fileio.c:295
+#, c-format
+msgid "An error occurred opening %s."
+msgstr ""
+
+#: src/fileio.c:306
+#, c-format
+msgid "An error occurred opening %s for write: %s."
+msgstr ""
+
+#: src/fileio.c:317
+#, c-format
+msgid "An error occurred writing to %s: %s."
+msgstr ""
+
+#: src/fileio.c:325
+#, c-format
+msgid "An error occurred closing %s: %s."
+msgstr ""
+
+#: src/fileio.c:393
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr ""
+
+#: src/fileio.c:404
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr ""
+
+#: src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "تصحیح رنگ"
+
+#: src/filter.c:195
+msgid "Invert"
+msgstr ""
+
+#: src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "آستانه"
+
+#: src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr ""
+
+#: src/filter.c:349
+msgid "Wacky"
+msgstr ""
+
+#: src/filter.c:450
+msgid "Smooth"
+msgstr ""
+
+#: src/filter.c:481
+msgid "Monochrome"
+msgstr ""
+
+#: src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr ""
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: src/filter.c:563
+msgid "Sobel"
+msgstr ""
+
+#: src/main.c:26
 msgid "show version and exit"
 msgstr ""
 
-#: src/main.c:33
+#: src/main.c:28
 msgid "v4l device to use"
 msgstr ""
 
-#: src/main.c:34
-msgid "enable debuging code"
+#: src/main.c:30
+msgid "enable debugging code"
 msgstr ""
 
-#: src/main.c:35
+#: src/main.c:32
 msgid "capture width"
 msgstr ""
 
-#: src/main.c:36
+#: src/main.c:34
 msgid "capture height"
 msgstr ""
 
-#: src/main.c:37
+#: src/main.c:36
 msgid "maximum capture size"
 msgstr ""
 
@@ -494,15 +404,26 @@ msgstr ""
 msgid "minimum capture size"
 msgstr ""
 
-#: src/main.c:39
+#: src/main.c:40
 msgid "middle capture size"
 msgstr ""
 
-#: src/main.c:57
+#: src/main.c:42
+msgid "use read() rather than mmap()"
+msgstr ""
+
+#: src/main.c:73
 msgid "camorama"
 msgstr ""
 
-#: src/main.c:71
+#: src/main.c:75
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+
+#: src/main.c:89
 #, c-format
 msgid ""
 "\n"
@@ -511,24 +432,88 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:173
-msgid "Couldn't find the main interface file (camorama.glade)."
+#: src/main.c:210
+msgid "Couldn't load builder file"
 msgstr ""
 
-#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
-#: src/v4l.c:215
+#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
+#: src/v4l.c:410
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
 
-#: src/support.c:66
+#: src/v4l.c:438
 #, c-format
-msgid "Couldn't find pixmap file: %s"
+msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
+#: src/v4l.c:453
+#, c-format
+msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
+#: src/v4l.c:466
+#, c-format
+msgid "failed to memory map buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:479
+#, c-format
+msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:488
+#, c-format
+msgid "failed to start streaming (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:516
+#, c-format
+msgid "Timeout while waiting for frames (%s)"
+msgstr ""
+
+#: src/v4l.c:576
+#, c-format
+msgid "failed to stop streaming (%s), exiting...."
+msgstr ""
+
+#~ msgid "Username:"
+#~ msgstr "نام کاربر:"
+
+#~ msgid "Password:"
+#~ msgstr "گذرواژه:"
+
+#~ msgid "~/.gnome-desktop"
+#~ msgstr "~/.gnome-desktop"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">جلوه‌ها</span>"
+
+#~ msgid "Black & White"
+#~ msgstr "سیاه و سفید"
+
+#~ msgid "Hue"
+#~ msgstr "پرده"
+
+#~ msgid "Laplace"
+#~ msgstr "لاپلاس"
+
+#~ msgid "Negative"
+#~ msgstr "نگاتیو"
+
+#~ msgid "Hostname for FTP server"
+#~ msgstr "نام میزبان کارگزار FTP"
+
+#~ msgid "Password for FTP server"
+#~ msgstr "گذرواژه‌ی کارگزار FTP"
+
+#~ msgid "Remote save filename"
+#~ msgstr "نام پرونده برای ذخیره‌ی دوردست"
+
+#~ msgid "Username for FTP server"
+#~ msgstr "نام کاربر برای کارگزار FTP"
