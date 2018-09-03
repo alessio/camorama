@@ -14,10 +14,7 @@ EXTRA_DIST =					\
 	autogen.sh				\
 	camorama.1				\
 	camorama.desktop.in			\
-	camorama.appdata.xml.in			\
-	data/pixmaps/camorama-webcam-16.png	\
-	data/pixmaps/camorama-webcam-24.png
-
+	camorama.appdata.xml.in
 
 CLEANFILES=\
 	camorama.desktop     \
@@ -26,9 +23,14 @@ CLEANFILES=\
 
 pixmapdir   = $(datadir)/pixmaps
 
-install-data-local:
+install-icons:
+	for i in 16 24 32 48 64 128 256 512; do \
+		$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/$${i}x$${i}/devices; \
+		$(INSTALL_DATA) pixmaps/camorama-$${i}.png $(DESTDIR)$(datadir)/icons/hicolor/$${i}x$${i}/devices/camorama.png; \
+	done
+
+install-data-local: install-icons
 @$(NORMAL_INSTALL)
-	if test -d $(srcdir)/pixmaps; then \
 	$(mkinstalldirs) $(DESTDIR)$(pixmapdir); \
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/camorama/pixmaps; \
 	for pixmap in $(srcdir)/pixmaps/*.png; do \
@@ -36,8 +38,7 @@ install-data-local:
 			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pixmapdir); \
 			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/camorama/pixmaps; \
 		fi \
-	done \
-fi
+	done
 
 dist-hook:
 	if test -d pixmaps; then \
