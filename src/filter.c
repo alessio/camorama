@@ -152,7 +152,8 @@ static void
 camorama_filter_color_init(CamoramaFilterColor* self) {}
 
 void
-camorama_filter_color_filter(CamoramaFilterColor* filter, guchar *image, int x, int y, int depth) {
+camorama_filter_color_filter(void *__filter, guchar *image, int x, int y, int depth) {
+	CamoramaFilterColor *filter = __filter;
 	int i;
 	char tmp;
 	i = x * y;

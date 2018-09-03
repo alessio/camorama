@@ -166,12 +166,12 @@ void acap_func (GtkWidget * rb, cam * cam)
             g_timeout_add (cam->timeout_interval,
                              (GSourceFunc) timeout_capture_func, cam);
         if (cam->debug == TRUE) {
-            printf ("add autocap - %d -  timeout_interval = \n",
+            printf ("add autocap - %d -  timeout_interval = %d\n",
                     cam->timeout_id, cam->timeout_interval);
         }
     } else {
         if (cam->debug == TRUE) {
-            printf ("remove autocap - %d -  timeout_interval = \n",
+            printf ("remove autocap - %d -  timeout_interval = %d\n",
                     cam->timeout_id, cam->timeout_interval);
         }
         g_source_remove (cam->timeout_id);
@@ -350,7 +350,6 @@ static int apply_remote_pref(cam *cam)
 void prefs_func (GtkWidget * okbutton, cam * cam)
 {
     GConfClient *client;
-    gchar *rdir;
 
     client = gconf_client_get_default ();
 
@@ -534,9 +533,6 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
     gtk_widget_show (about);
 }
 
-void
-camorama_filter_color_filter(void* filter, guchar *image, int x, int y, int depth);
-
 static void
 apply_filters(cam* cam) {
 	/* v4l has reverse rgb order from what camora expect so call the color
@@ -559,7 +555,7 @@ apply_filters(cam* cam) {
  *    https://github.com/bratsche/gtk-/blob/master/gdk/gdkcairo.c
  * With a small backport.
  */
-cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
+static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
                                     GdkWindow *for_window)
 {
     gint width = gdk_pixbuf_get_width (pixbuf);
@@ -800,7 +796,7 @@ void wb_change (GtkHScale * sc1, cam * cam)
     v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
 }
 
-void help_cb (GtkWidget * widget, gpointer data)
+static void help_cb (GtkWidget * widget, gpointer data)
 {
     GError *error = NULL;
 

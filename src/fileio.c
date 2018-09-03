@@ -40,8 +40,12 @@ add_rgb_text (guchar *image, int width, int height, char *cstring, char *format,
 
     time (&t);
     tm = localtime (&t);
-    len = strftime (line, 127, image_label, tm);
-    
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+    len = strftime (line, sizeof(line) - 1, image_label, tm);
+#pragma GCC diagnostic pop
+
     for (y = 0; y < CHAR_HEIGHT; y++) {
         /* locate text in lower left corner of image */
         ptr = image + 3 * width * (height - CHAR_HEIGHT - 2 + y) + 12;
@@ -83,18 +87,10 @@ add_rgb_text (guchar *image, int width, int height, char *cstring, char *format,
 void remote_save (cam * cam)
 {
     GThread *remote_thread;
-    char *output_uri_string, *input_uri_string;
-    unsigned char *tmp;
-    gboolean test;
     char *filename, *error_message;
-    FILE *fp;
-    int bytes = 0, fc;
-    time_t t;
     gchar *ext;
-    struct tm *tm;
     gboolean pbs;
     GdkPixbuf *pb;
-    GError *error;
 
     switch (cam->rsavetype) {
     case JPEG:

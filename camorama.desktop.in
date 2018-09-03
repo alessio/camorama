@@ -1,13 +1,10 @@
 [Desktop Entry]
+Type=Application
 Name=Camorama Webcam Viewer
 Comment=View, alter and save images from a webcam
+Icon=camorama
 Exec=camorama
 Terminal=0
-Type=Application
-Icon=camorama.png
-Categories=Video;Graphics;Viewer
+Categories=GNOME;AudioVideo;Video;
+Keywords=camorama;webcam;viewer;video-effects;
 StartupNotify=true
-X-GNOME-Bugzilla-Bugzilla=GNOME
-X-GNOME-Bugzilla-Product=camorama
-X-GNOME-Bugzilla-Component=General
-X-GNOME-Bugzilla-Component=User Interface

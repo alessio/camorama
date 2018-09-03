@@ -186,9 +186,6 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
         }
 }
 
-static guint resolution_signals[8] = { 0 };
-
-
 void
 load_interface(cam* cam) {
     int i;

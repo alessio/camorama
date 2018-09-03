@@ -1,3 +1,7 @@
+2018-09-03  Mauro Carvalho Chehab <mchehab@kernel.org>
+	* Update icons, desktop files
+	* Improve logic to install icons and other dist files
+
 2018-08-23  Mauro Carvalho Chehab <mchehab@kernel.org>
 
 	* Convert it to use V4L2 API
