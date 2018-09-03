@@ -2,6 +2,8 @@ desktopdir = $(datadir)/applications
 desktop_in_files = camorama.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+man_MANS = camorama.1
+
 appdatadir = $(datadir)/metainfo
 appdata_in_files = camorama.appdata.xml.in
 nodist_appdata_DATA = $(appdata_in_files:.xml.in=.xml)
@@ -13,7 +15,6 @@ EXTRA_DIST =					\
 	camorama.1				\
 	camorama.desktop.in			\
 	camorama.appdata.xml.in			\
-	camorama.1				\
 	data/pixmaps/camorama-webcam-16.png	\
 	data/pixmaps/camorama-webcam-24.png
 
