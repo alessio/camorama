@@ -8,10 +8,15 @@ nodist_appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 
 SUBDIRS = src data po
 
-EXTRA_DIST =                     \
-	autogen.sh               \
-	camorama.desktop.in      \
-	camorama.appdata.xml.in
+EXTRA_DIST =					\
+	autogen.sh				\
+	camorama.1				\
+	camorama.desktop.in			\
+	camorama.appdata.xml.in			\
+	camorama.1				\
+	data/pixmaps/camorama-webcam-16.png	\
+	data/pixmaps/camorama-webcam-24.png
+
 
 CLEANFILES=\
 	camorama.desktop     \
