@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-28 07:45-0300\n"
+"POT-Creation-Date: 2018-09-03 17:00-0300\n"
 "PO-Revision-Date: 2007-05-03 15:21+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Camorama"
 msgstr "Camorama"
 
-#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+#: camorama.appdata.xml.in:7 camorama.desktop.in:4
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama ウェブカム・ビューア"
 
@@ -31,14 +31,17 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:510
+#: camorama.desktop.in:5 src/callbacks.c:509
 msgid "View, alter and save images from a webcam"
 msgstr "WebCam の画像の表示や保存を行います"
 
-#: camorama.desktop.in:8
-#, fuzzy
-msgid "camorama.png"
+#: camorama.desktop.in:6 src/main.c:71
+msgid "camorama"
 msgstr "camorama"
+
+#: camorama.desktop.in:10
+msgid "camorama;webcam;viewer;video-effects;"
+msgstr ""
 
 #: data/camorama.ui:35
 msgid "Preferences"
@@ -230,7 +233,7 @@ msgstr "色相:"
 msgid "White Balance:"
 msgstr "ホワイト・バランス:"
 
-#: src/callbacks.c:497
+#: src/callbacks.c:496
 msgid "translator_credits"
 msgstr ""
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
@@ -238,12 +241,12 @@ msgstr ""
 "\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: src/callbacks.c:706
+#: src/callbacks.c:702
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:826
+#: src/callbacks.c:822
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -254,7 +257,7 @@ msgstr ""
 "リモートのキャプチャ: %d\n"
 "    キャプチャの間隔: %d"
 
-#: src/callbacks.c:835
+#: src/callbacks.c:831
 msgid "Automatic Capture Disabled"
 msgstr "自動キャプチャは無効です"
 
@@ -280,35 +283,35 @@ msgstr "ウェブカム"
 msgid "_Add Filter"
 msgstr "フィルタの追加(_A)"
 
-#: src/camorama-window.c:210
+#: src/camorama-window.c:207
 msgid "Effects"
 msgstr "画像の効果"
 
-#: src/fileio.c:116 src/fileio.c:257
+#: src/fileio.c:112 src/fileio.c:253
 msgid "Could save temporary image file in /tmp."
 msgstr "/tmp に画像ファイルを一時的に保存しました。"
 
-#: src/fileio.c:128
+#: src/fileio.c:124
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "画像ファイル '%s' を作成できませんでした。"
 
-#: src/fileio.c:136 src/fileio.c:419
+#: src/fileio.c:132 src/fileio.c:415
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "画像ファイル '%s/%s' を保存できませんでした。"
 
-#: src/fileio.c:174
+#: src/fileio.c:170
 #, fuzzy, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "%s をオープンする際にエラーが発生しました。"
 
-#: src/fileio.c:211
+#: src/fileio.c:207
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
 msgstr "%s をオープンする際にエラーが発生しました。"
 
-#: src/fileio.c:265
+#: src/fileio.c:261
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -317,70 +320,70 @@ msgstr ""
 "一時的な画像ファイル '%s' を開けません。\n"
 "画像をアップロードできません。"
 
-#: src/fileio.c:295
+#: src/fileio.c:291
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "%s をオープンする際にエラーが発生しました。"
 
-#: src/fileio.c:306
+#: src/fileio.c:302
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "%s をオープンする際にエラーが発生しました。"
 
-#: src/fileio.c:317
+#: src/fileio.c:313
 #, fuzzy, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "%s に書き込む際にエラーが発生しました。"
 
-#: src/fileio.c:325
+#: src/fileio.c:321
 #, fuzzy, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "%s をオープンする際にエラーが発生しました。"
 
-#: src/fileio.c:393
+#: src/fileio.c:389
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "フォルダ '%s' を作成できませんでした。"
 
-#: src/fileio.c:404
+#: src/fileio.c:400
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "フォルダ '%s' に移動できませんでした。"
 
-#: src/filter.c:170
+#: src/filter.c:171
 msgid "Color Correction"
 msgstr "色の補正"
 
-#: src/filter.c:195
+#: src/filter.c:196
 msgid "Invert"
 msgstr "反転"
 
-#: src/filter.c:234
+#: src/filter.c:235
 msgid "Threshold (Overall)"
 msgstr "境界値変動 (全体)"
 
-#: src/filter.c:276
+#: src/filter.c:277
 msgid "Threshold (Per Channel)"
 msgstr "境界値変動 (チャンネル単位)"
 
-#: src/filter.c:349
+#: src/filter.c:350
 msgid "Wacky"
 msgstr "ワッキー効果"
 
-#: src/filter.c:450
+#: src/filter.c:451
 msgid "Smooth"
 msgstr "平滑化"
 
-#: src/filter.c:481
+#: src/filter.c:482
 msgid "Monochrome"
 msgstr "モノクロ"
 
-#: src/filter.c:511
+#: src/filter.c:512
 msgid "Monochrome (Weight)"
 msgstr "モノクロ (ウェイト)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:563
+#: src/filter.c:564
 msgid "Sobel"
 msgstr "ゾーベル・フィルタ"
 
@@ -421,17 +424,13 @@ msgid "use read() rather than mmap()"
 msgstr "mmap() ではなく read() を使う"
 
 #: src/main.c:73
-msgid "camorama"
-msgstr "camorama"
-
-#: src/main.c:75
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:87
 #, c-format
 msgid ""
 "\n"
@@ -443,13 +442,13 @@ msgstr ""
 "\n"
 "Camorama のバージョン %s\n"
 
-#: src/main.c:210
+#: src/main.c:209
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap ファイルが見つかりませんでした: %s"
 
-#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
-#: src/v4l.c:410
+#: src/v4l.c:115 src/v4l.c:220 src/v4l.c:300 src/v4l.c:368 src/v4l.c:386
+#: src/v4l.c:406
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -458,40 +457,44 @@ msgstr ""
 "ビデオ・デバイス (%s) に接続できませんでした。\n"
 "接続を確認して下さい。"
 
-#: src/v4l.c:438
+#: src/v4l.c:434
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:453
+#: src/v4l.c:449
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:466
+#: src/v4l.c:462
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:479
+#: src/v4l.c:475
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:488
+#: src/v4l.c:484
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:516
+#: src/v4l.c:512
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:576
+#: src/v4l.c:574
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#, fuzzy
+#~ msgid "camorama.png"
+#~ msgstr "camorama"
 
 #~ msgid "Username:"
 #~ msgstr "ユーザ名:"

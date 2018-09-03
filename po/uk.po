@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-08-28 07:45-0300\n"
+"POT-Creation-Date: 2018-09-03 17:00-0300\n"
 "PO-Revision-Date: 2003-04-01 09:08--500\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <linux@linux.org.ua>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama"
 msgstr "camorama"
 
-#: camorama.appdata.xml.in:7 camorama.desktop.in:3
+#: camorama.appdata.xml.in:7 camorama.desktop.in:4
 msgid "Camorama Webcam Viewer"
 msgstr "Робота з веб-камерою"
 
@@ -30,14 +30,17 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:4 src/callbacks.c:510
+#: camorama.desktop.in:5 src/callbacks.c:509
 msgid "View, alter and save images from a webcam"
 msgstr "Показ, зміна і збереження зображень з веб-камери"
 
-#: camorama.desktop.in:8
-#, fuzzy
-msgid "camorama.png"
+#: camorama.desktop.in:6 src/main.c:71
+msgid "camorama"
 msgstr "camorama"
+
+#: camorama.desktop.in:10
+msgid "camorama;webcam;viewer;video-effects;"
+msgstr ""
 
 #: data/camorama.ui:35
 msgid "Preferences"
@@ -233,16 +236,16 @@ msgstr ""
 msgid "White Balance:"
 msgstr "Баланс білого"
 
-#: src/callbacks.c:497
+#: src/callbacks.c:496
 msgid "translator_credits"
 msgstr "Юрій Сирота <yuriy@beer.com>"
 
-#: src/callbacks.c:706
+#: src/callbacks.c:702
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:826
+#: src/callbacks.c:822
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -250,7 +253,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:835
+#: src/callbacks.c:831
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "Автоматична зйомка"
@@ -279,108 +282,108 @@ msgstr "webcamshot"
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:210
+#: src/camorama-window.c:207
 msgid "Effects"
 msgstr ""
 
-#: src/fileio.c:116 src/fileio.c:257
+#: src/fileio.c:112 src/fileio.c:253
 msgid "Could save temporary image file in /tmp."
 msgstr "Не вдалось зберегти тимчасовий файл зображення в /tmp."
 
-#: src/fileio.c:128
+#: src/fileio.c:124
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Не вдалось створити зображення \"%s\"."
 
-#: src/fileio.c:136 src/fileio.c:419
+#: src/fileio.c:132 src/fileio.c:415
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Не вдалось зберегти зображення \"%s/%s\"."
 
-#: src/fileio.c:174
+#: src/fileio.c:170
 #, fuzzy, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "Трапилась помилка під час відкриття \"%s\"."
 
-#: src/fileio.c:211
+#: src/fileio.c:207
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
 msgstr "Трапилась помилка під час відкриття \"%s\"."
 
-#: src/fileio.c:265
+#: src/fileio.c:261
 #, fuzzy, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr "Не вдалось відкрити тимчасовий файл зображення \"%s\"."
 
-#: src/fileio.c:295
+#: src/fileio.c:291
 #, fuzzy, c-format
 msgid "An error occurred opening %s."
 msgstr "Трапилась помилка під час відкриття \"%s\"."
 
-#: src/fileio.c:306
+#: src/fileio.c:302
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "Трапилась помилка під час відкриття \"%s\"."
 
-#: src/fileio.c:317
+#: src/fileio.c:313
 #, fuzzy, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "Трапилась помилка запису в \"%s\"."
 
-#: src/fileio.c:325
+#: src/fileio.c:321
 #, fuzzy, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "Трапилась помилка під час відкриття \"%s\"."
 
-#: src/fileio.c:393
+#: src/fileio.c:389
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Не вдалось створити каталог \"%s\"."
 
-#: src/fileio.c:404
+#: src/fileio.c:400
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Не вдалось відкрити каталог \"%s\"."
 
-#: src/filter.c:170
+#: src/filter.c:171
 #, fuzzy
 msgid "Color Correction"
 msgstr "Корекція кольору"
 
-#: src/filter.c:195
+#: src/filter.c:196
 msgid "Invert"
 msgstr ""
 
-#: src/filter.c:234
+#: src/filter.c:235
 #, fuzzy
 msgid "Threshold (Overall)"
 msgstr "Поріг"
 
-#: src/filter.c:276
+#: src/filter.c:277
 msgid "Threshold (Per Channel)"
 msgstr ""
 
-#: src/filter.c:349
+#: src/filter.c:350
 msgid "Wacky"
 msgstr "Дивне перетворення"
 
-#: src/filter.c:450
+#: src/filter.c:451
 #, fuzzy
 msgid "Smooth"
 msgstr "Згладжування"
 
-#: src/filter.c:481
+#: src/filter.c:482
 msgid "Monochrome"
 msgstr ""
 
-#: src/filter.c:511
+#: src/filter.c:512
 msgid "Monochrome (Weight)"
 msgstr ""
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:563
+#: src/filter.c:564
 msgid "Sobel"
 msgstr "Перетворення Собеля"
 
@@ -422,17 +425,13 @@ msgid "use read() rather than mmap()"
 msgstr ""
 
 #: src/main.c:73
-msgid "camorama"
-msgstr "camorama"
-
-#: src/main.c:75
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:87
 #, c-format
 msgid ""
 "\n"
@@ -445,13 +444,13 @@ msgstr ""
 "Camorama версії %s\n"
 "\n"
 
-#: src/main.c:210
+#: src/main.c:209
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Не вдалось віднайти файл зображення: %s"
 
-#: src/v4l.c:117 src/v4l.c:222 src/v4l.c:303 src/v4l.c:372 src/v4l.c:390
-#: src/v4l.c:410
+#: src/v4l.c:115 src/v4l.c:220 src/v4l.c:300 src/v4l.c:368 src/v4l.c:386
+#: src/v4l.c:406
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -460,40 +459,44 @@ msgstr ""
 "Не вдалося встановити з'єднання з відеопристроєм (%s).\n"
 "Будь ласка, перевірте з'єднання."
 
-#: src/v4l.c:438
+#: src/v4l.c:434
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:453
+#: src/v4l.c:449
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:466
+#: src/v4l.c:462
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:479
+#: src/v4l.c:475
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:488
+#: src/v4l.c:484
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:516
+#: src/v4l.c:512
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:576
+#: src/v4l.c:574
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#, fuzzy
+#~ msgid "camorama.png"
+#~ msgstr "camorama"
 
 #~ msgid "Username:"
 #~ msgstr "Користувач"
