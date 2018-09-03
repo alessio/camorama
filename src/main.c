@@ -48,8 +48,6 @@ main(int argc, char *argv[]) {
     cam cam_object, *cam;
     Display *display;
     Screen *screen_num;
-    gchar *pixfilename = "camorama/camorama.png";
-    GtkWidget *button;
     GConfClient *gc;
     unsigned int bufsize;
     GError *error = NULL;
@@ -166,6 +164,7 @@ main(int argc, char *argv[]) {
     /* get desktop depth */
     display = (Display *) gdk_x11_get_default_xdisplay ();
     screen_num = xlib_rgb_get_screen ();
+
     gdk_pixbuf_xlib_init (display, 0);
     cam->desk_depth = xlib_rgb_get_depth ();
 

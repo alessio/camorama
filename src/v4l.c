@@ -7,7 +7,6 @@
 #include "support.h"
 
 extern int frame_number;
-extern int errno;
 
 void print_cam(cam *cam){
    printf("\nCamera Info\n");
@@ -34,12 +33,12 @@ void print_cam(cam *cam){
       printf("timestamp = %s\n\n",cam->ts_string);
 }
 
-void insert_resolution(cam * cam, int x, int y)
+static void insert_resolution(cam * cam, int x, int y)
 {
    int i;
 
    try_set_win_info(cam, &x, &y);
-   for (i = 0; i++; i < cam->n_res) {
+   for (i = 0; i < cam->n_res; i++) {
       if (cam->res[i].x == x && cam->res[i].y == y)
          return;
    }
@@ -69,7 +68,6 @@ void get_supported_resolutions(cam * cam)
 {
    struct v4l2_fmtdesc fmt;
    struct v4l2_frmsizeenum frmsize;
-   struct v4l2_frmivalenum frmival;
    int i, x, y;
 
    fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
@@ -133,15 +131,15 @@ void camera_cap(cam * cam)
       if (v4l2_ioctl(cam->dev, VIDIOC_ENUM_FMT, &fmtdesc))
          break;
 
-   if(cam->debug == TRUE)
-      printf("format index %d: FOURCC: '%c%c%c%c' (%08x)%s\n", i,
-             fmtdesc.pixelformat & 0xff,
-             (fmtdesc.pixelformat >> 8) & 0xff,
-             (fmtdesc.pixelformat >> 16) & 0xff,
-             fmtdesc.pixelformat >> 24,
-             fmtdesc.pixelformat,
-             fmtdesc.flags & V4L2_FMT_FLAG_EMULATED ? " (emulated)" : ""
-            );
+      if (cam->debug == TRUE)
+         printf("format index %d: FOURCC: '%c%c%c%c' (%08x)%s\n", i,
+                fmtdesc.pixelformat & 0xff,
+                (fmtdesc.pixelformat >> 8) & 0xff,
+                (fmtdesc.pixelformat >> 16) & 0xff,
+                fmtdesc.pixelformat >> 24,
+                fmtdesc.pixelformat,
+                fmtdesc.flags & V4L2_FMT_FLAG_EMULATED ? " (emulated)" : ""
+               );
 
       /* FIXME: add a check for emulated formats */
 
@@ -229,7 +227,7 @@ void camera_cap(cam * cam)
       cam->read = TRUE;
    }
 
-   strncpy(cam->name, vid_cap.card, sizeof(cam->name));
+   strncpy(cam->name, (const char *)vid_cap.card, sizeof(cam->name));
    cam->name[sizeof(cam->name) - 1] = '\0';
 
    if(cam->debug == TRUE) {
@@ -244,7 +242,6 @@ void camera_cap(cam * cam)
 }
 
 void get_pic_info(cam * cam){
-   char *msg;
    int i;
 
    if(cam->debug == TRUE)
@@ -342,7 +339,6 @@ void get_win_info(cam * cam)
 
 void try_set_win_info(cam * cam, int *x, int *y)
 {
-   gchar *msg;
    struct v4l2_format fmt;
 
    memset(&fmt, 0, sizeof(fmt));
@@ -544,7 +540,7 @@ void stop_streaming(cam * cam)
    unsigned int i;
    int r;
    enum v4l2_buf_type		type;
-   fd_set fds;
+   fd_set fds, fderrs;
    struct v4l2_buffer buf;
    struct timeval tv;
 
@@ -552,12 +548,14 @@ void stop_streaming(cam * cam)
    for (i = 0; i < cam->n_buffers; ++i) {
       FD_ZERO(&fds);
       FD_SET(cam->dev, &fds);
+      FD_ZERO(&fderrs);
+      FD_SET(cam->dev, &fderrs);
 
       /* Timeout. */
       tv.tv_sec = 2;
       tv.tv_usec = 0;
 
-      r = select(cam->dev + 1, &fds, NULL, &fds, &tv);
+      r = select(cam->dev + 1, &fds, NULL, &fderrs, &tv);
       if (r == -1 && errno == EINTR)
          continue;
 

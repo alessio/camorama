@@ -46,6 +46,18 @@ GType camorama_filter_get_type        (void);
 GType camorama_filter_mirror_get_type (void);
 GType camorama_filter_laplace_get_type(void);
 GType camorama_filter_reichardt_get_type(void);
+GType camorama_filter_color_get_type(void);
+GType camorama_filter_invert_get_type(void);
+GType camorama_filter_threshold_get_type(void);
+GType camorama_filter_threshold_channel_get_type(void);
+GType camorama_filter_wacky_get_type(void);
+GType camorama_filter_mono_get_type(void);
+GType camorama_filter_mono_weight_get_type(void);
+GType camorama_filter_sobel_get_type(void);
+GType camorama_filter_smooth_get_type(void);
+
+void
+camorama_filter_color_filter(void *__filter, guchar *image, int x, int y, int depth);
 
 void         camorama_filters_init   (void);
 gchar const* camorama_filter_get_name(CamoramaFilter* self);

@@ -23,7 +23,6 @@ add_default_image(const gchar* stock_id, gint size, gchar *pixfilename)
 
 void
 camorama_stock_init(void) {
-	gchar *pixfilename;
 	GtkIconFactory* factory = gtk_icon_factory_new();
 	GtkIconSet    * set = gtk_icon_set_new ();
 	GtkIconSource * source = gtk_icon_source_new();
