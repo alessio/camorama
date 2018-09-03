@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2018-09-03 15:15-0300\n"
-"PO-Revision-Date: 2018-08-28 07:51-0300\n"
+"PO-Revision-Date: 2018-09-03 15:18-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -46,7 +46,7 @@ msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;visualizador;efeitos-de-video;"
 
 #: data/camorama.ui:35
 msgid "Preferences"
