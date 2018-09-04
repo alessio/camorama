@@ -12,7 +12,7 @@ void print_cam(cam_t *cam){
    printf("\nCamera Info\n");
    printf("-----------\n");
    printf("device = %s, x = %d, y = %d\n",cam->video_dev, cam->width,cam->height);
-   printf("bits per pixel = %d, desk_depth = %d\n", cam->bpp, cam->desk_depth);
+   printf("bits per pixel = %d\n", cam->bpp);
    if(cam->width <= 0 || cam->height <= 0) {
       switch (cam->size) {
       case PICMAX:

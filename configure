@@ -9641,7 +9641,7 @@ else
 fi
 
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 gconf-2.0"
+pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
 if test "x$enable_gtk3" = xyes; then
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"

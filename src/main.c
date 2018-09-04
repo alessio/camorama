@@ -8,8 +8,6 @@
 #include <config.h>
 
 #include <gdk/gdkx.h>
-#include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
-#include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
 #include <glib/gi18n.h>
 #include <locale.h>
 #include <libv4l2.h>
@@ -51,8 +49,6 @@ static GOptionEntry options[] = {
 int
 main(int argc, char *argv[]) {
     cam_t cam_object, *cam;
-    Display *display;
-    Screen *screen_num;
     GConfClient *gc;
     GtkWidget *widget;
     unsigned int bufsize;
@@ -169,13 +165,6 @@ main(int argc, char *argv[]) {
     cam->timeout_interval = gconf_client_get_int (cam->gc, KEY21, NULL);
     cam->show_adjustments = gconf_client_get_bool (cam->gc, KEY22, NULL);
     cam->show_effects = gconf_client_get_bool (cam->gc, KEY23, NULL);
-
-    /* get desktop depth */
-    display = (Display *) gdk_x11_get_default_xdisplay ();
-    screen_num = xlib_rgb_get_screen ();
-
-    gdk_pixbuf_xlib_init (display, 0);
-    cam->desk_depth = xlib_rgb_get_depth ();
 
     if (use_read)
         cam->dev = v4l2_open (cam->video_dev, O_RDWR);

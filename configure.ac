@@ -38,7 +38,7 @@ AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])
 
 AC_ARG_ENABLE(gtk3, [AC_HELP_STRING([--enable-gtk3], [Compile against GTK 3.x instead of GTK 2.x])], [enable_gtk3=$enableval], [enable_gtk3="no"])
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 gconf-2.0"
+pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
 if test "x$enable_gtk3" = xyes; then
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"

@@ -51,7 +51,6 @@ typedef struct camera {
    int dev;
    unsigned int width, height;
    int bpp;
-   int desk_depth;
    CamoImageSize size;
    char name[32];
    int contrast, brightness, whiteness, colour, hue, bytesperline;
