@@ -107,23 +107,23 @@ main(int argc, char *argv[]) {
 
     gconf_client_add_dir (cam->gc, PATH, GCONF_CLIENT_PRELOAD_NONE, NULL);
     gconf_client_notify_add (cam->gc, KEY1, (void *) gconf_notify_func,
-                             cam->pixdir, NULL, NULL);
+                             &cam->pixdir, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY2, (void *) gconf_notify_func,
-                             cam->capturefile, NULL, NULL);
+                             &cam->capturefile, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY3,
                              (void *) gconf_notify_func_int,
-                             GINT_TO_POINTER (cam->savetype), NULL, NULL);
+                             &cam->savetype, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY4,
                              (void *) gconf_notify_func_bool,
                              &cam->timestamp, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY5, (void *) gconf_notify_func,
-                             cam->host, NULL, NULL);
+                             &cam->host, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY6, (void *) gconf_notify_func,
-                             cam->proto, NULL, NULL);
+                             &cam->proto, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY8, (void *) gconf_notify_func,
-                             cam->rdir, NULL, NULL);
+                             &cam->rdir, NULL, NULL);
     gconf_client_notify_add (cam->gc, KEY9, (void *) gconf_notify_func,
-                             cam->rcapturefile, NULL, NULL);
+                             &cam->rcapturefile, NULL, NULL);
 
     if (!poopoo) {
 	gchar const* gconf_device = gconf_client_get_string(cam->gc, KEY_DEVICE, NULL);

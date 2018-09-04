@@ -197,32 +197,32 @@ void rts_func (GtkWidget * rb, cam_t *cam)
 
 void
 gconf_notify_func (GConfClient * client, guint cnxn_id, GConfEntry * entry,
-                   char *str)
+                   char **str)
 {
     GConfValue *value;
 
     value = gconf_entry_get_value (entry);
-    str = g_strdup (gconf_value_get_string (value));
+    *str = g_strdup (gconf_value_get_string (value));
 
 }
 
 void
 gconf_notify_func_bool (GConfClient * client, guint cnxn_id,
-                        GConfEntry * entry, gboolean val)
+                        GConfEntry * entry, gboolean *val)
 {
     GConfValue *value;
     value = gconf_entry_get_value (entry);
-    val = gconf_value_get_bool (value);
+    *val = gconf_value_get_bool (value);
 
 }
 
 void
 gconf_notify_func_int (GConfClient * client, guint cnxn_id,
-                       GConfEntry * entry, int val)
+                       GConfEntry * entry, int *val)
 {
     GConfValue *value;
     value = gconf_entry_get_value (entry);
-    val = gconf_value_get_int (value);
+    *val = gconf_value_get_int (value);
 
 }
 
