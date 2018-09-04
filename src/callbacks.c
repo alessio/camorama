@@ -489,12 +489,6 @@ apply_filters(cam_t *cam) {
 	   filter to fix things up before running the user selected filters */
 	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
 	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
-#warning "FIXME: enable the threshold channel filter"
-//	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
-//		threshold_channel (cam->pic_buf, cam->width, cam->height, cam->dither);
-#warning "FIXME: enable the threshold filter"
-//	if((effect_mask & CAMORAMA_FILTER_THRESHOLD)  != 0) 
-//		threshold (cam->pic_buf, cam->width, cam->height, cam->dither);
 }
 
 #define MULT(d,c,a,t) G_STMT_START { t = c * a + 0x7f; d = ((t >> 8) + t) >> 8; } G_STMT_END
