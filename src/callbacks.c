@@ -23,18 +23,12 @@ extern const gchar * const protos[];
 
 void ts_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->timestamp = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY4, cam->timestamp, NULL);
 }
 
 void customstring_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->usestring = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY18, cam->usestring, NULL);
     gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object
@@ -43,18 +37,12 @@ void customstring_func (GtkWidget * rb, cam_t *cam)
 
 void drawdate_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->usedate = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY19, cam->usedate, NULL);
 }
 
 void append_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->timefn = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY14, cam->timefn, NULL);
 
@@ -62,9 +50,6 @@ void append_func (GtkWidget * rb, cam_t *cam)
 
 void rappend_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->rtimefn = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY15, cam->rtimefn, NULL);
 
@@ -72,9 +57,6 @@ void rappend_func (GtkWidget * rb, cam_t *cam)
 
 void jpg_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->savetype = JPEG;
     gconf_client_set_int (cam->gc, KEY3, cam->savetype, NULL);
 
@@ -82,18 +64,12 @@ void jpg_func (GtkWidget * rb, cam_t *cam)
 
 void png_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->savetype = PNG;
     gconf_client_set_int (cam->gc, KEY3, cam->savetype, NULL);
 }
 
 void ppm_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->savetype = PPM;
     gconf_client_set_int (cam->gc, KEY3, cam->savetype, NULL);
 }
@@ -128,9 +104,6 @@ void set_sensitive (cam_t *cam)
 
 void cap_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->cap = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
 
     gconf_client_set_bool (cam->gc, KEY12, cam->cap, NULL);
@@ -141,9 +114,6 @@ void cap_func (GtkWidget * rb, cam_t *cam)
 
 void rcap_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->rcap = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY13, cam->rcap, NULL);
     update_tooltip (cam);
@@ -153,9 +123,6 @@ void rcap_func (GtkWidget * rb, cam_t *cam)
 
 void acap_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->acap = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
 
     gconf_client_set_bool (cam->gc, KEY20, cam->acap, NULL);
@@ -181,9 +148,6 @@ void acap_func (GtkWidget * rb, cam_t *cam)
 
 void interval_change (GtkWidget * sb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->timeout_interval =
         gtk_spin_button_get_value ((GtkSpinButton *) sb) * 60000;
     gconf_client_set_int (cam->gc, KEY21, cam->timeout_interval, NULL);
@@ -207,9 +171,6 @@ void interval_change (GtkWidget * sb, cam_t *cam)
 
 void rjpg_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->rsavetype = JPEG;
     gconf_client_set_int (cam->gc, KEY10, cam->rsavetype, NULL);
 
@@ -217,27 +178,18 @@ void rjpg_func (GtkWidget * rb, cam_t *cam)
 
 void rpng_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->rsavetype = PNG;
     gconf_client_set_int (cam->gc, KEY10, cam->rsavetype, NULL);
 }
 
 void rppm_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->rsavetype = PPM;
     gconf_client_set_int (cam->gc, KEY10, cam->rsavetype, NULL);
 }
 
 void rts_func (GtkWidget * rb, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
     cam->rtimestamp = gtk_toggle_button_get_active ((GtkToggleButton *) rb);
     gconf_client_set_bool (cam->gc, KEY11, cam->rtimestamp, NULL);
 
@@ -351,10 +303,6 @@ static int apply_remote_pref(cam_t *cam)
  */
 void prefs_func (GtkWidget * okbutton, cam_t *cam)
 {
-    GConfClient *client;
-
-    client = gconf_client_get_default ();
-
     if (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry)) {
         cam->pixdir = g_strdup (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry));
         gconf_client_set_string (cam->gc, KEY1, cam->pixdir, NULL);
