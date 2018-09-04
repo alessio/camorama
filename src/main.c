@@ -65,6 +65,7 @@ int main(int argc, char *argv[])
     cam->height = 0;
     cam->res = NULL;
     cam->n_res = 0;
+    cam->scale = 1.f;
 
     bindtextdomain(PACKAGE_NAME, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
@@ -84,6 +85,9 @@ int main(int argc, char *argv[])
 
     cam->width = x;
     cam->height = y;
+
+    cam->screen_width  = gdk_screen_width();
+    cam->screen_height = gdk_screen_height();
 
     if (ver) {
         fprintf(stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);

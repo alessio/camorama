@@ -50,7 +50,9 @@ struct resolutions {
 typedef struct camera {
     int dev;
     unsigned int width, height;
+    unsigned int screen_width, screen_height;
     int bpp;
+    float scale;
     CamoImageSize size;
     char name[32];
     int contrast, brightness, whiteness, colour, hue, bytesperline;
