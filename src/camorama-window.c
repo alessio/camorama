@@ -74,10 +74,8 @@ delete_filter_clicked(GtkTreeSelection* sel, GtkMenuItem* menuitem) {
 	struct weak_target target = {model, NULL};
 	g_list_foreach(paths, G_FUNC(reference_path), &target);
 	g_list_foreach(target.list, G_FUNC(delete_filter), model);
-	g_list_foreach(target.list, G_FUNC(gtk_tree_row_reference_free), NULL);
-	g_list_free(target.list);
-	g_list_foreach(paths, G_FUNC(gtk_tree_path_free), NULL);
-	g_list_free(paths);
+	g_list_free_full(target.list, (GDestroyNotify)gtk_tree_row_reference_free);
+	g_list_free_full(paths, (GDestroyNotify)gtk_tree_path_free);
 }
 
 static void
