@@ -282,15 +282,18 @@ int delete_event (GtkWidget * widget, gpointer data)
 
 static int apply_remote_pref(cam_t *cam)
 {
+    int index;
+    gchar *host, *rdir, *proto, *rfile, *uri;
+
     if (!strlen (gtk_entry_get_text ((GtkEntry *) host_entry)))
         return 0;
 
-    int index = gtk_combo_box_get_active(GTK_COMBO_BOX(protocol));
+    index = gtk_combo_box_get_active(GTK_COMBO_BOX(protocol));
 
-    gchar *host = g_strdup (gtk_entry_get_text ((GtkEntry *) host_entry));
-    gchar *rdir = g_strdup (gtk_entry_get_text ((GtkEntry *) rdir_entry));
-    gchar *proto = g_strdup (protos[index]);
-    gchar *rfile = g_strdup (gtk_entry_get_text ((GtkEntry *) filename_entry));
+    host = g_strdup (gtk_entry_get_text ((GtkEntry *) host_entry));
+    rdir = g_strdup (gtk_entry_get_text ((GtkEntry *) rdir_entry));
+    proto = g_strdup (protos[index]);
+    rfile = g_strdup (gtk_entry_get_text ((GtkEntry *) filename_entry));
 
     if (!host || !proto || !rdir || !rfile) {
         if (host)
@@ -304,7 +307,7 @@ static int apply_remote_pref(cam_t *cam)
         return 0;
     }
 
-    gchar *uri = volume_uri(host, proto, rdir);
+    uri = volume_uri(host, proto, rdir);
 
     if (cam->rdir_ok) {
         /* unmount/mount can spend time. Do only if URI changed */
@@ -399,9 +402,9 @@ void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data)
 
 void on_change_size_activate (GtkWidget * widget, cam_t *cam)
 {
-    gchar const *name;
-    gchar       *title;
-    int         width = 0, height = 0;
+    gchar const  *name;
+    gchar        *title;
+    unsigned int width = 0, height = 0;
 
     name = gtk_widget_get_name (widget);
 
@@ -564,11 +567,8 @@ static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
     int n_channels = gdk_pixbuf_get_n_channels (pixbuf);
     int cairo_stride;
     guchar *cairo_pixels;
-    cairo_format_t format;
     cairo_surface_t *surface;
     int j;
-
-    format = CAIRO_FORMAT_RGB24;
 
     surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24,
                                           width, height);
@@ -629,8 +629,11 @@ static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
 
 static void show_buffer(cam_t *cam)
 {
-    int i;
     GdkPixbuf *pb;
+    GtkWidget *widget;
+    GdkWindow *window;
+    cairo_surface_t *surface;
+    cairo_t *cr;
     unsigned char *pic_buf = cam->pic_buf;
     const GdkRectangle rect = {
         .x = 0, .y = 0,
@@ -654,11 +657,11 @@ static void show_buffer(cam_t *cam)
                                   (cam->width * cam->bpp / 8), NULL,
                                   NULL);
 
-    GtkWidget *widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
-    GdkWindow *window = gtk_widget_get_window(widget);
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
+    window = gtk_widget_get_window(widget);
 
-    cairo_surface_t *surface = create_from_pixbuf(pb, window);
-    cairo_t *cr = gdk_cairo_create(window);
+    surface = create_from_pixbuf(pb, window);
+    cr = gdk_cairo_create(window);
     cairo_set_source_surface(cr, surface, 0, 0);
 
     gdk_cairo_rectangle(cr, &rect);
@@ -699,8 +702,7 @@ gint fps (GtkWidget * sb)
 
     seconds++;
     stat = g_strdup_printf (_("%.2f fps - current     %.2f fps - average"),
-                            (float) frames / (float) (2),
-                            (float) frames2 / (float) (seconds * 2));
+                            frames / 2., frames2 / (seconds * 2.));
     frames = 0;
     gtk_statusbar_push (GTK_STATUSBAR(sb), cont, stat);
     g_free (stat);
@@ -793,19 +795,6 @@ void wb_change (GtkHScale * sc1, cam_t *cam)
 
     cam->whiteness = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
-}
-
-static void help_cb (GtkWidget * widget, gpointer data)
-{
-    GError *error = NULL;
-
-    if (error != NULL) {
-        /*
-         * FIXME: This is bad :) 
-         */
-        g_warning ("%s\n", error->message);
-        g_error_free (error);
-    }
 }
 
 void update_tooltip (cam_t *cam)

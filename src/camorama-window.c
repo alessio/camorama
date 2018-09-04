@@ -188,18 +188,19 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
 
 void
 load_interface(cam_t *cam) {
-    int i;
+    unsigned int i;
     gchar *title;
     GdkPixbuf *logo = NULL;
     GtkCellRenderer*     cell;
     GtkWidget *small_res, *new_res;
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "main_window"));
+    GtkTreeView* treeview;
 
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 
     /* set up the tree view */
-    GtkTreeView* treeview = GTK_TREE_VIEW(gtk_builder_get_object(cam->xml, "treeview_effects"));
+    treeview = GTK_TREE_VIEW(gtk_builder_get_object(cam->xml, "treeview_effects"));
     cell = gtk_cell_renderer_text_new();
     g_object_set(cell, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
     gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT(cell), 1);

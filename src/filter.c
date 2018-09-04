@@ -153,7 +153,6 @@ camorama_filter_color_init(CamoramaFilterColor* self) {}
 
 void
 camorama_filter_color_filter(void *__filter, guchar *image, int x, int y, int depth) {
-	CamoramaFilterColor *filter = __filter;
 	int i;
 	char tmp;
 	i = x * y;
@@ -181,9 +180,7 @@ static void
 camorama_filter_invert_init(CamoramaFilterInvert* self) {}
 
 static void
-camorama_filter_invert_filter(CamoramaFilter* filter, guchar *image, int x, int y, int depth) {
-#warning "FIXME: add a checking cast here"
-	CamoramaFilterInvert* self = (CamoramaFilterInvert*)filter;
+camorama_filter_invert_filter(void * filter, guchar *image, int x, int y, int depth) {
 	int i;
 	for (i = 0; i < x * y * depth; i++) {
 		image[i] = 255 - image[i];
@@ -211,9 +208,8 @@ camorama_filter_threshold_init(CamoramaFilterThreshold* self) {
 }
 
 static void
-camorama_filter_threshold_filter(CamoramaFilter* filter, guchar *image, int x, int y, int depth) {
-#warning "FIXME: cast"
-    CamoramaFilterThreshold* self = (CamoramaFilterThreshold*)filter;
+camorama_filter_threshold_filter(void * filter, guchar *image, int x, int y, int depth) {
+    CamoramaFilterThreshold* self = filter;
     int i;
     for (i = 0; i < x * y; i++) {
         if ((image[0] + image[1] + image[2]) > (self->threshold * 3)) {
@@ -247,9 +243,8 @@ camorama_filter_threshold_channel_init(CamoramaFilterThresholdChannel* self) {
 }
 
 static void
-camorama_filter_threshold_channel_filter(CamoramaFilter* filter, unsigned char *image, int x, int y, int depth) {
-#warning "FIXME: cast"
-    CamoramaFilterThresholdChannel* self = (CamoramaFilterThresholdChannel*)filter;
+camorama_filter_threshold_channel_filter(void *filter, unsigned char *image, int x, int y, int depth) {
+    CamoramaFilterThresholdChannel* self = filter;
     int i;
     for (i = 0; i < x * y; i++) {
         if (image[0] > self->threshold) {
@@ -287,14 +282,13 @@ static void
 camorama_filter_wacky_init(CamoramaFilterWacky* self) {}
 
 static void
-camorama_filter_wacky_filter(CamoramaFilter* filter, unsigned char *image, int x, int y, int depth) {
+camorama_filter_wacky_filter(void *filter, unsigned char *image, int x, int y, int depth) {
     int i;
     int neighbours;
     int total;
-    unsigned char *image2, *image3;
+    unsigned char *image2;
     image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * depth);
     memcpy (image2, image, x * y * depth);
-    image3 = image2;
 
     for (i = 0; i < x * y; i++) {
         total = 0;
@@ -360,7 +354,7 @@ static void
 camorama_filter_smooth_init(CamoramaFilterSmooth* self) {}
 
 static void
-camorama_filter_smooth_filter(CamoramaFilter* filter, guchar *image, int x, int y, int depth) {
+camorama_filter_smooth_filter(void * filter, guchar *image, int x, int y, int depth) {
     int i;
     int neighbours;
     int total0, total1, total2;
@@ -461,7 +455,7 @@ static void
 camorama_filter_mono_init(CamoramaFilterMono* self) {}
 
 static void
-camorama_filter_mono_filter(CamoramaFilter* filter, unsigned char *image, int x, int y, int depth) {
+camorama_filter_mono_filter(void *filter, unsigned char *image, int x, int y, int depth) {
     int i;
     int total, avg;
 
@@ -492,7 +486,7 @@ static void
 camorama_filter_mono_weight_init(CamoramaFilterMonoWeight* self) {}
 
 static void
-camorama_filter_mono_weight_filter(CamoramaFilter* filter, unsigned char *image, int x, int y, int depth) {
+camorama_filter_mono_weight_filter(void *filter, unsigned char *image, int x, int y, int depth) {
     int i;
     int avg;
     for (i = 0; i < x * y; i++) {
@@ -523,7 +517,7 @@ camorama_filter_sobel_init(CamoramaFilterSobel* self) {}
 
 /* fix this at some point, very slow */
 static void
-camorama_filter_sobel_filter(CamoramaFilter* filter, unsigned char *image, int x, int y, int depth) {
+camorama_filter_sobel_filter(void *filter, unsigned char *image, int x, int y, int depth) {
     int i, j, grad[3];
     int deltaX[3], deltaY[3];
     int width = x * 3;

@@ -76,7 +76,7 @@ struct _CamoramaFilterClass {
 
 	gchar const* name;
 
-	void (*filter) (CamoramaFilter* self,
+	void (*filter) (void          * self,
 			guchar        * image,
 			gint            width,
 			gint            height,

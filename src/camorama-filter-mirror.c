@@ -39,7 +39,7 @@ static void
 camorama_filter_mirror_init(CamoramaFilterMirror* self) {}
 
 static void
-camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) {
+camorama_filter_mirror_filter(void * filter, guchar *image, gint width, gint height, gint depth) {
 	gint x, z, row_length, image_length, new_row, next_row, half_row, index1, index2;
 	guchar temp;
 

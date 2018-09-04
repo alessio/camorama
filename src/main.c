@@ -21,6 +21,10 @@ static int half = 0, use_read = 0, buggery = 0;
 static gchar *poopoo = NULL;
 static int x = -1, y = -1;
 
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
+
 static GOptionEntry options[] = {
     {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
       N_("show version and exit"), NULL},
@@ -42,6 +46,7 @@ static GOptionEntry options[] = {
       N_("use read() rather than mmap()"), NULL},
     { NULL }
 };
+#pragma GCC diagnostic pop
 
 int
 main(int argc, char *argv[]) {
@@ -49,6 +54,7 @@ main(int argc, char *argv[]) {
     Display *display;
     Screen *screen_num;
     GConfClient *gc;
+    GtkWidget *widget;
     unsigned int bufsize;
     GError *error = NULL;
 
@@ -134,6 +140,11 @@ main(int argc, char *argv[]) {
         cam->video_dev = g_strdup (poopoo);
     }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
+    cam->date_format = "%Y-%m-%d %H:%M:%S";
+#pragma GCC diagnostic pop
+
     cam->pixdir = g_strdup (gconf_client_get_string (cam->gc, KEY1, NULL));
     cam->capturefile =
         g_strdup (gconf_client_get_string (cam->gc, KEY2, NULL));
@@ -145,7 +156,6 @@ main(int argc, char *argv[]) {
     cam->rsavetype = gconf_client_get_int (cam->gc, KEY10, NULL);
     cam->ts_string =
         g_strdup (gconf_client_get_string (cam->gc, KEY16, NULL));
-    cam->date_format = "%Y-%m-%d %H:%M:%S";
     cam->timestamp = gconf_client_get_bool (cam->gc, KEY4, NULL);
     cam->rtimestamp = gconf_client_get_bool (cam->gc, KEY11, NULL);
 
@@ -159,7 +169,6 @@ main(int argc, char *argv[]) {
     cam->timeout_interval = gconf_client_get_int (cam->gc, KEY21, NULL);
     cam->show_adjustments = gconf_client_get_bool (cam->gc, KEY22, NULL);
     cam->show_effects = gconf_client_get_bool (cam->gc, KEY23, NULL);
-
 
     /* get desktop depth */
     display = (Display *) gdk_x11_get_default_xdisplay ();
@@ -221,7 +230,7 @@ main(int argc, char *argv[]) {
      * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface (cam);
 
-    GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
+    widget = GTK_WIDGET (gtk_builder_get_object (cam->xml, "da"));
     gtk_widget_show (widget);
 
     cam->idle_id = g_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);

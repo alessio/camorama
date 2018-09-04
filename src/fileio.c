@@ -36,6 +36,8 @@ add_rgb_text (guchar *image, int width, int height, char *cstring, char *format,
         image_label = g_strdup_printf ("%s", format);
     } else if (str == FALSE && date == FALSE) {
         return 0;
+    } else {
+        image_label = g_strdup("");
     }
 
     time (&t);
@@ -137,8 +139,14 @@ void remote_save (cam_t *cam)
 
     g_free (filename);
 
-    remote_thread =
-        g_thread_new ("remote", (GThreadFunc) save_thread, cam);
+    remote_thread = g_thread_new ("remote", &save_thread, cam);
+    if (!remote_thread) {
+        error_message =
+            g_strdup_printf (_("Could not create a thread to save image '%s/%s'."),
+                             cam->pixdir, filename);
+        error_dialog (error_message);
+    }
+
     g_free (ext);
 }
 
@@ -181,8 +189,6 @@ gchar *volume_uri(gchar *host, gchar *proto, gchar *rdir)
 
 void umount_volume(cam_t *cam)
 {
-    struct mount_params mount;
-
     /* Unmount previous volume */
     if (!cam->rdir_ok)
         return;
@@ -216,26 +222,24 @@ void mount_volume(cam_t *cam)
                                   cam->rdir_mop, NULL, mount_cb, cam);
 }
 
-void save_thread (cam_t *cam)
+gpointer save_thread (gpointer data)
 {
+    cam_t *cam = data;
     char *output_uri_string, *input_uri_string;
     GFile *uri_1;
     GFileOutputStream *fout;
     unsigned char *tmp;
-    gboolean test;
-    char *filename, *error_message;
+    char *error_message;
     FILE *fp;
     int bytes = 0;
     time_t t;
     char timenow[64], *ext;
     struct tm *tm;
-    gboolean pbs;
-    GdkPixbuf *pb;
     GError *error = NULL;
 
     /* Check if it is ready to mount */
     if (!cam->rdir_ok)
-        return;
+        return NULL;
 
     switch (cam->rsavetype) {
     case JPEG:
@@ -327,11 +331,12 @@ void save_thread (cam_t *cam)
     g_object_unref(uri_1);
     free (tmp);
 	 g_thread_exit (NULL);
+
+    return NULL;
 }
 
 int local_save (cam_t *cam)
 {
-    int fc;
     gchar *filename, *ext;
     time_t t;
     struct tm *tm;
@@ -362,6 +367,8 @@ int local_save (cam_t *cam)
     time (&t);
     tm = localtime (&t);
     len = strftime (timenow, sizeof (timenow) - 1, "%s", tm);
+    if (len < 0)
+        timenow[0] = '\0';
 
     if (cam->debug == TRUE) {
         fprintf (stderr, "time = %s\n", timenow);

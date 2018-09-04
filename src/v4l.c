@@ -33,9 +33,9 @@ void print_cam(cam_t *cam){
       printf("timestamp = %s\n\n",cam->ts_string);
 }
 
-static void insert_resolution(cam_t *cam, int x, int y)
+static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y)
 {
-   int i;
+   unsigned int i;
 
    try_set_win_info(cam, &x, &y);
    for (i = 0; i < cam->n_res; i++) {
@@ -68,7 +68,8 @@ void get_supported_resolutions(cam_t *cam)
 {
    struct v4l2_fmtdesc fmt;
    struct v4l2_frmsizeenum frmsize;
-   int i, x, y;
+   int i;
+   unsigned int x, y;
 
    fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
@@ -337,7 +338,7 @@ void get_win_info(cam_t *cam)
    }
 }
 
-void try_set_win_info(cam_t *cam, int *x, int *y)
+void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y)
 {
    struct v4l2_format fmt;
 
@@ -488,11 +489,12 @@ void start_streaming(cam_t *cam)
    }
 }
 
-void capture_buffers(cam_t *cam, unsigned char *outbuf, int len)
+void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len)
 {
    char *msg;
    unsigned char *inbuf;
-   int r, y;
+   int r;
+   unsigned int y;
    fd_set fds;
    struct v4l2_buffer buf;
    struct timeval tv;

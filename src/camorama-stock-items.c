@@ -7,12 +7,15 @@
 #include <glib/gi18n.h>
 #include "v4l.h"
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
 static GtkStockItem camorama_items[] = {
 	{CAMORAMA_STOCK_WEBCAM, N_("Webcam"), 0, 0, "camorama"}
 };
+#pragma GCC diagnostic pop
 
 static void
-add_default_image(const gchar* stock_id, gint size, gchar *pixfilename)
+add_default_image(const gchar* stock_id, gint size, const gchar *pixfilename)
 {
 	GdkPixbuf* buf = gdk_pixbuf_new_from_file(pixfilename, NULL);
 	g_return_if_fail(buf);

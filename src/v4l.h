@@ -44,13 +44,12 @@ struct buffer_start_len {
 };
 
 struct resolutions {
-    int x, y;
+    unsigned int x, y;
 };
 
 typedef struct camera {
    int dev;
-   int width;
-   int height;
+   unsigned int width, height;
    int bpp;
    int desk_depth;
    CamoImageSize size;
@@ -59,9 +58,9 @@ typedef struct camera {
    unsigned int pixformat;
    int frame_number;
 
-   int min_width, min_height, max_width, max_height;
+   unsigned int min_width, min_height, max_width, max_height;
 
-   int n_res;
+   unsigned int n_res;
    struct resolutions *res;
 
    char *video_dev;
@@ -100,13 +99,13 @@ typedef struct camera {
 
 void camera_cap (cam_t *);
 void print_cam (cam_t *);
-void try_set_win_info(cam_t *cam, int *x, int *y);
+void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y);
 void set_win_info (cam_t *cam);
 void get_pic_info (cam_t *);
 void get_win_info (cam_t *);
 void get_supported_resolutions(cam_t *cam);
 void start_streaming(cam_t *cam);
-void capture_buffers(cam_t *cam, unsigned char *outbuf, int len);
+void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len);
 void stop_streaming(cam_t *cam);
 
 #endif /* !CAMORAMA_V4L_H */

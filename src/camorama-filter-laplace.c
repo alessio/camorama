@@ -41,7 +41,7 @@ static void
 camorama_filter_laplace_init(CamoramaFilterLaplace* self) {}
 
 static void
-camorama_filter_laplace_filter(CamoramaFilter* filter, guchar *image, int width, int height, int depth) {
+camorama_filter_laplace_filter(void *filter, guchar *image, int width, int height, int depth) {
     int x, y;
     unsigned char *image2;
 	

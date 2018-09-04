@@ -150,7 +150,7 @@ static void MaybeNewMemory(gint width, gint height, gint depth)
 
 
 static void
-camorama_filter_reichardt_filter(CamoramaFilter* filter, guchar *image, gint width, gint height, gint depth) 
+camorama_filter_reichardt_filter(void *filter, guchar *image, gint width, gint height, gint depth)
 {
 	gint x, y, z, row_length, row, column, thisPixel, thisXY, thatXY;
 
