@@ -59,9 +59,9 @@ static int sort_func(const void *__b, const void *__a)
     const struct resolutions *b = __b;
     int r;
 
-    r = b->x - a->x;
+    r = (int)b->x - a->x;
     if (!r)
-        r = b->y - a->y;
+         r = (int)b->y - a->y;
 
     return r;
 }
@@ -129,8 +129,8 @@ void camera_cap(cam_t *cam)
     /* Query supported resolutions */
 
     cam->rdir_ok = FALSE;
-    cam->min_width = -1;
-    cam->min_height = -1;
+    cam->min_width = (unsigned)-1;
+    cam->min_height = (unsigned)-1;
     cam->max_width = 0;
     cam->max_height = 0;
     for (i = 0;; i++) {

@@ -17,7 +17,7 @@
 static int ver = 0, max = 0, min;
 static int half = 0, use_read = 0, buggery = 0;
 static gchar *poopoo = NULL;
-static int x = -1, y = -1;
+static int x = 0, y = 0;
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
