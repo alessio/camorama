@@ -381,7 +381,8 @@ void on_change_size_activate(GtkWidget *widget, cam_t *cam)
     cam->width = width;
     cam->height = height;
 
-    printf("name = %s\n", name);
+    if (cam->debug == TRUE)
+        printf("name = %s\n", name);
 
     if (cam->read == FALSE)
         stop_streaming(cam);
