@@ -28,10 +28,9 @@
 
 G_BEGIN_DECLS
 
-#define G_FUNC(func)	    ((GFunc)(func))
+#define G_FUNC(func)            ((GFunc)(func))
 #define G_SOURCE_FUNC(func) ((GSourceFunc)(func))
 
 G_END_DECLS
 
-#endif /* GLIB_HELPERS_H */
-
+#endif                          /* GLIB_HELPERS_H */

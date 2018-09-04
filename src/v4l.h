@@ -27,20 +27,20 @@
 #include "camorama-filter-chain.h"
 
 typedef enum {
-   PICMAX = 0,
-   PICMIN = 1,
-   PICHALF = 2
+    PICMAX = 0,
+    PICMIN = 1,
+    PICHALF = 2
 } CamoImageSize;
 
 enum {
-   JPEG = 0,
-   PNG = 1,
-   PPM = 2
+    JPEG = 0,
+    PNG = 1,
+    PPM = 2
 };
 
 struct buffer_start_len {
-   void   *start;
-   size_t length;
+    void *start;
+    size_t length;
 };
 
 struct resolutions {
@@ -48,64 +48,63 @@ struct resolutions {
 };
 
 typedef struct camera {
-   int dev;
-   unsigned int width, height;
-   int bpp;
-   CamoImageSize size;
-   char name[32];
-   int contrast, brightness, whiteness, colour, hue, bytesperline;
-   unsigned int pixformat;
-   int frame_number;
+    int dev;
+    unsigned int width, height;
+    int bpp;
+    CamoImageSize size;
+    char name[32];
+    int contrast, brightness, whiteness, colour, hue, bytesperline;
+    unsigned int pixformat;
+    int frame_number;
 
-   unsigned int min_width, min_height, max_width, max_height;
+    unsigned int min_width, min_height, max_width, max_height;
 
-   unsigned int n_res;
-   struct resolutions *res;
+    unsigned int n_res;
+    struct resolutions *res;
 
-   char *video_dev;
-   unsigned char *image;
-   gchar *capturefile, *rcapturefile;
-   gchar *pixdir, *host, *proto, *rdir, *uri;
-   int savetype, rsavetype;
-   gchar *ts_string;
-   gchar *date_format;
-   gboolean debug, read, hidden;
-   gboolean cap, rcap, acap, show_adjustments, show_effects;
-   gboolean timestamp, rtimestamp, usedate, usestring;
-   gboolean rtimefn, timefn;
-   GtkWidget *da, *tray_tooltip, *status;
-   unsigned char *pic_buf, *tmp;
-   guint timeout_id, idle_id;
-   guint32 timeout_interval;
-   GConfClient *gc;
-   GtkBuilder *xml;
-   GtkStatusIcon *tray_icon;
+    char *video_dev;
+    unsigned char *image;
+    gchar *capturefile, *rcapturefile;
+    gchar *pixdir, *host, *proto, *rdir, *uri;
+    int savetype, rsavetype;
+    gchar *ts_string;
+    gchar *date_format;
+    gboolean debug, read, hidden;
+    gboolean cap, rcap, acap, show_adjustments, show_effects;
+    gboolean timestamp, rtimestamp, usedate, usestring;
+    gboolean rtimefn, timefn;
+    GtkWidget *da, *tray_tooltip, *status;
+    unsigned char *pic_buf, *tmp;
+    guint timeout_id, idle_id;
+    guint32 timeout_interval;
+    GConfClient *gc;
+    GtkBuilder *xml;
+    GtkStatusIcon *tray_icon;
 
-   CamoramaFilterChain* filter_chain;
+    CamoramaFilterChain *filter_chain;
 
-   gboolean rdir_ok;
-   GFile *rdir_file;
-   GMountOperation *rdir_mop;
+    gboolean rdir_ok;
+    GFile *rdir_file;
+    GMountOperation *rdir_mop;
 
-   /* Buffer handling - should be used only inside v4l.c */
-   struct v4l2_requestbuffers req;
-   unsigned int n_buffers;
-   struct  {
-      void   *start;
-      size_t length;
-   } *buffers;
+    /* Buffer handling - should be used only inside v4l.c */
+    struct v4l2_requestbuffers req;
+    unsigned int n_buffers;
+    struct {
+        void *start;
+        size_t length;
+    } *buffers;
 } cam_t;
 
-void camera_cap (cam_t *);
-void print_cam (cam_t *);
+void camera_cap(cam_t *);
+void print_cam(cam_t *);
 void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y);
-void set_win_info (cam_t *cam);
-void get_pic_info (cam_t *);
-void get_win_info (cam_t *);
+void set_win_info(cam_t *cam);
+void get_pic_info(cam_t *);
+void get_win_info(cam_t *);
 void get_supported_resolutions(cam_t *cam);
 void start_streaming(cam_t *cam);
 void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len);
 void stop_streaming(cam_t *cam);
 
-#endif /* !CAMORAMA_V4L_H */
-
+#endif                          /* !CAMORAMA_V4L_H */
