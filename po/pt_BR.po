@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2018-09-04 16:20-0300\n"
-"PO-Revision-Date: 2018-09-03 15:18-0300\n"
+"PO-Revision-Date: 2018-09-04 16:21-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -304,9 +304,9 @@ msgid "Could not save image '%s/%s'."
 msgstr "Impossível salvar a imagem '%s/%s'."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Impossível salvar a imagem '%s/%s'."
+msgstr "Impossível criar uma thread para salvar a imagem '%s/%s'."
 
 #: src/fileio.c:172
 #, c-format
