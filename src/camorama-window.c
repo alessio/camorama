@@ -92,7 +92,7 @@ menu_position_func(GtkMenu* menu, gint* x, gint* y, gboolean *push_in, gpointer 
 }
 
 static void
-show_popup(cam* cam, GtkTreeView* treeview, GdkEventButton* ev) {
+show_popup(cam_t *cam, GtkTreeView* treeview, GdkEventButton* ev) {
 	GtkMenu* menu = GTK_MENU(gtk_menu_new());
 	GtkWidget* item;
 	GtkWidget* add_filters = gtk_menu_new();
@@ -144,12 +144,12 @@ show_popup(cam* cam, GtkTreeView* treeview, GdkEventButton* ev) {
 }
 
 static void
-treeview_popup_menu_cb(cam* cam, GtkTreeView* treeview) {
+treeview_popup_menu_cb(cam_t *cam, GtkTreeView* treeview) {
 	show_popup(cam, treeview, NULL);
 }
 
 static gboolean
-treeview_clicked_cb(cam* cam, GdkEventButton* ev, GtkTreeView* treeview) {
+treeview_clicked_cb(cam_t *cam, GdkEventButton* ev, GtkTreeView* treeview) {
 	gboolean retval = GTK_WIDGET_GET_CLASS(treeview)->button_press_event(GTK_WIDGET(treeview), ev);
 
 	if(ev->button == 3) {
@@ -161,7 +161,7 @@ treeview_clicked_cb(cam* cam, GdkEventButton* ev, GtkTreeView* treeview) {
 }
 
 static void
-tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time, cam * cam){
+tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time, cam_t *cam){
         // FIXME: change to switch
         if (button == 1) {
             if (gtk_widget_get_visible
@@ -187,7 +187,7 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
 }
 
 void
-load_interface(cam* cam) {
+load_interface(cam_t *cam) {
     int i;
     gchar *title;
     GdkPixbuf *logo = NULL;

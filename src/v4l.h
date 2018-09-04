@@ -92,18 +92,18 @@ typedef struct camera {
       void   *start;
       size_t length;
    } *buffers;
-} cam;
+} cam_t;
 
-void camera_cap (cam *);
-void print_cam (cam *);
-void try_set_win_info(cam * cam, int *x, int *y);
-void set_win_info (cam * cam);
-void get_pic_info (cam *);
-void get_win_info (cam *);
-void get_supported_resolutions(cam * cam);
-void start_streaming(cam * cam);
-void capture_buffers(cam * cam, unsigned char *outbuf, int len);
-void stop_streaming(cam * cam);
+void camera_cap (cam_t *);
+void print_cam (cam_t *);
+void try_set_win_info(cam_t *cam, int *x, int *y);
+void set_win_info (cam_t *cam);
+void get_pic_info (cam_t *);
+void get_win_info (cam_t *);
+void get_supported_resolutions(cam_t *cam);
+void start_streaming(cam_t *cam);
+void capture_buffers(cam_t *cam, unsigned char *outbuf, int len);
+void stop_streaming(cam_t *cam);
 
 #endif /* !CAMORAMA_V4L_H */
 

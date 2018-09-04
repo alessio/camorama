@@ -22,7 +22,7 @@ extern const gchar * const protos[];
  * pref callbacks
  */
 
-void ts_func (GtkWidget * rb, cam * cam)
+void ts_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -31,7 +31,7 @@ void ts_func (GtkWidget * rb, cam * cam)
     gconf_client_set_bool (cam->gc, KEY4, cam->timestamp, NULL);
 }
 
-void customstring_func (GtkWidget * rb, cam * cam)
+void customstring_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -42,7 +42,7 @@ void customstring_func (GtkWidget * rb, cam * cam)
                               (cam->xml, "string_entry")), cam->usestring);
 }
 
-void drawdate_func (GtkWidget * rb, cam * cam)
+void drawdate_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -51,7 +51,7 @@ void drawdate_func (GtkWidget * rb, cam * cam)
     gconf_client_set_bool (cam->gc, KEY19, cam->usedate, NULL);
 }
 
-void append_func (GtkWidget * rb, cam * cam)
+void append_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -61,7 +61,7 @@ void append_func (GtkWidget * rb, cam * cam)
 
 }
 
-void rappend_func (GtkWidget * rb, cam * cam)
+void rappend_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -71,7 +71,7 @@ void rappend_func (GtkWidget * rb, cam * cam)
 
 }
 
-void jpg_func (GtkWidget * rb, cam * cam)
+void jpg_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -81,7 +81,7 @@ void jpg_func (GtkWidget * rb, cam * cam)
 
 }
 
-void png_func (GtkWidget * rb, cam * cam)
+void png_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -90,7 +90,7 @@ void png_func (GtkWidget * rb, cam * cam)
     gconf_client_set_int (cam->gc, KEY3, cam->savetype, NULL);
 }
 
-void ppm_func (GtkWidget * rb, cam * cam)
+void ppm_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -99,7 +99,7 @@ void ppm_func (GtkWidget * rb, cam * cam)
     gconf_client_set_int (cam->gc, KEY3, cam->savetype, NULL);
 }
 
-void set_sensitive (cam * cam)
+void set_sensitive (cam_t *cam)
 {
     gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object(cam->xml, "table4")),
                               cam->cap);
@@ -127,7 +127,7 @@ void set_sensitive (cam * cam)
 
 }
 
-void cap_func (GtkWidget * rb, cam * cam)
+void cap_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -140,7 +140,7 @@ void cap_func (GtkWidget * rb, cam * cam)
 
 }
 
-void rcap_func (GtkWidget * rb, cam * cam)
+void rcap_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -152,7 +152,7 @@ void rcap_func (GtkWidget * rb, cam * cam)
 
 }
 
-void acap_func (GtkWidget * rb, cam * cam)
+void acap_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -180,7 +180,7 @@ void acap_func (GtkWidget * rb, cam * cam)
     set_sensitive (cam);
 }
 
-void interval_change (GtkWidget * sb, cam * cam)
+void interval_change (GtkWidget * sb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -206,7 +206,7 @@ void interval_change (GtkWidget * sb, cam * cam)
     update_tooltip (cam);
 }
 
-void rjpg_func (GtkWidget * rb, cam * cam)
+void rjpg_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -216,7 +216,7 @@ void rjpg_func (GtkWidget * rb, cam * cam)
 
 }
 
-void rpng_func (GtkWidget * rb, cam * cam)
+void rpng_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -225,7 +225,7 @@ void rpng_func (GtkWidget * rb, cam * cam)
     gconf_client_set_int (cam->gc, KEY10, cam->rsavetype, NULL);
 }
 
-void rppm_func (GtkWidget * rb, cam * cam)
+void rppm_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -234,7 +234,7 @@ void rppm_func (GtkWidget * rb, cam * cam)
     gconf_client_set_int (cam->gc, KEY10, cam->rsavetype, NULL);
 }
 
-void rts_func (GtkWidget * rb, cam * cam)
+void rts_func (GtkWidget * rb, cam_t *cam)
 {
     GConfClient *client;
 
@@ -281,7 +281,7 @@ int delete_event (GtkWidget * widget, gpointer data)
     return FALSE;
 }
 
-static int apply_remote_pref(cam *cam)
+static int apply_remote_pref(cam_t *cam)
 {
     if (!strlen (gtk_entry_get_text ((GtkEntry *) host_entry)))
         return 0;
@@ -347,7 +347,7 @@ static int apply_remote_pref(cam *cam)
 /*
  * apply preferences
  */
-void prefs_func (GtkWidget * okbutton, cam * cam)
+void prefs_func (GtkWidget * okbutton, cam_t *cam)
 {
     GConfClient *client;
 
@@ -398,7 +398,7 @@ void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data)
     gtk_widget_show (prefswindow);
 }
 
-void on_change_size_activate (GtkWidget * widget, cam * cam)
+void on_change_size_activate (GtkWidget * widget, cam_t *cam)
 {
     gchar const *name;
     gchar       *title;
@@ -451,7 +451,7 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
     g_free (title);
 }
 
-void on_show_adjustments_activate (GtkToggleButton * button, cam * cam)
+void on_show_adjustments_activate (GtkToggleButton * button, cam_t *cam)
 {
     if (gtk_widget_get_visible(GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")))) {
         gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")));
@@ -468,7 +468,7 @@ void on_show_adjustments_activate (GtkToggleButton * button, cam * cam)
 }
 
 void
-on_show_effects_activate(GtkMenuItem* menuitem, cam* cam) {
+on_show_effects_activate(GtkMenuItem* menuitem, cam_t *cam) {
 	GtkWidget* effects = GTK_WIDGET(gtk_builder_get_object(cam->xml, "scrolledwindow_effects"));
 	cam->show_effects = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem));
 	
@@ -482,7 +482,7 @@ on_show_effects_activate(GtkMenuItem* menuitem, cam* cam) {
 	gconf_client_set_bool(cam->gc, KEY23, cam->show_effects, NULL);
 }
 
-void on_about_activate (GtkMenuItem * menuitem, cam * cam)
+void on_about_activate (GtkMenuItem * menuitem, cam_t *cam)
 {
     static GtkWidget *about = NULL;
     const gchar *authors[] = {
@@ -534,7 +534,7 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
 }
 
 static void
-apply_filters(cam* cam) {
+apply_filters(cam_t *cam) {
 	/* v4l has reverse rgb order from what camora expect so call the color
 	   filter to fix things up before running the user selected filters */
 	camorama_filter_color_filter(NULL, cam->pic_buf, cam->width, cam->height, cam->bpp / 8);
@@ -628,7 +628,7 @@ static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
     return surface;
 }
 
-static void show_buffer(cam* cam)
+static void show_buffer(cam_t *cam)
 {
     int i;
     GdkPixbuf *pb;
@@ -675,7 +675,7 @@ static void show_buffer(cam* cam)
  * get image from cam - does all the work ;) 
  */
 gint
-read_timeout_func(cam* cam) {
+read_timeout_func(cam_t *cam) {
     v4l2_read (cam->dev, cam->pic_buf,
                (cam->width * cam->height * cam->bpp / 8));
 
@@ -684,7 +684,7 @@ read_timeout_func(cam* cam) {
     return TRUE;
 }
 
-gint timeout_func (cam * cam)
+gint timeout_func (cam_t *cam)
 {
     capture_buffers(cam, cam->pic_buf, cam->width * cam->height * cam->bytesperline);
 
@@ -708,12 +708,12 @@ gint fps (GtkWidget * sb)
     return 1;
 }
 
-void on_status_show (GtkWidget * sb, cam * cam)
+void on_status_show (GtkWidget * sb, cam_t *cam)
 {
     cam->status = sb;
 }
 
-void capture_func (GtkWidget * widget, cam * cam)
+void capture_func (GtkWidget * widget, cam_t *cam)
 {
     if (cam->debug == TRUE) {
         printf
@@ -732,7 +732,7 @@ void capture_func (GtkWidget * widget, cam * cam)
 
 }
 
-gint timeout_capture_func (cam * cam)
+gint timeout_capture_func (cam_t *cam)
 {
     /* GdkRectangle rect;
      * rect->x = 0; rect->y = 0;
@@ -761,35 +761,35 @@ gint timeout_capture_func (cam * cam)
     return 1;
 }
 
-void contrast_change (GtkHScale * sc1, cam * cam)
+void contrast_change (GtkHScale * sc1, cam_t *cam)
 {
 
     cam->contrast = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_CONTRAST, cam->contrast);
 }
 
-void brightness_change (GtkHScale * sc1, cam * cam)
+void brightness_change (GtkHScale * sc1, cam_t *cam)
 {
 
     cam->brightness = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_BRIGHTNESS, cam->brightness);
 }
 
-void colour_change (GtkHScale * sc1, cam * cam)
+void colour_change (GtkHScale * sc1, cam_t *cam)
 {
 
     cam->colour = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_SATURATION, cam->colour);
 }
 
-void hue_change (GtkHScale * sc1, cam * cam)
+void hue_change (GtkHScale * sc1, cam_t *cam)
 {
 
     cam->hue = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_HUE, cam->hue);
 }
 
-void wb_change (GtkHScale * sc1, cam * cam)
+void wb_change (GtkHScale * sc1, cam_t *cam)
 {
 
     cam->whiteness = 256 * (int) gtk_range_get_value ((GtkRange *) sc1);
@@ -809,7 +809,7 @@ static void help_cb (GtkWidget * widget, gpointer data)
     }
 }
 
-void update_tooltip (cam * cam)
+void update_tooltip (cam_t *cam)
 {
     gchar *tooltip_text;
 

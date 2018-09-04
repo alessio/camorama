@@ -45,7 +45,7 @@ static GOptionEntry options[] = {
 
 int
 main(int argc, char *argv[]) {
-    cam cam_object, *cam;
+    cam_t cam_object, *cam;
     Display *display;
     Screen *screen_num;
     GConfClient *gc;

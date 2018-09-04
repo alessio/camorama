@@ -84,7 +84,7 @@ add_rgb_text (guchar *image, int width, int height, char *cstring, char *format,
     return 1;
 }
 
-void remote_save (cam * cam)
+void remote_save (cam_t *cam)
 {
     GThread *remote_thread;
     char *filename, *error_message;
@@ -150,7 +150,7 @@ struct mount_params {
 
 static void mount_cb (GObject * obj, GAsyncResult * res, gpointer user_data)
 {
-    cam *cam = user_data;
+    cam_t *cam = user_data;
     gboolean ret;
     GError *err = NULL;
 
@@ -179,7 +179,7 @@ gchar *volume_uri(gchar *host, gchar *proto, gchar *rdir)
     return g_strdup_printf ("%s://%s/%s", proto, host, rdir);
 }
 
-void umount_volume(cam *cam)
+void umount_volume(cam_t *cam)
 {
     struct mount_params mount;
 
@@ -194,7 +194,7 @@ void umount_volume(cam *cam)
                                             NULL, cam);
 }
 
-void mount_volume(cam *cam)
+void mount_volume(cam_t *cam)
 {
     /* Prepare a mount operation */
     cam->rdir_file = g_file_new_for_uri(cam->uri);
@@ -216,7 +216,7 @@ void mount_volume(cam *cam)
                                   cam->rdir_mop, NULL, mount_cb, cam);
 }
 
-void save_thread (cam * cam)
+void save_thread (cam_t *cam)
 {
     char *output_uri_string, *input_uri_string;
     GFile *uri_1;
@@ -329,7 +329,7 @@ void save_thread (cam * cam)
 	 g_thread_exit (NULL);
 }
 
-int local_save (cam * cam)
+int local_save (cam_t *cam)
 {
     int fc;
     gchar *filename, *ext;

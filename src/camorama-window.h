@@ -29,7 +29,7 @@
 
 G_BEGIN_DECLS
 
-void load_interface(cam* cam);
+void load_interface(cam_t *cam);
 
 G_END_DECLS
 

@@ -8,7 +8,7 @@
 
 extern int frame_number;
 
-void print_cam(cam *cam){
+void print_cam(cam_t *cam){
    printf("\nCamera Info\n");
    printf("-----------\n");
    printf("device = %s, x = %d, y = %d\n",cam->video_dev, cam->width,cam->height);
@@ -33,7 +33,7 @@ void print_cam(cam *cam){
       printf("timestamp = %s\n\n",cam->ts_string);
 }
 
-static void insert_resolution(cam * cam, int x, int y)
+static void insert_resolution(cam_t *cam, int x, int y)
 {
    int i;
 
@@ -64,7 +64,7 @@ static int sort_func(const void *__b,
    return r;
 }
 
-void get_supported_resolutions(cam * cam)
+void get_supported_resolutions(cam_t *cam)
 {
    struct v4l2_fmtdesc fmt;
    struct v4l2_frmsizeenum frmsize;
@@ -99,7 +99,7 @@ void get_supported_resolutions(cam * cam)
    qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
 }
 
-void camera_cap(cam * cam)
+void camera_cap(cam_t *cam)
 {
    char *msg;
    int i;
@@ -241,7 +241,7 @@ void camera_cap(cam * cam)
    }
 }
 
-void get_pic_info(cam * cam){
+void get_pic_info(cam_t *cam){
    int i;
 
    if(cam->debug == TRUE)
@@ -289,7 +289,7 @@ void get_pic_info(cam * cam){
    }
 }
 
-void get_win_info(cam * cam)
+void get_win_info(cam_t *cam)
 {
    gchar *msg;
    struct v4l2_format fmt = { 0 };
@@ -337,7 +337,7 @@ void get_win_info(cam * cam)
    }
 }
 
-void try_set_win_info(cam * cam, int *x, int *y)
+void try_set_win_info(cam_t *cam, int *x, int *y)
 {
    struct v4l2_format fmt;
 
@@ -352,7 +352,7 @@ void try_set_win_info(cam * cam, int *x, int *y)
    }
 }
 
-void set_win_info(cam * cam)
+void set_win_info(cam_t *cam)
 {
    gchar *msg;
    struct v4l2_format fmt;
@@ -419,7 +419,7 @@ void set_win_info(cam * cam)
    cam->height = fmt.fmt.pix.height;
 }
 
-void start_streaming(cam * cam)
+void start_streaming(cam_t *cam)
 {
    char *msg;
    unsigned int i;
@@ -488,7 +488,7 @@ void start_streaming(cam * cam)
    }
 }
 
-void capture_buffers(cam * cam, unsigned char *outbuf, int len)
+void capture_buffers(cam_t *cam, unsigned char *outbuf, int len)
 {
    char *msg;
    unsigned char *inbuf;
@@ -534,7 +534,7 @@ void capture_buffers(cam * cam, unsigned char *outbuf, int len)
 }
 
 
-void stop_streaming(cam * cam)
+void stop_streaming(cam_t *cam)
 {
    char *msg;
    unsigned int i;
