@@ -7,6 +7,9 @@ AM_CPPFLAGS=\
 
 bin_PROGRAMS = camorama
 
+AM_CFLAGS = $(WARN_CFLAGS)
+AM_LDFLAGS = $(WARN_LDFLAGS)
+
 camorama_SOURCES = \
 	callbacks.c \
 	camorama-filter-chain.c \

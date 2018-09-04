@@ -32,7 +32,9 @@ AM_PROG_CC_STDC
 AC_HEADER_STDC
 AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.h png.h glade/glade.h])
 
-GNOME_COMPILE_WARNINGS
+# Don't assume that gcc warnings are errors
+AX_IS_RELEASE(always)
+AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])
 
 AC_ARG_ENABLE(gtk3, [AC_HELP_STRING([--enable-gtk3], [Compile against GTK 3.x instead of GTK 2.x])], [enable_gtk3=$enableval], [enable_gtk3="no"])
 
