@@ -17,6 +17,7 @@
     "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "      \
     "General Public License for more details."
 
+static GtkWidget *about = NULL;
 
 extern GtkWidget *main_window, *prefswindow;
 //extern state func_state;
@@ -433,16 +434,20 @@ void on_show_effects_activate(GtkMenuItem *menuitem, cam_t *cam)
     gconf_client_set_bool(cam->gc, KEY23, cam->show_effects, NULL);
 }
 
+static void about_widget_destroy(GtkWidget *widget)
+{
+    gtk_widget_destroy(about);
+    about = NULL;
+}
+
+
 void on_about_activate(GtkMenuItem *menuitem, cam_t *cam)
 {
-    static GtkWidget *about = NULL;
-
     const gchar *authors[] = {
         "Greg Jones  <greg@fixedgear.org>",
         "Jens Knutson  <tempest@magusbooks.com>",
         NULL
     };
-    const gchar *documenters[] = { NULL };
     const gchar *comments = _("View, alter and save images from a webcam");
     const gchar *translators = _("translator_credits");
     GdkPixbuf *logo = gdk_pixbuf_new_from_file(PACKAGE_DATA_DIR
@@ -455,14 +460,12 @@ void on_about_activate(GtkMenuItem *menuitem, cam_t *cam)
         gtk_window_present(GTK_WINDOW(about));
         return;
     }
-
     about = g_object_new(GTK_TYPE_ABOUT_DIALOG,
                          "name", "Camorama",
                          "version", PACKAGE_VERSION,
                          "copyright", "Copyright \xc2\xa9 2002 Greg Jones",
                          "comments", comments,
                          "authors", authors,
-                         "documenters", documenters,
                          "translator-credits", translators,
                          "logo", logo,
                          "license", GPL_LICENSE,
@@ -470,11 +473,8 @@ void on_about_activate(GtkMenuItem *menuitem, cam_t *cam)
                          NULL);
     gtk_window_set_transient_for(GTK_WINDOW(about),
                                  GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))));
-
-    g_object_add_weak_pointer(G_OBJECT(about), (void **)&(about));
-    g_object_unref(logo);
     g_signal_connect(about, "response",
-                     G_CALLBACK(gtk_widget_destroy), NULL);
+                     G_CALLBACK(about_widget_destroy), NULL);
     gtk_widget_show(about);
 }
 
