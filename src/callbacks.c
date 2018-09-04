@@ -351,10 +351,44 @@ void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data)
     gtk_widget_show(prefswindow);
 }
 
+void set_image_scale(cam_t *cam)
+{
+    gchar *title;
+    float f;
+
+    if (cam->width > 0.66 * cam->screen_width || cam->height > 0.66 * cam->screen_height) {
+        cam->scale = (0.66 * cam->screen_width) / cam->width;
+        f = (0.66 * cam->screen_height) / cam->height;
+
+        if (f < cam->scale)
+            cam->scale = f;
+        if (cam->scale < 0.1f)
+          cam->scale = 0.1f;
+    } else {
+        cam->scale = 1.f;
+    }
+
+    gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
+                                cam->width * cam->scale,
+                                cam->height * cam->scale);
+
+    gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
+                      320, 240);
+
+    if (cam->scale == (float)1.)
+        title = g_strdup_printf("Camorama - %s - %dx%d", cam->name,
+                                cam->width, cam->height);
+    else
+        title = g_strdup_printf("Camorama - %s - %dx%d (scale: %d%%)", cam->name,
+                                cam->width, cam->height, (int)(cam->scale * 100.f));
+    gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
+                         title);
+    g_free(title);
+}
+
 void on_change_size_activate(GtkWidget *widget, cam_t *cam)
 {
     gchar const *name;
-    gchar *title;
     unsigned int width = 0, height = 0;
 
     name = gtk_widget_get_name(widget);
@@ -390,17 +424,7 @@ void on_change_size_activate(GtkWidget *widget, cam_t *cam)
     if (cam->read == FALSE)
         start_streaming(cam);
 
-    gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
-                                cam->width, cam->height);
-
-    gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
-                      320, 240);
-
-    title = g_strdup_printf("Camorama - %s - %dx%d",
-                            cam->name, cam->width, cam->height);
-    gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
-                         title);
-    g_free(title);
+    set_image_scale(cam);
 }
 
 void on_show_adjustments_activate(GtkToggleButton *button, cam_t *cam)
@@ -605,6 +629,9 @@ static void show_buffer(cam_t *cam)
     cairo_set_source_surface(cr, surface, 0, 0);
 
     gdk_cairo_rectangle(cr, &rect);
+
+    if (cam->scale != 1.f)
+        cairo_scale(cr, cam->scale, cam->scale);
 
     cairo_fill(cr);
     cairo_destroy(cr);

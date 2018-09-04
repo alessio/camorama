@@ -194,7 +194,6 @@ static void tray_clicked_callback(GtkStatusIcon *status, guint button,
 void load_interface(cam_t *cam)
 {
     unsigned int i;
-    gchar *title;
     GdkPixbuf *logo = NULL;
     GtkCellRenderer *cell;
     GtkWidget *small_res, *new_res;
@@ -257,11 +256,6 @@ void load_interface(cam_t *cam)
     /* connect the signals in the interface
      * glade_xml_signal_autoconnect(xml);
      * this won't work, can't pass data to callbacks.  have to do it individually :(*/
-
-    title = g_strdup_printf("Camorama - %s - %dx%d", cam->name,
-                            cam->width, cam->height);
-    gtk_window_set_title(GTK_WINDOW(window), title);
-    g_free(title);
 
     gtk_window_set_icon(GTK_WINDOW(window), logo);
     gtk_window_set_icon(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"))), logo);
@@ -562,8 +556,7 @@ void load_interface(cam_t *cam)
     gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(cam->xml, "string_entry")),
                              cam->usestring);
 
-    gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
-                                cam->width, cam->height);
+    set_image_scale(cam);
 
     prefswindow = GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"));
 }
