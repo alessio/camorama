@@ -1,3 +1,7 @@
+2018-09-04  Mauro Carvalho Chehab <mchehab@kernel.org>
+	* Enable gcc warnings and clean them
+	* Fix coding style issues
+
 2018-09-03  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Update icons, desktop files
 	* Improve logic to install icons and other dist files
