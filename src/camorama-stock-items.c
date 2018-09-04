@@ -5,7 +5,7 @@
 #endif
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include "v4l.h"
 
 static GtkStockItem camorama_items[] = {
 	{CAMORAMA_STOCK_WEBCAM, N_("Webcam"), 0, 0, "camorama"}

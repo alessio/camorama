@@ -1,13 +1,13 @@
+#include "interface.h"
+#include "support.h"
+#include "fileio.h"
+#include "v4l.h"
+
 #include <errno.h>
-#include <gtk/gtk.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 #include <time.h>
 #include <stdio.h>
-
-#include "interface.h"
-#include "support.h"
-#include "fileio.h"
 
 # define CHAR_HEIGHT  11
 # define CHAR_WIDTH   6

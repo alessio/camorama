@@ -1,7 +1,7 @@
 #ifndef CAMORAMA_CALLBACKS_H
 #define CAMORAMA_CALLBACKS_H
 
-#include <gtk/gtk.h>
+#include "v4l.h"
 #include "fileio.h"
 #include <gconf/gconf-client.h>
 

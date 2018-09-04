@@ -21,6 +21,7 @@
  * USA
  */
 
+#include "v4l.h"
 #include "camorama-filter-chain.h"
 
 #include "filter.h"

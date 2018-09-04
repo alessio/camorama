@@ -24,8 +24,6 @@
 #ifndef CAMORAMA_FILTER_CHAIN_H
 #define CAMORAMA_FILTER_CHAIN_H
 
-#include <gtk/gtk.h>
-
 G_BEGIN_DECLS
 
 typedef struct _CamoramaFilterChain      CamoramaFilterChain;

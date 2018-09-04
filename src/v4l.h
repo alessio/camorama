@@ -12,13 +12,17 @@
 #include <sys/ioctl.h>
 #include <sys/mman.h>
 #include <fcntl.h>
-#include <gtk/gtk.h>
 #include <linux/types.h>
 #include <linux/videodev2.h>
 #include <libv4l2.h>
 #include <signal.h>
 #include <png.h>
 #include <gconf/gconf-client.h>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstrict-prototypes"
+#include <gtk/gtk.h>
+#pragma GCC diagnostic pop
 
 #include "camorama-filter-chain.h"
 

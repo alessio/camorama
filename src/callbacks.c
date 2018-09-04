@@ -1,10 +1,9 @@
-#include <gtk/gtk.h>
-#include <glib/gi18n.h>
-#include <config.h>
 #include "callbacks.h"
 #include "interface.h"
 #include "support.h"
 #include "filter.h"
+#include <glib/gi18n.h>
+#include <config.h>
 #include <pthread.h>
 #include <libv4l2.h>
 

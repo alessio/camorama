@@ -1,13 +1,12 @@
+#include "callbacks.h"
+#include "interface.h"
+#include "support.h"
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <string.h>
-
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
-#include "callbacks.h"
-#include "interface.h"
-#include "support.h"
 #include <config.h>
 
 GtkWidget *xpm_label_box (gchar * xpm_filename)
