@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-03 15:15-0300\n"
+"POT-Creation-Date: 2018-09-04 16:20-0300\n"
 "PO-Revision-Date: 2018-09-03 15:18-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
@@ -36,11 +36,11 @@ msgstr ""
 "Camorama é um visualizador simplificado para webcam, com capacidade para "
 "aplicação de alguns efeitos de vídeo."
 
-#: camorama.desktop.in:5 src/callbacks.c:509
+#: camorama.desktop.in:5 src/callbacks.c:451
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
-#: camorama.desktop.in:6 src/main.c:71
+#: camorama.desktop.in:6 src/main.c:73
 msgid "camorama"
 msgstr "camorama"
 
@@ -234,7 +234,7 @@ msgstr "Matiz:"
 msgid "White Balance:"
 msgstr "Equilíbrio de Branco:"
 
-#: src/callbacks.c:496
+#: src/callbacks.c:452
 msgid "translator_credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
@@ -243,12 +243,12 @@ msgstr ""
 "Andre Noel <andrenoel@ubuntu.com>\n"
 "Mauro Carvalho Chehab <mchehab+samsung@kernel.org>"
 
-#: src/callbacks.c:702
+#: src/callbacks.c:644
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr "%.2f quadros/s - atual     %.2f quadros/s - média"
 
-#: src/callbacks.c:822
+#: src/callbacks.c:745
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -259,61 +259,66 @@ msgstr ""
 "Captura Remota: %d\n"
 "Intervalo de Captura: %d"
 
-#: src/callbacks.c:831
+#: src/callbacks.c:755
 msgid "Automatic Capture Disabled"
 msgstr "Captura Automática Desabilitada"
 
-#: src/camorama-filter-laplace.c:128
+#: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
 msgstr "Laplace (4 Vizinhos)"
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-mirror.c:67
+#: src/camorama-filter-mirror.c:75
 msgid "Mirror"
 msgstr "Espelhar"
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-reichardt.c:297
+#: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
 msgstr "Reichardt"
 
-#: src/camorama-stock-items.c:11
+#: src/camorama-stock-items.c:13
 msgid "Webcam"
 msgstr "Webcam"
 
-#: src/camorama-window.c:116
+#: src/camorama-window.c:123
 msgid "_Add Filter"
 msgstr "_Adicionar Filtro"
 
-#: src/camorama-window.c:207
+#: src/camorama-window.c:214
 msgid "Effects"
 msgstr "Efeitos"
 
-#: src/fileio.c:112 src/fileio.c:253
+#: src/fileio.c:111 src/fileio.c:253
 msgid "Could save temporary image file in /tmp."
 msgstr "Foi possível salvar a imagem temporária em /tmp."
 
-#: src/fileio.c:124
+#: src/fileio.c:121
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Impossível criar imagem '%s'."
 
-#: src/fileio.c:132 src/fileio.c:415
+#: src/fileio.c:129 src/fileio.c:403
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Impossível salvar a imagem '%s/%s'."
 
-#: src/fileio.c:170
+#: src/fileio.c:139
+#, fuzzy, c-format
+msgid "Could not create a thread to save image '%s/%s'."
+msgstr "Impossível salvar a imagem '%s/%s'."
+
+#: src/fileio.c:172
 #, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "Ocorreu um erro montando %s: %s."
 
-#: src/fileio.c:207
+#: src/fileio.c:208
 #, c-format
 msgid "An error occurred accessing %s."
 msgstr "Ocorreu um erro acessando %s."
 
-#: src/fileio.c:261
+#: src/fileio.c:259
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -322,110 +327,110 @@ msgstr ""
 "Impossível abrir arquivo de imagem temporário '%s'.\n"
 "Não é possível enviar imagem."
 
-#: src/fileio.c:291
+#: src/fileio.c:288
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "Ocorreu um erro abrindo %s."
 
-#: src/fileio.c:302
+#: src/fileio.c:299
 #, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "Ocorreu um erro abrindo %s para escrita: %s."
 
-#: src/fileio.c:313
+#: src/fileio.c:309
 #, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "Ocorreu um erro escrevendo em %s: %s."
 
-#: src/fileio.c:321
+#: src/fileio.c:316
 #, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "Ocorreu um erro fechando %s: %s."
 
-#: src/fileio.c:389
+#: src/fileio.c:381
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Impossível criar o diretório '%s'."
 
-#: src/fileio.c:400
+#: src/fileio.c:390
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Impossível mudar para o diretório '%s'."
 
-#: src/filter.c:171
+#: src/filter.c:187
 msgid "Color Correction"
 msgstr "Correção de Cor"
 
-#: src/filter.c:196
+#: src/filter.c:216
 msgid "Invert"
 msgstr "Inverter"
 
-#: src/filter.c:235
+#: src/filter.c:260
 msgid "Threshold (Overall)"
 msgstr "Limiar (Geral)"
 
-#: src/filter.c:277
+#: src/filter.c:310
 msgid "Threshold (Per Channel)"
 msgstr "Limiar (Por canal)"
 
-#: src/filter.c:350
+#: src/filter.c:388
 msgid "Wacky"
 msgstr "Maluco"
 
-#: src/filter.c:451
+#: src/filter.c:494
 msgid "Smooth"
 msgstr "Suavizar"
 
-#: src/filter.c:482
+#: src/filter.c:530
 msgid "Monochrome"
 msgstr "Monocromático"
 
-#: src/filter.c:512
+#: src/filter.c:568
 msgid "Monochrome (Weight)"
 msgstr "Monocromático (Ponderado)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:564
+#: src/filter.c:625
 msgid "Sobel"
 msgstr "Realçar"
 
-#: src/main.c:26
+#: src/main.c:27
 msgid "show version and exit"
 msgstr "mostrar versão e sair"
 
-#: src/main.c:28
+#: src/main.c:29
 msgid "v4l device to use"
 msgstr "dispositivo v4l a ser utilizado"
 
-#: src/main.c:30
+#: src/main.c:31
 msgid "enable debugging code"
 msgstr "ativar código de depuração"
 
-#: src/main.c:32
+#: src/main.c:33
 msgid "capture width"
 msgstr "largura da captura"
 
-#: src/main.c:34
+#: src/main.c:35
 msgid "capture height"
 msgstr "altura captura"
 
-#: src/main.c:36
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr "tamanho máximo de captura"
 
-#: src/main.c:38
+#: src/main.c:39
 msgid "minimum capture size"
 msgstr "tamanho mínimo de captura"
 
-#: src/main.c:40
+#: src/main.c:41
 msgid "middle capture size"
 msgstr "tamanho médio de captura"
 
-#: src/main.c:42
+#: src/main.c:43
 msgid "use read() rather than mmap()"
 msgstr "usar read() em vez de mmap()"
 
-#: src/main.c:73
+#: src/main.c:75
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -434,7 +439,7 @@ msgstr ""
 "Argumento inválido\n"
 "Execute '%s --help'\n"
 
-#: src/main.c:87
+#: src/main.c:89
 #, c-format
 msgid ""
 "\n"
@@ -447,12 +452,12 @@ msgstr ""
 "Camorama Versão %s\n"
 "\n"
 
-#: src/main.c:209
+#: src/main.c:204
 msgid "Couldn't load builder file"
 msgstr "Não foi possível carregar arquivo com interface gráfica"
 
-#: src/v4l.c:115 src/v4l.c:220 src/v4l.c:300 src/v4l.c:368 src/v4l.c:386
-#: src/v4l.c:406
+#: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
+#: src/v4l.c:418
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -461,41 +466,41 @@ msgstr ""
 "Impossível conectar ao dispositivo de vídeo (%s).\n"
 "Verifique a conexão."
 
-#: src/v4l.c:434
+#: src/v4l.c:447
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_REQBUFS  --  não foi possível requisitar buffers (%s), encerrando...."
 
-#: src/v4l.c:449
+#: src/v4l.c:465
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_QUERYBUF  --  não foi possível obter informações sobre buffers (%s), "
 "encerrando...."
 
-#: src/v4l.c:462
+#: src/v4l.c:480
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr "falha ao mapear os buffers na memória (%s), encerrando..."
 
-#: src/v4l.c:475
+#: src/v4l.c:494
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_QBUF  --  não foi possível enfileirar buffers (%s), encerrando...."
 
-#: src/v4l.c:484
+#: src/v4l.c:504
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr "falha ao iniciar o fluxo de vídeo (%s), encerrando..."
 
-#: src/v4l.c:512
+#: src/v4l.c:534
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr "Tempo máximo excedido enquanto esperando quadros com imagens (%s)"
 
-#: src/v4l.c:574
+#: src/v4l.c:596
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr "falha ao interromper o fluxo de vídeo (%s), encerrando..."

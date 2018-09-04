@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-03 17:00-0300\n"
+"POT-Creation-Date: 2018-09-04 17:05-0300\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -32,11 +32,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:509
+#: camorama.desktop.in:5 src/callbacks.c:451
 msgid "View, alter and save images from a webcam"
 msgstr ""
 
-#: camorama.desktop.in:6 src/main.c:71
+#: camorama.desktop.in:6 src/main.c:73
 #, fuzzy
 msgid "camorama"
 msgstr "جاما"
@@ -264,17 +264,17 @@ msgstr "التدرج:"
 msgid "White Balance:"
 msgstr "الميزان الأبيض"
 
-#: src/callbacks.c:496
+#: src/callbacks.c:452
 #, fuzzy
 msgid "translator_credits"
 msgstr "المترجمون:"
 
-#: src/callbacks.c:702
+#: src/callbacks.c:644
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:822
+#: src/callbacks.c:745
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -282,203 +282,208 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:831
+#: src/callbacks.c:755
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "فُعِّل النوم الآلي"
 
-#: src/camorama-filter-laplace.c:128
+#: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
 msgstr ""
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-mirror.c:67
+#: src/camorama-filter-mirror.c:75
 #, fuzzy
 msgid "Mirror"
 msgstr "خطأ"
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-reichardt.c:297
+#: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
 msgstr ""
 
 # #-#-#-#-#  gnome-icon-theme.gnome-2-18.ar.po (gnome-icon-theme.gnome-2-16.ar)  #-#-#-#-#
 # 48x48/emblems/emblem-web.icon.in.h:1
-#: src/camorama-stock-items.c:11
+#: src/camorama-stock-items.c:13
 #, fuzzy
 msgid "Webcam"
 msgstr "ويب"
 
-#: src/camorama-window.c:116
+#: src/camorama-window.c:123
 #, fuzzy
 msgid "_Add Filter"
 msgstr "أضف ملفات"
 
-#: src/camorama-window.c:207
+#: src/camorama-window.c:214
 #, fuzzy
 msgid "Effects"
 msgstr "مؤ_ثرات"
 
-#: src/fileio.c:112 src/fileio.c:253
+#: src/fileio.c:111 src/fileio.c:253
 #, fuzzy
 msgid "Could save temporary image file in /tmp."
 msgstr "تعذّر فتح ملف البريد المؤقّت %s: %s"
 
-#: src/fileio.c:124
+#: src/fileio.c:121
 #, fuzzy, c-format
 msgid "Unable to create image '%s'."
 msgstr "تعذّر جلب الرّسالة: %s"
 
-#: src/fileio.c:132 src/fileio.c:415
+#: src/fileio.c:129 src/fileio.c:403
 #, fuzzy, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "تعذّر تحميل الصورة '%s'."
 
-#: src/fileio.c:170
+#: src/fileio.c:139
+#, fuzzy, c-format
+msgid "Could not create a thread to save image '%s/%s'."
+msgstr "تعذّر تحميل الصورة '%s'."
+
+#: src/fileio.c:172
 #, fuzzy, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: src/fileio.c:207
+#: src/fileio.c:208
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: src/fileio.c:261
+#: src/fileio.c:259
 #, fuzzy, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr "فشلت الكتابة في ملف مؤقّت عند تحميل صورة XBM"
 
-#: src/fileio.c:291
+#: src/fileio.c:288
 #, fuzzy, c-format
 msgid "An error occurred opening %s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: src/fileio.c:302
+#: src/fileio.c:299
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: src/fileio.c:313
+#: src/fileio.c:309
 #, fuzzy, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: src/fileio.c:321
+#: src/fileio.c:316
 #, fuzzy, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: src/fileio.c:389
+#: src/fileio.c:381
 #, fuzzy, c-format
 msgid "Could not create directory '%s'."
 msgstr "لا يمكن إنشاء المجلّد %s:"
 
-#: src/fileio.c:400
+#: src/fileio.c:390
 #, fuzzy, c-format
 msgid "Could not change to directory '%s'."
 msgstr "لا يمكن إنشاء المجلّد %s:"
 
-#: src/filter.c:171
+#: src/filter.c:187
 #, fuzzy
 msgid "Color Correction"
 msgstr "انتقاء اللون"
 
-#: src/filter.c:196
+#: src/filter.c:216
 #, fuzzy
 msgid "Invert"
 msgstr "عكس"
 
-#: src/filter.c:235
+#: src/filter.c:260
 #, fuzzy
 msgid "Threshold (Overall)"
 msgstr "العتبة"
 
-#: src/filter.c:277
+#: src/filter.c:310
 #, fuzzy
 msgid "Threshold (Per Channel)"
 msgstr "انتقال القناة"
 
-#: src/filter.c:350
+#: src/filter.c:388
 #, fuzzy
 msgid "Wacky"
 msgstr "واكو"
 
-#: src/filter.c:451
+#: src/filter.c:494
 #, fuzzy
 msgid "Smooth"
 msgstr "جنوب"
 
-#: src/filter.c:482
+#: src/filter.c:530
 #, fuzzy
 msgid "Monochrome"
 msgstr "أ_حادي اللون"
 
-#: src/filter.c:512
+#: src/filter.c:568
 #, fuzzy
 msgid "Monochrome (Weight)"
 msgstr "أ_حادي اللون"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:564
+#: src/filter.c:625
 #, fuzzy
 msgid "Sobel"
 msgstr "ذاته"
 
-#: src/main.c:26
+#: src/main.c:27
 #, fuzzy
 msgid "show version and exit"
 msgstr "اطبع الإصدار و اخرج"
 
-#: src/main.c:28
+#: src/main.c:29
 #, fuzzy
 msgid "v4l device to use"
 msgstr "جهاز القرص المدمج للاستعمال"
 
-#: src/main.c:30
+#: src/main.c:31
 #, fuzzy
 msgid "enable debugging code"
 msgstr "مكّن التنقيح"
 
-#: src/main.c:32
+#: src/main.c:33
 #, fuzzy
 msgid "capture width"
 msgstr "عرض اللف"
 
-#: src/main.c:34
+#: src/main.c:35
 #, fuzzy
 msgid "capture height"
 msgstr "ارتفاع العمود"
 
-#: src/main.c:36
+#: src/main.c:37
 #, fuzzy
 msgid "maximum capture size"
 msgstr "الحجم اﻷ_كبر:"
 
-#: src/main.c:38
+#: src/main.c:39
 #, fuzzy
 msgid "minimum capture size"
 msgstr "الحد الأدنى لحجم خط"
 
-#: src/main.c:40
+#: src/main.c:41
 #, fuzzy
 msgid "middle capture size"
 msgstr "حجم نص أصغر"
 
-#: src/main.c:42
+#: src/main.c:43
 msgid "use read() rather than mmap()"
 msgstr ""
 
-#: src/main.c:73
+#: src/main.c:75
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:87
+#: src/main.c:89
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -489,13 +494,13 @@ msgstr ""
 "%s إصدار %s\n"
 "\n"
 
-#: src/main.c:209
+#: src/main.c:204
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "لا يوجد ملف البكسمب '%s'\n"
 
-#: src/v4l.c:115 src/v4l.c:220 src/v4l.c:300 src/v4l.c:368 src/v4l.c:386
-#: src/v4l.c:406
+#: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
+#: src/v4l.c:418
 #, fuzzy, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -504,37 +509,37 @@ msgstr ""
 "تعذّر الاتّصال بالخادم المحدّد.\n"
 "رجاء افحص اسم الخادم و حاوِل مرّة ثانية."
 
-#: src/v4l.c:434
+#: src/v4l.c:447
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:449
+#: src/v4l.c:465
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:462
+#: src/v4l.c:480
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:475
+#: src/v4l.c:494
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:484
+#: src/v4l.c:504
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:512
+#: src/v4l.c:534
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:574
+#: src/v4l.c:596
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""

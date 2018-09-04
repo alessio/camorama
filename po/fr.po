@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-03 17:00-0300\n"
+"POT-Creation-Date: 2018-09-04 17:05-0300\n"
 "PO-Revision-Date: 2007-03-04 12:53+0100\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:509
+#: camorama.desktop.in:5 src/callbacks.c:451
 msgid "View, alter and save images from a webcam"
 msgstr "Affiche, modifie et enregistre les images provenant d'une webcam"
 
-#: camorama.desktop.in:6 src/main.c:71
+#: camorama.desktop.in:6 src/main.c:73
 msgid "camorama"
 msgstr "camorama"
 
@@ -237,19 +237,19 @@ msgstr "Teinte :"
 msgid "White Balance:"
 msgstr "Balance des blancs :"
 
-#: src/callbacks.c:496
+#: src/callbacks.c:452
 msgid "translator_credits"
 msgstr ""
 "Baptiste Mille-Mathias <bmm80@ifrance.com>\n"
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
 "Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
-#: src/callbacks.c:702
+#: src/callbacks.c:644
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:822
+#: src/callbacks.c:745
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -260,61 +260,66 @@ msgstr ""
 "Capture distante : %d\n"
 "Intervalle de capture : %d"
 
-#: src/callbacks.c:831
+#: src/callbacks.c:755
 msgid "Automatic Capture Disabled"
 msgstr "Capture automatique désactivée"
 
-#: src/camorama-filter-laplace.c:128
+#: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
 msgstr "Laplace (4 voisins)"
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-mirror.c:67
+#: src/camorama-filter-mirror.c:75
 msgid "Mirror"
 msgstr "Mirroir"
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-reichardt.c:297
+#: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:11
+#: src/camorama-stock-items.c:13
 msgid "Webcam"
 msgstr "Webcam"
 
-#: src/camorama-window.c:116
+#: src/camorama-window.c:123
 msgid "_Add Filter"
 msgstr "_Ajouter un filtre"
 
-#: src/camorama-window.c:207
+#: src/camorama-window.c:214
 msgid "Effects"
 msgstr "Effets"
 
-#: src/fileio.c:112 src/fileio.c:253
+#: src/fileio.c:111 src/fileio.c:253
 msgid "Could save temporary image file in /tmp."
 msgstr "Possibilité d'enregistrer les images temporaires dans /tmp."
 
-#: src/fileio.c:124
+#: src/fileio.c:121
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Impossible de créer l'image « %s »."
 
-#: src/fileio.c:132 src/fileio.c:415
+#: src/fileio.c:129 src/fileio.c:403
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Impossible d'enregistrer l'image « %s/%s »."
 
-#: src/fileio.c:170
+#: src/fileio.c:139
+#, fuzzy, c-format
+msgid "Could not create a thread to save image '%s/%s'."
+msgstr "Impossible d'enregistrer l'image « %s/%s »."
+
+#: src/fileio.c:172
 #, fuzzy, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "Une erreur est survenue lors de l'ouverture de %s."
 
-#: src/fileio.c:207
+#: src/fileio.c:208
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
 msgstr "Une erreur est survenue lors de l'ouverture de %s."
 
-#: src/fileio.c:261
+#: src/fileio.c:259
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -323,117 +328,117 @@ msgstr ""
 "Impossible d'ouvrir l'image temporaire « %s ».\n"
 "Impossible de publier l'image."
 
-#: src/fileio.c:291
+#: src/fileio.c:288
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "Une erreur est survenue lors de l'ouverture de %s."
 
-#: src/fileio.c:302
+#: src/fileio.c:299
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "Une erreur est survenue lors de l'ouverture de %s."
 
-#: src/fileio.c:313
+#: src/fileio.c:309
 #, fuzzy, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "Une erreur est survenue lors de l'écriture dans %s."
 
-#: src/fileio.c:321
+#: src/fileio.c:316
 #, fuzzy, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "Une erreur est survenue lors de l'ouverture de %s."
 
-#: src/fileio.c:389
+#: src/fileio.c:381
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Impossible de créer le répertoire « %s »."
 
-#: src/fileio.c:400
+#: src/fileio.c:390
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Impossible de se placer dans le répertoire « %s »."
 
-#: src/filter.c:171
+#: src/filter.c:187
 msgid "Color Correction"
 msgstr "Correction des couleurs"
 
-#: src/filter.c:196
+#: src/filter.c:216
 msgid "Invert"
 msgstr "Inversion"
 
-#: src/filter.c:235
+#: src/filter.c:260
 msgid "Threshold (Overall)"
 msgstr "Seuil (global)"
 
-#: src/filter.c:277
+#: src/filter.c:310
 msgid "Threshold (Per Channel)"
 msgstr "Seuil (par canal)"
 
-#: src/filter.c:350
+#: src/filter.c:388
 msgid "Wacky"
 msgstr "Farfelu"
 
-#: src/filter.c:451
+#: src/filter.c:494
 msgid "Smooth"
 msgstr "Lissage"
 
-#: src/filter.c:482
+#: src/filter.c:530
 msgid "Monochrome"
 msgstr "Monochrome"
 
-#: src/filter.c:512
+#: src/filter.c:568
 msgid "Monochrome (Weight)"
 msgstr "Monochrome (pondéré)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:564
+#: src/filter.c:625
 msgid "Sobel"
 msgstr "Sobel"
 
-#: src/main.c:26
+#: src/main.c:27
 msgid "show version and exit"
 msgstr "affiche la version et quitte"
 
-#: src/main.c:28
+#: src/main.c:29
 msgid "v4l device to use"
 msgstr "périphérique v4l à utiliser"
 
-#: src/main.c:30
+#: src/main.c:31
 msgid "enable debugging code"
 msgstr "active le code de débogage"
 
-#: src/main.c:32
+#: src/main.c:33
 msgid "capture width"
 msgstr "largeur des captures"
 
-#: src/main.c:34
+#: src/main.c:35
 msgid "capture height"
 msgstr "hauteur des captures"
 
-#: src/main.c:36
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr "taille maximum des captures"
 
-#: src/main.c:38
+#: src/main.c:39
 msgid "minimum capture size"
 msgstr "taille minimum des captures"
 
-#: src/main.c:40
+#: src/main.c:41
 msgid "middle capture size"
 msgstr "taille moyenne des captures"
 
-#: src/main.c:42
+#: src/main.c:43
 msgid "use read() rather than mmap()"
 msgstr "utilise read() plutôt que mmap()"
 
-#: src/main.c:73
+#: src/main.c:75
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:87
+#: src/main.c:89
 #, c-format
 msgid ""
 "\n"
@@ -446,13 +451,13 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:209
+#: src/main.c:204
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Impossible de trouver le fichier pixmap : %s"
 
-#: src/v4l.c:115 src/v4l.c:220 src/v4l.c:300 src/v4l.c:368 src/v4l.c:386
-#: src/v4l.c:406
+#: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
+#: src/v4l.c:418
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -461,37 +466,37 @@ msgstr ""
 "Impossible de se connecter au périphérique vidéo (%s).\n"
 "Veuillez vérifier la connexion."
 
-#: src/v4l.c:434
+#: src/v4l.c:447
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:449
+#: src/v4l.c:465
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:462
+#: src/v4l.c:480
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:475
+#: src/v4l.c:494
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:484
+#: src/v4l.c:504
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:512
+#: src/v4l.c:534
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:574
+#: src/v4l.c:596
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
