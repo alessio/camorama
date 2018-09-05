@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-04 17:05-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2006-11-19 21:22+0100 \n"
 "Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:451
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
 
-#: camorama.desktop.in:6 src/main.c:73
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "camorama"
 
@@ -184,7 +184,7 @@ msgstr "Camorama-libglade"
 msgid "_File"
 msgstr "Bestandsnaam"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "Foto maken"
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "Regelaars weergeven"
 
@@ -212,36 +212,36 @@ msgstr "Klein"
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "Contrast:"
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "Helderheid:"
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "Kleur:"
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr "Tint:"
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "Witbalans:"
 
-#: src/callbacks.c:452
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr "Huib Kleinhout <huib@stack.nl>"
 
-#: src/callbacks.c:644
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:745
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -252,7 +252,7 @@ msgstr ""
 "Remote opname: %d\n"
 "Opnameinterval: %d"
 
-#: src/callbacks.c:755
+#: src/callbacks.c:826
 msgid "Automatic Capture Disabled"
 msgstr "Automatische opname uitgeschakeld"
 
@@ -278,7 +278,7 @@ msgstr "Webcam"
 msgid "_Add Filter"
 msgstr "Filter toe_voegen"
 
-#: src/camorama-window.c:214
+#: src/camorama-window.c:213
 msgid "Effects"
 msgstr "Effecten"
 
@@ -423,14 +423,14 @@ msgstr "gemiddelde opnamegrootte"
 msgid "use read() rather than mmap()"
 msgstr "Gebruik read() in plaats van mmap()"
 
-#: src/main.c:75
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -443,7 +443,7 @@ msgstr ""
 "Camorama versie %s\n"
 "\n"
 
-#: src/main.c:204
+#: src/main.c:208
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"

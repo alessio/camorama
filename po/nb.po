@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-04 17:05-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2006-09-13 13:36+0200\n"
 "Last-Translator: Øivind Hoel <oivind.hoel@gmail.com>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
@@ -29,11 +29,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:451
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "Vis, endre og lagre bilder fra et webkamera"
 
-#: camorama.desktop.in:6 src/main.c:73
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "camorama"
 
@@ -183,7 +183,7 @@ msgstr "Camorama-libglade"
 msgid "_File"
 msgstr "Filnavn"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "Ta bilde"
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "Vis justeringer"
 
@@ -211,36 +211,36 @@ msgstr "Liten"
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "Kontrast:"
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "Lysstyrke:"
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "Farge:"
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr "Glød:"
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "Hvit balanse:"
 
-#: src/callbacks.c:452
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: src/callbacks.c:644
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:745
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -251,7 +251,7 @@ msgstr ""
 "Eksternt opptak: %d\n"
 "Opptaksintervall: %d"
 
-#: src/callbacks.c:755
+#: src/callbacks.c:826
 msgid "Automatic Capture Disabled"
 msgstr "Automatisk opptak deaktivert"
 
@@ -279,7 +279,7 @@ msgstr "nettkamerabilde"
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:214
+#: src/camorama-window.c:213
 #, fuzzy
 msgid "Effects"
 msgstr "Vis effekter"
@@ -428,14 +428,14 @@ msgstr "middels opptaksstørrelse"
 msgid "use read() rather than mmap()"
 msgstr "bruk read() istedenfor mmap()"
 
-#: src/main.c:75
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -448,7 +448,7 @@ msgstr ""
 "Camorama versjon %s\n"
 "\n"
 
-#: src/main.c:204
+#: src/main.c:208
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Kunne ikke finne bildefil: %s"

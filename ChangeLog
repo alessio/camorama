@@ -1,6 +1,9 @@
-2018-09-04  Mauro Carvalho Chehab <mchehab@kernel.org>
+2018-09-05  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Enable gcc warnings and clean them
 	* Fix coding style issues
+	* Fix Wayland camera display with Gtk 3
+	* Scale image if camera	resolution is too high
+	* Prevent a potential bug with YUV420 format.
 
 2018-09-03  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Update icons, desktop files

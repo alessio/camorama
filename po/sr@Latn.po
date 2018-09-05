@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-04 17:05-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2003-08-27 13:43+0200\n"
 "Last-Translator: Dejan Matijević <dejan@ns.sympatico.ca>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
@@ -32,11 +32,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:451
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "Pogledaj, izmeni i sačuvaj snimke sa veb kamere"
 
-#: camorama.desktop.in:6 src/main.c:73
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "Kamorama"
 
@@ -186,7 +186,7 @@ msgstr "Kamorama - libglade"
 msgid "_File"
 msgstr "Ime datoteke"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "Napravi sliku"
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "Prikaži podešavanja"
 
@@ -214,39 +214,39 @@ msgstr "Mali"
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "Kontrast:"
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "Osvetljenje:"
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "Boja:"
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr "Nijansa:"
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "Podešavanje beline:"
 
-#: src/callbacks.c:452
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr ""
 "Dejan Matijević <dejan@ns.sympatico.ca>\n"
 "\n"
 "Prevod.org — prevod na srpski jezik."
 
-#: src/callbacks.c:644
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:745
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -254,7 +254,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:755
+#: src/callbacks.c:826
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "Samo snimanje"
@@ -283,7 +283,7 @@ msgstr "snimak veb kamerom"
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:214
+#: src/camorama-window.c:213
 #, fuzzy
 msgid "Effects"
 msgstr "Pokaži efekte"
@@ -433,14 +433,14 @@ msgstr "Srednja dimenzija snimka"
 msgid "use read() rather than mmap()"
 msgstr "Koristi read() bolje nego mmap()"
 
-#: src/main.c:75
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -453,7 +453,7 @@ msgstr ""
 "Kamorama verzija %s\n"
 "\n"
 
-#: src/main.c:204
+#: src/main.c:208
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Nemoguće naći piksmap datoteku: %s"

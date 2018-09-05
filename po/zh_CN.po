@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-04 17:05-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2004-11-29 16:39+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:451
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "查看、控制并保存摄像头的图像"
 
-#: camorama.desktop.in:6 src/main.c:73
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "camorama"
 
@@ -184,7 +184,7 @@ msgstr "Camorama-libglade"
 msgid "_File"
 msgstr "文件名"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "照相"
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "显示调整"
 
@@ -212,38 +212,38 @@ msgstr "小"
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "对比度："
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "亮度："
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "颜色："
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr ""
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "白平衡："
 
-#: src/callbacks.c:452
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr ""
 "开源软件国际化之 GNOME 简体中文组\n"
 "\thttp://i18n.linux.net.cn"
 
-#: src/callbacks.c:644
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:745
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -251,7 +251,7 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:755
+#: src/callbacks.c:826
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "自动抓取"
@@ -280,7 +280,7 @@ msgstr "webcamshot"
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:214
+#: src/camorama-window.c:213
 #, fuzzy
 msgid "Effects"
 msgstr "显示特效"
@@ -430,14 +430,14 @@ msgstr "中抓取大小"
 msgid "use read() rather than mmap()"
 msgstr "使用 read() 而非 nmap()"
 
-#: src/main.c:75
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -450,7 +450,7 @@ msgstr ""
 "Camorama 版本 %s\n"
 "\n"
 
-#: src/main.c:204
+#: src/main.c:208
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "找不到像素图文件：%s"

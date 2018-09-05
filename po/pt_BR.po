@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-04 16:20-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2018-09-04 16:21-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
@@ -36,11 +36,11 @@ msgstr ""
 "Camorama é um visualizador simplificado para webcam, com capacidade para "
 "aplicação de alguns efeitos de vídeo."
 
-#: camorama.desktop.in:5 src/callbacks.c:451
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
-#: camorama.desktop.in:6 src/main.c:73
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "camorama"
 
@@ -186,7 +186,7 @@ msgstr "Camorama-libglade"
 msgid "_File"
 msgstr "_Arquivo"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "Tirar Fotografia"
 
@@ -198,7 +198,7 @@ msgstr "_Editar"
 msgid "_View"
 msgstr "_Visualizar"
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "Mostrar Ajustes"
 
@@ -214,27 +214,27 @@ msgstr "Pequena"
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "Contraste:"
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "Brilho:"
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "Cor:"
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr "Matiz:"
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "Equilíbrio de Branco:"
 
-#: src/callbacks.c:452
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
@@ -243,12 +243,12 @@ msgstr ""
 "Andre Noel <andrenoel@ubuntu.com>\n"
 "Mauro Carvalho Chehab <mchehab+samsung@kernel.org>"
 
-#: src/callbacks.c:644
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr "%.2f quadros/s - atual     %.2f quadros/s - média"
 
-#: src/callbacks.c:745
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -259,7 +259,7 @@ msgstr ""
 "Captura Remota: %d\n"
 "Intervalo de Captura: %d"
 
-#: src/callbacks.c:755
+#: src/callbacks.c:826
 msgid "Automatic Capture Disabled"
 msgstr "Captura Automática Desabilitada"
 
@@ -285,7 +285,7 @@ msgstr "Webcam"
 msgid "_Add Filter"
 msgstr "_Adicionar Filtro"
 
-#: src/camorama-window.c:214
+#: src/camorama-window.c:213
 msgid "Effects"
 msgstr "Efeitos"
 
@@ -430,7 +430,7 @@ msgstr "tamanho médio de captura"
 msgid "use read() rather than mmap()"
 msgstr "usar read() em vez de mmap()"
 
-#: src/main.c:75
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -439,7 +439,7 @@ msgstr ""
 "Argumento inválido\n"
 "Execute '%s --help'\n"
 
-#: src/main.c:89
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -452,7 +452,7 @@ msgstr ""
 "Camorama Versão %s\n"
 "\n"
 
-#: src/main.c:204
+#: src/main.c:208
 msgid "Couldn't load builder file"
 msgstr "Não foi possível carregar arquivo com interface gráfica"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-04 17:05-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2006-09-15 15:34+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -31,11 +31,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:451
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "Katsele, muuta ja tallenna kuvia webikamerasta"
 
-#: camorama.desktop.in:6 src/main.c:73
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "camorama"
 
@@ -185,7 +185,7 @@ msgstr "Camorama-libglade"
 msgid "_File"
 msgstr "Tiedostonimi"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "Ota kuva"
 
@@ -197,7 +197,7 @@ msgstr ""
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "Näytä säädöt"
 
@@ -213,39 +213,39 @@ msgstr "Pieni"
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "Kontrasti:"
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "Kirkkaus:"
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "Väri:"
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr "Kylläisyys:"
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "Valkotasapaino:"
 
-#: src/callbacks.c:452
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr ""
 "Ilkka Tuohela, 2004-2005\n"
 "\n"
 "http://gnome.fi/"
 
-#: src/callbacks.c:644
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:745
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -256,7 +256,7 @@ msgstr ""
 "Etäkaappaus: %d\n"
 "Kaappausväli: %d"
 
-#: src/callbacks.c:755
+#: src/callbacks.c:826
 msgid "Automatic Capture Disabled"
 msgstr "Automaattinen kuvankaappaus pois käytöstä"
 
@@ -282,7 +282,7 @@ msgstr "Web-kamera"
 msgid "_Add Filter"
 msgstr "_Lisää suodin"
 
-#: src/camorama-window.c:214
+#: src/camorama-window.c:213
 msgid "Effects"
 msgstr "Tehosteet"
 
@@ -427,14 +427,14 @@ msgstr "kaapauksen keskikoko"
 msgid "use read() rather than mmap()"
 msgstr "käytä read():ia mmap():in sijasta"
 
-#: src/main.c:75
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:89
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -447,7 +447,7 @@ msgstr ""
 "Camorama versio %s\n"
 "\n"
 
-#: src/main.c:204
+#: src/main.c:208
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap-tiedosto ei voitu avata: %s"
