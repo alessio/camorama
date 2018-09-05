@@ -479,13 +479,13 @@ void on_about_activate(GtkMenuItem *menuitem, cam_t *cam)
     gtk_widget_show(about);
 }
 
-static void apply_filters(cam_t *cam)
+static void apply_filters(cam_t *cam, unsigned char *pic_buf)
 {
     /* v4l has reverse rgb order from what camora expect so call the color
        filter to fix things up before running the user selected filters */
-    camorama_filter_color_filter(NULL, cam->pic_buf, cam->width,
+    camorama_filter_color_filter(NULL, pic_buf, cam->width,
                                  cam->height, cam->bpp / 8);
-    camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf,
+    camorama_filter_chain_apply(cam->filter_chain, pic_buf,
                                 cam->width, cam->height, cam->bpp / 8);
 }
 
@@ -645,7 +645,7 @@ gint read_timeout_func(cam_t *cam)
                        cam->bpp / 8);
         pic_buf = cam->tmp;
     }
-    apply_filters(cam);
+    apply_filters(cam, pic_buf);
     cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                        cam->width, cam->height,
                                        (cam->width * cam->bpp / 8),
@@ -668,7 +668,7 @@ gint timeout_func(cam_t *cam)
                        cam->bpp / 8);
         pic_buf = cam->tmp;
     }
-    apply_filters(cam);
+    apply_filters(cam, pic_buf);
     cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                        cam->width, cam->height,
                                        (cam->width * cam->bpp / 8),
