@@ -36,14 +36,14 @@ AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.
 AX_IS_RELEASE(always)
 AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])
 
-AC_ARG_ENABLE(gtk3, [AC_HELP_STRING([--enable-gtk3], [Compile against GTK 3.x instead of GTK 2.x])], [enable_gtk3=$enableval], [enable_gtk3="no"])
+AC_ARG_ENABLE(gtk2, [AC_HELP_STRING([--enable-gtk2], [Compile against GTK 2.x instead of GTK 3.x])], [enable_gtk2=$enableval], [enable_gtk2="no"])
 
 pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
-if test "x$enable_gtk3" = xyes; then
-	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
-else
+if test "x$enable_gtk2" = xyes; then
 	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
+else
+	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
 fi
 
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
