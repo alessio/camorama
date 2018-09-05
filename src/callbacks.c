@@ -500,6 +500,9 @@ static void apply_filters(cam_t *cam)
 static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
                                            GdkWindow *for_window)
 {
+#if GTK_MAJOR_VERSION >= 3
+    return gdk_cairo_surface_create_from_pixbuf(pixbuf, 1, for_window);
+#else
     gint width = gdk_pixbuf_get_width(pixbuf);
     gint height = gdk_pixbuf_get_height(pixbuf);
     guchar *gdk_pixels = gdk_pixbuf_get_pixels(pixbuf);
@@ -564,6 +567,7 @@ static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
 
     cairo_surface_mark_dirty(surface);
     return surface;
+#endif
 }
 
 static void show_buffer(cam_t *cam)
@@ -579,6 +583,10 @@ static void show_buffer(cam_t *cam)
         .x = 0, .y = 0,
         .width = cam->width, .height = cam->height
     };
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
+    GdkDrawingContext *context;
+    cairo_region_t *region;
+#endif
 
     /*
      * refer the frame
@@ -601,13 +609,27 @@ static void show_buffer(cam_t *cam)
     window = gtk_widget_get_window(widget);
 
     surface = create_from_pixbuf(pb, window);
+
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
+    region = cairo_region_create();
+    context = gdk_window_begin_draw_frame(window, region);
+    cr = gdk_drawing_context_get_cairo_context(context);
+#else
     cr = gdk_cairo_create(window);
+#endif
+
     cairo_set_source_surface(cr, surface, 0, 0);
-
     gdk_cairo_rectangle(cr, &rect);
-
     cairo_fill(cr);
+
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
+    gdk_window_end_draw_frame(window, context);
+#else
     cairo_destroy(cr);
+    cairo_region_destroy(region);
+#endif
+
+    cairo_surface_destroy(surface);
 
     frames++;
     frames2++;
