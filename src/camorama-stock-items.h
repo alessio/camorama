@@ -10,5 +10,4 @@ void camorama_stock_init(void);
 #define CAMORAMA_STOCK_WEBCAM "camorama-webcam"
 
 G_END_DECLS
-
-#endif /* !CAMORAMA_STOCK_ITEMS_H */
+#endif                          /* !CAMORAMA_STOCK_ITEMS_H */

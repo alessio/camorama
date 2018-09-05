@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: carmorama.HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-03 17:00-0300\n"
+"POT-Creation-Date: 2018-09-05 14:33-0300\n"
 "PO-Revision-Date: 2004-03-15 20:19+0530\n"
 "Last-Translator: Jaswinder Singh Phulewala <jaswinderlinux@netscape.net>\n"
 "Language-Team: Punjabi\n"
@@ -32,11 +32,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:509
+#: camorama.desktop.in:5 src/callbacks.c:476
 msgid "View, alter and save images from a webcam"
 msgstr "webcam ਤੋਂ ਚਿੱਤਰ ਵੇਖੋ,ਬਦਲੋ ਅਤੇ ਸੰਭਾਲੋ"
 
-#: camorama.desktop.in:6 src/main.c:71
+#: camorama.desktop.in:6 src/main.c:74
 msgid "camorama"
 msgstr "camorama"
 
@@ -186,7 +186,7 @@ msgstr "Camorama-libglade"
 msgid "_File"
 msgstr "ਫਾਈਲ ਨਾਉਂ"
 
-#: data/camorama.ui:1223 data/camorama.ui:1523
+#: data/camorama.ui:1223 data/camorama.ui:1524
 msgid "Take Picture"
 msgstr "ਤਸਵੀਰ ਲਓ"
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1464
+#: data/camorama.ui:1291 data/camorama.ui:1465
 msgid "Show Adjustments"
 msgstr "ਠੀਕ ਕੀਤਾ ਦਿਖਾਓ"
 
@@ -214,36 +214,36 @@ msgstr "ਛੋਟਾ"
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1654
+#: data/camorama.ui:1655
 msgid "Contrast:"
 msgstr "ਗੂੜਾ: "
 
-#: data/camorama.ui:1668
+#: data/camorama.ui:1669
 msgid "Brightness:"
 msgstr "ਚਮਕ:"
 
-#: data/camorama.ui:1684
+#: data/camorama.ui:1685
 msgid "Color:"
 msgstr "ਰੰਗ: "
 
-#: data/camorama.ui:1700
+#: data/camorama.ui:1701
 msgid "Hue:"
 msgstr "ਰੰਗ ਦਾ ਸ਼ੇਡ:"
 
-#: data/camorama.ui:1716
+#: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "ਸਫੈਦ ਸੰਤੁਲਨ:"
 
-#: src/callbacks.c:496
+#: src/callbacks.c:477
 msgid "translator_credits"
 msgstr "ਜਸਵਿੰਦਰ ਸਿਘ ਫੂਲੇਵਾਲੀਅਾ(jaswinderlinux@netscape.net)"
 
-#: src/callbacks.c:702
+#: src/callbacks.c:715
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:822
+#: src/callbacks.c:816
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -251,65 +251,70 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: src/callbacks.c:831
+#: src/callbacks.c:826
 #, fuzzy
 msgid "Automatic Capture Disabled"
 msgstr "ਸ੍ਵੈ ਪ੍ਾਪਤੀ"
 
-#: src/camorama-filter-laplace.c:128
+#: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
 msgstr ""
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-mirror.c:67
+#: src/camorama-filter-mirror.c:75
 #, fuzzy
 msgid "Mirror"
 msgstr "ਦਰਪਣ ਚਿੱਤਰ"
 
 #. TRANSLATORS: This is a noun
-#: src/camorama-filter-reichardt.c:297
+#: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:11
+#: src/camorama-stock-items.c:13
 #, fuzzy
 msgid "Webcam"
 msgstr "webcamshot"
 
-#: src/camorama-window.c:116
+#: src/camorama-window.c:123
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:207
+#: src/camorama-window.c:213
 #, fuzzy
 msgid "Effects"
 msgstr "ਪ੍ਭਾਵ ਦਿਖਾਓ"
 
-#: src/fileio.c:112 src/fileio.c:253
+#: src/fileio.c:111 src/fileio.c:253
 msgid "Could save temporary image file in /tmp."
 msgstr " /tmp ਵਿਚ ਆਰਜੀ ਚਿੱਤਰ ਫਾਈਲ ਸੰਭਾਲ ਸਕਿਆ।"
 
-#: src/fileio.c:124
+#: src/fileio.c:121
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr " ਚਿੱਤਰ '%s' ਪੈਦਾ ਕਰਨ ਵਿਚ ਅਯੋਗ।"
 
-#: src/fileio.c:132 src/fileio.c:415
+#: src/fileio.c:129 src/fileio.c:403
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr " ਚਿੱਤਰ '%s/%s' ਸੰਭਾਲ ਨਹੀਂ ਸਕਿਆ।"
 
-#: src/fileio.c:170
+#: src/fileio.c:139
+#, fuzzy, c-format
+msgid "Could not create a thread to save image '%s/%s'."
+msgstr " ਚਿੱਤਰ '%s/%s' ਸੰਭਾਲ ਨਹੀਂ ਸਕਿਆ।"
+
+#: src/fileio.c:172
 #, fuzzy, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "%s ਨੂੰ ਖੋਲਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ। "
 
-#: src/fileio.c:207
+#: src/fileio.c:208
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
 msgstr "%s ਨੂੰ ਖੋਲਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ। "
 
-#: src/fileio.c:261
+#: src/fileio.c:259
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -318,121 +323,121 @@ msgstr ""
 "ਆਰਜੀ ਚਿੱਤਰ ਫਾਈਲ '%s' ਨੂੰ ਖੋਲਣ ਵਿਚ ਅਯੋਗ।\n"
 "ਚਿੱਤਰ ਨੂੰ ਨਿਰਯਾਤ ਨਹੀਂ ਕਰ ਸਕਦਾ।"
 
-#: src/fileio.c:291
+#: src/fileio.c:288
 #, fuzzy, c-format
 msgid "An error occurred opening %s."
 msgstr "%s ਨੂੰ ਖੋਲਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ। "
 
-#: src/fileio.c:302
+#: src/fileio.c:299
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "%s ਨੂੰ ਖੋਲਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ। "
 
-#: src/fileio.c:313
+#: src/fileio.c:309
 #, fuzzy, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "'%s' ਵਿੱਚ ਲਿਖਣ ਦੀ ਗਲਤੀ ਹੋਈ ਹੈ। "
 
-#: src/fileio.c:321
+#: src/fileio.c:316
 #, fuzzy, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "%s ਨੂੰ ਖੋਲਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ। "
 
-#: src/fileio.c:389
+#: src/fileio.c:381
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "'%s' ਡਾਇਰੈਕਟਰੀ ਨਹੀਂ ਬਣਾ ਸਕਿਆ।"
 
-#: src/fileio.c:400
+#: src/fileio.c:390
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "'%s' ਡਾਇਰੈਕਟਰੀ ਵਿਚ ਤਬਦੀਲੀ ਨਹੀਂ ਕਰ ਸਕਿਆ।"
 
-#: src/filter.c:171
+#: src/filter.c:187
 #, fuzzy
 msgid "Color Correction"
 msgstr "ਰੰਗ ਠੀਕ ਕਰਨਾ"
 
-#: src/filter.c:196
+#: src/filter.c:216
 msgid "Invert"
 msgstr ""
 
-#: src/filter.c:235
+#: src/filter.c:260
 #, fuzzy
 msgid "Threshold (Overall)"
 msgstr "ਮੁੱਢਲਾ:"
 
-#: src/filter.c:277
+#: src/filter.c:310
 msgid "Threshold (Per Channel)"
 msgstr ""
 
-#: src/filter.c:350
+#: src/filter.c:388
 msgid "Wacky"
 msgstr "ਵਿਕਸੀ"
 
-#: src/filter.c:451
+#: src/filter.c:494
 #, fuzzy
 msgid "Smooth"
 msgstr "ਮੁਲਾਇਮ ਕਰਨਾ"
 
-#: src/filter.c:482
+#: src/filter.c:530
 msgid "Monochrome"
 msgstr ""
 
-#: src/filter.c:512
+#: src/filter.c:568
 msgid "Monochrome (Weight)"
 msgstr ""
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:564
+#: src/filter.c:625
 msgid "Sobel"
 msgstr "Sobel"
 
-#: src/main.c:26
+#: src/main.c:27
 msgid "show version and exit"
 msgstr "ਵਰਜਨ ਦਿਖਾਉ ਅਤੇ ਬਾਹਰ ਜਾਓ"
 
-#: src/main.c:28
+#: src/main.c:29
 msgid "v4l device to use"
 msgstr "ਵਰਤਣ ਲਈ v4l ਯੰਤਰ"
 
-#: src/main.c:30
+#: src/main.c:31
 #, fuzzy
 msgid "enable debugging code"
 msgstr "ਡੀਬਗਿੰਗ ਨਿਯਮਾਂਵਲੀ ਯੋਗ ਕਰੋ"
 
-#: src/main.c:32
+#: src/main.c:33
 msgid "capture width"
 msgstr "ਪ੍ਾਪਤ ਕੀਤੀ ਚੌੜਾਈ"
 
-#: src/main.c:34
+#: src/main.c:35
 msgid "capture height"
 msgstr "ਪ੍ਾਪਤ ਕੀਤੀ ਉਚਾਈ"
 
-#: src/main.c:36
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਪ੍ਾਪਤ ਕੀਤਾ ਆਕਾਰ"
 
-#: src/main.c:38
+#: src/main.c:39
 msgid "minimum capture size"
 msgstr "ਘੱਟ ਤੋਂ ਘੱਟ ਪ੍ਾਪਤ ਕੀਤਾ ਆਕਾਰ"
 
-#: src/main.c:40
+#: src/main.c:41
 msgid "middle capture size"
 msgstr "ਵਿਚਕਾਰਲਾ ਪ੍ਾਪਤ ਕੀਤਾ ਆਕਾਰ"
 
-#: src/main.c:42
+#: src/main.c:43
 msgid "use read() rather than mmap()"
 msgstr " read()ਵਰਤੋ ਨਾ ਕਿ  mmap()"
 
-#: src/main.c:73
+#: src/main.c:76
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:87
+#: src/main.c:93
 #, c-format
 msgid ""
 "\n"
@@ -445,13 +450,13 @@ msgstr ""
 "Camorama ਵਰਜਨ %s\n"
 "\n"
 
-#: src/main.c:209
+#: src/main.c:208
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "pixmap ਫਾਈਲ: %s ਨਹੀਂ ਲੱਭ ਸਕੀ ਹੈ"
 
-#: src/v4l.c:115 src/v4l.c:220 src/v4l.c:300 src/v4l.c:368 src/v4l.c:386
-#: src/v4l.c:406
+#: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
+#: src/v4l.c:418
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -460,37 +465,37 @@ msgstr ""
 "ਆਵਾਜ ਯੰਤਰ (%s) ਨਾਲ ਸੰਬੰਧ ਨਹੀਂ ਬਣ ਸਕਿਆ।\n"
 "ਕਿਰਪਾ ਕਰਕੇ ਜੋੜ ਦੀ ਜਾਂਚ ਕਰੋ।"
 
-#: src/v4l.c:434
+#: src/v4l.c:447
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:449
+#: src/v4l.c:465
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:462
+#: src/v4l.c:480
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:475
+#: src/v4l.c:494
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:484
+#: src/v4l.c:504
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:512
+#: src/v4l.c:534
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:574
+#: src/v4l.c:596
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""

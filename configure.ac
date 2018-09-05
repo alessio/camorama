@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(camorama,0.20.1, https://github.com/alessio/camorama)
+AC_INIT(camorama,0.20.2, https://github.com/alessio/camorama)
 AC_CONFIG_SRCDIR(src/main.c)
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
@@ -32,11 +32,13 @@ AM_PROG_CC_STDC
 AC_HEADER_STDC
 AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.h png.h glade/glade.h])
 
-GNOME_COMPILE_WARNINGS
+# Don't assume that gcc warnings are errors
+AX_IS_RELEASE(always)
+AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])
 
 AC_ARG_ENABLE(gtk3, [AC_HELP_STRING([--enable-gtk3], [Compile against GTK 3.x instead of GTK 2.x])], [enable_gtk3=$enableval], [enable_gtk3="no"])
 
-pkg_modules="gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0 gconf-2.0"
+pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
 if test "x$enable_gtk3" = xyes; then
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"

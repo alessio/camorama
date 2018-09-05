@@ -25,7 +25,7 @@
 #ifndef CAMORAMA_GLOBALS_H
 #define CAMORAMA_GLOBALS_H
 
-#include <gtk/gtk.h>
+#include "v4l.h"
 
 G_BEGIN_DECLS
 
@@ -35,5 +35,4 @@ GtkWidget *dentry, *entry2, *string_entry, *format_selection;
 GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
 
 G_END_DECLS
-
-#endif /* !CAMORAMA_GLOBALS_H */
+#endif                          /* !CAMORAMA_GLOBALS_H */

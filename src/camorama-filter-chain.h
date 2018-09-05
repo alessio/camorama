@@ -24,40 +24,35 @@
 #ifndef CAMORAMA_FILTER_CHAIN_H
 #define CAMORAMA_FILTER_CHAIN_H
 
-#include <gtk/gtk.h>
-
 G_BEGIN_DECLS
 
-typedef struct _CamoramaFilterChain      CamoramaFilterChain;
+typedef struct _CamoramaFilterChain CamoramaFilterChain;
 typedef struct _CamoramaFilterChainClass CamoramaFilterChainClass;
 
 #define CAMORAMA_TYPE_FILTER_CHAIN         (camorama_filter_chain_get_type())
 
 GType camorama_filter_chain_get_type(void);
 
-CamoramaFilterChain* camorama_filter_chain_new   (void);
-void                 camorama_filter_chain_append(CamoramaFilterChain* self,
-					          GType                filter_type);
-void                 camorama_filter_chain_apply (CamoramaFilterChain* self,
-					          guchar*              image,
-					          gint                 width,
-					          gint                 height,
-						  gint                 depth);
+CamoramaFilterChain *camorama_filter_chain_new(void);
+void camorama_filter_chain_append(CamoramaFilterChain *self,
+                                  GType filter_type);
+void camorama_filter_chain_apply(CamoramaFilterChain *self,
+                                 guchar *image,
+                                 gint width, gint height, gint depth);
 
 struct _CamoramaFilterChain {
-	GtkListStore base_instance;
+    GtkListStore base_instance;
 };
 
 struct _CamoramaFilterChainClass {
-	GtkListStoreClass base_class;
+    GtkListStoreClass base_class;
 };
 
 enum {
-	CAMORAMA_FILTER_CHAIN_COL_NAME,
-	CAMORAMA_FILTER_CHAIN_COL_FILTER,
-	CAMORAMA_FILTER_CHAIN_N_COLUMNS
+    CAMORAMA_FILTER_CHAIN_COL_NAME,
+    CAMORAMA_FILTER_CHAIN_COL_FILTER,
+    CAMORAMA_FILTER_CHAIN_N_COLUMNS
 };
 
 G_END_DECLS
-
-#endif /* !CAMORAMA_FILTER_CHAIN_H */
+#endif                          /* !CAMORAMA_FILTER_CHAIN_H */
