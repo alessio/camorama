@@ -497,12 +497,10 @@ static void apply_filters(cam_t *cam)
  *    https://github.com/bratsche/gtk-/blob/master/gdk/gdkcairo.c
  * With a small backport.
  */
+#if GTK_MAJOR_VERSION < 3
 static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
                                            GdkWindow *for_window)
 {
-#if GTK_MAJOR_VERSION >= 3
-    return gdk_cairo_surface_create_from_pixbuf(pixbuf, 1, for_window);
-#else
     gint width = gdk_pixbuf_get_width(pixbuf);
     gint height = gdk_pixbuf_get_height(pixbuf);
     guchar *gdk_pixels = gdk_pixbuf_get_pixels(pixbuf);
@@ -567,81 +565,91 @@ static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
 
     cairo_surface_mark_dirty(surface);
     return surface;
-#endif
 }
 
 static void show_buffer(cam_t *cam)
 {
-    GdkPixbuf *pb;
     GtkWidget *widget;
     GdkWindow *window;
     cairo_surface_t *surface;
     cairo_t *cr;
-    unsigned char *pic_buf = cam->pic_buf;
-
     const GdkRectangle rect = {
         .x = 0, .y = 0,
         .width = cam->width, .height = cam->height
     };
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
-    GdkDrawingContext *context;
-    cairo_region_t *region;
-#endif
 
-    /*
-     * refer the frame
-     */
-    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
-                       cam->bpp / 8);
-        pic_buf = cam->tmp;
-    }
-
-    apply_filters(cam);
-
-    /* Use cairo to display the pixel buffer */
-
-    pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
-                                  cam->width, cam->height,
-                                  (cam->width * cam->bpp / 8), NULL, NULL);
+    if (!cam->pb)
+        return;
 
     widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
     window = gtk_widget_get_window(widget);
 
-    surface = create_from_pixbuf(pb, window);
-
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
-    region = cairo_region_create();
-    context = gdk_window_begin_draw_frame(window, region);
-    cr = gdk_drawing_context_get_cairo_context(context);
-#else
+    surface = create_from_pixbuf(cam->pb, window);
     cr = gdk_cairo_create(window);
-#endif
+    cairo_set_source_surface(cr, surface, 0, 0);
 
+    gdk_cairo_rectangle(cr, &rect);
+
+    cairo_fill(cr);
+    cairo_destroy(cr);
+    cairo_surface_destroy(surface);
+
+    frames++;
+    frames2++;
+}
+#else
+/*
+ * GTK 3 way: use a drawing callback
+ */
+void draw_callback(GtkWidget *widget, cairo_t *cr, cam_t *cam)
+{
+    GdkWindow *window;
+    cairo_surface_t *surface;
+    const GdkRectangle rect = {
+        .x = 0, .y = 0,
+        .width = cam->width, .height = cam->height
+    };
+
+    if (!cam->pb)
+        return;
+
+    window = gtk_widget_get_window(widget);
+    surface = gdk_cairo_surface_create_from_pixbuf(cam->pb, 1, window);
     cairo_set_source_surface(cr, surface, 0, 0);
     gdk_cairo_rectangle(cr, &rect);
     cairo_fill(cr);
-
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
-    gdk_window_end_draw_frame(window, context);
-#else
-    cairo_destroy(cr);
-    cairo_region_destroy(region);
-#endif
-
     cairo_surface_destroy(surface);
 
     frames++;
     frames2++;
 }
 
+static inline void show_buffer(cam_t *cam)
+{
+    gtk_widget_queue_draw(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")));
+}
+#endif
+
 /*
 * get image from cam - does all the work ;)
 */
 gint read_timeout_func(cam_t *cam)
 {
+    unsigned char *pic_buf = cam->pic_buf;
+
     v4l2_read(cam->dev, cam->pic_buf,
               (cam->width * cam->height * cam->bpp / 8));
+
+    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
+        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
+                       cam->bpp / 8);
+        pic_buf = cam->tmp;
+    }
+    apply_filters(cam);
+    cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
+                                       cam->width, cam->height,
+                                       (cam->width * cam->bpp / 8),
+                                       NULL, NULL);
 
     show_buffer(cam);
 
@@ -650,8 +658,21 @@ gint read_timeout_func(cam_t *cam)
 
 gint timeout_func(cam_t *cam)
 {
+    unsigned char *pic_buf = cam->pic_buf;
+
     capture_buffers(cam, cam->pic_buf,
                     cam->width * cam->height * cam->bytesperline);
+
+    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
+        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
+                       cam->bpp / 8);
+        pic_buf = cam->tmp;
+    }
+    apply_filters(cam);
+    cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
+                                       cam->width, cam->height,
+                                       (cam->width * cam->bpp / 8),
+                                       NULL, NULL);
 
     show_buffer(cam);
 

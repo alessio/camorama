@@ -217,6 +217,11 @@ int main(int argc, char *argv[])
     load_interface(cam);
 
     widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
+
+#if GTK_MAJOR_VERSION >= 3
+    g_signal_connect(G_OBJECT(widget), "draw", G_CALLBACK(draw_callback), cam);
+#endif
+
     gtk_widget_show(widget);
 
     cam->idle_id = g_idle_add((GSourceFunc) pt2Function, (gpointer) cam);

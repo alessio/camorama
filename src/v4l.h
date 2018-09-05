@@ -79,6 +79,7 @@ typedef struct camera {
     guint32 timeout_interval;
     GConfClient *gc;
     GtkBuilder *xml;
+    GdkPixbuf *pb;
     GtkStatusIcon *tray_icon;
 
     CamoramaFilterChain *filter_chain;

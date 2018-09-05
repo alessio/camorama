@@ -33,6 +33,7 @@ void ppm_func(GtkWidget *, cam_t *);
 void rts_func(GtkWidget *, cam_t *);
 void rjpg_func(GtkWidget *, cam_t *);
 void rpng_func(GtkWidget *, cam_t *);
+void draw_callback(GtkWidget *, cairo_t *, cam_t *cam);
 
 gint(*pt2Function) (cam_t *);
 void rppm_func(GtkWidget *, cam_t *);
