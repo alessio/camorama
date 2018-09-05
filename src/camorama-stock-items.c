@@ -43,23 +43,8 @@ void camorama_stock_init(void)
 
     gtk_icon_factory_add(factory, CAMORAMA_STOCK_WEBCAM, set);
 
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 16, PACKAGE_DATA_DIR
-                      "/icons/hicolor/16x16/devices/camorama.png");
     add_default_image(CAMORAMA_STOCK_WEBCAM, 24, PACKAGE_DATA_DIR
                       "/icons/hicolor/24x24/devices/camorama.png");
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 32, PACKAGE_DATA_DIR
-                      "/icons/hicolor/32x32/devices/camorama.png");
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 48, PACKAGE_DATA_DIR
-                      "/icons/hicolor/48x48/devices/camorama.png");
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 64, PACKAGE_DATA_DIR
-                      "/icons/hicolor/64x64/devices/camorama.png");
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 128, PACKAGE_DATA_DIR
-                      "/icons/hicolor/128x128/devices/camorama.png");
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 256, PACKAGE_DATA_DIR
-                      "/icons/hicolor/256x256/devices/camorama.png");
-    add_default_image(CAMORAMA_STOCK_WEBCAM, 512, PACKAGE_DATA_DIR
-                      "/icons/hicolor/512x512/devices/camorama.png");
-
     gtk_icon_factory_add_default(factory);
 
     gtk_icon_set_unref(set);

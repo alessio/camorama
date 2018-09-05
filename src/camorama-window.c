@@ -168,11 +168,11 @@ static gboolean treeview_clicked_cb(cam_t *cam, GdkEventButton *ev,
     return retval;
 }
 
-static void tray_clicked_callback(GtkStatusIcon *status, guint button,
-                                  guint activate_time, cam_t *cam)
+static gboolean tray_clicked_callback(GtkStatusIcon *icon, GdkEventButton *ev,
+                                      cam_t *cam)
 {
-    // FIXME: change to switch
-    if (button == 1) {
+    switch (ev->button) {
+    case 1:
         if (gtk_widget_get_visible(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window")))) {
             cam->hidden = TRUE;
             g_source_remove(cam->idle_id);
@@ -185,10 +185,15 @@ static void tray_clicked_callback(GtkStatusIcon *status, guint button,
                                        (cam->xml, "main_window")));
             cam->hidden = FALSE;
         }
-    } else if (button == 3) {
+	break;
+    case 3:
         //gw = MyApp->GetMainWindow ();
         //gnomemeeting_component_view (NULL, (gpointer) gw->ldap_window);
-     }
+        break;
+    default:
+        break;
+    }
+    return FALSE;
 }
 
 void load_interface(cam_t *cam)
@@ -250,7 +255,7 @@ void load_interface(cam_t *cam)
     g_object_set_data(G_OBJECT(cam->tray_icon), "embedded",
                       GINT_TO_POINTER(0));
 
-    g_signal_connect(cam->tray_icon, "popup-menu",
+    g_signal_connect(cam->tray_icon, "button-press-event",
                      G_CALLBACK(tray_clicked_callback), cam);
 
     /* connect the signals in the interface
