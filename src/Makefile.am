@@ -18,8 +18,6 @@ camorama_SOURCES = \
 	camorama-filter-mirror.c \
 	camorama-filter-reichardt.c \
 	camorama-globals.h \
-	camorama-stock-items.c \
-	camorama-stock-items.h \
 	camorama-window.c \
 	camorama-window.h \
 	filter.c \

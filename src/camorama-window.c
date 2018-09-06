@@ -32,7 +32,6 @@
 #include "callbacks.h"
 #include "camorama-filter-chain.h"
 #include "camorama-globals.h"
-#include "camorama-stock-items.h"
 #include "filter.h"
 #include "glib-helpers.h"
 #include "support.h"
@@ -85,6 +84,7 @@ static void delete_filter_clicked(GtkTreeSelection *sel,
     g_list_free_full(paths, (GDestroyNotify) gtk_tree_path_free);
 }
 
+#if !(GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22)
 static void menu_position_func(GtkMenu *menu, gint *x, gint *y,
                                gboolean *push_in, gpointer user_data)
 {
@@ -97,6 +97,7 @@ static void menu_position_func(GtkMenu *menu, gint *x, gint *y,
         // find the selected row and open the popup there
     }
 }
+#endif
 
 static void show_popup(cam_t *cam, GtkTreeView *treeview,
                        GdkEventButton *ev)
@@ -143,11 +144,15 @@ static void show_popup(cam_t *cam, GtkTreeView *treeview,
     g_free(filters);
 
     gtk_widget_show_all(GTK_WIDGET(menu));
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
+    gtk_menu_popup_at_pointer(menu, NULL);
+#else
     gtk_menu_popup(menu,
                    NULL, NULL,
                    menu_position_func, ev,
                    ev ? ev->button : 0,
                    ev ? ev->time : gtk_get_current_event_time());
+#endif
 }
 
 static void treeview_popup_menu_cb(cam_t *cam, GtkTreeView *treeview)
@@ -166,29 +171,6 @@ static gboolean treeview_clicked_cb(cam_t *cam, GdkEventButton *ev,
     }
 
     return retval;
-}
-
-static void tray_clicked_callback(GtkStatusIcon *status, guint button,
-                                  guint activate_time, cam_t *cam)
-{
-    // FIXME: change to switch
-    if (button == 1) {
-        if (gtk_widget_get_visible(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window")))) {
-            cam->hidden = TRUE;
-            g_source_remove(cam->idle_id);
-            gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object
-                                       (cam->xml, "main_window")));
-        } else {
-            cam->idle_id = g_idle_add((GSourceFunc) pt2Function,
-                                      (gpointer) cam);
-            gtk_widget_show(GTK_WIDGET(gtk_builder_get_object
-                                       (cam->xml, "main_window")));
-            cam->hidden = FALSE;
-        }
-    } else if (button == 3) {
-        //gw = MyApp->GetMainWindow ();
-        //gnomemeeting_component_view (NULL, (gpointer) gw->ldap_window);
-     }
 }
 
 void load_interface(cam_t *cam)
@@ -222,11 +204,6 @@ void load_interface(cam_t *cam)
     g_signal_connect_swapped(treeview, "popup-menu",
                              G_CALLBACK(treeview_popup_menu_cb), cam);
 
-    logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(window)),
-                                    CAMORAMA_STOCK_WEBCAM, 24, 0, NULL);
-    gtk_window_set_default_icon(logo);
-    logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(window)),
-                                    "camorama", 48, 0, NULL);
     if (cam->show_adjustments == FALSE) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "adjustments_table")));
@@ -242,21 +219,14 @@ void load_interface(cam_t *cam)
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(gtk_builder_get_object(cam->xml, "show_effects")),
                                    cam->show_effects);
 
-    cam->tray_icon = gtk_status_icon_new_from_stock(CAMORAMA_STOCK_WEBCAM);
-    update_tooltip(cam);
-    /* add the status to the plug */
-    g_object_set_data(G_OBJECT(cam->tray_icon), "available",
-                      GINT_TO_POINTER(1));
-    g_object_set_data(G_OBJECT(cam->tray_icon), "embedded",
-                      GINT_TO_POINTER(0));
-
-    g_signal_connect(cam->tray_icon, "popup-menu",
-                     G_CALLBACK(tray_clicked_callback), cam);
-
     /* connect the signals in the interface
      * glade_xml_signal_autoconnect(xml);
      * this won't work, can't pass data to callbacks.  have to do it individually :(*/
 
+    logo = gdk_pixbuf_new_from_file(PACKAGE_DATA_DIR
+                                    "/icons/hicolor/128x128/devices/camorama.png",
+                                    NULL);
+    gtk_window_set_default_icon(logo);
     gtk_window_set_icon(GTK_WINDOW(window), logo);
     gtk_window_set_icon(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"))), logo);
 

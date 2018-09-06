@@ -75,14 +75,13 @@ typedef struct camera {
     gboolean cap, rcap, acap, show_adjustments, show_effects;
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
-    GtkWidget *da, *tray_tooltip, *status;
+    GtkWidget *da, *status;
     unsigned char *pic_buf, *tmp;
     guint timeout_id, idle_id;
     guint32 timeout_interval;
     GConfClient *gc;
     GtkBuilder *xml;
     GdkPixbuf *pb;
-    GtkStatusIcon *tray_icon;
 
     CamoramaFilterChain *filter_chain;
 

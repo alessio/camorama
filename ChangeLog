@@ -3,6 +3,7 @@
 	* Fix coding style issues
 	* Fix Wayland camera display with Gtk 3
 	* Scale image if camera	resolution is too high
+	* Change default to use gtk3
 	* Prevent a potential bug with YUV420 format.
 
 2018-09-03  Mauro Carvalho Chehab <mchehab@kernel.org>

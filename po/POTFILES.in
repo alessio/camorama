@@ -9,7 +9,6 @@ src/camorama-filter-chain.c
 src/camorama-filter-laplace.c
 src/camorama-filter-mirror.c
 src/camorama-filter-reichardt.c
-src/camorama-stock-items.c
 src/camorama-window.c
 src/fileio.c
 src/filter.c

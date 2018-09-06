@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-05 14:33-0300\n"
+"POT-Creation-Date: 2018-09-06 15:17-0300\n"
 "PO-Revision-Date: 2018-09-04 16:21-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
@@ -36,11 +36,11 @@ msgstr ""
 "Camorama é um visualizador simplificado para webcam, com capacidade para "
 "aplicação de alguns efeitos de vídeo."
 
-#: camorama.desktop.in:5 src/callbacks.c:476
+#: camorama.desktop.in:5 src/callbacks.c:472
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
-#: camorama.desktop.in:6 src/main.c:74
+#: camorama.desktop.in:6 src/main.c:89
 msgid "camorama"
 msgstr "camorama"
 
@@ -234,7 +234,7 @@ msgstr "Matiz:"
 msgid "White Balance:"
 msgstr "Equilíbrio de Branco:"
 
-#: src/callbacks.c:477
+#: src/callbacks.c:473
 msgid "translator_credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
@@ -243,25 +243,10 @@ msgstr ""
 "Andre Noel <andrenoel@ubuntu.com>\n"
 "Mauro Carvalho Chehab <mchehab+samsung@kernel.org>"
 
-#: src/callbacks.c:715
+#: src/callbacks.c:711
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr "%.2f quadros/s - atual     %.2f quadros/s - média"
-
-#: src/callbacks.c:816
-#, c-format
-msgid ""
-"Local Capture: %d\n"
-"Remote Capture: %d\n"
-"Capture Interval: %d"
-msgstr ""
-"Captura Local: %d\n"
-"Captura Remota: %d\n"
-"Intervalo de Captura: %d"
-
-#: src/callbacks.c:826
-msgid "Automatic Capture Disabled"
-msgstr "Captura Automática Desabilitada"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -277,15 +262,11 @@ msgstr "Espelhar"
 msgid "Reichardt"
 msgstr "Reichardt"
 
-#: src/camorama-stock-items.c:13
-msgid "Webcam"
-msgstr "Webcam"
-
-#: src/camorama-window.c:123
+#: src/camorama-window.c:124
 msgid "_Add Filter"
 msgstr "_Adicionar Filtro"
 
-#: src/camorama-window.c:213
+#: src/camorama-window.c:195
 msgid "Effects"
 msgstr "Efeitos"
 
@@ -394,43 +375,43 @@ msgstr "Monocromático (Ponderado)"
 msgid "Sobel"
 msgstr "Realçar"
 
-#: src/main.c:27
+#: src/main.c:25
 msgid "show version and exit"
 msgstr "mostrar versão e sair"
 
-#: src/main.c:29
+#: src/main.c:27
 msgid "v4l device to use"
 msgstr "dispositivo v4l a ser utilizado"
 
-#: src/main.c:31
+#: src/main.c:29
 msgid "enable debugging code"
 msgstr "ativar código de depuração"
 
-#: src/main.c:33
+#: src/main.c:31
 msgid "capture width"
 msgstr "largura da captura"
 
-#: src/main.c:35
+#: src/main.c:33
 msgid "capture height"
 msgstr "altura captura"
 
-#: src/main.c:37
+#: src/main.c:35
 msgid "maximum capture size"
 msgstr "tamanho máximo de captura"
 
-#: src/main.c:39
+#: src/main.c:37
 msgid "minimum capture size"
 msgstr "tamanho mínimo de captura"
 
-#: src/main.c:41
+#: src/main.c:39
 msgid "middle capture size"
 msgstr "tamanho médio de captura"
 
-#: src/main.c:43
+#: src/main.c:41
 msgid "use read() rather than mmap()"
 msgstr "usar read() em vez de mmap()"
 
-#: src/main.c:76
+#: src/main.c:91
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -439,7 +420,7 @@ msgstr ""
 "Argumento inválido\n"
 "Execute '%s --help'\n"
 
-#: src/main.c:93
+#: src/main.c:106
 #, c-format
 msgid ""
 "\n"
@@ -452,7 +433,7 @@ msgstr ""
 "Camorama Versão %s\n"
 "\n"
 
-#: src/main.c:208
+#: src/main.c:221
 msgid "Couldn't load builder file"
 msgstr "Não foi possível carregar arquivo com interface gráfica"
 
@@ -504,6 +485,29 @@ msgstr "Tempo máximo excedido enquanto esperando quadros com imagens (%s)"
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr "falha ao interromper o fluxo de vídeo (%s), encerrando..."
+
+#, fuzzy
+#~ msgid "_Take Picture"
+#~ msgstr "Tirar Fotografia"
+
+#, fuzzy
+#~ msgid "_Preferences"
+#~ msgstr "Preferências"
+
+#~ msgid ""
+#~ "Local Capture: %d\n"
+#~ "Remote Capture: %d\n"
+#~ "Capture Interval: %d"
+#~ msgstr ""
+#~ "Captura Local: %d\n"
+#~ "Captura Remota: %d\n"
+#~ "Intervalo de Captura: %d"
+
+#~ msgid "Automatic Capture Disabled"
+#~ msgstr "Captura Automática Desabilitada"
+
+#~ msgid "Webcam"
+#~ msgstr "Webcam"
 
 #~ msgid "camorama.png"
 #~ msgstr "camorama.png"
