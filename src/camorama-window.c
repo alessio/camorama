@@ -84,6 +84,7 @@ static void delete_filter_clicked(GtkTreeSelection *sel,
     g_list_free_full(paths, (GDestroyNotify) gtk_tree_path_free);
 }
 
+#if !(GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22)
 static void menu_position_func(GtkMenu *menu, gint *x, gint *y,
                                gboolean *push_in, gpointer user_data)
 {
@@ -96,6 +97,7 @@ static void menu_position_func(GtkMenu *menu, gint *x, gint *y,
         // find the selected row and open the popup there
     }
 }
+#endif
 
 static void show_popup(cam_t *cam, GtkTreeView *treeview,
                        GdkEventButton *ev)
@@ -142,11 +144,15 @@ static void show_popup(cam_t *cam, GtkTreeView *treeview,
     g_free(filters);
 
     gtk_widget_show_all(GTK_WIDGET(menu));
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
+    gtk_menu_popup_at_pointer(menu, NULL);
+#else
     gtk_menu_popup(menu,
                    NULL, NULL,
                    menu_position_func, ev,
                    ev ? ev->button : 0,
                    ev ? ev->time : gtk_get_current_event_time());
+#endif
 }
 
 static void treeview_popup_menu_cb(cam_t *cam, GtkTreeView *treeview)
