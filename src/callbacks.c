@@ -764,35 +764,35 @@ gint timeout_capture_func(cam_t *cam)
     return 1;
 }
 
-void contrast_change(GtkHScale *sc1, cam_t *cam)
+void contrast_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->contrast = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_CONTRAST, cam->contrast);
 }
 
-void brightness_change(GtkHScale *sc1, cam_t *cam)
+void brightness_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->brightness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_BRIGHTNESS, cam->brightness);
 }
 
-void colour_change(GtkHScale *sc1, cam_t *cam)
+void colour_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->colour = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_SATURATION, cam->colour);
 }
 
-void hue_change(GtkHScale *sc1, cam_t *cam)
+void hue_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->hue = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_HUE, cam->hue);
 }
 
-void wb_change(GtkHScale *sc1, cam_t *cam)
+void wb_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->whiteness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
