@@ -143,7 +143,11 @@ static void show_popup(cam_t *cam, GtkTreeView *treeview,
     }
     g_free(filters);
 
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 90
+    gtk_widget_show(GTK_WIDGET(menu));
+#else
     gtk_widget_show_all(GTK_WIDGET(menu));
+#endif
 #if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
     gtk_menu_popup_at_pointer(menu, NULL);
 #else
@@ -160,6 +164,19 @@ static void treeview_popup_menu_cb(cam_t *cam, GtkTreeView *treeview)
     show_popup(cam, treeview, NULL);
 }
 
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 90
+static gboolean treeview_clicked_cb(cam_t *cam, GtkButton *button)
+{
+    GtkTreeView *treeview;
+
+    treeview = GTK_TREE_VIEW(gtk_builder_get_object(cam->xml,
+                                                    "treeview_effects"));
+
+    // FIXME: how to check if pressed button was button 3?
+    show_popup(cam, treeview, NULL);
+    return TRUE;
+}
+#else
 static gboolean treeview_clicked_cb(cam_t *cam, GdkEventButton *ev,
                                     GtkTreeView *treeview)
 {
@@ -172,6 +189,7 @@ static gboolean treeview_clicked_cb(cam_t *cam, GdkEventButton *ev,
 
     return retval;
 }
+#endif
 
 void load_interface(cam_t *cam)
 {
