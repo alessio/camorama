@@ -766,6 +766,7 @@ with_libintl_prefix
 enable_compile_warnings
 enable_Werror
 enable_gtk2
+enable_gtk4
 with_gconf_source
 with_gconf_schema_file_dir
 enable_schemas_install
@@ -1414,6 +1415,7 @@ Optional Features:
                           Enable compiler warnings and errors
   --disable-Werror        Unconditionally make all compiler warnings non-fatal
   --enable-gtk2           Compile against GTK 2.x instead of GTK 3.x
+  --enable-gtk4           Compile against GTK 4.x
   --disable-schemas-install
                           Disable the schemas installation
 
@@ -9641,10 +9643,20 @@ else
   enable_gtk2="no"
 fi
 
+# Check whether --enable-gtk4 was given.
+if test "${enable_gtk4+set}" = set; then :
+  enableval=$enable_gtk4; enable_gtk4=$enableval
+else
+  enable_gtk4="no"
+fi
+
 
 pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
-if test "x$enable_gtk2" = xyes; then
+if test "x$enable_gtk4" = xyes; then
+	pkg_modules="$pkg_modules gtk+-4.0 >= 3.92"
+	CAMORAMA_UI="camorama-gtk4.ui"
+elif test "x$enable_gtk2" = xyes; then
 	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
 	CAMORAMA_UI="camorama-gtk2.ui"
 else
