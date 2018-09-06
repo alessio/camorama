@@ -197,6 +197,10 @@ void umount_volume(cam_t *cam)
 
 void mount_volume(cam_t *cam)
 {
+    /* Only try to mount if remote capture is enabled */
+    if (!cam->rcap)
+        return;
+
     /* Prepare a mount operation */
     cam->rdir_file = g_file_new_for_uri(cam->uri);
     if (cam->rdir_file)
