@@ -42,13 +42,16 @@ pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
 if test "x$enable_gtk2" = xyes; then
 	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
+	CAMORAMA_UI="camorama-gtk2.ui"
 else
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
+	CAMORAMA_UI="camorama-gtk3.ui"
 fi
 
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
+AC_SUBST(CAMORAMA_UI)
 AC_DEFINE(HAVE_GCONF,1,[Build with gconf support])
 
 AC_PATH_PROG(GCONFTOOL, gconftool-2)

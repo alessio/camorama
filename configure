@@ -632,6 +632,7 @@ GCONF_SCHEMAS_INSTALL_TRUE
 GCONF_SCHEMA_FILE_DIR
 GCONF_SCHEMA_CONFIG_SOURCE
 GCONFTOOL
+CAMORAMA_UI
 PACKAGE_LIBS
 PACKAGE_CFLAGS
 PKG_CONFIG_LIBDIR
@@ -9645,8 +9646,10 @@ pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
 if test "x$enable_gtk2" = xyes; then
 	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
+	CAMORAMA_UI="camorama-gtk2.ui"
 else
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
+	CAMORAMA_UI="camorama-gtk3.ui"
 fi
 
 
@@ -9860,6 +9863,7 @@ else
 $as_echo "yes" >&6; }
 
 fi
+
 
 
 
