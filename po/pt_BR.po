@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-06 15:17-0300\n"
-"PO-Revision-Date: 2018-09-04 16:21-0300\n"
+"POT-Creation-Date: 2018-09-06 12:06-0300\n"
+"PO-Revision-Date: 2018-09-06 12:08-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -233,6 +233,22 @@ msgstr "Matiz:"
 #: data/camorama.ui:1717
 msgid "White Balance:"
 msgstr "Equilíbrio de Branco:"
+
+#: data/camorama-gtk3.ui:56
+msgid "_Take Picture"
+msgstr "_Tirar Fotografia"
+
+#: data/camorama-gtk3.ui:71
+msgid "_Quit"
+msgstr "_Encerrar"
+
+#: data/camorama-gtk3.ui:92
+msgid "_Preferences"
+msgstr "_Preferências"
+
+#: data/camorama-gtk3.ui:161
+msgid "_About"
+msgstr "_Sobre"
 
 #: src/callbacks.c:473
 msgid "translator_credits"
