@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama mk\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-05 14:33-0300\n"
+"POT-Creation-Date: 2018-09-06 15:17-0300\n"
 "PO-Revision-Date: 2004-09-17 00:09+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:476
+#: camorama.desktop.in:5 src/callbacks.c:472
 msgid "View, alter and save images from a webcam"
 msgstr "Поглед, извести и сними слики од вебкамера"
 
-#: camorama.desktop.in:6 src/main.c:74
+#: camorama.desktop.in:6 src/main.c:89
 msgid "camorama"
 msgstr "каморама"
 
@@ -237,27 +237,14 @@ msgstr "Хју:"
 msgid "White Balance:"
 msgstr "Баланс на бело:"
 
-#: src/callbacks.c:477
+#: src/callbacks.c:473
 msgid "translator_credits"
 msgstr "Марко Иваноски (marko@programmer.net)"
 
-#: src/callbacks.c:715
+#: src/callbacks.c:711
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
-
-#: src/callbacks.c:816
-#, c-format
-msgid ""
-"Local Capture: %d\n"
-"Remote Capture: %d\n"
-"Capture Interval: %d"
-msgstr ""
-
-#: src/callbacks.c:826
-#, fuzzy
-msgid "Automatic Capture Disabled"
-msgstr "Автоматско преземање"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -274,16 +261,11 @@ msgstr "Слика од огледало"
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-stock-items.c:13
-#, fuzzy
-msgid "Webcam"
-msgstr "вебкам слика"
-
-#: src/camorama-window.c:123
+#: src/camorama-window.c:124
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:213
+#: src/camorama-window.c:195
 #, fuzzy
 msgid "Effects"
 msgstr "Покажи ефекти"
@@ -396,51 +378,51 @@ msgstr ""
 msgid "Sobel"
 msgstr "Собел"
 
-#: src/main.c:27
+#: src/main.c:25
 msgid "show version and exit"
 msgstr "покажи верзија и излези"
 
-#: src/main.c:29
+#: src/main.c:27
 msgid "v4l device to use"
 msgstr "v4l уред да се користи"
 
-#: src/main.c:31
+#: src/main.c:29
 #, fuzzy
 msgid "enable debugging code"
 msgstr "Овозможи код за дебагирање"
 
-#: src/main.c:33
+#: src/main.c:31
 msgid "capture width"
 msgstr "Ширина на превземањето"
 
-#: src/main.c:35
+#: src/main.c:33
 msgid "capture height"
 msgstr "Висина на превземањето"
 
-#: src/main.c:37
+#: src/main.c:35
 msgid "maximum capture size"
 msgstr "Максимум големина при превземање"
 
-#: src/main.c:39
+#: src/main.c:37
 msgid "minimum capture size"
 msgstr "Минимум големина при превземање"
 
-#: src/main.c:41
+#: src/main.c:39
 msgid "middle capture size"
 msgstr "Средна големина при превземање"
 
-#: src/main.c:43
+#: src/main.c:41
 msgid "use read() rather than mmap()"
 msgstr "користи read() отколку mmap()"
 
-#: src/main.c:76
+#: src/main.c:91
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/main.c:93
+#: src/main.c:106
 #, c-format
 msgid ""
 "\n"
@@ -453,7 +435,7 @@ msgstr ""
 "Каморама верзија %s\n"
 "\n"
 
-#: src/main.c:208
+#: src/main.c:221
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Не можам да ја најдам pixmap датотеката: %s"
@@ -502,6 +484,22 @@ msgstr ""
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#, fuzzy
+#~ msgid "_Take Picture"
+#~ msgstr "Земи слика"
+
+#, fuzzy
+#~ msgid "_Preferences"
+#~ msgstr "Параметри"
+
+#, fuzzy
+#~ msgid "Automatic Capture Disabled"
+#~ msgstr "Автоматско преземање"
+
+#, fuzzy
+#~ msgid "Webcam"
+#~ msgstr "вебкам слика"
 
 #, fuzzy
 #~ msgid "camorama.png"
