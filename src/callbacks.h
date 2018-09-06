@@ -8,7 +8,7 @@
 G_BEGIN_DECLS
 
 void on_change_size_activate(GtkWidget * widget, cam_t *cam);
-void on_quit_activate(GtkMenuItem *menuitem, gpointer user_data);
+void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam);
 void gconf_notify_func(GConfClient *client, guint cnxn_id,
                        GConfEntry *entry, char **);
 void gconf_notify_func_bool(GConfClient *client, guint cnxn_id,

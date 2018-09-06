@@ -228,12 +228,6 @@ void gconf_notify_func_int(GConfClient *client, guint cnxn_id,
 
 }
 
-int delete_event(GtkWidget *widget, gpointer data)
-{
-    gtk_main_quit();
-    return FALSE;
-}
-
 static int apply_remote_pref(cam_t *cam)
 {
     int index;
@@ -337,9 +331,9 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
 
 }
 
-void on_quit_activate(GtkMenuItem *menuitem, gpointer user_data)
+void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam)
 {
-    gtk_main_quit();
+    g_application_quit(G_APPLICATION(cam->app));
 }
 
 void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data)

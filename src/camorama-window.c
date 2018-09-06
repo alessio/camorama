@@ -183,6 +183,8 @@ void load_interface(cam_t *cam)
                                                           "main_window"));
     GtkTreeView *treeview;
 
+    gtk_application_add_window(cam->app, GTK_WINDOW(window));
+
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 
     /* set up the tree view */
@@ -305,8 +307,6 @@ void load_interface(cam_t *cam)
     //g_signal_connect(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
     g_signal_connect(gtk_builder_get_object(cam->xml, "button1"),
                      "clicked", G_CALLBACK(capture_func), cam);
-    g_signal_connect(window, "delete-event", G_CALLBACK(delete_event),
-                     NULL);
 
     /* sliders */
     if (cam->contrast < 0) {

@@ -76,8 +76,9 @@ typedef struct camera {
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
     GtkWidget *da, *status;
+    GtkApplication *app;
     unsigned char *pic_buf, *tmp;
-    guint timeout_id, idle_id;
+    guint timeout_id, timeout_fps_id, idle_id;
     guint32 timeout_interval;
     GConfClient *gc;
     GtkBuilder *xml;

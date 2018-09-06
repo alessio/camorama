@@ -61,15 +61,33 @@ static void get_geometry(cam_t *cam)
 #endif
 }
 
-int main(int argc, char *argv[])
+static void close_app(GtkWidget* widget, cam_t *cam)
 {
-    cam_t cam_object, *cam;
-    GConfClient *gc;
-    GtkWidget *widget;
-    unsigned int bufsize;
-    GError *error = NULL;
+    if (cam->idle_id)
+        g_source_remove(cam->idle_id);
 
-    cam = &cam_object;
+    if (cam->read == FALSE)
+        stop_streaming(cam);
+
+    v4l2_close(cam->dev);
+
+    if (cam->timeout_id)
+        g_source_remove(cam->timeout_id);
+
+    if (cam->timeout_fps_id)
+        g_source_remove(cam->timeout_fps_id);
+
+    gtk_widget_destroy(widget);
+}
+
+static cam_t cam_object = { 0 };
+
+static void activate(GtkApplication *app)
+{
+    cam_t *cam = &cam_object;
+    GConfClient *gc;
+    GtkWidget *widget, *window;
+    unsigned int bufsize;
 
     /* set some default values */
     cam->frame_number = 0;
@@ -81,16 +99,7 @@ int main(int argc, char *argv[])
     cam->res = NULL;
     cam->n_res = 0;
     cam->scale = 1.f;
-
-    bindtextdomain(PACKAGE_NAME, PACKAGE_LOCALE_DIR);
-    bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
-    textdomain(PACKAGE_NAME);
-
-    if (!gtk_init_with_args(&argc, &argv, _("camorama"), options,
-                            PACKAGE_NAME, &error) || error) {
-        g_printerr(_("Invalid argument\nRun '%s --help'\n"), argv[0]);
-        return 1;
-    }
+    cam->app = app;
 
     /* gtk is initialized now */
     camorama_filters_init();
@@ -231,20 +240,37 @@ int main(int argc, char *argv[])
     g_signal_connect(G_OBJECT(widget), "draw", G_CALLBACK(draw_callback), cam);
 #endif
 
+    window = GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"));
+
+    g_signal_connect(G_OBJECT(window), "destroy",
+                     G_CALLBACK (close_app), cam);
+
     gtk_widget_show(widget);
 
     cam->idle_id = g_idle_add((GSourceFunc) pt2Function, (gpointer) cam);
 
-    g_timeout_add(2000, (GSourceFunc) fps, cam->status);
+    cam->timeout_fps_id = g_timeout_add(2000, (GSourceFunc) fps, cam->status);
 
     if (cam->debug == TRUE)
         print_cam(cam);
+}
 
-    gtk_main();
-    if (cam->read == FALSE) {
-        stop_streaming(cam);
-    }
-    v4l2_close(cam->dev);
+int main(int argc, char *argv[])
+{
+    GtkApplication *app;
+    gint status;
 
-    return 0;
+    bindtextdomain(PACKAGE_NAME, PACKAGE_LOCALE_DIR);
+    bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
+    textdomain(PACKAGE_NAME);
+
+    app = gtk_application_new(NULL, G_APPLICATION_FLAGS_NONE);
+    g_application_add_main_option_entries(G_APPLICATION(app), options);
+    g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
+
+    status = g_application_run(G_APPLICATION(app), argc, argv);
+
+    g_object_unref(app);
+
+    return status;
 }
