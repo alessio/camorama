@@ -118,7 +118,6 @@ void cap_func(GtkWidget *rb, cam_t *cam)
     cam->cap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
 
     gconf_client_set_bool(cam->gc, KEY12, cam->cap, NULL);
-    update_tooltip(cam);
     set_sensitive(cam);
 }
 
@@ -127,7 +126,6 @@ void rcap_func(GtkWidget *rb, cam_t *cam)
     cam->rcap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
 
     gconf_client_set_bool(cam->gc, KEY13, cam->rcap, NULL);
-    update_tooltip(cam);
     set_sensitive(cam);
 
 }
@@ -152,7 +150,6 @@ void acap_func(GtkWidget *rb, cam_t *cam)
         }
         g_source_remove(cam->timeout_id);
     }
-    update_tooltip(cam);
     set_sensitive(cam);
 }
 
@@ -173,7 +170,6 @@ void interval_change(GtkWidget *sb, cam_t *cam)
                    cam->timeout_id, cam->timeout_interval);
         }
     }
-    update_tooltip(cam);
 }
 
 void rjpg_func(GtkWidget *rb, cam_t *cam)
@@ -803,28 +799,4 @@ void wb_change(GtkHScale *sc1, cam_t *cam)
 
     cam->whiteness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
-}
-
-void update_tooltip(cam_t *cam)
-{
-    gchar *tooltip_text;
-
-    if (cam->debug == TRUE)
-        printf("update_tooltip called\n");
-
-    if (cam->acap == TRUE) {
-        tooltip_text = g_strdup_printf(_("Local Capture: %d\n"
-                                         "Remote Capture: %d\n"
-                                         "Capture Interval: %d"),
-                                       cam->cap, cam->rcap,
-                                       cam->timeout_interval / 60000);
-        if (cam->debug == TRUE)
-            printf("tip - acap on\n");
-    } else {
-        if (cam->debug == TRUE)
-            printf("tip - acap off\n");
-        tooltip_text = g_strdup_printf(_("Automatic Capture Disabled"));
-    }
-    gtk_status_icon_set_tooltip_text(cam->tray_icon, tooltip_text);
-    g_free(tooltip_text);
 }

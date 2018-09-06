@@ -106,8 +106,7 @@ am_camorama_OBJECTS = callbacks.$(OBJEXT) \
 	camorama-filter-chain.$(OBJEXT) \
 	camorama-filter-laplace.$(OBJEXT) \
 	camorama-filter-mirror.$(OBJEXT) \
-	camorama-filter-reichardt.$(OBJEXT) \
-	camorama-stock-items.$(OBJEXT) camorama-window.$(OBJEXT) \
+	camorama-filter-reichardt.$(OBJEXT) camorama-window.$(OBJEXT) \
 	filter.$(OBJEXT) main.$(OBJEXT) support.$(OBJEXT) \
 	v4l.$(OBJEXT) fileio.$(OBJEXT) $(am__objects_1)
 camorama_OBJECTS = $(am_camorama_OBJECTS)
@@ -311,8 +310,6 @@ camorama_SOURCES = \
 	camorama-filter-mirror.c \
 	camorama-filter-reichardt.c \
 	camorama-globals.h \
-	camorama-stock-items.c \
-	camorama-stock-items.h \
 	camorama-window.c \
 	camorama-window.h \
 	filter.c \
@@ -424,7 +421,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-filter-laplace.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-filter-mirror.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-filter-reichardt.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-stock-items.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/camorama-window.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fileio.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filter.Po@am__quote@

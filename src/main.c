@@ -12,8 +12,6 @@
 #include <locale.h>
 #include <libv4l2.h>
 
-#include "camorama-stock-items.h"
-
 static int ver = 0, max = 0, min;
 static int half = 0, use_read = 0, buggery = 0;
 static gchar *poopoo = NULL;
@@ -78,7 +76,6 @@ int main(int argc, char *argv[])
     }
 
     /* gtk is initialized now */
-    camorama_stock_init();
     camorama_filters_init();
 
     cam->debug = buggery;
@@ -209,15 +206,6 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    /*eggtray */
-
-    /*tray_icon = egg_tray_icon_new ("Our other cool tray icon");
-     * button = gtk_button_new_with_label ("This is a another\ncool tray icon");
-     * g_signal_connect (button, "clicked",
-     * G_CALLBACK (second_button_pressed), tray_icon);
-     *
-     * gtk_container_add (GTK_CONTAINER (tray_icon), button);
-     * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface(cam);
 
     widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));

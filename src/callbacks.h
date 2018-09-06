@@ -68,7 +68,6 @@ void hue_change(GtkHScale *, cam_t *);
 void wb_change(GtkHScale *, cam_t *);
 gboolean on_drawingarea_expose_event(GtkWidget *, GdkEventExpose *,
                                      cam_t *);
-void update_tooltip(cam_t *cam);
 void set_image_scale(cam_t *cam);
 
 G_END_DECLS
