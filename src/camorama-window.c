@@ -183,7 +183,9 @@ void load_interface(cam_t *cam)
                                                           "main_window"));
     GtkTreeView *treeview;
 
+#if GTK_MAJOR_VERSION >= 3
     gtk_application_add_window(cam->app, GTK_WINDOW(window));
+#endif
 
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 

@@ -78,11 +78,19 @@ static void close_app(GtkWidget* widget, cam_t *cam)
         g_source_remove(cam->timeout_fps_id);
 
     gtk_widget_destroy(widget);
+#if GTK_MAJOR_VERSION < 3
+    gtk_main_quit();
+#endif
+
 }
 
 static cam_t cam_object = { 0 };
 
+#if GTK_MAJOR_VERSION < 3
+static void activate(void)
+#else
 static void activate(GtkApplication *app)
+#endif
 {
     cam_t *cam = &cam_object;
     GConfClient *gc;
@@ -99,7 +107,9 @@ static void activate(GtkApplication *app)
     cam->res = NULL;
     cam->n_res = 0;
     cam->scale = 1.f;
+#if GTK_MAJOR_VERSION >= 3
     cam->app = app;
+#endif
 
     /* gtk is initialized now */
     camorama_filters_init();
@@ -257,13 +267,18 @@ static void activate(GtkApplication *app)
 
 int main(int argc, char *argv[])
 {
+#if GTK_MAJOR_VERSION >= 3
     GtkApplication *app;
     gint status;
+#else
+    GError *error = NULL;
+#endif
 
     bindtextdomain(PACKAGE_NAME, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
     textdomain(PACKAGE_NAME);
 
+#if GTK_MAJOR_VERSION >= 3
     app = gtk_application_new(NULL, G_APPLICATION_FLAGS_NONE);
     g_application_add_main_option_entries(G_APPLICATION(app), options);
     g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
@@ -273,4 +288,16 @@ int main(int argc, char *argv[])
     g_object_unref(app);
 
     return status;
+#else
+    if (!gtk_init_with_args(&argc, &argv, _("camorama"), options,
+                            PACKAGE_NAME, &error) || error) {
+        g_printerr(_("Invalid argument\nRun '%s --help'\n"), argv[0]);
+        return 1;
+    }
+    activate();
+
+    gtk_main();
+
+    return 0;
+#endif
 }

@@ -333,7 +333,11 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
 
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam)
 {
+#if GTK_MAJOR_VERSION >= 3
     g_application_quit(G_APPLICATION(cam->app));
+#else
+    gtk_main_quit();
+#endif
 }
 
 void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data)
