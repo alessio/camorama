@@ -208,7 +208,6 @@ void gconf_notify_func(GConfClient *client, guint cnxn_id, GConfEntry *entry,
 
     value = gconf_entry_get_value(entry);
     *str = g_strdup(gconf_value_get_string(value));
-
 }
 
 void gconf_notify_func_bool(GConfClient *client, guint cnxn_id,
@@ -303,7 +302,9 @@ static int apply_remote_pref(cam_t *cam)
 void prefs_func(GtkWidget *okbutton, cam_t *cam)
 {
     if (gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry)) {
-        cam->pixdir = g_strdup(gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry));
+        if (cam->pixdir)
+            g_free(cam->pixdir);
+        cam->pixdir = gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry);
         gconf_client_set_string(cam->gc, GCONF_SAVE_DIR, cam->pixdir, NULL);
     } else {
         if (cam->debug == TRUE)
@@ -318,13 +319,17 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
      * this is stupid, even if the string is empty, it will not return NULL
      */
     if (strlen(gtk_entry_get_text((GtkEntry *) entry2)) > 0) {
+        if(cam->capturefile)
+            g_free(cam->capturefile);
         cam->capturefile = g_strdup(gtk_entry_get_text((GtkEntry *) entry2));
         gconf_client_set_string(cam->gc, GCONF_SAVE_FILE,
                                 cam->capturefile, NULL);
     }
 
     if (strlen(gtk_entry_get_text((GtkEntry *) string_entry)) > 0) {
-        cam->ts_string = g_strdup(gtk_entry_get_text((GtkEntry *) string_entry));
+        if (cam->ts_string)
+            g_free(cam->ts_string);
+        cam->ts_string = g_strdup(gtk_entry_get_text((GtkEntry *)string_entry));
         gconf_client_set_string(cam->gc, GCONF_TIMESTAMP_STRING,
                                 cam->ts_string, NULL);
     }
@@ -333,7 +338,6 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
                 cam->capturefile);
     }
     gtk_widget_hide(prefswindow);
-
 }
 
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam)
