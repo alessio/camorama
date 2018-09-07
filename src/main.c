@@ -255,6 +255,8 @@ static void activate(GtkApplication *app)
         exit(1);
     }
 
+    gconf_client_set_string(cam->gc, KEY_DEVICE, cam->video_dev, NULL);
+
     load_interface(cam);
 
     widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
