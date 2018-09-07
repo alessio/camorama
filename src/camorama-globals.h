@@ -29,7 +29,7 @@
 
 G_BEGIN_DECLS
 
-GtkWidget *main_window, *prefswindow;
+GtkWidget *prefswindow;
 int frames, frames2, seconds;
 GtkWidget *dentry, *entry2, *string_entry, *format_selection;
 GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;

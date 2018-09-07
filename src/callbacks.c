@@ -19,7 +19,7 @@
 
 static GtkWidget *about = NULL;
 
-extern GtkWidget *main_window, *prefswindow;
+extern GtkWidget *prefswindow;
 //extern state func_state;
 //extern gint effect_mask;
 extern int frames;

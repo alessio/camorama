@@ -205,6 +205,8 @@ void load_interface(cam_t *cam)
     gtk_application_add_window(cam->app, GTK_WINDOW(window));
 #endif
 
+    prefswindow = GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"));
+
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 
     /* set up the tree view */
@@ -250,7 +252,7 @@ void load_interface(cam_t *cam)
                                     NULL);
     gtk_window_set_default_icon(logo);
     gtk_window_set_icon(GTK_WINDOW(window), logo);
-    gtk_window_set_icon(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"))), logo);
+    gtk_window_set_icon(GTK_WINDOW(prefswindow), logo);
 
     g_signal_connect(gtk_builder_get_object(cam->xml, "show_effects"),
                      "activate", G_CALLBACK(on_show_effects_activate),
@@ -547,6 +549,4 @@ void load_interface(cam_t *cam)
                              cam->usestring);
 
     set_image_scale(cam);
-
-    prefswindow = GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"));
 }
