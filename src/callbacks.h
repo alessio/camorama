@@ -8,7 +8,7 @@
 G_BEGIN_DECLS
 
 void on_change_size_activate(GtkWidget * widget, cam_t *cam);
-void on_quit_activate(GtkMenuItem *menuitem, gpointer user_data);
+void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam);
 void gconf_notify_func(GConfClient *client, guint cnxn_id,
                        GConfEntry *entry, char **);
 void gconf_notify_func_bool(GConfClient *client, guint cnxn_id,
@@ -42,6 +42,8 @@ void on_about_activate(GtkMenuItem *menuitem, cam_t *cam);
 void on_show_adjustments_activate(GtkToggleButton *button, cam_t *);
 void on_show_effects_activate(GtkMenuItem *menuitem, cam_t *);
 void prefs_func(GtkWidget *, cam_t *);
+gboolean delete_event_prefs_window(GtkWidget *widget, GdkEvent *event,
+                                   cam_t *cam);
 void capture_func2(GtkWidget *, cam_t *);
 void capture_func(GtkWidget *, cam_t *);
 gint timeout_capture_func(cam_t *);
@@ -59,13 +61,13 @@ void reichardt_func(GtkToggleButton *, gpointer);
 void colour_func(GtkToggleButton *, gpointer);
 void smooth_func(GtkToggleButton *, gpointer);
 void negative_func(GtkToggleButton *, gpointer);
-void on_scale1_drag_data_received(GtkHScale *, cam_t *);
+void on_scale1_drag_data_received(GtkScale *, cam_t *);
 void on_status_show(GtkWidget *, cam_t *);
-void contrast_change(GtkHScale *, cam_t *);
-void brightness_change(GtkHScale *, cam_t *);
-void colour_change(GtkHScale *, cam_t *);
-void hue_change(GtkHScale *, cam_t *);
-void wb_change(GtkHScale *, cam_t *);
+void contrast_change(GtkScale *, cam_t *);
+void brightness_change(GtkScale *, cam_t *);
+void colour_change(GtkScale *, cam_t *);
+void hue_change(GtkScale *, cam_t *);
+void wb_change(GtkScale *, cam_t *);
 gboolean on_drawingarea_expose_event(GtkWidget *, GdkEventExpose *,
                                      cam_t *);
 void set_image_scale(cam_t *cam);

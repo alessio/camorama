@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(camorama,0.20.2, https://github.com/alessio/camorama)
+AC_INIT(camorama,0.20.3, https://github.com/alessio/camorama)
 AC_CONFIG_SRCDIR(src/main.c)
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
@@ -37,18 +37,25 @@ AX_IS_RELEASE(always)
 AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])
 
 AC_ARG_ENABLE(gtk2, [AC_HELP_STRING([--enable-gtk2], [Compile against GTK 2.x instead of GTK 3.x])], [enable_gtk2=$enableval], [enable_gtk2="no"])
+AC_ARG_ENABLE(gtk4, [AC_HELP_STRING([--enable-gtk4], [Compile against GTK 4.x])], [enable_gtk4=$enableval], [enable_gtk4="no"])
 
 pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
-if test "x$enable_gtk2" = xyes; then
+if test "x$enable_gtk4" = xyes; then
+	pkg_modules="$pkg_modules gtk+-4.0 >= 3.92"
+	CAMORAMA_UI="camorama-gtk4.ui"
+elif test "x$enable_gtk2" = xyes; then
 	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
+	CAMORAMA_UI="camorama-gtk2.ui"
 else
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
+	CAMORAMA_UI="camorama-gtk3.ui"
 fi
 
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
+AC_SUBST(CAMORAMA_UI)
 AC_DEFINE(HAVE_GCONF,1,[Build with gconf support])
 
 AC_PATH_PROG(GCONFTOOL, gconftool-2)

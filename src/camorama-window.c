@@ -143,7 +143,11 @@ static void show_popup(cam_t *cam, GtkTreeView *treeview,
     }
     g_free(filters);
 
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 90
+    gtk_widget_show(GTK_WIDGET(menu));
+#else
     gtk_widget_show_all(GTK_WIDGET(menu));
+#endif
 #if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
     gtk_menu_popup_at_pointer(menu, NULL);
 #else
@@ -160,6 +164,19 @@ static void treeview_popup_menu_cb(cam_t *cam, GtkTreeView *treeview)
     show_popup(cam, treeview, NULL);
 }
 
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 90
+static gboolean treeview_clicked_cb(cam_t *cam, GtkButton *button)
+{
+    GtkTreeView *treeview;
+
+    treeview = GTK_TREE_VIEW(gtk_builder_get_object(cam->xml,
+                                                    "treeview_effects"));
+
+    // FIXME: how to check if pressed button was button 3?
+    show_popup(cam, treeview, NULL);
+    return TRUE;
+}
+#else
 static gboolean treeview_clicked_cb(cam_t *cam, GdkEventButton *ev,
                                     GtkTreeView *treeview)
 {
@@ -172,6 +189,7 @@ static gboolean treeview_clicked_cb(cam_t *cam, GdkEventButton *ev,
 
     return retval;
 }
+#endif
 
 void load_interface(cam_t *cam)
 {
@@ -182,6 +200,12 @@ void load_interface(cam_t *cam)
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "main_window"));
     GtkTreeView *treeview;
+
+#if GTK_MAJOR_VERSION >= 3
+    gtk_application_add_window(cam->app, GTK_WINDOW(window));
+#endif
+
+    prefswindow = GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"));
 
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 
@@ -228,7 +252,10 @@ void load_interface(cam_t *cam)
                                     NULL);
     gtk_window_set_default_icon(logo);
     gtk_window_set_icon(GTK_WINDOW(window), logo);
-    gtk_window_set_icon(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"))), logo);
+    gtk_window_set_icon(GTK_WINDOW(prefswindow), logo);
+
+    g_signal_connect(G_OBJECT(prefswindow), "delete-event",
+                     G_CALLBACK(delete_event_prefs_window), cam);
 
     g_signal_connect(gtk_builder_get_object(cam->xml, "show_effects"),
                      "activate", G_CALLBACK(on_show_effects_activate),
@@ -305,8 +332,6 @@ void load_interface(cam_t *cam)
     //g_signal_connect(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
     g_signal_connect(gtk_builder_get_object(cam->xml, "button1"),
                      "clicked", G_CALLBACK(capture_func), cam);
-    g_signal_connect(window, "delete-event", G_CALLBACK(delete_event),
-                     NULL);
 
     /* sliders */
     if (cam->contrast < 0) {
@@ -527,6 +552,4 @@ void load_interface(cam_t *cam)
                              cam->usestring);
 
     set_image_scale(cam);
-
-    prefswindow = GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"));
 }

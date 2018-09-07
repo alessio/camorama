@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama Gnome HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-06 15:17-0300\n"
+"POT-Creation-Date: 2018-09-07 11:42-0300\n"
 "PO-Revision-Date: 2006-12-24 13:54+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
@@ -33,12 +33,12 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:472
+#: camorama.desktop.in:5 src/callbacks.c:487
 msgid "View, alter and save images from a webcam"
 msgstr "Xem, sửa đổi và lưu ảnh từ máy ảnh Mạng."
 
 # Name: don't translate/Tên: đừng dịch
-#: camorama.desktop.in:6 src/main.c:89
+#: camorama.desktop.in:6 src/main.c:316
 msgid "camorama"
 msgstr "camorama"
 
@@ -46,202 +46,277 @@ msgstr "camorama"
 msgid "camorama;webcam;viewer;video-effects;"
 msgstr ""
 
-#: data/camorama.ui:35
+#: data/camorama-gtk2.ui:35 data/camorama-gtk4.ui:546
 msgid "Preferences"
 msgstr "Tùy thích"
 
-#: data/camorama.ui:107
+#: data/camorama-gtk2.ui:107 data/camorama-gtk3.ui:691
+#: data/camorama-gtk4.ui:616
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Chung</span>"
 
-#: data/camorama.ui:139
+#: data/camorama-gtk2.ui:139 data/camorama-gtk3.ui:725
+#: data/camorama-gtk4.ui:646
 msgid "Automatic Capture"
 msgstr "Tự động bắt"
 
-#: data/camorama.ui:161 data/camorama.ui:296 data/camorama.ui:334
-#: data/camorama.ui:517 data/camorama.ui:633 data/camorama.ui:670
-#: data/camorama.ui:905 data/camorama.ui:1021 data/camorama.ui:1058
+#: data/camorama-gtk2.ui:161 data/camorama-gtk2.ui:296
+#: data/camorama-gtk2.ui:334 data/camorama-gtk2.ui:517
+#: data/camorama-gtk2.ui:633 data/camorama-gtk2.ui:670
+#: data/camorama-gtk2.ui:905 data/camorama-gtk2.ui:1021
+#: data/camorama-gtk2.ui:1058 data/camorama-gtk3.ui:747
+#: data/camorama-gtk3.ui:885 data/camorama-gtk3.ui:924
+#: data/camorama-gtk3.ui:1101 data/camorama-gtk3.ui:1220
+#: data/camorama-gtk3.ui:1258 data/camorama-gtk3.ui:1483
+#: data/camorama-gtk3.ui:1602 data/camorama-gtk3.ui:1640
+#: data/camorama-gtk4.ui:666 data/camorama-gtk4.ui:781
+#: data/camorama-gtk4.ui:816 data/camorama-gtk4.ui:973
+#: data/camorama-gtk4.ui:1077 data/camorama-gtk4.ui:1111
+#: data/camorama-gtk4.ui:1316 data/camorama-gtk4.ui:1420
+#: data/camorama-gtk4.ui:1454
 msgid "     "
 msgstr "     "
 
-#: data/camorama.ui:183
+#: data/camorama-gtk2.ui:183 data/camorama-gtk3.ui:770
+#: data/camorama-gtk4.ui:687
 msgid "Capture Interval (in minutes):"
 msgstr "Khoảng bắt (theo phút):"
 
-#: data/camorama.ui:257
+#: data/camorama-gtk2.ui:257 data/camorama-gtk3.ui:842
+#: data/camorama-gtk4.ui:741
 msgid "General"
 msgstr "Chung"
 
-#: data/camorama.ui:279
+#: data/camorama-gtk2.ui:279 data/camorama-gtk3.ui:867
+#: data/camorama-gtk4.ui:765
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">Bắt cục bộ</span>"
 
-#: data/camorama.ui:311
+#: data/camorama-gtk2.ui:311 data/camorama-gtk3.ui:901
+#: data/camorama-gtk4.ui:795
 msgid "_Enable local capture"
 msgstr "_Bật bắt cục bộ"
 
-#: data/camorama.ui:360
+#: data/camorama-gtk2.ui:360 data/camorama-gtk3.ui:948
+#: data/camorama-gtk4.ui:838
 msgid "_Directory for captured pics:"
 msgstr "Thư _mục chứa ảnh đã bắt:"
 
-#: data/camorama.ui:373
+#: data/camorama-gtk2.ui:373 data/camorama-gtk3.ui:961
+#: data/camorama-gtk4.ui:851
 msgid "_Filename for pictures:"
 msgstr "_Tên tập tin của ảnh:"
 
-#: data/camorama.ui:388
+#: data/camorama-gtk2.ui:388 data/camorama-gtk3.ui:989
+#: data/camorama-gtk4.ui:879
 msgid "webcam-capture"
 msgstr "bắt ảnh Mạng"
 
-#: data/camorama.ui:407
+#: data/camorama-gtk2.ui:407 data/camorama-gtk3.ui:977
+#: data/camorama-gtk4.ui:867
 #, fuzzy
 msgid "Select a Directory"
 msgstr "Thư mục lưu :"
 
-#: data/camorama.ui:424 data/camorama.ui:813
+#: data/camorama-gtk2.ui:424 data/camorama-gtk2.ui:813
+#: data/camorama-gtk3.ui:1007 data/camorama-gtk3.ui:1390
+#: data/camorama-gtk4.ui:895 data/camorama-gtk4.ui:1239
 msgid "Append time to filename"
 msgstr "Phụ thêm giờ vào tên tập tin"
 
-#: data/camorama.ui:441 data/camorama.ui:829
+#: data/camorama-gtk2.ui:441 data/camorama-gtk2.ui:829
+#: data/camorama-gtk3.ui:1024 data/camorama-gtk3.ui:1406
+#: data/camorama-gtk4.ui:910 data/camorama-gtk4.ui:1253
 msgid "Add a timestamp to captured images"
 msgstr "Thêm nhãn thời gian vào ảnh đã bắt"
 
-#: data/camorama.ui:500 data/camorama.ui:888
+#: data/camorama-gtk2.ui:500 data/camorama-gtk2.ui:888
+#: data/camorama-gtk3.ui:1083 data/camorama-gtk3.ui:1465
+#: data/camorama-gtk4.ui:957 data/camorama-gtk4.ui:1300
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Kiểu ảnh</span>"
 
-#: data/camorama.ui:531 data/camorama.ui:919
+#: data/camorama-gtk2.ui:531 data/camorama-gtk2.ui:919
+#: data/camorama-gtk3.ui:1116 data/camorama-gtk3.ui:1498
+#: data/camorama-gtk4.ui:986 data/camorama-gtk4.ui:1329
 msgid "Save files in jpeg format"
 msgstr "Lưu tập tin dạng JPEG"
 
-#: data/camorama.ui:548 data/camorama.ui:936
+#: data/camorama-gtk2.ui:548 data/camorama-gtk2.ui:936
+#: data/camorama-gtk3.ui:1133 data/camorama-gtk3.ui:1515
+#: data/camorama-gtk4.ui:1001 data/camorama-gtk4.ui:1344
 msgid "Save files in png format"
 msgstr "Lưu tập tin dạng PNG"
 
-#: data/camorama.ui:593
+#: data/camorama-gtk2.ui:593 data/camorama-gtk3.ui:1178
+#: data/camorama-gtk4.ui:1038
 msgid "Local Capture"
 msgstr "Bắt cục bộ"
 
-#: data/camorama.ui:616
+#: data/camorama-gtk2.ui:616 data/camorama-gtk3.ui:1202
+#: data/camorama-gtk4.ui:1061
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">Bắt từ xa</span>"
 
-#: data/camorama.ui:648
+#: data/camorama-gtk2.ui:648 data/camorama-gtk3.ui:1236
+#: data/camorama-gtk4.ui:1091
 msgid "_Enable remote capture"
 msgstr "_Bật bắt từ xa"
 
-#: data/camorama.ui:696
+#: data/camorama-gtk2.ui:696 data/camorama-gtk3.ui:1284
+#: data/camorama-gtk4.ui:1135
 #, fuzzy
 msgid "Server:"
 msgstr "Máy phục vụ FTP: "
 
-#: data/camorama.ui:708
+#: data/camorama-gtk2.ui:708 data/camorama-gtk3.ui:1296
+#: data/camorama-gtk4.ui:1147
 msgid "Type:"
 msgstr ""
 
-#: data/camorama.ui:720
+#: data/camorama-gtk2.ui:720 data/camorama-gtk3.ui:1308
+#: data/camorama-gtk4.ui:1159
 msgid "Save directory:"
 msgstr "Thư mục lưu :"
 
-#: data/camorama.ui:732
+#: data/camorama-gtk2.ui:732 data/camorama-gtk3.ui:1320
+#: data/camorama-gtk4.ui:1171
 #, fuzzy
 msgid "Filename:"
 msgstr "Tên tập tin"
 
-#: data/camorama.ui:745
+#: data/camorama-gtk2.ui:745 data/camorama-gtk3.ui:1333
+#: data/camorama-gtk4.ui:1184
 msgid "ftp.yourdomain.org"
 msgstr "ftp.miền_bạn.org"
 
-#: data/camorama.ui:790
+#: data/camorama-gtk2.ui:790 data/camorama-gtk3.ui:1372
+#: data/camorama-gtk4.ui:1223
 msgid "webcamshot"
 msgstr "chụp ảnh Mạng"
 
-#: data/camorama.ui:981
+#: data/camorama-gtk2.ui:981 data/camorama-gtk3.ui:1560
+#: data/camorama-gtk4.ui:1381
 msgid "Remote Capture"
 msgstr "Bắt từ xa"
 
-#: data/camorama.ui:1004
+#: data/camorama-gtk2.ui:1004 data/camorama-gtk3.ui:1584
+#: data/camorama-gtk4.ui:1404
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">Ghi giờ</span>"
 
-#: data/camorama.ui:1036
+#: data/camorama-gtk2.ui:1036 data/camorama-gtk3.ui:1618
+#: data/camorama-gtk4.ui:1434
 msgid "Use custom string"
 msgstr "Dùng chuỗi riêng"
 
-#: data/camorama.ui:1080
+#: data/camorama-gtk2.ui:1080 data/camorama-gtk3.ui:1663
+#: data/camorama-gtk4.ui:1475
 msgid "String:"
 msgstr "Chuỗi:"
 
-#: data/camorama.ui:1126
+#: data/camorama-gtk2.ui:1126 data/camorama-gtk3.ui:1708
+#: data/camorama-gtk4.ui:1510
 msgid "Draw date and time"
 msgstr "Vẽ ngày giờ"
 
-#: data/camorama.ui:1170
+#: data/camorama-gtk2.ui:1170 data/camorama-gtk3.ui:1752
+#: data/camorama-gtk4.ui:1546
 msgid "Timestamp"
 msgstr "Ghi giờ"
 
 # Name: don't translate/Tên: đừng dịch
-#: data/camorama.ui:1199
+#: data/camorama-gtk2.ui:1199 data/camorama-gtk3.ui:41 data/camorama-gtk4.ui:29
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: data/camorama.ui:1216
+#: data/camorama-gtk2.ui:1216 data/camorama-gtk4.ui:47
 #, fuzzy
 msgid "_File"
 msgstr "Tên tập tin"
 
-#: data/camorama.ui:1223 data/camorama.ui:1524
+#: data/camorama-gtk2.ui:1223 data/camorama-gtk2.ui:1524
+#: data/camorama-gtk3.ui:366 data/camorama-gtk4.ui:303
 msgid "Take Picture"
 msgstr "Chụp ảnh"
 
-#: data/camorama.ui:1258
+#: data/camorama-gtk2.ui:1258 data/camorama-gtk4.ui:83
 msgid "_Edit"
 msgstr ""
 
-#: data/camorama.ui:1282
+#: data/camorama-gtk2.ui:1282 data/camorama-gtk3.ui:122
+#: data/camorama-gtk4.ui:104
 msgid "_View"
 msgstr ""
 
-#: data/camorama.ui:1291 data/camorama.ui:1465
+#: data/camorama-gtk2.ui:1291 data/camorama-gtk2.ui:1465
+#: data/camorama-gtk3.ui:131 data/camorama-gtk3.ui:307
+#: data/camorama-gtk4.ui:113 data/camorama-gtk4.ui:262
 msgid "Show Adjustments"
 msgstr "Hiện điều chỉnh"
 
-#: data/camorama.ui:1301
+#: data/camorama-gtk2.ui:1301 data/camorama-gtk3.ui:141
+#: data/camorama-gtk4.ui:123
 msgid "Show Effects"
 msgstr "Hiện hiệu ứng"
 
-#: data/camorama.ui:1317
+#: data/camorama-gtk2.ui:1317 data/camorama-gtk3.ui:157
+#: data/camorama-gtk4.ui:139
 msgid "Small"
 msgstr "Nhỏ"
 
-#: data/camorama.ui:1330
+#: data/camorama-gtk2.ui:1330 data/camorama-gtk4.ui:152
 msgid "_Help"
 msgstr ""
 
-#: data/camorama.ui:1655
+#: data/camorama-gtk2.ui:1655 data/camorama-gtk3.ui:465
+#: data/camorama-gtk4.ui:391
 msgid "Contrast:"
 msgstr "Tương phản:"
 
-#: data/camorama.ui:1669
+#: data/camorama-gtk2.ui:1669 data/camorama-gtk3.ui:477
+#: data/camorama-gtk4.ui:403
 msgid "Brightness:"
 msgstr "Độ sáng:"
 
-#: data/camorama.ui:1685
+#: data/camorama-gtk2.ui:1685 data/camorama-gtk3.ui:489
+#: data/camorama-gtk4.ui:415
 msgid "Color:"
 msgstr "Màu :"
 
-#: data/camorama.ui:1701
+#: data/camorama-gtk2.ui:1701 data/camorama-gtk3.ui:501
+#: data/camorama-gtk4.ui:427
 msgid "Hue:"
 msgstr "Sắc màu :"
 
-#: data/camorama.ui:1717
+#: data/camorama-gtk2.ui:1717 data/camorama-gtk3.ui:513
+#: data/camorama-gtk4.ui:439
 msgid "White Balance:"
 msgstr "Cân bằng trắng:"
 
-#: src/callbacks.c:473
+#: data/camorama-gtk3.ui:67 data/camorama-gtk4.ui:56
+#, fuzzy
+msgid "_Take Picture"
+msgstr "Chụp ảnh"
+
+#: data/camorama-gtk4.ui:71
+msgid "_Quit"
+msgstr ""
+
+#: data/camorama-gtk4.ui:92
+#, fuzzy
+msgid "_Preferences"
+msgstr "Tùy thích"
+
+#: data/camorama-gtk4.ui:161
+msgid "_About"
+msgstr ""
+
+#: src/callbacks.c:488
 msgid "translator_credits"
 msgstr "Nhóm Việt hóa Gnome <gnomevi-list@lists.sourceforge.net>"
 
-#: src/callbacks.c:711
+#: src/callbacks.c:726
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -264,11 +339,11 @@ msgstr ""
 msgid "_Add Filter"
 msgstr "Thê_m bộ lọc"
 
-#: src/camorama-window.c:195
+#: src/camorama-window.c:219
 msgid "Effects"
 msgstr "Hiệu ứng"
 
-#: src/fileio.c:111 src/fileio.c:253
+#: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr "Có thể lưu tập tin ảnh tạm thời vào « /tmp »."
 
@@ -277,7 +352,7 @@ msgstr "Có thể lưu tập tin ảnh tạm thời vào « /tmp »."
 msgid "Unable to create image '%s'."
 msgstr "Không thể tạo ảnh « %s »."
 
-#: src/fileio.c:129 src/fileio.c:403
+#: src/fileio.c:129 src/fileio.c:407
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Không thể lưu ảnh « %s/%s »."
@@ -292,12 +367,12 @@ msgstr "Không thể lưu ảnh « %s/%s »."
 msgid "An error occurred mounting %s:%s."
 msgstr "Gặp lỗi khi mở %s."
 
-#: src/fileio.c:208
+#: src/fileio.c:212
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
 msgstr "Gặp lỗi khi mở %s."
 
-#: src/fileio.c:259
+#: src/fileio.c:263
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -306,32 +381,32 @@ msgstr ""
 "Không thể mở tập tin ảnh tạm thời « %s »\n"
 "nên không thể tải ảnh lên."
 
-#: src/fileio.c:288
+#: src/fileio.c:292
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "Gặp lỗi khi mở %s."
 
-#: src/fileio.c:299
+#: src/fileio.c:303
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "Gặp lỗi khi mở %s."
 
-#: src/fileio.c:309
+#: src/fileio.c:313
 #, fuzzy, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "Gặp lỗi khi ghi vào %s."
 
-#: src/fileio.c:316
+#: src/fileio.c:320
 #, fuzzy, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "Gặp lỗi khi mở %s."
 
-#: src/fileio.c:381
+#: src/fileio.c:385
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Không thể tạo thư mục « %s »."
 
-#: src/fileio.c:390
+#: src/fileio.c:394
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Không thể chuyển đổi sang thư mục « %s »."
@@ -409,14 +484,7 @@ msgstr "kích cỡ bắt vừa"
 msgid "use read() rather than mmap()"
 msgstr "dùng read() hơn là mmap()"
 
-#: src/main.c:91
-#, c-format
-msgid ""
-"Invalid argument\n"
-"Run '%s --help'\n"
-msgstr ""
-
-#: src/main.c:106
+#: src/main.c:138
 #, c-format
 msgid ""
 "\n"
@@ -429,10 +497,17 @@ msgstr ""
 "Camorama phiên bản %s\n"
 "\n"
 
-#: src/main.c:221
+#: src/main.c:263
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Không tìm thấy tập tin sơ đồ điểm ảnh: %s"
+
+#: src/main.c:318
+#, c-format
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
 
 #: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
 #: src/v4l.c:418
@@ -478,14 +553,6 @@ msgstr ""
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
-
-#, fuzzy
-#~ msgid "_Take Picture"
-#~ msgstr "Chụp ảnh"
-
-#, fuzzy
-#~ msgid "_Preferences"
-#~ msgstr "Tùy thích"
 
 #~ msgid ""
 #~ "Local Capture: %d\n"

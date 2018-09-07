@@ -1,10 +1,24 @@
-2018-09-05  Mauro Carvalho Chehab <mchehab@kernel.org>
+2018-09-07  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Enable gcc warnings and clean them
 	* Fix coding style issues
 	* Fix Wayland camera display with Gtk 3
 	* Scale image if camera	resolution is too high
-	* Change default to use gtk3
-	* Prevent a potential bug with YUV420 format.
+	* Change default to use Gtk3
+	* Prevent a potential bug with YUV420 format
+	* Add experimental support for Gtk 4 (version 3.92)
+	* Use GApplication for Gtk 3 and Gtk 4
+	* Better name Gconf2 internal vars
+	* Keep persistence at camera device name
+	* Solve some memory leaks
+	* Improve visual with Gtk 3 using icons
+	  It should be noticed that Prisma disables icon
+	  by default.
+	* Solve a bug where remote map were happening even
+	  if disabled.
+	* Solve a bug when closing preferences via the window
+	  (x) button
+	* Get rid of the tray icon logic, as it is pretty
+	  much useless.
 
 2018-09-03  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Update icons, desktop files
