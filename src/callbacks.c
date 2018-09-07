@@ -340,6 +340,13 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
     gtk_widget_hide(prefswindow);
 }
 
+gboolean delete_event_prefs_window(GtkWidget *widget, GdkEvent *event,
+                                   cam_t *cam)
+{
+    prefs_func(widget, cam);
+    return TRUE;
+}
+
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam)
 {
 #if GTK_MAJOR_VERSION >= 3

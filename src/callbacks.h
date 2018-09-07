@@ -42,6 +42,8 @@ void on_about_activate(GtkMenuItem *menuitem, cam_t *cam);
 void on_show_adjustments_activate(GtkToggleButton *button, cam_t *);
 void on_show_effects_activate(GtkMenuItem *menuitem, cam_t *);
 void prefs_func(GtkWidget *, cam_t *);
+gboolean delete_event_prefs_window(GtkWidget *widget, GdkEvent *event,
+                                   cam_t *cam);
 void capture_func2(GtkWidget *, cam_t *);
 void capture_func(GtkWidget *, cam_t *);
 gint timeout_capture_func(cam_t *);

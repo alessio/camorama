@@ -254,6 +254,9 @@ void load_interface(cam_t *cam)
     gtk_window_set_icon(GTK_WINDOW(window), logo);
     gtk_window_set_icon(GTK_WINDOW(prefswindow), logo);
 
+    g_signal_connect(G_OBJECT(prefswindow), "delete-event",
+                     G_CALLBACK(delete_event_prefs_window), cam);
+
     g_signal_connect(gtk_builder_get_object(cam->xml, "show_effects"),
                      "activate", G_CALLBACK(on_show_effects_activate),
                      cam);
