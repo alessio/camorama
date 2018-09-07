@@ -78,10 +78,23 @@ static void close_app(GtkWidget* widget, cam_t *cam)
         g_source_remove(cam->timeout_fps_id);
 
     gtk_widget_destroy(widget);
+
+    g_free(cam->video_dev);
+    g_free(cam->pixdir);
+    g_free(cam->host);
+    g_free(cam->proto);
+    g_free(cam->rdir);
+    g_free(cam->rcapturefile);
+    g_free(cam->ts_string);
+    free(cam->pic_buf);
+    free(cam->tmp);
+
+    g_object_unref (G_OBJECT (cam->xml));
+    g_object_unref (G_OBJECT (cam->gc));
+
 #if GTK_MAJOR_VERSION < 3
     gtk_main_quit();
 #endif
-
 }
 
 static cam_t cam_object = { 0 };
@@ -177,15 +190,15 @@ static void activate(GtkApplication *app)
     cam->date_format = "%Y-%m-%d %H:%M:%S";
 #pragma GCC diagnostic pop
 
-    cam->pixdir = g_strdup(gconf_client_get_string(cam->gc, KEY1, NULL));
-    cam->capturefile = g_strdup(gconf_client_get_string(cam->gc, KEY2, NULL));
+    cam->pixdir = gconf_client_get_string(cam->gc, KEY1, NULL);
+    cam->capturefile = gconf_client_get_string(cam->gc, KEY2, NULL);
     cam->savetype = gconf_client_get_int(cam->gc, KEY3, NULL);
-    cam->host = g_strdup(gconf_client_get_string(cam->gc, KEY5, NULL));
-    cam->proto = g_strdup(gconf_client_get_string(cam->gc, KEY6, NULL));
-    cam->rdir = g_strdup(gconf_client_get_string(cam->gc, KEY8, NULL));
-    cam->rcapturefile = g_strdup(gconf_client_get_string(cam->gc, KEY9, NULL));
+    cam->host = gconf_client_get_string(cam->gc, KEY5, NULL);
+    cam->proto = gconf_client_get_string(cam->gc, KEY6, NULL);
+    cam->rdir = gconf_client_get_string(cam->gc, KEY8, NULL);
+    cam->rcapturefile = gconf_client_get_string(cam->gc, KEY9, NULL);
     cam->rsavetype = gconf_client_get_int(cam->gc, KEY10, NULL);
-    cam->ts_string = g_strdup(gconf_client_get_string(cam->gc, KEY16, NULL));
+    cam->ts_string = gconf_client_get_string(cam->gc, KEY16, NULL);
     cam->timestamp = gconf_client_get_bool(cam->gc, KEY4, NULL);
     cam->rtimestamp = gconf_client_get_bool(cam->gc, KEY11, NULL);
 
