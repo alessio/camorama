@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:34-0300\n"
-"PO-Revision-Date: 2018-09-06 17:48-0300\n"
+"POT-Creation-Date: 2018-09-18 09:35-0300\n"
+"PO-Revision-Date: 2018-09-18 09:35-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -292,18 +292,16 @@ msgid "White Balance:"
 msgstr "Equilíbrio de Branco:"
 
 #: data/camorama-gtk3.ui:67 data/camorama-gtk4.ui:56
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Tirar Fotografia"
+msgstr "_Tirar Fotografia"
 
 #: data/camorama-gtk4.ui:71
 msgid "_Quit"
 msgstr "_Encerrar"
 
 #: data/camorama-gtk4.ui:92
-#, fuzzy
 msgid "_Preferences"
-msgstr "Preferências"
+msgstr "_Preferências"
 
 #: data/camorama-gtk4.ui:161
 msgid "_About"
@@ -348,12 +346,12 @@ msgstr "Efeitos"
 #: src/camorama-window.c:285
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (max %.1f quadros/s)"
 
 #: src/camorama-window.c:289
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
