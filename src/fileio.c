@@ -164,10 +164,10 @@ static void mount_cb(GObject *obj, GAsyncResult *res, gpointer user_data)
 
     if (ret) {
         cam->rdir_ok = TRUE;
-        gconf_client_set_string(cam->gc, GCONF_HOSTNAME, cam->host, NULL);
-        gconf_client_set_string(cam->gc, GCONF_REMOTE_PROTO, cam->proto, NULL);
-        gconf_client_set_string(cam->gc, GCONF_REMOTE_SAVE_DIR, cam->rdir, NULL);
-        gconf_client_set_string(cam->gc, GCONF_REMOTE_SAVE_FILE, cam->rcapturefile, NULL);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_HOSTNAME, cam->host);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_REMOTE_PROTO, cam->proto);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_REMOTE_SAVE_DIR, cam->rdir);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_REMOTE_SAVE_FILE, cam->rcapturefile);
     } else {
         gchar *error_message = g_strdup_printf(_("An error occurred mounting %s:%s."),
                                                cam->uri, err->message);

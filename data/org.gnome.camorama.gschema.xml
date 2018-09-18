@@ -1,0 +1,129 @@
+<schemalist>
+  <schema id="org.gnome.camorama" path="/org/gnome/camorama/">
+    <key name="append-ts-to-file" type="b">
+      <default>true</default>
+      <summary>Append timestamp to filename</summary>
+      <description>Appends a timestamp, in UNIX time, to the ends of filenames</description>
+    </key>
+    <key name="auto-capture" type="b">
+      <default>false</default>
+      <summary>Toggles auto-capture</summary>
+      <description>Toggles automatic capturing of pictures.</description>
+    </key>
+    <key name="auto-capture-interval" type="i">
+      <default>1200000</default>
+      <summary>Interval for auto-capture</summary>
+      <description>Specifies the interval for automatic capture of pictures.</description>
+    </key>
+    <key name="device" type="s">
+      <default>'/dev/video0'</default>
+      <summary>Video device</summary>
+      <description>The unix file system path to the device that's assigned to your camera.</description>
+    </key>
+    <key name="drawdate" type="b">
+      <default>false</default>
+      <summary>Toggles the datestamp in captures</summary>
+      <description>Toggles the drawing of a datestamp within the captured pictures</description>
+    </key>
+    <key name="file-type" type="i">
+      <default>1</default>
+      <summary>Local capture image format</summary>
+      <description>Specifies the image format to be used for locally saved pictures</description>
+    </key>
+    <key name="height" type="i">
+      <default>0</default>
+      <summary>Image height</summary>
+      <description>Image height used by the camera. Zero means autoselect</description>
+    </key>
+    <key name="hostname" type="s">
+      <default>'yourdomain.org'</default>
+      <summary>Hostname for FTP server</summary>
+      <description>Hostname for the FTP server for remote captures.</description>
+    </key>
+    <key name="local-capture" type="b">
+      <default>true</default>
+      <summary>Toggles local capture</summary>
+      <description>When capturing pictures via the "Take Picture" button, or with auto capture, this key toggles the saving of pictures locally.</description>
+    </key>
+    <key name="remote-proto" type="s">
+      <default>'your-username'</default>
+      <summary>Protocol to use for remote access</summary>
+      <description>The URI name of the protocol that will be used to connect to a remote server. Can be ftp, sftp or smb</description>
+    </key>
+    <key name="remote-uri" type="s">
+      <default>'your-username'</default>
+      <summary>Complete URI used to store image snapshots remotely</summary>
+      <description>The complete URI of the last successful access to a remote server, including protocol, host and remote directory</description>
+    </key>
+    <key name="remote-append-ts-to-file" type="b">
+      <default>false</default>
+      <summary>Append timestamp to remote filename</summary>
+      <description>Appends a timestamp, in UNIX time, to the ends of remote filenames</description>
+    </key>
+    <key name="remote-capture" type="b">
+      <default>false</default>
+      <summary>Toggles remote capture</summary>
+      <description>When capturing pictures via the "Take Picture" button, or with auto capture, this key toggles the saving of pictures to a remote server.</description>
+    </key>
+    <key name="remote-file-type" type="i">
+      <default>0</default>
+      <summary>Remote capture image format</summary>
+      <description>Specifies the image format to be used for remotely saved pictures</description>
+    </key>
+    <key name="remote-save-dir" type="s">
+      <default>'your/upload/folder'</default>
+      <summary>Folder for remote captures</summary>
+      <description>Folder for saving captured pictures remotely</description>
+    </key>
+    <key name="remote-save-file" type="s">
+      <default>'Webcam'</default>
+      <summary>Remote save filename</summary>
+      <description>Name for the filename of uploaded images.</description>
+    </key>
+    <key name="remote-timestamp" type="b">
+      <default>false</default>
+      <summary>Toggles timestamp for remote captures</summary>
+      <description>Toggles the insertion of a timestamp into the images for FTP upload.</description>
+    </key>
+    <key name="save-dir" type="s">
+      <default>'~/Webcam_Pictures'</default>
+      <summary>Folder for local captures</summary>
+      <description>Folder for saving captured pictures to locally</description>
+    </key>
+    <key name="save-file" type="s">
+      <default>'Webcam'</default>
+      <summary>Filename for local captures</summary>
+      <description>Filename for saving captured pictures to locally</description>
+    </key>
+    <key name="timestamp" type="b">
+      <default>false</default>
+      <summary>Toggles timestamp for local captures</summary>
+      <description>Toggles the insertion of a timestamp into local images</description>
+    </key>
+    <key name="timestamp-string" type="s">
+      <default>'Camorama!'</default>
+      <summary>Custom text for the timestamp</summary>
+      <description>Defines a string of custom text to be inserted into the image.</description>
+    </key>
+    <key name="use-custom-string" type="b">
+      <default>false</default>
+      <summary>Toggles the custom string</summary>
+      <description>Toggles the use of the custom string for the timestamp in images.</description>
+    </key>
+    <key name="show-adjustments" type="b">
+      <default>true</default>
+      <summary>Toggles the video adjustment sliders</summary>
+      <description>Toggles the use of the sliders to adjust the video properties</description>
+    </key>
+    <key name="show-effects" type="b">
+      <default>true</default>
+      <summary>Toggles the video effects buttons</summary>
+      <description>Toggles the use of the buttons to adjust the video filters</description>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+      <summary>Image width</summary>
+      <description>Image width used by the camera. Zero means autoselect</description>
+    </key>
+  </schema>
+</schemalist>

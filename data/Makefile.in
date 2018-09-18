@@ -96,7 +96,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = camorama.schemas
+CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -144,12 +144,10 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(gladedir)" "$(DESTDIR)$(schemadir)" \
-	"$(DESTDIR)$(stuffdir)"
-DATA = $(glade_DATA) $(schema_DATA) $(stuff_DATA)
+am__installdirs = "$(DESTDIR)$(gladedir)" "$(DESTDIR)$(stuffdir)"
+DATA = $(glade_DATA) $(stuff_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/camorama.schemas.in \
-	$(top_srcdir)/mkinstalldirs
+am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/mkinstalldirs
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -173,13 +171,12 @@ ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
-GCONFTOOL = @GCONFTOOL@
-GCONF_SCHEMA_CONFIG_SOURCE = @GCONF_SCHEMA_CONFIG_SOURCE@
-GCONF_SCHEMA_FILE_DIR = @GCONF_SCHEMA_FILE_DIR@
 GETTEXT_MACRO_VERSION = @GETTEXT_MACRO_VERSION@
+GLIB_COMPILE_SCHEMAS = @GLIB_COMPILE_SCHEMAS@
 GMSGFMT = @GMSGFMT@
 GMSGFMT_015 = @GMSGFMT_015@
 GREP = @GREP@
+GSETTINGS_DISABLE_SCHEMAS_COMPILE = @GSETTINGS_DISABLE_SCHEMAS_COMPILE@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -249,6 +246,7 @@ datarootdir = @datarootdir@
 docdir = @docdir@
 dvidir = @dvidir@
 exec_prefix = @exec_prefix@
+gsettingsschemadir = @gsettingsschemadir@
 host = @host@
 host_alias = @host_alias@
 host_cpu = @host_cpu@
@@ -289,13 +287,8 @@ stuff_DATA = \
 
 gladedir = $(datadir)/camorama
 glade_DATA = $(CAMORAMA_UI)
-schemadir = @GCONF_SCHEMA_FILE_DIR@
-schema_in_files = camorama.schemas.in
-schema_DATA = $(schema_in_files:.schemas.in=.schemas)
-EXTRA_DIST = $(glade_DATA) $(schema_in_files) $(stuff_DATA)
-CLEANFILES = \
-	$(schema_DATA)
-
+gsettings_SCHEMAS = org.gnome.camorama.gschema.xml
+EXTRA_DIST = $(glade_DATA) $(stuff_DATA)
 all: all-am
 
 .SUFFIXES:
@@ -328,8 +321,6 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-camorama.schemas: $(top_builddir)/config.status $(srcdir)/camorama.schemas.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-gladeDATA: $(glade_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(glade_DATA)'; test -n "$(gladedir)" || list=; \
@@ -351,27 +342,6 @@ uninstall-gladeDATA:
 	@list='$(glade_DATA)'; test -n "$(gladedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(gladedir)'; $(am__uninstall_files_from_dir)
-install-schemaDATA: $(schema_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(schema_DATA)'; test -n "$(schemadir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(schemadir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(schemadir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(schemadir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(schemadir)" || exit $$?; \
-	done
-
-uninstall-schemaDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(schema_DATA)'; test -n "$(schemadir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(schemadir)'; $(am__uninstall_files_from_dir)
 install-stuffDATA: $(stuff_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(stuff_DATA)'; test -n "$(stuffdir)" || list=; \
@@ -434,7 +404,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(gladedir)" "$(DESTDIR)$(schemadir)" "$(DESTDIR)$(stuffdir)"; do \
+	for dir in "$(DESTDIR)$(gladedir)" "$(DESTDIR)$(stuffdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -459,7 +429,6 @@ install-strip:
 mostlyclean-generic:
 
 clean-generic:
-	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
@@ -488,8 +457,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-data-local install-gladeDATA \
-	install-schemaDATA install-stuffDATA
+install-data-am: install-gladeDATA install-stuffDATA
 
 install-dvi: install-dvi-am
 
@@ -533,36 +501,32 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-gladeDATA uninstall-schemaDATA \
-	uninstall-stuffDATA
+uninstall-am: uninstall-gladeDATA uninstall-stuffDATA
 
 .MAKE: install-am install-strip
 
 .PHONY: all all-am check check-am clean clean-generic cscopelist-am \
 	ctags-am distclean distclean-generic distdir dvi dvi-am html \
 	html-am info info-am install install-am install-data \
-	install-data-am install-data-local install-dvi install-dvi-am \
-	install-exec install-exec-am install-gladeDATA install-html \
-	install-html-am install-info install-info-am install-man \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-schemaDATA install-strip install-stuffDATA \
-	installcheck installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
-	pdf-am ps ps-am tags-am uninstall uninstall-am \
-	uninstall-gladeDATA uninstall-schemaDATA uninstall-stuffDATA
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-gladeDATA install-html install-html-am \
+	install-info install-info-am install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	install-stuffDATA installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic pdf pdf-am ps ps-am tags-am uninstall \
+	uninstall-am uninstall-gladeDATA uninstall-stuffDATA
 
 .PRECIOUS: Makefile
 
+
+@GSETTINGS_RULES@
 
 # For the sake of some users
 user-install: $(app_DATA) $(keys_DATA)
 	mkdir -p ~/.gnome/application-registry ~/.gnome/mime-info/
 	cp $(app_DATA) ~/.gnome/application-registry
 	cp $(keys_DATA) ~/.gnome/mime-info/
-
-install-data-local:
-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(schema_DATA)
-	$(GCONFTOOL) --shutdown
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

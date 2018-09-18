@@ -36,14 +36,14 @@ extern const gchar *const protos[];
 void ts_func(GtkWidget *rb, cam_t *cam)
 {
     cam->timestamp = gtk_toggle_button_get_active((GtkToggleButton *) rb);
-    gconf_client_set_bool(cam->gc, GCONF_TIMESTAMP, cam->timestamp, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_TIMESTAMP, cam->timestamp);
 }
 
 void customstring_func(GtkWidget *rb, cam_t *cam)
 {
     cam->usestring = gtk_toggle_button_get_active((GtkToggleButton *) rb);
-    gconf_client_set_bool(cam->gc, GCONF_USE_CUSTOM_STRING,
-                          cam->usestring, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_USE_CUSTOM_STRING,
+                           cam->usestring);
     gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(cam->xml, "string_entry")),
                              cam->usestring);
 }
@@ -51,40 +51,40 @@ void customstring_func(GtkWidget *rb, cam_t *cam)
 void drawdate_func(GtkWidget *rb, cam_t *cam)
 {
     cam->usedate = gtk_toggle_button_get_active((GtkToggleButton *) rb);
-    gconf_client_set_bool(cam->gc, GCONF_DRAWDATE, cam->usedate, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_DRAWDATE, cam->usedate);
 }
 
 void append_func(GtkWidget *rb, cam_t *cam)
 {
     cam->timefn = gtk_toggle_button_get_active((GtkToggleButton *) rb);
-    gconf_client_set_bool(cam->gc, GCONF_LOCAL_APPEND_TS, cam->timefn, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_LOCAL_APPEND_TS, cam->timefn);
 
 }
 
 void rappend_func(GtkWidget *rb, cam_t *cam)
 {
     cam->rtimefn = gtk_toggle_button_get_active((GtkToggleButton *) rb);
-    gconf_client_set_bool(cam->gc, GCONF_REMOTE_APPEND_TS, cam->rtimefn, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_REMOTE_APPEND_TS, cam->rtimefn);
 
 }
 
 void jpg_func(GtkWidget *rb, cam_t *cam)
 {
     cam->savetype = JPEG;
-    gconf_client_set_int(cam->gc, GCONF_FILE_TYPE, cam->savetype, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_FILE_TYPE, cam->savetype);
 
 }
 
 void png_func(GtkWidget *rb, cam_t *cam)
 {
     cam->savetype = PNG;
-    gconf_client_set_int(cam->gc, GCONF_FILE_TYPE, cam->savetype, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_FILE_TYPE, cam->savetype);
 }
 
 void ppm_func(GtkWidget *rb, cam_t *cam)
 {
     cam->savetype = PPM;
-    gconf_client_set_int(cam->gc, GCONF_FILE_TYPE, cam->savetype, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_FILE_TYPE, cam->savetype);
 }
 
 void set_sensitive(cam_t *cam)
@@ -118,7 +118,7 @@ void cap_func(GtkWidget *rb, cam_t *cam)
 {
     cam->cap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
 
-    gconf_client_set_bool(cam->gc, GCONF_LOCAL_CAPTURE, cam->cap, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_LOCAL_CAPTURE, cam->cap);
     set_sensitive(cam);
 }
 
@@ -126,7 +126,7 @@ void rcap_func(GtkWidget *rb, cam_t *cam)
 {
     cam->rcap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
 
-    gconf_client_set_bool(cam->gc, GCONF_REMOTE_CAPTURE, cam->rcap, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_REMOTE_CAPTURE, cam->rcap);
     set_sensitive(cam);
 
 }
@@ -135,7 +135,7 @@ void acap_func(GtkWidget *rb, cam_t *cam)
 {
     cam->acap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
 
-    gconf_client_set_bool(cam->gc, GCONF_AUTO_CAPTURE, cam->acap, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_AUTO_CAPTURE, cam->acap);
 
     if (cam->acap == TRUE) {
         cam->timeout_id = g_timeout_add(cam->timeout_interval,
@@ -157,8 +157,8 @@ void acap_func(GtkWidget *rb, cam_t *cam)
 void interval_change(GtkWidget *sb, cam_t *cam)
 {
     cam->timeout_interval = gtk_spin_button_get_value((GtkSpinButton *) sb) * 60000;
-    gconf_client_set_int(cam->gc, GCONF_AUTO_CAPTURE_INTERVAL,
-                         cam->timeout_interval, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_AUTO_CAPTURE_INTERVAL,
+                       cam->timeout_interval);
     if (cam->acap == TRUE) {
         if (cam->debug == TRUE) {
             printf("interval_change; old timeout_id = %d old interval = %d\n",
@@ -177,57 +177,27 @@ void interval_change(GtkWidget *sb, cam_t *cam)
 void rjpg_func(GtkWidget *rb, cam_t *cam)
 {
     cam->rsavetype = JPEG;
-    gconf_client_set_int(cam->gc, GCONF_REMOTE_FILE_TYPE, cam->rsavetype, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_REMOTE_FILE_TYPE, cam->rsavetype);
 
 }
 
 void rpng_func(GtkWidget *rb, cam_t *cam)
 {
     cam->rsavetype = PNG;
-    gconf_client_set_int(cam->gc, GCONF_REMOTE_FILE_TYPE, cam->rsavetype, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_REMOTE_FILE_TYPE, cam->rsavetype);
 }
 
 void rppm_func(GtkWidget *rb, cam_t *cam)
 {
     cam->rsavetype = PPM;
-    gconf_client_set_int(cam->gc, GCONF_REMOTE_FILE_TYPE, cam->rsavetype, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_REMOTE_FILE_TYPE, cam->rsavetype);
 }
 
 void rts_func(GtkWidget *rb, cam_t *cam)
 {
     cam->rtimestamp = gtk_toggle_button_get_active((GtkToggleButton *) rb);
-    gconf_client_set_bool(cam->gc, GCONF_REMOTE_TIMESTAMP,
-                          cam->rtimestamp, NULL);
-
-}
-
-void gconf_notify_func(GConfClient *client, guint cnxn_id, GConfEntry *entry,
-                       char **str)
-{
-    GConfValue *value;
-
-    value = gconf_entry_get_value(entry);
-    *str = g_strdup(gconf_value_get_string(value));
-}
-
-void gconf_notify_func_bool(GConfClient *client, guint cnxn_id,
-                            GConfEntry *entry, gboolean *val)
-{
-    GConfValue *value;
-
-    value = gconf_entry_get_value(entry);
-    *val = gconf_value_get_bool(value);
-
-}
-
-void gconf_notify_func_int(GConfClient *client, guint cnxn_id,
-                           GConfEntry *entry, int *val)
-{
-    GConfValue *value;
-
-    value = gconf_entry_get_value(entry);
-    *val = gconf_value_get_int(value);
-
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_REMOTE_TIMESTAMP,
+                           cam->rtimestamp);
 }
 
 static int apply_remote_pref(cam_t *cam)
@@ -305,7 +275,7 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
         if (cam->pixdir)
             g_free(cam->pixdir);
         cam->pixdir = gtk_file_chooser_get_current_folder((GtkFileChooser *) dentry);
-        gconf_client_set_string(cam->gc, GCONF_SAVE_DIR, cam->pixdir, NULL);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_SAVE_DIR, cam->pixdir);
     } else {
         if (cam->debug == TRUE)
             fprintf(stderr, "null directory\ndirectory unchanged.");
@@ -322,16 +292,16 @@ void prefs_func(GtkWidget *okbutton, cam_t *cam)
         if(cam->capturefile)
             g_free(cam->capturefile);
         cam->capturefile = g_strdup(gtk_entry_get_text((GtkEntry *) entry2));
-        gconf_client_set_string(cam->gc, GCONF_SAVE_FILE,
-                                cam->capturefile, NULL);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_SAVE_FILE,
+                              cam->capturefile);
     }
 
     if (strlen(gtk_entry_get_text((GtkEntry *) string_entry)) > 0) {
         if (cam->ts_string)
             g_free(cam->ts_string);
         cam->ts_string = g_strdup(gtk_entry_get_text((GtkEntry *)string_entry));
-        gconf_client_set_string(cam->gc, GCONF_TIMESTAMP_STRING,
-                                cam->ts_string, NULL);
+        g_settings_set_string(cam->gc, CAM_SETTINGS_TIMESTAMP_STRING,
+                              cam->ts_string);
     }
     if (cam->debug == TRUE) {
         fprintf(stderr, "dir now = %s\nfile now = %s\n", cam->pixdir,
@@ -395,8 +365,8 @@ void set_image_scale(cam_t *cam)
                          title);
     g_free(title);
 
-    gconf_client_set_int(cam->gc, GCONF_WIDTH, cam->width, NULL);
-    gconf_client_set_int(cam->gc, GCONF_HEIGHT, cam->height, NULL);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_WIDTH, cam->width);
+    g_settings_set_int(cam->gc, CAM_SETTINGS_HEIGHT, cam->height);
 }
 
 void on_change_size_activate(GtkWidget *widget, cam_t *cam)
@@ -452,8 +422,8 @@ void on_show_adjustments_activate(GtkToggleButton *button, cam_t *cam)
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "adjustments_table")));
         cam->show_adjustments = TRUE;
     }
-    gconf_client_set_bool(cam->gc, GCONF_SHOW_ADJUSTMENTS,
-                          cam->show_adjustments, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_SHOW_ADJUSTMENTS,
+                           cam->show_adjustments);
 }
 
 void on_show_effects_activate(GtkMenuItem *menuitem, cam_t *cam)
@@ -470,7 +440,7 @@ void on_show_effects_activate(GtkMenuItem *menuitem, cam_t *cam)
         gtk_widget_show(effects);
     }
 
-    gconf_client_set_bool(cam->gc, GCONF_SHOW_EFFECTS, cam->show_effects, NULL);
+    g_settings_set_boolean(cam->gc, CAM_SETTINGS_SHOW_EFFECTS, cam->show_effects);
 }
 
 static void about_widget_destroy(GtkWidget *widget)

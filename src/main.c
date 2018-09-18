@@ -106,7 +106,7 @@ static void activate(GtkApplication *app)
 #endif
 {
     cam_t *cam = &cam_object;
-    GConfClient *gc;
+    GSettings *gc;
     GtkWidget *widget, *window;
     unsigned int bufsize;
 
@@ -148,32 +148,11 @@ static void activate(GtkApplication *app)
         printf("Forcing read mode\n");
         cam->read = TRUE;
     }
-    gc = gconf_client_get_default();
+    gc = g_settings_new(CAM_SETTINGS_SCHEMA);
     cam->gc = gc;
 
-    gconf_client_add_dir(cam->gc, GCONF_PARENT, GCONF_CLIENT_PRELOAD_NONE, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_SAVE_DIR, (void *)gconf_notify_func,
-                            &cam->pixdir, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_SAVE_FILE, (void *)gconf_notify_func,
-                            &cam->capturefile, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_FILE_TYPE,
-                            (void *)gconf_notify_func_int,
-                            &cam->savetype, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_TIMESTAMP,
-                            (void *)gconf_notify_func_bool,
-                            &cam->timestamp, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_HOSTNAME, (void *)gconf_notify_func,
-                            &cam->host, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_REMOTE_PROTO, (void *)gconf_notify_func,
-                            &cam->proto, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_REMOTE_SAVE_DIR, (void *)gconf_notify_func,
-                            &cam->rdir, NULL, NULL);
-    gconf_client_notify_add(cam->gc, GCONF_REMOTE_SAVE_FILE, (void *)gconf_notify_func,
-                            &cam->rcapturefile, NULL, NULL);
-
     if (!poopoo) {
-        gchar const *gconf_device = gconf_client_get_string(cam->gc, GCONF_DEVICE,
-                                                            NULL);
+        gchar const *gconf_device = g_settings_get_string(cam->gc, CAM_SETTINGS_DEVICE);
         if (gconf_device)
             cam->video_dev = g_strdup(gconf_device);
         else
@@ -187,46 +166,45 @@ static void activate(GtkApplication *app)
     cam->date_format = "%Y-%m-%d %H:%M:%S";
 #pragma GCC diagnostic pop
 
-    cam->pixdir = gconf_client_get_string(cam->gc, GCONF_SAVE_DIR, NULL);
-    cam->capturefile = gconf_client_get_string(cam->gc, GCONF_SAVE_FILE, NULL);
-    cam->savetype = gconf_client_get_int(cam->gc, GCONF_FILE_TYPE, NULL);
-    cam->host = gconf_client_get_string(cam->gc, GCONF_HOSTNAME, NULL);
-    cam->proto = gconf_client_get_string(cam->gc, GCONF_REMOTE_PROTO, NULL);
-    cam->rdir = gconf_client_get_string(cam->gc, GCONF_REMOTE_SAVE_DIR, NULL);
-    cam->rcapturefile = gconf_client_get_string(cam->gc,
-                                                GCONF_REMOTE_SAVE_FILE, NULL);
-    cam->rsavetype = gconf_client_get_int(cam->gc,
-                                          GCONF_REMOTE_FILE_TYPE, NULL);
-    cam->ts_string = gconf_client_get_string(cam->gc,
-                                             GCONF_TIMESTAMP_STRING, NULL);
-    cam->timestamp = gconf_client_get_bool(cam->gc, GCONF_TIMESTAMP, NULL);
-    cam->rtimestamp = gconf_client_get_bool(cam->gc, GCONF_REMOTE_TIMESTAMP, NULL);
+    cam->pixdir = g_settings_get_string(cam->gc, CAM_SETTINGS_SAVE_DIR);
+    cam->capturefile = g_settings_get_string(cam->gc, CAM_SETTINGS_SAVE_FILE);
+    cam->savetype = g_settings_get_int(cam->gc, CAM_SETTINGS_FILE_TYPE);
+    cam->host = g_settings_get_string(cam->gc, CAM_SETTINGS_HOSTNAME);
+    cam->proto = g_settings_get_string(cam->gc, CAM_SETTINGS_REMOTE_PROTO);
+    cam->rdir = g_settings_get_string(cam->gc, CAM_SETTINGS_REMOTE_SAVE_DIR);
+    cam->rcapturefile = g_settings_get_string(cam->gc,
+                                              CAM_SETTINGS_REMOTE_SAVE_FILE);
+    cam->rsavetype = g_settings_get_int(cam->gc,
+                                        CAM_SETTINGS_REMOTE_FILE_TYPE);
+    cam->ts_string = g_settings_get_string(cam->gc,
+                                           CAM_SETTINGS_TIMESTAMP_STRING);
+    cam->timestamp = g_settings_get_boolean(cam->gc, CAM_SETTINGS_TIMESTAMP);
+    cam->rtimestamp = g_settings_get_boolean(cam->gc, CAM_SETTINGS_REMOTE_TIMESTAMP);
 
-    cam->cap = gconf_client_get_bool(cam->gc, GCONF_LOCAL_CAPTURE, NULL);
-    cam->rcap = gconf_client_get_bool(cam->gc, GCONF_REMOTE_CAPTURE, NULL);
-    cam->timefn = gconf_client_get_bool(cam->gc, GCONF_LOCAL_APPEND_TS, NULL);
-    cam->rtimefn = gconf_client_get_bool(cam->gc,
-                                         GCONF_REMOTE_APPEND_TS, NULL);
-    cam->usestring = gconf_client_get_bool(cam->gc,
-                                           GCONF_USE_CUSTOM_STRING, NULL);
-    cam->usedate = gconf_client_get_bool(cam->gc, GCONF_DRAWDATE, NULL);
-    cam->acap = gconf_client_get_bool(cam->gc, GCONF_AUTO_CAPTURE, NULL);
-    cam->timeout_interval = gconf_client_get_int(cam->gc,
-                                                 GCONF_AUTO_CAPTURE_INTERVAL, NULL);
-    cam->show_adjustments = gconf_client_get_bool(cam->gc,
-                                                  GCONF_SHOW_ADJUSTMENTS,
-                                                  NULL);
-    cam->show_effects = gconf_client_get_bool(cam->gc,
-                                              GCONF_SHOW_EFFECTS, NULL);
+    cam->cap = g_settings_get_boolean(cam->gc, CAM_SETTINGS_LOCAL_CAPTURE);
+    cam->rcap = g_settings_get_boolean(cam->gc, CAM_SETTINGS_REMOTE_CAPTURE);
+    cam->timefn = g_settings_get_boolean(cam->gc, CAM_SETTINGS_LOCAL_APPEND_TS);
+    cam->rtimefn = g_settings_get_boolean(cam->gc,
+                                         CAM_SETTINGS_REMOTE_APPEND_TS);
+    cam->usestring = g_settings_get_boolean(cam->gc,
+                                           CAM_SETTINGS_USE_CUSTOM_STRING);
+    cam->usedate = g_settings_get_boolean(cam->gc, CAM_SETTINGS_DRAWDATE);
+    cam->acap = g_settings_get_boolean(cam->gc, CAM_SETTINGS_AUTO_CAPTURE);
+    cam->timeout_interval = g_settings_get_int(cam->gc,
+                                               CAM_SETTINGS_AUTO_CAPTURE_INTERVAL);
+    cam->show_adjustments = g_settings_get_boolean(cam->gc,
+                                                   CAM_SETTINGS_SHOW_ADJUSTMENTS);
+    cam->show_effects = g_settings_get_boolean(cam->gc,
+                                               CAM_SETTINGS_SHOW_EFFECTS);
     if (x)
         cam->width = x;
     else
-        cam->width = gconf_client_get_int(cam->gc, GCONF_WIDTH, NULL);
+        cam->width = g_settings_get_int(cam->gc, CAM_SETTINGS_WIDTH);
 
     if (y)
         cam->height = y;
     else
-        cam->height = gconf_client_get_int(cam->gc, GCONF_HEIGHT, NULL);
+        cam->height = g_settings_get_int(cam->gc, CAM_SETTINGS_HEIGHT);
 
     if (use_read)
         cam->dev = v4l2_open(cam->video_dev, O_RDWR);
@@ -270,7 +248,7 @@ static void activate(GtkApplication *app)
         exit(1);
     }
 
-    gconf_client_set_string(cam->gc, GCONF_DEVICE, cam->video_dev, NULL);
+    g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
 
     load_interface(cam);
 

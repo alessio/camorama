@@ -5,7 +5,6 @@ camorama.desktop.in
 data/camorama-gtk2.ui
 data/camorama-gtk3.ui
 data/camorama-gtk4.ui
-data/camorama.schemas
 src/callbacks.c
 src/camorama-filter-chain.c
 src/camorama-filter-laplace.c

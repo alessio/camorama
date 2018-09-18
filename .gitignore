@@ -7,8 +7,9 @@ camorama.desktop
 config.h
 config.log
 config.status
-data/camorama.schemas
 data/Makefile
+data/org.gnome.camorama.gschema.valid
+data/org.gnome.camorama.gschema.xml
 intltool-extract
 intltool-merge
 intltool-update

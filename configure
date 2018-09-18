@@ -627,17 +627,16 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
-GCONF_SCHEMAS_INSTALL_FALSE
-GCONF_SCHEMAS_INSTALL_TRUE
-GCONF_SCHEMA_FILE_DIR
-GCONF_SCHEMA_CONFIG_SOURCE
-GCONFTOOL
 CAMORAMA_UI
 PACKAGE_LIBS
 PACKAGE_CFLAGS
+GSETTINGS_RULES
+GLIB_COMPILE_SCHEMAS
+gsettingsschemadir
 PKG_CONFIG_LIBDIR
 PKG_CONFIG_PATH
 PKG_CONFIG
+GSETTINGS_DISABLE_SCHEMAS_COMPILE
 WARN_SCANNERFLAGS
 WARN_LDFLAGS
 WARN_CFLAGS
@@ -767,9 +766,7 @@ enable_compile_warnings
 enable_Werror
 enable_gtk2
 enable_gtk4
-with_gconf_source
-with_gconf_schema_file_dir
-enable_schemas_install
+enable_schemas_compile
 '
       ac_precious_vars='build_alias
 host_alias
@@ -1416,8 +1413,8 @@ Optional Features:
   --disable-Werror        Unconditionally make all compiler warnings non-fatal
   --enable-gtk2           Compile against GTK 2.x instead of GTK 3.x
   --enable-gtk4           Compile against GTK 4.x
-  --disable-schemas-install
-                          Disable the schemas installation
+  --disable-schemas-compile
+                          Disable regeneration of gschemas.compiled on install
 
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
@@ -1427,10 +1424,6 @@ Optional Packages:
   --without-libiconv-prefix     don't search for libiconv in includedir and libdir
   --with-libintl-prefix[=DIR]  search for libintl in DIR/include and DIR/lib
   --without-libintl-prefix     don't search for libintl in includedir and libdir
-  --with-gconf-source=sourceaddress
-                          Config database for installing schema files.
-  --with-gconf-schema-file-dir=dir
-                          Directory for installing schema files.
 
 Some influential environment variables:
   CC          C compiler command
@@ -9651,18 +9644,16 @@ else
 fi
 
 
-pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
 
-if test "x$enable_gtk4" = xyes; then
-	pkg_modules="$pkg_modules gtk+-4.0 >= 3.92"
-	CAMORAMA_UI="camorama-gtk4.ui"
-elif test "x$enable_gtk2" = xyes; then
-	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
-	CAMORAMA_UI="camorama-gtk2.ui"
-else
-	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
-	CAMORAMA_UI="camorama-gtk3.ui"
+  # Check whether --enable-schemas-compile was given.
+if test "${enable_schemas_compile+set}" = set; then :
+  enableval=$enable_schemas_compile; case ${enableval} in
+                  yes) GSETTINGS_DISABLE_SCHEMAS_COMPILE=""  ;;
+                  no)  GSETTINGS_DISABLE_SCHEMAS_COMPILE="1" ;;
+                  *) as_fn_error $? "bad value ${enableval} for --enable-schemas-compile" "$LINENO" 5 ;;
+                 esac
 fi
+
 
 
 
@@ -9772,7 +9763,7 @@ fi
 
 fi
 if test -n "$PKG_CONFIG"; then
-	_pkg_min_version=0.9.0
+	_pkg_min_version=0.16
 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking pkg-config is at least version $_pkg_min_version" >&5
 $as_echo_n "checking pkg-config is at least version $_pkg_min_version... " >&6; }
 	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
@@ -9784,6 +9775,120 @@ $as_echo "no" >&6; }
 		PKG_CONFIG=""
 	fi
 fi
+  gsettingsschemadir=${datadir}/glib-2.0/schemas
+
+  if test x$cross_compiling != xyes; then
+    GLIB_COMPILE_SCHEMAS=`$PKG_CONFIG --variable glib_compile_schemas gio-2.0`
+  else
+    # Extract the first word of "glib-compile-schemas", so it can be a program name with args.
+set dummy glib-compile-schemas; ac_word=$2
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+$as_echo_n "checking for $ac_word... " >&6; }
+if ${ac_cv_path_GLIB_COMPILE_SCHEMAS+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  case $GLIB_COMPILE_SCHEMAS in
+  [\\/]* | ?:[\\/]*)
+  ac_cv_path_GLIB_COMPILE_SCHEMAS="$GLIB_COMPILE_SCHEMAS" # Let the user override the test with a path.
+  ;;
+  *)
+  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+for as_dir in $PATH
+do
+  IFS=$as_save_IFS
+  test -z "$as_dir" && as_dir=.
+    for ac_exec_ext in '' $ac_executable_extensions; do
+  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+    ac_cv_path_GLIB_COMPILE_SCHEMAS="$as_dir/$ac_word$ac_exec_ext"
+    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+    break 2
+  fi
+done
+  done
+IFS=$as_save_IFS
+
+  ;;
+esac
+fi
+GLIB_COMPILE_SCHEMAS=$ac_cv_path_GLIB_COMPILE_SCHEMAS
+if test -n "$GLIB_COMPILE_SCHEMAS"; then
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GLIB_COMPILE_SCHEMAS" >&5
+$as_echo "$GLIB_COMPILE_SCHEMAS" >&6; }
+else
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+fi
+
+
+  fi
+
+  if test "x$GLIB_COMPILE_SCHEMAS" = "x"; then
+    as_fn_error $? "glib-compile-schemas not found." "$LINENO" 5
+  else
+    :
+  fi
+
+  GSETTINGS_RULES='
+.PHONY : uninstall-gsettings-schemas install-gsettings-schemas clean-gsettings-schemas
+
+mostlyclean-am: clean-gsettings-schemas
+
+gsettings__enum_file = $(addsuffix .enums.xml,$(gsettings_ENUM_NAMESPACE))
+
+%.gschema.valid: %.gschema.xml $(gsettings__enum_file)
+	$(AM_V_GEN) $(GLIB_COMPILE_SCHEMAS) --strict --dry-run $(addprefix --schema-file=,$(gsettings__enum_file)) --schema-file=$< && mkdir -p $(@D) && touch $@
+
+all-am: $(gsettings_SCHEMAS:.xml=.valid)
+uninstall-am: uninstall-gsettings-schemas
+install-data-am: install-gsettings-schemas
+
+.SECONDARY: $(gsettings_SCHEMAS)
+
+install-gsettings-schemas: $(gsettings_SCHEMAS) $(gsettings__enum_file)
+	@$(NORMAL_INSTALL)
+	if test -n "$^"; then \
+		test -z "$(gsettingsschemadir)" || $(MKDIR_P) "$(DESTDIR)$(gsettingsschemadir)"; \
+		$(INSTALL_DATA) $^ "$(DESTDIR)$(gsettingsschemadir)"; \
+		test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir); \
+	fi
+
+uninstall-gsettings-schemas:
+	@$(NORMAL_UNINSTALL)
+	@list='\''$(gsettings_SCHEMAS) $(gsettings__enum_file)'\''; test -n "$(gsettingsschemadir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e '\''s|^.*/||'\''`; \
+	test -n "$$files" || exit 0; \
+	echo " ( cd '\''$(DESTDIR)$(gsettingsschemadir)'\'' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(gsettingsschemadir)" && rm -f $$files
+	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
+
+clean-gsettings-schemas:
+	rm -f $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+
+ifdef gsettings_ENUM_NAMESPACE
+$(gsettings__enum_file): $(gsettings_ENUM_FILES)
+	$(AM_V_GEN) glib-mkenums --comments '\''<!-- @comment@ -->'\'' --fhead "<schemalist>" --vhead "  <@type@ id='\''$(gsettings_ENUM_NAMESPACE).@EnumName@'\''>" --vprod "    <value nick='\''@valuenick@'\'' value='\''@valuenum@'\''/>" --vtail "  </@type@>" --ftail "</schemalist>" $^ > $@.tmp && mv $@.tmp $@
+endif
+'
+
+
+
+
+
+
+
+pkg_modules="gdk-pixbuf-2.0"
+
+if test "x$enable_gtk4" = xyes; then
+	pkg_modules="$pkg_modules gtk+-4.0 >= 3.92"
+	CAMORAMA_UI="camorama-gtk4.ui"
+elif test "x$enable_gtk2" = xyes; then
+	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
+	CAMORAMA_UI="camorama-gtk2.ui"
+else
+	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
+	CAMORAMA_UI="camorama-gtk3.ui"
+fi
+
 
 pkg_failed=no
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PACKAGE" >&5
@@ -9882,99 +9987,7 @@ fi
 $as_echo "#define HAVE_GCONF 1" >>confdefs.h
 
 
-# Extract the first word of "gconftool-2", so it can be a program name with args.
-set dummy gconftool-2; ac_word=$2
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
-$as_echo_n "checking for $ac_word... " >&6; }
-if ${ac_cv_path_GCONFTOOL+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  case $GCONFTOOL in
-  [\\/]* | ?:[\\/]*)
-  ac_cv_path_GCONFTOOL="$GCONFTOOL" # Let the user override the test with a path.
-  ;;
-  *)
-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-for as_dir in $PATH
-do
-  IFS=$as_save_IFS
-  test -z "$as_dir" && as_dir=.
-    for ac_exec_ext in '' $ac_executable_extensions; do
-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_GCONFTOOL="$as_dir/$ac_word$ac_exec_ext"
-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
-    break 2
-  fi
-done
-  done
-IFS=$as_save_IFS
-
-  ;;
-esac
-fi
-GCONFTOOL=$ac_cv_path_GCONFTOOL
-if test -n "$GCONFTOOL"; then
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GCONFTOOL" >&5
-$as_echo "$GCONFTOOL" >&6; }
-else
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-fi
-
-
-
-  if test "x$GCONF_SCHEMA_INSTALL_SOURCE" = "x"; then
-    GCONF_SCHEMA_CONFIG_SOURCE=`gconftool-2 --get-default-source`
-  else
-    GCONF_SCHEMA_CONFIG_SOURCE=$GCONF_SCHEMA_INSTALL_SOURCE
-  fi
-
-
-# Check whether --with-gconf-source was given.
-if test "${with_gconf_source+set}" = set; then :
-  withval=$with_gconf_source; GCONF_SCHEMA_CONFIG_SOURCE="$withval"
-fi
-
-
-
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: Using config source $GCONF_SCHEMA_CONFIG_SOURCE for schema installation" >&5
-$as_echo "Using config source $GCONF_SCHEMA_CONFIG_SOURCE for schema installation" >&6; }
-
-  if test "x$GCONF_SCHEMA_FILE_DIR" = "x"; then
-    GCONF_SCHEMA_FILE_DIR='$(sysconfdir)/gconf/schemas'
-  fi
-
-
-# Check whether --with-gconf-schema-file-dir was given.
-if test "${with_gconf_schema_file_dir+set}" = set; then :
-  withval=$with_gconf_schema_file_dir; GCONF_SCHEMA_FILE_DIR="$withval"
-fi
-
-
-
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: Using $GCONF_SCHEMA_FILE_DIR as install directory for schema files" >&5
-$as_echo "Using $GCONF_SCHEMA_FILE_DIR as install directory for schema files" >&6; }
-
-  # Check whether --enable-schemas-install was given.
-if test "${enable_schemas_install+set}" = set; then :
-  enableval=$enable_schemas_install; case ${enableval} in
-       yes|no) ;;
-       *) as_fn_error $? "bad value ${enableval} for --enable-schemas-install" "$LINENO" 5 ;;
-      esac
-fi
-
-   if test "$enable_schemas_install" != no; then
-  GCONF_SCHEMAS_INSTALL_TRUE=
-  GCONF_SCHEMAS_INSTALL_FALSE='#'
-else
-  GCONF_SCHEMAS_INSTALL_TRUE='#'
-  GCONF_SCHEMAS_INSTALL_FALSE=
-fi
-
-
-
-
-ac_config_files="$ac_config_files Makefile src/Makefile data/Makefile data/camorama.schemas po/Makefile.in"
+ac_config_files="$ac_config_files Makefile src/Makefile data/Makefile po/Makefile.in"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -10114,10 +10127,6 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${am__fastdepCC_TRUE}" && test -z "${am__fastdepCC_FALSE}"; then
   as_fn_error $? "conditional \"am__fastdepCC\" was never defined.
-Usually this means the macro was only invoked conditionally." "$LINENO" 5
-fi
-if test -z "${GCONF_SCHEMAS_INSTALL_TRUE}" && test -z "${GCONF_SCHEMAS_INSTALL_FALSE}"; then
-  as_fn_error $? "conditional \"GCONF_SCHEMAS_INSTALL\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 
@@ -10725,7 +10734,6 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
-    "data/camorama.schemas") CONFIG_FILES="$CONFIG_FILES data/camorama.schemas" ;;
     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
