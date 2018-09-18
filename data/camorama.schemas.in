@@ -99,26 +99,15 @@
     </schema>
 
     <schema>
-      <key>/schemas/apps/camorama/preferences/login</key>
-      <applyto>/apps/camorama/preferences/login</applyto>
+      <key>/schemas/apps/camorama/preferences/remote_proto</key>
+      <applyto>/apps/camorama/preferences/remote_proto</applyto>
       <owner>camorama</owner>
       <type>string</type>
       <default>your-username</default>
       <locale name="C">
-	<short>Username for FTP server</short>
-	<long>Username to use for FTP uploads of captured pictures</long>
-      </locale>
-    </schema>
-
-    <schema>
-      <key>/schemas/apps/camorama/preferences/password</key>
-      <applyto>/apps/camorama/preferences/password</applyto>
-      <owner>camorama</owner>
-      <type>string</type>
-      <default>seeeekrit</default>
-      <locale name="C">
-	<short>Password for FTP server</short>
-	<long>The password for the FTP account for remote captures.</long>
+	<short>Protocol to use for remote access</short>
+	<long>The URI name of the protocol that will be used to connect
+	to a remote server. Can be ftp, sftp or smb</long>
       </locale>
     </schema>
 
