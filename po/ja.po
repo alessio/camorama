@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2007-05-03 15:21+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -31,11 +31,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "WebCam の画像の表示や保存を行います"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -308,7 +308,225 @@ msgstr "設定"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "ファイル名にタイムスタンプを追加する"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "自動キャプチャ"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "画像の自動キャプチャを行うかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "自動キャプチャの間隔"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "画像を自動キャプチャする時間間隔を指定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "ビデオのデバイス"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "お使いのカメラに割り当てるデバイスへのパス名です。"
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "キャプチャするタイムスタンプの切り替え"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "キャプチャした画像にタイムスタンプを付与するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "ローカル・キャプチャの画像フォーマット"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "ローカルで保存する画像のフォーマットを指定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "キャプチャする高さ"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "FTP サーバのホスト名"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "リモート・キャプチャで使用する FTP サーバのホスト名です。"
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "ローカル・キャプチャの切り替え"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をロー"
+"カルに保存するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "リモート・キャプチャ用のフォルダ"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "リモートのファイル名にタイムスタンプを追加する"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "リモート・ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "リモート・キャプチャの切り替え"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をリ"
+"モートに保存するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "リモート・キャプチャの画像フォーマット"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "リモートで保存する画像のフォーマットを指定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "リモート・キャプチャ用のフォルダ"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "リモートでキャプチャした画像を保存するフォルダです。"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "リモートで保存するファイル名"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "アップロードする画像のファイル名です。"
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "リモート・キャプチャのタイムスタンプ"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"FTP へアップロードした画像へタイムスタンプを付与するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "ローカル・キャプチャ用のフォルダ"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "ローカルでキャプチャした画像を保存するフォルダです。"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "ローカル・キャプチャ用のファイル名"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "ローカルでキャプチャした画像を保存する際に使用するファイル名です。"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "ローカル・キャプチャのタイムスタンプ"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "ローカル画像へタイムスタンプを付与するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "タイムスタンプ用のカスタム文字列"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "画像に挿入するカスタム・テキストの文字列を定義します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "カスタム文字列の切り替え"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "画像へ付与するタイムスタンプをカスタマイズするかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "ビデオ調整スライダ"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "ビデオのプロパティを調整するスライダを使用するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "ビデオ調整ボタン"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "ビデオのフィルタを調整するボタンを使用するかどうかを設定します。"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "キャプチャする幅"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr ""
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
@@ -316,7 +534,7 @@ msgstr ""
 "\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -506,12 +724,12 @@ msgstr ""
 "\n"
 "Camorama のバージョン %s\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap ファイルが見つかりませんでした: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -613,156 +831,17 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "中ぐらい"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "ファイル名にタイムスタンプを追加する"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "リモートのファイル名にタイムスタンプを追加する"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "リモート・ファイル名の末尾に UNIX 時間のタイムスタンプを追加します。"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "タイムスタンプ用のカスタム文字列"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "画像に挿入するカスタム・テキストの文字列を定義します。"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "ローカル・キャプチャ用のファイル名"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "ローカルでキャプチャした画像を保存する際に使用するファイル名です。"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "ローカル・キャプチャ用のフォルダ"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "リモート・キャプチャ用のフォルダ"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "リモートでキャプチャした画像を保存するフォルダです。"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "ローカルでキャプチャした画像を保存するフォルダです。"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "FTP サーバのホスト名"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "リモート・キャプチャで使用する FTP サーバのホスト名です。"
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "自動キャプチャの間隔"
-
-#~ msgid "Local capture image format"
-#~ msgstr "ローカル・キャプチャの画像フォーマット"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "アップロードする画像のファイル名です。"
-
 #~ msgid "Password for FTP server"
 #~ msgstr "FTP サーバのパスワード"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "リモート・キャプチャの画像フォーマット"
-
-#~ msgid "Remote save filename"
-#~ msgstr "リモートで保存するファイル名"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "ローカルで保存する画像のフォーマットを指定します。"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr "リモートで保存する画像のフォーマットを指定します。"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "画像を自動キャプチャする時間間隔を指定します。"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "リモート・キャプチャの FTP アカウントに対するパスワードです。"
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr "お使いのカメラに割り当てるデバイスへのパス名です。"
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "自動キャプチャ"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "画像の自動キャプチャを行うかどうかを設定します。"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "ローカル・キャプチャの切り替え"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "リモート・キャプチャの切り替え"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "カスタム文字列の切り替え"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "キャプチャするタイムスタンプの切り替え"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "キャプチャした画像にタイムスタンプを付与するかどうかを設定します。"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "ローカル画像へタイムスタンプを付与するかどうかを設定します。"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "FTP へアップロードした画像へタイムスタンプを付与するかどうかを設定します。"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "ビデオのフィルタを調整するボタンを使用するかどうかを設定します。"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "画像へ付与するタイムスタンプをカスタマイズするかどうかを設定します。"
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "ビデオのプロパティを調整するスライダを使用するかどうかを設定します。"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "ビデオ調整スライダ"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "ビデオ調整ボタン"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "ローカル・キャプチャのタイムスタンプ"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "リモート・キャプチャのタイムスタンプ"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "FTP サーバのユーザ名"
 
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr "キャプチャした画像をアップロードする FTP のユーザ名です。"
-
-#~ msgid "Video device"
-#~ msgstr "ビデオのデバイス"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像を"
-#~ "ローカルに保存するかどうかを設定します。"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像を"
-#~ "リモートに保存するかどうかを設定します。"
 
 #~ msgid "Unable to capture image."
 #~ msgstr "画像をキャプチャできません。"

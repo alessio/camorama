@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2006-09-15 15:34+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -31,11 +31,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Katsele, muuta ja tallenna kuvia webikamerasta"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -308,14 +308,235 @@ msgstr "Asetukset"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Lisää aikaleima tiedostonimeen"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Lisää aikaleima UNIX-ajan muodossa tiedostonimien loppuun"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Vaihtelee automaattista kaappaustilaa"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Vaihtelee, onko automaattinen kuvankaappaus käytössä."
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Automaattisen kuvankaappauksen aikaväli"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Määrittelee aikavälin automaattiselle kuvankaappaukselle."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "Videolaite"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "Kameraasi liittyvän unix-laitetiedoston polku tiedostojärjestelmässä."
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Vaihtelee aikaleimaa kuvankaappauksissa"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Vaihtelee, piirretäänkö kaapattuihin kuviin päiväys ja aikaleima"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Paikallinen kaapattujen kuvien tallennusmuoto"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+"Määrittelee kuvaformaatin, jota käytetään paikallisesti tallennetuille "
+"kuville"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "kaappauksen korkeus"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "FTP-palvelimen isäntänimi"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Isäntänimi FTP-palvelimelle, johon etäkuvankaappaukset tallennetaan."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Vaihtelee paikallista kuvankaappausta"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Kun kuvia kaapataan \"Ota Kuva\" napilla tai automaattisesti, tämä näppäin "
+"vaihtelee tallennetaanko kuvat paikallisesti."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Etäkansio"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Lisää aikaleima etätiedostonimeen"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "Lisää aikaleima UNIX-ajan muodossa etätiedostonimien loppuun"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Vaihtelee etäkuvankaappausta"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Kun kuvia kaapataan \"Ota Kuva\" napilla tai automaattisesti, tämä näppäin "
+"vaihtelee tallennetaanko kuvat etäpalvelimelle."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Etäkaapattujen tiedostojen tallennusmuoto"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+"Määrittelee kuvaformaatin, jota käytetään etäpalvelimelle tallennetuille "
+"kuville"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Etäkansio"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Kansio, johon kuvat tallennetaan etääjärjestelmässä"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Tiedostonimi etäpalvelimella"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Palvelimelle vietyjen tiedostojen tiedostonimi."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Vaihtelee aikaleimaa etäkaappauksille"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "Vaihtelee, lisätäänkö aikaleima FTP-palvelimelle vietäviin kuviin"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Paikallinen kansio"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Kansio, johon kuva tallennetaan paikallisesti"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Tiedostonimi paikallisille kaappauksille"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Tiedostonimi kaapattujen kuvien paikallista tallennusta varten"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Vaihtelee aikaleimaa paikallisille kaappauksille"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Vaihtelee, lisätäänkö aikaleima paikallisiin kuviin"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Oma teksti aikaleimalle"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Määrittelee oman merkkijonon, joka lisätään kuviin."
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Vaihtelee omaa merkkijonoa"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "Vaihtelee oman merkkijonon käyttöä aikaleimana kuvissa."
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Vaihtelee videosäätimiä"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "Vaihtelee säätimien käyttöä videon ominaisuuksien säätöön"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Vaihtelee videotehosteiden nappeja"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Vaihtelee näppäinten käyttö videosuodattimien säätöön"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "kaappauksen leveys"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr ""
 "Ilkka Tuohela, 2004-2005\n"
 "\n"
 "http://gnome.fi/"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -506,12 +727,12 @@ msgstr ""
 "Camorama versio %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap-tiedosto ei voitu avata: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -612,158 +833,17 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "Kesimääräinen"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Lisää aikaleima tiedostonimeen"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Lisää aikaleima etätiedostonimeen"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "Lisää aikaleima UNIX-ajan muodossa tiedostonimien loppuun"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr "Lisää aikaleima UNIX-ajan muodossa etätiedostonimien loppuun"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Oma teksti aikaleimalle"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "Määrittelee oman merkkijonon, joka lisätään kuviin."
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Tiedostonimi paikallisille kaappauksille"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Tiedostonimi kaapattujen kuvien paikallista tallennusta varten"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Paikallinen kansio"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Etäkansio"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Kansio, johon kuvat tallennetaan etääjärjestelmässä"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Kansio, johon kuva tallennetaan paikallisesti"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "FTP-palvelimen isäntänimi"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr ""
-#~ "Isäntänimi FTP-palvelimelle, johon etäkuvankaappaukset tallennetaan."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Automaattisen kuvankaappauksen aikaväli"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Paikallinen kaapattujen kuvien tallennusmuoto"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Palvelimelle vietyjen tiedostojen tiedostonimi."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Salasana FTP-palvelimelle"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Etäkaapattujen tiedostojen tallennusmuoto"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Tiedostonimi etäpalvelimella"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr ""
-#~ "Määrittelee kuvaformaatin, jota käytetään paikallisesti tallennetuille "
-#~ "kuville"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "Määrittelee kuvaformaatin, jota käytetään etäpalvelimelle tallennetuille "
-#~ "kuville"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Määrittelee aikavälin automaattiselle kuvankaappaukselle."
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Salasana FTP-tunnukselle, jota käytetään etäkuvankaappauksissa"
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr ""
-#~ "Kameraasi liittyvän unix-laitetiedoston polku tiedostojärjestelmässä."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Vaihtelee automaattista kaappaustilaa"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Vaihtelee, onko automaattinen kuvankaappaus käytössä."
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Vaihtelee paikallista kuvankaappausta"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Vaihtelee etäkuvankaappausta"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Vaihtelee omaa merkkijonoa"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Vaihtelee aikaleimaa kuvankaappauksissa"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "Vaihtelee, piirretäänkö kaapattuihin kuviin päiväys ja aikaleima"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Vaihtelee, lisätäänkö aikaleima paikallisiin kuviin"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr "Vaihtelee, lisätäänkö aikaleima FTP-palvelimelle vietäviin kuviin"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "Vaihtelee näppäinten käyttö videosuodattimien säätöön"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr "Vaihtelee oman merkkijonon käyttöä aikaleimana kuvissa."
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr "Vaihtelee säätimien käyttöä videon ominaisuuksien säätöön"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Vaihtelee videosäätimiä"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Vaihtelee videotehosteiden nappeja"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Vaihtelee aikaleimaa paikallisille kaappauksille"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Vaihtelee aikaleimaa etäkaappauksille"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Käyttäjätunnus FTP-palvelimella"
 
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr "Käyttäjätunnus FTP-palvelimelle, johon kaapatut kuvat siirretään"
-
-#~ msgid "Video device"
-#~ msgstr "Videolaite"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "Kun kuvia kaapataan \"Ota Kuva\" napilla tai automaattisesti, tämä "
-#~ "näppäin vaihtelee tallennetaanko kuvat paikallisesti."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "Kun kuvia kaapataan \"Ota Kuva\" napilla tai automaattisesti, tämä "
-#~ "näppäin vaihtelee tallennetaanko kuvat etäpalvelimelle."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "Kuvaa ei voitu kaapata."

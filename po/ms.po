@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2002-02-04 00:07+0800\n"
 "Last-Translator: Hasbullah Bin Pit <sebol@ikhlas.com>\n"
 "Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.net>\n"
@@ -29,11 +29,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Lihat, ubah dan simpan imej drpd webcam"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -308,11 +308,245 @@ msgstr "Keutamaan"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Tambah setemmasa ke namafail"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Tambah setemmasa, dalam masa UNIX, ke hujung namafail"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+#, fuzzy
+msgid "Toggles auto-capture"
+msgstr "Toggle auto mauturun"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+#, fuzzy
+msgid "Toggles automatic capturing of pictures."
+msgstr "Toggle auto mauturun"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+#, fuzzy
+msgid "Interval for auto-capture"
+msgstr "Toggle auto mauturun"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+#, fuzzy
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Nyatakan font digunakan pada badan dokumen bila mencetak dokumen."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+#, fuzzy
+msgid "Toggles the datestamp in captures"
+msgstr "Togol nisbah aspek"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+#, fuzzy
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Togol nisbah aspek"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+#, fuzzy
+msgid "Local capture image format"
+msgstr "format imej Magick"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+#, fuzzy
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Nyatakan font digunakan pada badan dokumen bila mencetak dokumen."
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "Tinggi cekupan"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Sambung ke pelayan"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Konfigurasikan perkongsian SMB bagi pencetak jauh anda."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+#, fuzzy
+msgid "Toggles local capture"
+msgstr "Togol Skrinpenuh"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Folder bagi cekupan jauh"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Tambah setemmasa ke namafail jauh"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "Tambah setemmasa, dalam masa UNIX, ke hujung namafail jauh "
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+#, fuzzy
+msgid "Toggles remote capture"
+msgstr "Tiada video untuk dicekup"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+#, fuzzy
+msgid "Remote capture image format"
+msgstr "Tukar format imej"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+#, fuzzy
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Nyatakan font digunakan pada badan dokumen bila mencetak dokumen."
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Folder bagi cekupan jauh"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Folder untuk menyimpan gambar secara jauuh"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+#, fuzzy
+msgid "Remote save filename"
+msgstr "Buang fail"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+#, fuzzy
+msgid "Name for the filename of uploaded images."
+msgstr "Nama fail RC tema untuk dimuatkan"
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+#, fuzzy
+msgid "Toggles timestamp for remote captures"
+msgstr "Togol keadaan ditanda bagi halaman genap"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Folder untuk cekupan lokal"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+#, fuzzy
+msgid "Folder for saving captured pictures to locally"
+msgstr "Namafail untuk menyimpan gambar yg dicekup secara lokal"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Namafail bagi cekupan lokal"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Namafail untuk menyimpan gambar yg dicekup secara lokal"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+#, fuzzy
+msgid "Toggles timestamp for local captures"
+msgstr "Togol keadaan ditanda bagi semua halaman"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+#, fuzzy
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Togol keadaan ditanda bagi semua halaman"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Teks sendiri bagi setemmasa"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Takrifkan satu rentetan bagi teks tersendiri untuk diselitkan ke imej."
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+#, fuzzy
+msgid "Toggles the custom string"
+msgstr "Togol nisbah aspek"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+#, fuzzy
+msgid "Toggles the video adjustment sliders"
+msgstr "Togol nisbah aspek"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+#, fuzzy
+msgid "Toggles the video effects buttons"
+msgstr "Togol nisbah aspek"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "Lebar cekupan"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Hasbullah Bin Pit <sebolikhlas.com>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -510,12 +744,12 @@ msgstr ""
 "Camorama versi %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Gagal memcari fail pixmap: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -623,107 +857,13 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "Negatif"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Tambah setemmasa ke namafail"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Tambah setemmasa ke namafail jauh"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "Tambah setemmasa, dalam masa UNIX, ke hujung namafail"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr "Tambah setemmasa, dalam masa UNIX, ke hujung namafail jauh "
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Teks sendiri bagi setemmasa"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr ""
-#~ "Takrifkan satu rentetan bagi teks tersendiri untuk diselitkan ke imej."
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Namafail bagi cekupan lokal"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Namafail untuk menyimpan gambar yg dicekup secara lokal"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Folder untuk cekupan lokal"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Folder bagi cekupan jauh"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Folder untuk menyimpan gambar secara jauuh"
-
-#, fuzzy
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Sambung ke pelayan"
-
-#, fuzzy
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Konfigurasikan perkongsian SMB bagi pencetak jauh anda."
-
-#, fuzzy
-#~ msgid "Local capture image format"
-#~ msgstr "format imej Magick"
-
-#, fuzzy
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Nama fail RC tema untuk dimuatkan"
-
 #, fuzzy
 #~ msgid "Password for FTP server"
 #~ msgstr "Katalaluan : "
 
 #, fuzzy
-#~ msgid "Remote capture image format"
-#~ msgstr "Tukar format imej"
-
-#, fuzzy
-#~ msgid "Remote save filename"
-#~ msgstr "Buang fail"
-
-#, fuzzy
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "Nyatakan font digunakan pada badan dokumen bila mencetak dokumen."
-
-#, fuzzy
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Katalaluan pengguna bagi pelayan luaran"
-
-#, fuzzy
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Toggle auto mauturun"
-
-#, fuzzy
-#~ msgid "Toggles local capture"
-#~ msgstr "Togol Skrinpenuh"
-
-#, fuzzy
-#~ msgid "Toggles remote capture"
-#~ msgstr "Tiada video untuk dicekup"
-
-#, fuzzy
-#~ msgid "Toggles the custom string"
-#~ msgstr "Togol nisbah aspek"
-
-#, fuzzy
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Togol nisbah aspek"
-
-#, fuzzy
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Togol nisbah aspek"
-
-#, fuzzy
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Togol keadaan ditanda bagi semua halaman"
-
-#, fuzzy
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Togol keadaan ditanda bagi halaman genap"
 
 #, fuzzy
 #~ msgid "Username for FTP server"

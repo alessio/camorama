@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2005-02-26 17:37+0100\n"
 "Last-Translator: Francesc Dorca <f.dorca@filnet.es>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Visualitza, altera i desa imatges d'una càmera web"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -310,11 +310,235 @@ msgstr "Preferències"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Annexa la marca horària al nom del fitxer"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Annexa la marca horària, en temps UNIX, al final dels noms de fitxer"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Commuta a captura automàtica"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Commuta a captura automàtica d'imatges."
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Interval per a captura automàtica"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Especifica l'interval per a la captura automàtica d'imatges."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Commuta a marca horària en captures"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Commuta el dibuix d'una marca de data a les imatges capturades"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Format d'imatge de captura local"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Especifica el format a utilitzar per a imatges desades localment"
+
+# FIXME: hauria de ser "alçària" (josep)
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "alçada de la captura"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Nom de l'ordinador central per al servidor FTP"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Nom del servidor d'FTP per a captures remotes."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Commuta a captura local"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"En capturar imatges mitjançant el botó \"Fes una captura\", o amb la captura "
+"automàtica, aquesta tecla commuta el desar imatges localment."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Carpeta per a captures remotes"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Annexa la marca horària al nom del fitxer remot"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Annexa la marca horària, en temps UNIX, al final dels noms de fitxer remots"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Commuta a captura remota"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"En capturar imatges mitjançant el botó \"Fes una captura\", o amb la captura "
+"automàtica, aquesta tecla commuta el desar imatges a un servidor remot."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Format d'imatge de captura remota"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Especifica el format a utilitzar per a imatges desades remotament"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Carpeta per a captures remotes"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Carpeta on desar imatges capturades remotament"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Nom de fitxer en desar remotament"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Nom del nom de fitxer d'imatges pujades."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Commuta a marca horària per a captures remotes"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Commuta la inserció d'una marca horària a les imatges per a la pujada FTP."
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Carpeta per a captures locals"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Carpeta on desar imatges capturades localment"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Nom de fitxer per a captures locals"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Nom del fitxer per a desar les imatges capturades a localment"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Commuta a marca horària per a captures locals"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Commuta la inserció d'una marca horària a les imatges locals"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Text personalitzat per a la marca horària"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Defineix una cadena de text personalitzada per inserir-la a la imatge"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Commuta a cadena personalitzada"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Commuta l'ús de la cadena personalitzada per a la marca horària a les "
+"imatges."
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Commuta els controls de desplaçament d'ajust de vídeo"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+"Commuta l'ús de controls de desplaçament per a ajustar les propietats del "
+"vídeo"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Commuta els bottons d'efectes de vídeo"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Commuta l'ús dels botons per a ajustar els filtres de vídeo"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "amplada de la captura"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Francesc Dorca i Badia <f.dorca@filnet.es>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -512,12 +736,12 @@ msgstr ""
 "Camorama versió %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "No s'ha trobat el fitxer de mapa de píxels: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -630,155 +854,17 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "Negatiu"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Annexa la marca horària al nom del fitxer"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Annexa la marca horària al nom del fitxer remot"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr ""
-#~ "Annexa la marca horària, en temps UNIX, al final dels noms de fitxer"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Annexa la marca horària, en temps UNIX, al final dels noms de fitxer "
-#~ "remots"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Text personalitzat per a la marca horària"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr ""
-#~ "Defineix una cadena de text personalitzada per inserir-la a la imatge"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Nom de fitxer per a captures locals"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Nom del fitxer per a desar les imatges capturades a localment"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Carpeta per a captures locals"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Carpeta per a captures remotes"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Carpeta on desar imatges capturades remotament"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Carpeta on desar imatges capturades localment"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Nom de l'ordinador central per al servidor FTP"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Nom del servidor d'FTP per a captures remotes."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Interval per a captura automàtica"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Format d'imatge de captura local"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Nom del nom de fitxer d'imatges pujades."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Contrasenya del servidor d'FTP"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Format d'imatge de captura remota"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Nom de fitxer en desar remotament"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "Especifica el format a utilitzar per a imatges desades localment"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr "Especifica el format a utilitzar per a imatges desades remotament"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Especifica l'interval per a la captura automàtica d'imatges."
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "La contrasenya per al compte FTP per a captures remotes."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Commuta a captura automàtica"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Commuta a captura automàtica d'imatges."
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Commuta a captura local"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Commuta a captura remota"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Commuta a cadena personalitzada"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Commuta a marca horària en captures"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "Commuta el dibuix d'una marca de data a les imatges capturades"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Commuta la inserció d'una marca horària a les imatges locals"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "Commuta la inserció d'una marca horària a les imatges per a la pujada FTP."
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "Commuta l'ús dels botons per a ajustar els filtres de vídeo"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Commuta l'ús de la cadena personalitzada per a la marca horària a les "
-#~ "imatges."
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "Commuta l'ús de controls de desplaçament per a ajustar les propietats del "
-#~ "vídeo"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Commuta els controls de desplaçament d'ajust de vídeo"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Commuta els bottons d'efectes de vídeo"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Commuta a marca horària per a captures locals"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Commuta a marca horària per a captures remotes"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Nom d'usuari per al servidor d'FTP"
 
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr "Nom d'usuari a usar per a pujades FTP d'imatges capturades"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "En capturar imatges mitjançant el botó \"Fes una captura\", o amb la "
-#~ "captura automàtica, aquesta tecla commuta el desar imatges localment."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "En capturar imatges mitjançant el botó \"Fes una captura\", o amb la "
-#~ "captura automàtica, aquesta tecla commuta el desar imatges a un servidor "
-#~ "remot."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "No s'ha pogut capturar la imatge."

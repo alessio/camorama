@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2007-03-04 12:53+0100\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Affiche, modifie et enregistre les images provenant d'une webcam"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -312,14 +312,236 @@ msgstr "Préférences"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Apposer un horodatage au nom des fichiers"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Apposer un horodatage, en temps UNIX, à la fin des noms de fichiers"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Activer la capture automatique"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Active la capture automatique des images"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Intervalle pour la capture automatique"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Indique l'intervalle pour la capture automatique des images"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "Périphérique vidéo"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "Chemin d'accès unix au périphérique assigné à votre caméra."
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Activer la date dans les captures"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Active l'impression de la date sur les images enregistrées"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Format de capture des images locales"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Indique le format à utiliser pour les images enregistrées localement"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "hauteur des captures"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Nom d'hôte du serveur FTP"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Nom d'hôte du serveur FTP pour les captures distantes."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Activer les captures locales"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Lors d'une capture d'image via le bouton « Prendre une photo », ou avec la "
+"capture automatique, cette clé active l'enregistrement local des images."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Dossier pour les captures distantes"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Apposer un horodatage aux fichiers distants"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Apposer un horodatage, en temps UNIX, à la fin des noms de fichiers distants"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Activer les captures distantes"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Lors d'une capture d'image via le bouton « Prendre une photo », ou avec la "
+"capture automatique, cette clé active l'enregistrement des images vers le "
+"serveur distant."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Format des images distantes"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Indique le format à utiliser pour les images enregistrées à distance"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Dossier pour les captures distantes"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Dossier d'enregistrement des images capturées à distance"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Nom du fichier distant à enregistrer"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Nom de fichier des images envoyées."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Activer l'horodatage pour les captures distantes"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Active l'insertion d'un horodatage sur les images destinées à l'envoi FTP."
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Dossier pour les capture locales"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Dossier d'enregistrement des images capturées localement"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Nom de ficher pour les capture locale"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Nom de fichier des images capturées localement"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Activer l'horodatage pour les captures locales"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Active l'insertion d'horodatage dans les images locales"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Texte de remplacement pour l'horodatage"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Définit une chaîne de texte personnalisée à insérer dans l'image."
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Activer la chaîne personnalisée"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Active l'utilisation d'une chaîne personnalisée pour l'horodatage des images."
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Activer l'utilisation d'ascenseurs d'ajustement de la vidéo"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+"Active l'utilisation d'ascenseurs pour ajuster les propriétés de la vidéo"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Activer les boutons d'effets vidéo"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Active l'utilisation des boutons pour ajuster les filtres vidéo"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "largeur des captures"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr ""
 "Baptiste Mille-Mathias <bmm80@ifrance.com>\n"
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
 "Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -510,12 +732,12 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Impossible de trouver le fichier pixmap : %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -617,137 +839,11 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "Moyenne"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Apposer un horodatage au nom des fichiers"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Apposer un horodatage aux fichiers distants"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "Apposer un horodatage, en temps UNIX, à la fin des noms de fichiers"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Apposer un horodatage, en temps UNIX, à la fin des noms de fichiers "
-#~ "distants"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Texte de remplacement pour l'horodatage"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "Définit une chaîne de texte personnalisée à insérer dans l'image."
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Nom de ficher pour les capture locale"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Nom de fichier des images capturées localement"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Dossier pour les capture locales"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Dossier pour les captures distantes"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Dossier d'enregistrement des images capturées à distance"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Dossier d'enregistrement des images capturées localement"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Nom d'hôte du serveur FTP"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Nom d'hôte du serveur FTP pour les captures distantes."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Intervalle pour la capture automatique"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Format de capture des images locales"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Nom de fichier des images envoyées."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Mot de passe pour le serveur FTP"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Format des images distantes"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Nom du fichier distant à enregistrer"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr ""
-#~ "Indique le format à utiliser pour les images enregistrées localement"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "Indique le format à utiliser pour les images enregistrées à distance"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Indique l'intervalle pour la capture automatique des images"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Mot de passe pour le serveur FTP pour les captures distantes."
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr "Chemin d'accès unix au périphérique assigné à votre caméra."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Activer la capture automatique"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Active la capture automatique des images"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Activer les captures locales"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Activer les captures distantes"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Activer la chaîne personnalisée"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Activer la date dans les captures"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "Active l'impression de la date sur les images enregistrées"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Active l'insertion d'horodatage dans les images locales"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "Active l'insertion d'un horodatage sur les images destinées à l'envoi FTP."
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "Active l'utilisation des boutons pour ajuster les filtres vidéo"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Active l'utilisation d'une chaîne personnalisée pour l'horodatage des "
-#~ "images."
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "Active l'utilisation d'ascenseurs pour ajuster les propriétés de la vidéo"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Activer l'utilisation d'ascenseurs d'ajustement de la vidéo"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Activer les boutons d'effets vidéo"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Activer l'horodatage pour les captures locales"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Activer l'horodatage pour les captures distantes"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Nom d'utilisateur pour le serveur FTP"
@@ -755,25 +851,6 @@ msgstr ""
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr ""
 #~ "Nom d'utilisateur à utiliser pour envoyer par FTP les images capturées"
-
-#~ msgid "Video device"
-#~ msgstr "Périphérique vidéo"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "Lors d'une capture d'image via le bouton « Prendre une photo », ou avec "
-#~ "la capture automatique, cette clé active l'enregistrement local des "
-#~ "images."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "Lors d'une capture d'image via le bouton « Prendre une photo », ou avec "
-#~ "la capture automatique, cette clé active l'enregistrement des images vers "
-#~ "le serveur distant."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "Impossible de capturer l'image."

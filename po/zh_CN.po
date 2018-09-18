@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2004-11-29 16:39+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "查看、控制并保存摄像头的图像"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -307,13 +307,231 @@ msgstr "首选项"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "在文件名后追加时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "在文件名结尾处填加 UNIX 时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "切换自动抓取"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "切换自动抓取图片。"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "自动抓取的间隔"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "指定自动抓取图像的间隔。"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "切换抓取中的时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+#, fuzzy
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "切换抓取中的时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "本地抓取图像格式"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "指定在本地保存图片时所用的图像格式"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "抓取高度"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "FTP 服务器的主机名"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "远程抓取的 FTP 服务器主机名。"
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "切换本地抓取"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "远程抓取的文件夹"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "在远程文件名后追加时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "在远程文件名结尾处填加 UNIX 时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "切换远程抓取"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "远程抓取图像格式"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "指定在远程保存图片时所用的图像格式"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "远程抓取的文件夹"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "保存远程抓取图片的文件夹"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "远程保存文件名"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "上传图像的名称。"
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+#, fuzzy
+msgid "Toggles timestamp for remote captures"
+msgstr "切换远程抓取"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "本地抓取的文件夹"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "将抓取的图片保存到本地所用的文件夹"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "本地抓取的文件名"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "将抓取的图片保存到本地时所用文件名"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+#, fuzzy
+msgid "Toggles timestamp for local captures"
+msgstr "切换本地抓取"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+#, fuzzy
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "切换抓取中的时间戳"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "自定义时间戳文本"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "定义要插入到图像的自定义文本字符串。"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "切换自定义字符串"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+#, fuzzy
+msgid "Toggles the video adjustment sliders"
+msgstr "切换自定义字符串"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "抓取宽度"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr ""
 "开源软件国际化之 GNOME 简体中文组\n"
 "\thttp://i18n.linux.net.cn"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -510,12 +728,12 @@ msgstr ""
 "Camorama 版本 %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "找不到像素图文件：%s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -624,95 +842,11 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "负片"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "在文件名后追加时间戳"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "在远程文件名后追加时间戳"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "在文件名结尾处填加 UNIX 时间戳"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr "在远程文件名结尾处填加 UNIX 时间戳"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "自定义时间戳文本"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "定义要插入到图像的自定义文本字符串。"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "本地抓取的文件名"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "将抓取的图片保存到本地时所用文件名"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "本地抓取的文件夹"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "远程抓取的文件夹"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "保存远程抓取图片的文件夹"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "将抓取的图片保存到本地所用的文件夹"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "FTP 服务器的主机名"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "远程抓取的 FTP 服务器主机名。"
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "自动抓取的间隔"
-
-#~ msgid "Local capture image format"
-#~ msgstr "本地抓取图像格式"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "上传图像的名称。"
-
 #~ msgid "Password for FTP server"
 #~ msgstr "FTP 服务器的密码"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "远程抓取图像格式"
-
-#~ msgid "Remote save filename"
-#~ msgstr "远程保存文件名"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "指定在本地保存图片时所用的图像格式"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr "指定在远程保存图片时所用的图像格式"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "指定自动抓取图像的间隔。"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "远程抓取的 FTP 账户密码。"
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "切换自动抓取"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "切换自动抓取图片。"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "切换本地抓取"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "切换远程抓取"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "切换自定义字符串"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "切换抓取中的时间戳"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "FTP 服务器的用户名"
