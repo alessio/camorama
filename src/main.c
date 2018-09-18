@@ -129,9 +129,6 @@ static void activate(GtkApplication *app)
 
     cam->debug = buggery;
 
-    cam->width = x;
-    cam->height = y;
-
     get_geometry(cam);
 
     if (ver) {
@@ -221,6 +218,15 @@ static void activate(GtkApplication *app)
                                                   NULL);
     cam->show_effects = gconf_client_get_bool(cam->gc,
                                               GCONF_SHOW_EFFECTS, NULL);
+    if (x)
+        cam->width = x;
+    else
+        cam->width = gconf_client_get_int(cam->gc, GCONF_WIDTH, NULL);
+
+    if (y)
+        cam->height = y;
+    else
+        cam->height = gconf_client_get_int(cam->gc, GCONF_HEIGHT, NULL);
 
     if (use_read)
         cam->dev = v4l2_open(cam->video_dev, O_RDWR);

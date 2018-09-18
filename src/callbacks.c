@@ -394,6 +394,9 @@ void set_image_scale(cam_t *cam)
     gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                          title);
     g_free(title);
+
+    gconf_client_set_int(cam->gc, GCONF_WIDTH, cam->width, NULL);
+    gconf_client_set_int(cam->gc, GCONF_HEIGHT, cam->height, NULL);
 }
 
 void on_change_size_activate(GtkWidget *widget, cam_t *cam)

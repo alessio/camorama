@@ -14,6 +14,30 @@
     </schema>
 
     <schema>
+      <key>/schemas/apps/camorama/width</key>
+      <applyto>/apps/camorama/width</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+	<short>Image width</short>
+	<long>Image width used by the camera. Zero means autoselect</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/height</key>
+      <applyto>/apps/camorama/height</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+	<short>Image height</short>
+	<long>Image height used by the camera. Zero means autoselect</long>
+      </locale>
+    </schema>
+
+    <schema>
       <key>/schemas/apps/camorama/preferences/append_ts_to_file</key>
       <applyto>/apps/camorama/preferences/append_ts_to_file</applyto>
       <owner>camorama</owner>
@@ -108,6 +132,19 @@
 	<short>Protocol to use for remote access</short>
 	<long>The URI name of the protocol that will be used to connect
 	to a remote server. Can be ftp, sftp or smb</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/preferences/remote_uri</key>
+      <applyto>/apps/camorama/preferences/remote_uri</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>your-username</default>
+      <locale name="C">
+	<short>Complete URI used to store image snapshots remotely</short>
+	<long>The complete URI of the last successful access to a remote
+	server, including protocol, host and remote directory</long>
       </locale>
     </schema>
 
