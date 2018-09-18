@@ -14,6 +14,30 @@
     </schema>
 
     <schema>
+      <key>/schemas/apps/camorama/width</key>
+      <applyto>/apps/camorama/width</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+	<short>Image width</short>
+	<long>Image width used by the camera. Zero means autoselect</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/camorama/height</key>
+      <applyto>/apps/camorama/height</applyto>
+      <owner>camorama</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+	<short>Image height</short>
+	<long>Image height used by the camera. Zero means autoselect</long>
+      </locale>
+    </schema>
+
+    <schema>
       <key>/schemas/apps/camorama/preferences/append_ts_to_file</key>
       <applyto>/apps/camorama/preferences/append_ts_to_file</applyto>
       <owner>camorama</owner>

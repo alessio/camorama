@@ -2,6 +2,8 @@
 #define GCONF_PREFS  GCONF_PARENT "/preferences"
 
 #define GCONF_DEVICE                GCONF_PARENT "/device"
+#define GCONF_WIDTH                 GCONF_PARENT "/width"
+#define GCONF_HEIGHT                GCONF_PARENT "/height"
 #define GCONF_SAVE_DIR              GCONF_PREFS "/save_dir"
 #define GCONF_SAVE_FILE             GCONF_PREFS "/save_file"
 #define GCONF_FILE_TYPE             GCONF_PREFS "/file_type"
