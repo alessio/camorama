@@ -36,7 +36,8 @@ void print_cam(cam_t *cam)
         printf("timestamp = %s\n\n", cam->ts_string);
 }
 
-static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y)
+static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y,
+                              float max_fps)
 {
     unsigned int i;
 
@@ -50,6 +51,7 @@ static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y)
 
     cam->res[cam->n_res].x = x;
     cam->res[cam->n_res].y = y;
+    cam->res[cam->n_res].max_fps = max_fps;
     cam->n_res++;
 }
 
@@ -64,6 +66,27 @@ static int sort_func(const void *__b, const void *__a)
          r = (int)b->y - a->y;
 
     return r;
+}
+
+static float get_max_fps_discrete(cam_t *cam,
+                                  struct v4l2_frmsizeenum *frmsize)
+{
+    struct v4l2_frmivalenum frmival;
+    float fps, max_fps = -1;
+
+    frmival.width = frmsize->discrete.width;
+    frmival.height = frmsize->discrete.height;
+    frmival.pixel_format = frmsize->pixel_format;
+    frmival.index = 0;
+
+    for (frmival.index = 0;
+         !v4l2_ioctl(cam->dev, VIDIOC_ENUM_FRAMEINTERVALS, &frmival);
+         frmival.index++) {
+            fps = ((float)frmival.discrete.denominator)/frmival.discrete.numerator;
+            if (fps > max_fps)
+                max_fps = fps;
+    }
+    return max_fps;
 }
 
 void get_supported_resolutions(cam_t *cam)
@@ -87,7 +110,8 @@ void get_supported_resolutions(cam_t *cam)
         while (!v4l2_ioctl(cam->dev, VIDIOC_ENUM_FRAMESIZES, &frmsize)) {
             if (frmsize.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
                     insert_resolution(cam, frmsize.discrete.width,
-                                      frmsize.discrete.height);
+                                      frmsize.discrete.height,
+                                      get_max_fps_discrete(cam, &frmsize));
             } else if (frmsize.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
                     for (i = 0; i < 4; i++) {
                         x = frmsize.stepwise.min_width +
@@ -96,7 +120,7 @@ void get_supported_resolutions(cam_t *cam)
                         y = frmsize.stepwise.min_height +
                             i * (frmsize.stepwise.max_height -
                                  frmsize.stepwise.min_height) / 4;
-                        insert_resolution(cam, x, y);
+                        insert_resolution(cam, x, y, -1);
                     }
             }
             frmsize.index++;

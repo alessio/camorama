@@ -279,9 +279,14 @@ void load_interface(cam_t *cam)
 
     if (cam->n_res > 0) {
         for (i = 0; i < cam->n_res; i++) {
-            char name[32];
+            char name[80];
 
-            sprintf(name, "%dx%d", cam->res[i].x, cam->res[i].y);
+            if (cam->res[i].max_fps > 0)
+                    sprintf(name, _("%dx%d (max %.1f fps)"),
+                            cam->res[i].x, cam->res[i].y,
+                            (double)cam->res[i].max_fps);
+                else
+                    sprintf(name, _("%dx%d"), cam->res[i].x, cam->res[i].y);
 
             new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), name);
             gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),

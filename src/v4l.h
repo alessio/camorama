@@ -45,6 +45,7 @@ struct buffer_start_len {
 
 struct resolutions {
     unsigned int x, y;
+    float max_fps;
 };
 
 typedef struct camera {
