@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: carmorama.HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-07 11:42-0300\n"
+"POT-Creation-Date: 2018-09-18 09:32-0300\n"
 "PO-Revision-Date: 2004-03-15 20:19+0530\n"
 "Last-Translator: Jaswinder Singh Phulewala <jaswinderlinux@netscape.net>\n"
 "Language-Team: Punjabi\n"
@@ -342,6 +342,16 @@ msgstr ""
 msgid "Effects"
 msgstr "ਪ੍ਭਾਵ ਦਿਖਾਓ"
 
+#: src/camorama-window.c:285
+#, c-format
+msgid "%dx%d (max %.1f fps)"
+msgstr ""
+
+#: src/camorama-window.c:289
+#, c-format
+msgid "%dx%d"
+msgstr ""
+
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
 msgstr " /tmp ਵਿਚ ਆਰਜੀ ਚਿੱਤਰ ਫਾਈਲ ਸੰਭਾਲ ਸਕਿਆ।"
@@ -512,8 +522,8 @@ msgid ""
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
-#: src/v4l.c:418
+#: src/v4l.c:146 src/v4l.c:252 src/v4l.c:333 src/v4l.c:402 src/v4l.c:421
+#: src/v4l.c:442
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -522,37 +532,37 @@ msgstr ""
 "ਆਵਾਜ ਯੰਤਰ (%s) ਨਾਲ ਸੰਬੰਧ ਨਹੀਂ ਬਣ ਸਕਿਆ।\n"
 "ਕਿਰਪਾ ਕਰਕੇ ਜੋੜ ਦੀ ਜਾਂਚ ਕਰੋ।"
 
-#: src/v4l.c:447
+#: src/v4l.c:471
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:465
+#: src/v4l.c:489
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:480
+#: src/v4l.c:504
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:494
+#: src/v4l.c:518
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:504
+#: src/v4l.c:528
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:534
+#: src/v4l.c:558
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:596
+#: src/v4l.c:620
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
