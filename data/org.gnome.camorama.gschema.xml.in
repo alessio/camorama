@@ -1,4 +1,5 @@
-<schemalist>
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="camorama">
   <schema id="org.gnome.camorama" path="/org/gnome/camorama/">
     <key name="append-ts-to-file" type="b">
       <default>true</default>
