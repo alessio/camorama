@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:32-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2006-11-19 21:22+0100 \n"
 "Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "camorama"
 
@@ -307,11 +307,11 @@ msgstr "Voorkeuren"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr "Huib Kleinhout <huib@stack.nl>"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -489,7 +489,7 @@ msgstr "gemiddelde opnamegrootte"
 msgid "use read() rather than mmap()"
 msgstr "Gebruik read() in plaats van mmap()"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -502,12 +502,12 @@ msgstr ""
 "Camorama versie %s\n"
 "\n"
 
-#: src/main.c:263
+#: src/main.c:269
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:32-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2006-03-13 23:11+0100\n"
 "Last-Translator: Jens Seidel <jseidel@cvs.gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "Webcam-Bilder anzeigen, bearbeiten und speichern"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "Camorama"
 
@@ -307,11 +307,11 @@ msgstr "Einstellungen"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr "Christian Neumair <chris@gnome-de.org>"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -494,7 +494,7 @@ msgstr "Durchschnittliche Mitschnittgröße"
 msgid "use read() rather than mmap()"
 msgstr "read() gegenüber mmap() bevorzugen"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -507,12 +507,12 @@ msgstr ""
 "Camorama, Version %s\n"
 "\n"
 
-#: src/main.c:263
+#: src/main.c:269
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap-Datei »%s« konnte nicht gefunden werden"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"
