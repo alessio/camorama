@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:32-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2004-09-13 10:32+0530\n"
 "Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢யில் இருக்கும் பிம்ப பார்க்க, மாற்ற மற்றும் சேமிக்கலாம்"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "கமொராமா"
 
@@ -312,11 +312,11 @@ msgstr "முன்னுருமை"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr "மொழிபெயர்ப்பாளர்_நம்பிக்-கை"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -498,7 +498,7 @@ msgstr "நடுநிலைமையான கைப்பற்றும் �
 msgid "use read() rather than mmap()"
 msgstr "mmap()க்கு பதிலாக read()ஐ உபயோகி"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -511,12 +511,12 @@ msgstr ""
 "கமொராமா பதிப்பு %s\n"
 "\n"
 
-#: src/main.c:263
+#: src/main.c:269
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "%s என்ற pixmap கோப்பைத் திறக்க இயலவில்லை"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"

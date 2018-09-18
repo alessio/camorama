@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:35-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2018-09-18 09:35-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
@@ -36,11 +36,11 @@ msgstr ""
 "Camorama é um visualizador simplificado para webcam, com capacidade para "
 "aplicação de alguns efeitos de vídeo."
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "camorama"
 
@@ -307,7 +307,7 @@ msgstr "_Preferências"
 msgid "_About"
 msgstr "_Sobre"
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
@@ -316,7 +316,7 @@ msgstr ""
 "Andre Noel <andrenoel@ubuntu.com>\n"
 "Mauro Carvalho Chehab <mchehab+samsung@kernel.org>"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr "%.2f quadros/s - atual     %.2f quadros/s - média"
@@ -494,7 +494,7 @@ msgstr "tamanho médio de captura"
 msgid "use read() rather than mmap()"
 msgstr "usar read() em vez de mmap()"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -507,11 +507,11 @@ msgstr ""
 "Camorama Versão %s\n"
 "\n"
 
-#: src/main.c:263
+#: src/main.c:269
 msgid "Couldn't load builder file"
 msgstr "Não foi possível carregar arquivo com interface gráfica"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"

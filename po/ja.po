@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:32-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2007-05-03 15:21+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -31,11 +31,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "WebCam の画像の表示や保存を行います"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "camorama"
 
@@ -308,7 +308,7 @@ msgstr "設定"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr ""
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
@@ -316,7 +316,7 @@ msgstr ""
 "\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -494,7 +494,7 @@ msgstr "中くらいのサイズ"
 msgid "use read() rather than mmap()"
 msgstr "mmap() ではなく read() を使う"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -506,12 +506,12 @@ msgstr ""
 "\n"
 "Camorama のバージョン %s\n"
 
-#: src/main.c:263
+#: src/main.c:269
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap ファイルが見つかりませんでした: %s"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:32-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2005-12-03 20:51+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "檢視、交換與儲存網路攝影機的影像"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "camorama"
 
@@ -313,7 +313,7 @@ msgstr "偏好設定"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -322,7 +322,7 @@ msgstr ""
 "\n"
 "Chao-Hsiung Liao <pesder.liao@msa.hinet.net>, 2005"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -505,7 +505,7 @@ msgstr "中等擷取尺寸"
 msgid "use read() rather than mmap()"
 msgstr "使用 read() 而非 mmap()"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -518,12 +518,12 @@ msgstr ""
 "Camorama 版本 %s\n"
 "\n"
 
-#: src/main.c:263
+#: src/main.c:269
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "找不到點陣檔：%s"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"

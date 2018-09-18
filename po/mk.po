@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama mk\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 09:32-0300\n"
+"POT-Creation-Date: 2018-09-18 12:54-0300\n"
 "PO-Revision-Date: 2004-09-17 00:09+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:487
+#: camorama.desktop.in:5 src/callbacks.c:490
 msgid "View, alter and save images from a webcam"
 msgstr "Поглед, извести и сними слики од вебкамера"
 
-#: camorama.desktop.in:6 src/main.c:316
+#: camorama.desktop.in:6 src/main.c:322
 msgid "camorama"
 msgstr "каморама"
 
@@ -312,11 +312,11 @@ msgstr "Параметри"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:488
+#: src/callbacks.c:491
 msgid "translator_credits"
 msgstr "Марко Иваноски (marko@programmer.net)"
 
-#: src/callbacks.c:726
+#: src/callbacks.c:729
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -500,7 +500,7 @@ msgstr "Средна големина при превземање"
 msgid "use read() rather than mmap()"
 msgstr "користи read() отколку mmap()"
 
-#: src/main.c:138
+#: src/main.c:135
 #, c-format
 msgid ""
 "\n"
@@ -513,12 +513,12 @@ msgstr ""
 "Каморама верзија %s\n"
 "\n"
 
-#: src/main.c:263
+#: src/main.c:269
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Не можам да ја најдам pixmap датотеката: %s"
 
-#: src/main.c:318
+#: src/main.c:324
 #, c-format
 msgid ""
 "Invalid argument\n"
