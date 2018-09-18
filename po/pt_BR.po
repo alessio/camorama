@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-07 11:42-0300\n"
-"PO-Revision-Date: 2018-09-06 17:48-0300\n"
+"POT-Creation-Date: 2018-09-18 09:35-0300\n"
+"PO-Revision-Date: 2018-09-18 09:35-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -292,18 +292,16 @@ msgid "White Balance:"
 msgstr "Equilíbrio de Branco:"
 
 #: data/camorama-gtk3.ui:67 data/camorama-gtk4.ui:56
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Tirar Fotografia"
+msgstr "_Tirar Fotografia"
 
 #: data/camorama-gtk4.ui:71
 msgid "_Quit"
 msgstr "_Encerrar"
 
 #: data/camorama-gtk4.ui:92
-#, fuzzy
 msgid "_Preferences"
-msgstr "Preferências"
+msgstr "_Preferências"
 
 #: data/camorama-gtk4.ui:161
 msgid "_About"
@@ -344,6 +342,16 @@ msgstr "_Adicionar Filtro"
 #: src/camorama-window.c:219
 msgid "Effects"
 msgstr "Efeitos"
+
+#: src/camorama-window.c:285
+#, c-format
+msgid "%dx%d (max %.1f fps)"
+msgstr "%dx%d (max %.1f quadros/s)"
+
+#: src/camorama-window.c:289
+#, c-format
+msgid "%dx%d"
+msgstr "%dx%d"
 
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
@@ -512,8 +520,8 @@ msgstr ""
 "Argumento inválido\n"
 "Execute '%s --help'\n"
 
-#: src/v4l.c:122 src/v4l.c:228 src/v4l.c:309 src/v4l.c:378 src/v4l.c:397
-#: src/v4l.c:418
+#: src/v4l.c:146 src/v4l.c:252 src/v4l.c:333 src/v4l.c:402 src/v4l.c:421
+#: src/v4l.c:442
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -522,41 +530,41 @@ msgstr ""
 "Impossível conectar ao dispositivo de vídeo (%s).\n"
 "Verifique a conexão."
 
-#: src/v4l.c:447
+#: src/v4l.c:471
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_REQBUFS  --  não foi possível requisitar buffers (%s), encerrando...."
 
-#: src/v4l.c:465
+#: src/v4l.c:489
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_QUERYBUF  --  não foi possível obter informações sobre buffers (%s), "
 "encerrando...."
 
-#: src/v4l.c:480
+#: src/v4l.c:504
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr "falha ao mapear os buffers na memória (%s), encerrando..."
 
-#: src/v4l.c:494
+#: src/v4l.c:518
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_QBUF  --  não foi possível enfileirar buffers (%s), encerrando...."
 
-#: src/v4l.c:504
+#: src/v4l.c:528
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr "falha ao iniciar o fluxo de vídeo (%s), encerrando..."
 
-#: src/v4l.c:534
+#: src/v4l.c:558
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr "Tempo máximo excedido enquanto esperando quadros com imagens (%s)"
 
-#: src/v4l.c:596
+#: src/v4l.c:620
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr "falha ao interromper o fluxo de vídeo (%s), encerrando..."
