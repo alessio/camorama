@@ -112,6 +112,19 @@
     </schema>
 
     <schema>
+      <key>/schemas/apps/camorama/preferences/remote_uri</key>
+      <applyto>/apps/camorama/preferences/remote_uri</applyto>
+      <owner>camorama</owner>
+      <type>string</type>
+      <default>your-username</default>
+      <locale name="C">
+	<short>Complete URI used to store image snapshots remotely</short>
+	<long>The complete URI of the last successful access to a remote
+	server, including protocol, host and remote directory</long>
+      </locale>
+    </schema>
+
+    <schema>
       <key>/schemas/apps/camorama/preferences/remote_append_ts_to_file</key>
       <applyto>/apps/camorama/preferences/remote_append_ts_to_file</applyto>
       <owner>camorama</owner>
