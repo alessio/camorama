@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2003-03-16 13:47+0330\n"
 "Last-Translator: Roozbeh Pournader <roozbeh@sharif.edu>\n"
 "Language-Team: Persian <farsi@lists.sharif.edu>\n"
@@ -29,11 +29,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr ""
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr ""
 
@@ -306,11 +306,224 @@ msgstr "ترجیحات"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+#, fuzzy
+msgid "Append timestamp to filename"
+msgstr "الحاق زمان به نام پرونده"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+msgid "Image height"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "نام میزبان کارگزار FTP"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "نام میزبان کارگزار FTP"
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+msgid "Protocol to use for remote access"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+#, fuzzy
+msgid "Append timestamp to remote filename"
+msgstr "الحاق زمان به نام پرونده"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "نام پرونده برای ذخیره‌ی دوردست"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+#, fuzzy
+msgid "Filename for local captures"
+msgstr "نام پرونده برای عکس‌ها:"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+msgid "Image width"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "روزبه پورنادر <roozbeh@sharif.edu>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -498,11 +711,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:269
+#: src/main.c:247
 msgid "Couldn't load builder file"
 msgstr ""
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -579,14 +792,8 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "نگاتیو"
 
-#~ msgid "Hostname for FTP server"
-#~ msgstr "نام میزبان کارگزار FTP"
-
 #~ msgid "Password for FTP server"
 #~ msgstr "گذرواژه‌ی کارگزار FTP"
-
-#~ msgid "Remote save filename"
-#~ msgstr "نام پرونده برای ذخیره‌ی دوردست"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "نام کاربر برای کارگزار FTP"

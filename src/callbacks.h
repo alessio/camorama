@@ -3,18 +3,11 @@
 
 #include "v4l.h"
 #include "fileio.h"
-#include <gconf/gconf-client.h>
 
 G_BEGIN_DECLS
 
 void on_change_size_activate(GtkWidget * widget, cam_t *cam);
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam);
-void gconf_notify_func(GConfClient *client, guint cnxn_id,
-                       GConfEntry *entry, char **);
-void gconf_notify_func_bool(GConfClient *client, guint cnxn_id,
-                            GConfEntry *entry, gboolean *val);
-void gconf_notify_func_int(GConfClient *client, guint cnxn_id,
-                           GConfEntry *entry, int *val);
 int delete_event(GtkWidget *, gpointer data);
 void cap_func(GtkWidget *, cam_t *);
 void rcap_func(GtkWidget *, cam_t *);

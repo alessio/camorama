@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2004-09-13 10:32+0530\n"
 "Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Å¨ÄôÀ¼ì¸ÕÅ¢யில் இருக்கும் பிம்ப பார்க்க, மாற்ற மற்றும் சேமிக்கலாம்"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "கமொராமா"
 
@@ -312,11 +312,228 @@ msgstr "முன்னுருமை"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "timestampஐ கோப்புப் பெயருடன் இணை"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ கோப்புப் பெயரின் கடைசியில் இணை"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "¾ýÉ¡§Ä-கைப்பற்றுதலுக்கு மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "படங்களை தானியங்கி கைப்பற்றுதலுக்கு மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "தானியங்கி கைப்பற்றுதலினுடைய இடைவேளை"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "தானாகவே கைப்பற்றப்பட்டப் படங்களின் இடைவேளையைச் சொல்"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "கைப்பற்றுதலின் datestampஐ மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "கைப்பற்றப்பட்ட படங்களின் உள்-ளே datestamp வரைதலை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "உள் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "உள் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "உயரத்-தைக் கைப்பற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "FTP சேவகனுடைய புரவலப் பெயர்"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "FTP சேவகனுடைய தொலைக் கைப்பற்றுதலுக்கான புரவலப் பெயர்"
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "உள் கைப்பற்றுதலை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் "
+"கைபற்றும் பொழுது,''இந்த விசை பிம்பங்களின் சேமிப்பை உள்ளேயே மாற்றிவிடும்."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "தொலைக் கைப்பற்றுதலுக்கான ஆவணம்"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "timestampஐ தொலைக் கோப்புப் பெயருடன் இணை"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ தொலைக் கோப்புப் பெயரின் கடைசியில் இணை"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr " தொலைக் கைப்பற்றுதலை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் "
+"கைபற்றும் பொழுது,இந்த விசை பிம்பங்களின் சேமிப்-பை தொலை சேவகனுக்கு மாற்றவும்."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "தொலைக் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "தெ¡லைக் கே¡டியில் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "தொலைக் கைப்பற்றுதலுக்கான ஆவணம்"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "தொலைக் கைப்பற்றப்பட்ட படங்களை சேமிப்பதற்கான அடைவு"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "தெ¡லைக் கே¡டி கோப்புபெயரைச் சேமி"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "uploaded பிம்பத்திற்கான கோப்புபெயரினுடைய பெயர் "
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "தொலை கைப்பற்றுதலினுடைய timestampஐ மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "FTP uploadற்காக பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "உள் கைப்பற்றுதலுக்கான ஆவணம்"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "உள் கைப்பற்றப்பட்ட  படங்களை சேமிப்பதற்கான அடைவு"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "உள்-கைப்பற்றப்பட்ட படங்களுக்கான கோப்புப் பெயர்"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "கைப்பற்றப்பட்ட படங்களை உள் சேமிப்பதற்கான கோப்புப் பெயர்"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "உள் கைப்பற்றுதலினுடைய timestampஐ மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "உள் பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "timestampன் உரையை ஆயத்தமாக்கு"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "¦¾¡¼÷îசியினுடைய ஆயத்த உரையை ஒரு பிம்பத்தில் இணைப்பதற்கான விளக்கம்"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "ஆயத்த தொடர்ச்சியை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "பிம்பங்களில் உள்ள timestampனுடைய ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷"
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "காட்சி சீரமைப்பு சருக்குதல்களை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "காட்சி பண்புகளை சீரமைப்பதற்காக சருக்குதல் உபயோகத்தை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "காட்சி விளைவு பொத்தான்களை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "காட்சி வடிகட்டியை சீரமைப்பதற்காக பொத்தான்களின் உபயோகத்-தை மாற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "அகலத்-தைக் கைப்பற்று"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "மொழிபெயர்ப்பாளர்_நம்பிக்-கை"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -511,12 +728,12 @@ msgstr ""
 "கமொராமா பதிப்பு %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "%s என்ற pixmap கோப்பைத் திறக்க இயலவில்லை"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -626,146 +843,17 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "நெகட்டிவ்-எதிர்"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "timestampஐ கோப்புப் பெயருடன் இணை"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "timestampஐ தொலைக் கோப்புப் பெயருடன் இணை"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ கோப்புப் பெயரின் கடைசியில் இணை"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr "UNIX நேரத்தில் இருக்கும் timestampஐ தொலைக் கோப்புப் பெயரின் கடைசியில் இணை"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "timestampன் உரையை ஆயத்தமாக்கு"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "¦¾¡¼÷îசியினுடைய ஆயத்த உரையை ஒரு பிம்பத்தில் இணைப்பதற்கான விளக்கம்"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "உள்-கைப்பற்றப்பட்ட படங்களுக்கான கோப்புப் பெயர்"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "கைப்பற்றப்பட்ட படங்களை உள் சேமிப்பதற்கான கோப்புப் பெயர்"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "உள் கைப்பற்றுதலுக்கான ஆவணம்"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "தொலைக் கைப்பற்றுதலுக்கான ஆவணம்"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "தொலைக் கைப்பற்றப்பட்ட படங்களை சேமிப்பதற்கான அடைவு"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "உள் கைப்பற்றப்பட்ட  படங்களை சேமிப்பதற்கான அடைவு"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "FTP சேவகனுடைய புரவலப் பெயர்"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "FTP சேவகனுடைய தொலைக் கைப்பற்றுதலுக்கான புரவலப் பெயர்"
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "தானியங்கி கைப்பற்றுதலினுடைய இடைவேளை"
-
-#~ msgid "Local capture image format"
-#~ msgstr "உள் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "uploaded பிம்பத்திற்கான கோப்புபெயரினுடைய பெயர் "
-
 #~ msgid "Password for FTP server"
 #~ msgstr "FTP சேவகனுடைய கடவுச் சொல்"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "தொலைக் கைப்பற்றப்பட்ட பிம்பங்களின் வடிவம்"
-
-#~ msgid "Remote save filename"
-#~ msgstr "தெ¡லைக் கே¡டி கோப்புபெயரைச் சேமி"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "உள் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "தெ¡லைக் கே¡டியில் சேமிக்கப்பட்டப் படங்களில் உபயோகிக்கப்படும்  பிம்ப வடிவத்-தைச் சொல்"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "தானாகவே கைப்பற்றப்பட்டப் படங்களின் இடைவேளையைச் சொல்"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "தொலைக் கைப்பற்றப்பட்டப் படங்களுக்கான FTP கணக்கினுடைய ¸¼×î¦º¡ø"
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "¾ýÉ¡§Ä-கைப்பற்றுதலுக்கு மாற்று"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "படங்களை தானியங்கி கைப்பற்றுதலுக்கு மாற்று"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "உள் கைப்பற்றுதலை மாற்று"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr " தொலைக் கைப்பற்றுதலை மாற்று"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "ஆயத்த தொடர்ச்சியை மாற்று"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "கைப்பற்றுதலின் datestampஐ மாற்று"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "கைப்பற்றப்பட்ட படங்களின் உள்-ளே datestamp வரைதலை மாற்று"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "உள் பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr "FTP uploadற்காக பிம்பங்களினுள் timestampஇன் சொருகுதலை மாற்று"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "காட்சி வடிகட்டியை சீரமைப்பதற்காக பொத்தான்களின் உபயோகத்-தை மாற்று"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr "பிம்பங்களில் உள்ள timestampனுடைய ÀÂýÀÎòÐÀÅ÷ ¦ÀÂ÷"
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr "காட்சி பண்புகளை சீரமைப்பதற்காக சருக்குதல் உபயோகத்தை மாற்று"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "காட்சி சீரமைப்பு சருக்குதல்களை மாற்று"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "காட்சி விளைவு பொத்தான்களை மாற்று"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "உள் கைப்பற்றுதலினுடைய timestampஐ மாற்று"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "தொலை கைப்பற்றுதலினுடைய timestampஐ மாற்று"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "FTP சேவகனுடைய ÀÂýÀÎòÐÀÅரின் ¦ÀÂ÷"
 
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr "கைப்பற்றப்பட்ட படங்களின் FTP ஏற்றத்தை உபயோகப்படுத்துபவரின் "
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் "
-#~ "கைபற்றும் பொழுது,''இந்த விசை பிம்பங்களின் சேமிப்பை உள்ளேயே மாற்றிவிடும்."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "\"Take picture\" என்ற பட்டன் வழியாகவோ அல்லது தானே கைபற்றுதல் மூலமாகவோ பிம்பத்-தைக் "
-#~ "கைபற்றும் பொழுது,இந்த விசை பிம்பங்களின் சேமிப்-பை தொலை சேவகனுக்கு மாற்றவும்."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "பிம்பத்-தைக் கைப்பற்ற இயலாது."

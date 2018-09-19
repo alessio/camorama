@@ -17,7 +17,6 @@
 #include <libv4l2.h>
 #include <signal.h>
 #include <png.h>
-#include <gconf/gconf-client.h>
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-prototypes"
@@ -80,7 +79,7 @@ typedef struct camera {
     unsigned char *pic_buf, *tmp;
     guint timeout_id, timeout_fps_id, idle_id;
     guint32 timeout_interval;
-    GConfClient *gc;
+    GSettings *gc;
     GtkBuilder *xml;
     GdkPixbuf *pb;
 

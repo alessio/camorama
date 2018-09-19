@@ -38,8 +38,9 @@ AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])
 
 AC_ARG_ENABLE(gtk2, [AC_HELP_STRING([--enable-gtk2], [Compile against GTK 2.x instead of GTK 3.x])], [enable_gtk2=$enableval], [enable_gtk2="no"])
 AC_ARG_ENABLE(gtk4, [AC_HELP_STRING([--enable-gtk4], [Compile against GTK 4.x])], [enable_gtk4=$enableval], [enable_gtk4="no"])
+GLIB_GSETTINGS
 
-pkg_modules="gdk-pixbuf-2.0 gconf-2.0"
+pkg_modules="gdk-pixbuf-2.0"
 
 if test "x$enable_gtk4" = xyes; then
 	pkg_modules="$pkg_modules gtk+-4.0 >= 3.92"
@@ -58,15 +59,10 @@ AC_SUBST(PACKAGE_LIBS)
 AC_SUBST(CAMORAMA_UI)
 AC_DEFINE(HAVE_GCONF,1,[Build with gconf support])
 
-AC_PATH_PROG(GCONFTOOL, gconftool-2)
-AM_GCONF_SOURCE_2
-
-
 AC_OUTPUT([
 	Makefile
 	src/Makefile
 	data/Makefile
-	data/camorama.schemas
 	po/Makefile.in
 ])
 

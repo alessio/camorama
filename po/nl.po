@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2006-11-19 21:22+0100 \n"
 "Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -307,11 +307,245 @@ msgstr "Voorkeuren"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Tijdstempel aan bestandsnaam toevoegen"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Voegt aan het eind van een bestandsnaam een UNIX-tijdstempel toe"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Schakelt automatische opname in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Schakelt automatische opname van beelden in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Interval van automatisch opname"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Specificeert het interval voor automatische opname van beelden."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "Video-apparaat"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "De unix-bestandsnaam van het camera-apparaat"
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Schakelt de datumstempel bij opnames in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Schakelt de weergave van een datumstempel bij opgenomen beelden in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Afbeeldingsformaat van lokale opnames"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+"Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor lokaal "
+"opgeslagen beelden."
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "opnamehoogte"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Computernaam van de FTP-server"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Computernaam van de FTP-server voor opnames op afstand"
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Schakelt lokale opname in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Tijdens de opname van beelden met behulp van de \"Foto maken\"-knop of "
+"automatische opname, schakelt deze toets de lokale opslag van afbeeldingen "
+"in/uit."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Map voor opnames op afstand"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Tijdstempel aan bestandsnaam op afstand toevoegen"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Voegt aan het eind van een bestandsnaam op afstand een UNIX-tijdstempel toe"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Schakelt opname op afstand in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Tijdens de opname van beelden met behulp van de \"Foto maken\"-knop of "
+"automatische opname, schakelt deze toets de opslag op afstand van "
+"afbeeldingen in/uit."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Afbeeldingsformaat van opnames op afstand"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+"Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor op "
+"afstand opgeslagen afbeeldingen."
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Map voor opnames op afstand"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Bestandsnaam voor het op afstand opslaan van opgenomen beelden"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Bestandsnaam op afstand"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Bestandsnaam van de ge-uploade afbeeldingen."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Schakelt de tijdstempel voor opnames op afstand in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Schakelt de toevoeging van een tijdstempel bij opgenomen beelden voor FTP-"
+"upload in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Map voor lokale opnames"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Map voor het lokaal opslaan van opgenomen beelden"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Bestandsnaam voor lokale opnames"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Bestandsnaam voor het lokaal opslaan van opgenomen beelden"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Schakelt de tijdstempel voor lokale opnames in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr ""
+"Schakelt de toevoeging van een tijdstempel bij opgenomen beelden in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Aangepaste tekst als tijdstempel"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr ""
+"Definieert een aangepaste tekst die aan de afbeelding toegevoegd dient te "
+"worden"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Schakelt de aangepaste tekst in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Schakelt het gebruik van aangepaste tekst als tijdstempel in afbeeldingen in/"
+"uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Schakelt de schuifknoppen voor video-instellingen in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+"Schakelt het gebruik van schuifknoppen om de video-eigenschappen aan te "
+"passen in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Schakelt de knoppen voor video-effecten in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+"Schakelt het gebruik van de knoppen om de videofilters aan te passen in/uit"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "opnamebreedte"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Huib Kleinhout <huib@stack.nl>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -502,12 +736,12 @@ msgstr ""
 "Camorama versie %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -610,147 +844,11 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "Middel"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Tijdstempel aan bestandsnaam toevoegen"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Tijdstempel aan bestandsnaam op afstand toevoegen"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "Voegt aan het eind van een bestandsnaam een UNIX-tijdstempel toe"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Voegt aan het eind van een bestandsnaam op afstand een UNIX-tijdstempel "
-#~ "toe"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Aangepaste tekst als tijdstempel"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr ""
-#~ "Definieert een aangepaste tekst die aan de afbeelding toegevoegd dient te "
-#~ "worden"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Bestandsnaam voor lokale opnames"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Bestandsnaam voor het lokaal opslaan van opgenomen beelden"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Map voor lokale opnames"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Map voor opnames op afstand"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Bestandsnaam voor het op afstand opslaan van opgenomen beelden"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Map voor het lokaal opslaan van opgenomen beelden"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Computernaam van de FTP-server"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Computernaam van de FTP-server voor opnames op afstand"
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Interval van automatisch opname"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Afbeeldingsformaat van lokale opnames"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Bestandsnaam van de ge-uploade afbeeldingen."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Wachtwoord van de FTP-server"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Afbeeldingsformaat van opnames op afstand"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Bestandsnaam op afstand"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr ""
-#~ "Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor "
-#~ "lokaal opgeslagen beelden."
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor op "
-#~ "afstand opgeslagen afbeeldingen."
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Specificeert het interval voor automatische opname van beelden."
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Het wachtwoord van het FTP-account voor opnames op afstand."
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr "De unix-bestandsnaam van het camera-apparaat"
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Schakelt automatische opname in/uit"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Schakelt automatische opname van beelden in/uit"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Schakelt lokale opname in/uit"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Schakelt opname op afstand in/uit"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Schakelt de aangepaste tekst in/uit"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Schakelt de datumstempel bij opnames in/uit"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr ""
-#~ "Schakelt de weergave van een datumstempel bij opgenomen beelden in/uit"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr ""
-#~ "Schakelt de toevoeging van een tijdstempel bij opgenomen beelden in/uit"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "Schakelt de toevoeging van een tijdstempel bij opgenomen beelden voor FTP-"
-#~ "upload in/uit"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr ""
-#~ "Schakelt het gebruik van de knoppen om de videofilters aan te passen in/"
-#~ "uit"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Schakelt het gebruik van aangepaste tekst als tijdstempel in afbeeldingen "
-#~ "in/uit"
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "Schakelt het gebruik van schuifknoppen om de video-eigenschappen aan te "
-#~ "passen in/uit"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Schakelt de schuifknoppen voor video-instellingen in/uit"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Schakelt de knoppen voor video-effecten in/uit"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Schakelt de tijdstempel voor lokale opnames in/uit"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Schakelt de tijdstempel voor opnames op afstand in/uit"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Gebruikersnaam voor FTP-server"
@@ -759,25 +857,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Gebruikersnaam die gebruikt dient te worden voor FTP-uploads van "
 #~ "opgenomen beelden"
-
-#~ msgid "Video device"
-#~ msgstr "Video-apparaat"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "Tijdens de opname van beelden met behulp van de \"Foto maken\"-knop of "
-#~ "automatische opname, schakelt deze toets de lokale opslag van "
-#~ "afbeeldingen in/uit."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "Tijdens de opname van beelden met behulp van de \"Foto maken\"-knop of "
-#~ "automatische opname, schakelt deze toets de opslag op afstand van "
-#~ "afbeeldingen in/uit."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "De afbeelding kan niet worden opgeslagen."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2006-03-13 23:11+0100\n"
 "Last-Translator: Jens Seidel <jseidel@cvs.gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Webcam-Bilder anzeigen, bearbeiten und speichern"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "Camorama"
 
@@ -307,11 +307,241 @@ msgstr "Einstellungen"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Zeitstempel an Dateiname anhängen"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der Dateinamen"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Auto-Mitschneiden?"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Sollen Bilder automatisch mitgeschnitten werden?"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Intervall für Auto-Mitschneiden"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Gibt das Intervall für das automatische Mitschneiden von Bildern an."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "Video-Gerät"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+"Der Unix-Dateisystempfad zu dem Gerät, das Ihrer Kamera zugeordnet ist."
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Den Datumsstempel zu Mitschnitten hinzufügen/nicht hinzufügen"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Den Datumsstempel in den gespeicherten Bildern zeichnen/nicht zeichnen"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Bildformat lokaler Mitschnitte"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+"Welches Bildformat soll für lokal gespeicherte Bilder verwendet werden?"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "Mittschnitthöhe"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Rechnername des FTP-Servers"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Der Rechnername des FTP-Servers für entfernte Mitschnitte."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Lokal mitschneiden?"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Beim Mitschneiden von Bildern mittels des »Bild aufnehmen«-Knopfes oder "
+"mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder lokal "
+"gespeichert werden."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Ordner für entfernte Mitschnitte"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Zeitstempel an entfernten Dateinamen anhängen"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der entfernten "
+"Dateinamen"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Entfernt mitschneiden?"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Beim Mitschneiden von Bildern mittels des »Bild aufnehmen«-Knopfes oder "
+"mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder auf "
+"einem entfernten Rechner gespeichert werden."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Bildformat ntfernter Mitschnitte"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+"Welches Bildformat soll für entfernt gespeicherte Bilder verwendet werden?"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Ordner für entfernte Mitschnitte"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Ordner zum entfernten Speichern mitgeschnittener Bilder"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Dateiname für entferntes Speichern"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Ein Name für die Datei hochgeladener Bilder."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Zeitstempel für entfernte Mitschnitte?"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Einen Zeitstempel in die per FTP hochgeladenen Bilder einfügen/nicht einfügen"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Ordner für lokale Mitschnitte"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Ordner zum lokalen Speichern mitgeschnittener Bilder"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Dateiname für lokale Mitschnitte"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Dateiname für das lokale Speichern mitgeschnittener Bilder"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Zeitstempel für lokale Mitschnitte?"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Einen Zeitstempel in lokale Bilder einfügen/nicht einfügen"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Benutzerdefinierter Zeitstempel-Text"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr ""
+"Legt eine benutzerdefinierte Zeichenkette fest, die in's Bild eingefügt wird."
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Eine benutzerdefinierte Zeichenkette verwenden/nicht verwenden"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Eine benutzerdefinierte Zeichenkette für den Zeitstempel in Bildern "
+"verwenden/nicht verwenden."
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Die Schieber zur Video-Anpassung anzeigen/verbergen"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+"Die Schieber zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Die Knöpfe zur Video-Anpassung anzeigen/verbergen"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+"Die Knöpfe zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "Mittschnittbreite"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Christian Neumair <chris@gnome-de.org>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -507,12 +737,12 @@ msgstr ""
 "Camorama, Version %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap-Datei »%s« konnte nicht gefunden werden"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -607,146 +837,11 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "Mittel"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Zeitstempel an Dateiname anhängen"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Zeitstempel an entfernten Dateinamen anhängen"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr ""
-#~ "Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der Dateinamen"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der entfernten "
-#~ "Dateinamen"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Benutzerdefinierter Zeitstempel-Text"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr ""
-#~ "Legt eine benutzerdefinierte Zeichenkette fest, die in's Bild eingefügt "
-#~ "wird."
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Dateiname für lokale Mitschnitte"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Dateiname für das lokale Speichern mitgeschnittener Bilder"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Ordner für lokale Mitschnitte"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Ordner für entfernte Mitschnitte"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Ordner zum entfernten Speichern mitgeschnittener Bilder"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Ordner zum lokalen Speichern mitgeschnittener Bilder"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Rechnername des FTP-Servers"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Der Rechnername des FTP-Servers für entfernte Mitschnitte."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Intervall für Auto-Mitschneiden"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Bildformat lokaler Mitschnitte"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Ein Name für die Datei hochgeladener Bilder."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Passwort des FTP-Servers"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Bildformat ntfernter Mitschnitte"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Dateiname für entferntes Speichern"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr ""
-#~ "Welches Bildformat soll für lokal gespeicherte Bilder verwendet werden?"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "Welches Bildformat soll für entfernt gespeicherte Bilder verwendet werden?"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr ""
-#~ "Gibt das Intervall für das automatische Mitschneiden von Bildern an."
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Das Passwort für den FTP-Zugang für entfernte Mitschnitte."
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr ""
-#~ "Der Unix-Dateisystempfad zu dem Gerät, das Ihrer Kamera zugeordnet ist."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Auto-Mitschneiden?"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Sollen Bilder automatisch mitgeschnitten werden?"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Lokal mitschneiden?"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Entfernt mitschneiden?"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Eine benutzerdefinierte Zeichenkette verwenden/nicht verwenden"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Den Datumsstempel zu Mitschnitten hinzufügen/nicht hinzufügen"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr ""
-#~ "Den Datumsstempel in den gespeicherten Bildern zeichnen/nicht zeichnen"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Einen Zeitstempel in lokale Bilder einfügen/nicht einfügen"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "Einen Zeitstempel in die per FTP hochgeladenen Bilder einfügen/nicht "
-#~ "einfügen"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr ""
-#~ "Die Knöpfe zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Eine benutzerdefinierte Zeichenkette für den Zeitstempel in Bildern "
-#~ "verwenden/nicht verwenden."
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "Die Schieber zum Anpassen der Video-Eigenschaften verwenden/nicht "
-#~ "verwenden"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Die Schieber zur Video-Anpassung anzeigen/verbergen"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Die Knöpfe zur Video-Anpassung anzeigen/verbergen"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Zeitstempel für lokale Mitschnitte?"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Zeitstempel für entfernte Mitschnitte?"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Benutzername für FTP-Server"
@@ -754,25 +849,6 @@ msgstr ""
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr ""
 #~ "Der für FTP-Uploads mitgeschnittener Bilder zu verwendende Benutzername"
-
-#~ msgid "Video device"
-#~ msgstr "Video-Gerät"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "Beim Mitschneiden von Bildern mittels des »Bild aufnehmen«-Knopfes oder "
-#~ "mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder lokal "
-#~ "gespeichert werden."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "Beim Mitschneiden von Bildern mittels des »Bild aufnehmen«-Knopfes oder "
-#~ "mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder auf "
-#~ "einem entfernten Rechner gespeichert werden."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "Bild konnte nicht mitgeschnitten werden."

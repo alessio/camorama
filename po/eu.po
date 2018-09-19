@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2007-08-08 20:14+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -36,11 +36,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Irudiak web kamera batetik ikusi, aldatu eta gorde"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -313,11 +313,231 @@ msgstr "Hobespenak"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Fitxategi-izenari data-zigilua gehitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Eskuratze automatikoa gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Irudien eskuratze automatikoa gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Eskuratze automatikorako tartea"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Irudien eskuratze automatikoaren tartea zehazten du"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "Bideo-gailua"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+"Gailuaren UNIX fitxategi-sistemaren bide-izena (kamerari esleitu zaiona)."
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Data-zigilua irudietan gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Eskuratutako irudietan data-zigiluaren marrazketa gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Eskuratze lokalaren irudi-formatua"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Lokalean gordeko diren irudien formatua zehazten du"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "eskuratzearen altuera"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "FTP-zerbitzariaren izena"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Urruenako eskuratzeentzako FTP-zerbitzariaren izena."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Eskuratze lokala gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
+"eskuratze automatikoarekin, gako honek irudien eskuratze lokala gaitzen du."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Urruneko eskuratzeentako direktorioa"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Urruneko fitxategi-izenari data-zigilua gehitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Urruneko fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Urruneko eskuratzea gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
+"eskuratze automatikoarekin, gako honek urruneko zerbitzari batean irudien "
+"eskuratzea gaitzen du"
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Urruneko eskuratzearen irudi-formatua"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Urrunean gordeko diren irudien formatua zehazten du"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Urruneko eskuratzeentako direktorioa"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Eskuratutako irudiak urrunean gordetzeko direktorioa"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Urrunean gordetzeko fitxategi-izena"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Zerbitzarira igotako irudien fitxategi-izena"
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Urruneko eskuratzeentzat data-zigilua gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "FTP bitartze igoko diren irudietan data-zigiluaren txertaketa gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Eskuratze lokalentzako direktorioa"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Eskuratutako irudiak lokalean gordetzeko direktorioa"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Eskuratze lokalentzako fitxategi-izena"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Eskuratutako irudiak lokalean gordetzeko fitxategi-izena"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Eskuratze lokalentzat data-zigilua gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Irudi lokaletan data-zigiluaren txertaketa gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Data-zigilurako testu pertsonalizatua"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Irudiaren barruan sartuko den testu-kate pertsonalizatua zehazten du"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Textu-kate pertsonalizatua gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "Irudien data-zigiluan testu-kate pertsonalizatuaren erabilpena gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Bideoa egokitzeko graduatzaileak gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "Bideoaren ezaugarriak egokitzeko graduatzaileen erabilera gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Bideoaren efektuen botoiak gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Bideo-iragazkiak egokitzeko botoien erabilpena gaitu"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "eskuratzearen zabalera"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Alberto Silva <alberto@nmp.es>, 2003"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -508,12 +728,12 @@ msgstr ""
 "Camorama bertsioa %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "pixmap-fitxategia ezin izan da aurkitu: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -615,159 +835,17 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "Ertaina"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Fitxategi-izenari data-zigilua gehitu"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Urruneko fitxategi-izenari data-zigilua gehitu"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "Fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data formatuan"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Urruneko fitxategi-izenen bukaeran data-zigilua gehitu, UNIX data "
-#~ "formatuan"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Data-zigilurako testu pertsonalizatua"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr ""
-#~ "Irudiaren barruan sartuko den testu-kate pertsonalizatua zehazten du"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Eskuratze lokalentzako fitxategi-izena"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Eskuratutako irudiak lokalean gordetzeko fitxategi-izena"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Eskuratze lokalentzako direktorioa"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Urruneko eskuratzeentako direktorioa"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Eskuratutako irudiak urrunean gordetzeko direktorioa"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Eskuratutako irudiak lokalean gordetzeko direktorioa"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "FTP-zerbitzariaren izena"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Urruenako eskuratzeentzako FTP-zerbitzariaren izena."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Eskuratze automatikorako tartea"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Eskuratze lokalaren irudi-formatua"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Zerbitzarira igotako irudien fitxategi-izena"
-
 #~ msgid "Password for FTP server"
 #~ msgstr "FTP-zerbitzariaren pasahitza"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Urruneko eskuratzearen irudi-formatua"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Urrunean gordetzeko fitxategi-izena"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "Lokalean gordeko diren irudien formatua zehazten du"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr "Urrunean gordeko diren irudien formatua zehazten du"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Irudien eskuratze automatikoaren tartea zehazten du"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Urruneko eskuratzeak egiteko erabiliko den FTP-kontuaren pasahitza"
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr ""
-#~ "Gailuaren UNIX fitxategi-sistemaren bide-izena (kamerari esleitu zaiona)."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Eskuratze automatikoa gaitu"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Irudien eskuratze automatikoa gaitu"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Eskuratze lokala gaitu"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Urruneko eskuratzea gaitu"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Textu-kate pertsonalizatua gaitu"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Data-zigilua irudietan gaitu"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "Eskuratutako irudietan data-zigiluaren marrazketa gaitu"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Irudi lokaletan data-zigiluaren txertaketa gaitu"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr "FTP bitartze igoko diren irudietan data-zigiluaren txertaketa gaitu"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "Bideo-iragazkiak egokitzeko botoien erabilpena gaitu"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Irudien data-zigiluan testu-kate pertsonalizatuaren erabilpena gaitu"
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr "Bideoaren ezaugarriak egokitzeko graduatzaileen erabilera gaitu"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Bideoa egokitzeko graduatzaileak gaitu"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Bideoaren efektuen botoiak gaitu"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Eskuratze lokalentzat data-zigilua gaitu"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Urruneko eskuratzeentzat data-zigilua gaitu"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "FTP-zerbitzariaren erabiltzaile-izena"
 
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr "Eskuratutako irudiak FTP-zerbitzarira igotzeko erabilitzaile-izena"
-
-#~ msgid "Video device"
-#~ msgstr "Bideo-gailua"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
-#~ "eskuratze automatikoarekin, gako honek irudien eskuratze lokala gaitzen "
-#~ "du."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "\"Argazkia hartu\" botoia erabiliz irudiak eskuratzen direnean, edo "
-#~ "eskuratze automatikoarekin, gako honek urruneko zerbitzari batean irudien "
-#~ "eskuratzea gaitzen du"
 
 #~ msgid "Unable to capture image."
 #~ msgstr "Ezin izan da irudia eskuratu"

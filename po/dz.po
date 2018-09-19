@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camora.head.pot\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2007-03-01 16:30+0530\n"
 "Last-Translator: sonam pelden <sonaa_peldn@yahoo.com>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -34,11 +34,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "ཝེབ་ཀེམ་ཅིག་ལས་  ལྟ་ནི་སོར་ནི་དང་གཟུགས་བརྙན་ཚུ་སྲུང་"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "ཀེ་མོ་ར་མ་"
 
@@ -311,11 +311,236 @@ msgstr "དགའ་གདམ་ཚུ་"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "དུས་བཀོད་འདི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "ཡུ་ནིགསི་དུས་ཡུན་ནང་  ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "རང་བཞིན་འཛིན་བཟུང་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་འབད་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "རང་བཞིན་-འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་འདི་གསལ་བཀོད་འབད།"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr "ཝི་ཌིའོ་ཐབས་འཕྲུལ་"
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+"ཡུ་ནིགསི་ཡིག་སྣོད་རིམ་ལུགས་འགྲུལ་ལམ་འདི་  ཁྱོད་རའི་པར་ཆས་ལུ་འགན་སྤྲོད་འབད་ཡོད་པའི་ཐབས་འཕྲུལ་ལུ།"
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "ཚེས་གྲངས་བཀོད་པ་འདི་འཛིན་བཟུང་ནང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr ""
+"ཚེས་གྲངས་བཀོད་པ་ཅིག་གི་པར་རིས་འདི་  འཛནི་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ནང་འཁོད་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+"ཉེ་གནས་ཀྱི་སྲུང་བཞག་སྟེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིན་མི་  གཟུགས་བརྙན་རྩ་སྒྲིག་འདི་གསལ་"
+"བཀོད་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "མཐོ་ཚད་འཛིན་བཟུང་འབད་"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ཧོསཊི་མིང་"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་ཨེཕ་ཊི་པི་འདི་གི་དོན་ལུ་ཧོསཊི་མིང་།"
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"པར་ཚུ་ \"Take Picture\" ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་བཟུང་"
+"འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཉེ་གནས་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་གི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "དུས་བཀོད་འདི་ཐག་རིང་གི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "ཡུ་ནིགསི་དུས་ཡུན་  ཐག་རིང་ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"པར་ཚུ་ \"Take Picture\" ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་བཟུང་"
+"འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཐག་རིང་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+"ཐག་རིང་གི་སྲུང་བཞག་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ཨིན་པའི་གཟུགས་བརྙན་རྩ་སྒརིག་འདི་"
+"གསལ་བཀོད་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "ཐག་རིང་གི་འཛིན་བཟུང་གི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཐག་རིང་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "ཐག་རིང་གི་སྲུང་ཡིག་སྣོད་མིང་"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "སྐྱེལ་བཙུགས་འབད་དེ་ཡོད་པའི་གཟུགས་བརྙན་ཚུ་གི་ཡིག་སྣོད་མིང་འདི་གི་དོན་ལུ་མིང་།"
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཀྱི་དོན་ལུ་  གཟུགས་བརྙན་ནང་ལུ་དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་གི་དོན་ལུ་ཡིག་སྣོད་མིང་"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་ཡིག་སྣོད་མིང་"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་ཉེ་གནས་གཟུགས་བརྙན་ཚུ་ནང་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "དུས་བཀོད་འདི་གི་དོན་ལུ་  སྲོལ་སྒྲིག་ཚིག་ཡིག་"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "གཟུགས་བརྙན་ནང་ལུ་བཙུགས་ནི་ཨིན་པའི་སྲོལ་སྒྲིག་ཚིག་ཡིག་གི་ཡིག་རྒྱུན་ཅིག་ངེས་འཛིན་འབདཝ་ཨིན།"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "སྲོལ་སྒྲིག་ཡིག་རྒྱུན་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"གཟུགས་བརྙན་ཚུ་ནང་དུས་བཀོད་ཀྱི་དོན་ལུ་སྲོལ་སྒྲིག་ཡིག་རྒྱུན་གྱི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "ཝི་ཌིའོ་བདེ་སྒྲིག་བཤུད་བྱེད་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "ཝི་ཌིའོ་རྒྱུ་དངོས་འདི་བདེ་སྒྲིག་བཟོ་ནི་ལུ་  བཤུད་བྱེད་ཚུ་གི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "ཝི་ཌིའོ་ནུས་ཅན་ཚུ་གི་ཨེབ་རྟ་ཚུ་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "ཝི་ཌིའོ་ཚག་མ་ཚུ་བདེ་སྒྲིག་བཟོ་ནི་ལུ་ ཨེབ་རྟ་ཚུ་གི་ལང་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "རྒྱ་ཚད་འཛནི་བཟུང་འབད་"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "སྐད་བསྒྱུར་པའི་ངོ་བསྟོད་ཚུ། (_c)"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -506,12 +731,12 @@ msgstr ""
 "ཀེ་མོ་ར་མ་ཐོན་རིམ་%s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "པར་ཁྲ་ཡིག་སྣོད་ཐོབ་མ་ཚུགས: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -612,139 +837,11 @@ msgstr ""
 #~ msgid "Medium"
 #~ msgstr "འབྲིང་མ་"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "དུས་བཀོད་འདི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "དུས་བཀོད་འདི་ཐག་རིང་གི་ཡིག་སྣོད་མིང་ལུ་མཇུག་བསྣོན་འབད་"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "ཡུ་ནིགསི་དུས་ཡུན་ནང་  ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr "ཡུ་ནིགསི་དུས་ཡུན་  ཐག་རིང་ཡིག་སྣོད་མིང་ཚུ་གི་མཇུག་ལུ་དུས་བཀོད་ཅིག་མཇུག་བསྣོན་འབདཝ་ཨིན་"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "དུས་བཀོད་འདི་གི་དོན་ལུ་  སྲོལ་སྒྲིག་ཚིག་ཡིག་"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "གཟུགས་བརྙན་ནང་ལུ་བཙུགས་ནི་ཨིན་པའི་སྲོལ་སྒྲིག་ཚིག་ཡིག་གི་ཡིག་རྒྱུན་ཅིག་ངེས་འཛིན་འབདཝ་ཨིན།"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "ཉེ་གནས་འཛིན་བཟུང་གི་དོན་ལུ་ཡིག་སྣོད་མིང་"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་ཡིག་སྣོད་མིང་"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་སྣོད་འཛིན་"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "ཐག་རིང་གི་འཛིན་བཟུང་གི་དོན་ལུ་སྣོད་འཛིན་"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཐག་རིང་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་ཉེ་གནས་ལུ་སྲུང་ནིའི་དོན་ལུ་སྣོད་འཛིན་"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ཧོསཊི་མིང་"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "ཐག་རིང་གི་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་ཨེཕ་ཊི་པི་འདི་གི་དོན་ལུ་ཧོསཊི་མིང་།"
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "རང་བཞིན་-འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་"
-
-#~ msgid "Local capture image format"
-#~ msgstr "ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "སྐྱེལ་བཙུགས་འབད་དེ་ཡོད་པའི་གཟུགས་བརྙན་ཚུ་གི་ཡིག་སྣོད་མིང་འདི་གི་དོན་ལུ་མིང་།"
-
 #~ msgid "Password for FTP server"
 #~ msgstr "ཨེཕ་ཊི་པི་སར་བར་གི་དོན་ལུ་ཆོག་ཡིག་"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "ཉེ་གནས་འཛིན་བཟུང་གཟུགས་བརྙན་རྩ་སྒྲིག་"
-
-#~ msgid "Remote save filename"
-#~ msgstr "ཐག་རིང་གི་སྲུང་ཡིག་སྣོད་མིང་"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr ""
-#~ "ཉེ་གནས་ཀྱི་སྲུང་བཞག་སྟེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིན་མི་  གཟུགས་བརྙན་རྩ་སྒྲིག་འདི་"
-#~ "གསལ་བཀོད་འབདཝ་ཨིན་"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "ཐག་རིང་གི་སྲུང་བཞག་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ཨིན་པའི་གཟུགས་བརྙན་རྩ་སྒརིག་"
-#~ "འདི་གསལ་བཀོད་འབདཝ་ཨིན་"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་གི་དོན་ལུ་བར་མཚམས་འདི་གསལ་བཀོད་འབད།"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་ ཨེཕ་ཊི་པི་རྩིས་ཐོ་འདི་གི་དོན་ལུ་ཆོག་ཡིག།"
-
-#~ msgid ""
-#~ "The unix file system path to the device that's assigned to your camera."
-#~ msgstr ""
-#~ "ཡུ་ནིགསི་ཡིག་སྣོད་རིམ་ལུགས་འགྲུལ་ལམ་འདི་  ཁྱོད་རའི་པར་ཆས་ལུ་འགན་སྤྲོད་འབད་ཡོད་པའི་ཐབས་འཕྲུལ་ལུ།"
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "རང་བཞིན་འཛིན་བཟུང་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "པར་ཚུ་གི་རང་བཞིན་འཛིན་བཟུང་འབད་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
-
-#~ msgid "Toggles local capture"
-#~ msgstr "ཉེ་གནས་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "ཐག་རིང་གི་འཛིན་བཟུང་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "སྲོལ་སྒྲིག་ཡིག་རྒྱུན་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "ཚེས་གྲངས་བཀོད་པ་འདི་འཛིན་བཟུང་ནང་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr ""
-#~ "ཚེས་གྲངས་བཀོད་པ་ཅིག་གི་པར་རིས་འདི་  འཛནི་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ནང་འཁོད་སོར་སྟོན་འབདཝ་"
-#~ "ཨིན་"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་ཉེ་གནས་གཟུགས་བརྙན་ཚུ་ནང་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཀྱི་དོན་ལུ་  གཟུགས་བརྙན་ནང་ལུ་དུས་བཀོད་ཅིག་གི་བཙུགས་པ་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "ཝི་ཌིའོ་ཚག་མ་ཚུ་བདེ་སྒྲིག་བཟོ་ནི་ལུ་ ཨེབ་རྟ་ཚུ་གི་ལང་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "གཟུགས་བརྙན་ཚུ་ནང་དུས་བཀོད་ཀྱི་དོན་ལུ་སྲོལ་སྒྲིག་ཡིག་རྒྱུན་གྱི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "ཝི་ཌིའོ་རྒྱུ་དངོས་འདི་བདེ་སྒྲིག་བཟོ་ནི་ལུ་  བཤུད་བྱེད་ཚུ་གི་ལག་ལེན་འཐབ་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "ཝི་ཌིའོ་བདེ་སྒྲིག་བཤུད་བྱེད་འདི་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "ཝི་ཌིའོ་ནུས་ཅན་ཚུ་གི་ཨེབ་རྟ་ཚུ་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "ཉེ་གནས་འཛིན་བཟུང་ཚུ་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "ཐག་རིང་གི་འཛནི་བཟུང་གི་དོན་ལུ་དུས་བཀོད་སོར་སྟོན་འབདཝ་ཨིན་"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "ཨེཕ་ཊི་པི་སར་བར་གྱི་དོན་ལུ་ལག་ལེན་པའི་མིང་"
@@ -753,23 +850,6 @@ msgstr ""
 #~ msgstr ""
 #~ "འཛིན་བཟུང་འབད་དེ་ཡོད་པའི་པར་ཚུ་གི་ཨེཕ་ཊི་པི་སྐྱེལ་བཙུགས་ཚུ་གི་དོན་ལུ་  ལག་ལེན་འཐབ་ནི་ལུ་ལག་ལེན་"
 #~ "པའི་མིང་"
-
-#~ msgid "Video device"
-#~ msgstr "ཝི་ཌིའོ་ཐབས་འཕྲུལ་"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "པར་ཚུ་ \"Take Picture\" ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་"
-#~ "བཟུང་འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཉེ་གནས་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "པར་ཚུ་ \"Take Picture\" ཨེབ་རྟ་ལས་རྒྱུད་དེ་འཛིན་བཟུང་འབདཝ་ད་  ཡང་ན་  རང་བཞིན་འཛིན་"
-#~ "བཟུང་འབདཝ་ད་  ལྡེ་མིག་འདི་གིས་པར་ཚུ་ཐག་རིང་སྦེ་སྲུང་ནི་འདི་སོར་སྟོན་འབདཝ་ཨིན།"
 
 #~ msgid "Unable to capture image."
 #~ msgstr "གཟུགས་བརྙན་འཛིན་བཟུང་འབད་མ་ཚུགས།"

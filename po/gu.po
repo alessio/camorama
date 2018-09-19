@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2004-09-08 18:14+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -33,11 +33,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "વેબકેમમાંથી ચિત્રો જુઓ, બદલો અને સંગ્રહો"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr ""
 
@@ -310,11 +310,227 @@ msgstr "પસંદગીઓ"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "ફાઈલના નામમાં સમયનોંધ ઉમેરો"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, ફાઈલના નામના અંતે"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "ચિત્રોને આપોઆપ મેળવવા માટે ફેરબદલી કરે છે."
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "આપોઆપ મેળવવા માટેનો અંતરાલ"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "ચિત્રોને આપોઆપ મેળવવા માટેનો અંતરાલ સ્પષ્ટ કરે છે."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "મેળવાયેલા માટે તારીખનોંધ ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "ચિત્રના બંધારણ માટે સ્થાનિક મેળવવાનું"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "સ્થાનિક રીતે સંગ્રહાયેલ ચિત્રો માટે વપરાતા ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+msgid "Image height"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "FTP સર્વર માટે યજમાન નામ"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "દૂરનું મેળવવા માટે FTP સર્વર માટે યજમાન નામ."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "સ્થાનિક આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "દૂરસ્થ મેળવાયેલા માટે ફોલ્ડર"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "દૂરસ્થ ફાઈલનામમાં સમયનોંધ ઉમેરો"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, દૂરસ્થ ફાઈલના નામના અંતે"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "દૂરસ્થ મેળવવા માટે ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "દૂરસ્થ મેળવવા માટેના ચિત્રનું બંધારણ"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "દૂરસ્થ રીતે સંગ્રહાયેલા ચિત્રો માટે ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "દૂરસ્થ મેળવાયેલા માટે ફોલ્ડર"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "મેળવાયેલ ચિત્રોને દૂરસ્થ રીતે સંગ્રહવા માટેનું ફોલ્ડર"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "સંગ્રહવા માટે દૂરસ્થ ફાઈલનું નામ"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "અપલોડ થયેલ ચિત્રોની ફાઈલના નામો માટેનું નામ."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+#, fuzzy
+msgid "Toggles timestamp for remote captures"
+msgstr "દૂરસ્થ મેળવવા માટે ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+#, fuzzy
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "સ્થાનિક મેળવાયેલા માટે ફોલ્ડર"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "મેળવાયેલ ચિત્રોને સ્થાનીય રીતે સંગ્રહવા માટેનું ફોલ્ડર"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "સ્થાનિક મેળવાયેલા માટે ફાઈલનામ"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "મેળવાયેલ ચિત્રોને સ્થાનિક રીતે સંગ્રહવા માટે ફાઈલનામ"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+#, fuzzy
+msgid "Toggles timestamp for local captures"
+msgstr "સ્થાનિક આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+#, fuzzy
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "સમયનોંધ માટે કસ્ટમ લખાણ"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "ચિત્રમાં ઉમેરવા માટે કસ્ટમ લખાણની શબ્દમાળા વ્યાખ્યાયિત કરે છે."
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "કસ્ટમ શબ્દમાળા ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+#, fuzzy
+msgid "Toggles the video adjustment sliders"
+msgstr "કસ્ટમ શબ્દમાળા ફેરબદલી કરે છે"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+msgid "Image width"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr ""
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -504,11 +720,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:269
+#: src/main.c:247
 msgid "Couldn't load builder file"
 msgstr ""
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -608,95 +824,8 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "ઋણ"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "ફાઈલના નામમાં સમયનોંધ ઉમેરો"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "દૂરસ્થ ફાઈલનામમાં સમયનોંધ ઉમેરો"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, ફાઈલના નામના અંતે"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr "સમયનોંધ ઉમેરે છે, યુનિક્સ સમયમાં, દૂરસ્થ ફાઈલના નામના અંતે"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "સમયનોંધ માટે કસ્ટમ લખાણ"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "ચિત્રમાં ઉમેરવા માટે કસ્ટમ લખાણની શબ્દમાળા વ્યાખ્યાયિત કરે છે."
-
-#~ msgid "Filename for local captures"
-#~ msgstr "સ્થાનિક મેળવાયેલા માટે ફાઈલનામ"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "મેળવાયેલ ચિત્રોને સ્થાનિક રીતે સંગ્રહવા માટે ફાઈલનામ"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "સ્થાનિક મેળવાયેલા માટે ફોલ્ડર"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "દૂરસ્થ મેળવાયેલા માટે ફોલ્ડર"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "મેળવાયેલ ચિત્રોને દૂરસ્થ રીતે સંગ્રહવા માટેનું ફોલ્ડર"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "મેળવાયેલ ચિત્રોને સ્થાનીય રીતે સંગ્રહવા માટેનું ફોલ્ડર"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "FTP સર્વર માટે યજમાન નામ"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "દૂરનું મેળવવા માટે FTP સર્વર માટે યજમાન નામ."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "આપોઆપ મેળવવા માટેનો અંતરાલ"
-
-#~ msgid "Local capture image format"
-#~ msgstr "ચિત્રના બંધારણ માટે સ્થાનિક મેળવવાનું"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "અપલોડ થયેલ ચિત્રોની ફાઈલના નામો માટેનું નામ."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "FTP સર્વર માટે પાસવર્ડ"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "દૂરસ્થ મેળવવા માટેના ચિત્રનું બંધારણ"
-
-#~ msgid "Remote save filename"
-#~ msgstr "સંગ્રહવા માટે દૂરસ્થ ફાઈલનું નામ"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "સ્થાનિક રીતે સંગ્રહાયેલ ચિત્રો માટે વપરાતા ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr "દૂરસ્થ રીતે સંગ્રહાયેલા ચિત્રો માટે ચિત્રનું બંધારણ સ્પષ્ટ કરે છે"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "ચિત્રોને આપોઆપ મેળવવા માટેનો અંતરાલ સ્પષ્ટ કરે છે."
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "દૂરસ્થ મેળવવા માટે FTP ખાતાનો પાસવર્ડ."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "ચિત્રોને આપોઆપ મેળવવા માટે ફેરબદલી કરે છે."
-
-#~ msgid "Toggles local capture"
-#~ msgstr "સ્થાનિક આપોઆપ મેળવવા માટે ફેરબદલી કરે છે"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "દૂરસ્થ મેળવવા માટે ફેરબદલી કરે છે"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "કસ્ટમ શબ્દમાળા ફેરબદલી કરે છે"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "મેળવાયેલા માટે તારીખનોંધ ફેરબદલી કરે છે"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "મેળવાયેલ ચિત્રો સાથે તારીખનોંધ દોરવામાં ફેરબદલી કરે છે"

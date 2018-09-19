@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama mk\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2004-09-17 00:09+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -35,11 +35,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Поглед, извести и сними слики од вебкамера"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "каморама"
 
@@ -312,11 +312,236 @@ msgstr "Параметри"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Припои временска марка на името од датотеките"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr ""
+"Внеси временска марка, во UNIX време, на крајовите од имињата од датотеките"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Вклучува авто-превземање"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Вклучи автоматско превземање на слики."
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Интервал за авто-превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Специфицира интервал за автоматско превземање на слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Вклучи марка на датумот во превземањата"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Вклучи го цртањето на дата марки во заробените слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Формат на локално превземените слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+"Специфицира форматот на сликата да биде користен само за локално снимени "
+"слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "Висина на превземањето"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Име на компјутер за FTP сервер"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Име на компјутер за FTP сервер за нелокални превземања."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Вклучи локално превземање"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Кога превземате слики преку \"Земи слика\" копчето, или со авто превземање, "
+"ова копче го вклучува снимањето на сликата локално."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Папка за нелокални превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Припои временска марка на нелокално име на датотека"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Внеси временска марка, во UNIX време, на крајовите од нелокалните имињата од "
+"датотеките"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Вклучи нелокално превземање"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Кога превземате слики преку \"Земи слика\" копчето, или со авто превземање, "
+"ова копче го вклучува снимањето на сликата на нелокален сервер."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Формат за нелокално заробените слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+"Специфицира форматот на сликата да биде користен само за нелокално снимени "
+"слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Папка за нелокални превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Папка за снимање на нелокални превземени слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Име за нелокално снимање"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Име на датотеката за вчитани слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Вклучи временска марка за нелокални превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "Вклучи го внесувањето на временска марка во сликите за FTP вчитување."
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Папка за локални превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Папка за снимање на превземени локални слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Име на датотеката за ликални превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Име на датотека за снимање на локалните превземени слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Вклучи временска марка за локални превземања"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Вклучи го внесувањето на временска марка во локалните слики"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Сопствен текст за временска марка"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Дефинира низа од сопствен текст за да биде внесен во сликата"
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Вклучи сопствена низа"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Вклучи го користењето на сопствена низа за временските марко во сликата."
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Вклучи ги лизгачите за промена на видео својствата"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "Вклучи го користењето на лизгачи за промена на видео својствата"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+msgid "Toggles the video effects buttons"
+msgstr "Вклучи ги копчињата ефекти на сликата"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Вклучи го користењето на копчињата за подесување на видео филтрите"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "Ширина на превземањето"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Марко Иваноски (marko@programmer.net)"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -513,12 +738,12 @@ msgstr ""
 "Каморама верзија %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Не можам да ја најдам pixmap датотеката: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -631,135 +856,11 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "Негативи"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Припои временска марка на името од датотеките"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Припои временска марка на нелокално име на датотека"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr ""
-#~ "Внеси временска марка, во UNIX време, на крајовите од имињата од "
-#~ "датотеките"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Внеси временска марка, во UNIX време, на крајовите од нелокалните имињата "
-#~ "од датотеките"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Сопствен текст за временска марка"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr "Дефинира низа од сопствен текст за да биде внесен во сликата"
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Име на датотеката за ликални превземања"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Име на датотека за снимање на локалните превземени слики"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Папка за локални превземања"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Папка за нелокални превземања"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Папка за снимање на нелокални превземени слики"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Папка за снимање на превземени локални слики"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Име на компјутер за FTP сервер"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Име на компјутер за FTP сервер за нелокални превземања."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Интервал за авто-превземања"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Формат на локално превземените слики"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Име на датотеката за вчитани слики"
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Лозинка за FTP серверот"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Формат за нелокално заробените слики"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Име за нелокално снимање"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr ""
-#~ "Специфицира форматот на сликата да биде користен само за локално снимени "
-#~ "слики"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr ""
-#~ "Специфицира форматот на сликата да биде користен само за нелокално "
-#~ "снимени слики"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Специфицира интервал за автоматско превземање на слики"
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Лозинката за FTP сметката за нелокално превземање."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Вклучува авто-превземање"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Вклучи автоматско превземање на слики."
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Вклучи локално превземање"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Вклучи нелокално превземање"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Вклучи сопствена низа"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Вклучи марка на датумот во превземањата"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "Вклучи го цртањето на дата марки во заробените слики"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Вклучи го внесувањето на временска марка во локалните слики"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "Вклучи го внесувањето на временска марка во сликите за FTP вчитување."
-
-#~ msgid "Toggles the use of the buttons to adjust the video filters"
-#~ msgstr "Вклучи го користењето на копчињата за подесување на видео филтрите"
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Вклучи го користењето на сопствена низа за временските марко во сликата."
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr "Вклучи го користењето на лизгачи за промена на видео својствата"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Вклучи ги лизгачите за промена на видео својствата"
-
-#~ msgid "Toggles the video effects buttons"
-#~ msgstr "Вклучи ги копчињата ефекти на сликата"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Вклучи временска марка за локални превземања"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Вклучи временска марка за нелокални превземања"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Корисничко име за FTP сервер"
@@ -767,21 +868,6 @@ msgstr ""
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr ""
 #~ "Корисничко име кое ќе се користи при FTP вчитувањата на превземените слики"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "Кога превземате слики преку \"Земи слика\" копчето, или со авто "
-#~ "превземање, ова копче го вклучува снимањето на сликата локално."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "Кога превземате слики преку \"Земи слика\" копчето, или со авто "
-#~ "превземање, ова копче го вклучува снимањето на сликата на нелокален "
-#~ "сервер."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "Не може да превземи слика"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 12:54-0300\n"
+"POT-Creation-Date: 2018-09-18 23:56-0300\n"
 "PO-Revision-Date: 2003-04-01 09:08--500\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <linux@linux.org.ua>\n"
@@ -30,11 +30,11 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:490
+#: camorama.desktop.in:5 src/callbacks.c:460
 msgid "View, alter and save images from a webcam"
 msgstr "Показ, зміна і збереження зображень з веб-камери"
 
-#: camorama.desktop.in:6 src/main.c:322
+#: camorama.desktop.in:6 src/main.c:300
 msgid "camorama"
 msgstr "camorama"
 
@@ -311,11 +311,233 @@ msgstr "Вподобання"
 msgid "_About"
 msgstr ""
 
-#: src/callbacks.c:491
+#: data/org.gnome.camorama.gschema.xml.in:6
+msgid "Append timestamp to filename"
+msgstr "Додати позначку часу до назви файла"
+
+#: data/org.gnome.camorama.gschema.xml.in:7
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Додавати позначку часу в форматі часу UNIX в кінець назв файлів"
+
+#: data/org.gnome.camorama.gschema.xml.in:11
+msgid "Toggles auto-capture"
+msgstr "Перемикнути автозйомку"
+
+#: data/org.gnome.camorama.gschema.xml.in:12
+msgid "Toggles automatic capturing of pictures."
+msgstr "Перемикнути автоматичне знімання зображень."
+
+#: data/org.gnome.camorama.gschema.xml.in:16
+msgid "Interval for auto-capture"
+msgstr "Інтервал автозйомки"
+
+#: data/org.gnome.camorama.gschema.xml.in:17
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "Визначає інтервал для автоматичного знімання."
+
+#: data/org.gnome.camorama.gschema.xml.in:21
+msgid "Video device"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:22
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:26
+msgid "Toggles the datestamp in captures"
+msgstr "Перемикнути позначку дати у зйомках"
+
+#: data/org.gnome.camorama.gschema.xml.in:27
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "Перемикнути малювання позначки дати у знятих зображеннях"
+
+#: data/org.gnome.camorama.gschema.xml.in:31
+msgid "Local capture image format"
+msgstr "Формат зображень локальних зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:32
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "Визначає формат зображення для зображень, що зберігаються локально"
+
+#: data/org.gnome.camorama.gschema.xml.in:36
+#, fuzzy
+msgid "Image height"
+msgstr "висота зображення"
+
+#: data/org.gnome.camorama.gschema.xml.in:37
+msgid "Image height used by the camera. Zero means autoselect"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:41
+#, fuzzy
+msgid "Hostname for the server"
+msgstr "Назва хоста сервера FTP"
+
+#: data/org.gnome.camorama.gschema.xml.in:42
+#, fuzzy
+msgid "Hostname for the server used for remote captures."
+msgstr "Назва хоста сервера FTP для віддалених зйомок."
+
+#: data/org.gnome.camorama.gschema.xml.in:46
+msgid "Toggles local capture"
+msgstr "Перемикнути локальну зйомку"
+
+#: data/org.gnome.camorama.gschema.xml.in:47
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Ця клавіша встановлює локальне збереження зображень, що робляться "
+"натисненням кнопки \"Зробити знімок\" чи автоматично."
+
+#: data/org.gnome.camorama.gschema.xml.in:51
+#, fuzzy
+msgid "Protocol to use for remote access"
+msgstr "Тека для віддалених зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:52
+msgid ""
+"The URI name of the protocol that will be used to connect to a remote "
+"server. Can be ftp, sftp or smb"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:56
+msgid "Complete URI used to store image snapshots remotely"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:57
+msgid ""
+"The complete URI of the last successful access to a remote server, including "
+"protocol, host and remote directory"
+msgstr ""
+
+#: data/org.gnome.camorama.gschema.xml.in:61
+msgid "Append timestamp to remote filename"
+msgstr "Додати позначку часу до назви віддаленого файла"
+
+#: data/org.gnome.camorama.gschema.xml.in:62
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+"Додавати позначку часу в форматі часу UNIX в кінець назв віддалений файлів"
+
+#: data/org.gnome.camorama.gschema.xml.in:66
+msgid "Toggles remote capture"
+msgstr "Перемикнути віддалену зйомку"
+
+#: data/org.gnome.camorama.gschema.xml.in:67
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Ця клавіша встановлює віддалене збереження зображень, що робляться "
+"натисненням кнопки \"Зробити знімок\" чи автоматично."
+
+#: data/org.gnome.camorama.gschema.xml.in:71
+msgid "Remote capture image format"
+msgstr "Формат зображень віддалених зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:72
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "Визначає формат зображення для зображень, що зберігаються віддалено"
+
+#: data/org.gnome.camorama.gschema.xml.in:76
+msgid "Folder for remote captures"
+msgstr "Тека для віддалених зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:77
+msgid "Folder for saving captured pictures remotely"
+msgstr "Тека для збереження знятих зображень віддалено"
+
+#: data/org.gnome.camorama.gschema.xml.in:81
+msgid "Remote save filename"
+msgstr "Назва файла для віддаленого збереження"
+
+#: data/org.gnome.camorama.gschema.xml.in:82
+msgid "Name for the filename of uploaded images."
+msgstr "Назви файлів для відвантажених зображень."
+
+#: data/org.gnome.camorama.gschema.xml.in:86
+msgid "Toggles timestamp for remote captures"
+msgstr "Перемикнути позначку часу для віддалених зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:87
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+"Перемикнути вставляння позначки часу в зображення для відвантаження на FTP."
+
+#: data/org.gnome.camorama.gschema.xml.in:91
+msgid "Folder for local captures"
+msgstr "Тека для локальних зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:92
+msgid "Folder for saving captured pictures to locally"
+msgstr "Тека для збереження знятих зображень локально"
+
+#: data/org.gnome.camorama.gschema.xml.in:96
+msgid "Filename for local captures"
+msgstr "Назва файла для локальних зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:97
+msgid "Filename for saving captured pictures to locally"
+msgstr "Назва файла для збереження знятих зображень локально"
+
+#: data/org.gnome.camorama.gschema.xml.in:101
+msgid "Toggles timestamp for local captures"
+msgstr "Перемикнути позначку часу для локальних зйомок"
+
+#: data/org.gnome.camorama.gschema.xml.in:102
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "Перемикнути вставляння позначки часу в локальні зображення"
+
+#: data/org.gnome.camorama.gschema.xml.in:106
+msgid "Custom text for the timestamp"
+msgstr "Нетиповий текст для позначки часу"
+
+#: data/org.gnome.camorama.gschema.xml.in:107
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "Визначає рядок нетипового тексту, що його буде вставлено у зображення."
+
+#: data/org.gnome.camorama.gschema.xml.in:111
+msgid "Toggles the custom string"
+msgstr "Перемикнути нетиповий рядок"
+
+#: data/org.gnome.camorama.gschema.xml.in:112
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+"Перемикнути використання нетипового рядка для позначки часу в зображеннях."
+
+#: data/org.gnome.camorama.gschema.xml.in:116
+msgid "Toggles the video adjustment sliders"
+msgstr "Перемикнути повзунки регулювання відео"
+
+#: data/org.gnome.camorama.gschema.xml.in:117
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "Перемикнути використання повзунків для регулювання властивостей відео"
+
+#: data/org.gnome.camorama.gschema.xml.in:121
+#, fuzzy
+msgid "Toggles the video effects buttons"
+msgstr "Перемикнути повзунки регулювання відео"
+
+#: data/org.gnome.camorama.gschema.xml.in:122
+#, fuzzy
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Перемикнути використання повзунків для регулювання властивостей відео"
+
+#: data/org.gnome.camorama.gschema.xml.in:126
+#, fuzzy
+msgid "Image width"
+msgstr "ширина зображення"
+
+#: data/org.gnome.camorama.gschema.xml.in:127
+msgid "Image width used by the camera. Zero means autoselect"
+msgstr ""
+
+#: src/callbacks.c:461
 msgid "translator_credits"
 msgstr "Юрій Сирота <yuriy@beer.com>"
 
-#: src/callbacks.c:729
+#: src/callbacks.c:699
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
@@ -509,12 +731,12 @@ msgstr ""
 "Camorama версії %s\n"
 "\n"
 
-#: src/main.c:269
+#: src/main.c:247
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Не вдалось віднайти файл зображення: %s"
 
-#: src/main.c:324
+#: src/main.c:302
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -626,145 +848,17 @@ msgstr ""
 #~ msgid "Negative"
 #~ msgstr "Інвертувати"
 
-#~ msgid "Append timestamp to filename"
-#~ msgstr "Додати позначку часу до назви файла"
-
-#~ msgid "Append timestamp to remote filename"
-#~ msgstr "Додати позначку часу до назви віддаленого файла"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-#~ msgstr "Додавати позначку часу в форматі часу UNIX в кінець назв файлів"
-
-#~ msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-#~ msgstr ""
-#~ "Додавати позначку часу в форматі часу UNIX в кінець назв віддалений файлів"
-
-#~ msgid "Custom text for the timestamp"
-#~ msgstr "Нетиповий текст для позначки часу"
-
-#~ msgid "Defines a string of custom text to be inserted into the image."
-#~ msgstr ""
-#~ "Визначає рядок нетипового тексту, що його буде вставлено у зображення."
-
-#~ msgid "Filename for local captures"
-#~ msgstr "Назва файла для локальних зйомок"
-
-#~ msgid "Filename for saving captured pictures to locally"
-#~ msgstr "Назва файла для збереження знятих зображень локально"
-
-#~ msgid "Folder for local captures"
-#~ msgstr "Тека для локальних зйомок"
-
-#~ msgid "Folder for remote captures"
-#~ msgstr "Тека для віддалених зйомок"
-
-#~ msgid "Folder for saving captured pictures remotely"
-#~ msgstr "Тека для збереження знятих зображень віддалено"
-
-#~ msgid "Folder for saving captured pictures to locally"
-#~ msgstr "Тека для збереження знятих зображень локально"
-
-#~ msgid "Hostname for FTP server"
-#~ msgstr "Назва хоста сервера FTP"
-
-#~ msgid "Hostname for the FTP server for remote captures."
-#~ msgstr "Назва хоста сервера FTP для віддалених зйомок."
-
-#~ msgid "Interval for auto-capture"
-#~ msgstr "Інтервал автозйомки"
-
-#~ msgid "Local capture image format"
-#~ msgstr "Формат зображень локальних зйомок"
-
-#~ msgid "Name for the filename of uploaded images."
-#~ msgstr "Назви файлів для відвантажених зображень."
-
 #~ msgid "Password for FTP server"
 #~ msgstr "Пароль для сервера FTP"
 
-#~ msgid "Remote capture image format"
-#~ msgstr "Формат зображень віддалених зйомок"
-
-#~ msgid "Remote save filename"
-#~ msgstr "Назва файла для віддаленого збереження"
-
-#~ msgid "Specifies the image format to be used for locally saved pictures"
-#~ msgstr "Визначає формат зображення для зображень, що зберігаються локально"
-
-#~ msgid "Specifies the image format to be used for remotely saved pictures"
-#~ msgstr "Визначає формат зображення для зображень, що зберігаються віддалено"
-
-#~ msgid "Specifies the interval for automatic capture of pictures."
-#~ msgstr "Визначає інтервал для автоматичного знімання."
-
 #~ msgid "The password for the FTP account for remote captures."
 #~ msgstr "Пароль користувача FTP для віддалений зйомок."
-
-#~ msgid "Toggles auto-capture"
-#~ msgstr "Перемикнути автозйомку"
-
-#~ msgid "Toggles automatic capturing of pictures."
-#~ msgstr "Перемикнути автоматичне знімання зображень."
-
-#~ msgid "Toggles local capture"
-#~ msgstr "Перемикнути локальну зйомку"
-
-#~ msgid "Toggles remote capture"
-#~ msgstr "Перемикнути віддалену зйомку"
-
-#~ msgid "Toggles the custom string"
-#~ msgstr "Перемикнути нетиповий рядок"
-
-#~ msgid "Toggles the datestamp in captures"
-#~ msgstr "Перемикнути позначку дати у зйомках"
-
-#~ msgid "Toggles the drawing of a datestamp within the captured pictures"
-#~ msgstr "Перемикнути малювання позначки дати у знятих зображеннях"
-
-#~ msgid "Toggles the insertion of a timestamp into local images"
-#~ msgstr "Перемикнути вставляння позначки часу в локальні зображення"
-
-#~ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-#~ msgstr ""
-#~ "Перемикнути вставляння позначки часу в зображення для відвантаження на "
-#~ "FTP."
-
-#~ msgid "Toggles the use of the custom string for the timestamp in images."
-#~ msgstr ""
-#~ "Перемикнути використання нетипового рядка для позначки часу в зображеннях."
-
-#~ msgid "Toggles the use of the sliders to adjust the video properties"
-#~ msgstr ""
-#~ "Перемикнути використання повзунків для регулювання властивостей відео"
-
-#~ msgid "Toggles the video adjustment sliders"
-#~ msgstr "Перемикнути повзунки регулювання відео"
-
-#~ msgid "Toggles timestamp for local captures"
-#~ msgstr "Перемикнути позначку часу для локальних зйомок"
-
-#~ msgid "Toggles timestamp for remote captures"
-#~ msgstr "Перемикнути позначку часу для віддалених зйомок"
 
 #~ msgid "Username for FTP server"
 #~ msgstr "Користувач сервера FTP"
 
 #~ msgid "Username to use for FTP uploads of captured pictures"
 #~ msgstr "Користувач FTP для відвантажень знятих зображень"
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures locally."
-#~ msgstr ""
-#~ "Ця клавіша встановлює локальне збереження зображень, що робляться "
-#~ "натисненням кнопки \"Зробити знімок\" чи автоматично."
-
-#~ msgid ""
-#~ "When capturing pictures via the \"Take Picture\" button, or with auto "
-#~ "capture, this key toggles the saving of pictures to a remote server."
-#~ msgstr ""
-#~ "Ця клавіша встановлює віддалене збереження зображень, що робляться "
-#~ "натисненням кнопки \"Зробити знімок\" чи автоматично."
 
 #~ msgid "Unable to capture image."
 #~ msgstr "Неможливо зробити знімок."
