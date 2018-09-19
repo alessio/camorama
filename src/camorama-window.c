@@ -205,6 +205,8 @@ void load_interface(cam_t *cam)
     gtk_application_add_window(cam->app, GTK_WINDOW(window));
 #endif
 
+    gtk_widget_show(window);
+
     prefswindow = GTK_WIDGET(gtk_builder_get_object(cam->xml, "prefswindow"));
 
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");

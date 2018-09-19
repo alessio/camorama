@@ -228,6 +228,73 @@ static int sort_devices(const void *__a, const void *__b)
     return strcmp(a->fname, b->fname);
 }
 
+static void videodev_response(GtkDialog *dialog,
+                              cam_t *cam)
+{
+    GtkWidget *widget;
+
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_window"));
+    gtk_widget_hide(widget);
+}
+
+static int select_video_dev(cam_t *cam)
+{
+    GtkWidget *window, *widget;
+    int ret;
+#if GTK_MAJOR_VERSION < 3
+    unsigned int i;
+    int index, last_minor = -1, p = 0;
+#endif
+
+    /* Only ask if there are multiple cameras */
+    if (n_valid_devices == 1) {
+        cam->video_dev = devices[0].fname;
+        return 0;
+    }
+
+    /* There are multiple devices. Ask the user */
+
+    window = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_window"));
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_combo"));
+
+    gtk_combo_box_set_active(GTK_COMBO_BOX(widget), 0);
+
+    gtk_widget_show(window);
+
+    ret = gtk_dialog_run(GTK_DIALOG(window));
+
+#if GTK_MAJOR_VERSION >= 3
+    cam->video_dev = gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(widget));
+#else
+    /*
+     * For whatever weird reason, gtk_combo_box_text_get_active_text()
+     * is not work with Gtk 2.24. We might implement a map, but, as we'll
+     * probably drop support for it in the future, better to use the more
+     * optimized way for Gtk 3 and Gtk 4.
+     */
+
+    index = gtk_combo_box_get_active(GTK_COMBO_BOX(widget));
+    printf("index = %d\n", index);
+
+    /* Should be aligned with the similar logic at activate() */
+    for (i = 0; i < n_devices; i++) {
+        if (devices[i].is_valid) {
+            if (devices[i].minor == last_minor)
+                continue;
+            if (p == index)
+                break;
+            last_minor = devices[i].minor;
+            p++;
+        }
+    }
+    if (i < n_devices)
+        cam->video_dev = devices[i].fname;
+#endif
+
+    gtk_widget_hide(window);
+    return ret;
+}
+
 static cam_t cam_object = { 0 };
 
 #if GTK_MAJOR_VERSION < 3
@@ -239,6 +306,7 @@ static void activate(GtkApplication *app)
     cam_t *cam = &cam_object;
     GtkWidget *widget, *window;
     unsigned int bufsize, i;
+    int last_minor = -1;
 
     /* set some default values */
     cam->frame_number = 0;
@@ -305,6 +373,31 @@ static void activate(GtkApplication *app)
         cam->video_dev = g_strdup(video_dev);
     }
 
+    cam->xml = gtk_builder_new();
+
+    if (!gtk_builder_add_from_file(cam->xml,
+                                   PACKAGE_DATA_DIR "/camorama/" CAMORAMA_UI,
+                                   NULL)) {
+        error_dialog(_("Couldn't load builder file"));
+        exit(1);
+    }
+
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_ok"));
+    g_signal_connect(G_OBJECT(widget), "clicked",
+                     G_CALLBACK(videodev_response), cam);
+
+    /* While we have Gtk 2 support, should be aligned with select_video_dev() */
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_combo"));
+    for (i = 0; i < n_devices; i++) {
+        if (devices[i].is_valid) {
+            if (devices[i].minor == last_minor)
+                continue;
+            gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widget),
+                                           devices[i].fname);
+            last_minor = devices[i].minor;
+        }
+    }
+
     if (cam->video_dev) {
         for (i = 0; i < n_devices; i++)
             if (!strcmp(cam->video_dev, devices[i].fname) && devices[i].is_valid)
@@ -312,11 +405,19 @@ static void activate(GtkApplication *app)
 
         /* Not found, or doesn't work. Falling back to the first device */
         if (i == n_devices) {
-            char *msg = g_strdup_printf(_("%s not found. Falling back to %s"),
-                                        cam->video_dev, devices[0].fname);
+            char *msg;
+
+            if (n_valid_devices == 1)
+                msg = g_strdup_printf(_("%s not found. Falling back to %s"),
+                                     cam->video_dev, devices[0].fname);
+            else
+                msg = g_strdup_printf(_("%s not found."),
+                                     cam->video_dev);
             error_dialog(msg);
             g_free(msg);
-            cam->video_dev = devices[0].fname;
+
+            /* Ask user or get the only one device, if it is the case */
+            select_video_dev(cam);
         }
     } else {
         cam->video_dev = devices[0].fname;
@@ -375,7 +476,9 @@ static void activate(GtkApplication *app)
     else
         cam->dev = v4l2_open(cam->video_dev, O_RDWR | O_NONBLOCK);
 
-    camera_cap(cam);
+    if (camera_cap(cam))
+        exit(-1);
+
     get_win_info(cam);
 
     set_win_info(cam);
@@ -383,6 +486,9 @@ static void activate(GtkApplication *app)
 
     /* get picture attributes */
     get_pic_info(cam);
+
+    /* Only store the device name after being able to successfully use it */
+    g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
 
     bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
     cam->pic_buf = malloc(bufsize);
@@ -397,17 +503,6 @@ static void activate(GtkApplication *app)
         start_streaming(cam);
     else
         printf("using read()\n");
-
-    cam->xml = gtk_builder_new();
-
-    if (!gtk_builder_add_from_file(cam->xml,
-                                   PACKAGE_DATA_DIR "/camorama/" CAMORAMA_UI,
-                                   NULL)) {
-        error_dialog(_("Couldn't load builder file"));
-        exit(1);
-    }
-
-    g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
 
     load_interface(cam);
 

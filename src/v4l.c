@@ -129,7 +129,7 @@ void get_supported_resolutions(cam_t *cam)
     qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
 }
 
-void camera_cap(cam_t *cam)
+int camera_cap(cam_t *cam)
 {
     char *msg;
     int i;
@@ -145,7 +145,7 @@ void camera_cap(cam_t *cam)
                               cam->video_dev, errno);
         error_dialog(msg);
         g_free(msg);
-        exit(0);
+        return 1;
     }
 
     /* Query supported resolutions */
@@ -247,7 +247,7 @@ void camera_cap(cam_t *cam)
                               cam->video_dev);
         error_dialog(msg);
         g_free(msg);
-        exit(0);
+        return 1;
     }
 
     if (!(vid_cap.device_caps & V4L2_CAP_STREAMING))
@@ -265,6 +265,8 @@ void camera_cap(cam_t *cam)
         printf("min width = %d\n", cam->min_width);
         printf("min height = %d\n", cam->min_height);
     }
+
+    return 0;
 }
 
 void get_pic_info(cam_t *cam)
