@@ -38,8 +38,8 @@
     </key>
     <key name="hostname" type="s">
       <default>'yourdomain.org'</default>
-      <summary>Hostname for FTP server</summary>
-      <description>Hostname for the FTP server for remote captures.</description>
+      <summary>Hostname for the server</summary>
+      <description>Hostname for the server used for remote captures.</description>
     </key>
     <key name="local-capture" type="b">
       <default>true</default>
