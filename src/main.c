@@ -7,14 +7,17 @@
 #include "support.h"
 #include <config.h>
 
+#include <ftw.h>
 #include <gdk/gdkx.h>
 #include <glib/gi18n.h>
 #include <locale.h>
 #include <libv4l2.h>
+#include <stdlib.h>
+#include <sys/sysmacros.h>
 
 static int ver = 0, max = 0, min;
-static int half = 0, use_read = 0, buggery = 0;
-static gchar *poopoo = NULL;
+static int half = 0, use_read = 0, debug = 0;
+static gchar *video_dev = NULL;
 static int x = 0, y = 0;
 
 #pragma GCC diagnostic push
@@ -23,9 +26,9 @@ static int x = 0, y = 0;
 static GOptionEntry options[] = {
     {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
      N_("show version and exit"), NULL},
-    {"device", 'd', 0, G_OPTION_ARG_STRING, &poopoo,
+    {"device", 'd', 0, G_OPTION_ARG_STRING, &video_dev,
      N_("v4l device to use"), NULL},
-    {"debug", 'D', 0, G_OPTION_ARG_NONE, &buggery,
+    {"debug", 'D', 0, G_OPTION_ARG_NONE, &debug,
      N_("enable debugging code"), NULL},
     {"width", 'x', 0, G_OPTION_ARG_INT, &x,
      N_("capture width"), NULL},
@@ -97,6 +100,58 @@ static void close_app(GtkWidget* widget, cam_t *cam)
 #endif
 }
 
+static unsigned int n_devices = 0;
+static char **devices = NULL;
+
+static int retrieve_video_devs(const char *file,
+                               const struct stat *st,
+                               int flag)
+{
+    /* Discard  devices that can't be a videodev */
+    if (!S_ISCHR(st->st_mode) || major(st->st_rdev) != 81)
+        return 0;
+
+    /* discard devices that aren't v4l/by-* or video? */
+    if (!strstr(file, "v4l") && !strstr(file, "video"))
+        return 0;
+
+    devices = realloc(devices, (n_devices + 1) * sizeof(char *));
+    if (!devices) {
+        char *msg = g_strdup_printf(_("Can't allocate memory to store devices"));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
+    devices[n_devices++] = g_strdup(file);
+
+    return(0);
+}
+
+static int sort_devices(const void *__a, const void *__b)
+{
+    const char * const *a = __a;
+    const char * const *b = __b;
+    int v0 = 0, v1 = 0;
+
+    /* Ensure that /dev/video* devices will stay at the top */
+
+    if (strstr(*b, "/dev/video"))
+        v1 = 10;
+
+    if (strstr(*a, "/dev/video"))
+        v0 = 10;
+
+    if (v0 && v1)
+        return strcmp(*a, *b);
+    if (v0)
+        return -1;
+    if (v1)
+        return 1;
+
+    return strcmp(*a, *b);
+}
+
 static cam_t cam_object = { 0 };
 
 #if GTK_MAJOR_VERSION < 3
@@ -106,9 +161,8 @@ static void activate(GtkApplication *app)
 #endif
 {
     cam_t *cam = &cam_object;
-    GSettings *gc;
     GtkWidget *widget, *window;
-    unsigned int bufsize;
+    unsigned int bufsize, i;
 
     /* set some default values */
     cam->frame_number = 0;
@@ -127,7 +181,7 @@ static void activate(GtkApplication *app)
     /* gtk is initialized now */
     camorama_filters_init();
 
-    cam->debug = buggery;
+    cam->debug = debug;
 
     get_geometry(cam);
 
@@ -148,18 +202,51 @@ static void activate(GtkApplication *app)
         printf("Forcing read mode\n");
         cam->read = TRUE;
     }
-    gc = g_settings_new(CAM_SETTINGS_SCHEMA);
-    cam->gc = gc;
+    /* Get all video devices */
+    if (ftw("/dev", retrieve_video_devs, 4) || !n_devices) {
+        char *msg = g_strdup_printf(_("Didn't find any camera"));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+    qsort(devices, n_devices, sizeof(char *), sort_devices);
 
-    if (!poopoo) {
-        gchar const *gconf_device = g_settings_get_string(cam->gc, CAM_SETTINGS_DEVICE);
+    if (cam->debug)
+        for (i = 0; i < n_devices; i++)
+            printf("Device[%d]: %s\n", i, devices[i]);
+
+    cam->gc = g_settings_new(CAM_SETTINGS_SCHEMA);
+
+    if (!video_dev) {
+        gchar const *gconf_device = g_settings_get_string(cam->gc,
+                                                          CAM_SETTINGS_DEVICE);
         if (gconf_device)
             cam->video_dev = g_strdup(gconf_device);
         else
-            cam->video_dev = g_strdup("/dev/video0");
+            cam->video_dev = NULL;
     } else {
-        cam->video_dev = g_strdup(poopoo);
+        cam->video_dev = g_strdup(video_dev);
     }
+
+    if (cam->video_dev) {
+        for (i = 0; i < n_devices; i++)
+            if (!strcmp(cam->video_dev, devices[i]))
+                break;
+
+        /* Not found. Falling back to the first device */
+        if (i == n_devices) {
+            char *msg = g_strdup_printf(_("%s not found. Falling back to %s"),
+                                        cam->video_dev, devices[0]);
+            error_dialog(msg);
+            g_free(msg);
+            cam->video_dev = devices[0];
+        }
+    } else {
+        cam->video_dev = devices[0];
+    }
+
+    if (cam->debug)
+        printf("Using videodev: %s\n", cam->video_dev);
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
