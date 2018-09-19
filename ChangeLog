@@ -1,3 +1,9 @@
+2018-09-19  Mauro Carvalho Chehab <mchehab@kernel.org>
+	* Use GSettings instead of Gconf-2
+	* better describe 'hostname' key at GSettings
+	* Add configuration schema to translation toolset
+	* Update pt_BR GSettings translation
+
 2018-09-18  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Do some fixes at camorama's schema
 	* Make the latest used resolution persistent
