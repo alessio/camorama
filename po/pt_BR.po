@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-18 23:56-0300\n"
-"PO-Revision-Date: 2018-09-18 09:35-0300\n"
+"POT-Creation-Date: 2018-09-18 23:57-0300\n"
+"PO-Revision-Date: 2018-09-18 23:57-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -325,7 +325,7 @@ msgstr "Alterna a captura automática de imagens."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
-msgstr "Intreval de auto-captura"
+msgstr "Intervalo de auto-captura"
 
 #: data/org.gnome.camorama.gschema.xml.in:17
 msgid "Specifies the interval for automatic capture of pictures."
@@ -351,7 +351,7 @@ msgstr "Alterna o desenho da data dentro das imagens capturadas"
 
 #: data/org.gnome.camorama.gschema.xml.in:31
 msgid "Local capture image format"
-msgstr "Formato imagem captura local"
+msgstr "Formato de imagem na captura local"
 
 #: data/org.gnome.camorama.gschema.xml.in:32
 msgid "Specifies the image format to be used for locally saved pictures"
@@ -359,23 +359,20 @@ msgstr ""
 "Especifica o formato de imagem a ser utilizado para imagens salvas localmente"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "altura captura"
+msgstr "Altura da imagem"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Altura da imagem usada pela camera. Zero significa auto-seleção"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Nome do servidor FTP"
+msgstr "Nome do servidor"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Nome do servidor FTP para capturas remotas."
+msgstr "Nome do servidor utilizado para capturas remotas."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -390,25 +387,28 @@ msgstr ""
 "captura, esta tecla alterna a gravação local das imagens."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Pasta para capturas remotas"
+msgstr "Protocolo a ser utilizado para capturas remotas"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"A URI com o nome do protocolo a ser utilizado para conectar com um servidor "
+"remoto. Pode ser ftp, sftp ou smb"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "URI completa utilizada para armazenar capturas de imagem remotamente"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"URI completa do último acesso com sucesso a um servidor remoto, incluindo "
+"protocolo, servidor e diretório remoto"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -522,13 +522,12 @@ msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Alterna o use do botão para ajustar os filtros de vídeo"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "largura da captura"
+msgstr "Largura da imagem"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Largura da imagem usada pela camera. Zero significa auto-seleção"
 
 #: src/callbacks.c:461
 msgid "translator_credits"
