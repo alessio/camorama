@@ -288,7 +288,7 @@ stuff_DATA = \
 gladedir = $(datadir)/camorama
 glade_DATA = $(CAMORAMA_UI)
 gsettings_SCHEMAS = org.gnome.camorama.gschema.xml
-EXTRA_DIST = $(glade_DATA) $(stuff_DATA)
+EXTRA_DIST = $(glade_DATA) $(stuff_DATA) $(gsettings_SCHEMAS).in
 all: all-am
 
 .SUFFIXES:

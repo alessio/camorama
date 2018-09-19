@@ -25,5 +25,5 @@ user-install: $(app_DATA) $(keys_DATA)
 	cp $(app_DATA) ~/.gnome/application-registry
 	cp $(keys_DATA) ~/.gnome/mime-info/
 
-EXTRA_DIST = $(glade_DATA) $(stuff_DATA)
+EXTRA_DIST = $(glade_DATA) $(stuff_DATA) $(gsettings_SCHEMAS).in
 
