@@ -242,7 +242,7 @@ void camera_cap(cam_t *cam)
         }
     }
 
-    if (!(vid_cap.capabilities & V4L2_CAP_VIDEO_CAPTURE)) {
+    if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
         msg = g_strdup_printf(_("Device %s is not a video capture device)."),
                               cam->video_dev);
         error_dialog(msg);
@@ -250,7 +250,7 @@ void camera_cap(cam_t *cam)
         exit(0);
     }
 
-    if (!(vid_cap.capabilities & V4L2_CAP_STREAMING))
+    if (!(vid_cap.device_caps & V4L2_CAP_STREAMING))
         cam->read = TRUE;
 
     strncpy(cam->name, (const char *)vid_cap.card, sizeof(cam->name));
@@ -259,7 +259,7 @@ void camera_cap(cam_t *cam)
     if (cam->debug == TRUE) {
         printf("\nVIDIOC_QUERYCAP\n");
         printf("device name = %s\n", vid_cap.card);
-        printf("device caps = 0x%08x\n", vid_cap.capabilities);
+        printf("device caps = 0x%08x\n", vid_cap.device_caps);
         printf("max width = %d\n", cam->max_width);
         printf("max height = %d\n", cam->max_height);
         printf("min width = %d\n", cam->min_width);
