@@ -106,7 +106,7 @@ struct devnodes {
     gboolean is_valid;
 };
 
-static unsigned int n_devices = 0;
+static unsigned int n_devices = 0, n_valid_devices = 0;
 static struct devnodes *devices = NULL;
 
 static int retrieve_video_devs(const char *file,
@@ -148,12 +148,14 @@ static int retrieve_video_devs(const char *file,
         if (fd < 0) {
             devices[n_devices].is_valid = False;
         } else {
-            if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &vid_cap) == -1)
+            if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &vid_cap) == -1) {
                 devices[n_devices].is_valid = False;
-            else if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE))
+            } else if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
                 devices[n_devices].is_valid = False;
-            else
+            } else {
+                n_valid_devices++;
                 devices[n_devices].is_valid = True;
+            }
         }
 
         v4l2_close(fd);
@@ -173,14 +175,21 @@ static int retrieve_video_devs(const char *file,
  *
  *  - Valid devices comes first
  *  - Lowest minors comes first
- *  - /dev/video devices comes first
- *  - Device name is sorted alphabetically
+ *
+ * For devnode names, it sorts on this order:
+ *  - custom udev given names
+ *  - /dev/v4l/by-id/
+ *  - /dev/v4l/by-path/
+ *  - /dev/video
+ *  - /dev/char/
+ *
+ *  - Device name is sorted alphabetically if follows same pattern
  */
 static int sort_devices(const void *__a, const void *__b)
 {
     const struct devnodes *a = __a;
     const struct devnodes *b = __b;
-    int v0 = 0, v1 = 0;
+    int val_a, val_b;
 
     if (a->is_valid != b->is_valid)
         return !a->is_valid - !b->is_valid;
@@ -190,19 +199,32 @@ static int sort_devices(const void *__a, const void *__b)
 
     /* Ensure that /dev/video* devices will stay at the top */
 
-    if (strstr(b->fname, "/dev/video"))
-        v1 = 1;
+    if (strstr(a->fname, "by-id"))
+        val_a = 1;
+    if (strstr(a->fname, "by-path"))
+        val_a = 2;
+    else if (strstr(a->fname, "/dev/video"))
+        val_a = 3;
+    else if (strstr(a->fname, "char"))
+        val_a = 4;
+    else    /* Customized names comes first */
+        val_a = 0;
 
-    if (strstr(a->fname, "/dev/video"))
-        v0 = 1;
+    if (strstr(b->fname, "by-id"))
+        val_b = 1;
+    if (strstr(b->fname, "by-path"))
+        val_b = 2;
+    else if (strstr(b->fname, "/dev/video"))
+        val_b = 3;
+    else if (strstr(b->fname, "char"))
+        val_b = 4;
+    else   /* Customized names comes first */
+        val_b = 0;
 
-    if (v0 && v1)
-        return strcmp(a->fname, b->fname);
-    if (v0)
-        return -1;
-    if (v1)
-        return 1;
+    if (val_a != val_b)
+        return val_a - val_b;
 
+    /* Finally, just use alphabetic order */
     return strcmp(a->fname, b->fname);
 }
 
