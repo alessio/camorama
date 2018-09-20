@@ -100,56 +100,110 @@ static void close_app(GtkWidget* widget, cam_t *cam)
 #endif
 }
 
+struct devnodes {
+    char *fname;
+    int minor;
+    gboolean is_valid;
+};
+
 static unsigned int n_devices = 0;
-static char **devices = NULL;
+static struct devnodes *devices = NULL;
 
 static int retrieve_video_devs(const char *file,
                                const struct stat *st,
                                int flag)
 {
+    int dev_minor, first_device = -1, fd;
+    unsigned int i;
+    struct v4l2_capability vid_cap = { 0 };
+
+
     /* Discard  devices that can't be a videodev */
     if (!S_ISCHR(st->st_mode) || major(st->st_rdev) != 81)
         return 0;
 
-    /* discard devices that aren't v4l/by-* or video? */
-    if (!strstr(file, "v4l") && !strstr(file, "video"))
-        return 0;
+    dev_minor = minor(st->st_rdev);
 
-    devices = realloc(devices, (n_devices + 1) * sizeof(char *));
+    /* check if it is an already existing device */
+    if (devices) {
+        for (i = 0; i < n_devices; i++) {
+            if (dev_minor == devices[i].minor) {
+                first_device = i;
+                break;
+            }
+        }
+    }
+
+    devices = realloc(devices, (n_devices + 1) * sizeof(struct devnodes));
     if (!devices) {
         char *msg = g_strdup_printf(_("Can't allocate memory to store devices"));
         error_dialog(msg);
         g_free(msg);
         exit(0);
     }
+    memset(&devices[n_devices], 0, sizeof(struct devnodes));
 
-    devices[n_devices++] = g_strdup(file);
+    if (first_device < 0) {
+        fd = v4l2_open(file, O_RDWR);
+        if (fd < 0) {
+            devices[n_devices].is_valid = False;
+        } else {
+            if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &vid_cap) == -1)
+                devices[n_devices].is_valid = False;
+            else if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE))
+                devices[n_devices].is_valid = False;
+            else
+                devices[n_devices].is_valid = True;
+        }
+
+        v4l2_close(fd);
+    } else {
+        devices[n_devices].is_valid = devices[first_device].is_valid;
+    }
+
+    devices[n_devices].fname = g_strdup(file);
+    devices[n_devices].minor = dev_minor;
+    n_devices++;
 
     return(0);
 }
 
+/*
+ * Sort order:
+ *
+ *  - Valid devices comes first
+ *  - Lowest minors comes first
+ *  - /dev/video devices comes first
+ *  - Device name is sorted alphabetically
+ */
 static int sort_devices(const void *__a, const void *__b)
 {
-    const char * const *a = __a;
-    const char * const *b = __b;
+    const struct devnodes *a = __a;
+    const struct devnodes *b = __b;
     int v0 = 0, v1 = 0;
+
+    if (a->is_valid != b->is_valid)
+        return !a->is_valid - !b->is_valid;
+
+    if (a->minor != b->minor)
+        return a->minor - b->minor;
 
     /* Ensure that /dev/video* devices will stay at the top */
 
-    if (strstr(*b, "/dev/video"))
-        v1 = 10;
+    if (strstr(b->fname, "/dev/video"))
+        v1 = 1;
 
-    if (strstr(*a, "/dev/video"))
-        v0 = 10;
+    if (strstr(a->fname, "/dev/video"))
+        v0 = 1;
 
     if (v0 && v1)
-        return strcmp(*a, *b);
+        return strcmp(a->fname, b->fname);
     if (v0)
         return -1;
     if (v1)
         return 1;
 
-    return strcmp(*a, *b);
+    return strcmp(a->fname, b->fname);
 }
 
 static cam_t cam_object = { 0 };
@@ -209,11 +263,12 @@ static void activate(GtkApplication *app)
         g_free(msg);
         exit(0);
     }
-    qsort(devices, n_devices, sizeof(char *), sort_devices);
+    qsort(devices, n_devices, sizeof(struct devnodes), sort_devices);
 
     if (cam->debug)
         for (i = 0; i < n_devices; i++)
-            printf("Device[%d]: %s\n", i, devices[i]);
+            printf("Device[%d]: %s (%s)\n", i, devices[i].fname,
+                   devices[i].is_valid ? "OK" : "NOK");
 
     cam->gc = g_settings_new(CAM_SETTINGS_SCHEMA);
 
@@ -230,19 +285,19 @@ static void activate(GtkApplication *app)
 
     if (cam->video_dev) {
         for (i = 0; i < n_devices; i++)
-            if (!strcmp(cam->video_dev, devices[i]))
+            if (!strcmp(cam->video_dev, devices[i].fname) && devices[i].is_valid)
                 break;
 
-        /* Not found. Falling back to the first device */
+        /* Not found, or doesn't work. Falling back to the first device */
         if (i == n_devices) {
             char *msg = g_strdup_printf(_("%s not found. Falling back to %s"),
-                                        cam->video_dev, devices[0]);
+                                        cam->video_dev, devices[0].fname);
             error_dialog(msg);
             g_free(msg);
-            cam->video_dev = devices[0];
+            cam->video_dev = devices[0].fname;
         }
     } else {
-        cam->video_dev = devices[0];
+        cam->video_dev = devices[0].fname;
     }
 
     if (cam->debug)
