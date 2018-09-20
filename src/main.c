@@ -392,16 +392,11 @@ static void activate(GtkApplication *app)
         printf("Failed to allocate memory for buffers\n");
         exit(0);
     }
-    //cam->read = FALSE;
-    /* initialize cam and create the window */
 
-    if (cam->read == FALSE) {
-        pt2Function = timeout_func;
+    if (cam->read == FALSE)
         start_streaming(cam);
-    } else {
+    else
         printf("using read()\n");
-        pt2Function = read_timeout_func;
-    }
 
     cam->xml = gtk_builder_new();
 
@@ -429,7 +424,7 @@ static void activate(GtkApplication *app)
 
     gtk_widget_show(widget);
 
-    cam->idle_id = g_idle_add((GSourceFunc) pt2Function, (gpointer) cam);
+    cam->idle_id = g_idle_add((GSourceFunc) timeout_func, (gpointer) cam);
 
     cam->timeout_fps_id = g_timeout_add(2000, (GSourceFunc) fps, cam->status);
 

@@ -644,35 +644,16 @@ static inline void show_buffer(cam_t *cam)
 /*
 * get image from cam - does all the work ;)
 */
-gint read_timeout_func(cam_t *cam)
-{
-    unsigned char *pic_buf = cam->pic_buf;
-
-    v4l2_read(cam->dev, cam->pic_buf,
-              (cam->width * cam->height * cam->bpp / 8));
-
-    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
-                       cam->bpp / 8);
-        pic_buf = cam->tmp;
-    }
-    apply_filters(cam, pic_buf);
-    cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
-                                       cam->width, cam->height,
-                                       (cam->width * cam->bpp / 8),
-                                       NULL, NULL);
-
-    show_buffer(cam);
-
-    return TRUE;
-}
-
 gint timeout_func(cam_t *cam)
 {
     unsigned char *pic_buf = cam->pic_buf;
 
-    capture_buffers(cam, cam->pic_buf,
-                    cam->width * cam->height * cam->bytesperline);
+    if (cam->read)
+        v4l2_read(cam->dev, cam->pic_buf,
+                 (cam->width * cam->height * cam->bpp / 8));
+    else
+        capture_buffers(cam, cam->pic_buf,
+                        cam->width * cam->height * cam->bytesperline);
 
     if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
         yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
@@ -736,10 +717,10 @@ gint timeout_capture_func(cam_t *cam)
          * maybe add a "window_state_event" handler to do the same when
          * window is iconified
          */
-        pt2Function(cam);
-        pt2Function(cam);
-        pt2Function(cam);
-        pt2Function(cam);
+        timeout_func(cam);
+        timeout_func(cam);
+        timeout_func(cam);
+        timeout_func(cam);
 
     }
     memcpy(cam->tmp, cam->pic_buf,
