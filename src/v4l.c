@@ -118,7 +118,7 @@ void get_supported_resolutions(cam_t *cam)
                                       frmsize.discrete.height,
                                       get_max_fps_discrete(cam, &frmsize));
             } else if (frmsize.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
-                    for (i = 0; i < 4; i++) {
+                    for (i = 0; i <= 4; i++) {
                         x = frmsize.stepwise.min_width +
                             i * (frmsize.stepwise.max_width -
                                  frmsize.stepwise.min_width) / 4;
