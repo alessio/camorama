@@ -2,10 +2,14 @@
 #include "interface.h"
 #include "support.h"
 #include "filter.h"
+
+#include <assert.h>
+#include <ftw.h>
 #include <glib/gi18n.h>
 #include <config.h>
 #include <pthread.h>
 #include <libv4l2.h>
+#include <sys/sysmacros.h>
 
 #define GPL_LICENSE \
     "GPL version 2.\n\n"                                                      \
@@ -768,4 +772,236 @@ void wb_change(GtkScale *sc1, cam_t *cam)
 
     cam->whiteness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
     v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
+}
+
+/*
+ * Video device selection
+ */
+
+unsigned int n_devices = 0, n_valid_devices = 0;
+struct devnodes *devices = NULL;
+
+static int handle_video_devs(const char *file,
+                             const struct stat *st,
+                             int flag)
+{
+    int dev_minor, first_device = -1, fd;
+    unsigned int i;
+    struct v4l2_capability vid_cap = { 0 };
+
+
+    /* Discard  devices that can't be a videodev */
+    if (!S_ISCHR(st->st_mode) || major(st->st_rdev) != 81)
+        return 0;
+
+    dev_minor = minor(st->st_rdev);
+
+    /* check if it is an already existing device */
+    if (devices) {
+        for (i = 0; i < n_devices; i++) {
+            if (dev_minor == devices[i].minor) {
+                first_device = i;
+                break;
+            }
+        }
+    }
+
+    devices = realloc(devices, (n_devices + 1) * sizeof(struct devnodes));
+    if (!devices) {
+        char *msg = g_strdup_printf(_("Can't allocate memory to store devices"));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+    memset(&devices[n_devices], 0, sizeof(struct devnodes));
+
+    if (first_device < 0) {
+        fd = v4l2_open(file, O_RDWR);
+        if (fd < 0) {
+            devices[n_devices].is_valid = FALSE;
+        } else {
+            if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &vid_cap) == -1) {
+                devices[n_devices].is_valid = FALSE;
+            } else if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
+                devices[n_devices].is_valid = FALSE;
+            } else {
+                n_valid_devices++;
+                devices[n_devices].is_valid = TRUE;
+            }
+        }
+
+        v4l2_close(fd);
+    } else {
+        devices[n_devices].is_valid = devices[first_device].is_valid;
+    }
+
+    devices[n_devices].fname = g_strdup(file);
+    devices[n_devices].minor = dev_minor;
+    n_devices++;
+
+    return(0);
+}
+
+/*
+ * Sort order:
+ *
+ *  - Valid devices comes first
+ *  - Lowest minors comes first
+ *
+ * For devnode names, it sorts on this order:
+ *  - custom udev given names
+ *  - /dev/v4l/by-id/
+ *  - /dev/v4l/by-path/
+ *  - /dev/video
+ *  - /dev/char/
+ *
+ *  - Device name is sorted alphabetically if follows same pattern
+ */
+static int sort_devices(const void *__a, const void *__b)
+{
+    const struct devnodes *a = __a;
+    const struct devnodes *b = __b;
+    int val_a, val_b;
+
+    if (a->is_valid != b->is_valid)
+        return !a->is_valid - !b->is_valid;
+
+    if (a->minor != b->minor)
+        return a->minor - b->minor;
+
+    /* Ensure that /dev/video* devices will stay at the top */
+
+    if (strstr(a->fname, "by-id"))
+        val_a = 1;
+    if (strstr(a->fname, "by-path"))
+        val_a = 2;
+    else if (strstr(a->fname, "/dev/video"))
+        val_a = 3;
+    else if (strstr(a->fname, "char"))
+        val_a = 4;
+    else    /* Customized names comes first */
+        val_a = 0;
+
+    if (strstr(b->fname, "by-id"))
+        val_b = 1;
+    if (strstr(b->fname, "by-path"))
+        val_b = 2;
+    else if (strstr(b->fname, "/dev/video"))
+        val_b = 3;
+    else if (strstr(b->fname, "char"))
+        val_b = 4;
+    else   /* Customized names comes first */
+        val_b = 0;
+
+    if (val_a != val_b)
+        return val_a - val_b;
+
+    /* Finally, just use alphabetic order */
+    return strcmp(a->fname, b->fname);
+}
+
+static void videodev_response(GtkDialog *dialog,
+                              cam_t *cam)
+{
+    GtkWidget *widget;
+
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_window"));
+    gtk_widget_hide(widget);
+}
+
+void retrieve_video_dev(cam_t *cam)
+{
+    int last_minor = -1;
+    unsigned int i;
+    GtkWidget *widget;
+
+    /* This function is not meant to be called more than once */
+    assert (n_devices == 0);
+
+    /* Get all video devices */
+    if (ftw("/dev", handle_video_devs, 4) || !n_devices) {
+        char *msg = g_strdup_printf(_("Didn't find any camera"));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+    qsort(devices, n_devices, sizeof(struct devnodes), sort_devices);
+
+    if (cam->debug)
+        for (i = 0; i < n_devices; i++)
+            printf("Device[%d]: %s (%s)\n", i, devices[i].fname,
+                   devices[i].is_valid ? "OK" : "NOK");
+
+    /* While we have Gtk 2 support, should be aligned with select_video_dev() */
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_combo"));
+    for (i = 0; i < n_devices; i++) {
+        if (devices[i].is_valid) {
+            if (devices[i].minor == last_minor)
+                continue;
+            gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widget),
+                                           devices[i].fname);
+            last_minor = devices[i].minor;
+        }
+    }
+
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_ok"));
+    g_signal_connect(G_OBJECT(widget), "clicked",
+                     G_CALLBACK(videodev_response), cam);
+}
+
+int select_video_dev(cam_t *cam)
+{
+    GtkWidget *window, *widget;
+    int ret;
+#if GTK_MAJOR_VERSION < 3
+    unsigned int i;
+    int index, last_minor = -1, p = 0;
+#endif
+
+    /* Only ask if there are multiple cameras */
+    if (n_valid_devices == 1) {
+        cam->video_dev = devices[0].fname;
+        return 0;
+    }
+
+    /* There are multiple devices. Ask the user */
+
+    window = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_window"));
+    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "videodev_combo"));
+
+    gtk_combo_box_set_active(GTK_COMBO_BOX(widget), 0);
+
+    gtk_widget_show(window);
+
+    ret = gtk_dialog_run(GTK_DIALOG(window));
+
+#if GTK_MAJOR_VERSION >= 3
+    cam->video_dev = gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(widget));
+#else
+    /*
+     * For whatever weird reason, gtk_combo_box_text_get_active_text()
+     * is not work with Gtk 2.24. We might implement a map, but, as we'll
+     * probably drop support for it in the future, better to use the more
+     * optimized way for Gtk 3 and Gtk 4.
+     */
+
+    index = gtk_combo_box_get_active(GTK_COMBO_BOX(widget));
+
+    /* Should be aligned with the similar logic at retrieve_video_dev() */
+    for (i = 0; i < n_devices; i++) {
+        if (devices[i].is_valid) {
+            if (devices[i].minor == last_minor)
+                continue;
+            if (p == index)
+                break;
+            last_minor = devices[i].minor;
+            p++;
+        }
+    }
+    if (i < n_devices)
+        cam->video_dev = devices[i].fname;
+#endif
+
+    gtk_widget_hide(window);
+    return ret;
 }

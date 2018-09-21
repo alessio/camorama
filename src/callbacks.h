@@ -4,6 +4,15 @@
 #include "v4l.h"
 #include "fileio.h"
 
+struct devnodes {
+    char *fname;
+    int minor;
+    gboolean is_valid;
+};
+
+extern unsigned int n_devices, n_valid_devices;
+extern struct devnodes *devices;
+
 G_BEGIN_DECLS
 
 void on_change_size_activate(GtkWidget * widget, cam_t *cam);
@@ -62,6 +71,8 @@ void wb_change(GtkScale *, cam_t *);
 gboolean on_drawingarea_expose_event(GtkWidget *, GdkEventExpose *,
                                      cam_t *);
 void set_image_scale(cam_t *cam);
+void retrieve_video_dev(cam_t *cam);
+int select_video_dev(cam_t *cam);
 
 G_END_DECLS
 
