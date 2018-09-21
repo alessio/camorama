@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2018-09-21 11:25-0300\n"
-"PO-Revision-Date: 2018-09-18 23:57-0300\n"
+"PO-Revision-Date: 2018-09-21 11:34-0300\n"
 "Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "Language: pt_BR\n"
@@ -260,7 +260,7 @@ msgstr "Mostrar Efeitos"
 #: data/camorama-gtk2.ui:1310 data/camorama-gtk3.ui:150
 #: data/camorama-gtk4.ui:132
 msgid "_Change Camera"
-msgstr ""
+msgstr "Altera _Câmera"
 
 #: data/camorama-gtk2.ui:1325 data/camorama-gtk3.ui:165
 #: data/camorama-gtk4.ui:147
@@ -298,9 +298,8 @@ msgstr "Equilíbrio de Branco:"
 
 #: data/camorama-gtk2.ui:1868 data/camorama-gtk3.ui:1833
 #: data/camorama-gtk4.ui:1621
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "dispositivo v4l a ser utilizado"
+msgstr "Selecione um dispositivo v4l a ser utilizado"
 
 #: data/camorama-gtk3.ui:66 data/camorama-gtk4.ui:55
 msgid "_Take Picture"
@@ -556,11 +555,11 @@ msgstr "%.2f quadros/s - atual     %.2f quadros/s - média"
 
 #: src/callbacks.c:811
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Não foi possível alocar memória para armazenar dispositivos"
 
 #: src/callbacks.c:923
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Não encontrada nenhuma câmera"
 
 #: src/callbacks.c:1047
 #, c-format
@@ -755,12 +754,12 @@ msgstr "Não foi possível carregar arquivo com interface gráfica"
 #: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s não encontrado. Usando %s ao invés"
 
 #: src/main.c:190
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s não encontrado."
 
 #: src/main.c:296
 #, c-format
@@ -772,18 +771,18 @@ msgstr ""
 "Execute '%s --help'\n"
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
 "Impossível conectar ao dispositivo de vídeo (%s).\n"
-"Verifique a conexão."
+"Verifique a conexão. Erro: %d"
 
 #: src/v4l.c:251
 #, c-format
-msgid "Device %s is not a video capture device)."
-msgstr ""
+msgid "Device %s is not a video capture device."
+msgstr "Dispositivo %s não é um dispositivo de captura de vídeo."
 
 #: src/v4l.c:334 src/v4l.c:403 src/v4l.c:422 src/v4l.c:443
 #, c-format
