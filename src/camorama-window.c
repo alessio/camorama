@@ -269,11 +269,8 @@ void load_interface(cam_t *cam)
                      cam);
 
     if (n_valid_devices > 1) {
-        video_dev = gtk_menu_item_new_with_label("Change camera");
-        gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
-                          video_dev);
+        video_dev = GTK_WIDGET(gtk_builder_get_object(cam->xml, "change_camera"));
         gtk_widget_show(video_dev);
-
         g_signal_connect(video_dev, "activate",
                          G_CALLBACK(on_change_camera), cam);
     }
