@@ -1,3 +1,18 @@
+2018-09-21  Mauro Carvalho Chehab <mchehab@kernel.org>
+
+	* Fix the maximum resolution on cameras with a scaler
+	  (stepwise frame sizes);
+	* Properly handle the camera video device, by checking
+	  their names at devfs and checking what V4L2 devices
+	  support video capture streams;
+	* Add a dialog to allow changing the video device. It
+	  is used when more than one cameras are available,
+	  and called at the beginning of camorama, if there's
+	  no previous value, or if it is invalid;
+	* When there are multiple cameras, add a new item at
+	  the <View> menu, allowing changing the camera at
+	  runtime.
+
 2018-09-19  Mauro Carvalho Chehab <mchehab@kernel.org>
 	* Use GSettings instead of Gconf-2
 	* better describe 'hostname' key at GSettings
