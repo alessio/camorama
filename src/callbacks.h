@@ -4,6 +4,15 @@
 #include "v4l.h"
 #include "fileio.h"
 
+struct devnodes {
+    char *fname;
+    int minor;
+    gboolean is_valid;
+};
+
+extern unsigned int n_devices, n_valid_devices;
+extern struct devnodes *devices;
+
 G_BEGIN_DECLS
 
 void on_change_size_activate(GtkWidget * widget, cam_t *cam);
@@ -28,7 +37,6 @@ void rjpg_func(GtkWidget *, cam_t *);
 void rpng_func(GtkWidget *, cam_t *);
 void draw_callback(GtkWidget *, cairo_t *, cam_t *cam);
 
-gint(*pt2Function) (cam_t *);
 void rppm_func(GtkWidget *, cam_t *);
 void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data);
 void on_about_activate(GtkMenuItem *menuitem, cam_t *cam);
@@ -42,7 +50,6 @@ void capture_func(GtkWidget *, cam_t *);
 gint timeout_capture_func(cam_t *);
 gint fps(GtkWidget *);
 gint timeout_func(cam_t *);
-gint read_timeout_func(cam_t *);
 void edge_func1(GtkToggleButton *, gpointer);
 void sobel_func(GtkToggleButton *, gpointer);
 void fix_colour_func(GtkToggleButton *, char *);
@@ -64,6 +71,10 @@ void wb_change(GtkScale *, cam_t *);
 gboolean on_drawingarea_expose_event(GtkWidget *, GdkEventExpose *,
                                      cam_t *);
 void set_image_scale(cam_t *cam);
+void retrieve_video_dev(cam_t *cam);
+int select_video_dev(cam_t *cam);
+void on_change_camera(GtkWidget *widget, cam_t *cam);
+void start_camera(cam_t *cam);
 
 G_END_DECLS
 

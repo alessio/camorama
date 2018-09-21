@@ -11,10 +11,11 @@
 #include <glib/gi18n.h>
 #include <locale.h>
 #include <libv4l2.h>
+#include <stdlib.h>
 
 static int ver = 0, max = 0, min;
-static int half = 0, use_read = 0, buggery = 0;
-static gchar *poopoo = NULL;
+static int half = 0, use_read = 0, debug = 0;
+static gchar *video_dev = NULL;
 static int x = 0, y = 0;
 
 #pragma GCC diagnostic push
@@ -23,9 +24,9 @@ static int x = 0, y = 0;
 static GOptionEntry options[] = {
     {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
      N_("show version and exit"), NULL},
-    {"device", 'd', 0, G_OPTION_ARG_STRING, &poopoo,
+    {"device", 'd', 0, G_OPTION_ARG_STRING, &video_dev,
      N_("v4l device to use"), NULL},
-    {"debug", 'D', 0, G_OPTION_ARG_NONE, &buggery,
+    {"debug", 'D', 0, G_OPTION_ARG_NONE, &debug,
      N_("enable debugging code"), NULL},
     {"width", 'x', 0, G_OPTION_ARG_INT, &x,
      N_("capture width"), NULL},
@@ -106,9 +107,8 @@ static void activate(GtkApplication *app)
 #endif
 {
     cam_t *cam = &cam_object;
-    GSettings *gc;
     GtkWidget *widget, *window;
-    unsigned int bufsize;
+    unsigned int i;
 
     /* set some default values */
     cam->frame_number = 0;
@@ -120,6 +120,7 @@ static void activate(GtkApplication *app)
     cam->res = NULL;
     cam->n_res = 0;
     cam->scale = 1.f;
+    cam->dev = -1;
 #if GTK_MAJOR_VERSION >= 3
     cam->app = app;
 #endif
@@ -127,7 +128,7 @@ static void activate(GtkApplication *app)
     /* gtk is initialized now */
     camorama_filters_init();
 
-    cam->debug = buggery;
+    cam->debug = debug;
 
     get_geometry(cam);
 
@@ -148,18 +149,58 @@ static void activate(GtkApplication *app)
         printf("Forcing read mode\n");
         cam->read = TRUE;
     }
-    gc = g_settings_new(CAM_SETTINGS_SCHEMA);
-    cam->gc = gc;
 
-    if (!poopoo) {
-        gchar const *gconf_device = g_settings_get_string(cam->gc, CAM_SETTINGS_DEVICE);
+    cam->xml = gtk_builder_new();
+
+    if (!gtk_builder_add_from_file(cam->xml,
+                                   PACKAGE_DATA_DIR "/camorama/" CAMORAMA_UI,
+                                   NULL)) {
+        error_dialog(_("Couldn't load builder file"));
+        exit(1);
+    }
+
+    retrieve_video_dev(cam);
+
+    cam->gc = g_settings_new(CAM_SETTINGS_SCHEMA);
+
+    if (!video_dev) {
+        gchar const *gconf_device = g_settings_get_string(cam->gc,
+                                                          CAM_SETTINGS_DEVICE);
         if (gconf_device)
             cam->video_dev = g_strdup(gconf_device);
         else
-            cam->video_dev = g_strdup("/dev/video0");
+            cam->video_dev = NULL;
     } else {
-        cam->video_dev = g_strdup(poopoo);
+        cam->video_dev = g_strdup(video_dev);
     }
+
+    if (cam->video_dev) {
+        for (i = 0; i < n_devices; i++)
+            if (!strcmp(cam->video_dev, devices[i].fname) && devices[i].is_valid)
+                break;
+
+        /* Not found, or doesn't work. Falling back to the first device */
+        if (i == n_devices) {
+            char *msg;
+
+            if (n_valid_devices == 1)
+                msg = g_strdup_printf(_("%s not found. Falling back to %s"),
+                                     cam->video_dev, devices[0].fname);
+            else
+                msg = g_strdup_printf(_("%s not found."),
+                                     cam->video_dev);
+            error_dialog(msg);
+            g_free(msg);
+
+            /* Ask user or get the only one device, if it is the case */
+            select_video_dev(cam);
+        }
+    } else {
+        cam->video_dev = devices[0].fname;
+    }
+
+    if (cam->debug)
+        printf("Using videodev: %s\n", cam->video_dev);
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
@@ -206,49 +247,7 @@ static void activate(GtkApplication *app)
     else
         cam->height = g_settings_get_int(cam->gc, CAM_SETTINGS_HEIGHT);
 
-    if (use_read)
-        cam->dev = v4l2_open(cam->video_dev, O_RDWR);
-    else
-        cam->dev = v4l2_open(cam->video_dev, O_RDWR | O_NONBLOCK);
-
-    camera_cap(cam);
-    get_win_info(cam);
-
-    set_win_info(cam);
-    get_win_info(cam);
-
-    /* get picture attributes */
-    get_pic_info(cam);
-
-    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
-    cam->pic_buf = malloc(bufsize);
-    cam->tmp = malloc(bufsize);
-
-    if (!cam->pic_buf || !cam->tmp) {
-        printf("Failed to allocate memory for buffers\n");
-        exit(0);
-    }
-    //cam->read = FALSE;
-    /* initialize cam and create the window */
-
-    if (cam->read == FALSE) {
-        pt2Function = timeout_func;
-        start_streaming(cam);
-    } else {
-        printf("using read()\n");
-        pt2Function = read_timeout_func;
-    }
-
-    cam->xml = gtk_builder_new();
-
-    if (!gtk_builder_add_from_file(cam->xml,
-                                   PACKAGE_DATA_DIR "/camorama/" CAMORAMA_UI,
-                                   NULL)) {
-        error_dialog(_("Couldn't load builder file"));
-        exit(1);
-    }
-
-    g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
+    start_camera(cam);
 
     load_interface(cam);
 
@@ -265,12 +264,7 @@ static void activate(GtkApplication *app)
 
     gtk_widget_show(widget);
 
-    cam->idle_id = g_idle_add((GSourceFunc) pt2Function, (gpointer) cam);
-
     cam->timeout_fps_id = g_timeout_add(2000, (GSourceFunc) fps, cam->status);
-
-    if (cam->debug == TRUE)
-        print_cam(cam);
 }
 
 int main(int argc, char *argv[])

@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(camorama,0.20.5, https://github.com/alessio/camorama)
+AC_INIT(camorama,0.20.6, https://github.com/alessio/camorama)
 AC_CONFIG_SRCDIR(src/main.c)
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
@@ -30,6 +30,7 @@ AC_ISC_POSIX
 AC_PROG_CC
 AM_PROG_CC_STDC
 AC_HEADER_STDC
+AC_HEADER_MAJOR
 AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.h png.h glade/glade.h])
 
 # Don't assume that gcc warnings are errors

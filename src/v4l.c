@@ -71,7 +71,7 @@ static int sort_func(const void *__b, const void *__a)
 static float get_max_fps_discrete(cam_t *cam,
                                   struct v4l2_frmsizeenum *frmsize)
 {
-    struct v4l2_frmivalenum frmival;
+    struct v4l2_frmivalenum frmival = { 0 };
     float fps, max_fps = -1;
 
     frmival.width = frmsize->discrete.width;
@@ -91,11 +91,16 @@ static float get_max_fps_discrete(cam_t *cam,
 
 void get_supported_resolutions(cam_t *cam)
 {
-    struct v4l2_fmtdesc fmt;
-    struct v4l2_frmsizeenum frmsize;
+    struct v4l2_fmtdesc fmt = { 0 };
+    struct v4l2_frmsizeenum frmsize = { 0 };
     int i;
     unsigned int x, y;
 
+    if (cam->n_res) {
+        free(cam->res);
+        cam->res = NULL;
+        cam->n_res = 0;
+    }
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
     for (fmt.index = 0;
@@ -113,7 +118,7 @@ void get_supported_resolutions(cam_t *cam)
                                       frmsize.discrete.height,
                                       get_max_fps_discrete(cam, &frmsize));
             } else if (frmsize.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
-                    for (i = 0; i < 4; i++) {
+                    for (i = 0; i <= 4; i++) {
                         x = frmsize.stepwise.min_width +
                             i * (frmsize.stepwise.max_width -
                                  frmsize.stepwise.min_width) / 4;
@@ -129,7 +134,7 @@ void get_supported_resolutions(cam_t *cam)
     qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
 }
 
-void camera_cap(cam_t *cam)
+int camera_cap(cam_t *cam)
 {
     char *msg;
     int i;
@@ -139,15 +144,13 @@ void camera_cap(cam_t *cam)
 
     /* Query device capabilities */
     if (v4l2_ioctl(cam->dev, VIDIOC_QUERYCAP, &vid_cap) == -1) {
-        if (cam->debug == TRUE) {
-            fprintf(stderr,
-                    "VIDIOC_QUERYCAP  --  could not get camera capabilities, exiting.....\n");
-        }
-        msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."),
-                              cam->video_dev);
+
+        msg = g_strdup_printf(_("Could not connect to video device (%s).\n"
+                                "Please check connection. Error: %d"),
+                              cam->video_dev, errno);
         error_dialog(msg);
         g_free(msg);
-        exit(0);
+        return 1;
     }
 
     /* Query supported resolutions */
@@ -244,19 +247,15 @@ void camera_cap(cam_t *cam)
         }
     }
 
-    if (!(vid_cap.capabilities & V4L2_CAP_VIDEO_CAPTURE)) {
-        if (cam->debug == TRUE) {
-            fprintf(stderr,
-                    "VIDIOC_QUERYCAP  --  it is not a capture device, exiting.....\n");
-        }
-        msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."),
+    if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
+        msg = g_strdup_printf(_("Device %s is not a video capture device."),
                               cam->video_dev);
         error_dialog(msg);
         g_free(msg);
-        exit(0);
+        return 1;
     }
 
-    if (!(vid_cap.capabilities & V4L2_CAP_STREAMING))
+    if (!(vid_cap.device_caps & V4L2_CAP_STREAMING))
         cam->read = TRUE;
 
     strncpy(cam->name, (const char *)vid_cap.card, sizeof(cam->name));
@@ -265,12 +264,14 @@ void camera_cap(cam_t *cam)
     if (cam->debug == TRUE) {
         printf("\nVIDIOC_QUERYCAP\n");
         printf("device name = %s\n", vid_cap.card);
-        printf("device caps = 0x%08x\n", vid_cap.capabilities);
+        printf("device caps = 0x%08x\n", vid_cap.device_caps);
         printf("max width = %d\n", cam->max_width);
         printf("max height = %d\n", cam->max_height);
         printf("min width = %d\n", cam->min_width);
         printf("min height = %d\n", cam->min_height);
     }
+
+    return 0;
 }
 
 void get_pic_info(cam_t *cam)
