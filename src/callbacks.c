@@ -1134,6 +1134,11 @@ void start_camera(cam_t *cam)
         cam->tmp = NULL;
     }
 
+    /* Reset also frame counts, as the new camera can use a different fps */
+    frames = 0;
+    frames2 = 0;
+    seconds = 0;
+
     /* Second step: clean-up all resolutions */
 
     container = GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"));
