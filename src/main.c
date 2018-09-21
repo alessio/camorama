@@ -108,7 +108,7 @@ static void activate(GtkApplication *app)
 {
     cam_t *cam = &cam_object;
     GtkWidget *widget, *window;
-    unsigned int bufsize, i;
+    unsigned int i;
 
     /* set some default values */
     cam->frame_number = 0;
@@ -120,6 +120,7 @@ static void activate(GtkApplication *app)
     cam->res = NULL;
     cam->n_res = 0;
     cam->scale = 1.f;
+    cam->dev = -1;
 #if GTK_MAJOR_VERSION >= 3
     cam->app = app;
 #endif
@@ -246,38 +247,7 @@ static void activate(GtkApplication *app)
     else
         cam->height = g_settings_get_int(cam->gc, CAM_SETTINGS_HEIGHT);
 
-    if (use_read)
-        cam->dev = v4l2_open(cam->video_dev, O_RDWR);
-    else
-        cam->dev = v4l2_open(cam->video_dev, O_RDWR | O_NONBLOCK);
-
-    if (camera_cap(cam))
-        exit(-1);
-
-    get_win_info(cam);
-
-    set_win_info(cam);
-    get_win_info(cam);
-
-    /* get picture attributes */
-    get_pic_info(cam);
-
-    /* Only store the device name after being able to successfully use it */
-    g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
-
-    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
-    cam->pic_buf = malloc(bufsize);
-    cam->tmp = malloc(bufsize);
-
-    if (!cam->pic_buf || !cam->tmp) {
-        printf("Failed to allocate memory for buffers\n");
-        exit(0);
-    }
-
-    if (cam->read == FALSE)
-        start_streaming(cam);
-    else
-        printf("using read()\n");
+    start_camera(cam);
 
     load_interface(cam);
 
@@ -294,12 +264,7 @@ static void activate(GtkApplication *app)
 
     gtk_widget_show(widget);
 
-    cam->idle_id = g_idle_add((GSourceFunc) timeout_func, (gpointer) cam);
-
     cam->timeout_fps_id = g_timeout_add(2000, (GSourceFunc) fps, cam->status);
-
-    if (cam->debug == TRUE)
-        print_cam(cam);
 }
 
 int main(int argc, char *argv[])

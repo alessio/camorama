@@ -73,6 +73,8 @@ gboolean on_drawingarea_expose_event(GtkWidget *, GdkEventExpose *,
 void set_image_scale(cam_t *cam);
 void retrieve_video_dev(cam_t *cam);
 int select_video_dev(cam_t *cam);
+void on_change_camera(GtkWidget *widget, cam_t *cam);
+void start_camera(cam_t *cam);
 
 G_END_DECLS
 

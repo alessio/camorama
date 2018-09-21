@@ -1005,3 +1005,186 @@ int select_video_dev(cam_t *cam)
     gtk_widget_hide(window);
     return ret;
 }
+
+void on_change_camera(GtkWidget *widget, cam_t *cam)
+{
+    gchar *old_cam;
+
+    old_cam = g_strdup(cam->video_dev);
+    select_video_dev(cam);
+
+    /* Trivial case: nothing changed */
+    if (!strcmp(cam->video_dev, old_cam)) {
+        g_free(old_cam);
+        return;
+    }
+    g_free(old_cam);
+
+    start_camera(cam);
+}
+
+static void add_gtk_view_resolutions(cam_t *cam)
+{
+    GtkWidget *small_res, *new_res;
+    unsigned int i;
+
+    /*
+     * Dynamically generate the resolutions based on what the camera
+     * actually supports. Provide a fallback method, if the camera driver
+     * is too old and doesn't support formats enumeration.
+     */
+
+    small_res = GTK_WIDGET(gtk_builder_get_object(cam->xml, "small"));
+
+    /* Get all supported resolutions by cam->pixformat */
+    get_supported_resolutions(cam);
+
+    if (cam->n_res > 0) {
+        for (i = 0; i < cam->n_res; i++) {
+            char name[80];
+
+            if (cam->res[i].max_fps > 0)
+                    sprintf(name, _("%dx%d (max %.1f fps)"),
+                            cam->res[i].x, cam->res[i].y,
+                            (double)cam->res[i].max_fps);
+                else
+                    sprintf(name, _("%dx%d"), cam->res[i].x, cam->res[i].y);
+
+            new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), name);
+            gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
+                              new_res);
+            gtk_widget_show(new_res);
+            g_signal_connect(new_res, "activate",
+                             G_CALLBACK(on_change_size_activate), cam);
+            gtk_widget_set_name(new_res, name);
+
+            if (cam->width == cam->res[i].x && cam->height == cam->res[i].y)
+                gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
+                                               TRUE);
+            else
+                gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
+                                               FALSE);
+        }
+
+        /* We won't actually use the small res */
+        gtk_widget_hide(small_res);
+    } else {
+        g_signal_connect(gtk_builder_get_object(cam->xml, "small"),
+                         "activate", G_CALLBACK(on_change_size_activate),
+                         cam);
+
+        new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res),
+                                                                 "Medium");
+        gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
+                          new_res);
+        gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
+                                       FALSE);
+        gtk_widget_show(new_res);
+        g_signal_connect(new_res, "activate",
+                         G_CALLBACK(on_change_size_activate), cam);
+        gtk_widget_set_name(new_res, "medium");
+
+        new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res),
+                                                                 "Large");
+        gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
+                          new_res);
+        gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
+                                       FALSE);
+        gtk_widget_show(new_res);
+        g_signal_connect(new_res, "activate",
+                         G_CALLBACK(on_change_size_activate), cam);
+        gtk_widget_set_name(new_res, "large");
+    }
+}
+
+void start_camera(cam_t *cam)
+{
+    unsigned int bufsize;
+    GList *children, *iter;
+    GtkWidget *widget, *container;
+
+    /* First step: free used resources, if any */
+
+    if (cam->idle_id) {
+        g_source_remove(cam->idle_id);
+        cam->idle_id = 0;
+    }
+
+    if (cam->dev >= 0) {
+        if (cam->read == FALSE)
+            stop_streaming(cam);
+
+        cam->pb = NULL;
+
+        v4l2_close(cam->dev);
+    }
+
+    if (cam->timeout_id) {
+        g_source_remove(cam->timeout_id);
+        cam->timeout_id = 0;
+    }
+
+    if (cam->pic_buf) {
+        free(cam->pic_buf);
+        cam->pic_buf = NULL;
+    }
+
+    if (cam->tmp) {
+        free(cam->tmp);
+        cam->tmp = NULL;
+    }
+
+    /* Second step: clean-up all resolutions */
+
+    container = GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"));
+    children = gtk_container_get_children(GTK_CONTAINER(container));
+    for (iter = children; iter != NULL; iter = g_list_next(iter)) {
+        widget = GTK_WIDGET(iter->data);
+        if (strstr(gtk_widget_get_name(widget), "x"))
+            gtk_widget_destroy(widget);
+    }
+
+    /* Third step: allocate them again */
+
+    if (cam->read)
+        cam->dev = v4l2_open(cam->video_dev, O_RDWR);
+    else
+        cam->dev = v4l2_open(cam->video_dev, O_RDWR | O_NONBLOCK);
+
+    if (camera_cap(cam))
+        exit(-1);
+
+    get_win_info(cam);
+
+    set_win_info(cam);
+    get_win_info(cam);
+
+    /* get picture attributes */
+    get_pic_info(cam);
+
+    /* Only store the device name after being able to successfully use it */
+    g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
+
+    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
+    cam->pic_buf = malloc(bufsize);
+    cam->tmp = malloc(bufsize);
+
+    if (!cam->pic_buf || !cam->tmp) {
+        printf("Failed to allocate memory for buffers\n");
+        exit(0);
+    }
+
+    if (cam->read == FALSE)
+        start_streaming(cam);
+    else
+        printf("using read()\n");
+
+    cam->idle_id = g_idle_add((GSourceFunc) timeout_func, (gpointer) cam);
+
+    if (cam->debug == TRUE)
+        print_cam(cam);
+
+    /* Add resolutions */
+
+    add_gtk_view_resolutions(cam);
+}

@@ -71,7 +71,7 @@ static int sort_func(const void *__b, const void *__a)
 static float get_max_fps_discrete(cam_t *cam,
                                   struct v4l2_frmsizeenum *frmsize)
 {
-    struct v4l2_frmivalenum frmival;
+    struct v4l2_frmivalenum frmival = { 0 };
     float fps, max_fps = -1;
 
     frmival.width = frmsize->discrete.width;
@@ -91,11 +91,16 @@ static float get_max_fps_discrete(cam_t *cam,
 
 void get_supported_resolutions(cam_t *cam)
 {
-    struct v4l2_fmtdesc fmt;
-    struct v4l2_frmsizeenum frmsize;
+    struct v4l2_fmtdesc fmt = { 0 };
+    struct v4l2_frmsizeenum frmsize = { 0 };
     int i;
     unsigned int x, y;
 
+    if (cam->n_res) {
+        free(cam->res);
+        cam->res = NULL;
+        cam->n_res = 0;
+    }
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
     for (fmt.index = 0;

@@ -196,7 +196,7 @@ void load_interface(cam_t *cam)
     unsigned int i;
     GdkPixbuf *logo = NULL;
     GtkCellRenderer *cell;
-    GtkWidget *small_res, *new_res;
+    GtkWidget *video_dev;
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "main_window"));
     GtkTreeView *treeview;
@@ -268,72 +268,14 @@ void load_interface(cam_t *cam)
                      "toggled", G_CALLBACK(on_show_adjustments_activate),
                      cam);
 
-    /*
-     * Dynamically generate the resolutions based on what the camera
-     * actually supports. Provide a fallback method, if the camera driver
-     * is too old and doesn't support formats enumeration.
-     */
-
-    small_res = GTK_WIDGET(gtk_builder_get_object(cam->xml, "small"));
-
-    /* Get all supported resolutions by cam->pixformat */
-    get_supported_resolutions(cam);
-
-    if (cam->n_res > 0) {
-        for (i = 0; i < cam->n_res; i++) {
-            char name[80];
-
-            if (cam->res[i].max_fps > 0)
-                    sprintf(name, _("%dx%d (max %.1f fps)"),
-                            cam->res[i].x, cam->res[i].y,
-                            (double)cam->res[i].max_fps);
-                else
-                    sprintf(name, _("%dx%d"), cam->res[i].x, cam->res[i].y);
-
-            new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res), name);
-            gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
-                              new_res);
-            gtk_widget_show(new_res);
-            g_signal_connect(new_res, "activate",
-                             G_CALLBACK(on_change_size_activate), cam);
-            gtk_widget_set_name(new_res, name);
-
-            if (cam->width == cam->res[i].x && cam->height == cam->res[i].y)
-                gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
-                                               TRUE);
-            else
-                gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
-                                               FALSE);
-        }
-
-        /* We won't actually use the small res */
-        gtk_widget_hide(small_res);
-    } else {
-        g_signal_connect(gtk_builder_get_object(cam->xml, "small"),
-                         "activate", G_CALLBACK(on_change_size_activate),
-                         cam);
-
-        new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res),
-                                                                 "Medium");
+    if (n_valid_devices > 1) {
+        video_dev = gtk_menu_item_new_with_label("Change camera");
         gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
-                          new_res);
-        gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
-                                       FALSE);
-        gtk_widget_show(new_res);
-        g_signal_connect(new_res, "activate",
-                         G_CALLBACK(on_change_size_activate), cam);
-        gtk_widget_set_name(new_res, "medium");
+                          video_dev);
+        gtk_widget_show(video_dev);
 
-        new_res = gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM(small_res),
-                                                                 "Large");
-        gtk_container_add(GTK_CONTAINER(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4_menu"))),
-                          new_res);
-        gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(new_res),
-                                       FALSE);
-        gtk_widget_show(new_res);
-        g_signal_connect(new_res, "activate",
-                         G_CALLBACK(on_change_size_activate), cam);
-        gtk_widget_set_name(new_res, "large");
+        g_signal_connect(video_dev, "activate",
+                         G_CALLBACK(on_change_camera), cam);
     }
 
     //g_signal_connect(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
