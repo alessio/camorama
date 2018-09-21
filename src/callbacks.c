@@ -1185,6 +1185,8 @@ void start_camera(cam_t *cam)
         print_cam(cam);
 
     /* Add resolutions */
-
     add_gtk_view_resolutions(cam);
+
+    /* Adjust image scale */
+    set_image_scale(cam);
 }

@@ -496,6 +496,4 @@ void load_interface(cam_t *cam)
     set_sensitive(cam);
     gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(cam->xml, "string_entry")),
                              cam->usestring);
-
-    set_image_scale(cam);
 }
