@@ -248,7 +248,7 @@ int camera_cap(cam_t *cam)
     }
 
     if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
-        msg = g_strdup_printf(_("Device %s is not a video capture device)."),
+        msg = g_strdup_printf(_("Device %s is not a video capture device."),
                               cam->video_dev);
         error_dialog(msg);
         g_free(msg);
