@@ -33,6 +33,13 @@ AC_HEADER_STDC
 AC_HEADER_MAJOR
 AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h linux/videodev.h png.h glade/glade.h])
 
+# Check for V4L2
+AC_CHECK_LIB(v4l2, v4l2_open, LIBV4L="yes",,)
+if test "$LIBV4L" != "yes"; then
+    echo "Oops:	libv4l library not found."
+    exit 1
+fi
+
 # Don't assume that gcc warnings are errors
 AX_IS_RELEASE(always)
 AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])

@@ -8046,6 +8046,52 @@ fi
 done
 
 
+# Check for V4L2
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for v4l2_open in -lv4l2" >&5
+$as_echo_n "checking for v4l2_open in -lv4l2... " >&6; }
+if ${ac_cv_lib_v4l2_v4l2_open+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-lv4l2  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char v4l2_open ();
+int
+main ()
+{
+return v4l2_open ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"; then :
+  ac_cv_lib_v4l2_v4l2_open=yes
+else
+  ac_cv_lib_v4l2_v4l2_open=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_v4l2_v4l2_open" >&5
+$as_echo "$ac_cv_lib_v4l2_v4l2_open" >&6; }
+if test "x$ac_cv_lib_v4l2_v4l2_open" = xyes; then :
+  LIBV4L="yes"
+fi
+
+if test "$LIBV4L" != "yes"; then
+    echo "Oops:	libv4l library not found."
+    exit 1
+fi
+
 # Don't assume that gcc warnings are errors
 
 
