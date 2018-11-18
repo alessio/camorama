@@ -612,7 +612,7 @@ static void show_buffer(cam_t *cam)
     frames++;
     frames2++;
 }
-#else
+#elif GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION < 94
 /*
  * GTK 3 way: use a drawing callback
  */
@@ -642,6 +642,15 @@ void draw_callback(GtkWidget *widget, cairo_t *cr, cam_t *cam)
 static inline void show_buffer(cam_t *cam)
 {
     gtk_widget_queue_draw(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")));
+}
+#else	/* TODO: add GTK 4 specific draw functions */
+void draw_callback(GtkWidget *widget, cairo_t *cr, cam_t *cam)
+{
+   #error "Can't draw yet with gtk > 3.94"
+}
+
+static inline void show_buffer(cam_t *cam)
+{
 }
 #endif
 
