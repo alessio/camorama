@@ -208,6 +208,12 @@ static void activate(GtkApplication *app)
 #pragma GCC diagnostic pop
 
     cam->pixdir = g_settings_get_string(cam->gc, CAM_SETTINGS_SAVE_DIR);
+    /* Deal with the save-dir default value starting with "~/" */
+    if (cam->pixdir && cam->pixdir[0] == '~' && cam->pixdir[1] == '/') {
+        gchar *old = cam->pixdir;
+        cam->pixdir = g_strdup_printf("%s/%s", g_get_home_dir(), old + 2);
+        g_free(old);
+    }
     cam->capturefile = g_settings_get_string(cam->gc, CAM_SETTINGS_SAVE_FILE);
     cam->savetype = g_settings_get_int(cam->gc, CAM_SETTINGS_FILE_TYPE);
     cam->host = g_settings_get_string(cam->gc, CAM_SETTINGS_HOSTNAME);
