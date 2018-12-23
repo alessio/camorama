@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-09-21 11:25-0300\n"
+"POT-Creation-Date: 2018-12-23 16:04-0200\n"
 "PO-Revision-Date: 2003-03-16 13:47+0330\n"
 "Last-Translator: Roozbeh Pournader <roozbeh@sharif.edu>\n"
 "Language-Team: Persian <farsi@lists.sharif.edu>\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "View, alter and save images from a webcam"
 msgstr ""
 
-#: camorama.desktop.in:6 src/main.c:294
+#: camorama.desktop.in:6 src/main.c:292
 msgid "camorama"
 msgstr ""
 
@@ -41,278 +41,283 @@ msgstr ""
 msgid "camorama;webcam;viewer;video-effects;"
 msgstr ""
 
-#: data/camorama-gtk2.ui:35 data/camorama-gtk4.ui:554
+#: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
 msgstr "ترجیحات"
 
-#: data/camorama-gtk2.ui:107 data/camorama-gtk3.ui:699
-#: data/camorama-gtk4.ui:624
+#: data/camorama-gtk2.ui:111 data/camorama-gtk3.ui:741
+#: data/camorama-gtk4.ui:666
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">عمومی</span>"
 
-#: data/camorama-gtk2.ui:139 data/camorama-gtk3.ui:733
-#: data/camorama-gtk4.ui:654
+#: data/camorama-gtk2.ui:143 data/camorama-gtk3.ui:775
+#: data/camorama-gtk4.ui:696
 msgid "Automatic Capture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:161 data/camorama-gtk2.ui:296
-#: data/camorama-gtk2.ui:334 data/camorama-gtk2.ui:517
-#: data/camorama-gtk2.ui:633 data/camorama-gtk2.ui:670
-#: data/camorama-gtk2.ui:905 data/camorama-gtk2.ui:1021
-#: data/camorama-gtk2.ui:1058 data/camorama-gtk3.ui:755
-#: data/camorama-gtk3.ui:893 data/camorama-gtk3.ui:932
-#: data/camorama-gtk3.ui:1109 data/camorama-gtk3.ui:1228
-#: data/camorama-gtk3.ui:1266 data/camorama-gtk3.ui:1491
-#: data/camorama-gtk3.ui:1610 data/camorama-gtk3.ui:1648
-#: data/camorama-gtk4.ui:674 data/camorama-gtk4.ui:789
-#: data/camorama-gtk4.ui:824 data/camorama-gtk4.ui:981
-#: data/camorama-gtk4.ui:1085 data/camorama-gtk4.ui:1119
-#: data/camorama-gtk4.ui:1324 data/camorama-gtk4.ui:1428
-#: data/camorama-gtk4.ui:1462
+#: data/camorama-gtk2.ui:165 data/camorama-gtk2.ui:300
+#: data/camorama-gtk2.ui:338 data/camorama-gtk2.ui:521
+#: data/camorama-gtk2.ui:637 data/camorama-gtk2.ui:674
+#: data/camorama-gtk2.ui:909 data/camorama-gtk2.ui:1025
+#: data/camorama-gtk2.ui:1062 data/camorama-gtk3.ui:797
+#: data/camorama-gtk3.ui:935 data/camorama-gtk3.ui:974
+#: data/camorama-gtk3.ui:1151 data/camorama-gtk3.ui:1270
+#: data/camorama-gtk3.ui:1308 data/camorama-gtk3.ui:1533
+#: data/camorama-gtk3.ui:1652 data/camorama-gtk3.ui:1690
+#: data/camorama-gtk4.ui:716 data/camorama-gtk4.ui:831
+#: data/camorama-gtk4.ui:866 data/camorama-gtk4.ui:1023
+#: data/camorama-gtk4.ui:1127 data/camorama-gtk4.ui:1161
+#: data/camorama-gtk4.ui:1366 data/camorama-gtk4.ui:1470
+#: data/camorama-gtk4.ui:1504
 msgid "     "
 msgstr "     "
 
-#: data/camorama-gtk2.ui:183 data/camorama-gtk3.ui:778
-#: data/camorama-gtk4.ui:695
+#: data/camorama-gtk2.ui:187 data/camorama-gtk3.ui:820
+#: data/camorama-gtk4.ui:737
 msgid "Capture Interval (in minutes):"
 msgstr ""
 
-#: data/camorama-gtk2.ui:257 data/camorama-gtk3.ui:850
-#: data/camorama-gtk4.ui:749
+#: data/camorama-gtk2.ui:261 data/camorama-gtk3.ui:892
+#: data/camorama-gtk4.ui:791
 msgid "General"
 msgstr "عمومی"
 
-#: data/camorama-gtk2.ui:279 data/camorama-gtk3.ui:875
-#: data/camorama-gtk4.ui:773
+#: data/camorama-gtk2.ui:283 data/camorama-gtk3.ui:917
+#: data/camorama-gtk4.ui:815
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr ""
 
-#: data/camorama-gtk2.ui:311 data/camorama-gtk3.ui:909
-#: data/camorama-gtk4.ui:803
+#: data/camorama-gtk2.ui:315 data/camorama-gtk3.ui:951
+#: data/camorama-gtk4.ui:845
 msgid "_Enable local capture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:360 data/camorama-gtk3.ui:956
-#: data/camorama-gtk4.ui:846
+#: data/camorama-gtk2.ui:364 data/camorama-gtk3.ui:998
+#: data/camorama-gtk4.ui:888
 msgid "_Directory for captured pics:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:373 data/camorama-gtk3.ui:969
-#: data/camorama-gtk4.ui:859
+#: data/camorama-gtk2.ui:377 data/camorama-gtk3.ui:1011
+#: data/camorama-gtk4.ui:901
 msgid "_Filename for pictures:"
 msgstr "نام پرونده برای عکس‌ها:"
 
-#: data/camorama-gtk2.ui:388 data/camorama-gtk3.ui:997
-#: data/camorama-gtk4.ui:887
+#: data/camorama-gtk2.ui:392 data/camorama-gtk3.ui:1039
+#: data/camorama-gtk4.ui:929
 msgid "webcam-capture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:407 data/camorama-gtk3.ui:985
-#: data/camorama-gtk4.ui:875
+#: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
+#: data/camorama-gtk4.ui:917
 #, fuzzy
 msgid "Select a Directory"
 msgstr "ذخیره‌ی شاخه:"
 
-#: data/camorama-gtk2.ui:424 data/camorama-gtk2.ui:813
-#: data/camorama-gtk3.ui:1015 data/camorama-gtk3.ui:1398
-#: data/camorama-gtk4.ui:903 data/camorama-gtk4.ui:1247
+#: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
+#: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
+#: data/camorama-gtk4.ui:945 data/camorama-gtk4.ui:1289
 msgid "Append time to filename"
 msgstr "الحاق زمان به نام پرونده"
 
-#: data/camorama-gtk2.ui:441 data/camorama-gtk2.ui:829
-#: data/camorama-gtk3.ui:1032 data/camorama-gtk3.ui:1414
-#: data/camorama-gtk4.ui:918 data/camorama-gtk4.ui:1261
+#: data/camorama-gtk2.ui:445 data/camorama-gtk2.ui:833
+#: data/camorama-gtk3.ui:1074 data/camorama-gtk3.ui:1456
+#: data/camorama-gtk4.ui:960 data/camorama-gtk4.ui:1303
 msgid "Add a timestamp to captured images"
 msgstr ""
 
-#: data/camorama-gtk2.ui:500 data/camorama-gtk2.ui:888
-#: data/camorama-gtk3.ui:1091 data/camorama-gtk3.ui:1473
-#: data/camorama-gtk4.ui:965 data/camorama-gtk4.ui:1308
+#: data/camorama-gtk2.ui:504 data/camorama-gtk2.ui:892
+#: data/camorama-gtk3.ui:1133 data/camorama-gtk3.ui:1515
+#: data/camorama-gtk4.ui:1007 data/camorama-gtk4.ui:1350
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">نوع تصویر</span>"
 
-#: data/camorama-gtk2.ui:531 data/camorama-gtk2.ui:919
-#: data/camorama-gtk3.ui:1124 data/camorama-gtk3.ui:1506
-#: data/camorama-gtk4.ui:994 data/camorama-gtk4.ui:1337
+#: data/camorama-gtk2.ui:535 data/camorama-gtk2.ui:923
+#: data/camorama-gtk3.ui:1166 data/camorama-gtk3.ui:1548
+#: data/camorama-gtk4.ui:1036 data/camorama-gtk4.ui:1379
 msgid "Save files in jpeg format"
 msgstr "ذخیره پرونده‌ها در قالب jpeg"
 
-#: data/camorama-gtk2.ui:548 data/camorama-gtk2.ui:936
-#: data/camorama-gtk3.ui:1141 data/camorama-gtk3.ui:1523
-#: data/camorama-gtk4.ui:1009 data/camorama-gtk4.ui:1352
+#: data/camorama-gtk2.ui:552 data/camorama-gtk2.ui:940
+#: data/camorama-gtk3.ui:1183 data/camorama-gtk3.ui:1565
+#: data/camorama-gtk4.ui:1051 data/camorama-gtk4.ui:1394
 msgid "Save files in png format"
 msgstr "ذخیره پرونده‌ها در قالب png"
 
-#: data/camorama-gtk2.ui:593 data/camorama-gtk3.ui:1186
-#: data/camorama-gtk4.ui:1046
+#: data/camorama-gtk2.ui:597 data/camorama-gtk3.ui:1228
+#: data/camorama-gtk4.ui:1088
 msgid "Local Capture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:616 data/camorama-gtk3.ui:1210
-#: data/camorama-gtk4.ui:1069
+#: data/camorama-gtk2.ui:620 data/camorama-gtk3.ui:1252
+#: data/camorama-gtk4.ui:1111
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr ""
 
-#: data/camorama-gtk2.ui:648 data/camorama-gtk3.ui:1244
-#: data/camorama-gtk4.ui:1099
+#: data/camorama-gtk2.ui:652 data/camorama-gtk3.ui:1286
+#: data/camorama-gtk4.ui:1141
 msgid "_Enable remote capture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:696 data/camorama-gtk3.ui:1292
-#: data/camorama-gtk4.ui:1143
+#: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
+#: data/camorama-gtk4.ui:1185
 #, fuzzy
 msgid "Server:"
 msgstr "کارگزار FTP: "
 
-#: data/camorama-gtk2.ui:708 data/camorama-gtk3.ui:1304
-#: data/camorama-gtk4.ui:1155
+#: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
+#: data/camorama-gtk4.ui:1197
 msgid "Type:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:720 data/camorama-gtk3.ui:1316
-#: data/camorama-gtk4.ui:1167
+#: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
+#: data/camorama-gtk4.ui:1209
 msgid "Save directory:"
 msgstr "ذخیره‌ی شاخه:"
 
-#: data/camorama-gtk2.ui:732 data/camorama-gtk3.ui:1328
-#: data/camorama-gtk4.ui:1179
+#: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
+#: data/camorama-gtk4.ui:1221
 #, fuzzy
 msgid "Filename:"
 msgstr "نام پرونده"
 
-#: data/camorama-gtk2.ui:745 data/camorama-gtk3.ui:1341
-#: data/camorama-gtk4.ui:1192
+#: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
+#: data/camorama-gtk4.ui:1234
 msgid "ftp.yourdomain.org"
 msgstr "ftp.yourdomain.org"
 
-#: data/camorama-gtk2.ui:790 data/camorama-gtk3.ui:1380
-#: data/camorama-gtk4.ui:1231
+#: data/camorama-gtk2.ui:794 data/camorama-gtk3.ui:1422
+#: data/camorama-gtk4.ui:1273
 msgid "webcamshot"
 msgstr ""
 
-#: data/camorama-gtk2.ui:981 data/camorama-gtk3.ui:1568
-#: data/camorama-gtk4.ui:1389
+#: data/camorama-gtk2.ui:985 data/camorama-gtk3.ui:1610
+#: data/camorama-gtk4.ui:1431
 msgid "Remote Capture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1004 data/camorama-gtk3.ui:1592
-#: data/camorama-gtk4.ui:1412
+#: data/camorama-gtk2.ui:1008 data/camorama-gtk3.ui:1634
+#: data/camorama-gtk4.ui:1454
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1036 data/camorama-gtk3.ui:1626
-#: data/camorama-gtk4.ui:1442
+#: data/camorama-gtk2.ui:1040 data/camorama-gtk3.ui:1668
+#: data/camorama-gtk4.ui:1484
 msgid "Use custom string"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1080 data/camorama-gtk3.ui:1671
-#: data/camorama-gtk4.ui:1483
+#: data/camorama-gtk2.ui:1084 data/camorama-gtk3.ui:1713
+#: data/camorama-gtk4.ui:1525
 msgid "String:"
 msgstr "رشته:"
 
-#: data/camorama-gtk2.ui:1126 data/camorama-gtk3.ui:1716
-#: data/camorama-gtk4.ui:1518
+#: data/camorama-gtk2.ui:1130 data/camorama-gtk3.ui:1758
+#: data/camorama-gtk4.ui:1560
 msgid "Draw date and time"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1170 data/camorama-gtk3.ui:1760
-#: data/camorama-gtk4.ui:1554
+#: data/camorama-gtk2.ui:1174 data/camorama-gtk3.ui:1802
+#: data/camorama-gtk4.ui:1596
 msgid "Timestamp"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1198 data/camorama-gtk3.ui:40 data/camorama-gtk4.ui:28
+#: data/camorama-gtk2.ui:1202 data/camorama-gtk3.ui:44 data/camorama-gtk4.ui:32
 msgid "Camorama-libglade"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1215 data/camorama-gtk4.ui:46
+#: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
 #, fuzzy
 msgid "_File"
 msgstr "نام پرونده"
 
-#: data/camorama-gtk2.ui:1222 data/camorama-gtk2.ui:1532
-#: data/camorama-gtk3.ui:374 data/camorama-gtk4.ui:311
+#: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
+#: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
 msgid "Take Picture"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1257 data/camorama-gtk4.ui:82
+#: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1281 data/camorama-gtk3.ui:121
-#: data/camorama-gtk4.ui:103
+#: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
+#: data/camorama-gtk4.ui:107
 msgid "_View"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1290 data/camorama-gtk2.ui:1473
-#: data/camorama-gtk3.ui:130 data/camorama-gtk3.ui:315
-#: data/camorama-gtk4.ui:112 data/camorama-gtk4.ui:270
+#: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
+#: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
+#: data/camorama-gtk4.ui:116 data/camorama-gtk4.ui:274
 msgid "Show Adjustments"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1300 data/camorama-gtk3.ui:140
-#: data/camorama-gtk4.ui:122
+#: data/camorama-gtk2.ui:1304 data/camorama-gtk3.ui:144
+#: data/camorama-gtk4.ui:126
 msgid "Show Effects"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1310 data/camorama-gtk3.ui:150
-#: data/camorama-gtk4.ui:132
+#: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
+#: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1325 data/camorama-gtk3.ui:165
-#: data/camorama-gtk4.ui:147
+#: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
+#: data/camorama-gtk4.ui:151
 msgid "Small"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1338 data/camorama-gtk4.ui:160
+#: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1663 data/camorama-gtk3.ui:473
-#: data/camorama-gtk4.ui:399
+#: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
+#: data/camorama-gtk4.ui:403
 msgid "Contrast:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1677 data/camorama-gtk3.ui:485
-#: data/camorama-gtk4.ui:411
+#: data/camorama-gtk2.ui:1681 data/camorama-gtk3.ui:489
+#: data/camorama-gtk4.ui:415
 msgid "Brightness:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1693 data/camorama-gtk3.ui:497
-#: data/camorama-gtk4.ui:423
+#: data/camorama-gtk2.ui:1697 data/camorama-gtk3.ui:501
+#: data/camorama-gtk4.ui:427
 #, fuzzy
 msgid "Color:"
 msgstr "رنگ"
 
-#: data/camorama-gtk2.ui:1709 data/camorama-gtk3.ui:509
-#: data/camorama-gtk4.ui:435
+#: data/camorama-gtk2.ui:1713 data/camorama-gtk3.ui:513
+#: data/camorama-gtk4.ui:439
 msgid "Hue:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1725 data/camorama-gtk3.ui:521
-#: data/camorama-gtk4.ui:447
+#: data/camorama-gtk2.ui:1729 data/camorama-gtk3.ui:525
+#: data/camorama-gtk4.ui:451
 msgid "White Balance:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1868 data/camorama-gtk3.ui:1833
-#: data/camorama-gtk4.ui:1621
+#: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
+#: data/camorama-gtk4.ui:533
+msgid "Zoom:"
+msgstr ""
+
+#: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
+#: data/camorama-gtk4.ui:1663
 msgid "Select a video device to be used"
 msgstr ""
 
-#: data/camorama-gtk3.ui:66 data/camorama-gtk4.ui:55
+#: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
 msgid "_Take Picture"
 msgstr ""
 
-#: data/camorama-gtk4.ui:70
+#: data/camorama-gtk4.ui:74
 msgid "_Quit"
 msgstr ""
 
-#: data/camorama-gtk4.ui:91
+#: data/camorama-gtk4.ui:95
 #, fuzzy
 msgid "_Preferences"
 msgstr "ترجیحات"
 
-#: data/camorama-gtk4.ui:169
+#: data/camorama-gtk4.ui:173
 msgid "_About"
 msgstr ""
 
@@ -533,25 +538,25 @@ msgstr ""
 msgid "translator_credits"
 msgstr "روزبه پورنادر <roozbeh@sharif.edu>"
 
-#: src/callbacks.c:684
+#: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:811
+#: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
 msgstr ""
 
-#: src/callbacks.c:923
+#: src/callbacks.c:939
 msgid "Didn't find any camera"
 msgstr ""
 
-#: src/callbacks.c:1047
+#: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
 msgstr ""
 
-#: src/callbacks.c:1051
+#: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
 msgstr ""
@@ -684,43 +689,43 @@ msgstr ""
 msgid "Sobel"
 msgstr ""
 
-#: src/main.c:26
+#: src/main.c:23
 msgid "show version and exit"
 msgstr ""
 
-#: src/main.c:28
+#: src/main.c:25
 msgid "v4l device to use"
 msgstr ""
 
-#: src/main.c:30
+#: src/main.c:27
 msgid "enable debugging code"
 msgstr ""
 
-#: src/main.c:32
+#: src/main.c:29
 msgid "capture width"
 msgstr ""
 
-#: src/main.c:34
+#: src/main.c:31
 msgid "capture height"
 msgstr ""
 
-#: src/main.c:36
+#: src/main.c:33
 msgid "maximum capture size"
 msgstr ""
 
-#: src/main.c:38
+#: src/main.c:35
 msgid "minimum capture size"
 msgstr ""
 
-#: src/main.c:40
+#: src/main.c:37
 msgid "middle capture size"
 msgstr ""
 
-#: src/main.c:42
+#: src/main.c:39
 msgid "use read() rather than mmap()"
 msgstr ""
 
-#: src/main.c:136
+#: src/main.c:131
 #, c-format
 msgid ""
 "\n"
@@ -729,21 +734,21 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:158
+#: src/main.c:153
 msgid "Couldn't load builder file"
 msgstr ""
 
-#: src/main.c:187
+#: src/main.c:182
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr ""
 
-#: src/main.c:190
+#: src/main.c:185
 #, c-format
 msgid "%s not found."
 msgstr ""
 
-#: src/main.c:296
+#: src/main.c:294
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -762,44 +767,44 @@ msgstr ""
 msgid "Device %s is not a video capture device."
 msgstr ""
 
-#: src/v4l.c:334 src/v4l.c:403 src/v4l.c:422 src/v4l.c:443
+#: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
 
-#: src/v4l.c:472
+#: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:490
+#: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:505
+#: src/v4l.c:536
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:519
+#: src/v4l.c:550
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:529
+#: src/v4l.c:560
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:559
+#: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:621
+#: src/v4l.c:652
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
