@@ -55,7 +55,7 @@ typedef struct camera {
     float scale;
     CamoImageSize size;
     char name[32];
-    int contrast, brightness, whiteness, colour, hue, zoom, bytesperline;
+    int contrast, brightness, whiteness, colour, hue, zoom, zoom_cid, bytesperline;
     unsigned int pixformat;
     int frame_number;
 

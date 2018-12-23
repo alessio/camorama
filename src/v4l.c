@@ -274,6 +274,29 @@ int camera_cap(cam_t *cam)
     return 0;
 }
 
+static int v4l_get_zoom(cam_t *cam)
+{
+    int i;
+
+    cam->zoom_cid = V4L2_CID_ZOOM_ABSOLUTE;
+    i = v4l2_get_control(cam->dev, cam->zoom_cid);
+    if (i >= 0)
+        return i;
+
+    cam->zoom_cid = V4L2_CID_ZOOM_RELATIVE;
+    i = v4l2_get_control(cam->dev, cam->zoom_cid);
+    if (i >= 0)
+        return i;
+
+    cam->zoom_cid = V4L2_CID_ZOOM_CONTINUOUS;
+    i = v4l2_get_control(cam->dev, cam->zoom_cid);
+    if (i >= 0)
+        return i;
+
+    cam->zoom_cid = -1;
+    return -1;
+}
+
 void get_pic_info(cam_t *cam)
 {
     int i;
@@ -297,8 +320,8 @@ void get_pic_info(cam_t *cam)
     } else {
         cam->colour = -1;
     }
-    i = v4l2_get_control(cam->dev, V4L2_CID_ZOOM_ABSOLUTE);
-    if (i >= 0) {
+    i = v4l_get_zoom(cam);
+    if (cam->zoom_cid) {
         cam->zoom = i;
         if (cam->debug == TRUE)
             printf("zoom = %d\n", cam->zoom);
