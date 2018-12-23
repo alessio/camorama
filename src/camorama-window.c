@@ -230,12 +230,6 @@ void load_interface(cam_t *cam)
     g_signal_connect_swapped(treeview, "popup-menu",
                              G_CALLBACK(treeview_popup_menu_cb), cam);
 
-    if (cam->show_adjustments == FALSE) {
-        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
-                                                          "adjustments_table")));
-
-        gtk_window_resize(GTK_WINDOW(window), 320, 240);
-    }
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(gtk_builder_get_object(cam->xml, "showadjustment_item")),
                                    cam->show_adjustments);
     if (cam->show_effects == FALSE) {
@@ -345,6 +339,14 @@ void load_interface(cam_t *cam)
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "balance_slider")),
                             (int)(cam->whiteness / 256));
     }
+
+    if (cam->show_adjustments == FALSE)
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "adjustments_table")));
+
+    // Ensure that windows will be resized due to the controls
+    gtk_window_resize(GTK_WINDOW(window), 320, 240);
+
 
     /* buttons */
     g_signal_connect(gtk_builder_get_object(cam->xml, "quit"), "activate",
