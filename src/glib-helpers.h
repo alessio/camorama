@@ -28,6 +28,8 @@
 
 G_BEGIN_DECLS
 
+#undef G_FUNC
+#undef G_SOURCE_FUNC
 #define G_FUNC(func)            ((GFunc)(func))
 #define G_SOURCE_FUNC(func) ((GSourceFunc)(func))
 
