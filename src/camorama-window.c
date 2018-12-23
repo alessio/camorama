@@ -300,7 +300,7 @@ void load_interface(cam_t *cam)
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "brightness_slider")),
                             (int)(cam->brightness / 256));
     }
-    if (cam->colour < 1) {
+    if (cam->colour < 0) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "color_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
