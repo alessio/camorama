@@ -18,9 +18,6 @@ static int half = 0, use_read = 0, debug = 0;
 static gchar *video_dev = NULL;
 static int x = 0, y = 0;
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
-
 static GOptionEntry options[] = {
     {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
      N_("show version and exit"), NULL},
@@ -42,8 +39,6 @@ static GOptionEntry options[] = {
      N_("use read() rather than mmap()"), NULL},
     {NULL}
 };
-
-#pragma GCC diagnostic pop
 
 static void get_geometry(cam_t *cam)
 {
@@ -202,10 +197,7 @@ static void activate(GtkApplication *app)
     if (cam->debug)
         printf("Using videodev: %s\n", cam->video_dev);
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
-    cam->date_format = "%Y-%m-%d %H:%M:%S";
-#pragma GCC diagnostic pop
+    cam->date_format = (char *) "%Y-%m-%d %H:%M:%S";
 
     cam->pixdir = g_settings_get_string(cam->gc, CAM_SETTINGS_SAVE_DIR);
     /* Deal with the save-dir default value starting with "~/" */
