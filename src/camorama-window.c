@@ -313,6 +313,19 @@ void load_interface(cam_t *cam)
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "color_slider")),
                             (int)(cam->colour / 256));
     }
+    if (cam->zoom < 0) {
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "zoom_icon")));
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "zoom_label")));
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "zoom_slider")));
+    } else {
+        g_signal_connect(gtk_builder_get_object(cam->xml, "zoom_slider"),
+                         "value-changed", G_CALLBACK(zoom_change), cam);
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "zoom_slider")),
+                            (int)(cam->zoom / 256));
+    }
     if (cam->hue < 0) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "hue_icon")));

@@ -762,6 +762,13 @@ void brightness_change(GtkScale *sc1, cam_t *cam)
     v4l2_set_control(cam->dev, V4L2_CID_BRIGHTNESS, cam->brightness);
 }
 
+void zoom_change(GtkScale *sc1, cam_t *cam)
+{
+
+    cam->zoom = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    v4l2_set_control(cam->dev, V4L2_CID_ZOOM_ABSOLUTE, cam->zoom);
+}
+
 void colour_change(GtkScale *sc1, cam_t *cam)
 {
 
