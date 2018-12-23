@@ -1,3 +1,20 @@
+2018-12-23  Mauro Carvalho Chehab <mchehab@kernel.org>
+
+	* Fix check if color control is available;
+	* Add zoom control if available at the camera;
+	* Ensure that window will take into account if a control
+	  is hidden at the main window's size;
+	* Some improvements at the building system: use
+	  autotools version 1.16.1 and shows what Gtk version
+	  will be used;
+	* Get rid of GCC specific pragmas;
+	* Clean warnings when building with Gtk3 and Clang 7;
+	* Cleanup the code by removing the glib-helpers.h header;
+	* Properly handle "~" as directory name;
+	* Take into account that Gtk4 3.94 will require a different
+	  render for the images (whose code is yet to be written);
+	* Check if libv4l is present at configure time;
+
 2018-09-21  Mauro Carvalho Chehab <mchehab@kernel.org>
 
 	* Fix the maximum resolution on cameras with a scaler

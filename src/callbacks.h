@@ -65,6 +65,7 @@ void on_scale1_drag_data_received(GtkScale *, cam_t *);
 void on_status_show(GtkWidget *, cam_t *);
 void contrast_change(GtkScale *, cam_t *);
 void brightness_change(GtkScale *, cam_t *);
+void zoom_change(GtkScale *, cam_t *);
 void colour_change(GtkScale *, cam_t *);
 void hue_change(GtkScale *, cam_t *);
 void wb_change(GtkScale *, cam_t *);

@@ -28,12 +28,12 @@
 # include <config.h>
 #endif
 
+#include <glib.h>
 #include <glib/gi18n.h>
 #include "callbacks.h"
 #include "camorama-filter-chain.h"
 #include "camorama-globals.h"
 #include "filter.h"
-#include "glib-helpers.h"
 #include "support.h"
 
 static GQuark menu_item_filter_type = 0;
@@ -77,8 +77,8 @@ static void delete_filter_clicked(GtkTreeSelection *sel,
     GList *paths = gtk_tree_selection_get_selected_rows(sel, &model);
     struct weak_target target = { model, NULL };
 
-    g_list_foreach(paths, G_FUNC(reference_path), &target);
-    g_list_foreach(target.list, G_FUNC(delete_filter), model);
+    g_list_foreach(paths, (GFunc)(reference_path), &target);
+    g_list_foreach(target.list, (GFunc)(delete_filter), model);
     g_list_free_full(target.list,
                      (GDestroyNotify) gtk_tree_row_reference_free);
     g_list_free_full(paths, (GDestroyNotify) gtk_tree_path_free);
@@ -230,12 +230,6 @@ void load_interface(cam_t *cam)
     g_signal_connect_swapped(treeview, "popup-menu",
                              G_CALLBACK(treeview_popup_menu_cb), cam);
 
-    if (cam->show_adjustments == FALSE) {
-        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
-                                                          "adjustments_table")));
-
-        gtk_window_resize(GTK_WINDOW(window), 320, 240);
-    }
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(gtk_builder_get_object(cam->xml, "showadjustment_item")),
                                    cam->show_adjustments);
     if (cam->show_effects == FALSE) {
@@ -306,7 +300,7 @@ void load_interface(cam_t *cam)
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "brightness_slider")),
                             (int)(cam->brightness / 256));
     }
-    if (cam->colour < 1) {
+    if (cam->colour < 0) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "color_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -318,6 +312,19 @@ void load_interface(cam_t *cam)
                          "value-changed", G_CALLBACK(colour_change), cam);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "color_slider")),
                             (int)(cam->colour / 256));
+    }
+    if (cam->zoom < 0) {
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "zoom_icon")));
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "zoom_label")));
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "zoom_slider")));
+    } else {
+        g_signal_connect(gtk_builder_get_object(cam->xml, "zoom_slider"),
+                         "value-changed", G_CALLBACK(zoom_change), cam);
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "zoom_slider")),
+                            (int)(cam->zoom / 256));
     }
     if (cam->hue < 0) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -345,6 +352,14 @@ void load_interface(cam_t *cam)
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "balance_slider")),
                             (int)(cam->whiteness / 256));
     }
+
+    if (cam->show_adjustments == FALSE)
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "adjustments_table")));
+
+    // Ensure that windows will be resized due to the controls
+    gtk_window_resize(GTK_WINDOW(window), 320, 240);
+
 
     /* buttons */
     g_signal_connect(gtk_builder_get_object(cam->xml, "quit"), "activate",

@@ -3,6 +3,7 @@ stuff_DATA =				\
 	pixmaps/snap-icon.xpm \
 	pixmaps/snap-icon-small.xpm \
 	pixmaps/contrast.png \
+	pixmaps/zoom.png \
 	pixmaps/colourness.png \
 	pixmaps/brightness.png \
 	pixmaps/whiteness.png \

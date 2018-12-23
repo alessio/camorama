@@ -53,12 +53,15 @@ pkg_modules="gdk-pixbuf-2.0"
 if test "x$enable_gtk4" = xyes; then
 	pkg_modules="$pkg_modules gtk+-4.0 >= 3.92"
 	CAMORAMA_UI="camorama-gtk4.ui"
+	GTK_VER="4"
 elif test "x$enable_gtk2" = xyes; then
 	pkg_modules="$pkg_modules gtk+-2.0 >= 2.24"
 	CAMORAMA_UI="camorama-gtk2.ui"
+	GTK_VER="2"
 else
 	pkg_modules="$pkg_modules gtk+-3.0 >= 3.10 cairo"
 	CAMORAMA_UI="camorama-gtk3.ui"
+	GTK_VER="3"
 fi
 
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
@@ -74,3 +77,10 @@ AC_OUTPUT([
 	po/Makefile.in
 ])
 
+cat <<EOF
+
+compile time options summary
+============================
+
+    Gtk version to use: $GTK_VER
+EOF
