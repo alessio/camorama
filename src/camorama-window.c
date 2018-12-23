@@ -28,12 +28,12 @@
 # include <config.h>
 #endif
 
+#include <glib.h>
 #include <glib/gi18n.h>
 #include "callbacks.h"
 #include "camorama-filter-chain.h"
 #include "camorama-globals.h"
 #include "filter.h"
-#include "glib-helpers.h"
 #include "support.h"
 
 static GQuark menu_item_filter_type = 0;
@@ -77,8 +77,8 @@ static void delete_filter_clicked(GtkTreeSelection *sel,
     GList *paths = gtk_tree_selection_get_selected_rows(sel, &model);
     struct weak_target target = { model, NULL };
 
-    g_list_foreach(paths, G_FUNC(reference_path), &target);
-    g_list_foreach(target.list, G_FUNC(delete_filter), model);
+    g_list_foreach(paths, (GFunc)(reference_path), &target);
+    g_list_foreach(target.list, (GFunc)(delete_filter), model);
     g_list_free_full(target.list,
                      (GDestroyNotify) gtk_tree_row_reference_free);
     g_list_free_full(paths, (GDestroyNotify) gtk_tree_path_free);

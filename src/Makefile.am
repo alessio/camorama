@@ -21,7 +21,6 @@ camorama_SOURCES = \
 	camorama-window.c \
 	camorama-window.h \
 	filter.c \
-	glib-helpers.h \
 	main.c \
 	support.c \
 	v4l.c \
