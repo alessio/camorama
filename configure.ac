@@ -7,7 +7,7 @@ AM_CONFIG_HEADER(config.h)
 AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
 AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
 
-AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT_VERSION([0.20])
 AM_GNU_GETTEXT([external])
 
 # This is needed for gtk2+ to work with gettext

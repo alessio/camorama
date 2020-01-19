@@ -55,3 +55,5 @@ camorama.desktop: camorama.desktop.in
 
 camorama.appdata.xml: camorama.appdata.xml.in
 	msgfmt --xml -d $(top_srcdir)/po --template $< -o $@
+
+ACLOCAL_AMFLAGS = -I m4
