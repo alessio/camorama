@@ -1,3 +1,5 @@
+[![Translation status](https://translate.fedoraproject.org/widgets/camorama/-/svg-badge.svg)](https://translate.fedoraproject.org/engage/camorama/)
+
 This branch of camorama has been adapted to try out various computer-vision
 filters, starting with a Reichardt motion detection filter.
 
