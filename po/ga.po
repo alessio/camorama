@@ -2,19 +2,22 @@
 # Copyright (C) 2004 Alastair McKinstry <mckinstry@computer.org>
 # This file is distributed under the same license as the camorama package.
 # Alastair McKinstry <mckinstry@computer.org>, 2004.
-#
+# Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: camorama HEAD\n"
+"Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-12-23 16:04-0200\n"
-"PO-Revision-Date: 2004-02-04 07:10+0000\n"
-"Last-Translator: Alastair McKinstry <mckinstry@computer.org>\n"
+"POT-Creation-Date: 2020-02-04 20:56+0100\n"
+"PO-Revision-Date: 2018-09-21 05:46+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -804,40 +807,3 @@ msgstr ""
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
-
-#, fuzzy
-#~ msgid "camorama.png"
-#~ msgstr "camorama"
-
-#~ msgid "Username:"
-#~ msgstr "Ain Úsáideoir:"
-
-#~ msgid "Password:"
-#~ msgstr "Pasfhocal:"
-
-#~ msgid "your-username"
-#~ msgstr "di-ainm-úsáideoir"
-
-#~ msgid "your-password"
-#~ msgstr "do-pasfhocal"
-
-#~ msgid "~/.gnome-desktop"
-#~ msgstr "~/.gnome-desktop"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "Black & white"
-#~ msgstr "Dubh & Bán:"
-
-#~ msgid "Laplace"
-#~ msgstr "Laplace"
-
-#~ msgid "Large"
-#~ msgstr "Mór"
-
-#~ msgid "Medium"
-#~ msgstr "Gnáth"
-
-#~ msgid "Orientation"
-#~ msgstr "Treosuíomh"

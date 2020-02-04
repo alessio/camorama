@@ -2,19 +2,21 @@
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the camorama package.
 # Ole Laursen <olau@hardworking.dk>, 2003.
-#
+# Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: camorama\n"
+"Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-12-23 16:04-0200\n"
-"PO-Revision-Date: 2003-12-27 20:01+0100\n"
-"Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
+"POT-Creation-Date: 2020-02-04 20:56+0100\n"
+"PO-Revision-Date: 2018-09-21 05:47+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -830,89 +832,3 @@ msgstr ""
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
-
-#, fuzzy
-#~ msgid "Automatic Capture Disabled"
-#~ msgstr "Automatisk optagelse"
-
-#, fuzzy
-#~ msgid "Webcam"
-#~ msgstr "netkamera-billede"
-
-#, fuzzy
-#~ msgid "camorama.png"
-#~ msgstr "Camorama"
-
-#~ msgid "Username:"
-#~ msgstr "Brugernavn:"
-
-#~ msgid "Password:"
-#~ msgstr "Adgangskode:"
-
-#~ msgid "your-username"
-#~ msgstr "din-brugernavn"
-
-#~ msgid "your-password"
-#~ msgstr "din-adgangskode"
-
-#~ msgid "path/to/save/to"
-#~ msgstr "sti/at/gemme/til"
-
-#~ msgid "Couldn't find the main interface file (camorama.glade)."
-#~ msgstr "Kunne ikke finde hovedgrænsefladefilen (camorama.glade)."
-
-# %s er billedfilen
-#~ msgid "Couldn't find pixmap file: %s"
-#~ msgstr "Kunne ikke finde billedfilen: %s"
-
-#~ msgid "~/.gnome-desktop"
-#~ msgstr "~/.gnome-desktop"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "<span weight=\"bold\">Effects</span>"
-#~ msgstr "<span weight=\"bold\">Effekter</span>"
-
-#~ msgid "Black & white"
-#~ msgstr "Sort/hvid"
-
-#~ msgid "Color threshold"
-#~ msgstr "Farvetærskel"
-
-#~ msgid "Laplace"
-#~ msgstr "Laplace"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
-
-#~ msgid "Medium"
-#~ msgstr "Mellem"
-
-#~ msgid "Negative"
-#~ msgstr "Negativ"
-
-#~ msgid "Password for FTP server"
-#~ msgstr "Adgangskode til FTP-server"
-
-#~ msgid "The password for the FTP account for remote captures."
-#~ msgstr "Adgangskoden til FTP-kontoen for fjerne optagelser."
-
-#~ msgid "Username for FTP server"
-#~ msgstr "Brugernavn til FTP-server"
-
-#~ msgid "Username to use for FTP uploads of captured pictures"
-#~ msgstr ""
-#~ "Brugernavn som skal bruges til FTP-forsendelser af optagede billeder"
-
-#~ msgid "Unable to capture image."
-#~ msgstr "Kan ikke optage billede."
-
-#~ msgid "Orientation"
-#~ msgstr "Orientering"
-
-#~ msgid "The orientation of the tray."
-#~ msgstr "Orienteringen af området."
-
-#~ msgid "Add timestamp to captured images"
-#~ msgstr "Tilføj tidsstempel til optagede billeder"

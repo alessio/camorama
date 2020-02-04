@@ -4,19 +4,22 @@
 # This file is distributed under the same license as the camorama package.
 #
 # Maintainer: Дејан Матијевић <dejan@ns.sympatico.ca>
-#
+# Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Camorama\n"
+"Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-12-23 16:04-0200\n"
-"PO-Revision-Date: 2003-08-27 13:43+0200\n"
-"Last-Translator: Дејан Матијевић <dejan@ns.sympatico.ca>\n"
+"POT-Creation-Date: 2020-02-04 20:56+0100\n"
+"PO-Revision-Date: 2018-09-21 05:47+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -835,84 +838,3 @@ msgstr ""
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
-
-#, fuzzy
-#~ msgid "Automatic Capture Disabled"
-#~ msgstr "Само снимање"
-
-#, fuzzy
-#~ msgid "Webcam"
-#~ msgstr "снимак веб камером"
-
-#, fuzzy
-#~ msgid "camorama.png"
-#~ msgstr "Каморама"
-
-#~ msgid "Username:"
-#~ msgstr "Корисник:"
-
-#~ msgid "Password:"
-#~ msgstr "Лозинка:"
-
-#~ msgid "your-username"
-#~ msgstr "Ваше корисничко име"
-
-#~ msgid "your-password"
-#~ msgstr "Ваша лозинка"
-
-#~ msgid "path/to/save/to"
-#~ msgstr "Сачувај поруку у "
-
-#~ msgid "Couldn't find the main interface file (camorama.glade)."
-#~ msgstr "Nemoguће наћи главну приступну датотеку (camorama.glade)."
-
-#~ msgid "Couldn't find pixmap file: %s"
-#~ msgstr "Немогуће наћи пиксмап датотеку: %s"
-
-#~ msgid "~/.gnome-desktop"
-#~ msgstr "~/.ГНОМ - радно окружење"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "<span weight=\"bold\">Effects</span>"
-#~ msgstr "<span weight=\"bold\">Ефекат</span"
-
-#~ msgid "Black & white"
-#~ msgstr "Црно и бело"
-
-#~ msgid "Color threshold"
-#~ msgstr "Праг боје"
-
-#~ msgid "Laplace"
-#~ msgstr "Лапласова"
-
-#~ msgid "Large"
-#~ msgstr "Велики"
-
-#~ msgid "Medium"
-#~ msgstr "Осредњи"
-
-#~ msgid "Negative"
-#~ msgstr "Негатив"
-
-#~ msgid "Password for FTP server"
-#~ msgstr "Лозинка за ФТП сервер"
-
-#~ msgid "The password for the FTP account for remote captures."
-#~ msgstr "Лозинка за ФТП рачун за даљинске снимке."
-
-#~ msgid "Username for FTP server"
-#~ msgstr "Корисничко име за ФТП сервер"
-
-#~ msgid "Username to use for FTP uploads of captured pictures"
-#~ msgstr "Корисничо име које ће се користити ѕа ФТП натовар снимљених слика"
-
-#~ msgid "Unable to capture image."
-#~ msgstr "У немогућности да снима снимке."
-
-#~ msgid "Orientation"
-#~ msgstr "Усмерење"
-
-#~ msgid "The orientation of the tray."
-#~ msgstr "Усмерење/оријентација фиоке."
