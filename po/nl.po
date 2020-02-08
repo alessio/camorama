@@ -1,22 +1,24 @@
 # Translations of camorama do not seem to work
-#
+# 
 # Huib Kleinhout <huib@stack.nl>, 2003
 # Wouter Bolsterlee <uws+gnome@xs4all.nl>, 2006.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Geert Warrink <geert.warrink@onsnet.nu>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-02-04 20:56+0100\n"
-"PO-Revision-Date: 2018-09-21 05:52+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Dutch <nl@li.org>\n"
+"PO-Revision-Date: 2020-02-08 08:16+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: Dutch <https://translate.fedoraproject.org/projects/camorama/"
+"master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -31,6 +33,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama is een eenvoudige webcam-viewer, met de mogelijkheid om enkele "
+"video-effecten toe te passen."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
@@ -42,7 +46,7 @@ msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;viewer;video-effecten;"
 
 #: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
@@ -112,9 +116,8 @@ msgstr "webcam-opname"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Map met opnames:"
+msgstr "Selecteer een map"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -163,14 +166,13 @@ msgstr "_Opname op afstand inschakelen"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "FTP-server:"
+msgstr "Server:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Type:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -179,9 +181,8 @@ msgstr "Map met opnames:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Bestandsnaam"
+msgstr "Bestandsnaam:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -228,9 +229,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Bestandsnaam"
+msgstr "_Bestand"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -239,12 +239,12 @@ msgstr "Foto maken"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Bewerken"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Bekijken"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -260,7 +260,7 @@ msgstr "Effecten weergeven"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "_Verander camera"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -269,7 +269,7 @@ msgstr "Klein"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Hulp"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -299,31 +299,28 @@ msgstr "Witbalans:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoomen:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "v4l-apparaat dat gebruikt dient te worden"
+msgstr "Selecteer een videoapparaat dat moet worden gebruikt"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Foto maken"
+msgstr "_Foto maken"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Verlaten"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Voorkeuren"
+msgstr "_Voorkeuren"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_Over"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -339,7 +336,7 @@ msgstr "Schakelt automatische opname in/uit"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr "Schakelt automatische opname van beelden in/uit"
+msgstr "Schakelt automatische opname van beelden in/uit."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
@@ -355,7 +352,7 @@ msgstr "Video-apparaat"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "De unix-bestandsnaam van het camera-apparaat"
+msgstr "De unix-bestandsnaam van het camera-apparaat."
 
 #: data/org.gnome.camorama.gschema.xml.in:26
 msgid "Toggles the datestamp in captures"
@@ -373,26 +370,23 @@ msgstr "Afbeeldingsformaat van lokale opnames"
 msgid "Specifies the image format to be used for locally saved pictures"
 msgstr ""
 "Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor lokaal "
-"opgeslagen beelden."
+"opgeslagen beelden"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "opnamehoogte"
+msgstr "Beeldhoogte"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Beeldhoogte gebruikt door de camera. Nul betekent autoselectie"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Computernaam van de FTP-server"
+msgstr "Hostnaam voor de server"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Computernaam van de FTP-server voor opnames op afstand"
+msgstr "Hostnaam voor de server die wordt gebruikt voor externe opnamen."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -408,25 +402,28 @@ msgstr ""
 "in/uit."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Map voor opnames op afstand"
+msgstr "Protocol te gebruiken voor externe toegang"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"De URI-naam van het protocol dat wordt gebruikt om verbinding te maken met "
+"een externe server. Kan ftp, sftp of smb zijn"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Volledige URI die wordt gebruikt om afbeeldingen op afstand op te slaan"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"De complete URI van de laatste succesvolle toegang tot een externe server, "
+"inclusief protocol, host en externe map"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -458,7 +455,7 @@ msgstr "Afbeeldingsformaat van opnames op afstand"
 msgid "Specifies the image format to be used for remotely saved pictures"
 msgstr ""
 "Specificeert het afbeeldingsformaat dat gebruikt dient te worden voor op "
-"afstand opgeslagen afbeeldingen."
+"afstand opgeslagen afbeeldingen"
 
 #: data/org.gnome.camorama.gschema.xml.in:76
 msgid "Folder for remote captures"
@@ -484,7 +481,7 @@ msgstr "Schakelt de tijdstempel voor opnames op afstand in/uit"
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr ""
 "Schakelt de toevoeging van een tijdstempel bij opgenomen beelden voor FTP-"
-"upload in/uit"
+"upload in/uit."
 
 #: data/org.gnome.camorama.gschema.xml.in:91
 msgid "Folder for local captures"
@@ -519,7 +516,7 @@ msgstr "Aangepaste tekst als tijdstempel"
 msgid "Defines a string of custom text to be inserted into the image."
 msgstr ""
 "Definieert een aangepaste tekst die aan de afbeelding toegevoegd dient te "
-"worden"
+"worden."
 
 #: data/org.gnome.camorama.gschema.xml.in:111
 msgid "Toggles the custom string"
@@ -529,7 +526,7 @@ msgstr "Schakelt de aangepaste tekst in/uit"
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr ""
 "Schakelt het gebruik van aangepaste tekst als tijdstempel in afbeeldingen in/"
-"uit"
+"uit."
 
 #: data/org.gnome.camorama.gschema.xml.in:116
 msgid "Toggles the video adjustment sliders"
@@ -551,13 +548,12 @@ msgstr ""
 "Schakelt het gebruik van de knoppen om de videofilters aan te passen in/uit"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "opnamebreedte"
+msgstr "Beeldbreedte"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Beeldbreedte gebruikt door de camera. Nul betekent autoselectie"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
@@ -566,25 +562,25 @@ msgstr "Huib Kleinhout <huib@stack.nl>"
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f fps - huidig     %.2f fps - gemiddelde"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Kan geen geheugen toewijzen om apparaten op te slaan"
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Geen camera gevonden"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (max %.1f fps)"
 
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -598,7 +594,7 @@ msgstr "Spiegelen"
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
@@ -623,19 +619,19 @@ msgid "Could not save image '%s/%s'."
 msgstr "Kan afbeelding '%s/%s' niet opslaan."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Kan afbeelding '%s/%s' niet opslaan."
+msgstr "Kan geen thread maken om afbeelding '%s/%s' op te slaan."
 
 #: src/fileio.c:172
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "Er is een fout opgetreden bij het openen van %s."
+msgstr "Er is een fout opgetreden bij het aankoppelen van %s:%s."
 
 #: src/fileio.c:212
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "Er is een fout opgetreden bij het openen van %s."
+msgstr "Er is een fout opgetreden bij de toegang tot %s."
 
 #: src/fileio.c:263
 #, c-format
@@ -652,19 +648,19 @@ msgid "An error occurred opening %s."
 msgstr "Er is een fout opgetreden bij het openen van %s."
 
 #: src/fileio.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "Er is een fout opgetreden bij het openen van %s."
+msgstr "Er is een fout opgetreden bij het openen van %s voor schrijven: %s."
 
 #: src/fileio.c:313
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "Er is een fout opgetreden bij het schrijven naar %s."
+msgstr "Er is een fout opgetreden bij het schrijven naar %s: %s."
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Er is een fout opgetreden bij het openen van %s."
+msgstr "Er is een fout opgetreden bij het sluiten van %s: %s."
 
 #: src/fileio.c:385
 #, c-format
@@ -686,11 +682,11 @@ msgstr "Omkeren"
 
 #: src/filter.c:260
 msgid "Threshold (Overall)"
-msgstr "Drempelwaarde (totaal):"
+msgstr "Drempelwaarde (totaal)"
 
 #: src/filter.c:310
 msgid "Threshold (Per Channel)"
-msgstr "Drempelwaarde (per kanaal):"
+msgstr "Drempelwaarde (per kanaal)"
 
 #: src/filter.c:388
 msgid "Wacky"
@@ -763,19 +759,18 @@ msgstr ""
 "\n"
 
 #: src/main.c:153
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"
+msgstr "Kan het bouw-bestand niet laden"
 
 #: src/main.c:182
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s niet gevonden. Terugvallen op %s"
 
 #: src/main.c:185
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s niet gevonden."
 
 #: src/main.c:294
 #, c-format
@@ -783,20 +778,22 @@ msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
+"Ongeldig argument\n"
+"Voer '%s --help' uit\n"
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
 "Kan geen verbinding maken met video-apparaat (%s).\n"
-"Controleer de verbinding."
+"Controleer de verbinding. Fout: %d"
 
 #: src/v4l.c:251
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Apparaat %s is geen video-opnameapparaat."
 
 #: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
@@ -810,34 +807,35 @@ msgstr ""
 #: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS  --  kon geen buffers (%s) aanvragen, afsluiten...."
 
 #: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF  --  kon geen buffers (%s) ondervragen, afsluiten...."
 
 #: src/v4l.c:536
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "kon geen map buffers opslaan (%s), afsluiten...."
 
 #: src/v4l.c:550
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF  --  kon geen buffers (%s) aan wachtrij toevoegen, afsluiten...."
 
 #: src/v4l.c:560
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "kon niet beginnen met streamen (%s), afsluiten...."
 
 #: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Time-out tijdens het wachten op frames (%s)"
 
 #: src/v4l.c:652
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "kon niet stoppen met streamen (%s), afsluiten...."
