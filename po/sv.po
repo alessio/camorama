@@ -3,23 +3,25 @@
 # This file is distributed under the same license as the camorama package.
 # Daniel Nylander <po@danielnylander.se>, 2006.
 # Christian Rose <menthos@menthos.com>, 2003.
-#
-# $Id: sv.po,v 1.13 2006/11/18 22:34:25 dnylande Exp $
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Göran Uddeborg <goeran@uddeborg.se>, 2020.
+# 
+# $Id: sv.po,v 1.13 2006/11/18 22:34:25 dnylande Exp $
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-02-04 20:56+0100\n"
-"PO-Revision-Date: 2018-09-21 05:47+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"PO-Revision-Date: 2020-02-21 21:38+0000\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
+"camorama/master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.11.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -34,6 +36,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama är en enkel visare för webcam, med möjligheten att använda några "
+"videoeffekter."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
@@ -45,7 +49,7 @@ msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;visare;videoeffekter;"
 
 #: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
@@ -115,9 +119,8 @@ msgstr "webbkameratagning"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Spara katalog:"
+msgstr "Välj en katalog"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -166,14 +169,13 @@ msgstr "_Aktivera fjärrtagning"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "FTP-server: "
+msgstr "Server:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -182,9 +184,8 @@ msgstr "Spara katalog:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Filnamn"
+msgstr "Filnamn:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -231,9 +232,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Filnamn"
+msgstr "_Fil"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -242,12 +242,12 @@ msgstr "Ta bild"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Redigera"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Visa"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -263,7 +263,7 @@ msgstr "Visa effekter"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "_Ändra kamera"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -272,7 +272,7 @@ msgstr "Liten"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Hjälp"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -302,31 +302,28 @@ msgstr "Vitbalans:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoom:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "v4l-enhet att använda"
+msgstr "Välj en videoenhet att använda"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Ta bild"
+msgstr "_Ta bild"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Avsluta"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Inställningar"
+msgstr "_Inställningar"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_Om"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -378,23 +375,20 @@ msgid "Specifies the image format to be used for locally saved pictures"
 msgstr "Anger bildformatet som ska användas för lokalt sparade bilder"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "tagningshöjd"
+msgstr "Bildhöjd"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Bildhöjd som används av kameran. Noll betyder välj automatiskt"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Värdnamn för FTP-server"
+msgstr "Värdnamn för servern"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Värdnamn för FTP-servern för fjärrtagningar."
+msgstr "Värdnamn för servern som används för fjärrtagningar."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -409,25 +403,28 @@ msgstr ""
 "nyckel det lokala sparandet av bilder."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Mapp för fjärrtagningar"
+msgstr "Protokoll att använda för fjärråtkomst"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"URI-namnet på protokollet som skall användas för att ansluta till en "
+"fjärrserver. Kan vara ftp, sftp eller smb"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Fullständig URI lagrad för att spara ögonblicksbilder på annan plats"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"Den fullständiga URI:n till den senast lyckade åtkomsten av en fjärrserver, "
+"inklusive protokoll, värd och fjärrkatalog"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -538,13 +535,12 @@ msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Växlar användandet av knapparna för justering av videofiltren"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "tagningsbredd"
+msgstr "Bildbredd"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Bildbredd som använd av kameran. Noll betyder välj automatiskt"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
@@ -558,25 +554,25 @@ msgstr ""
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f b/s - nuvarande     %.2f b/s - genomsnitt"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Kan inte allokera minne för att lagra enheter"
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Hittade inte någon kamera"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%d×%d (max %.1f b/s)"
 
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%d×%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -590,7 +586,7 @@ msgstr "Spegel"
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
@@ -615,19 +611,19 @@ msgid "Could not save image '%s/%s'."
 msgstr "Kunde inte spara bilden \"%s/%s\"."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Kunde inte spara bilden \"%s/%s\"."
+msgstr "Kunde inte skapa en tråd för att spara bilden \"%s/%s\"."
 
 #: src/fileio.c:172
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "Ett fel uppstod vid öppnande av %s."
+msgstr "Ett fel uppstod vid öppnande av %s:%s."
 
 #: src/fileio.c:212
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "Ett fel uppstod vid öppnande av %s."
+msgstr "Ett fel uppstod vid åtkomst av %s."
 
 #: src/fileio.c:263
 #, c-format
@@ -644,19 +640,19 @@ msgid "An error occurred opening %s."
 msgstr "Ett fel uppstod vid öppnande av %s."
 
 #: src/fileio.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "Ett fel uppstod vid öppnande av %s."
+msgstr "Ett fel uppstod vid öppnande av %s för skrivning: %s."
 
 #: src/fileio.c:313
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "Ett fel uppstod vid skrivning till %s."
+msgstr "Ett fel uppstod vid skrivning till %s: %s."
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Ett fel uppstod vid öppnande av %s."
+msgstr "Ett fel uppstod när %s stängdes: %s."
 
 #: src/fileio.c:385
 #, c-format
@@ -755,19 +751,18 @@ msgstr ""
 "\n"
 
 #: src/main.c:153
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Kunde inte hitta pixmap-filen: %s"
+msgstr "Kunde inte läsa in en byggfil"
 
 #: src/main.c:182
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s finns inte. Går tillbaka till %s"
 
 #: src/main.c:185
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s finns inte."
 
 #: src/main.c:294
 #, c-format
@@ -775,20 +770,22 @@ msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
+"Felaktigt argument\n"
+"Kör ”%s --help”\n"
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
 "Kunde inte ansluta till videoenheten (%s).\n"
-"Kontrollera anslutningen."
+"Kontrollera anslutningen. Fel: %d"
 
 #: src/v4l.c:251
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Enheten %s är inte en videofångstenhet."
 
 #: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
@@ -802,34 +799,34 @@ msgstr ""
 #: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS  —  kunde inte begära buffertar (%s), avslutar …"
 
 #: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF  —  kunde inte fråga buffertar (%s), avslutar …"
 
 #: src/v4l.c:536
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "misslyckades att minnesmappa buffertar (%s), avslutar …"
 
 #: src/v4l.c:550
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS  —  kunde inte köa upp buffertar (%s), avslutar …"
 
 #: src/v4l.c:560
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "misslyckades att börja strömma (%s), avslutar …"
 
 #: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Tiden gick ut vid väntan på ramar (%s)"
 
 #: src/v4l.c:652
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "misslyckades att sluta strömma (%s), avslutar …"
