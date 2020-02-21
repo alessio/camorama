@@ -2,23 +2,23 @@
 # Copyright (C) 2003 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the camorama package.
 # Tamer Sezgin <tamer_sezgin@yahoo.com>, 2003.
-#
-#
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Oğuz Ersen <oguzersen@protonmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-02-04 20:56+0100\n"
-"PO-Revision-Date: 2018-09-21 05:47+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"PO-Revision-Date: 2020-02-12 18:16+0000\n"
+"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
+"camorama/master/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>1)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -114,9 +114,8 @@ msgstr "webcam-yakala"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Kayıt dizini:"
+msgstr "Bir Dizin Seçin"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -165,14 +164,13 @@ msgstr "Uzak yakalamayı _etkinleştir"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "FTP sunucu: "
+msgstr "Sunucu:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Tür:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -181,9 +179,8 @@ msgstr "Kayıt dizini:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Dosya adı"
+msgstr "Dosya adı:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -230,9 +227,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Dosya adı"
+msgstr "_Dosya"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -241,12 +237,12 @@ msgstr "Resim Çek"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Düzenle"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Görüntüle"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -271,7 +267,7 @@ msgstr "Küçük"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Yardım"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -281,7 +277,7 @@ msgstr "Zıtlık:"
 #: data/camorama-gtk2.ui:1681 data/camorama-gtk3.ui:489
 #: data/camorama-gtk4.ui:415
 msgid "Brightness:"
-msgstr "Parlaklık"
+msgstr "Parlaklık:"
 
 #: data/camorama-gtk2.ui:1697 data/camorama-gtk3.ui:501
 #: data/camorama-gtk4.ui:427
@@ -305,27 +301,24 @@ msgstr ""
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "kullanılacak v4l cihazı"
+msgstr "Kullanılacak bir video cihazı seç"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Resim Çek"
+msgstr "_Resim Çek"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Çıkış"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Tercihler"
+msgstr "_Tercihler"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_Hakkında"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -376,27 +369,24 @@ msgid "Specifies the image format to be used for locally saved pictures"
 msgstr "Yerel kaydedilen resimlerde kullanacak görüntü biçimini belirtir"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "yakalama yüksekliği"
+msgstr "Görüntü yüksekliği"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
 msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "FTP sunucu için makina adı"
+msgstr "Sunucu için ana bilgisayar adı"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Uzak yakalamalar için FTP sunucusu adı."
+msgstr "Uzak çekimler için kullanılan sunucunun ana bilgisayar adı."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
-msgstr "Yerel yakalamayı açıp/kapatır."
+msgstr "Yerel yakalamayı açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:47
 msgid ""
@@ -407,9 +397,8 @@ msgstr ""
 "yakalama sırasında, bu anahtar, resimlerin yerel kaydedilmesini açıp/kapatır."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Uzak yakalamalar için dizin"
+msgstr "Uzaktan erişim için kullanılacak protokol"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
@@ -503,7 +492,7 @@ msgstr "Yerel yakalamalar için zaman damgasını açıp/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:102
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Yerel görüntülerin içine zaman damgası yerleştirilmesini açıp/kapatır "
+msgstr "Yerel görüntülerin içine zaman damgası yerleştirilmesini açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:106
 msgid "Custom text for the timestamp"
@@ -538,9 +527,8 @@ msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Video filtrelerini ayarlamak için düğme kullanımını açıp/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "yakalama genişliği"
+msgstr "Görüntü genişliği"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
@@ -579,9 +567,8 @@ msgstr ""
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
-#, fuzzy
 msgid "Mirror"
-msgstr "Görüntüyü aynala"
+msgstr "Aynalama"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
@@ -593,9 +580,8 @@ msgid "_Add Filter"
 msgstr ""
 
 #: src/camorama-window.c:221
-#, fuzzy
 msgid "Effects"
-msgstr "Etkileri Göster"
+msgstr "Efektler"
 
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
@@ -612,19 +598,19 @@ msgid "Could not save image '%s/%s'."
 msgstr "'%s/%s' görüntüsünü kaydedemedi."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "'%s/%s' görüntüsünü kaydedemedi."
+msgstr "'%s/%s' görüntüsünü kaydetmek için bir thread oluşturulamadı."
 
 #: src/fileio.c:172
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "%s açılırken bir hata oluştu."
+msgstr "%s bağlanırken bir hata oluştu: %s."
 
 #: src/fileio.c:212
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "%s açılırken bir hata oluştu."
+msgstr "%s'e erişirken bir hata oluştu."
 
 #: src/fileio.c:263
 #, c-format
@@ -636,24 +622,24 @@ msgstr ""
 "Görüntü yüklenemedi."
 
 #: src/fileio.c:292
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s."
 msgstr "%s açılırken bir hata oluştu."
 
 #: src/fileio.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "%s açılırken bir hata oluştu."
+msgstr "%s yazmak için açılırken bir hata oluştu: %s."
 
 #: src/fileio.c:313
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "%s içine yazarken bir hata oluştu."
+msgstr "%s yazılırken bir hata oluştu: %s."
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "%s açılırken bir hata oluştu."
+msgstr "%s kapatılırken bir hata oluştu: %s."
 
 #: src/fileio.c:385
 #, c-format
@@ -666,18 +652,16 @@ msgid "Could not change to directory '%s'."
 msgstr "'%s' dizinine geçilemedi."
 
 #: src/filter.c:187
-#, fuzzy
 msgid "Color Correction"
-msgstr "Renk düzeltme"
+msgstr "Renk Düzeltme"
 
 #: src/filter.c:216
 msgid "Invert"
 msgstr ""
 
 #: src/filter.c:260
-#, fuzzy
 msgid "Threshold (Overall)"
-msgstr "Eşik:"
+msgstr "Eşik (Genel)"
 
 #: src/filter.c:310
 msgid "Threshold (Per Channel)"
@@ -688,7 +672,6 @@ msgid "Wacky"
 msgstr "Uçuk"
 
 #: src/filter.c:494
-#, fuzzy
 msgid "Smooth"
 msgstr "Yumuşatma"
 
@@ -714,9 +697,8 @@ msgid "v4l device to use"
 msgstr "kullanılacak v4l cihazı"
 
 #: src/main.c:27
-#, fuzzy
 msgid "enable debugging code"
-msgstr "hata ayıklamayı etkinleştir"
+msgstr "hata ayıklama kodunu etkinleştir"
 
 #: src/main.c:29
 msgid "capture width"
@@ -756,9 +738,8 @@ msgstr ""
 "\n"
 
 #: src/main.c:153
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Pixmap dosyası: %s bulunamadı"
+msgstr "Oluşturucu (builder) dosyası yüklenemedi"
 
 #: src/main.c:182
 #, c-format
@@ -778,13 +759,13 @@ msgid ""
 msgstr ""
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Video cihazına (%s) bağlanamadı.\n"
-"Lütfen bağlantıyı kontrol edin."
+"Video cihazına (%s) bağlanılamadı.\n"
+"Lütfen bağlantıyı kontrol edin. Hata: %d"
 
 #: src/v4l.c:251
 #, c-format
