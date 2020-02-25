@@ -13,6 +13,11 @@
 #include <libv4l2.h>
 #include <stdlib.h>
 
+GtkWidget *prefswindow;
+int frames, frames2, seconds;
+GtkWidget *dentry, *entry2, *string_entry, *format_selection;
+GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
+
 static int ver = 0, max = 0, min;
 static int half = 0, use_read = 0, debug = 0;
 static gchar *video_dev = NULL;
