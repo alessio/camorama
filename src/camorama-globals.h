@@ -29,10 +29,10 @@
 
 G_BEGIN_DECLS
 
-GtkWidget *prefswindow;
-int frames, frames2, seconds;
-GtkWidget *dentry, *entry2, *string_entry, *format_selection;
-GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
+extern GtkWidget *prefswindow;
+extern int frames, frames2, seconds;
+extern GtkWidget *dentry, *entry2, *string_entry, *format_selection;
+extern GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
 
 G_END_DECLS
 #endif                          /* !CAMORAMA_GLOBALS_H */
