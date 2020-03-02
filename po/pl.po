@@ -7,21 +7,23 @@
 # translators@gnome.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Michal Biesiada <biesiadmichal@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-02-04 20:56+0100\n"
-"PO-Revision-Date: 2018-09-21 05:46+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"PO-Revision-Date: 2020-03-02 02:38+0000\n"
+"Last-Translator: Michal Biesiada <biesiadmichal@gmail.com>\n"
+"Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
+"master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.11.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -119,9 +121,8 @@ msgstr "kamera-lokalnie"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Katalog zapisu:"
+msgstr "Wybierz katalog"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -170,14 +171,13 @@ msgstr "Prz_echwytywanie zdalne"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "Serwer FTP: "
+msgstr "Serwer:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -186,9 +186,8 @@ msgstr "Katalog zapisu:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Nazwa pliku"
+msgstr "Nazwa pliku:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -312,9 +311,8 @@ msgstr ""
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "używane urządzenie v4l"
+msgstr "Wybierz urządzenie wideo, które ma być używane"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
 #, fuzzy
@@ -360,7 +358,7 @@ msgstr "Określa okres czasu automatycznego przechwytywania obrazów."
 
 #: data/org.gnome.camorama.gschema.xml.in:21
 msgid "Video device"
-msgstr ""
+msgstr "Urządzenie wideo"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
@@ -383,9 +381,8 @@ msgid "Specifies the image format to be used for locally saved pictures"
 msgstr "Określa format lokalnie zapisywanych obrazów"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "wysokość przechwytywanego obrazu"
+msgstr "Wysokość obrazu"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
@@ -423,6 +420,8 @@ msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"Nazwa URI protokołu, który będzie używany do łączenia się ze zdalnym "
+"serwerem. Może być ftp, sftp lub smb"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
@@ -433,6 +432,8 @@ msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"Pełny identyfikator URI ostatniego udanego dostępu do zdalnego serwera, w "
+"tym protokół, host i zdalny katalog"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -550,9 +551,8 @@ msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Określa, czy używać przycisków przy dostosowywaniu filtrów wideo"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "szerokość przechwytywanego obrazu"
+msgstr "Szerokość obrazu"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
@@ -597,17 +597,17 @@ msgstr "Odbicie obrazu"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
+#, fuzzy
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
 msgstr ""
 
 #: src/camorama-window.c:221
-#, fuzzy
 msgid "Effects"
-msgstr "Wyświetlanie efektów"
+msgstr "Efekty"
 
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
