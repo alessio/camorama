@@ -1,4 +1,7 @@
+
 [![Translation status](https://translate.fedoraproject.org/widgets/camorama/-/svg-badge.svg)](https://translate.fedoraproject.org/engage/camorama/)
+
+# camorama - view, alter and save images from a webcam
 
 This branch of camorama has been adapted to try out various computer-vision
 filters, starting with a Reichardt motion detection filter.
@@ -11,18 +14,18 @@ Adrian Bowyer
 ----------------------------
 
 
+# Build
 
-camorama - view, alter and save images from a webcam
-how to build:
-
+```
 ./configure
 make
 su
 make installl
+```
 
+# Run
 
-how to run:
-
+```
 camorama (options)
 
 options:
@@ -89,11 +92,10 @@ preferences:
 		- custom string - string you want to use in the timestamp
 		- draw date/time - add date/time in the timestamp
 		
-		
+```		
 
 
-
-problems:
+# Known issues
 
 - runs slow on quickcam and when the capture size is large - getting much better....
 
@@ -105,12 +107,12 @@ tested cams:
 - quickcam express
 - 3com homeconnect camera - using the 3comhc driver, not the default kernel driver
 
-requirements:
+# Requirements
 
 - a working version of gnome 2 (http://www.gnome.org)
 - video for linux (http://www.exploits.org/v4l)
 
-credits:
+# Credits
 
 these are projects that i looked at when creating camorama:
 
@@ -120,7 +122,3 @@ these are projects that i looked at when creating camorama:
 - metacity-setup (http://plastercast.tzo.com/~plastercast/Projects/) - configure scripts and gnome2 stuff
 - Mark McClelland for the code for YUV->RGB conversion
 - gnomemeeting for the eggtray icon stuff (system tray applet). 
-
-homepage:
-
-- http://camorama.fixedgear.org
