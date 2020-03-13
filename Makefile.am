@@ -57,3 +57,7 @@ camorama.appdata.xml: camorama.appdata.xml.in
 	msgfmt --xml -d $(top_srcdir)/po --template $< -o $@
 
 ACLOCAL_AMFLAGS = -I m4
+
+DISTCLEANFILES = config.guess config.rpath~ config.sub configure \
+		 ./Makefile.in ./data/Makefile.in ./src/Makefile.in \
+		 ./po/Makefile.in ./po/Makefile.in
