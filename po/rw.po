@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2018-12-23 16:04-0200\n"
+"POT-Creation-Date: 2020-03-13 08:42+0100\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "View, alter and save images from a webcam"
 msgstr "Na Kubika Ishusho Bivuye a"
 
-#: camorama.desktop.in:6 src/main.c:292
+#: camorama.desktop.in:6 src/main.c:297
 msgid "camorama"
 msgstr ""
 
@@ -779,52 +779,52 @@ msgstr ""
 msgid "Sobel"
 msgstr ""
 
-#: src/main.c:23
+#: src/main.c:28
 #, fuzzy
 msgid "show version and exit"
 msgstr "Garagaza Verisiyo Na Gusohoka"
 
-#: src/main.c:25
+#: src/main.c:30
 #, fuzzy
 msgid "v4l device to use"
 msgstr "APAREYE Kuri Gukoresha"
 
-#: src/main.c:27
+#: src/main.c:32
 #, fuzzy
 msgid "enable debugging code"
 msgstr "Gushoboza ITEGEKONGENGA"
 
-#: src/main.c:29
+#: src/main.c:34
 #, fuzzy
 msgid "capture width"
 msgstr "Ubugari"
 
-#: src/main.c:31
+#: src/main.c:36
 #, fuzzy
 msgid "capture height"
 msgstr "Ubuhagarike"
 
-#: src/main.c:33
+#: src/main.c:38
 #, fuzzy
 msgid "maximum capture size"
 msgstr "Kinini Ingano"
 
-#: src/main.c:35
+#: src/main.c:40
 #, fuzzy
 msgid "minimum capture size"
 msgstr "Gito Ingano"
 
-#: src/main.c:37
+#: src/main.c:42
 #, fuzzy
 msgid "middle capture size"
 msgstr "Hagati Ingano"
 
-#: src/main.c:39
+#: src/main.c:44
 #, fuzzy
 msgid "use read() rather than mmap()"
 msgstr "Gukoresha Gusoma"
 
-#: src/main.c:131
+#: src/main.c:136
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -833,22 +833,22 @@ msgid ""
 "\n"
 msgstr "Verisiyo"
 
-#: src/main.c:153
+#: src/main.c:158
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Gushaka IDOSIYE"
 
-#: src/main.c:182
+#: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr ""
 
-#: src/main.c:185
+#: src/main.c:190
 #, c-format
 msgid "%s not found."
 msgstr ""
 
-#: src/main.c:294
+#: src/main.c:299
 #, c-format
 msgid ""
 "Invalid argument\n"

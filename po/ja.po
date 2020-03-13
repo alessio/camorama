@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2020-02-04 20:56+0100\n"
+"POT-Creation-Date: 2020-03-13 08:42+0100\n"
 "PO-Revision-Date: 2018-09-21 05:46+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "View, alter and save images from a webcam"
 msgstr "WebCam の画像の表示や保存を行います"
 
-#: camorama.desktop.in:6 src/main.c:292
+#: camorama.desktop.in:6 src/main.c:297
 msgid "camorama"
 msgstr "camorama"
 
@@ -702,43 +702,43 @@ msgstr "モノクロ (ウェイト)"
 msgid "Sobel"
 msgstr "ゾーベル・フィルタ"
 
-#: src/main.c:23
+#: src/main.c:28
 msgid "show version and exit"
 msgstr "バージョンを表示して終了する"
 
-#: src/main.c:25
+#: src/main.c:30
 msgid "v4l device to use"
 msgstr "v41 (Video for Linux) デバイスを利用する"
 
-#: src/main.c:27
+#: src/main.c:32
 msgid "enable debugging code"
 msgstr "デバッグ・モードを有効にする"
 
-#: src/main.c:29
+#: src/main.c:34
 msgid "capture width"
 msgstr "キャプチャする幅"
 
-#: src/main.c:31
+#: src/main.c:36
 msgid "capture height"
 msgstr "キャプチャする高さ"
 
-#: src/main.c:33
+#: src/main.c:38
 msgid "maximum capture size"
 msgstr "最大サイズ"
 
-#: src/main.c:35
+#: src/main.c:40
 msgid "minimum capture size"
 msgstr "最小サイズ"
 
-#: src/main.c:37
+#: src/main.c:42
 msgid "middle capture size"
 msgstr "中くらいのサイズ"
 
-#: src/main.c:39
+#: src/main.c:44
 msgid "use read() rather than mmap()"
 msgstr "mmap() ではなく read() を使う"
 
-#: src/main.c:131
+#: src/main.c:136
 #, c-format
 msgid ""
 "\n"
@@ -750,22 +750,22 @@ msgstr ""
 "\n"
 "Camorama のバージョン %s\n"
 
-#: src/main.c:153
+#: src/main.c:158
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Pixmap ファイルが見つかりませんでした: %s"
 
-#: src/main.c:182
+#: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr ""
 
-#: src/main.c:185
+#: src/main.c:190
 #, c-format
 msgid "%s not found."
 msgstr ""
 
-#: src/main.c:294
+#: src/main.c:299
 #, c-format
 msgid ""
 "Invalid argument\n"

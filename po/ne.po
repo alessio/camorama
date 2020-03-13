@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2020-02-04 20:56+0100\n"
+"POT-Creation-Date: 2020-03-13 08:42+0100\n"
 "PO-Revision-Date: 2018-09-21 05:52+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "View, alter and save images from a webcam"
 msgstr "दृश्य, वेबक्यामबाट छविहरू परिवर्तन र बचत गर्नुहोस्"
 
-#: camorama.desktop.in:6 src/main.c:292
+#: camorama.desktop.in:6 src/main.c:297
 msgid "camorama"
 msgstr "कामोरामा"
 
@@ -704,43 +704,43 @@ msgstr ""
 msgid "Sobel"
 msgstr ""
 
-#: src/main.c:23
+#: src/main.c:28
 msgid "show version and exit"
 msgstr "संस्करण देखाउनुहोस् र निस्कनुहोस्"
 
-#: src/main.c:25
+#: src/main.c:30
 msgid "v4l device to use"
 msgstr "v4l यन्त्र प्रयोगका लागि"
 
-#: src/main.c:27
+#: src/main.c:32
 msgid "enable debugging code"
 msgstr "डिबगिङ कोड सक्षम पार्नुहोस्"
 
-#: src/main.c:29
+#: src/main.c:34
 msgid "capture width"
 msgstr "क्याप्चर चौडाइ"
 
-#: src/main.c:31
+#: src/main.c:36
 msgid "capture height"
 msgstr "क्याप्चर उचाइ"
 
-#: src/main.c:33
+#: src/main.c:38
 msgid "maximum capture size"
 msgstr "अधिकतम क्याप्चर साइज"
 
-#: src/main.c:35
+#: src/main.c:40
 msgid "minimum capture size"
 msgstr "न्यूनतम क्याप्चर साइज"
 
-#: src/main.c:37
+#: src/main.c:42
 msgid "middle capture size"
 msgstr "मध्यम क्याप्चर साइज"
 
-#: src/main.c:39
+#: src/main.c:44
 msgid "use read() rather than mmap()"
 msgstr "पढ्न प्रयोग गर्नुहोस्() एमम्याप भन्दा पनि()"
 
-#: src/main.c:131
+#: src/main.c:136
 #, c-format
 msgid ""
 "\n"
@@ -753,22 +753,22 @@ msgstr ""
 "कामोरामा संस्करण %s\n"
 "\n"
 
-#: src/main.c:153
+#: src/main.c:158
 #, fuzzy
 msgid "Couldn't load builder file"
 msgstr "पिक्सम्याप फाइल पत्ता लागेन: %s"
 
-#: src/main.c:182
+#: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr ""
 
-#: src/main.c:185
+#: src/main.c:190
 #, c-format
 msgid "%s not found."
 msgstr ""
 
-#: src/main.c:294
+#: src/main.c:299
 #, c-format
 msgid ""
 "Invalid argument\n"
