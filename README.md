@@ -119,6 +119,6 @@ these are projects that i looked at when creating camorama:
 - gspy (gspy.sourceforge.net) - gnome/v4l stuff, code for image timestamp
 - gqcam  - gnome/v4l stuff  -  the more i work on camorama, the more it becomes gqcam2 ;)
 - xawtv - v4l stuff
-- metacity-setup (http://plastercast.tzo.com/~plastercast/Projects/) - configure scripts and gnome2 stuff
+- metacity-setup (https://help.ubuntu.com/community/Metacity) - configure scripts and gnome2 stuff
 - Mark McClelland for the code for YUV->RGB conversion
 - gnomemeeting for the eggtray icon stuff (system tray applet). 
