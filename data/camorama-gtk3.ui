@@ -1121,7 +1121,7 @@
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="hexpand">True</property>
-                                            <property name="text" translatable="yes">webcam-capture</property>
+                                            <property name="text" translatable="no">webcam-capture</property>
                                             <property name="primary_icon_activatable">False</property>
                                             <property name="secondary_icon_activatable">False</property>
                                           </object>
