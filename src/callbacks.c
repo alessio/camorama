@@ -651,6 +651,10 @@ void draw_callback(GtkWidget *widget, cairo_t *cr, cam_t *cam)
 
     window = gtk_widget_get_window(widget);
     surface = gdk_cairo_surface_create_from_pixbuf(cam->pb, 1, window);
+
+    if (cam->scale != 1.f)
+        cairo_scale(cr, cam->scale, cam->scale);
+
     cairo_set_source_surface(cr, surface, 0, 0);
     gdk_cairo_rectangle(cr, &rect);
     cairo_fill(cr);
