@@ -1827,7 +1827,6 @@
               <object class="GtkHScale" id="zoom_slider">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="hexpand">True</property>
                 <property name="adjustment">adjustment7</property>
                 <property name="round_digits">0</property>
                 <property name="digits">0</property>
