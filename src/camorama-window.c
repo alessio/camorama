@@ -360,7 +360,6 @@ void load_interface(cam_t *cam)
     // Ensure that windows will be resized due to the controls
     gtk_window_resize(GTK_WINDOW(window), 320, 240);
 
-
     /* buttons */
     g_signal_connect(gtk_builder_get_object(cam->xml, "quit"), "activate",
                      G_CALLBACK(on_quit_activate), cam);
@@ -511,4 +510,10 @@ void load_interface(cam_t *cam)
     set_sensitive(cam);
     gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(cam->xml, "string_entry")),
                              cam->usestring);
+
+    // Detect window resize calls
+#if GTK_MAJOR_VERSION >= 3
+    g_signal_connect(window,
+		     "configure-event", G_CALLBACK(on_configure_event), cam);
+#endif
 }
