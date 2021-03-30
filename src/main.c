@@ -45,23 +45,6 @@ static GOptionEntry options[] = {
     {NULL}
 };
 
-static void get_geometry(cam_t *cam)
-{
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
-    GdkRectangle geo;
-
-    GdkDisplay *display = gdk_display_get_default();
-    GdkMonitor *monitor = gdk_display_get_monitor(display, 0);
-    gdk_monitor_get_geometry(monitor, &geo);
-
-    cam->screen_width  = geo.width;
-    cam->screen_height = geo.height;
-#else
-    cam->screen_width  = gdk_screen_width();
-    cam->screen_height = gdk_screen_height();
-#endif
-}
-
 static void close_app(GtkWidget* widget, cam_t *cam)
 {
     if (cam->idle_id)
@@ -129,8 +112,6 @@ static void activate(GtkApplication *app)
     camorama_filters_init();
 
     cam->debug = debug;
-
-    get_geometry(cam);
 
     if (ver) {
         fprintf(stderr, _("\n\nCamorama version %s\n\n"), PACKAGE_VERSION);

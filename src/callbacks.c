@@ -335,14 +335,35 @@ void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data)
     gtk_widget_show(prefswindow);
 }
 
+static void get_geometry(cam_t *cam, unsigned int *width, unsigned int *height)
+{
+#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
+    GdkRectangle geo;
+    GdkWindow *win = gdk_screen_get_root_window(gdk_screen_get_default());
+
+    GdkDisplay *display = gdk_display_get_default();
+    GdkMonitor *monitor = gdk_display_get_monitor_at_window(display, win);
+    gdk_monitor_get_geometry(monitor, &geo);
+
+    *width  = geo.width;
+    *height = geo.height;
+#else
+    *width  = gdk_screen_width();
+    *height = gdk_screen_height();
+#endif
+}
+
 void set_image_scale(cam_t *cam)
 {
     gchar *title;
     float f;
+    unsigned int width, height;
 
-    if (cam->width > 0.66 * cam->screen_width || cam->height > 0.66 * cam->screen_height) {
-        cam->scale = (0.66 * cam->screen_width) / cam->width;
-        f = (0.66 * cam->screen_height) / cam->height;
+    get_geometry(cam, &width, &height);
+
+    if (cam->width > 0.66 * width || cam->height > 0.66 * height) {
+        cam->scale = (0.66 * width) / cam->width;
+        f = (0.66 * height) / cam->height;
 
         if (f < cam->scale)
             cam->scale = f;
