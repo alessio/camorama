@@ -388,7 +388,6 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent  *event, cam_t *cam)
 
 void set_image_scale(cam_t *cam)
 {
-    gchar *title;
     float f;
     unsigned int width, height;
 
@@ -771,6 +770,7 @@ void on_status_show(GtkWidget *sb, cam_t *cam)
 
 void capture_func(GtkWidget *widget, cam_t *cam)
 {
+printf("%s:\n", __FUNCTION__);
     if (cam->debug == TRUE)
         printf("capture_func\nx = %d, y = %d, depth = %d, realloc size = %d\n",
                cam->width, cam->height, cam->bpp,
