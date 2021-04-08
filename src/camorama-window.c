@@ -269,7 +269,8 @@ void load_interface(cam_t *cam)
                          G_CALLBACK(on_change_camera), cam);
     }
 
-    //g_signal_connect(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
+    g_signal_connect(gtk_builder_get_object(cam->xml, "imagemenuitem1"),
+		     "activate", G_CALLBACK(capture_func), cam);
     g_signal_connect(gtk_builder_get_object(cam->xml, "button1"),
                      "clicked", G_CALLBACK(capture_func), cam);
 
