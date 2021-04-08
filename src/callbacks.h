@@ -18,6 +18,8 @@ G_BEGIN_DECLS
 void on_change_size_activate(GtkWidget * widget, cam_t *cam);
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam);
 gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam);
+gboolean on_window_state_event(GtkMenuItem *menuitem,
+			       GdkEventWindowState *event, cam_t *cam);
 int delete_event(GtkWidget *, gpointer data);
 void cap_func(GtkWidget *, cam_t *);
 void rcap_func(GtkWidget *, cam_t *);
@@ -48,6 +50,7 @@ gboolean delete_event_prefs_window(GtkWidget *widget, GdkEvent *event,
                                    cam_t *cam);
 void capture_func2(GtkWidget *, cam_t *);
 void capture_func(GtkWidget *, cam_t *);
+void toggle_fullscreen(GtkWidget *, cam_t *);
 gint timeout_capture_func(cam_t *);
 gint fps(GtkWidget *);
 gint timeout_func(cam_t *);

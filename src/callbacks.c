@@ -353,7 +353,7 @@ static void get_geometry(cam_t *cam, unsigned int *width, unsigned int *height)
 #endif
 }
 
-gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent  *event, cam_t *cam)
+gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
 {
 #if GTK_MAJOR_VERSION >= 3
     GtkWidget *da = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
@@ -385,6 +385,42 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent  *event, cam_t *cam)
 
     return FALSE;
 }
+
+gboolean on_window_state_event(GtkMenuItem *menuitem,
+			       GdkEventWindowState *event, cam_t *cam)
+{
+#if GTK_MAJOR_VERSION >= 3
+    if (event->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) {
+	gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
+	gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
+	gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
+	gtk_widget_hide(cam->status);
+    } else {
+	gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
+	gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
+	gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
+	gtk_widget_show(cam->status);
+    }
+#endif
+
+    return GDK_EVENT_PROPAGATE;
+}
+
+void toggle_fullscreen(GtkWidget *widget, cam_t *cam)
+{
+    GdkWindowState state;
+    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                          "main_window"));
+
+    state = gdk_window_get_state (gtk_widget_get_window (GTK_WIDGET (window)));
+
+    if (state & GDK_WINDOW_STATE_FULLSCREEN) {
+	gtk_window_unfullscreen(GTK_WINDOW(window));
+    } else {
+	gtk_window_fullscreen(GTK_WINDOW(window));
+    }
+}
+
 
 void set_image_scale(cam_t *cam)
 {
