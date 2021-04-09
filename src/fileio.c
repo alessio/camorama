@@ -46,6 +46,7 @@ add_rgb_text(guchar *image, int width, int height, char *cstring,
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
     len = strftime(line, sizeof(line) - 1, image_label, tm);
 #pragma GCC diagnostic pop
+    g_free(image_label);
 
     for (y = 0; y < CHAR_HEIGHT; y++) {
         /* locate text in lower left corner of image */
@@ -110,6 +111,7 @@ void remote_save(cam_t *cam)
     if (chdir("/tmp") != 0) {
         error_dialog(_("Could save temporary image file in /tmp."));
         g_free(ext);
+        return;
     }
 
     filename = g_strdup_printf("camorama.%s", ext);
@@ -122,6 +124,8 @@ void remote_save(cam_t *cam)
                                         filename);
         error_dialog(error_message);
         g_free(error_message);
+        g_free(ext);
+        return;
     }
 
     pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
@@ -130,6 +134,8 @@ void remote_save(cam_t *cam)
                                         cam->pixdir, filename);
         error_dialog(error_message);
         g_free(filename);
+        g_free(ext);
+        return;
     }
 
     g_free(filename);
@@ -230,6 +236,7 @@ gpointer save_thread(gpointer data)
     GFileOutputStream *fout;
     unsigned char *tmp;
     char *error_message;
+    gssize ret;
     FILE *fp;
     int bytes = 0;
     time_t t;
@@ -308,15 +315,14 @@ gpointer save_thread(gpointer data)
     }
 
     /*  write the data */
-    g_output_stream_write(G_OUTPUT_STREAM(fout), tmp, bytes, NULL, &error);
-    if (error) {
+    ret = g_output_stream_write(G_OUTPUT_STREAM(fout), tmp, bytes, NULL, &error);
+    if (ret < 0) {
         error_message = g_strdup_printf(_("An error occurred writing to %s: %s."),
                                         output_uri_string, error->message);
         error_dialog(error_message);
         g_free(error_message);
     }
-    g_output_stream_close(G_OUTPUT_STREAM(fout), NULL, &error);
-    if (error) {
+    if (!g_output_stream_close(G_OUTPUT_STREAM(fout), NULL, &error)) {
         error_message = g_strdup_printf(_("An error occurred closing %s: %s."),
                                         output_uri_string, error->message);
         error_dialog(error_message);
