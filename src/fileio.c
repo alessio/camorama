@@ -124,6 +124,7 @@ void remote_save(cam_t *cam)
                                         filename);
         error_dialog(error_message);
         g_free(error_message);
+        g_free(filename);
         g_free(ext);
         return;
     }
@@ -133,20 +134,21 @@ void remote_save(cam_t *cam)
         error_message = g_strdup_printf(_("Could not save image '%s/%s'."),
                                         cam->pixdir, filename);
         error_dialog(error_message);
+        g_free(error_message);
         g_free(filename);
         g_free(ext);
         return;
     }
-
-    g_free(filename);
 
     remote_thread = g_thread_new("remote", &save_thread, cam);
     if (!remote_thread) {
         error_message = g_strdup_printf(_("Could not create a thread to save image '%s/%s'."),
                                         cam->pixdir, filename);
         error_dialog(error_message);
+        g_free(error_message);
     }
 
+    g_free(filename);
     g_free(ext);
 }
 
