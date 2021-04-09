@@ -42,9 +42,12 @@ static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y,
     unsigned int i;
 
     try_set_win_info(cam, &x, &y);
-    for (i = 0; i < cam->n_res; i++) {
-        if (cam->res[i].x == x && cam->res[i].y == y)
-        return;
+
+    if (cam->res) {
+        for (i = 0; i < cam->n_res; i++) {
+            if (cam->res[i].x == x && cam->res[i].y == y)
+            return;
+	}
     }
 
     cam->res = realloc(cam->res, (cam->n_res + 1) * sizeof(struct resolutions));
@@ -97,6 +100,7 @@ void get_supported_resolutions(cam_t *cam)
     unsigned int x, y;
 
     if (cam->n_res) {
+        /* Free it, as the resolutions will be re-inserted */
         free(cam->res);
         cam->res = NULL;
         cam->n_res = 0;
@@ -131,7 +135,9 @@ void get_supported_resolutions(cam_t *cam)
             frmsize.index++;
         }
     }
-    qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
+
+    if (cam->res)
+        qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
 }
 
 int camera_cap(cam_t *cam)
