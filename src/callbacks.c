@@ -991,7 +991,7 @@ static int sort_devices(const void *__a, const void *__b)
 
     if (strstr(a->fname, "by-id"))
         val_a = 1;
-    if (strstr(a->fname, "by-path"))
+    else if (strstr(a->fname, "by-path"))
         val_a = 2;
     else if (strstr(a->fname, "/dev/video"))
         val_a = 3;
@@ -1002,7 +1002,7 @@ static int sort_devices(const void *__a, const void *__b)
 
     if (strstr(b->fname, "by-id"))
         val_b = 1;
-    if (strstr(b->fname, "by-path"))
+    else if (strstr(b->fname, "by-path"))
         val_b = 2;
     else if (strstr(b->fname, "/dev/video"))
         val_b = 3;
