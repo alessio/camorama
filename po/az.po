@@ -5,13 +5,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Mətin Əmirov <metin@karegen.com>, 2003, 2004.
 # Anonymous <noreply@weblate.org>, 2020.
+# Alesker Abdullayev - FEDORA Azerbaijan <tech@abdullaeff.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-05-06 10:43+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2020-05-07 11:40+0000\n"
+"Last-Translator: Alesker Abdullayev - FEDORA Azerbaijan <tech@abdullaeff.com>"
+"\n"
 "Language-Team: Azerbaijani <https://translate.fedoraproject.org/projects/"
 "camorama/master/az/>\n"
 "Language: az\n"
@@ -23,7 +25,7 @@ msgstr ""
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
-msgstr "Camorama"
+msgstr "Kamorama"
 
 #: camorama.appdata.xml.in:7 camorama.desktop.in:4
 msgid "Camorama Webcam Viewer"
@@ -230,7 +232,7 @@ msgstr "Vaxt Mühürü"
 
 #: data/camorama-gtk2.ui:1202 data/camorama-gtk3.ui:44 data/camorama-gtk4.ui:32
 msgid "Camorama-libglade"
-msgstr "Camorama-libglade"
+msgstr "Kamorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
 #, fuzzy
@@ -552,12 +554,7 @@ msgstr ""
 
 #: src/callbacks.c:465
 msgid "translator_credits"
-msgstr ""
-"Vasif İsmailoğlu <linuxaz@azerimail.net>\n"
-"Mətin Əmirov <metin@karegen.com>\n"
-"\n"
-"Tərcümə işləri üzrə yazışma siyahısı ünvanımız:\n"
-"<translation-team-az@lists.sourceforge.net> "
+msgstr "translator_credits"
 
 #: src/callbacks.c:693
 #, c-format
@@ -694,7 +691,7 @@ msgstr ""
 
 #: src/filter.c:388
 msgid "Wacky"
-msgstr "Wacky"
+msgstr "Uğursuz"
 
 #: src/filter.c:494
 #, fuzzy
@@ -792,8 +789,8 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"(%s) video avadanlığına bağlana bilmədi.\n"
-"Xahiş edirik, bağlantınızı yoxlayın."
+"(%s) video cihazına bağlantı uğursuz oldu.\n"
+"Zəhmət olmasa əlaqəni yoxlayın. Xəta: %d"
 
 #: src/v4l.c:251
 #, c-format
