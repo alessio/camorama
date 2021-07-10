@@ -11,13 +11,14 @@
 # Anonymous <noreply@weblate.org>, 2020.
 # Mateusz Stomski <zbytatencyjny@gmail.com>, 2020.
 # Szymon Scholz <szymonscholz@gmail.com>, 2020.
+# Michał Smyk <fedora@smyk.it>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
 "PO-Revision-Date: 2020-09-27 18:29+0000\n"
-"Last-Translator: Michal Biesiada <biesiadmichal@gmail.com>\n"
+"Last-Translator: Michał Smyk <fedora@smyk.it>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -511,7 +512,7 @@ msgstr "Znacznik czasu dla przechwytywania lokalnego"
 #: data/org.gnome.camorama.gschema.xml.in:102
 msgid "Toggles the insertion of a timestamp into local images"
 msgstr ""
-"Określa, czy na na lokalnie zapisywanych obrazach jest umieszczony znacznik "
+"Określa, czy na lokalnie zapisywanych obrazach jest umieszczony znacznik "
 "czasu"
 
 #: data/org.gnome.camorama.gschema.xml.in:106
@@ -631,7 +632,7 @@ msgid "An error occurred mounting %s:%s."
 msgstr "Podczas montowania %s:%s wystąpił błąd."
 
 #: src/fileio.c:212
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
 msgstr "Podczas uzyskiwania dostępu do %s wystąpił błąd."
 
@@ -650,7 +651,7 @@ msgid "An error occurred opening %s."
 msgstr "Podczas otwierania %s wystąpił błąd."
 
 #: src/fileio.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "Podczas otwierania %s w celu zapisu %s wystąpił błąd."
 
@@ -761,7 +762,6 @@ msgstr ""
 "\n"
 
 #: src/main.c:158
-#, fuzzy
 msgid "Couldn't load builder file"
 msgstr "Nie można załadować pliku konstruktora"
 
