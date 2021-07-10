@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-02-21 21:38+0000\n"
+"PO-Revision-Date: 2020-09-12 15:29+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "camorama/master/sv/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.1\n"
+"X-Generator: Weblate 4.2.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -540,13 +540,14 @@ msgstr "Bildbredd"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr "Bildbredd som använd av kameran. Noll betyder välj automatiskt"
+msgstr "Bildbredd som används av kameran. Noll betyder välj automatiskt"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
 msgstr ""
 "Daniel Nylander\n"
 "Christian Rose\n"
+"Göran Uddeborg\n"
 "\n"
 "Skicka synpunkter på översättningen till\n"
 "tp-sv@listor.tp-sv.se"
