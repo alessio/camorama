@@ -3,20 +3,22 @@
 # This file is distributed under the same license as the camorama package.
 # Ilkka Tuohela <hile@iki.fi> 2004-2005.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2018-09-21 05:52+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2020-03-22 11:38+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
+"camorama/master/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.11.3\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -24,17 +26,19 @@ msgstr "Camorama"
 
 #: camorama.appdata.xml.in:7 camorama.desktop.in:4
 msgid "Camorama Webcam Viewer"
-msgstr "Camorama Webikameran katselin"
+msgstr "Camorama - Webbikameran katselin"
 
 #: camorama.appdata.xml.in:9
 msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama on yksinkertainen webbikameran katseluun tarkoitettu sovellus. Se "
+"tarjoaa myös mahdollisuuden lisätä joitain videotehosteita."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
-msgstr "Katsele, muuta ja tallenna kuvia webikamerasta"
+msgstr "Katsele, muuta ja tallenna kuvia webbikamerasta"
 
 #: camorama.desktop.in:6 src/main.c:297
 msgid "camorama"
@@ -112,9 +116,8 @@ msgstr "webikameran-kaappaus"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Tallennushakemisto:"
+msgstr "Valitse kansio"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -163,14 +166,13 @@ msgstr "_Käytä etäkaappausta"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "FTP-palvelin: "
+msgstr "Palvelin:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Tyyppi:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -179,9 +181,8 @@ msgstr "Tallennushakemisto:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Tiedostonimi"
+msgstr "Tiedostonimi:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -228,9 +229,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Tiedostonimi"
+msgstr "_Tiedosto"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -239,12 +239,12 @@ msgstr "Ota kuva"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Muokkaa"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Näytä"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -260,7 +260,7 @@ msgstr "Näytä tehosteet"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "_Vaihda kameraa"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -269,7 +269,7 @@ msgstr "Pieni"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Ohje"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -299,31 +299,28 @@ msgstr "Valkotasapaino:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoomaus:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "v4l-laite on käytössä"
+msgstr "Valitse käytettävä videolaite"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Ota kuva"
+msgstr "_Ota kuva"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Lopeta"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Asetukset"
+msgstr "_Asetukset"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_Tietoja"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -376,23 +373,20 @@ msgstr ""
 "kuville"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "kaappauksen korkeus"
+msgstr "Kuvan korkeus"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Kameran käyttämä kuvan korkeus. Nolla tarkoittaa automaattista valintaa"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "FTP-palvelimen isäntänimi"
+msgstr "Palvelimen isäntänimi"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Isäntänimi FTP-palvelimelle, johon etäkuvankaappaukset tallennetaan."
+msgstr "Isäntänimi palvelimelle, johon etäkuvankaappaukset tallennetaan."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -407,9 +401,8 @@ msgstr ""
 "vaihtelee tallennetaanko kuvat paikallisesti."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Etäkansio"
+msgstr "Etäkäyttöön käytettävä protokolla"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
@@ -538,9 +531,8 @@ msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Vaihtelee näppäinten käyttö videosuodattimien säätöön"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "kaappauksen leveys"
+msgstr "Kuvan leveys"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
@@ -556,7 +548,7 @@ msgstr ""
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f fps - nykyinen     %.2f fps - keskiarvo"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
@@ -564,17 +556,17 @@ msgstr ""
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Kameroita ei löytynyt"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (enintään %.1f fps)"
 
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -775,13 +767,13 @@ msgid ""
 msgstr ""
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Videolaitteeseen %s ei saatu yhteyttä.\n"
-"Tarkista yhteys kameraan."
+"Videolaitteeseen ei voitu yhdistää (%s).\n"
+"Tarkista yhteys. Virhe: %d"
 
 #: src/v4l.c:251
 #, c-format
