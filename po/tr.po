@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-02-12 18:16+0000\n"
+"POT-Creation-Date: 2020-02-04 20:56+0100\n"
+"PO-Revision-Date: 2020-04-21 18:40+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "camorama/master/tr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.0.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -33,6 +33,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama, bazı video efektleri uygulayabilen basit bir web kamerası "
+"görüntüleyicisidir."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
@@ -44,7 +46,7 @@ msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;görüntüleyici;video-efektleri;"
 
 #: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
@@ -90,7 +92,7 @@ msgstr "Genel"
 #: data/camorama-gtk2.ui:283 data/camorama-gtk3.ui:917
 #: data/camorama-gtk4.ui:815
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Yerel Yakala</span>"
+msgstr "<span weight=\"bold\">Yerel Yakalama</span>"
 
 #: data/camorama-gtk2.ui:315 data/camorama-gtk3.ui:951
 #: data/camorama-gtk4.ui:845
@@ -100,7 +102,7 @@ msgstr "Yerel yakalamayı _etkinleştir"
 #: data/camorama-gtk2.ui:364 data/camorama-gtk3.ui:998
 #: data/camorama-gtk4.ui:888
 msgid "_Directory for captured pics:"
-msgstr "Yakalanan resimler için _Dizin:"
+msgstr "Yakalanan resimler için _dizin:"
 
 #: data/camorama-gtk2.ui:377 data/camorama-gtk3.ui:1011
 #: data/camorama-gtk4.ui:901
@@ -110,7 +112,7 @@ msgstr "Resimler için _dosya adı:"
 #: data/camorama-gtk2.ui:392 data/camorama-gtk3.ui:1039
 #: data/camorama-gtk4.ui:929
 msgid "webcam-capture"
-msgstr "webcam-yakala"
+msgstr "webcam-yakalama"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
@@ -133,7 +135,7 @@ msgstr "Yakalanan görüntülere zaman damgası ekle"
 #: data/camorama-gtk3.ui:1133 data/camorama-gtk3.ui:1515
 #: data/camorama-gtk4.ui:1007 data/camorama-gtk4.ui:1350
 msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Görüntü Tipi</span>"
+msgstr "<span weight=\"bold\">Görüntü Türü</span>"
 
 #: data/camorama-gtk2.ui:535 data/camorama-gtk2.ui:923
 #: data/camorama-gtk3.ui:1166 data/camorama-gtk3.ui:1548
@@ -150,12 +152,12 @@ msgstr "Dosyaları png biçiminde kaydet"
 #: data/camorama-gtk2.ui:597 data/camorama-gtk3.ui:1228
 #: data/camorama-gtk4.ui:1088
 msgid "Local Capture"
-msgstr "Yerel Yakala"
+msgstr "Yerel Yakalama"
 
 #: data/camorama-gtk2.ui:620 data/camorama-gtk3.ui:1252
 #: data/camorama-gtk4.ui:1111
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Uzak Yakala</span>"
+msgstr "<span weight=\"bold\">Uzak Yakalama</span>"
 
 #: data/camorama-gtk2.ui:652 data/camorama-gtk3.ui:1286
 #: data/camorama-gtk4.ui:1141
@@ -195,7 +197,7 @@ msgstr "webcamvuruş"
 #: data/camorama-gtk2.ui:985 data/camorama-gtk3.ui:1610
 #: data/camorama-gtk4.ui:1431
 msgid "Remote Capture"
-msgstr "Uzak Yakala"
+msgstr "Uzak Yakalama"
 
 #: data/camorama-gtk2.ui:1008 data/camorama-gtk3.ui:1634
 #: data/camorama-gtk4.ui:1454
@@ -205,12 +207,12 @@ msgstr "<span weight=\"bold\">Zaman damgası</span>"
 #: data/camorama-gtk2.ui:1040 data/camorama-gtk3.ui:1668
 #: data/camorama-gtk4.ui:1484
 msgid "Use custom string"
-msgstr "Özel bir katar kullan"
+msgstr "Özel dizge kullan"
 
 #: data/camorama-gtk2.ui:1084 data/camorama-gtk3.ui:1713
 #: data/camorama-gtk4.ui:1525
 msgid "String:"
-msgstr "Dizi:"
+msgstr "Dizge:"
 
 #: data/camorama-gtk2.ui:1130 data/camorama-gtk3.ui:1758
 #: data/camorama-gtk4.ui:1560
@@ -253,12 +255,12 @@ msgstr "Ayarlamaları Göster"
 #: data/camorama-gtk2.ui:1304 data/camorama-gtk3.ui:144
 #: data/camorama-gtk4.ui:126
 msgid "Show Effects"
-msgstr "Etkileri Göster"
+msgstr "Efektleri Göster"
 
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "Kamerayı _Değiştir"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -297,12 +299,12 @@ msgstr "Beyaz Ayar:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Yakınlaştırma:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
 msgid "Select a video device to be used"
-msgstr "Kullanılacak bir video cihazı seç"
+msgstr "Kullanılacak bir video aygıtı seç"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
 msgid "_Take Picture"
@@ -330,11 +332,11 @@ msgstr "Dosya adlarının sonuna, UNIX zamanı olarak, zaman damgası ekle"
 
 #: data/org.gnome.camorama.gschema.xml.in:11
 msgid "Toggles auto-capture"
-msgstr "Otomatik yakalamayı açıp/kapatır"
+msgstr "Otomatik yakalamayı açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr "Resimlerin otomatik yakalanmasını açıp/kapatır."
+msgstr "Resimlerin otomatik yakalanmasını açar/kapatır."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
@@ -346,19 +348,19 @@ msgstr "Resimlerin otomatik yakalama aralığını belirtir."
 
 #: data/org.gnome.camorama.gschema.xml.in:21
 msgid "Video device"
-msgstr ""
+msgstr "Video aygıtı"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr ""
+msgstr "Kameranıza atanan aygıtın unix dosya sistemi yolu."
 
 #: data/org.gnome.camorama.gschema.xml.in:26
 msgid "Toggles the datestamp in captures"
-msgstr "Yakalamalardaki tarih damgasını açıp/kapatır"
+msgstr "Yakalamalardaki tarih damgasını açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:27
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Yakalanan resimlerin içine tarih damgası çizilmesini açıp/kapatır"
+msgstr "Yakalanan resimlerin içine tarih damgası çizilmesini açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:31
 msgid "Local capture image format"
@@ -375,6 +377,8 @@ msgstr "Görüntü yüksekliği"
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
 msgstr ""
+"Kamera tarafından kullanılan görüntü yüksekliği. Sıfır, otomatik seçim "
+"anlamına gelir"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
@@ -382,7 +386,7 @@ msgstr "Sunucu için ana bilgisayar adı"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
 msgid "Hostname for the server used for remote captures."
-msgstr "Uzak çekimler için kullanılan sunucunun ana bilgisayar adı."
+msgstr "Uzak yakalamalar için kullanılacak sunucunun ana bilgisayar adı."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -394,7 +398,8 @@ msgid ""
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
 "\"Resim Çek\" düğmesi kullanılarak resimler yakalandığında, ya da otomatik "
-"yakalama sırasında, bu anahtar, resimlerin yerel kaydedilmesini açıp/kapatır."
+"yakalama sırasında, bu tuş resimlerin yerel olarak kaydedilmesini açar/"
+"kapatır."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
 msgid "Protocol to use for remote access"
@@ -405,16 +410,20 @@ msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"Uzak bir sunucuya bağlanmak için kullanılacak protokolün URI adı. ftp, sftp "
+"veya smb olabilir"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Anlık görüntüleri uzak bir adreste depolamak için kullanılacak tam URI"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"Protokol, ana bilgisayar adı ve uzak dizin dahil olmak üzere uzaktaki bir "
+"sunucuya son başarılı erişimin tam URI'si"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -426,7 +435,7 @@ msgstr "Uzak dosya adlarının sonuna, UNIX zamanı olarak, zaman damgası ekle"
 
 #: data/org.gnome.camorama.gschema.xml.in:66
 msgid "Toggles remote capture"
-msgstr "Uzak yakalamayı açıp/kapatır"
+msgstr "Uzak yakalamayı açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:67
 msgid ""
@@ -434,7 +443,8 @@ msgid ""
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
 "\"Resim Çek\" düğmesi kullanılarak resimler yakalandığında, ya da otomatik "
-"yakalama sırasında, bu anahtar, resimlerin uzağa kaydedilmesini açıp/kapatır."
+"yakalama sırasında, bu tuş resimlerin uzak bir sunucuya kaydedilmesini açar/"
+"kapatır."
 
 #: data/org.gnome.camorama.gschema.xml.in:71
 msgid "Remote capture image format"
@@ -462,13 +472,13 @@ msgstr "Yüklenen görüntüleri için dosya adı."
 
 #: data/org.gnome.camorama.gschema.xml.in:86
 msgid "Toggles timestamp for remote captures"
-msgstr "Uzak yakalamalar için zaman damgasını açıp/kapatır"
+msgstr "Uzak yakalamalar için zaman damgasını açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:87
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr ""
-"FTP yüklemesi için görüntülerin içerisine zaman damgası yerleştirilmesini "
-"açıp/kapatır."
+"FTP yüklemesi için görüntülerin içerisine zaman damgası yerleştirilmesini aç"
+"ar/kapatır."
 
 #: data/org.gnome.camorama.gschema.xml.in:91
 msgid "Folder for local captures"
@@ -476,7 +486,7 @@ msgstr "Yerel yakalamalar için dizin"
 
 #: data/org.gnome.camorama.gschema.xml.in:92
 msgid "Folder for saving captured pictures to locally"
-msgstr "Yakalanan resimleri yerel kaydetmek için dizin"
+msgstr "Yakalanan resimleri yerel olarak kaydetmek için dizin"
 
 #: data/org.gnome.camorama.gschema.xml.in:96
 msgid "Filename for local captures"
@@ -488,7 +498,7 @@ msgstr "Yakalanan resimleri yerel olarak kaydetmek için dosya adı"
 
 #: data/org.gnome.camorama.gschema.xml.in:101
 msgid "Toggles timestamp for local captures"
-msgstr "Yerel yakalamalar için zaman damgasını açıp/kapatır"
+msgstr "Yerel yakalamalar için zaman damgasını açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:102
 msgid "Toggles the insertion of a timestamp into local images"
@@ -500,31 +510,32 @@ msgstr "Zaman damgası için özel yazı"
 
 #: data/org.gnome.camorama.gschema.xml.in:107
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Görüntüye eklenecek özel bir yazı tanımlar."
+msgstr "Görüntüye eklenecek özel bir metin dizgesi tanımlar."
 
 #: data/org.gnome.camorama.gschema.xml.in:111
 msgid "Toggles the custom string"
-msgstr "Özel yazıyı açıp/kapatır"
+msgstr "Özel dizgeyi açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:112
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Görüntülerdeki zaman damgası için özel yazı kullanımını açıp/kapatır."
+msgstr "Görüntülerdeki zaman damgası için özel dizge kullanımını açar/kapatır."
 
 #: data/org.gnome.camorama.gschema.xml.in:116
 msgid "Toggles the video adjustment sliders"
-msgstr "Video ayar slider larını açıp/kapatır"
+msgstr "Video ayarlama kaydırıcılarını açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:117
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Video özelliklerini ayarlamak için slider kullanımını açıp/kapatır"
+msgstr ""
+"Video özelliklerini ayarlamak için kaydırıcıların kullanımını açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:121
 msgid "Toggles the video effects buttons"
-msgstr "Video etki düğmelerini açıp/kapatır"
+msgstr "Video efekt düğmelerini açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:122
 msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "Video filtrelerini ayarlamak için düğme kullanımını açıp/kapatır"
+msgstr "Video filtrelerini ayarlamak için kullanılan düğmeleri açar/kapatır"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
 msgid "Image width"
@@ -533,37 +544,41 @@ msgstr "Görüntü genişliği"
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
 msgstr ""
+"Kamera tarafından kullanılan görüntü genişliği. Sıfır, otomatik seçim "
+"anlamına gelir"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
-msgstr "Tamer Sezgin <tamer_se<gin@yahoo.com>"
+msgstr ""
+"Tamer Sezgin <tamer_se<gin@yahoo.com>\n"
+"Oğuz Ersen <oguzersen@protonmail.com>"
 
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f fps - şu anda     %.2f fps - ortalama"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Aygıtları depolamak için bellek ayrılamıyor"
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Kamera bulunamadı"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (en fazla %.1f fps)"
 
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "Laplace (4 Komşu)"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
@@ -573,11 +588,11 @@ msgstr "Aynalama"
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
-msgstr ""
+msgstr "Filtre _Ekle"
 
 #: src/camorama-window.c:221
 msgid "Effects"
@@ -590,7 +605,7 @@ msgstr "Geçici resim dosyasını /tmp içerisine kaydedebilir."
 #: src/fileio.c:121
 #, c-format
 msgid "Unable to create image '%s'."
-msgstr "'%s' görüntüsünü yakalayamadı."
+msgstr "'%s' görüntüsü oluşturulamadı."
 
 #: src/fileio.c:129 src/fileio.c:407
 #, c-format
@@ -600,7 +615,7 @@ msgstr "'%s/%s' görüntüsünü kaydedemedi."
 #: src/fileio.c:139
 #, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "'%s/%s' görüntüsünü kaydetmek için bir thread oluşturulamadı."
+msgstr "'%s/%s' görüntüsünü kaydetmek için bir iş parçacığı oluşturulamadı."
 
 #: src/fileio.c:172
 #, c-format
@@ -657,7 +672,7 @@ msgstr "Renk Düzeltme"
 
 #: src/filter.c:216
 msgid "Invert"
-msgstr ""
+msgstr "Ters Çevir"
 
 #: src/filter.c:260
 msgid "Threshold (Overall)"
@@ -665,7 +680,7 @@ msgstr "Eşik (Genel)"
 
 #: src/filter.c:310
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "Eşik (Kanal Başına)"
 
 #: src/filter.c:388
 msgid "Wacky"
@@ -677,11 +692,11 @@ msgstr "Yumuşatma"
 
 #: src/filter.c:530
 msgid "Monochrome"
-msgstr ""
+msgstr "Tek Renkli"
 
 #: src/filter.c:568
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "Tek Renkli (Ağırlık)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:625
@@ -690,11 +705,11 @@ msgstr "Sobel"
 
 #: src/main.c:28
 msgid "show version and exit"
-msgstr "versiyonu göster ve çık"
+msgstr "sürümü göster ve çık"
 
 #: src/main.c:30
 msgid "v4l device to use"
-msgstr "kullanılacak v4l cihazı"
+msgstr "kullanılacak v4l aygıtı"
 
 #: src/main.c:32
 msgid "enable debugging code"
@@ -734,7 +749,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Camorama versiyonu %s\n"
+"Camorama sürümü %s\n"
 "\n"
 
 #: src/main.c:158
@@ -744,12 +759,12 @@ msgstr "Oluşturucu (builder) dosyası yüklenemedi"
 #: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s bulunamadı. Onun yerine %s kullanılıyor"
 
 #: src/main.c:190
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s bulunamadı."
 
 #: src/main.c:299
 #, c-format
@@ -757,6 +772,8 @@ msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
+"Geçersiz argüman\n"
+"'%s --help' komutunu kullanın\n"
 
 #: src/v4l.c:148
 #, c-format
@@ -764,13 +781,13 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Video cihazına (%s) bağlanılamadı.\n"
-"Lütfen bağlantıyı kontrol edin. Hata: %d"
+"(%s) video aygıtına bağlanılamadı.\n"
+"Lütfen bağlantıyı gözden geçirin. Hata: %d"
 
 #: src/v4l.c:251
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "%s bir video yakalama aygıtı değil."
 
 #: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
@@ -778,40 +795,42 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Video cihazına (%s) bağlanamadı.\n"
-"Lütfen bağlantıyı kontrol edin."
+"(%s) video aygıtına bağlanamadı.\n"
+"Lütfen bağlantıyı gözden geçirin."
 
 #: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS  --  arabellek istenemedi (%s), sonlandırılıyor...."
 
 #: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QUERYBUF  --  arabellekler sorgulanamadı (%s), sonlandırılıyor...."
 
 #: src/v4l.c:536
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "arabellekler belleğe alınamadı (%s), sonlandırılıyor...."
 
 #: src/v4l.c:550
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF  --  arabellekler kuyruğa eklenemedi (%s), sonlandırılıyor...."
 
 #: src/v4l.c:560
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "video akışı başlatılamadı (%s), sonlandırılıyor...."
 
 #: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Çerçeveleri beklerken süre doldu (%s)"
 
 #: src/v4l.c:652
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "video akışı durdurulamadı (%s), sonlandırılıyor...."

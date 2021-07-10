@@ -2,20 +2,22 @@
 # Copyright (C) 2005 Free Software Foundation, Inc.
 # Chao-Hsiung Liao <pesder.liao@msa.hinet.net>, 2005.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Enfong Cao <nelson22768384@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2018-09-21 05:46+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
+"PO-Revision-Date: 2021-03-27 05:01+0000\n"
+"Last-Translator: Enfong Cao <nelson22768384@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
+"projects/camorama/master/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.5.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -169,7 +171,7 @@ msgstr "FTP 伺服器:"
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "類型:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -238,12 +240,12 @@ msgstr "拍照"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "編輯(_E)"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "檢視(_V)"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -259,7 +261,7 @@ msgstr "顯示效果"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "切換鏡頭(_C)"
 
 # calendar/gui/calendar-model.c:499
 # calendar/gui/calendar-model.c:1068
@@ -274,7 +276,7 @@ msgstr "小"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "幫助(_H)"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -304,7 +306,7 @@ msgstr "白平衡:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "縮放:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
@@ -319,7 +321,7 @@ msgstr "拍照"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "退出(_Q)"
 
 #: data/camorama-gtk4.ui:95
 #, fuzzy
@@ -328,7 +330,7 @@ msgstr "偏好設定"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "關於(_A)"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -566,7 +568,7 @@ msgstr ""
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "找不到任何鏡頭"
 
 #: src/callbacks.c:1063
 #, c-format
@@ -576,7 +578,7 @@ msgstr ""
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -677,7 +679,7 @@ msgstr "色彩校正"
 
 #: src/filter.c:216
 msgid "Invert"
-msgstr ""
+msgstr "負片"
 
 #: src/filter.c:260
 #, fuzzy
@@ -699,7 +701,7 @@ msgstr "平滑化"
 
 #: src/filter.c:530
 msgid "Monochrome"
-msgstr ""
+msgstr "黑白"
 
 #: src/filter.c:568
 msgid "Monochrome (Weight)"
@@ -772,7 +774,7 @@ msgstr ""
 #: src/main.c:190
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "找不到 %s。"
 
 #: src/main.c:299
 #, c-format
