@@ -600,10 +600,6 @@ void on_about_activate(GtkMenuItem *menuitem, cam_t *cam)
 
 static void apply_filters(cam_t *cam, unsigned char *pic_buf)
 {
-    /* v4l has reverse rgb order from what camora expect so call the color
-       filter to fix things up before running the user selected filters */
-    camorama_filter_color_filter(NULL, pic_buf, cam->width,
-                                 cam->height, cam->bpp / 8);
     camorama_filter_chain_apply(cam->filter_chain, pic_buf,
                                 cam->width, cam->height, cam->bpp / 8);
 }

@@ -43,7 +43,7 @@ static gboolean is_format_supported(cam_t *cam, unsigned int pixformat)
      * that provides the highest frame rate, use it, if not disabled.
      */
     if (cam->use_libv4l)
-        return pixformat == V4L2_PIX_FMT_BGR24;
+        return pixformat == V4L2_PIX_FMT_RGB24;
 
     for (i = 0; i < ARRAY_SIZE(supported_formats); i++)
         if (supported_formats[i] == pixformat)
@@ -80,9 +80,9 @@ static void convert_yuv(enum v4l2_ycbcr_encoding enc,
          *    G = 1.164 * y + -0.392 * u + -0.813 * v
          *    B = 1.164 * y +  2.017 * u +    0.0 * v
          */
-        *(*dst)++ = BYTE_CLAMP((y + 132186 * u             ) >> 16);
-        *(*dst)++ = BYTE_CLAMP((y -  25690 * u -  53281 * v) >> 16);
         *(*dst)++ = BYTE_CLAMP((y              + 104595 * v) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y -  25690 * u -  53281 * v) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y + 132186 * u             ) >> 16);
         break;
     case V4L2_YCBCR_ENC_DEFAULT:
     case V4L2_YCBCR_ENC_709:
@@ -97,9 +97,9 @@ static void convert_yuv(enum v4l2_ycbcr_encoding enc,
          *    G = 1.164 * y + -0.213 * u + -0.533 * v
          *    B = 1.164 * y +  2.112 * u +    0.0 * v
          */
-        *(*dst)++ = BYTE_CLAMP((y + 138412 * u             ) >> 16);
-        *(*dst)++ = BYTE_CLAMP((y -  13959 * u -  34931 * v) >> 16);
         *(*dst)++ = BYTE_CLAMP((y              + 117506 * v) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y -  13959 * u -  34931 * v) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y + 138412 * u             ) >> 16);
         break;
     }
 }
@@ -121,9 +121,9 @@ static void copy_two_pixels(cam_t *cam,
         for (i = 0; i < 2; i++) {
             pix = (plane0[0] << 8) + plane0[1];
 
-            *(*dst)++ = (unsigned char)((pix & 0x1f) << 3) | 0x07;
-            *(*dst)++ = (unsigned char)((((pix & 0x07e0) >> 5)) << 2) | 0x03;
             *(*dst)++ = (unsigned char)(((pix & 0xf800) >> 11) << 3) | 0x07;
+            *(*dst)++ = (unsigned char)((((pix & 0x07e0) >> 5)) << 2) | 0x03;
+            *(*dst)++ = (unsigned char)((pix & 0x1f) << 3) | 0x07;
 
             plane0 += 2;
         }
@@ -132,9 +132,9 @@ static void copy_two_pixels(cam_t *cam,
         for (i = 0; i < 2; i++) {
             pix = (plane0[1] << 8) + plane0[0];
 
-            *(*dst)++ = (unsigned char)((pix & 0x1f) << 3) | 0x07;
-            *(*dst)++ = (unsigned char)((((pix & 0x07e0) >> 5)) << 2) | 0x03;
             *(*dst)++ = (unsigned char)(((pix & 0xf800) >> 11) << 3) | 0x07;
+            *(*dst)++ = (unsigned char)((((pix & 0x07e0) >> 5)) << 2) | 0x03;
+            *(*dst)++ = (unsigned char)((pix & 0x1f) << 3) | 0x07;
 
             plane0 += 2;
         }
@@ -185,9 +185,9 @@ static void copy_two_pixels(cam_t *cam,
     case V4L2_PIX_FMT_ARGB32:
     case V4L2_PIX_FMT_XRGB32:
         for (i = 0; i < 2; i++) {
-            *(*dst)++ = plane0[3];
-            *(*dst)++ = plane0[2];
             *(*dst)++ = plane0[1];
+            *(*dst)++ = plane0[2];
+            *(*dst)++ = plane0[3];
 
             plane0 += 4;
         }
@@ -196,19 +196,19 @@ static void copy_two_pixels(cam_t *cam,
     case V4L2_PIX_FMT_ABGR32:
     case V4L2_PIX_FMT_XBGR32:
         for (i = 0; i < 2; i++) {
-            *(*dst)++ = plane0[0];
-            *(*dst)++ = plane0[1];
             *(*dst)++ = plane0[2];
+            *(*dst)++ = plane0[1];
+            *(*dst)++ = plane0[0];
 
             plane0 += 4;
         }
         break;
     default:
-    case V4L2_PIX_FMT_RGB24:
+    case V4L2_PIX_FMT_BGR24:
         for (i = 0; i < 2; i++) {
-            *(*dst)++ = plane0[0];
-            *(*dst)++ = plane0[1];
             *(*dst)++ = plane0[2];
+            *(*dst)++ = plane0[1];
+            *(*dst)++ = plane0[0];
 
             plane0 += 3;
         }
@@ -216,7 +216,7 @@ static void copy_two_pixels(cam_t *cam,
     }
 }
 
-static unsigned int convert_to_bgr24(cam_t *cam)
+static unsigned int convert_to_rgb24(cam_t *cam)
 {
     unsigned char *plane0 = cam->pic_buf;
     unsigned char *p_out = cam->tmp;
@@ -344,8 +344,8 @@ unsigned char *cam_read(cam_t *cam)
     if (ret)
         return NULL;
 
-    if (cam->pixformat != V4L2_PIX_FMT_BGR24) {
-        convert_to_bgr24(cam);
+    if (cam->pixformat != V4L2_PIX_FMT_RGB24) {
+        convert_to_rgb24(cam);
         pic_buf = cam->tmp;
     }
 
@@ -910,11 +910,11 @@ void set_win_info(cam_t *cam)
                       fmt.fmt.pix.pixelformat >> 24);
         }
         msg = g_strdup_printf(_("Could not set format to %c%c%c%c on video device (%s)."),
-                              cam->video_dev,
                               cam->pixformat & 0xff,
                               (cam->pixformat >> 8) & 0xff,
                               (cam->pixformat >> 16) & 0xff,
-                              cam->pixformat >> 24);
+                              cam->pixformat >> 24,
+                              cam->video_dev);
         error_dialog(msg);
         g_free(msg);
         exit(0);

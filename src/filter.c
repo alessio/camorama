@@ -41,36 +41,6 @@ static void camorama_filter_class_init(CamoramaFilterClass *self_class)
 typedef struct _CamoramaFilter CamoramaFilterColor;
 typedef struct _CamoramaFilterClass CamoramaFilterColorClass;
 
-G_DEFINE_TYPE(CamoramaFilterColor, camorama_filter_color,
-              CAMORAMA_TYPE_FILTER);
-
-static void camorama_filter_color_init(CamoramaFilterColor *self)
-{
-}
-
-void
-camorama_filter_color_filter(void *__filter, guchar *image, int x, int y,
-                             int depth)
-{
-    int i;
-    char tmp;
-
-    i = x * y;
-    while (i--) {
-        tmp = image[0];
-        image[0] = image[2];
-        image[2] = tmp;
-        image += 3;
-    }
-}
-
-static void
-camorama_filter_color_class_init(CamoramaFilterColorClass *self_class)
-{
-    self_class->filter = camorama_filter_color_filter;
-    self_class->name = _("Color Correction");
-}
-
 /* GType stuff for CamoramaFilterInvert */
 typedef struct _CamoramaFilter CamoramaFilterInvert;
 typedef struct _CamoramaFilterClass CamoramaFilterInvertClass;
@@ -512,7 +482,6 @@ camorama_filter_sobel_class_init(CamoramaFilterSobelClass *self_class)
 /* general filter initialization */
 void camorama_filters_init(void)
 {
-    camorama_filter_color_get_type();
     camorama_filter_invert_get_type();
     camorama_filter_threshold_get_type();
     camorama_filter_threshold_channel_get_type();

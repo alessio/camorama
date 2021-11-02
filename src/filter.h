@@ -63,9 +63,6 @@ GType camorama_filter_mono_weight_get_type(void);
 GType camorama_filter_sobel_get_type(void);
 GType camorama_filter_smooth_get_type(void);
 
-void camorama_filter_color_filter(void *__filter, guchar *image, int x, int y,
-                                  int depth);
-
 void camorama_filters_init(void);
 gchar const *camorama_filter_get_name(CamoramaFilter * self);
 void camorama_filter_apply(CamoramaFilter *self, guchar *image,
