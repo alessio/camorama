@@ -770,24 +770,13 @@ static inline void show_buffer(cam_t *cam)
 */
 gint timeout_func(cam_t *cam)
 {
-    unsigned char *pic_buf = cam->pic_buf;
+    unsigned char *pic_buf = cam_read(cam);
 
-    if (cam->read)
-        v4l2_read(cam->dev, cam->pic_buf,
-                 (cam->width * cam->height * cam->bpp / 8));
-    else if (cam->userptr)
-        capture_buffers_userptr(cam, cam->pic_buf,
-                                cam->width * cam->height * cam->bytesperline);
-    else
-        capture_buffers(cam, cam->pic_buf,
-                        cam->width * cam->height * cam->bytesperline);
+    if (!pic_buf)
+        return TRUE;
 
-    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
-                       cam->bpp / 8);
-        pic_buf = cam->tmp;
-    }
     apply_filters(cam, pic_buf);
+
     cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                        cam->width, cam->height,
                                        (cam->width * cam->bpp / 8),
@@ -867,42 +856,42 @@ void contrast_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->contrast = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    v4l2_set_control(cam->dev, V4L2_CID_CONTRAST, cam->contrast);
+    cam_set_control(cam, V4L2_CID_CONTRAST, cam->contrast);
 }
 
 void brightness_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->brightness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    v4l2_set_control(cam->dev, V4L2_CID_BRIGHTNESS, cam->brightness);
+    cam_set_control(cam, V4L2_CID_BRIGHTNESS, cam->brightness);
 }
 
 void zoom_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->zoom = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    v4l2_set_control(cam->dev, cam->zoom_cid, cam->zoom);
+    cam_set_control(cam, cam->zoom_cid, cam->zoom);
 }
 
 void colour_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->colour = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    v4l2_set_control(cam->dev, V4L2_CID_SATURATION, cam->colour);
+    cam_set_control(cam, V4L2_CID_SATURATION, cam->colour);
 }
 
 void hue_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->hue = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    v4l2_set_control(cam->dev, V4L2_CID_HUE, cam->hue);
+    cam_set_control(cam, V4L2_CID_HUE, cam->hue);
 }
 
 void wb_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->whiteness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    v4l2_set_control(cam->dev, V4L2_CID_WHITENESS, cam->whiteness);
+    cam_set_control(cam, V4L2_CID_WHITENESS, cam->whiteness);
 }
 
 /*
@@ -947,11 +936,11 @@ static int handle_video_devs(const char *file,
     memset(&devices[n_devices], 0, sizeof(struct devnodes));
 
     if (first_device < 0) {
-        fd = v4l2_open(file, O_RDWR);
+        fd = open(file, O_RDWR);
         if (fd < 0) {
             devices[n_devices].is_valid = FALSE;
         } else {
-            if (v4l2_ioctl(fd, VIDIOC_QUERYCAP, &vid_cap) == -1) {
+            if (ioctl(fd, VIDIOC_QUERYCAP, &vid_cap) == -1) {
                 devices[n_devices].is_valid = FALSE;
             } else if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
                 devices[n_devices].is_valid = FALSE;
@@ -961,7 +950,7 @@ static int handle_video_devs(const char *file,
             }
         }
 
-        v4l2_close(fd);
+        close(fd);
     } else {
         devices[n_devices].is_valid = devices[first_device].is_valid;
     }
@@ -1251,7 +1240,7 @@ void start_camera(cam_t *cam)
 
         cam->pb = NULL;
 
-        v4l2_close(cam->dev);
+        cam_close(cam);
     }
 
     if (cam->timeout_id) {
@@ -1287,9 +1276,9 @@ void start_camera(cam_t *cam)
     /* Third step: allocate them again */
 
     if (cam->read)
-        cam->dev = v4l2_open(cam->video_dev, O_RDWR);
+        cam->dev = cam_open(cam, O_RDWR);
     else
-        cam->dev = v4l2_open(cam->video_dev, O_RDWR | O_NONBLOCK);
+        cam->dev = cam_open(cam, O_RDWR | O_NONBLOCK);
 
     if (camera_cap(cam))
         exit(-1);

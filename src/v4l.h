@@ -71,7 +71,7 @@ typedef struct camera {
     int savetype, rsavetype;
     gchar *ts_string;
     gchar *date_format;
-    gboolean debug, read, userptr, hidden;
+    gboolean debug, read, userptr, use_libv4l, hidden;
     gboolean cap, rcap, acap, show_adjustments, show_effects;
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
@@ -102,6 +102,13 @@ typedef struct camera {
     } *buffers;
 } cam_t;
 
+int cam_open(cam_t *cam, int oflag);
+int cam_close(cam_t *cam);
+unsigned char *cam_read(cam_t *cam);
+int cam_ioctl(cam_t *cam, unsigned long cmd, void *arg);
+int cam_set_control(cam_t *cam, int cid, int value);
+int cam_get_control(cam_t *cam, int cid);
+
 int camera_cap(cam_t *);
 void print_cam(cam_t *);
 void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y);
@@ -113,7 +120,7 @@ void start_streaming(cam_t *cam);
 void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len);
 void stop_streaming(cam_t *cam);
 void start_streaming_userptr(cam_t *cam);
-void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf, unsigned int len);
+void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf);
 void stop_streaming_userptr(cam_t *cam);
 
 #endif                          /* !CAMORAMA_V4L_H */

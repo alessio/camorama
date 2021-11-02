@@ -4,9 +4,114 @@
 #include <sys/select.h>
 #include <time.h>
 #include "v4l.h"
+#include "filter.h"
 #include "support.h"
 
 extern int frame_number;
+
+int cam_open(cam_t *cam, int oflag)
+{
+    if (cam->use_libv4l)
+        return v4l2_open(cam->video_dev, oflag);
+    else
+        return open(cam->video_dev, oflag);
+}
+
+int cam_close(cam_t *cam)
+{
+    if (cam->use_libv4l)
+        return v4l2_close(cam->dev);
+    else
+        return close(cam->dev);
+}
+
+unsigned char *cam_read(cam_t *cam)
+{
+    unsigned char *pic_buf = cam->pic_buf;
+    int ret = 0;
+
+    if (cam->read) {
+        if (cam->use_libv4l)
+            ret = v4l2_read(cam->dev, cam->pic_buf,
+                            (cam->width * cam->height * cam->bpp / 8));
+        else
+            ret = read(cam->dev, cam->pic_buf,
+                       (cam->width * cam->height * cam->bpp / 8));
+    } else if (cam->userptr) {
+            capture_buffers_userptr(cam, cam->pic_buf);
+    } else {
+            capture_buffers(cam, cam->pic_buf, cam->bytesperline);
+    }
+    if (ret)
+        return NULL;
+
+    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
+        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
+                       cam->bpp / 8);
+        pic_buf = cam->tmp;
+    }
+
+    return pic_buf;
+}
+
+int cam_ioctl(cam_t *cam, unsigned long cmd, void *arg)
+{
+    if (cam->use_libv4l)
+        return v4l2_ioctl(cam->dev, cmd, arg);
+    else
+        return ioctl(cam->dev, cmd, arg);
+}
+
+int cam_set_control(cam_t *cam, int cid, int value)
+{
+    struct v4l2_queryctrl qctrl = { .id = cid };
+    struct v4l2_control ctrl = { .id = cid };
+    int ret;
+
+    if (cam->use_libv4l)
+        return v4l2_set_control(cam->dev, cid, value);
+
+    ret = cam_ioctl(cam, VIDIOC_QUERYCTRL, &qctrl);
+    if (ret)
+            return ret;
+
+    if ((qctrl.flags & V4L2_CTRL_FLAG_DISABLED) ||
+        (qctrl.flags & V4L2_CTRL_FLAG_GRABBED))
+            return 0;
+
+    if (qctrl.type == V4L2_CTRL_TYPE_BOOLEAN)
+        ctrl.value = value ? 1 : 0;
+    else
+        ctrl.value = ((long long) value * (qctrl.maximum - qctrl.minimum) +
+                      32767) / 65535 + qctrl.minimum;
+
+    ret = cam_ioctl(cam, VIDIOC_S_CTRL, &ctrl);
+
+    return ret;
+}
+
+int cam_get_control(cam_t *cam, int cid)
+{
+        struct v4l2_queryctrl qctrl = { .id = cid };
+        struct v4l2_control ctrl = { .id = cid };
+
+    if (cam->use_libv4l)
+        return v4l2_get_control(cam->dev, cid);
+
+    if (cam_ioctl(cam, VIDIOC_QUERYCTRL, &qctrl))
+        return -1;
+    if (qctrl.flags & V4L2_CTRL_FLAG_DISABLED) {
+        errno = EINVAL;
+        return -1;
+    }
+
+    if (cam_ioctl(cam, VIDIOC_G_CTRL, &ctrl))
+            return -1;
+
+    return (((long long) ctrl.value - qctrl.minimum) * 65535 +
+                        (qctrl.maximum - qctrl.minimum) / 2) /
+            (qctrl.maximum - qctrl.minimum);
+}
 
 void print_cam(cam_t *cam)
 {
@@ -83,7 +188,7 @@ static float get_max_fps_discrete(cam_t *cam,
     frmival.index = 0;
 
     for (frmival.index = 0;
-         !v4l2_ioctl(cam->dev, VIDIOC_ENUM_FRAMEINTERVALS, &frmival);
+         !cam_ioctl(cam, VIDIOC_ENUM_FRAMEINTERVALS, &frmival);
          frmival.index++) {
             fps = ((float)frmival.discrete.denominator)/frmival.discrete.numerator;
             if (fps > max_fps)
@@ -108,7 +213,7 @@ void get_supported_resolutions(cam_t *cam)
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
     for (fmt.index = 0;
-         !v4l2_ioctl(cam->dev, VIDIOC_ENUM_FMT, &fmt);
+         !cam_ioctl(cam, VIDIOC_ENUM_FMT, &fmt);
          fmt.index++) {
         if (cam->pixformat != fmt.pixelformat)
             continue;
@@ -116,7 +221,7 @@ void get_supported_resolutions(cam_t *cam)
         frmsize.pixel_format = fmt.pixelformat;
         frmsize.index = 0;
 
-        while (!v4l2_ioctl(cam->dev, VIDIOC_ENUM_FRAMESIZES, &frmsize)) {
+        while (!cam_ioctl(cam, VIDIOC_ENUM_FRAMESIZES, &frmsize)) {
             if (frmsize.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
                     insert_resolution(cam, frmsize.discrete.width,
                                       frmsize.discrete.height,
@@ -149,7 +254,7 @@ int camera_cap(cam_t *cam)
     struct v4l2_format fmt;
 
     /* Query device capabilities */
-    if (v4l2_ioctl(cam->dev, VIDIOC_QUERYCAP, &vid_cap) == -1) {
+    if (cam_ioctl(cam, VIDIOC_QUERYCAP, &vid_cap) == -1) {
 
         msg = g_strdup_printf(_("Could not connect to video device (%s).\n"
                                 "Please check connection. Error: %d"),
@@ -169,7 +274,7 @@ int camera_cap(cam_t *cam)
     for (i = 0;; i++) {
         fmtdesc.index = i;
 
-        if (v4l2_ioctl(cam->dev, VIDIOC_ENUM_FMT, &fmtdesc))
+        if (cam_ioctl(cam, VIDIOC_ENUM_FMT, &fmtdesc))
         break;
 
         if (cam->debug == TRUE)
@@ -190,7 +295,7 @@ int camera_cap(cam_t *cam)
         fmt.fmt.pix.width = 48;
         fmt.fmt.pix.height = 32;
 
-        if (!v4l2_ioctl(cam->dev, VIDIOC_TRY_FMT, &fmt)) {
+        if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
             if (fmt.fmt.pix.width < cam->min_width)
                     cam->min_width = fmt.fmt.pix.width;
             if (fmt.fmt.pix.height < cam->min_height)
@@ -206,7 +311,7 @@ int camera_cap(cam_t *cam)
         fmt.fmt.pix.width = 100000;
         fmt.fmt.pix.height = 100000;
 
-        if (!v4l2_ioctl(cam->dev, VIDIOC_TRY_FMT, &fmt)) {
+        if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
         if (fmt.fmt.pix.width > cam->max_width)
                 cam->max_width = fmt.fmt.pix.width;
         if (fmt.fmt.pix.height > cam->max_height)
@@ -285,17 +390,17 @@ static int v4l_get_zoom(cam_t *cam)
     int i;
 
     cam->zoom_cid = V4L2_CID_ZOOM_ABSOLUTE;
-    i = v4l2_get_control(cam->dev, cam->zoom_cid);
+    i = cam_get_control(cam, cam->zoom_cid);
     if (i >= 0)
         return i;
 
     cam->zoom_cid = V4L2_CID_ZOOM_RELATIVE;
-    i = v4l2_get_control(cam->dev, cam->zoom_cid);
+    i = cam_get_control(cam, cam->zoom_cid);
     if (i >= 0)
         return i;
 
     cam->zoom_cid = V4L2_CID_ZOOM_CONTINUOUS;
-    i = v4l2_get_control(cam->dev, cam->zoom_cid);
+    i = cam_get_control(cam, cam->zoom_cid);
     if (i >= 0)
         return i;
 
@@ -310,7 +415,7 @@ void get_pic_info(cam_t *cam)
     if (cam->debug == TRUE)
         printf("\nVideo control settings:\n");
 
-    i = v4l2_get_control(cam->dev, V4L2_CID_HUE);
+    i = cam_get_control(cam, V4L2_CID_HUE);
     if (i >= 0) {
         cam->hue = i;
         if (cam->debug == TRUE)
@@ -318,7 +423,7 @@ void get_pic_info(cam_t *cam)
     } else {
         cam->hue = -1;
     }
-    i = v4l2_get_control(cam->dev, V4L2_CID_SATURATION);
+    i = cam_get_control(cam, V4L2_CID_SATURATION);
     if (i >= 0) {
         cam->colour = i;
         if (cam->debug == TRUE)
@@ -334,7 +439,7 @@ void get_pic_info(cam_t *cam)
     } else {
         cam->zoom = -1;
     }
-    i = v4l2_get_control(cam->dev, V4L2_CID_CONTRAST);
+    i = cam_get_control(cam, V4L2_CID_CONTRAST);
     if (i >= 0) {
         cam->contrast = i;
         if (cam->debug == TRUE)
@@ -342,7 +447,7 @@ void get_pic_info(cam_t *cam)
     } else {
         cam->contrast = -1;
     }
-    i = v4l2_get_control(cam->dev, V4L2_CID_WHITENESS);
+    i = cam_get_control(cam, V4L2_CID_WHITENESS);
     if (i >= 0) {
         cam->whiteness = i;
         if (cam->debug == TRUE)
@@ -350,7 +455,7 @@ void get_pic_info(cam_t *cam)
     } else {
         cam->whiteness = -1;
     }
-    i = v4l2_get_control(cam->dev, V4L2_CID_BRIGHTNESS);
+    i = cam_get_control(cam, V4L2_CID_BRIGHTNESS);
     if (i >= 0) {
         cam->brightness = i;
         if (cam->debug == TRUE)
@@ -367,7 +472,7 @@ void get_win_info(cam_t *cam)
 
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
-    if (v4l2_ioctl(cam->dev, VIDIOC_G_FMT, &fmt)) {
+    if (cam_ioctl(cam, VIDIOC_G_FMT, &fmt)) {
         msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."),
                               cam->video_dev);
         error_dialog(msg);
@@ -419,7 +524,7 @@ void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y)
     fmt.fmt.pix.pixelformat = cam->pixformat;
     fmt.fmt.pix.width = *x;
     fmt.fmt.pix.height = *y;
-    if (!v4l2_ioctl(cam->dev, VIDIOC_TRY_FMT, &fmt)) {
+    if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
         *x = fmt.fmt.pix.width;
         *y = fmt.fmt.pix.height;
     }
@@ -434,7 +539,7 @@ void set_win_info(cam_t *cam)
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
     /* Get current settings, apply our changes and try the new setting */
-    if (v4l2_ioctl(cam->dev, VIDIOC_G_FMT, &fmt)) {
+    if (cam_ioctl(cam, VIDIOC_G_FMT, &fmt)) {
         if (cam->debug) {
             g_message("VIDIOC_G_FMT  --  could not get window info, exiting....");
         }
@@ -453,7 +558,7 @@ void set_win_info(cam_t *cam)
     fmt.fmt.pix.pixelformat = cam->pixformat;
     fmt.fmt.pix.width = cam->width;
     fmt.fmt.pix.height = cam->height;
-    if (v4l2_ioctl(cam->dev, VIDIOC_S_FMT, &fmt)) {
+    if (cam_ioctl(cam, VIDIOC_S_FMT, &fmt)) {
         if (cam->debug)
             g_message("VIDIOC_S_FMT  --  could not set window info, exiting....");
 
@@ -506,7 +611,7 @@ void start_streaming(cam_t *cam)
     cam->req.count = 2;
     cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     cam->req.memory = V4L2_MEMORY_MMAP;
-    if (v4l2_ioctl(cam->dev, VIDIOC_REQBUFS, &cam->req)) {
+    if (cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req)) {
         msg = g_strdup_printf(_("VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."),
                               cam->video_dev);
         error_dialog(msg);
@@ -531,7 +636,7 @@ void start_streaming(cam_t *cam)
         buf.memory = V4L2_MEMORY_MMAP;
         buf.index = cam->n_buffers;
 
-        if (v4l2_ioctl(cam->dev, VIDIOC_QUERYBUF, &buf)) {
+        if (cam_ioctl(cam, VIDIOC_QUERYBUF, &buf)) {
             msg = g_strdup_printf(_("VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."),
                                   cam->video_dev);
             error_dialog(msg);
@@ -560,7 +665,7 @@ void start_streaming(cam_t *cam)
         buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
         buf.memory = V4L2_MEMORY_MMAP;
         buf.index = i;
-        if (v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf)) {
+        if (cam_ioctl(cam, VIDIOC_QBUF, &buf)) {
             msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."),
                                   cam->video_dev);
             error_dialog(msg);
@@ -570,7 +675,7 @@ void start_streaming(cam_t *cam)
     }
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
-    if (v4l2_ioctl(cam->dev, VIDIOC_STREAMON, &type)) {
+    if (cam_ioctl(cam, VIDIOC_STREAMON, &type)) {
         msg = g_strdup_printf(_("failed to start streaming (%s), exiting...."),
                               cam->video_dev);
         error_dialog(msg);
@@ -589,7 +694,7 @@ void start_streaming_userptr(cam_t *cam)
     cam->req.count = 2;
     cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     cam->req.memory = V4L2_MEMORY_USERPTR;
-    if (v4l2_ioctl(cam->dev, VIDIOC_REQBUFS, &cam->req)) {
+    if (cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req)) {
         msg = g_strdup_printf(_("VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."),
                               cam->video_dev);
         error_dialog(msg);
@@ -626,7 +731,7 @@ void start_streaming_userptr(cam_t *cam)
         buf.length = cam->buffers[cam->n_buffers].length;
         buf.m.userptr = (unsigned long)cam->buffers[cam->n_buffers].start;
 
-        if (v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf)) {
+        if (cam_ioctl(cam, VIDIOC_QBUF, &buf)) {
             msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not query buffers (%s), exiting...."),
                                   cam->video_dev);
             error_dialog(msg);
@@ -637,7 +742,7 @@ void start_streaming_userptr(cam_t *cam)
 
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
-    if (v4l2_ioctl(cam->dev, VIDIOC_STREAMON, &type)) {
+    if (cam_ioctl(cam, VIDIOC_STREAMON, &type)) {
         msg = g_strdup_printf(_("failed to start streaming (%s), exiting...."),
                               cam->video_dev);
         error_dialog(msg);
@@ -678,7 +783,7 @@ void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len)
     memset(&buf, 0, sizeof(buf));
     buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     buf.memory = V4L2_MEMORY_MMAP;
-    v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf);
+    cam_ioctl(cam, VIDIOC_DQBUF, &buf);
 
     if (len > buf.bytesused)
         len = buf.bytesused;
@@ -690,11 +795,10 @@ void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len)
         inbuf += cam->bytesperline;
     }
 
-    v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf);
+    cam_ioctl(cam, VIDIOC_QBUF, &buf);
 }
 
-void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf,
-                             unsigned int len)
+void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf)
 {
     char *msg;
     unsigned char *inbuf;
@@ -726,7 +830,7 @@ void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf,
     memset(&buf, 0, sizeof(buf));
     buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     buf.memory = V4L2_MEMORY_USERPTR;
-    v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf);
+    cam_ioctl(cam, VIDIOC_DQBUF, &buf);
 
     inbuf = cam->buffers[buf.index].start;
     for (y = 0; y < cam->height; y++) {
@@ -735,7 +839,7 @@ void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf,
         inbuf += cam->bytesperline;
     }
 
-    v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf);
+    cam_ioctl(cam, VIDIOC_QBUF, &buf);
 }
 
 void stop_streaming(cam_t *cam)
@@ -767,14 +871,14 @@ void stop_streaming(cam_t *cam)
             memset(&buf, 0, sizeof(buf));
             buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
             buf.memory = V4L2_MEMORY_MMAP;
-            if (v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf))
+            if (cam_ioctl(cam, VIDIOC_DQBUF, &buf))
                 break;
         }
     };
 
     /* Streams off */
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    if (v4l2_ioctl(cam->dev, VIDIOC_STREAMOFF, &type)) {
+    if (cam_ioctl(cam, VIDIOC_STREAMOFF, &type)) {
         msg = g_strdup_printf(_("failed to stop streaming (%s), exiting...."),
                               cam->video_dev);
         error_dialog(msg);
@@ -791,7 +895,7 @@ void stop_streaming(cam_t *cam)
     cam->req.count = 0;
     cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     cam->req.memory = V4L2_MEMORY_MMAP;
-    v4l2_ioctl(cam->dev, VIDIOC_REQBUFS, &cam->req);
+    cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req);
 
     free(cam->buffers);
     cam->buffers = NULL;
@@ -826,14 +930,14 @@ void stop_streaming_userptr(cam_t *cam)
             memset(&buf, 0, sizeof(buf));
             buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
             buf.memory = V4L2_MEMORY_USERPTR;
-            if (v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf))
+            if (cam_ioctl(cam, VIDIOC_DQBUF, &buf))
                 break;
         }
     };
 
     /* Streams off */
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    if (v4l2_ioctl(cam->dev, VIDIOC_STREAMOFF, &type)) {
+    if (cam_ioctl(cam, VIDIOC_STREAMOFF, &type)) {
         msg = g_strdup_printf(_("failed to stop streaming (%s), exiting...."),
                               cam->video_dev);
         error_dialog(msg);
@@ -850,7 +954,7 @@ void stop_streaming_userptr(cam_t *cam)
     cam->req.count = 0;
     cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     cam->req.memory = V4L2_MEMORY_MMAP;
-    v4l2_ioctl(cam->dev, VIDIOC_REQBUFS, &cam->req);
+    cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req);
 
     free(cam->buffers);
     cam->buffers = NULL;
