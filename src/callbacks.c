@@ -368,7 +368,7 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
 
     scale = 1. * width / cam->width;
     if (1. * height / cam->height < scale)
-	scale = 1. * height / cam->height;
+        scale = 1. * height / cam->height;
 
     cam->scale = scale;
 
@@ -387,19 +387,19 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
 }
 
 gboolean on_window_state_event(GtkMenuItem *menuitem,
-			       GdkEventWindowState *event, cam_t *cam)
+                               GdkEventWindowState *event, cam_t *cam)
 {
 #if GTK_MAJOR_VERSION >= 3
     if (event->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) {
-	gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
-	gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
-	gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
-	gtk_widget_hide(cam->status);
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
+        gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
+        gtk_widget_hide(cam->status);
     } else {
-	gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
-	gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
-	gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
-	gtk_widget_show(cam->status);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
+        gtk_widget_show(cam->status);
     }
 #endif
 
@@ -415,9 +415,9 @@ void toggle_fullscreen(GtkWidget *widget, cam_t *cam)
     state = gdk_window_get_state (gtk_widget_get_window (GTK_WIDGET (window)));
 
     if (state & GDK_WINDOW_STATE_FULLSCREEN) {
-	gtk_window_unfullscreen(GTK_WINDOW(window));
+        gtk_window_unfullscreen(GTK_WINDOW(window));
     } else {
-	gtk_window_fullscreen(GTK_WINDOW(window));
+        gtk_window_fullscreen(GTK_WINDOW(window));
     }
 }
 
@@ -744,7 +744,7 @@ static inline void show_buffer(cam_t *cam)
 {
     gtk_widget_queue_draw(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")));
 }
-#else	/* TODO: add GTK 4 specific draw functions */
+#else   /* TODO: add GTK 4 specific draw functions */
 void draw_callback(GtkWidget *widget, cairo_t *cr, cam_t *cam)
 {
    #error "Can't draw yet with gtk > 3.94"

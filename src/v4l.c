@@ -47,7 +47,7 @@ static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y,
         for (i = 0; i < cam->n_res; i++) {
             if (cam->res[i].x == x && cam->res[i].y == y)
             return;
-	}
+        }
     }
 
     cam->res = realloc(cam->res, (cam->n_res + 1) * sizeof(struct resolutions));

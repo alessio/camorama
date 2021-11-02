@@ -19,7 +19,7 @@ void on_change_size_activate(GtkWidget * widget, cam_t *cam);
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam);
 gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam);
 gboolean on_window_state_event(GtkMenuItem *menuitem,
-			       GdkEventWindowState *event, cam_t *cam);
+                               GdkEventWindowState *event, cam_t *cam);
 int delete_event(GtkWidget *, gpointer data);
 void cap_func(GtkWidget *, cam_t *);
 void rcap_func(GtkWidget *, cam_t *);

@@ -270,7 +270,7 @@ void load_interface(cam_t *cam)
     }
 
     g_signal_connect(gtk_builder_get_object(cam->xml, "imagemenuitem1"),
-		     "activate", G_CALLBACK(capture_func), cam);
+                     "activate", G_CALLBACK(capture_func), cam);
     g_signal_connect(gtk_builder_get_object(cam->xml, "button1"),
                      "clicked", G_CALLBACK(capture_func), cam);
 
@@ -515,13 +515,13 @@ void load_interface(cam_t *cam)
 #if GTK_MAJOR_VERSION >= 3
     // Detect window resize calls
     g_signal_connect(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
-		     "configure-event", G_CALLBACK(on_configure_event), cam);
+                     "configure-event", G_CALLBACK(on_configure_event), cam);
     g_signal_connect(window, "window-state-event",
-		     G_CALLBACK(on_window_state_event), cam);
+                     G_CALLBACK(on_window_state_event), cam);
 
     g_signal_connect(gtk_builder_get_object(cam->xml, "button3"),
                      "clicked", G_CALLBACK(toggle_fullscreen), cam);
     g_signal_connect(gtk_builder_get_object(cam->xml, "imagemenuitem2"),
-		     "activate", G_CALLBACK(toggle_fullscreen), cam);
+                     "activate", G_CALLBACK(toggle_fullscreen), cam);
 #endif
 }
