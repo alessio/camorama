@@ -84,8 +84,6 @@ struct _CamoramaFilterClass {
                     guchar *image, gint width, gint height, gint depth);
 };
 
-void yuv420p_to_rgb(guchar *image, guchar *temp, gint x, gint y, gint z);
-
 G_END_DECLS
 
 #endif                          /* !CAMORAMA_FILTER_H */

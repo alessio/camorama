@@ -43,13 +43,14 @@ struct buffer_start_len {
 };
 
 struct resolutions {
+    unsigned int pixformat;
     unsigned int x, y;
     float max_fps;
 };
 
 typedef struct camera {
     int dev;
-    unsigned int width, height;
+    unsigned int width, height, colorspace, ycbcr_enc;
     int bpp;
     float scale;
     CamoImageSize size;
@@ -111,11 +112,12 @@ int cam_get_control(cam_t *cam, int cid);
 
 int camera_cap(cam_t *);
 void print_cam(cam_t *);
-void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y);
+void try_set_win_info(cam_t *cam, unsigned int pixformat,
+                      unsigned int *x, unsigned int *y);
 void set_win_info(cam_t *cam);
 void get_pic_info(cam_t *);
 void get_win_info(cam_t *);
-void get_supported_resolutions(cam_t *cam);
+void get_supported_resolutions(cam_t *cam, gboolean all_supported);
 void start_streaming(cam_t *cam);
 void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len);
 void stop_streaming(cam_t *cam);

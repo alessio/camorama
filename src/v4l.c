@@ -4,10 +4,309 @@
 #include <sys/select.h>
 #include <time.h>
 #include "v4l.h"
-#include "filter.h"
 #include "support.h"
 
 extern int frame_number;
+
+#define BYTE_CLAMP(a) CLAMP(a, 0, 255)
+
+/* Formats that are natively supported */
+static const unsigned int supported_formats[] = {
+    V4L2_PIX_FMT_BGR24,
+    V4L2_PIX_FMT_RGB24,
+    V4L2_PIX_FMT_ARGB32,
+    V4L2_PIX_FMT_XRGB32,
+    V4L2_PIX_FMT_BGR32,
+    V4L2_PIX_FMT_ABGR32,
+    V4L2_PIX_FMT_XBGR32,
+    V4L2_PIX_FMT_YUYV,
+    V4L2_PIX_FMT_UYVY,
+    V4L2_PIX_FMT_YVYU,
+    V4L2_PIX_FMT_VYUY,
+    V4L2_PIX_FMT_RGB565,
+    V4L2_PIX_FMT_RGB565X,
+    V4L2_PIX_FMT_RGB32,
+    V4L2_PIX_FMT_NV12,
+    V4L2_PIX_FMT_NV21,
+    V4L2_PIX_FMT_YUV420,
+    V4L2_PIX_FMT_YVU420,
+};
+
+#define ARRAY_SIZE(a)  (sizeof(a)/sizeof(*a))
+
+static gboolean is_format_supported(cam_t *cam, unsigned int pixformat)
+{
+    unsigned int i;
+
+    /*
+     * As libv4l supports more formats and already selects the format
+     * that provides the highest frame rate, use it, if not disabled.
+     */
+    if (cam->use_libv4l)
+        return pixformat == V4L2_PIX_FMT_BGR24;
+
+    for (i = 0; i < ARRAY_SIZE(supported_formats); i++)
+        if (supported_formats[i] == pixformat)
+            return TRUE;
+
+    return FALSE;
+}
+
+static void convert_yuv(enum v4l2_ycbcr_encoding enc,
+                        int32_t y, int32_t u, int32_t v,
+                        unsigned char **dst)
+{
+    int full_scale = 1; // FIXME: add support for non-full_scale
+
+    if (full_scale)
+        y *= 65536;
+    else
+        y = (y - 16) * 76284;
+
+    u -= 128;
+    v -= 128;
+
+    /*
+     * TODO: add BT2020 and SMPTE240M and better handle
+     * other differences
+     */
+    switch (enc) {
+    case V4L2_YCBCR_ENC_601:
+    case V4L2_YCBCR_ENC_XV601:
+    case V4L2_YCBCR_ENC_SYCC:
+        /*
+         * ITU-R BT.601 matrix:
+         *    R = 1.164 * y +    0.0 * u +  1.596 * v
+         *    G = 1.164 * y + -0.392 * u + -0.813 * v
+         *    B = 1.164 * y +  2.017 * u +    0.0 * v
+         */
+        *(*dst)++ = BYTE_CLAMP((y + 132186 * u             ) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y -  25690 * u -  53281 * v) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y              + 104595 * v) >> 16);
+        break;
+    case V4L2_YCBCR_ENC_DEFAULT:
+    case V4L2_YCBCR_ENC_709:
+    case V4L2_YCBCR_ENC_XV709:
+    case V4L2_YCBCR_ENC_BT2020:
+    case V4L2_YCBCR_ENC_BT2020_CONST_LUM:
+    case V4L2_YCBCR_ENC_SMPTE240M:
+    default:
+        /*
+         * ITU-R BT.709 matrix:
+         *    R = 1.164 * y +    0.0 * u +  1.793 * v
+         *    G = 1.164 * y + -0.213 * u + -0.533 * v
+         *    B = 1.164 * y +  2.112 * u +    0.0 * v
+         */
+        *(*dst)++ = BYTE_CLAMP((y + 138412 * u             ) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y -  13959 * u -  34931 * v) >> 16);
+        *(*dst)++ = BYTE_CLAMP((y              + 117506 * v) >> 16);
+        break;
+    }
+}
+
+static void copy_two_pixels(cam_t *cam,
+                            enum v4l2_ycbcr_encoding enc,
+                            unsigned char *plane0,
+                            unsigned char *plane1,
+                            unsigned char *plane2,
+                            unsigned char **dst)
+{
+    uint32_t fourcc = cam->pixformat;
+    int32_t y_off, u_off, u, v;
+    uint16_t pix;
+    int i;
+
+    switch (cam->pixformat) {
+    case V4L2_PIX_FMT_RGB565: /* rrrrrggg gggbbbbb */
+        for (i = 0; i < 2; i++) {
+            pix = (plane0[0] << 8) + plane0[1];
+
+            *(*dst)++ = (unsigned char)((pix & 0x1f) << 3) | 0x07;
+            *(*dst)++ = (unsigned char)((((pix & 0x07e0) >> 5)) << 2) | 0x03;
+            *(*dst)++ = (unsigned char)(((pix & 0xf800) >> 11) << 3) | 0x07;
+
+            plane0 += 2;
+        }
+        break;
+    case V4L2_PIX_FMT_RGB565X: /* gggbbbbb rrrrrggg */
+        for (i = 0; i < 2; i++) {
+            pix = (plane0[1] << 8) + plane0[0];
+
+            *(*dst)++ = (unsigned char)((pix & 0x1f) << 3) | 0x07;
+            *(*dst)++ = (unsigned char)((((pix & 0x07e0) >> 5)) << 2) | 0x03;
+            *(*dst)++ = (unsigned char)(((pix & 0xf800) >> 11) << 3) | 0x07;
+
+            plane0 += 2;
+        }
+        break;
+    case V4L2_PIX_FMT_YUYV:
+    case V4L2_PIX_FMT_UYVY:
+    case V4L2_PIX_FMT_YVYU:
+    case V4L2_PIX_FMT_VYUY:
+        y_off = (fourcc == V4L2_PIX_FMT_YUYV || fourcc == V4L2_PIX_FMT_YVYU) ? 0 : 1;
+        u_off = (fourcc == V4L2_PIX_FMT_YUYV || fourcc == V4L2_PIX_FMT_UYVY) ? 0 : 2;
+
+        u = plane0[(1 - y_off) + u_off];
+        v = plane0[(1 - y_off) + (2 - u_off)];
+
+        for (i = 0; i < 2; i++)
+            convert_yuv(enc, plane0[y_off + (i << 1)], u, v, dst);
+
+        break;
+    case V4L2_PIX_FMT_NV12:
+    case V4L2_PIX_FMT_NV21:
+        if (fourcc == V4L2_PIX_FMT_NV12) {
+            u = plane1[0];
+            v = plane1[1];
+        } else {
+            u = plane1[1];
+            v = plane1[0];
+        }
+
+        for (i = 0; i < 2; i++)
+            convert_yuv(enc, plane0[i], u, v, dst);
+
+        break;
+    case V4L2_PIX_FMT_YUV420:
+    case V4L2_PIX_FMT_YVU420:
+        if (fourcc == V4L2_PIX_FMT_YUV420) {
+            u = plane1[0];
+            v = plane2[0];
+        } else {
+            u = plane2[0];
+            v = plane1[0];
+        }
+
+        for (i = 0; i < 2; i++)
+            convert_yuv(enc, plane0[i], u, v, dst);
+
+        break;
+    case V4L2_PIX_FMT_RGB32:
+    case V4L2_PIX_FMT_ARGB32:
+    case V4L2_PIX_FMT_XRGB32:
+        for (i = 0; i < 2; i++) {
+            *(*dst)++ = plane0[3];
+            *(*dst)++ = plane0[2];
+            *(*dst)++ = plane0[1];
+
+            plane0 += 4;
+        }
+        break;
+    case V4L2_PIX_FMT_BGR32:
+    case V4L2_PIX_FMT_ABGR32:
+    case V4L2_PIX_FMT_XBGR32:
+        for (i = 0; i < 2; i++) {
+            *(*dst)++ = plane0[0];
+            *(*dst)++ = plane0[1];
+            *(*dst)++ = plane0[2];
+
+            plane0 += 4;
+        }
+        break;
+    default:
+    case V4L2_PIX_FMT_RGB24:
+        for (i = 0; i < 2; i++) {
+            *(*dst)++ = plane0[0];
+            *(*dst)++ = plane0[1];
+            *(*dst)++ = plane0[2];
+
+            plane0 += 3;
+        }
+        break;
+    }
+}
+
+static unsigned int convert_to_bgr24(cam_t *cam)
+{
+    unsigned char *plane0 = cam->pic_buf;
+    unsigned char *p_out = cam->tmp;
+    uint32_t width = cam->width;
+    uint32_t height = cam->height;
+    uint32_t bytesperline = cam->bytesperline;
+    unsigned char *plane0_start = plane0;
+    unsigned char *plane1_start = NULL;
+    unsigned char *plane2_start = NULL;
+    unsigned char *plane1 = NULL;
+    unsigned char *plane2 = NULL;
+    enum v4l2_ycbcr_encoding enc;
+    unsigned int x, y, depth;
+    uint32_t num_planes = 1;
+    unsigned char *p_start;
+    uint32_t plane0_size;
+    uint32_t w_dec = 0;
+    uint32_t h_dec = 0;
+
+    if (cam->ycbcr_enc == V4L2_YCBCR_ENC_DEFAULT)
+        enc = V4L2_MAP_YCBCR_ENC_DEFAULT(cam->colorspace);
+    else
+        enc = cam->ycbcr_enc;
+
+    switch (cam->pixformat) {
+    case V4L2_PIX_FMT_BGR24:
+        depth = 24;
+        break;
+    case V4L2_PIX_FMT_RGB32:
+    case V4L2_PIX_FMT_ARGB32:
+    case V4L2_PIX_FMT_XRGB32:
+    case V4L2_PIX_FMT_BGR32:
+    case V4L2_PIX_FMT_ABGR32:
+    case V4L2_PIX_FMT_XBGR32:
+        depth = 32;
+        break;
+    case V4L2_PIX_FMT_NV12:
+    case V4L2_PIX_FMT_NV21:
+        num_planes = 2;
+        depth = 8;                              /* Depth of plane 0 */
+        h_dec = 1;
+        break;
+    case V4L2_PIX_FMT_YUV420:
+    case V4L2_PIX_FMT_YVU420:
+        num_planes = 3;
+        depth = 8;                              /* Depth of plane 0 */
+        h_dec = 1;
+        w_dec = 1;
+        break;
+    case V4L2_PIX_FMT_RGB565:
+    case V4L2_PIX_FMT_RGB565X:
+    case V4L2_PIX_FMT_YUYV:
+    case V4L2_PIX_FMT_UYVY:
+    case V4L2_PIX_FMT_YVYU:
+    case V4L2_PIX_FMT_VYUY:
+    default:
+        depth = 16;
+        break;
+    }
+
+    p_start = p_out;
+
+    if (num_planes > 1) {
+        plane0_size = (width * height * depth) >> 3;
+        plane1_start = plane0_start + plane0_size;
+    }
+
+    if (num_planes > 2)
+        plane2_start = plane1_start + (plane0_size >> (w_dec + h_dec));
+
+    for (y = 0; y < height; y++) {
+        plane0 = plane0_start + bytesperline * y;
+        if (num_planes > 1)
+            plane1 = plane1_start + (bytesperline >> w_dec) * (y >> h_dec);
+        if (num_planes > 2)
+            plane2 = plane2_start + (bytesperline >> w_dec) * (y >> h_dec);
+
+        for (x = 0; x < width >> 1; x++) {
+            copy_two_pixels(cam, enc, plane0, plane1, plane2, &p_out);
+
+            plane0 += depth >> 2;
+            if (num_planes > 1)
+                plane1 += depth >> (2 + w_dec);
+            if (num_planes > 2)
+                plane2 += depth >> (2 + w_dec);
+        }
+    }
+
+    return p_out - p_start;
+}
 
 int cam_open(cam_t *cam, int oflag)
 {
@@ -45,9 +344,8 @@ unsigned char *cam_read(cam_t *cam)
     if (ret)
         return NULL;
 
-    if (cam->pixformat == V4L2_PIX_FMT_YUV420) {
-        yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->width, cam->height,
-                       cam->bpp / 8);
+    if (cam->pixformat != V4L2_PIX_FMT_BGR24) {
+        convert_to_bgr24(cam);
         pic_buf = cam->tmp;
     }
 
@@ -141,25 +439,38 @@ void print_cam(cam_t *cam)
         printf("timestamp = %s\n\n", cam->ts_string);
 }
 
-static void insert_resolution(cam_t *cam, unsigned int x, unsigned int y,
+static void insert_resolution(cam_t *cam, unsigned int pixformat,
+                              unsigned int x, unsigned int y,
                               float max_fps)
 {
     unsigned int i;
 
-    try_set_win_info(cam, &x, &y);
+    try_set_win_info(cam, pixformat, &x, &y);
 
     if (cam->res) {
         for (i = 0; i < cam->n_res; i++) {
-            if (cam->res[i].x == x && cam->res[i].y == y)
+            if (cam->res[i].x == x && cam->res[i].y == y &&
+                cam->res[i].pixformat == pixformat)
             return;
         }
     }
 
     cam->res = realloc(cam->res, (cam->n_res + 1) * sizeof(struct resolutions));
 
+    cam->res[cam->n_res].pixformat = pixformat;
     cam->res[cam->n_res].x = x;
     cam->res[cam->n_res].y = y;
     cam->res[cam->n_res].max_fps = max_fps;
+
+    if (cam->debug == TRUE)
+        printf("  Resolution #%d: FOURCC: '%c%c%c%c' (%dx%d %.2f fps)\n",
+               cam->n_res,
+                pixformat & 0xff,
+                (pixformat >> 8) & 0xff,
+                (pixformat >> 16) & 0xff,
+                pixformat >> 24,
+                x, y, (double)max_fps);
+
     cam->n_res++;
 }
 
@@ -172,6 +483,8 @@ static int sort_func(const void *__b, const void *__a)
     r = (int)b->x - a->x;
     if (!r)
          r = (int)b->y - a->y;
+    if (!r)
+         r = (int)b->max_fps - a->max_fps;
 
     return r;
 }
@@ -197,11 +510,13 @@ static float get_max_fps_discrete(cam_t *cam,
     return max_fps;
 }
 
-void get_supported_resolutions(cam_t *cam)
+void get_supported_resolutions(cam_t *cam, gboolean all_supported)
 {
-    struct v4l2_fmtdesc fmt = { 0 };
+    struct v4l2_fmtdesc fmtdesc = { 0 };
+    struct v4l2_format fmt;
     struct v4l2_frmsizeenum frmsize = { 0 };
     int i;
+    gboolean has_framesizes = FALSE;
     unsigned int x, y;
 
     if (cam->n_res) {
@@ -210,20 +525,72 @@ void get_supported_resolutions(cam_t *cam)
         cam->res = NULL;
         cam->n_res = 0;
     }
-    fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+    fmtdesc.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
-    for (fmt.index = 0;
-         !cam_ioctl(cam, VIDIOC_ENUM_FMT, &fmt);
-         fmt.index++) {
-        if (cam->pixformat != fmt.pixelformat)
+    for (fmtdesc.index = 0;
+         !cam_ioctl(cam, VIDIOC_ENUM_FMT, &fmtdesc);
+         fmtdesc.index++) {
+        if (!all_supported) {
+            if (cam->pixformat != fmtdesc.pixelformat)
+                continue;
+
+        } else {
+            if (cam->debug == TRUE)
+                printf("format index %d: FOURCC: '%c%c%c%c' (%08x)%s\n",
+                       fmtdesc.index,
+                       fmtdesc.pixelformat & 0xff,
+                       (fmtdesc.pixelformat >> 8) & 0xff,
+                       (fmtdesc.pixelformat >> 16) & 0xff,
+                       fmtdesc.pixelformat >> 24,
+                       fmtdesc.pixelformat,
+                       fmtdesc.
+                       flags & V4L2_FMT_FLAG_EMULATED ? " (emulated)" : "");
+
+            memset(&fmt, 0, sizeof(fmt));
+            fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+            fmt.fmt.pix.pixelformat = fmtdesc.pixelformat;
+            fmt.fmt.pix.width = 48;
+            fmt.fmt.pix.height = 32;
+
+            if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
+                if (fmt.fmt.pix.width < cam->min_width)
+                        cam->min_width = fmt.fmt.pix.width;
+                if (fmt.fmt.pix.height < cam->min_height)
+                        cam->min_height = fmt.fmt.pix.height;
+                if (cam->debug == TRUE)
+                        printf("  MIN: %dx%d\n", fmt.fmt.pix.width,
+                            fmt.fmt.pix.height);
+            }
+
+            memset(&fmt, 0, sizeof(fmt));
+            fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+            fmt.fmt.pix.pixelformat = fmtdesc.pixelformat;
+            fmt.fmt.pix.width = 100000;
+            fmt.fmt.pix.height = 100000;
+
+            if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
+            if (fmt.fmt.pix.width > cam->max_width)
+                    cam->max_width = fmt.fmt.pix.width;
+            if (fmt.fmt.pix.height > cam->max_height)
+                    cam->max_height = fmt.fmt.pix.height;
+            if (cam->debug == TRUE)
+                    printf("  MAX: %dx%d\n", fmt.fmt.pix.width,
+                        fmt.fmt.pix.height);
+            }
+        }
+
+        if (!is_format_supported(cam, fmtdesc.pixelformat))
             continue;
 
-        frmsize.pixel_format = fmt.pixelformat;
+        frmsize.pixel_format = fmtdesc.pixelformat;
         frmsize.index = 0;
 
         while (!cam_ioctl(cam, VIDIOC_ENUM_FRAMESIZES, &frmsize)) {
+            has_framesizes = TRUE;
+
             if (frmsize.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
-                    insert_resolution(cam, frmsize.discrete.width,
+                    insert_resolution(cam, frmsize.pixel_format,
+                                      frmsize.discrete.width,
                                       frmsize.discrete.height,
                                       get_max_fps_discrete(cam, &frmsize));
             } else if (frmsize.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
@@ -234,11 +601,15 @@ void get_supported_resolutions(cam_t *cam)
                         y = frmsize.stepwise.min_height +
                             i * (frmsize.stepwise.max_height -
                                  frmsize.stepwise.min_height) / 4;
-                        insert_resolution(cam, x, y, -1);
+                        insert_resolution(cam, frmsize.pixel_format, x, y, -1);
                     }
             }
             frmsize.index++;
         }
+
+        if (!has_framesizes)
+            insert_resolution(cam, fmtdesc.pixelformat,
+                              fmt.fmt.pix.width, fmt.fmt.pix.height, -1);
     }
 
     if (cam->res)
@@ -248,10 +619,7 @@ void get_supported_resolutions(cam_t *cam)
 int camera_cap(cam_t *cam)
 {
     char *msg;
-    int i;
     struct v4l2_capability vid_cap = { 0 };
-    struct v4l2_fmtdesc fmtdesc = {.type = V4L2_BUF_TYPE_VIDEO_CAPTURE };
-    struct v4l2_format fmt;
 
     /* Query device capabilities */
     if (cam_ioctl(cam, VIDIOC_QUERYCAP, &vid_cap) == -1) {
@@ -271,56 +639,8 @@ int camera_cap(cam_t *cam)
     cam->min_height = (unsigned)-1;
     cam->max_width = 0;
     cam->max_height = 0;
-    for (i = 0;; i++) {
-        fmtdesc.index = i;
 
-        if (cam_ioctl(cam, VIDIOC_ENUM_FMT, &fmtdesc))
-        break;
-
-        if (cam->debug == TRUE)
-            printf("format index %d: FOURCC: '%c%c%c%c' (%08x)%s\n", i,
-                   fmtdesc.pixelformat & 0xff,
-                   (fmtdesc.pixelformat >> 8) & 0xff,
-                   (fmtdesc.pixelformat >> 16) & 0xff,
-                   fmtdesc.pixelformat >> 24,
-                   fmtdesc.pixelformat,
-                   fmtdesc.
-                   flags & V4L2_FMT_FLAG_EMULATED ? " (emulated)" : "");
-
-        /* FIXME: add a check for emulated formats */
-
-        memset(&fmt, 0, sizeof(fmt));
-        fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-        fmt.fmt.pix.pixelformat = fmtdesc.pixelformat;
-        fmt.fmt.pix.width = 48;
-        fmt.fmt.pix.height = 32;
-
-        if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
-            if (fmt.fmt.pix.width < cam->min_width)
-                    cam->min_width = fmt.fmt.pix.width;
-            if (fmt.fmt.pix.height < cam->min_height)
-                    cam->min_height = fmt.fmt.pix.height;
-            if (cam->debug == TRUE)
-                    printf("  MIN: %dx%d\n", fmt.fmt.pix.width,
-                           fmt.fmt.pix.height);
-        }
-
-        memset(&fmt, 0, sizeof(fmt));
-        fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-        fmt.fmt.pix.pixelformat = fmtdesc.pixelformat;
-        fmt.fmt.pix.width = 100000;
-        fmt.fmt.pix.height = 100000;
-
-        if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
-        if (fmt.fmt.pix.width > cam->max_width)
-                cam->max_width = fmt.fmt.pix.width;
-        if (fmt.fmt.pix.height > cam->max_height)
-                cam->max_height = fmt.fmt.pix.height;
-        if (cam->debug == TRUE)
-                printf("  MAX: %dx%d\n", fmt.fmt.pix.width,
-                       fmt.fmt.pix.height);
-        }
-    }
+    get_supported_resolutions(cam, TRUE);
 
     /* Adjust camera resolution */
 
@@ -503,9 +823,7 @@ void get_win_info(cam_t *cam)
             fmt.fmt.pix.bytesperline = fmt.fmt.pix.width * 3;
     }
 
-    if (fmt.fmt.pix.pixelformat == V4L2_PIX_FMT_BGR24 ||
-        fmt.fmt.pix.pixelformat == V4L2_PIX_FMT_YUV420) {
-
+    if (is_format_supported(cam, fmt.fmt.pix.pixelformat)) {
         cam->pixformat = fmt.fmt.pix.pixelformat;
         cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
         cam->width = fmt.fmt.pix.width;
@@ -515,13 +833,14 @@ void get_win_info(cam_t *cam)
     }
 }
 
-void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y)
+void try_set_win_info(cam_t *cam, unsigned int pixformat,
+                      unsigned int *x, unsigned int *y)
 {
     struct v4l2_format fmt;
 
     memset(&fmt, 0, sizeof(fmt));
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    fmt.fmt.pix.pixelformat = cam->pixformat;
+    fmt.fmt.pix.pixelformat = pixformat;
     fmt.fmt.pix.width = *x;
     fmt.fmt.pix.height = *y;
     if (!cam_ioctl(cam, VIDIOC_TRY_FMT, &fmt)) {
@@ -532,8 +851,8 @@ void try_set_win_info(cam_t *cam, unsigned int *x, unsigned int *y)
 
 void set_win_info(cam_t *cam)
 {
-    gchar *msg;
     struct v4l2_format fmt;
+    gchar *msg;
 
     memset(&fmt, 0, sizeof(fmt));
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
@@ -550,9 +869,14 @@ void set_win_info(cam_t *cam)
         exit(0);
     }
 
-    if (fmt.fmt.pix.pixelformat != V4L2_PIX_FMT_BGR24 &&
-        fmt.fmt.pix.pixelformat != V4L2_PIX_FMT_YUV420)
-        cam->pixformat = V4L2_PIX_FMT_BGR24;
+    if (!cam->n_res) {
+        msg = g_strdup_printf(_("Device video formats are incompatible with camorama."));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
+    cam->pixformat = cam->res[0].pixformat;
 
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     fmt.fmt.pix.pixelformat = cam->pixformat;
@@ -562,16 +886,18 @@ void set_win_info(cam_t *cam)
         if (cam->debug)
             g_message("VIDIOC_S_FMT  --  could not set window info, exiting....");
 
-        msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."),
+        msg = g_strdup_printf(_("Could not set window info on video device (%s).\nPlease check connection."),
                               cam->video_dev);
         error_dialog(msg);
         g_free(msg);
         exit(0);
     }
+//    cam->pixformat = fmt.fmt.pix.pixelformat;
+    cam->colorspace = fmt.fmt.pix.colorspace;
+    cam->ycbcr_enc = fmt.fmt.pix.ycbcr_enc;
 
     /* Check if returned format is valid */
-    if (fmt.fmt.pix.pixelformat != V4L2_PIX_FMT_BGR24 &&
-        fmt.fmt.pix.pixelformat != V4L2_PIX_FMT_YUV420) {
+    if (!is_format_supported(cam, cam->pixformat)) {
         if (cam->debug) {
             g_message("VIDIOC_S_FMT  --  could not set format to %c%c%c%c (was set to %c%c%c%c instead), exiting....",
                       cam->pixformat & 0xff,
@@ -583,8 +909,12 @@ void set_win_info(cam_t *cam)
                       (fmt.fmt.pix.pixelformat >> 16) & 0xff,
                       fmt.fmt.pix.pixelformat >> 24);
         }
-        msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."),
-                              cam->video_dev);
+        msg = g_strdup_printf(_("Could not set format to %c%c%c%c on video device (%s)."),
+                              cam->video_dev,
+                              cam->pixformat & 0xff,
+                              (cam->pixformat >> 8) & 0xff,
+                              (cam->pixformat >> 16) & 0xff,
+                              cam->pixformat >> 24);
         error_dialog(msg);
         g_free(msg);
         exit(0);

@@ -490,7 +490,7 @@ void on_change_size_activate(GtkWidget *widget, cam_t *cam)
         sscanf(name, "%dx%d", &width, &height);
     }
 
-    try_set_win_info(cam, &width, &height);
+    try_set_win_info(cam, cam->pixformat, &width, &height);
 
     /* Nothing to do, so just return */
     if (width == cam->width && height == cam->height)
@@ -779,7 +779,7 @@ gint timeout_func(cam_t *cam)
 
     cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                        cam->width, cam->height,
-                                       (cam->width * cam->bpp / 8),
+                                       (cam->width * 3),
                                        NULL, NULL);
 
     show_buffer(cam);
@@ -1157,7 +1157,7 @@ static void add_gtk_view_resolutions(cam_t *cam)
     small_res = GTK_WIDGET(gtk_builder_get_object(cam->xml, "small"));
 
     /* Get all supported resolutions by cam->pixformat */
-    get_supported_resolutions(cam);
+    get_supported_resolutions(cam, FALSE);
 
     if (cam->n_res > 0) {
         for (i = 0; i < cam->n_res; i++) {
@@ -1284,7 +1284,6 @@ void start_camera(cam_t *cam)
         exit(-1);
 
     get_win_info(cam);
-
     set_win_info(cam);
     get_win_info(cam);
 
@@ -1296,6 +1295,9 @@ void start_camera(cam_t *cam)
 
     bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
     cam->pic_buf = malloc(bufsize);
+
+    /* Should hold RGB24 */
+    bufsize = cam->max_width * cam->max_height * 3;
     cam->tmp = malloc(bufsize);
 
     if (!cam->pic_buf || !cam->tmp) {
