@@ -19,7 +19,7 @@ GtkWidget *dentry, *entry2, *string_entry, *format_selection;
 GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
 
 static int ver = 0, max = 0, min;
-static int half = 0, use_read = 0, debug = 0;
+static int half = 0, use_read = 0, use_userptr = 0, debug = 0;
 static gchar *video_dev = NULL;
 static int x = 0, y = 0;
 
@@ -42,6 +42,8 @@ static GOptionEntry options[] = {
      N_("middle capture size"), NULL},
     {"read", 'R', 0, G_OPTION_ARG_NONE, &use_read,
      N_("use read() rather than mmap()"), NULL},
+    {"userptr", 'U', 0, G_OPTION_ARG_NONE, &use_userptr,
+     N_("use userptr pointer rather than mmap()"), NULL},
     {NULL}
 };
 
@@ -50,8 +52,12 @@ static void close_app(GtkWidget* widget, cam_t *cam)
     if (cam->idle_id)
         g_source_remove(cam->idle_id);
 
-    if (cam->read == FALSE)
-        stop_streaming(cam);
+    if (cam->read == FALSE) {
+        if (cam->userptr)
+            stop_streaming_userptr(cam);
+        else if (cam->read == FALSE)
+            stop_streaming(cam);
+    }
 
     v4l2_close(cam->dev);
 
@@ -129,6 +135,9 @@ static void activate(GtkApplication *app)
     if (use_read) {
         printf("Forcing read mode\n");
         cam->read = TRUE;
+    } else if (use_userptr) {
+        printf("Forcing userptr mode\n");
+        cam->userptr = TRUE;
     }
 
     cam->xml = gtk_builder_new();

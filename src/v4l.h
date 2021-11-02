@@ -54,7 +54,8 @@ typedef struct camera {
     float scale;
     CamoImageSize size;
     char name[32];
-    int contrast, brightness, whiteness, colour, hue, zoom, zoom_cid, bytesperline;
+    int contrast, brightness, whiteness, colour, hue, zoom, zoom_cid;
+    unsigned int bytesperline, sizeimage;
     unsigned int pixformat;
     int frame_number;
 
@@ -70,7 +71,7 @@ typedef struct camera {
     int savetype, rsavetype;
     gchar *ts_string;
     gchar *date_format;
-    gboolean debug, read, hidden;
+    gboolean debug, read, userptr, hidden;
     gboolean cap, rcap, acap, show_adjustments, show_effects;
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
@@ -111,5 +112,8 @@ void get_supported_resolutions(cam_t *cam);
 void start_streaming(cam_t *cam);
 void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len);
 void stop_streaming(cam_t *cam);
+void start_streaming_userptr(cam_t *cam);
+void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf, unsigned int len);
+void stop_streaming_userptr(cam_t *cam);
 
 #endif                          /* !CAMORAMA_V4L_H */

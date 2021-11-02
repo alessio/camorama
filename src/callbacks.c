@@ -502,11 +502,21 @@ void on_change_size_activate(GtkWidget *widget, cam_t *cam)
     if (cam->debug == TRUE)
         printf("name = %s\n", name);
 
-    if (cam->read == FALSE)
-        stop_streaming(cam);
+    if (cam->read == FALSE) {
+        if (cam->userptr)
+            stop_streaming_userptr(cam);
+        else if (cam->read == FALSE)
+            stop_streaming(cam);
+    }
+
     set_win_info(cam);
-    if (cam->read == FALSE)
-        start_streaming(cam);
+
+    if (cam->read == FALSE) {
+        if (cam->userptr)
+            start_streaming_userptr(cam);
+        else if (cam->read == FALSE)
+            start_streaming(cam);
+    }
 
     set_image_scale(cam);
 }
@@ -765,6 +775,9 @@ gint timeout_func(cam_t *cam)
     if (cam->read)
         v4l2_read(cam->dev, cam->pic_buf,
                  (cam->width * cam->height * cam->bpp / 8));
+    else if (cam->userptr)
+        capture_buffers_userptr(cam, cam->pic_buf,
+                                cam->width * cam->height * cam->bytesperline);
     else
         capture_buffers(cam, cam->pic_buf,
                         cam->width * cam->height * cam->bytesperline);
@@ -1229,8 +1242,12 @@ void start_camera(cam_t *cam)
     }
 
     if (cam->dev >= 0) {
-        if (cam->read == FALSE)
-            stop_streaming(cam);
+        if (cam->read == FALSE) {
+            if (cam->userptr)
+                stop_streaming_userptr(cam);
+            else if (cam->read == FALSE)
+                stop_streaming(cam);
+        }
 
         cam->pb = NULL;
 
@@ -1297,10 +1314,12 @@ void start_camera(cam_t *cam)
         exit(0);
     }
 
-    if (cam->read == FALSE)
-        start_streaming(cam);
-    else
+    if (cam->read)
         printf("using read()\n");
+    else if (cam->userptr)
+        start_streaming_userptr(cam);
+    else if (cam->read == FALSE)
+        start_streaming(cam);
 
     cam->idle_id = g_idle_add((GSourceFunc) timeout_func, (gpointer) cam);
 

@@ -406,6 +406,7 @@ void get_win_info(cam_t *cam)
         cam->width = fmt.fmt.pix.width;
         cam->height = fmt.fmt.pix.height;
         cam->bytesperline = fmt.fmt.pix.bytesperline;
+        cam->sizeimage = fmt.fmt.pix.sizeimage;
     }
 }
 
@@ -487,7 +488,7 @@ void set_win_info(cam_t *cam)
     /* Resolution may have changed. Store the retrieved one */
     cam->pixformat = fmt.fmt.pix.pixelformat;
     cam->bytesperline = fmt.fmt.pix.bytesperline;
-
+    cam->sizeimage = fmt.fmt.pix.sizeimage;
     cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
 
     cam->width = fmt.fmt.pix.width;
@@ -514,6 +515,13 @@ void start_streaming(cam_t *cam)
     }
 
     cam->buffers = calloc(cam->req.count, sizeof(*cam->buffers));
+    if (!cam->buffers) {
+        msg = g_strdup_printf(_("could not allocate memory for video buffers, exiting...."));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
     for (cam->n_buffers = 0;
          cam->n_buffers < cam->req.count;
          ++cam->n_buffers) {
@@ -560,6 +568,73 @@ void start_streaming(cam_t *cam)
             exit(0);
         }
     }
+    type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+
+    if (v4l2_ioctl(cam->dev, VIDIOC_STREAMON, &type)) {
+        msg = g_strdup_printf(_("failed to start streaming (%s), exiting...."),
+                              cam->video_dev);
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+}
+
+void start_streaming_userptr(cam_t *cam)
+{
+    char *msg;
+    enum v4l2_buf_type type;
+    struct v4l2_buffer buf;
+
+    memset(&cam->req, 0, sizeof(cam->req));
+    cam->req.count = 2;
+    cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+    cam->req.memory = V4L2_MEMORY_USERPTR;
+    if (v4l2_ioctl(cam->dev, VIDIOC_REQBUFS, &cam->req)) {
+        msg = g_strdup_printf(_("VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."),
+                              cam->video_dev);
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
+    cam->buffers = calloc(cam->req.count, sizeof(*cam->buffers));
+    if (!cam->buffers) {
+        msg = g_strdup_printf(_("could not allocate memory for video buffers, exiting...."));
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
+    for (cam->n_buffers = 0;
+         cam->n_buffers < cam->req.count;
+         ++cam->n_buffers) {
+        memset(&buf, 0, sizeof(buf));
+
+        cam->buffers[cam->n_buffers].length = cam->sizeimage;
+        cam->buffers[cam->n_buffers].start = calloc(1, cam->sizeimage);
+
+        if (!cam->buffers[cam->n_buffers].start) {
+            msg = g_strdup_printf(_("could not allocate memory for video buffers, exiting...."));
+            error_dialog(msg);
+            g_free(msg);
+            exit(0);
+        }
+
+        buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+        buf.memory = V4L2_MEMORY_USERPTR;
+        buf.index = cam->n_buffers;
+        buf.length = cam->buffers[cam->n_buffers].length;
+        buf.m.userptr = (unsigned long)cam->buffers[cam->n_buffers].start;
+
+        if (v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf)) {
+            msg = g_strdup_printf(_("VIDIOC_QBUF  --  could not query buffers (%s), exiting...."),
+                                  cam->video_dev);
+            error_dialog(msg);
+            g_free(msg);
+            exit(0);
+        }
+    }
+
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
     if (v4l2_ioctl(cam->dev, VIDIOC_STREAMON, &type)) {
@@ -618,6 +693,51 @@ void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len)
     v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf);
 }
 
+void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf,
+                             unsigned int len)
+{
+    char *msg;
+    unsigned char *inbuf;
+    int r;
+    unsigned int y;
+    fd_set fds;
+    struct v4l2_buffer buf;
+    struct timeval tv;
+
+    do {
+        FD_ZERO(&fds);
+        FD_SET(cam->dev, &fds);
+
+        /* Timeout. */
+        tv.tv_sec = 2;
+        tv.tv_usec = 0;
+
+        r = select(cam->dev + 1, &fds, NULL, NULL, &tv);
+    } while ((r == -1 && (errno == EINTR)));
+
+    if (r == -1) {
+        msg = g_strdup_printf(_("Timeout while waiting for frames (%s)"),
+                              cam->video_dev);
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
+    memset(&buf, 0, sizeof(buf));
+    buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+    buf.memory = V4L2_MEMORY_USERPTR;
+    v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf);
+
+    inbuf = cam->buffers[buf.index].start;
+    for (y = 0; y < cam->height; y++) {
+        memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
+        outbuf += cam->width * cam->bpp / 8;
+        inbuf += cam->bytesperline;
+    }
+
+    v4l2_ioctl(cam->dev, VIDIOC_QBUF, &buf);
+}
+
 void stop_streaming(cam_t *cam)
 {
     char *msg;
@@ -647,6 +767,65 @@ void stop_streaming(cam_t *cam)
             memset(&buf, 0, sizeof(buf));
             buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
             buf.memory = V4L2_MEMORY_MMAP;
+            if (v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf))
+                break;
+        }
+    };
+
+    /* Streams off */
+    type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+    if (v4l2_ioctl(cam->dev, VIDIOC_STREAMOFF, &type)) {
+        msg = g_strdup_printf(_("failed to stop streaming (%s), exiting...."),
+                              cam->video_dev);
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
+
+    /* Unmap buffers */
+    for (i = 0; i < cam->n_buffers; ++i)
+        v4l2_munmap(cam->buffers[i].start, cam->buffers[i].length);
+
+    /* Free existing buffers */
+    memset(&cam->req, 0, sizeof(cam->req));
+    cam->req.count = 0;
+    cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+    cam->req.memory = V4L2_MEMORY_MMAP;
+    v4l2_ioctl(cam->dev, VIDIOC_REQBUFS, &cam->req);
+
+    free(cam->buffers);
+    cam->buffers = NULL;
+}
+
+void stop_streaming_userptr(cam_t *cam)
+{
+    char *msg;
+    unsigned int i;
+    int r;
+    enum v4l2_buf_type type;
+    fd_set fds, fderrs;
+    struct v4l2_buffer buf;
+    struct timeval tv;
+
+    /* Dequeue all pending buffers */
+    for (i = 0; i < cam->n_buffers; ++i) {
+        FD_ZERO(&fds);
+        FD_SET(cam->dev, &fds);
+        FD_ZERO(&fderrs);
+        FD_SET(cam->dev, &fderrs);
+
+        /* Timeout. */
+        tv.tv_sec = 2;
+        tv.tv_usec = 0;
+
+        r = select(cam->dev + 1, &fds, NULL, &fderrs, &tv);
+        if (r == -1 && errno == EINTR)
+            continue;
+
+        if (r != -1) {
+            memset(&buf, 0, sizeof(buf));
+            buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+            buf.memory = V4L2_MEMORY_USERPTR;
             if (v4l2_ioctl(cam->dev, VIDIOC_DQBUF, &buf))
                 break;
         }
