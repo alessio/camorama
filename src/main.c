@@ -144,6 +144,7 @@ static void activate(GtkApplication *app)
     } else if (use_userptr) {
         printf("Forcing userptr mode\n");
         cam->userptr = TRUE;
+        cam->use_libv4l = FALSE;
     }
 
     cam->xml = gtk_builder_new();
