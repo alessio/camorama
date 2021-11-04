@@ -263,17 +263,17 @@ static unsigned int convert_to_rgb24(cam_t *cam)
 
     video_fmt = video_fmt_props(cam->pixformat);
     if (!video_fmt)
-	return 0;
+        return 0;
 
     depth = video_fmt->depth;
     h_dec = video_fmt->y_decimation;
     w_dec = video_fmt->x_decimation;
 
     if (h_dec)
-	num_planes++;
+        num_planes++;
 
     if (w_dec)
-	num_planes++;
+        num_planes++;
 
     p_start = p_out;
 
@@ -639,6 +639,36 @@ int camera_cap(cam_t *cam)
         return 1;
     }
 
+    if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
+        msg = g_strdup_printf(_("Device %s is not a video capture device."),
+                              cam->video_dev);
+        error_dialog(msg);
+        g_free(msg);
+        return 1;
+    }
+
+    if (!(vid_cap.device_caps & V4L2_CAP_STREAMING)) {
+        printf("Device doesn't support streaming. Using read mode\n");
+
+        cam->read = TRUE;
+    } else {
+        /* If MMAP is not supported, select USERPTR */
+        memset(&cam->req, 0, sizeof(cam->req));
+        cam->req.count = 2;
+        cam->req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+        cam->req.memory = V4L2_MEMORY_MMAP;
+        if (cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req)) {
+            printf("Device doesn't support mmap. Using userptr mode\n");
+	    cam_close(cam);
+            cam->userptr = TRUE;
+            cam->use_libv4l = FALSE;
+	    cam_open(cam, O_RDWR);
+        } else {
+	    cam->req.count = 0;
+	    cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req);
+	}
+    }
+
     /* Query supported resolutions */
 
     cam->rdir_ok = FALSE;
@@ -684,17 +714,6 @@ int camera_cap(cam_t *cam)
         break;
         }
     }
-
-    if (!(vid_cap.device_caps & V4L2_CAP_VIDEO_CAPTURE)) {
-        msg = g_strdup_printf(_("Device %s is not a video capture device."),
-                              cam->video_dev);
-        error_dialog(msg);
-        g_free(msg);
-        return 1;
-    }
-
-    if (!(vid_cap.device_caps & V4L2_CAP_STREAMING))
-        cam->read = TRUE;
 
     strncpy(cam->name, (const char *)vid_cap.card, sizeof(cam->name));
     cam->name[sizeof(cam->name) - 1] = '\0';
