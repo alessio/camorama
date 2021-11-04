@@ -11,32 +11,50 @@ extern int frame_number;
 #define BYTE_CLAMP(a) CLAMP(a, 0, 255)
 
 /* Formats that are natively supported */
-static const unsigned int supported_formats[] = {
-    V4L2_PIX_FMT_BGR24,
-    V4L2_PIX_FMT_RGB24,
-    V4L2_PIX_FMT_ARGB32,
-    V4L2_PIX_FMT_XRGB32,
-    V4L2_PIX_FMT_BGR32,
-    V4L2_PIX_FMT_ABGR32,
-    V4L2_PIX_FMT_XBGR32,
-    V4L2_PIX_FMT_YUYV,
-    V4L2_PIX_FMT_UYVY,
-    V4L2_PIX_FMT_YVYU,
-    V4L2_PIX_FMT_VYUY,
-    V4L2_PIX_FMT_RGB565,
-    V4L2_PIX_FMT_RGB565X,
-    V4L2_PIX_FMT_RGB32,
-    V4L2_PIX_FMT_NV12,
-    V4L2_PIX_FMT_NV21,
-    V4L2_PIX_FMT_YUV420,
-    V4L2_PIX_FMT_YVU420,
+struct video_formats {
+    unsigned int pixformat;
+    unsigned int depth;
+    unsigned int y_decimation;
+    unsigned int x_decimation;
+};
+
+static const struct video_formats supported_formats[] = {
+    { V4L2_PIX_FMT_BGR24,   24, 0, 0},
+    { V4L2_PIX_FMT_RGB24,   24, 0, 0},
+    { V4L2_PIX_FMT_ARGB32,  32, 0, 0},
+    { V4L2_PIX_FMT_XRGB32,  32, 0, 0},
+    { V4L2_PIX_FMT_BGR32,   32, 0, 0},
+    { V4L2_PIX_FMT_ABGR32,  32, 0, 0},
+    { V4L2_PIX_FMT_XBGR32,  32, 0, 0},
+    { V4L2_PIX_FMT_YUYV,    16, 0, 0},
+    { V4L2_PIX_FMT_UYVY,    16, 0, 0},
+    { V4L2_PIX_FMT_YVYU,    16, 0, 0},
+    { V4L2_PIX_FMT_VYUY,    16, 0, 0},
+    { V4L2_PIX_FMT_RGB565,  16, 0, 0},
+    { V4L2_PIX_FMT_RGB565X, 16, 0, 0},
+    { V4L2_PIX_FMT_RGB32,   16, 0, 0},
+    { V4L2_PIX_FMT_NV12,     8, 1, 0},
+    { V4L2_PIX_FMT_NV21,     8, 1, 0},
+    { V4L2_PIX_FMT_YUV420,   8, 1, 1},
+    { V4L2_PIX_FMT_YVU420,   8, 1, 1},
 };
 
 #define ARRAY_SIZE(a)  (sizeof(a)/sizeof(*a))
 
-static gboolean is_format_supported(cam_t *cam, unsigned int pixformat)
+static const struct video_formats *video_fmt_props(unsigned int pixformat)
 {
     unsigned int i;
+
+    for (i = 0; i < ARRAY_SIZE(supported_formats); i++)
+        if (supported_formats[i].pixformat == pixformat)
+            return &supported_formats[i];
+
+    return NULL;
+}
+
+static gboolean is_format_supported(cam_t *cam, unsigned int pixformat)
+{
+   const struct video_formats *video_fmt;
 
     /*
      * As libv4l supports more formats and already selects the format
@@ -45,9 +63,10 @@ static gboolean is_format_supported(cam_t *cam, unsigned int pixformat)
     if (cam->use_libv4l)
         return pixformat == V4L2_PIX_FMT_RGB24;
 
-    for (i = 0; i < ARRAY_SIZE(supported_formats); i++)
-        if (supported_formats[i] == pixformat)
-            return TRUE;
+    video_fmt = video_fmt_props(pixformat);
+
+    if (video_fmt)
+        return TRUE;
 
     return FALSE;
 }
@@ -223,6 +242,7 @@ static unsigned int convert_to_rgb24(cam_t *cam)
     uint32_t width = cam->width;
     uint32_t height = cam->height;
     uint32_t bytesperline = cam->bytesperline;
+    const struct video_formats *video_fmt;
     unsigned char *plane0_start = plane0;
     unsigned char *plane1_start = NULL;
     unsigned char *plane2_start = NULL;
@@ -233,49 +253,27 @@ static unsigned int convert_to_rgb24(cam_t *cam)
     uint32_t num_planes = 1;
     unsigned char *p_start;
     uint32_t plane0_size;
-    uint32_t w_dec = 0;
-    uint32_t h_dec = 0;
+    uint32_t w_dec;
+    uint32_t h_dec;
 
     if (cam->ycbcr_enc == V4L2_YCBCR_ENC_DEFAULT)
         enc = V4L2_MAP_YCBCR_ENC_DEFAULT(cam->colorspace);
     else
         enc = cam->ycbcr_enc;
 
-    switch (cam->pixformat) {
-    case V4L2_PIX_FMT_BGR24:
-        depth = 24;
-        break;
-    case V4L2_PIX_FMT_RGB32:
-    case V4L2_PIX_FMT_ARGB32:
-    case V4L2_PIX_FMT_XRGB32:
-    case V4L2_PIX_FMT_BGR32:
-    case V4L2_PIX_FMT_ABGR32:
-    case V4L2_PIX_FMT_XBGR32:
-        depth = 32;
-        break;
-    case V4L2_PIX_FMT_NV12:
-    case V4L2_PIX_FMT_NV21:
-        num_planes = 2;
-        depth = 8;                              /* Depth of plane 0 */
-        h_dec = 1;
-        break;
-    case V4L2_PIX_FMT_YUV420:
-    case V4L2_PIX_FMT_YVU420:
-        num_planes = 3;
-        depth = 8;                              /* Depth of plane 0 */
-        h_dec = 1;
-        w_dec = 1;
-        break;
-    case V4L2_PIX_FMT_RGB565:
-    case V4L2_PIX_FMT_RGB565X:
-    case V4L2_PIX_FMT_YUYV:
-    case V4L2_PIX_FMT_UYVY:
-    case V4L2_PIX_FMT_YVYU:
-    case V4L2_PIX_FMT_VYUY:
-    default:
-        depth = 16;
-        break;
-    }
+    video_fmt = video_fmt_props(cam->pixformat);
+    if (!video_fmt)
+	return 0;
+
+    depth = video_fmt->depth;
+    h_dec = video_fmt->y_decimation;
+    w_dec = video_fmt->x_decimation;
+
+    if (h_dec)
+	num_planes++;
+
+    if (w_dec)
+	num_planes++;
 
     p_start = p_out;
 
