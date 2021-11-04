@@ -45,6 +45,7 @@ struct buffer_start_len {
 struct resolutions {
     unsigned int pixformat;
     unsigned int x, y;
+    unsigned int depth;
     float max_fps;
 };
 

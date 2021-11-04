@@ -441,6 +441,7 @@ static void insert_resolution(cam_t *cam, unsigned int pixformat,
                               unsigned int x, unsigned int y,
                               float max_fps)
 {
+    const struct video_formats *video_fmt;
     unsigned int i;
 
     try_set_win_info(cam, pixformat, &x, &y);
@@ -459,6 +460,10 @@ static void insert_resolution(cam_t *cam, unsigned int pixformat,
     cam->res[cam->n_res].x = x;
     cam->res[cam->n_res].y = y;
     cam->res[cam->n_res].max_fps = max_fps;
+
+    video_fmt = video_fmt_props(pixformat);
+    if (video_fmt)
+        cam->res[cam->n_res].depth = video_fmt-> depth;
 
     if (cam->debug == TRUE)
         printf("  Resolution #%d: FOURCC: '%c%c%c%c' (%dx%d %.2f fps)\n",
@@ -483,6 +488,10 @@ static int sort_func(const void *__b, const void *__a)
          r = (int)b->y - a->y;
     if (!r)
          r = (int)b->max_fps - a->max_fps;
+
+    /* Less depth may mean higher FPS */
+    if (!r)
+         r = (int)a->depth - b->depth;
 
     return r;
 }
