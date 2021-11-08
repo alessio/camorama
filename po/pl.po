@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
 "PO-Revision-Date: 2020-04-17 16:40+0000\n"
-"Last-Translator: Michal Biesiada <biesiadmichal@gmail.com>\n"
+"Last-Translator: Mateusz Stomski <zbytatencyjny@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -621,9 +621,9 @@ msgid "Could not save image '%s/%s'."
 msgstr "Nie można zapisać obrazu \"%s/%s\"."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Nie można zapisać obrazu \"%s/%s\"."
+msgstr "Nie można zapisać obrazu '%s/%s'."
 
 #: src/fileio.c:172
 #, fuzzy, c-format
@@ -662,7 +662,7 @@ msgstr "Podczas zapisu do %s wystąpił błąd."
 #: src/fileio.c:320
 #, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Podczas zamykania %s wystąpił błąd."
+msgstr "Wystąpił błąd w trakcie zamykania %s: %s."
 
 #: src/fileio.c:385
 #, c-format
