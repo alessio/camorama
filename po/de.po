@@ -4,13 +4,14 @@
 # Christian Neumair <chris@gnome-de.org>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Jens Maucher <jens.maucher@online.de>, 2020.
+# Fabian Affolter <mail@fabian-affolter.ch>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-04-25 14:40+0000\n"
-"Last-Translator: Jens Maucher <jens.maucher@online.de>\n"
+"PO-Revision-Date: 2020-12-13 15:35+0000\n"
+"Last-Translator: Fabian Affolter <mail@fabian-affolter.ch>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/camorama/"
 "master/de/>\n"
 "Language: de\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0.1\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -44,7 +45,7 @@ msgstr "Camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;viewer;video-effects;"
 
 #: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
@@ -114,9 +115,8 @@ msgstr "webcam-mitschneiden"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Speicherverzeichnis:"
+msgstr "Speicherverzeichnis wählen"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -172,7 +172,7 @@ msgstr "FTP-Server:"
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -241,12 +241,12 @@ msgstr "Bild aufnehmen"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Bearbeiten"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Ansicht"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -271,7 +271,7 @@ msgstr "Klein"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Hilfe"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -301,13 +301,12 @@ msgstr "Weißbalance:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Vergrösserung:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "Zu verwendendes v4l-Gerät"
+msgstr "Zu verwendendes Video-Gerät"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
 #, fuzzy
@@ -676,7 +675,7 @@ msgstr "Verzeichnis »%s« konnte nicht angelegt werden."
 #: src/fileio.c:394
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr "Wechseln in's Verzeichnis »%s« fehlgeschlagen."
+msgstr "Wechseln in's Verzeichnis '%s' fehlgeschlagen."
 
 #: src/filter.c:187
 #, fuzzy
@@ -685,16 +684,15 @@ msgstr "Farbkorrektur"
 
 #: src/filter.c:216
 msgid "Invert"
-msgstr ""
+msgstr "Invertieren"
 
 #: src/filter.c:260
-#, fuzzy
 msgid "Threshold (Overall)"
-msgstr "Schwellwert:"
+msgstr "Schwellwert (Total)"
 
 #: src/filter.c:310
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "Schwellenwert (pro Kanal)"
 
 #: src/filter.c:388
 msgid "Wacky"
@@ -707,7 +705,7 @@ msgstr "Glättung"
 
 #: src/filter.c:530
 msgid "Monochrome"
-msgstr ""
+msgstr "Monochrome"
 
 #: src/filter.c:568
 msgid "Monochrome (Weight)"
@@ -780,7 +778,7 @@ msgstr ""
 #: src/main.c:190
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s nicht gefunden."
 
 #: src/main.c:299
 #, c-format
