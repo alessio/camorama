@@ -10,13 +10,14 @@
 # Michal Biesiada <biesiadmichal@gmail.com>, 2020.
 # Anonymous <noreply@weblate.org>, 2020.
 # Mateusz Stomski <zbytatencyjny@gmail.com>, 2020.
+# Szymon Scholz <szymonscholz@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-04-17 16:40+0000\n"
-"Last-Translator: Mateusz Stomski <zbytatencyjny@gmail.com>\n"
+"PO-Revision-Date: 2020-08-02 22:41+0000\n"
+"Last-Translator: Szymon Scholz <szymonscholz@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.0.1\n"
+"X-Generator: Weblate 4.1.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -594,7 +595,6 @@ msgstr "Lustrzane odbicie"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
-#, fuzzy
 msgid "Reichardt"
 msgstr "Reichardt"
 
@@ -626,14 +626,14 @@ msgid "Could not create a thread to save image '%s/%s'."
 msgstr "Nie można zapisać obrazu '%s/%s'."
 
 #: src/fileio.c:172
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "Podczas otwierania %s wystąpił błąd."
+msgstr "Podczas montowania %s:%s wystąpił błąd."
 
 #: src/fileio.c:212
 #, fuzzy, c-format
 msgid "An error occurred accessing %s."
-msgstr "Podczas otwierania %s wystąpił błąd."
+msgstr "Podczas uzyskiwania dostępu do %s wystąpił błąd."
 
 #: src/fileio.c:263
 #, c-format
@@ -645,19 +645,19 @@ msgstr ""
 "Nie można wysłać obrazu."
 
 #: src/fileio.c:292
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s."
 msgstr "Podczas otwierania %s wystąpił błąd."
 
 #: src/fileio.c:303
 #, fuzzy, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "Podczas otwierania %s wystąpił błąd."
+msgstr "Podczas otwierania %s w celu zapisu %s wystąpił błąd."
 
 #: src/fileio.c:313
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "Podczas zapisu do %s wystąpił błąd."
+msgstr "Podczas zapisu do %s:%s wystąpił błąd."
 
 #: src/fileio.c:320
 #, c-format
@@ -675,7 +675,6 @@ msgid "Could not change to directory '%s'."
 msgstr "Nie można zmienić katalogu na \"%s\"."
 
 #: src/filter.c:187
-#, fuzzy
 msgid "Color Correction"
 msgstr "Korekcja koloru"
 
@@ -696,7 +695,6 @@ msgid "Wacky"
 msgstr "Szaleństwo"
 
 #: src/filter.c:494
-#, fuzzy
 msgid "Smooth"
 msgstr "Wygładzanie"
 
@@ -765,7 +763,7 @@ msgstr ""
 #: src/main.c:158
 #, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Nie można znaleźć pliku piksmapy: %s"
+msgstr "Nie można załadować pliku konstruktora"
 
 #: src/main.c:187
 #, c-format
