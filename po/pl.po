@@ -9,13 +9,14 @@
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Michal Biesiada <biesiadmichal@gmail.com>, 2020.
 # Anonymous <noreply@weblate.org>, 2020.
+# Mateusz Stomski <zbytatencyjny@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-04-16 16:12+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2020-04-16 16:36+0000\n"
+"Last-Translator: Mateusz Stomski <zbytatencyjny@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -52,7 +53,7 @@ msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr "camorama;webcam;viewer;video-effects;kamerka;internetowa"
+msgstr "camorama;webcam;viewer;video-effects;kamerka;internetowa;"
 
 #: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
@@ -239,9 +240,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Nazwa pliku"
+msgstr "_Plik"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -250,12 +250,12 @@ msgstr "Zrób zdjęcie"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Edycja"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Widok"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -271,7 +271,7 @@ msgstr "Wyświetlanie efektów"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "_Zmiana kamery"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -280,7 +280,7 @@ msgstr "Małe"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Pomoc"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -310,7 +310,7 @@ msgstr "Balans bieli:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Zbliżenie:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
@@ -318,22 +318,20 @@ msgid "Select a video device to be used"
 msgstr "Wybierz urządzenie wideo, które ma być używane"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Zrób zdjęcie"
+msgstr "_Zrób zdjęcie"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Wyjście"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Preferencje"
+msgstr "_Ustawienia"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_O programie"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -365,7 +363,7 @@ msgstr "Urządzenie wideo"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr ""
+msgstr "Ścieżka do pliku wskazującego na twoją kamerę w systemie unix."
 
 #: data/org.gnome.camorama.gschema.xml.in:26
 msgid "Toggles the datestamp in captures"
@@ -389,17 +387,15 @@ msgstr "Wysokość obrazu"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Wysokość obrazu używana przez kamerę. Zero oznacza wybór automatyczny"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Nazwa komputera serwera FTP"
+msgstr "Nazwa serwera FTP"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Nazwa serwera FTP przechwytującego zdalnie obrazy."
+msgstr "Nazwa serwera przechwytującego zdalnie obrazy."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -428,7 +424,7 @@ msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Pełna ścieżka URI używana do zdalnego magazynowania zrzutów"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
@@ -559,7 +555,7 @@ msgstr "Szerokość obrazu"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Szerokość używana przez kamerę. Zero oznacza wybór automatyczny"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
@@ -568,7 +564,7 @@ msgstr "GNOME PL Team <translators@gnome.pl>"
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f fps - aktualnie     %.2f fps - średnio"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
@@ -576,17 +572,17 @@ msgstr ""
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Nie znaleziono żadnej kamery"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (maks %.1f fps)"
 
 #: src/callbacks.c:1067
-#, c-format
+#, c-format, fuzzy
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -594,9 +590,8 @@ msgstr ""
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
-#, fuzzy
 msgid "Mirror"
-msgstr "Odbicie obrazu"
+msgstr "Lustrzane odbicie"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
@@ -666,9 +661,9 @@ msgid "An error occurred writing to %s: %s."
 msgstr "Podczas zapisu do %s wystąpił błąd."
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Podczas otwierania %s wystąpił błąd."
+msgstr "Podczas zamykania %s wystąpił błąd."
 
 #: src/fileio.c:385
 #, c-format
@@ -687,16 +682,15 @@ msgstr "Korekcja koloru"
 
 #: src/filter.c:216
 msgid "Invert"
-msgstr ""
+msgstr "Odwróć"
 
 #: src/filter.c:260
-#, fuzzy
 msgid "Threshold (Overall)"
-msgstr "Próg:"
+msgstr "Próg (Łącznie)"
 
 #: src/filter.c:310
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "Próg (Na kanał)"
 
 #: src/filter.c:388
 msgid "Wacky"
@@ -709,11 +703,11 @@ msgstr "Wygładzanie"
 
 #: src/filter.c:530
 msgid "Monochrome"
-msgstr ""
+msgstr "Monochrom"
 
 #: src/filter.c:568
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "Monochrom (Szerokość)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:625
@@ -729,9 +723,8 @@ msgid "v4l device to use"
 msgstr "używane urządzenie v4l"
 
 #: src/main.c:32
-#, fuzzy
 msgid "enable debugging code"
-msgstr "włączenie kodu śledzenia"
+msgstr "włączenie śledzenia błędów"
 
 #: src/main.c:34
 msgid "capture width"
@@ -778,12 +771,12 @@ msgstr "Nie można znaleźć pliku piksmapy: %s"
 #: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s nie znaleziono. Przywracanie do %s"
 
 #: src/main.c:190
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s nie znaleziono."
 
 #: src/main.c:299
 #, c-format
@@ -791,20 +784,22 @@ msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
+"Nieprawidłowy argument\n"
+"Wpisz'%s --help'\n"
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Nie można przyłączyć się do urządzenia wideo (%s).\n"
-"Sprawdź czy jest prawidłowo podłączone."
+"Nie można połączyć z urządzeniem video (%s).\n"
+"Sprawdź połączenie. Błąd: %d"
 
 #: src/v4l.c:251
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Urządzenie %s nie jest urządzeniem przechwytującym obraz."
 
 #: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
@@ -818,34 +813,34 @@ msgstr ""
 #: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS  --  nie mogę pobrać bufora (%s), wychodzę...."
 
 #: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF  --  nie mogę pobrać bufora (%s), wychodzę...."
 
 #: src/v4l.c:536
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "błąd przy mapowaniu bufora (%s), wychodzę...."
 
 #: src/v4l.c:550
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QBUF  --  nie mogę zakolejkować bufora (%s), wychodzę...."
 
 #: src/v4l.c:560
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "błąd przy rozpoczęciu strumieniowania (%s), wychodzę...."
 
 #: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Zbyt długi czas oczekiwania na klatkę (%s)"
 
 #: src/v4l.c:652
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "błąd przy wyłączeniu strumieniowania (%s), wychodzę..."
