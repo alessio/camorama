@@ -5,13 +5,14 @@
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Jens Maucher <jens.maucher@online.de>, 2020.
 # Fabian Affolter <mail@fabian-affolter.ch>, 2020.
+# Ettore Atalan <atalanttore@googlemail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-12-13 15:35+0000\n"
-"Last-Translator: Fabian Affolter <mail@fabian-affolter.ch>\n"
+"PO-Revision-Date: 2021-11-08 00:49+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/camorama/"
 "master/de/>\n"
 "Language: de\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.8\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -165,9 +166,8 @@ msgstr "Entfernt _mitschneiden"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "FTP-Server:"
+msgstr "Server:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
@@ -181,9 +181,8 @@ msgstr "Speicherverzeichnis:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Dateiname"
+msgstr "Dateiname:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -230,9 +229,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Dateiname"
+msgstr "_Dateiname"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -262,7 +260,7 @@ msgstr "Effekte anzeigen"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "Kamera _ändern"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -309,22 +307,20 @@ msgid "Select a video device to be used"
 msgstr "Zu verwendendes Video-Gerät"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Bild aufnehmen"
+msgstr "Bild _aufnehmen"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Beenden"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Einstellungen"
+msgstr "_Einstellungen"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_Über"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -378,23 +374,20 @@ msgstr ""
 "soll"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "Mittschnitthöhe"
+msgstr "Bildhöhe"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
 msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Rechnername des FTP-Servers"
+msgstr "Rechnername des Servers"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Der Rechnername des FTP-Servers für entfernte Mitschnitte."
+msgstr "Der Rechnername des Servers für entfernte Mitschnitte."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -410,15 +403,16 @@ msgstr ""
 "gespeichert werden."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Ordner für entfernte Mitschnitte"
+msgstr "Für den Fernzugriff zu verwendendes Protokoll"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"Der URI-Name des Protokolls, das für die Verbindung mit einem entfernten "
+"Server verwendet wird. Kann ftp, sftp oder smb sein"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
@@ -550,9 +544,8 @@ msgstr ""
 "Die Knöpfe zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "Mittschnittbreite"
+msgstr "Bildbreite"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
@@ -565,7 +558,7 @@ msgstr "Christian Neumair <chris@gnome-de.org>"
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f BpS - aktuell     %.2f BpS - durchschnittlich"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
@@ -573,41 +566,39 @@ msgstr ""
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Keine Kamera gefunden"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (max. %.1f BpS)"
 
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "Laplace (4 Nachbarn)"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
-#, fuzzy
 msgid "Mirror"
-msgstr "Bild spiegeln"
+msgstr "Spiegel"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
-msgstr ""
+msgstr "Filter _hinzufügen"
 
 #: src/camorama-window.c:221
-#, fuzzy
 msgid "Effects"
-msgstr "Effekte anzeigen"
+msgstr "Effekte"
 
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
@@ -678,7 +669,6 @@ msgid "Could not change to directory '%s'."
 msgstr "Wechseln in's Verzeichnis '%s' fehlgeschlagen."
 
 #: src/filter.c:187
-#, fuzzy
 msgid "Color Correction"
 msgstr "Farbkorrektur"
 
@@ -799,7 +789,7 @@ msgstr ""
 #: src/v4l.c:251
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Gerät %s ist kein Videoaufnahmegerät."
 
 #: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
