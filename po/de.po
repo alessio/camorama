@@ -3,20 +3,22 @@
 # This file is distributed under the same license as the camorama package.
 # Christian Neumair <chris@gnome-de.org>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Jens Maucher <jens.maucher@online.de>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2018-09-21 05:47+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"PO-Revision-Date: 2020-04-25 14:40+0000\n"
+"Last-Translator: Jens Maucher <jens.maucher@online.de>\n"
+"Language-Team: German <https://translate.fedoraproject.org/projects/camorama/"
+"master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.0.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -335,11 +337,11 @@ msgstr "Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der Dateinamen"
 
 #: data/org.gnome.camorama.gschema.xml.in:11
 msgid "Toggles auto-capture"
-msgstr "Auto-Mitschneiden?"
+msgstr "Schaltet die automatische Erfassung um"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr "Sollen Bilder automatisch mitgeschnitten werden?"
+msgstr "Schaltet die automatische Aufnahme von Bildern um."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
@@ -373,7 +375,8 @@ msgstr "Bildformat lokaler Mitschnitte"
 #: data/org.gnome.camorama.gschema.xml.in:32
 msgid "Specifies the image format to be used for locally saved pictures"
 msgstr ""
-"Welches Bildformat soll für lokal gespeicherte Bilder verwendet werden?"
+"Gibt das Bildformat an, das für lokal gespeicherte Bilder verwendet werden "
+"soll"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
 #, fuzzy
@@ -396,7 +399,7 @@ msgstr "Der Rechnername des FTP-Servers für entfernte Mitschnitte."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
-msgstr "Lokal mitschneiden?"
+msgstr "Schaltet die lokale Erfassung um"
 
 #: data/org.gnome.camorama.gschema.xml.in:47
 msgid ""
@@ -440,7 +443,7 @@ msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:66
 msgid "Toggles remote capture"
-msgstr "Entfernt mitschneiden?"
+msgstr "Schaltet die Fernerfassung um"
 
 #: data/org.gnome.camorama.gschema.xml.in:67
 msgid ""
@@ -458,7 +461,8 @@ msgstr "Bildformat ntfernter Mitschnitte"
 #: data/org.gnome.camorama.gschema.xml.in:72
 msgid "Specifies the image format to be used for remotely saved pictures"
 msgstr ""
-"Welches Bildformat soll für entfernt gespeicherte Bilder verwendet werden?"
+"Gibt das Bildformat an, das für remote gespeicherte Bilder verwendet werden "
+"soll"
 
 #: data/org.gnome.camorama.gschema.xml.in:76
 msgid "Folder for remote captures"
@@ -478,7 +482,7 @@ msgstr "Ein Name für die Datei hochgeladener Bilder."
 
 #: data/org.gnome.camorama.gschema.xml.in:86
 msgid "Toggles timestamp for remote captures"
-msgstr "Zeitstempel für entfernte Mitschnitte?"
+msgstr "Schaltet den Zeitstempel für Fernaufnahmen um"
 
 #: data/org.gnome.camorama.gschema.xml.in:87
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
@@ -503,7 +507,7 @@ msgstr "Dateiname für das lokale Speichern mitgeschnittener Bilder"
 
 #: data/org.gnome.camorama.gschema.xml.in:101
 msgid "Toggles timestamp for local captures"
-msgstr "Zeitstempel für lokale Mitschnitte?"
+msgstr "Schaltet den Zeitstempel für lokale Aufnahmen um"
 
 #: data/org.gnome.camorama.gschema.xml.in:102
 msgid "Toggles the insertion of a timestamp into local images"
