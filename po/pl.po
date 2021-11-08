@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-04-16 16:36+0000\n"
-"Last-Translator: Mateusz Stomski <zbytatencyjny@gmail.com>\n"
+"PO-Revision-Date: 2020-04-17 16:40+0000\n"
+"Last-Translator: Michal Biesiada <biesiadmichal@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -410,9 +410,8 @@ msgstr ""
 "lub po użyciu przycisku \"Zrób zdjęcie\"."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Zdalny folder dla przechwyconych obrazów"
+msgstr "Protokół do użycia dla zdalnego dostępu"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
@@ -568,7 +567,7 @@ msgstr "%.2f fps - aktualnie     %.2f fps - średnio"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Nie można przydzielić pamięci do przechowywania urządzeń"
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
@@ -580,13 +579,13 @@ msgid "%dx%d (max %.1f fps)"
 msgstr "%dx%d (maks %.1f fps)"
 
 #: src/callbacks.c:1067
-#, c-format, fuzzy
+#, c-format
 msgid "%dx%d"
 msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "Laplace (4 sąsiadów)"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
@@ -601,7 +600,7 @@ msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
-msgstr ""
+msgstr "_Dodaj filtr"
 
 #: src/camorama-window.c:221
 msgid "Effects"
