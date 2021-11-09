@@ -49,9 +49,16 @@ struct resolutions {
     float max_fps;
 };
 
+struct colorspace_parms {
+    enum v4l2_colorspace     colorspace;
+    enum v4l2_xfer_func      xfer_func;
+    enum v4l2_ycbcr_encoding ycbcr_enc;
+    enum v4l2_quantization   quantization;
+};
+
 typedef struct camera {
     int dev;
-    unsigned int width, height, colorspace, ycbcr_enc;
+    unsigned int width, height;
     int bpp;
     float scale;
     CamoImageSize size;
@@ -62,6 +69,7 @@ typedef struct camera {
     int frame_number;
 
     unsigned int min_width, min_height, max_width, max_height;
+    struct colorspace_parms colorspc;
 
     unsigned int n_res;
     struct resolutions *res;

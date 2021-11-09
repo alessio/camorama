@@ -10,33 +10,35 @@ extern int frame_number;
 
 #define BYTE_CLAMP(a) CLAMP(a, 0, 255)
 
-/* Formats that are natively supported */
 struct video_formats {
     unsigned int pixformat;
     unsigned int depth;
     unsigned int y_decimation;
     unsigned int x_decimation;
+
+    unsigned int is_rgb:1;
 };
 
+/* Formats that are natively supported */
 static const struct video_formats supported_formats[] = {
-    { V4L2_PIX_FMT_BGR24,   24, 0, 0},
-    { V4L2_PIX_FMT_RGB24,   24, 0, 0},
-    { V4L2_PIX_FMT_ARGB32,  32, 0, 0},
-    { V4L2_PIX_FMT_XRGB32,  32, 0, 0},
-    { V4L2_PIX_FMT_BGR32,   32, 0, 0},
-    { V4L2_PIX_FMT_ABGR32,  32, 0, 0},
-    { V4L2_PIX_FMT_XBGR32,  32, 0, 0},
-    { V4L2_PIX_FMT_YUYV,    16, 0, 0},
-    { V4L2_PIX_FMT_UYVY,    16, 0, 0},
-    { V4L2_PIX_FMT_YVYU,    16, 0, 0},
-    { V4L2_PIX_FMT_VYUY,    16, 0, 0},
-    { V4L2_PIX_FMT_RGB565,  16, 0, 0},
-    { V4L2_PIX_FMT_RGB565X, 16, 0, 0},
-    { V4L2_PIX_FMT_RGB32,   16, 0, 0},
-    { V4L2_PIX_FMT_NV12,     8, 1, 0},
-    { V4L2_PIX_FMT_NV21,     8, 1, 0},
-    { V4L2_PIX_FMT_YUV420,   8, 1, 1},
-    { V4L2_PIX_FMT_YVU420,   8, 1, 1},
+    { V4L2_PIX_FMT_BGR32,   32, 0, 0, 1},
+    { V4L2_PIX_FMT_ABGR32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_XBGR32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB32,   32, 0, 0, 1},
+    { V4L2_PIX_FMT_ARGB32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_XRGB32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_BGR24,   24, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB24,   24, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB565,  16, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB565X, 16, 0, 0, 1},
+    { V4L2_PIX_FMT_YUYV,    16, 0, 0, 0},
+    { V4L2_PIX_FMT_UYVY,    16, 0, 0, 0},
+    { V4L2_PIX_FMT_YVYU,    16, 0, 0, 0},
+    { V4L2_PIX_FMT_VYUY,    16, 0, 0, 0},
+    { V4L2_PIX_FMT_NV12,     8, 1, 0, 0},
+    { V4L2_PIX_FMT_NV21,     8, 1, 0, 0},
+    { V4L2_PIX_FMT_YUV420,   8, 1, 1, 0},
+    { V4L2_PIX_FMT_YVU420,   8, 1, 1, 0},
 };
 
 #define ARRAY_SIZE(a)  (sizeof(a)/sizeof(*a))
@@ -71,16 +73,14 @@ static gboolean is_format_supported(cam_t *cam, unsigned int pixformat)
     return FALSE;
 }
 
-static void convert_yuv(enum v4l2_ycbcr_encoding enc,
+static void convert_yuv(struct colorspace_parms *c,
                         int32_t y, int32_t u, int32_t v,
                         unsigned char **dst)
 {
-    int full_scale = 1; // FIXME: add support for non-full_scale
-
-    if (full_scale)
-        y *= 65536;
-    else
-        y = (y - 16) * 76284;
+        if (c->quantization == V4L2_QUANTIZATION_FULL_RANGE)
+                y *= 65536;
+        else
+                y = (y - 16) * 76284;
 
     u -= 128;
     v -= 128;
@@ -89,7 +89,7 @@ static void convert_yuv(enum v4l2_ycbcr_encoding enc,
      * TODO: add BT2020 and SMPTE240M and better handle
      * other differences
      */
-    switch (enc) {
+    switch (c->ycbcr_enc) {
     case V4L2_YCBCR_ENC_601:
     case V4L2_YCBCR_ENC_XV601:
     case V4L2_YCBCR_ENC_SYCC:
@@ -124,7 +124,7 @@ static void convert_yuv(enum v4l2_ycbcr_encoding enc,
 }
 
 static void copy_two_pixels(cam_t *cam,
-                            enum v4l2_ycbcr_encoding enc,
+                            struct colorspace_parms *c,
                             unsigned char *plane0,
                             unsigned char *plane1,
                             unsigned char *plane2,
@@ -169,7 +169,7 @@ static void copy_two_pixels(cam_t *cam,
         v = plane0[(1 - y_off) + (2 - u_off)];
 
         for (i = 0; i < 2; i++)
-            convert_yuv(enc, plane0[y_off + (i << 1)], u, v, dst);
+            convert_yuv(c, plane0[y_off + (i << 1)], u, v, dst);
 
         break;
     case V4L2_PIX_FMT_NV12:
@@ -183,7 +183,7 @@ static void copy_two_pixels(cam_t *cam,
         }
 
         for (i = 0; i < 2; i++)
-            convert_yuv(enc, plane0[i], u, v, dst);
+            convert_yuv(c, plane0[i], u, v, dst);
 
         break;
     case V4L2_PIX_FMT_YUV420:
@@ -197,7 +197,7 @@ static void copy_two_pixels(cam_t *cam,
         }
 
         for (i = 0; i < 2; i++)
-            convert_yuv(enc, plane0[i], u, v, dst);
+            convert_yuv(c, plane0[i], u, v, dst);
 
         break;
     case V4L2_PIX_FMT_RGB32:
@@ -248,18 +248,12 @@ static unsigned int convert_to_rgb24(cam_t *cam)
     unsigned char *plane2_start = NULL;
     unsigned char *plane1 = NULL;
     unsigned char *plane2 = NULL;
-    enum v4l2_ycbcr_encoding enc;
     unsigned int x, y, depth;
     uint32_t num_planes = 1;
     unsigned char *p_start;
     uint32_t plane0_size;
     uint32_t w_dec;
     uint32_t h_dec;
-
-    if (cam->ycbcr_enc == V4L2_YCBCR_ENC_DEFAULT)
-        enc = V4L2_MAP_YCBCR_ENC_DEFAULT(cam->colorspace);
-    else
-        enc = cam->ycbcr_enc;
 
     video_fmt = video_fmt_props(cam->pixformat);
     if (!video_fmt)
@@ -293,7 +287,7 @@ static unsigned int convert_to_rgb24(cam_t *cam)
             plane2 = plane2_start + (bytesperline >> w_dec) * (y >> h_dec);
 
         for (x = 0; x < width >> 1; x++) {
-            copy_two_pixels(cam, enc, plane0, plane1, plane2, &p_out);
+            copy_two_pixels(cam, &cam->colorspc, plane0, plane1, plane2, &p_out);
 
             plane0 += depth >> 2;
             if (num_planes > 1)
@@ -304,6 +298,72 @@ static unsigned int convert_to_rgb24(cam_t *cam)
     }
 
     return p_out - p_start;
+}
+
+static void get_colorspace_data(cam_t *cam,
+                                struct v4l2_format *fmt)
+{
+    struct colorspace_parms *c = &cam->colorspc;
+    const struct video_formats *video_fmt;
+
+    memset(c, 0, sizeof(*c));
+
+    video_fmt = video_fmt_props(fmt->fmt.pix.pixelformat);
+    if (!video_fmt)
+            return;
+
+    /*
+     * A more complete colorspace default detection would need to
+     * implement timings API, in order to check for SDTV/HDTV.
+     */
+    if (fmt->fmt.pix.colorspace == V4L2_COLORSPACE_DEFAULT)
+        c->colorspace = video_fmt->is_rgb ?
+                        V4L2_COLORSPACE_SRGB :
+                        V4L2_COLORSPACE_REC709;
+    else
+        c->colorspace = fmt->fmt.pix.colorspace;
+
+    if (fmt->fmt.pix.xfer_func == V4L2_XFER_FUNC_DEFAULT)
+        c->xfer_func = V4L2_MAP_XFER_FUNC_DEFAULT(c->colorspace);
+    else
+        c->xfer_func = fmt->fmt.pix.xfer_func;
+
+    if (!video_fmt->is_rgb) {
+        if (fmt->fmt.pix.ycbcr_enc == V4L2_YCBCR_ENC_DEFAULT)
+            c->ycbcr_enc = V4L2_MAP_YCBCR_ENC_DEFAULT(c->colorspace);
+        else
+            c->ycbcr_enc = fmt->fmt.pix.ycbcr_enc;
+    }
+
+    if (fmt->fmt.pix.quantization == V4L2_QUANTIZATION_DEFAULT)
+        c->quantization = V4L2_MAP_QUANTIZATION_DEFAULT(video_fmt->is_rgb,
+                                                        c->colorspace,
+                                                        c->ycbcr_enc);
+
+    if (cam->debug == TRUE) {
+        if (!video_fmt->is_rgb) {
+            printf("YUV standard: ");
+                switch (c->ycbcr_enc) {
+                case V4L2_YCBCR_ENC_601:
+                case V4L2_YCBCR_ENC_XV601:
+                case V4L2_YCBCR_ENC_SYCC:
+                    printf("BT.601\n");
+                    break;
+                case V4L2_YCBCR_ENC_DEFAULT:
+                case V4L2_YCBCR_ENC_709:
+                case V4L2_YCBCR_ENC_XV709:
+                case V4L2_YCBCR_ENC_BT2020:
+                case V4L2_YCBCR_ENC_BT2020_CONST_LUM:
+                case V4L2_YCBCR_ENC_SMPTE240M:
+                default:
+                    printf("BT.709\n");
+                }
+            }
+
+        printf ("Quantization: %s\n",
+                (c->quantization == V4L2_QUANTIZATION_FULL_RANGE) ?
+                "full-range" : "limited-range");
+    }
 }
 
 int cam_open(cam_t *cam, int oflag)
@@ -659,14 +719,14 @@ int camera_cap(cam_t *cam)
         cam->req.memory = V4L2_MEMORY_MMAP;
         if (cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req)) {
             printf("Device doesn't support mmap. Using userptr mode\n");
-	    cam_close(cam);
+            cam_close(cam);
             cam->userptr = TRUE;
             cam->use_libv4l = FALSE;
-	    cam_open(cam, O_RDWR);
+            cam_open(cam, O_RDWR);
         } else {
-	    cam->req.count = 0;
-	    cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req);
-	}
+            cam->req.count = 0;
+            cam_ioctl(cam, VIDIOC_REQBUFS, &cam->req);
+        }
     }
 
     /* Query supported resolutions */
@@ -841,6 +901,7 @@ void get_win_info(cam_t *cam)
         if (fmt.fmt.pix.bytesperline)
             printf("bytes/line = %d\n", fmt.fmt.pix.bytesperline);
     }
+    get_colorspace_data(cam, &fmt);
 
     if (!fmt.fmt.pix.bytesperline) {
         if (fmt.fmt.pix.pixelformat == V4L2_PIX_FMT_YUV420)
@@ -918,9 +979,7 @@ void set_win_info(cam_t *cam)
         g_free(msg);
         exit(0);
     }
-//    cam->pixformat = fmt.fmt.pix.pixelformat;
-    cam->colorspace = fmt.fmt.pix.colorspace;
-    cam->ycbcr_enc = fmt.fmt.pix.ycbcr_enc;
+    cam->pixformat = fmt.fmt.pix.pixelformat;
 
     /* Check if returned format is valid */
     if (!is_format_supported(cam, cam->pixformat)) {
