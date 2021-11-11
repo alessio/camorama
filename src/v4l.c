@@ -593,9 +593,8 @@ void get_supported_resolutions(cam_t *cam, gboolean all_supported)
     struct v4l2_fmtdesc fmtdesc = { 0 };
     struct v4l2_format fmt;
     struct v4l2_frmsizeenum frmsize = { 0 };
-    int i;
     gboolean has_framesizes = FALSE;
-    unsigned int x, y;
+    unsigned int x, y, i;
 
     if (cam->n_res) {
         /* Free it, as the resolutions will be re-inserted */
@@ -690,8 +689,25 @@ void get_supported_resolutions(cam_t *cam, gboolean all_supported)
                               fmt.fmt.pix.width, fmt.fmt.pix.height, -1);
     }
 
-    if (cam->res)
-        qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
+    if (!cam->res)
+	return;
+
+    qsort(cam->res, cam->n_res, sizeof(struct resolutions), sort_func);
+
+    if (cam->debug == TRUE) {
+	for (i = 0; i < cam->n_res; i++) {
+	    printf("Resolution #%d: FOURCC: '%c%c%c%c' (%dx%d %.2f fps, %d depth)\n",
+		   i,
+		    cam->res[i].pixformat & 0xff,
+		   (cam->res[i].pixformat >> 8) & 0xff,
+		   (cam->res[i].pixformat >> 16) & 0xff,
+		    cam->res[i].pixformat >> 24,
+		   cam->res[i].x,
+		   cam->res[i].y,
+		   (double)cam->res[i].max_fps,
+		   cam->res[i].depth);
+	}
+    }
 }
 
 int camera_cap(cam_t *cam)
