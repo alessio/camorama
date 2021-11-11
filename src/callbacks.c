@@ -359,25 +359,29 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
     GtkWidget *da = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
     gint width, height;
     gchar *title;
-    double scale;
+    float scale;
 
     gtk_window_get_size(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))), &width, &height);
 
     width = gtk_widget_get_allocated_width(da);
     height = gtk_widget_get_allocated_height(da);
 
-    scale = 1. * width / cam->width;
-    if (1. * height / cam->height < scale)
-        scale = 1. * height / cam->height;
+    if (cam->scale > 0) {
+	scale = 1. * width / cam->width;
+	if (1.f * height / cam->height < scale)
+	    scale = 1. * height / cam->height;
 
-    cam->scale = scale;
+	cam->scale = scale;
+    } else {
+	scale = 1.f;
+    }
 
-    if (cam->scale == (float)1.)
+    if (scale == 1.f)
         title = g_strdup_printf("Camorama - %s - %dx%d", cam->name,
                                 cam->width, cam->height);
     else
         title = g_strdup_printf("Camorama - %s - %dx%d (scale: %d%%)", cam->name,
-                                cam->width, cam->height, (int)(cam->scale * 100.f));
+                                cam->width, cam->height, (int)(scale * 100.f));
     gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                          title);
     g_free(title);
@@ -424,22 +428,12 @@ void toggle_fullscreen(GtkWidget *widget, cam_t *cam)
 
 void set_image_scale(cam_t *cam)
 {
-    float f;
+#if GTK_MAJOR_VERSION < 3
+    float scale, f;
+#endif
     unsigned int width, height;
 
     get_geometry(cam, &width, &height);
-
-    if (cam->width > 0.66 * width || cam->height > 0.66 * height) {
-        cam->scale = (0.66 * width) / cam->width;
-        f = (0.66 * height) / cam->height;
-
-        if (f < cam->scale)
-            cam->scale = f;
-        if (cam->scale < 0.1f)
-          cam->scale = 0.1f;
-    } else {
-        cam->scale = 1.f;
-    }
 
 #if GTK_MAJOR_VERSION >= 3
     gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
@@ -448,19 +442,36 @@ void set_image_scale(cam_t *cam)
     gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                       width, height);
 #else
+    if (cam->scale > 0) {
+	if (cam->width > 0.66 * width || cam->height > 0.66 * height) {
+	    cam->scale = (0.66 * width) / cam->width;
+	    f = (0.66 * height) / cam->height;
+
+	    if (f < cam->scale)
+		cam->scale = f;
+	    if (cam->scale < 0.1f)
+	    cam->scale = 0.1f;
+	} else {
+	    cam->scale = 1.f;
+	}
+	scale = cam->scale;
+    } else {
+	scale = 1.f;
+    }
+
     gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
-                                cam->width * cam->scale,
-                                cam->height * cam->scale);
+                                cam->width * scale,
+                                cam->height * scale);
 
     gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                       320, 240);
 
-    if (cam->scale == (float)1.)
+    if (scale == 1.f)
         title = g_strdup_printf("Camorama - %s - %dx%d", cam->name,
                                 cam->width, cam->height);
     else
         title = g_strdup_printf("Camorama - %s - %dx%d (scale: %d%%)", cam->name,
-                                cam->width, cam->height, (int)(cam->scale * 100.f));
+                                cam->width, cam->height, (int)(scale * 100.f));
     gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                          title);
     g_free(title);
@@ -705,7 +716,7 @@ static void show_buffer(cam_t *cam)
 
     gdk_cairo_rectangle(cr, &rect);
 
-    if (cam->scale != 1.f)
+    if (cam->scale > 0 && cam->scale != 1.f)
         cairo_scale(cr, cam->scale, cam->scale);
 
     cairo_fill(cr);
@@ -734,7 +745,7 @@ void draw_callback(GtkWidget *widget, cairo_t *cr, cam_t *cam)
     window = gtk_widget_get_window(widget);
     surface = gdk_cairo_surface_create_from_pixbuf(cam->pb, 1, window);
 
-    if (cam->scale != 1.f)
+    if (cam->scale > 0 && cam->scale != 1.f)
         cairo_scale(cr, cam->scale, cam->scale);
 
     cairo_set_source_surface(cr, surface, 0, 0);

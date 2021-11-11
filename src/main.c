@@ -21,6 +21,7 @@ GtkWidget *host_entry, *protocol, *rdir_entry, *filename_entry;
 static int ver = 0, max = 0, min;
 static int half = 0, use_read = 0, use_userptr = 0, debug = 0;
 static int dont_use_libv4l = 0;
+static int disable_scaler = 0;
 static gchar *video_dev = NULL;
 static int x = 0, y = 0;
 
@@ -43,6 +44,8 @@ static GOptionEntry options[] = {
      N_("middle capture size"), NULL},
     {"read", 'R', 0, G_OPTION_ARG_NONE, &use_read,
      N_("use read() rather than mmap()"), NULL},
+    {"disable-scaler", 'S', 0, G_OPTION_ARG_NONE, &disable_scaler,
+     N_("disable video scaler"), NULL},
     {"userptr", 'U', 0, G_OPTION_ARG_NONE, &use_userptr,
      N_("use userptr pointer rather than mmap()"), NULL},
     {"dont-use-libv4l2", 'D', 0, G_OPTION_ARG_NONE, &dont_use_libv4l,
@@ -145,6 +148,11 @@ static void activate(GtkApplication *app)
         printf("Forcing userptr mode\n");
         cam->userptr = TRUE;
         cam->use_libv4l = FALSE;
+    }
+
+    if (disable_scaler) {
+        printf("Disabling auto scaling\n");
+	cam->scale = -1.;
     }
 
     cam->xml = gtk_builder_new();
