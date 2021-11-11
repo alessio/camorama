@@ -1009,6 +1009,16 @@ void set_win_info(cam_t *cam)
     cam->pixformat = fmt.fmt.pix.pixelformat;
     cam->bytesperline = fmt.fmt.pix.bytesperline;
     cam->sizeimage = fmt.fmt.pix.sizeimage;
+
+    if (!fmt.fmt.pix.width) {
+        g_message("VIDIOC_S_FMT  --  zero width returned!");
+
+        msg = g_strdup_printf(_("Returned width is zero on video device (%s)!"),
+                              cam->video_dev);
+        error_dialog(msg);
+        g_free(msg);
+        exit(0);
+    }
     cam->bpp = ((fmt.fmt.pix.bytesperline << 3) + (fmt.fmt.pix.width - 1)) / fmt.fmt.pix.width;
 
     cam->width = fmt.fmt.pix.width;
