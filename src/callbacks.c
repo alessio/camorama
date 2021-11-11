@@ -804,14 +804,10 @@ void on_status_show(GtkWidget *sb, cam_t *cam)
 
 void capture_func(GtkWidget *widget, cam_t *cam)
 {
-printf("%s:\n", __FUNCTION__);
     if (cam->debug == TRUE)
         printf("capture_func\nx = %d, y = %d, depth = %d, realloc size = %d\n",
                cam->width, cam->height, cam->bpp,
                (cam->width * cam->height * cam->bpp / 8));
-
-    memcpy(cam->tmp, cam->pic_buf,
-           cam->width * cam->height * cam->bpp / 8);
 
     if (cam->rcap == TRUE)
         remote_save(cam);
@@ -836,8 +832,6 @@ gint timeout_capture_func(cam_t *cam)
         timeout_func(cam);
 
     }
-    memcpy(cam->tmp, cam->pic_buf,
-           cam->width * cam->height * cam->bpp / 8);
 
     if (cam->cap == TRUE)
         local_save(cam);
@@ -1215,7 +1209,6 @@ static void add_gtk_view_resolutions(cam_t *cam)
 
 void start_camera(cam_t *cam)
 {
-    unsigned int bufsize;
     GList *children, *iter;
     GtkWidget *widget, *container;
 
@@ -1289,16 +1282,20 @@ void start_camera(cam_t *cam)
     /* Only store the device name after being able to successfully use it */
     g_settings_set_string(cam->gc, CAM_SETTINGS_DEVICE, cam->video_dev);
 
-    bufsize = cam->max_width * cam->max_height * cam->bpp / 8;
-    cam->pic_buf = malloc(bufsize);
+    /* pic_buf is always for RGB3, which is the format expected by gtk */
+    cam->pic_buf = malloc(cam->max_width * cam->max_height * 3);
 
-    /* Should hold RGB24 */
-    bufsize = cam->max_width * cam->max_height * 3;
-    cam->tmp = malloc(bufsize);
-
-    if (!cam->pic_buf || !cam->tmp) {
+    if (!cam->pic_buf) {
         printf("Failed to allocate memory for buffers\n");
         exit(0);
+    }
+
+    if (cam->read) {
+	cam->tmp = malloc(cam->sizeimage);
+	if (!cam->pic_buf) {
+	    printf("Failed to allocate memory for read buffer\n");
+	    exit(0);
+	}
     }
 
     if (cam->read)

@@ -235,10 +235,10 @@ static void copy_two_pixels(cam_t *cam,
     }
 }
 
-static unsigned int convert_to_rgb24(cam_t *cam)
+static unsigned int convert_to_rgb24(cam_t *cam, unsigned char *inbuf)
 {
-    unsigned char *plane0 = cam->pic_buf;
-    unsigned char *p_out = cam->tmp;
+    unsigned char *plane0 = inbuf;
+    unsigned char *p_out = cam->pic_buf;
     uint32_t width = cam->width;
     uint32_t height = cam->height;
     uint32_t bytesperline = cam->bytesperline;
@@ -391,9 +391,12 @@ unsigned char *cam_read(cam_t *cam)
         if (cam->use_libv4l)
             ret = v4l2_read(cam->dev, cam->pic_buf,
                             (cam->width * cam->height * cam->bpp / 8));
-        else
-            ret = read(cam->dev, cam->pic_buf,
+        else {
+            ret = read(cam->dev, cam->tmp,
                        (cam->width * cam->height * cam->bpp / 8));
+	    if (!ret)
+		convert_to_rgb24(cam, cam->tmp);
+	}
     } else if (cam->userptr) {
             capture_buffers_userptr(cam, cam->pic_buf);
     } else {
@@ -401,11 +404,6 @@ unsigned char *cam_read(cam_t *cam)
     }
     if (ret)
         return NULL;
-
-    if (cam->pixformat != V4L2_PIX_FMT_RGB24) {
-        convert_to_rgb24(cam);
-        pic_buf = cam->tmp;
-    }
 
     return pic_buf;
 }
@@ -1241,10 +1239,14 @@ void capture_buffers(cam_t *cam, unsigned char *outbuf, unsigned int len)
         len = buf.bytesused;
 
     inbuf = cam->buffers[buf.index].start;
-    for (y = 0; y < cam->height; y++) {
-        memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
-        outbuf += cam->width * cam->bpp / 8;
-        inbuf += cam->bytesperline;
+    if (cam->use_libv4l) {
+	    for (y = 0; y < cam->height; y++) {
+		memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
+		outbuf += cam->width * cam->bpp / 8;
+		inbuf += cam->bytesperline;
+	    }
+    } else {
+	    convert_to_rgb24(cam, inbuf);
     }
 
     cam_ioctl(cam, VIDIOC_QBUF, &buf);
@@ -1285,10 +1287,14 @@ void capture_buffers_userptr(cam_t *cam, unsigned char *outbuf)
     cam_ioctl(cam, VIDIOC_DQBUF, &buf);
 
     inbuf = cam->buffers[buf.index].start;
-    for (y = 0; y < cam->height; y++) {
-        memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
-        outbuf += cam->width * cam->bpp / 8;
-        inbuf += cam->bytesperline;
+    if (cam->use_libv4l) {
+	    for (y = 0; y < cam->height; y++) {
+		memcpy(outbuf, inbuf, cam->width * cam->bpp / 8);
+		outbuf += cam->width * cam->bpp / 8;
+		inbuf += cam->bytesperline;
+	    }
+    } else {
+	    convert_to_rgb24(cam, inbuf);
     }
 
     cam_ioctl(cam, VIDIOC_QBUF, &buf);
