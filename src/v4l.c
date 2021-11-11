@@ -21,16 +21,9 @@ struct video_formats {
 
 /* Formats that are natively supported */
 static const struct video_formats supported_formats[] = {
-    { V4L2_PIX_FMT_BGR32,   32, 0, 0, 1},
-    { V4L2_PIX_FMT_ABGR32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_XBGR32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_RGB32,   32, 0, 0, 1},
-    { V4L2_PIX_FMT_ARGB32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_XRGB32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_BGR24,   24, 0, 0, 1},
     { V4L2_PIX_FMT_RGB24,   24, 0, 0, 1},
-    { V4L2_PIX_FMT_RGB565,  16, 0, 0, 1},
-    { V4L2_PIX_FMT_RGB565X, 16, 0, 0, 1},
+    { V4L2_PIX_FMT_BGR24,   24, 0, 0, 1},
+
     { V4L2_PIX_FMT_YUYV,    16, 0, 0, 0},
     { V4L2_PIX_FMT_UYVY,    16, 0, 0, 0},
     { V4L2_PIX_FMT_YVYU,    16, 0, 0, 0},
@@ -39,6 +32,16 @@ static const struct video_formats supported_formats[] = {
     { V4L2_PIX_FMT_NV21,     8, 1, 0, 0},
     { V4L2_PIX_FMT_YUV420,   8, 1, 1, 0},
     { V4L2_PIX_FMT_YVU420,   8, 1, 1, 0},
+
+    { V4L2_PIX_FMT_RGB565,  16, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB565X, 16, 0, 0, 1},
+
+    { V4L2_PIX_FMT_BGR32,   32, 0, 0, 1},
+    { V4L2_PIX_FMT_ABGR32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_XBGR32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB32,   32, 0, 0, 1},
+    { V4L2_PIX_FMT_ARGB32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_XRGB32,  32, 0, 0, 1},
 };
 
 #define ARRAY_SIZE(a)  (sizeof(a)/sizeof(*a))
@@ -528,8 +531,12 @@ static void insert_resolution(cam_t *cam, unsigned int pixformat,
 	if (video_fmt->y_decimation)
 	    depth /= video_fmt->y_decimation;
 
+        cam->res[cam->n_res].order = video_fmt - supported_formats;
+
 	if (video_fmt->x_decimation || video_fmt->y_decimation)
 	    cam->res[cam->n_res].depth += depth << 1;
+    } else {
+        cam->res[cam->n_res].order = 99999;
     }
 
     if (cam->debug == TRUE)
@@ -555,12 +562,8 @@ static int sort_func(const void *__b, const void *__a)
          r = (int)b->y - a->y;
     if (!r)
          r = (int)b->max_fps - a->max_fps;
-
-    /* Less depth may mean higher FPS */
     if (!r)
-         r = (int)b->depth - a->depth;
-    if (!r)
-         r = (int)b->pixformat - a->pixformat;
+         r = (int)b->order - a->order;
 
     return r;
 }

@@ -47,6 +47,7 @@ struct resolutions {
     unsigned int x, y;
     unsigned int depth;
     float max_fps;
+    int order;
 };
 
 struct colorspace_parms {
