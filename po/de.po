@@ -5,13 +5,13 @@
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Jens Maucher <jens.maucher@online.de>, 2020.
 # Fabian Affolter <mail@fabian-affolter.ch>, 2020.
-# Ettore Atalan <atalanttore@googlemail.com>, 2021.
+# Ettore Atalan <atalanttore@googlemail.com>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2021-11-08 00:49+0000\n"
+"PO-Revision-Date: 2022-01-02 21:16+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/camorama/"
 "master/de/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -620,14 +620,14 @@ msgid "Could not create a thread to save image '%s/%s'."
 msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
 
 #: src/fileio.c:172
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Einhängen von %s:%s ist ein Fehler aufgetreten."
 
 #: src/fileio.c:212
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Zugriff auf %s ist ein Fehler aufgetreten."
 
 #: src/fileio.c:263
 #, c-format
@@ -644,19 +644,19 @@ msgid "An error occurred opening %s."
 msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
 
 #: src/fileio.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Öffnen von %s zum Schreiben ist ein Fehler aufgetreten: %s."
 
 #: src/fileio.c:313
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "Beim Schreiben nach %s ist ein Fehler aufgetreten."
+msgstr "Beim Schreiben nach %s ist ein Fehler aufgetreten: %s."
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Schließen von %s ist ein Fehler aufgetreten: %s."
 
 #: src/fileio.c:385
 #, c-format
@@ -756,9 +756,8 @@ msgstr ""
 "\n"
 
 #: src/main.c:158
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Pixmap-Datei »%s« konnte nicht gefunden werden"
+msgstr ""
 
 #: src/main.c:187
 #, c-format
