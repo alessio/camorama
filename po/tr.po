@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2020-03-13 08:42+0100\n"
+"POT-Creation-Date: 2022-01-16 12:14+0100\n"
 "PO-Revision-Date: 2020-02-12 18:16+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
@@ -34,13 +34,9 @@ msgid ""
 "effects."
 msgstr ""
 
-#: camorama.desktop.in:5 src/callbacks.c:464
+#: camorama.desktop.in:5 src/callbacks.c:582
 msgid "View, alter and save images from a webcam"
 msgstr "Web kamerası görüntülerini izle, değiştir ve sakla"
-
-#: camorama.desktop.in:6 src/main.c:297
-msgid "camorama"
-msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
@@ -50,12 +46,12 @@ msgstr ""
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: data/camorama-gtk2.ui:111 data/camorama-gtk3.ui:741
+#: data/camorama-gtk2.ui:111 data/camorama-gtk3.ui:826
 #: data/camorama-gtk4.ui:666
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Genel</span>"
 
-#: data/camorama-gtk2.ui:143 data/camorama-gtk3.ui:775
+#: data/camorama-gtk2.ui:143 data/camorama-gtk3.ui:860
 #: data/camorama-gtk4.ui:696
 msgid "Automatic Capture"
 msgstr "Otomatik Yakala"
@@ -64,11 +60,11 @@ msgstr "Otomatik Yakala"
 #: data/camorama-gtk2.ui:338 data/camorama-gtk2.ui:521
 #: data/camorama-gtk2.ui:637 data/camorama-gtk2.ui:674
 #: data/camorama-gtk2.ui:909 data/camorama-gtk2.ui:1025
-#: data/camorama-gtk2.ui:1062 data/camorama-gtk3.ui:797
-#: data/camorama-gtk3.ui:935 data/camorama-gtk3.ui:974
-#: data/camorama-gtk3.ui:1151 data/camorama-gtk3.ui:1270
-#: data/camorama-gtk3.ui:1308 data/camorama-gtk3.ui:1533
-#: data/camorama-gtk3.ui:1652 data/camorama-gtk3.ui:1690
+#: data/camorama-gtk2.ui:1062 data/camorama-gtk3.ui:882
+#: data/camorama-gtk3.ui:1020 data/camorama-gtk3.ui:1059
+#: data/camorama-gtk3.ui:1236 data/camorama-gtk3.ui:1355
+#: data/camorama-gtk3.ui:1393 data/camorama-gtk3.ui:1618
+#: data/camorama-gtk3.ui:1737 data/camorama-gtk3.ui:1775
 #: data/camorama-gtk4.ui:716 data/camorama-gtk4.ui:831
 #: data/camorama-gtk4.ui:866 data/camorama-gtk4.ui:1023
 #: data/camorama-gtk4.ui:1127 data/camorama-gtk4.ui:1161
@@ -77,152 +73,152 @@ msgstr "Otomatik Yakala"
 msgid "     "
 msgstr "     "
 
-#: data/camorama-gtk2.ui:187 data/camorama-gtk3.ui:820
+#: data/camorama-gtk2.ui:187 data/camorama-gtk3.ui:905
 #: data/camorama-gtk4.ui:737
 msgid "Capture Interval (in minutes):"
 msgstr "Yakalama Aralığı (dakika cinsinden):"
 
-#: data/camorama-gtk2.ui:261 data/camorama-gtk3.ui:892
+#: data/camorama-gtk2.ui:261 data/camorama-gtk3.ui:977
 #: data/camorama-gtk4.ui:791
 msgid "General"
 msgstr "Genel"
 
-#: data/camorama-gtk2.ui:283 data/camorama-gtk3.ui:917
+#: data/camorama-gtk2.ui:283 data/camorama-gtk3.ui:1002
 #: data/camorama-gtk4.ui:815
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">Yerel Yakala</span>"
 
-#: data/camorama-gtk2.ui:315 data/camorama-gtk3.ui:951
+#: data/camorama-gtk2.ui:315 data/camorama-gtk3.ui:1036
 #: data/camorama-gtk4.ui:845
 msgid "_Enable local capture"
 msgstr "Yerel yakalamayı _etkinleştir"
 
-#: data/camorama-gtk2.ui:364 data/camorama-gtk3.ui:998
+#: data/camorama-gtk2.ui:364 data/camorama-gtk3.ui:1083
 #: data/camorama-gtk4.ui:888
 msgid "_Directory for captured pics:"
 msgstr "Yakalanan resimler için _Dizin:"
 
-#: data/camorama-gtk2.ui:377 data/camorama-gtk3.ui:1011
+#: data/camorama-gtk2.ui:377 data/camorama-gtk3.ui:1096
 #: data/camorama-gtk4.ui:901
 msgid "_Filename for pictures:"
 msgstr "Resimler için _dosya adı:"
 
-#: data/camorama-gtk2.ui:392 data/camorama-gtk3.ui:1039
+#: data/camorama-gtk2.ui:392 data/camorama-gtk3.ui:1124
 #: data/camorama-gtk4.ui:929
 msgid "webcam-capture"
 msgstr "webcam-yakala"
 
-#: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
+#: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1112
 #: data/camorama-gtk4.ui:917
 msgid "Select a Directory"
 msgstr "Bir Dizin Seçin"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
-#: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
+#: data/camorama-gtk3.ui:1142 data/camorama-gtk3.ui:1525
 #: data/camorama-gtk4.ui:945 data/camorama-gtk4.ui:1289
 msgid "Append time to filename"
 msgstr "Dosya adına zamanı ekle"
 
 #: data/camorama-gtk2.ui:445 data/camorama-gtk2.ui:833
-#: data/camorama-gtk3.ui:1074 data/camorama-gtk3.ui:1456
+#: data/camorama-gtk3.ui:1159 data/camorama-gtk3.ui:1541
 #: data/camorama-gtk4.ui:960 data/camorama-gtk4.ui:1303
 msgid "Add a timestamp to captured images"
 msgstr "Yakalanan görüntülere zaman damgası ekle"
 
 #: data/camorama-gtk2.ui:504 data/camorama-gtk2.ui:892
-#: data/camorama-gtk3.ui:1133 data/camorama-gtk3.ui:1515
+#: data/camorama-gtk3.ui:1218 data/camorama-gtk3.ui:1600
 #: data/camorama-gtk4.ui:1007 data/camorama-gtk4.ui:1350
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Görüntü Tipi</span>"
 
 #: data/camorama-gtk2.ui:535 data/camorama-gtk2.ui:923
-#: data/camorama-gtk3.ui:1166 data/camorama-gtk3.ui:1548
+#: data/camorama-gtk3.ui:1251 data/camorama-gtk3.ui:1633
 #: data/camorama-gtk4.ui:1036 data/camorama-gtk4.ui:1379
 msgid "Save files in jpeg format"
 msgstr "Dosyaları jpeg biçiminde kaydet"
 
 #: data/camorama-gtk2.ui:552 data/camorama-gtk2.ui:940
-#: data/camorama-gtk3.ui:1183 data/camorama-gtk3.ui:1565
+#: data/camorama-gtk3.ui:1268 data/camorama-gtk3.ui:1650
 #: data/camorama-gtk4.ui:1051 data/camorama-gtk4.ui:1394
 msgid "Save files in png format"
 msgstr "Dosyaları png biçiminde kaydet"
 
-#: data/camorama-gtk2.ui:597 data/camorama-gtk3.ui:1228
+#: data/camorama-gtk2.ui:597 data/camorama-gtk3.ui:1313
 #: data/camorama-gtk4.ui:1088
 msgid "Local Capture"
 msgstr "Yerel Yakala"
 
-#: data/camorama-gtk2.ui:620 data/camorama-gtk3.ui:1252
+#: data/camorama-gtk2.ui:620 data/camorama-gtk3.ui:1337
 #: data/camorama-gtk4.ui:1111
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">Uzak Yakala</span>"
 
-#: data/camorama-gtk2.ui:652 data/camorama-gtk3.ui:1286
+#: data/camorama-gtk2.ui:652 data/camorama-gtk3.ui:1371
 #: data/camorama-gtk4.ui:1141
 msgid "_Enable remote capture"
 msgstr "Uzak yakalamayı _etkinleştir"
 
-#: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
+#: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1419
 #: data/camorama-gtk4.ui:1185
 msgid "Server:"
 msgstr "Sunucu:"
 
-#: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
+#: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1431
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
 msgstr "Tür:"
 
-#: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
+#: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1443
 #: data/camorama-gtk4.ui:1209
 msgid "Save directory:"
 msgstr "Kayıt dizini:"
 
-#: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
+#: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1455
 #: data/camorama-gtk4.ui:1221
 msgid "Filename:"
 msgstr "Dosya adı:"
 
-#: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
+#: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1468
 #: data/camorama-gtk4.ui:1234
 msgid "ftp.yourdomain.org"
 msgstr "ftp.alanadin.org"
 
-#: data/camorama-gtk2.ui:794 data/camorama-gtk3.ui:1422
+#: data/camorama-gtk2.ui:794 data/camorama-gtk3.ui:1507
 #: data/camorama-gtk4.ui:1273
 msgid "webcamshot"
 msgstr "webcamvuruş"
 
-#: data/camorama-gtk2.ui:985 data/camorama-gtk3.ui:1610
+#: data/camorama-gtk2.ui:985 data/camorama-gtk3.ui:1695
 #: data/camorama-gtk4.ui:1431
 msgid "Remote Capture"
 msgstr "Uzak Yakala"
 
-#: data/camorama-gtk2.ui:1008 data/camorama-gtk3.ui:1634
+#: data/camorama-gtk2.ui:1008 data/camorama-gtk3.ui:1719
 #: data/camorama-gtk4.ui:1454
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">Zaman damgası</span>"
 
-#: data/camorama-gtk2.ui:1040 data/camorama-gtk3.ui:1668
+#: data/camorama-gtk2.ui:1040 data/camorama-gtk3.ui:1753
 #: data/camorama-gtk4.ui:1484
 msgid "Use custom string"
 msgstr "Özel bir katar kullan"
 
-#: data/camorama-gtk2.ui:1084 data/camorama-gtk3.ui:1713
+#: data/camorama-gtk2.ui:1084 data/camorama-gtk3.ui:1798
 #: data/camorama-gtk4.ui:1525
 msgid "String:"
 msgstr "Dizi:"
 
-#: data/camorama-gtk2.ui:1130 data/camorama-gtk3.ui:1758
+#: data/camorama-gtk2.ui:1130 data/camorama-gtk3.ui:1843
 #: data/camorama-gtk4.ui:1560
 msgid "Draw date and time"
 msgstr "Tarih ve saati çiz"
 
-#: data/camorama-gtk2.ui:1174 data/camorama-gtk3.ui:1802
+#: data/camorama-gtk2.ui:1174 data/camorama-gtk3.ui:1887
 #: data/camorama-gtk4.ui:1596
 msgid "Timestamp"
 msgstr "Zaman damgası"
 
-#: data/camorama-gtk2.ui:1202 data/camorama-gtk3.ui:44 data/camorama-gtk4.ui:32
+#: data/camorama-gtk2.ui:1202 data/camorama-gtk3.ui:49 data/camorama-gtk4.ui:32
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
@@ -231,7 +227,7 @@ msgid "_File"
 msgstr "_Dosya"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
-#: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
+#: data/camorama-gtk3.ui:463 data/camorama-gtk4.ui:315
 msgid "Take Picture"
 msgstr "Resim Çek"
 
@@ -239,28 +235,28 @@ msgstr "Resim Çek"
 msgid "_Edit"
 msgstr "_Düzenle"
 
-#: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
+#: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:144
 #: data/camorama-gtk4.ui:107
 msgid "_View"
 msgstr "_Görüntüle"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
-#: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
+#: data/camorama-gtk3.ui:153 data/camorama-gtk3.ui:342
 #: data/camorama-gtk4.ui:116 data/camorama-gtk4.ui:274
 msgid "Show Adjustments"
 msgstr "Ayarlamaları Göster"
 
-#: data/camorama-gtk2.ui:1304 data/camorama-gtk3.ui:144
+#: data/camorama-gtk2.ui:1304 data/camorama-gtk3.ui:163
 #: data/camorama-gtk4.ui:126
 msgid "Show Effects"
 msgstr "Etkileri Göster"
 
-#: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
+#: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:172
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
+#: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:187
 #: data/camorama-gtk4.ui:151
 msgid "Small"
 msgstr "Küçük"
@@ -269,44 +265,54 @@ msgstr "Küçük"
 msgid "_Help"
 msgstr "_Yardım"
 
-#: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
+#: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:562
 #: data/camorama-gtk4.ui:403
 msgid "Contrast:"
 msgstr "Zıtlık:"
 
-#: data/camorama-gtk2.ui:1681 data/camorama-gtk3.ui:489
+#: data/camorama-gtk2.ui:1681 data/camorama-gtk3.ui:574
 #: data/camorama-gtk4.ui:415
 msgid "Brightness:"
 msgstr "Parlaklık:"
 
-#: data/camorama-gtk2.ui:1697 data/camorama-gtk3.ui:501
+#: data/camorama-gtk2.ui:1697 data/camorama-gtk3.ui:586
 #: data/camorama-gtk4.ui:427
 msgid "Color:"
 msgstr "Renk:"
 
-#: data/camorama-gtk2.ui:1713 data/camorama-gtk3.ui:513
+#: data/camorama-gtk2.ui:1713 data/camorama-gtk3.ui:598
 #: data/camorama-gtk4.ui:439
 msgid "Hue:"
 msgstr "Renk özü:"
 
-#: data/camorama-gtk2.ui:1729 data/camorama-gtk3.ui:525
+#: data/camorama-gtk2.ui:1729 data/camorama-gtk3.ui:610
 #: data/camorama-gtk4.ui:451
 msgid "White Balance:"
 msgstr "Beyaz Ayar:"
 
-#: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
+#: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:692
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
 msgstr ""
 
-#: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
+#: data/camorama-gtk2.ui:1909 data/camorama-gtk3.ui:1960
 #: data/camorama-gtk4.ui:1663
 msgid "Select a video device to be used"
 msgstr "Kullanılacak bir video cihazı seç"
 
-#: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
+#: data/camorama-gtk3.ui:78 data/camorama-gtk4.ui:59
 msgid "_Take Picture"
 msgstr "_Resim Çek"
+
+#: data/camorama-gtk3.ui:89
+#, fuzzy
+#| msgid "Toggles local capture"
+msgid "Toggle _Full Screen"
+msgstr "Yerel yakalamayı açar/kapatır"
+
+#: data/camorama-gtk3.ui:404
+msgid "Full Screen"
+msgstr ""
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -534,29 +540,29 @@ msgstr "Görüntü genişliği"
 msgid "Image width used by the camera. Zero means autoselect"
 msgstr ""
 
-#: src/callbacks.c:465
+#: src/callbacks.c:583
 msgid "translator_credits"
 msgstr "Tamer Sezgin <tamer_se<gin@yahoo.com>"
 
-#: src/callbacks.c:693
+#: src/callbacks.c:803
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:827
+#: src/callbacks.c:932
 msgid "Can't allocate memory to store devices"
 msgstr ""
 
-#: src/callbacks.c:939
+#: src/callbacks.c:1044
 msgid "Didn't find any camera"
 msgstr ""
 
-#: src/callbacks.c:1063
+#: src/callbacks.c:1168
 #, c-format
 msgid "%dx%d (max %.1f fps)"
 msgstr ""
 
-#: src/callbacks.c:1067
+#: src/callbacks.c:1172
 #, c-format
 msgid "%dx%d"
 msgstr ""
@@ -583,36 +589,36 @@ msgstr ""
 msgid "Effects"
 msgstr "Efektler"
 
-#: src/fileio.c:111 src/fileio.c:257
+#: src/fileio.c:112 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Geçici resim dosyasını /tmp içerisine kaydedebilir."
 
-#: src/fileio.c:121
+#: src/fileio.c:123
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "'%s' görüntüsünü yakalayamadı."
 
-#: src/fileio.c:129 src/fileio.c:407
+#: src/fileio.c:134 src/fileio.c:415
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "'%s/%s' görüntüsünü kaydedemedi."
 
-#: src/fileio.c:139
+#: src/fileio.c:145
 #, c-format
 msgid "Could not create a thread to save image '%s/%s'."
 msgstr "'%s/%s' görüntüsünü kaydetmek için bir thread oluşturulamadı."
 
-#: src/fileio.c:172
+#: src/fileio.c:180
 #, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "%s bağlanırken bir hata oluştu: %s."
 
-#: src/fileio.c:212
+#: src/fileio.c:220
 #, c-format
 msgid "An error occurred accessing %s."
 msgstr "%s'e erişirken bir hata oluştu."
 
-#: src/fileio.c:263
+#: src/fileio.c:272
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -621,110 +627,122 @@ msgstr ""
 "Geçici görüntü dosyası '%s' açılamadı.\n"
 "Görüntü yüklenemedi."
 
-#: src/fileio.c:292
+#: src/fileio.c:301
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "%s açılırken bir hata oluştu."
 
-#: src/fileio.c:303
+#: src/fileio.c:312
 #, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "%s yazmak için açılırken bir hata oluştu: %s."
 
-#: src/fileio.c:313
+#: src/fileio.c:322
 #, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "%s yazılırken bir hata oluştu: %s."
 
-#: src/fileio.c:320
+#: src/fileio.c:328
 #, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "%s kapatılırken bir hata oluştu: %s."
 
-#: src/fileio.c:385
+#: src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "'%s' dizini yaratılamadı."
 
-#: src/fileio.c:394
+#: src/fileio.c:402
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "'%s' dizinine geçilemedi."
 
-#: src/filter.c:187
-msgid "Color Correction"
-msgstr "Renk Düzeltme"
-
-#: src/filter.c:216
+#: src/filter.c:70
 msgid "Invert"
 msgstr ""
 
-#: src/filter.c:260
+#: src/filter.c:114
 msgid "Threshold (Overall)"
 msgstr "Eşik (Genel)"
 
-#: src/filter.c:310
+#: src/filter.c:164
 msgid "Threshold (Per Channel)"
 msgstr ""
 
-#: src/filter.c:388
+#: src/filter.c:242
 msgid "Wacky"
 msgstr "Uçuk"
 
-#: src/filter.c:494
+#: src/filter.c:348
 msgid "Smooth"
 msgstr "Yumuşatma"
 
-#: src/filter.c:530
+#: src/filter.c:384
 msgid "Monochrome"
 msgstr ""
 
-#: src/filter.c:568
+#: src/filter.c:422
 msgid "Monochrome (Weight)"
 msgstr ""
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:625
+#: src/filter.c:479
 msgid "Sobel"
 msgstr "Sobel"
 
-#: src/main.c:28
+#: src/main.c:31
 msgid "show version and exit"
 msgstr "versiyonu göster ve çık"
 
-#: src/main.c:30
+#: src/main.c:33
 msgid "v4l device to use"
 msgstr "kullanılacak v4l cihazı"
 
-#: src/main.c:32
+#: src/main.c:35
 msgid "enable debugging code"
 msgstr "hata ayıklama kodunu etkinleştir"
 
-#: src/main.c:34
+#: src/main.c:37
 msgid "capture width"
 msgstr "yakalama genişliği"
 
-#: src/main.c:36
+#: src/main.c:39
 msgid "capture height"
 msgstr "yakalama yüksekliği"
 
-#: src/main.c:38
+#: src/main.c:41
 msgid "maximum capture size"
 msgstr "en büyük yakalama boyutları"
 
-#: src/main.c:40
+#: src/main.c:43
 msgid "minimum capture size"
 msgstr "en küçük yakalama boyutları"
 
-#: src/main.c:42
+#: src/main.c:45
 msgid "middle capture size"
 msgstr "orta yakalama boyutları"
 
-#: src/main.c:44
+#: src/main.c:47
 msgid "use read() rather than mmap()"
 msgstr "mmap() yerine read() kullanın"
 
-#: src/main.c:136
+#: src/main.c:49
+msgid "disable video scaler"
+msgstr ""
+
+#: src/main.c:51 src/main.c:53
+#, fuzzy
+#| msgid "use read() rather than mmap()"
+msgid "use userptr pointer rather than mmap()"
+msgstr "mmap() yerine read() kullanın"
+
+#: src/main.c:55
+#, fuzzy
+#| msgid "v4l device to use"
+msgid "v4l device input to use"
+msgstr "kullanılacak v4l cihazı"
+
+#: src/main.c:133
 #, c-format
 msgid ""
 "\n"
@@ -737,28 +755,32 @@ msgstr ""
 "Camorama versiyonu %s\n"
 "\n"
 
-#: src/main.c:158
+#: src/main.c:167
 msgid "Couldn't load builder file"
 msgstr "Oluşturucu (builder) dosyası yüklenemedi"
 
-#: src/main.c:187
+#: src/main.c:196
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr ""
 
-#: src/main.c:190
+#: src/main.c:199
 #, c-format
 msgid "%s not found."
 msgstr ""
 
-#: src/main.c:299
+#: src/main.c:306
+msgid "camorama"
+msgstr "camorama"
+
+#: src/main.c:308
 #, c-format
 msgid ""
 "Invalid argument\n"
 "Run '%s --help'\n"
 msgstr ""
 
-#: src/v4l.c:148
+#: src/v4l.c:722
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -767,12 +789,12 @@ msgstr ""
 "Video cihazına (%s) bağlanılamadı.\n"
 "Lütfen bağlantıyı kontrol edin. Hata: %d"
 
-#: src/v4l.c:251
+#: src/v4l.c:731
 #, c-format
 msgid "Device %s is not a video capture device."
 msgstr ""
 
-#: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
+#: src/v4l.c:913 src/v4l.c:983
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -781,37 +803,75 @@ msgstr ""
 "Video cihazına (%s) bağlanamadı.\n"
 "Lütfen bağlantıyı kontrol edin."
 
-#: src/v4l.c:503
+#: src/v4l.c:991
+msgid "Device video formats are incompatible with camorama."
+msgstr ""
+
+#: src/v4l.c:1007
+#, fuzzy, c-format
+#| msgid ""
+#| "Could not connect to video device (%s).\n"
+#| "Please check connection."
+msgid ""
+"Could not set window info on video device (%s).\n"
+"Please check connection."
+msgstr ""
+"Video cihazına (%s) bağlanamadı.\n"
+"Lütfen bağlantıyı kontrol edin."
+
+#: src/v4l.c:1028
+#, c-format
+msgid "Could not set format to %c%c%c%c on video device (%s)."
+msgstr ""
+
+#: src/v4l.c:1047
+#, c-format
+msgid "Returned width is zero on video device (%s)!"
+msgstr ""
+
+#: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:521
+#: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
+msgid "could not allocate memory for video buffers, exiting...."
+msgstr ""
+
+#: src/v4l.c:1096
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:536
+#: src/v4l.c:1111
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:550
+#: src/v4l.c:1125
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:560
+#: src/v4l.c:1135 src/v4l.c:1202
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:590
+#: src/v4l.c:1191
+#, c-format
+msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+
+#: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:652
+#: src/v4l.c:1346 src/v4l.c:1405
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#~ msgid "Color Correction"
+#~ msgstr "Renk Düzeltme"
