@@ -67,6 +67,7 @@ typedef struct camera {
     int contrast, brightness, whiteness, colour, hue, zoom, zoom_cid;
     unsigned int bytesperline, sizeimage;
     unsigned int pixformat;
+    int input;
     int frame_number;
 
     unsigned int min_width, min_height, max_width, max_height;
