@@ -19,13 +19,8 @@ which gnome-autogen.sh || {
   exit 1
 }
 
-. gnome-autogen.sh
-
-GETTEXT_VER=$(autopoint --version|perl -ne 'print $1 if (m/gettext-tools\D*([\d\.]+)/)')
-CUR_VER=$(cat po/Makefile.in.in|perl -ne 'print "$1\n" if (m/gettext-\D*(\d[\d\.]+)/)')
-
-if [ "$GETTEXT_VER" != "$CUR_VER" ]; then
-	autopoint --force
-fi
+autopoint --force
+# configure gets run below again, lets not run it twice
+NOCONFIGURE=1 . gnome-autogen.sh
 
 $srcdir/configure `/bin/grep ^DISTCHECK configure.ac | sed 's/^DISTCHECK_CONFIGURE_FLAGS="\(.*\)"$/\1/'` $@
