@@ -24,6 +24,7 @@ static int dont_use_libv4l = 0;
 static int disable_scaler = 0;
 static gchar *video_dev = NULL;
 static int x = 0, y = 0;
+static int input = 0;
 
 static GOptionEntry options[] = {
     {"version", 'V', 0, G_OPTION_ARG_NONE, &ver,
@@ -50,6 +51,8 @@ static GOptionEntry options[] = {
      N_("use userptr pointer rather than mmap()"), NULL},
     {"dont-use-libv4l2", 'D', 0, G_OPTION_ARG_NONE, &dont_use_libv4l,
      N_("use userptr pointer rather than mmap()"), NULL},
+    {"input", 'i', 0, G_OPTION_ARG_INT, &input,
+     N_("v4l device input to use"), NULL},
     {NULL}
 };
 
@@ -116,6 +119,7 @@ static void activate(GtkApplication *app)
     cam->n_res = 0;
     cam->scale = 1.f;
     cam->dev = -1;
+    cam->input = input;
 #if GTK_MAJOR_VERSION >= 3
     cam->app = app;
 #endif

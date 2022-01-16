@@ -757,6 +757,9 @@ int camera_cap(cam_t *cam)
         }
     }
 
+    /* Select input before querying resolutions */
+    cam_ioctl(cam, VIDIOC_S_INPUT, &cam->input);
+
     /* Query supported resolutions */
 
     cam->rdir_ok = FALSE;
