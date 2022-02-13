@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2022-01-02 21:16+0000\n"
+"PO-Revision-Date: 2022-02-14 13:16+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/camorama/"
 "master/de/>\n"
@@ -35,6 +35,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama ist ein einfacher Webkamera-Betrachter, mit der Möglichkeit, einige "
+"Videoeffekte anzuwenden."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
@@ -379,7 +381,7 @@ msgstr "Bildhöhe"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Von der Kamera verwendete Bildhöhe. Null bedeutet automatische Auswahl"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
@@ -416,7 +418,7 @@ msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Vollständiger URI für die Fernspeicherung von Bildschnappschüssen"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
@@ -550,6 +552,7 @@ msgstr "Bildbreite"
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
 msgstr ""
+"Von der Kamera verwendete Bildbreite. Null bedeutet automatische Auswahl"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
@@ -615,9 +618,9 @@ msgid "Could not save image '%s/%s'."
 msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
+msgstr "Es konnte kein Thread zum Speichern des Bildes »%s/%s« erstellt werden."
 
 #: src/fileio.c:172
 #, c-format
@@ -699,7 +702,7 @@ msgstr "Monochrome"
 
 #: src/filter.c:568
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "Schwarzweiß (Gewichtung)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:625
@@ -762,7 +765,7 @@ msgstr ""
 #: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s nicht gefunden. Rückgriff auf %s"
 
 #: src/main.c:190
 #, c-format
@@ -777,13 +780,13 @@ msgid ""
 msgstr ""
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
 "Verbindung zum Videogerät (%s) konnte nicht hergestellt werden.\n"
-"Bitte überprüfen Sie die Verbindung."
+"Bitte Verbindung überprüfen. Fehler: %d"
 
 #: src/v4l.c:251
 #, c-format
@@ -802,12 +805,12 @@ msgstr ""
 #: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS -- konnte Puffer (%s) nicht anfordern, wird beendet ...."
 
 #: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF -- konnte Puffer (%s) nicht abfragen, wird beendet ...."
 
 #: src/v4l.c:536
 #, c-format
@@ -818,6 +821,8 @@ msgstr ""
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF -- konnte Puffer nicht in die Warteschlange einreihen (%s), wird "
+"beendet ...."
 
 #: src/v4l.c:560
 #, c-format
@@ -827,7 +832,7 @@ msgstr ""
 #: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Zeitüberschreitung beim Warten auf Einzelbilder (%s)"
 
 #: src/v4l.c:652
 #, c-format
