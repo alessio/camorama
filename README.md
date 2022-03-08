@@ -20,7 +20,7 @@ Adrian Bowyer
 ./configure
 make
 su
-make installl
+make install
 ```
 
 # Run
