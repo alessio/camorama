@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2020-03-13 08:42+0100\n"
+"POT-Creation-Date: 2022-03-09 21:04+0100\n"
 "PO-Revision-Date: 2020-05-02 07:40+0000\n"
 "Last-Translator: Casey Jones <nahareport@yahoo.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -33,15 +33,13 @@ msgstr "Camorama ウェブカム・ビューア"
 msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
-msgstr "Camoramaはシンプルなwebcamビューアーで、いくつかのビデオ効果を適用することができます。"
+msgstr ""
+"Camoramaはシンプルなwebcamビューアーで、いくつかのビデオ効果を適用することが"
+"できます。"
 
-#: camorama.desktop.in:5 src/callbacks.c:464
+#: camorama.desktop.in:5 src/callbacks.c:582
 msgid "View, alter and save images from a webcam"
 msgstr "WebCam の画像の表示や保存を行います"
-
-#: camorama.desktop.in:6 src/main.c:297
-msgid "camorama"
-msgstr "camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
@@ -51,12 +49,12 @@ msgstr "camorama;webcam;viewer;video-effects;"
 msgid "Preferences"
 msgstr "設定"
 
-#: data/camorama-gtk2.ui:111 data/camorama-gtk3.ui:741
+#: data/camorama-gtk2.ui:111 data/camorama-gtk3.ui:826
 #: data/camorama-gtk4.ui:666
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">全般</span>"
 
-#: data/camorama-gtk2.ui:143 data/camorama-gtk3.ui:775
+#: data/camorama-gtk2.ui:143 data/camorama-gtk3.ui:860
 #: data/camorama-gtk4.ui:696
 msgid "Automatic Capture"
 msgstr "自動キャプチャを有効にする"
@@ -65,11 +63,11 @@ msgstr "自動キャプチャを有効にする"
 #: data/camorama-gtk2.ui:338 data/camorama-gtk2.ui:521
 #: data/camorama-gtk2.ui:637 data/camorama-gtk2.ui:674
 #: data/camorama-gtk2.ui:909 data/camorama-gtk2.ui:1025
-#: data/camorama-gtk2.ui:1062 data/camorama-gtk3.ui:797
-#: data/camorama-gtk3.ui:935 data/camorama-gtk3.ui:974
-#: data/camorama-gtk3.ui:1151 data/camorama-gtk3.ui:1270
-#: data/camorama-gtk3.ui:1308 data/camorama-gtk3.ui:1533
-#: data/camorama-gtk3.ui:1652 data/camorama-gtk3.ui:1690
+#: data/camorama-gtk2.ui:1062 data/camorama-gtk3.ui:882
+#: data/camorama-gtk3.ui:1020 data/camorama-gtk3.ui:1059
+#: data/camorama-gtk3.ui:1236 data/camorama-gtk3.ui:1355
+#: data/camorama-gtk3.ui:1393 data/camorama-gtk3.ui:1618
+#: data/camorama-gtk3.ui:1737 data/camorama-gtk3.ui:1775
 #: data/camorama-gtk4.ui:716 data/camorama-gtk4.ui:831
 #: data/camorama-gtk4.ui:866 data/camorama-gtk4.ui:1023
 #: data/camorama-gtk4.ui:1127 data/camorama-gtk4.ui:1161
@@ -78,152 +76,147 @@ msgstr "自動キャプチャを有効にする"
 msgid "     "
 msgstr "     "
 
-#: data/camorama-gtk2.ui:187 data/camorama-gtk3.ui:820
+#: data/camorama-gtk2.ui:187 data/camorama-gtk3.ui:905
 #: data/camorama-gtk4.ui:737
 msgid "Capture Interval (in minutes):"
 msgstr "キャプチャの間隔 (分):"
 
-#: data/camorama-gtk2.ui:261 data/camorama-gtk3.ui:892
+#: data/camorama-gtk2.ui:261 data/camorama-gtk3.ui:977
 #: data/camorama-gtk4.ui:791
 msgid "General"
 msgstr "全般"
 
-#: data/camorama-gtk2.ui:283 data/camorama-gtk3.ui:917
+#: data/camorama-gtk2.ui:283 data/camorama-gtk3.ui:1002
 #: data/camorama-gtk4.ui:815
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">ローカル・キャプチャ</span>"
 
-#: data/camorama-gtk2.ui:315 data/camorama-gtk3.ui:951
+#: data/camorama-gtk2.ui:315 data/camorama-gtk3.ui:1036
 #: data/camorama-gtk4.ui:845
 msgid "_Enable local capture"
 msgstr "ローカル・キャプチャを有効にする(_E)"
 
-#: data/camorama-gtk2.ui:364 data/camorama-gtk3.ui:998
+#: data/camorama-gtk2.ui:364 data/camorama-gtk3.ui:1083
 #: data/camorama-gtk4.ui:888
 msgid "_Directory for captured pics:"
 msgstr "保存先のフォルダ(_D):"
 
-#: data/camorama-gtk2.ui:377 data/camorama-gtk3.ui:1011
+#: data/camorama-gtk2.ui:377 data/camorama-gtk3.ui:1096
 #: data/camorama-gtk4.ui:901
 msgid "_Filename for pictures:"
 msgstr "画像のファイル名(_F):"
 
-#: data/camorama-gtk2.ui:392 data/camorama-gtk3.ui:1039
-#: data/camorama-gtk4.ui:929
-msgid "webcam-capture"
-msgstr "WebCam キャプチャ"
-
-#: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
+#: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1112
 #: data/camorama-gtk4.ui:917
 msgid "Select a Directory"
 msgstr "フォルダーを選択"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
-#: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
+#: data/camorama-gtk3.ui:1142 data/camorama-gtk3.ui:1525
 #: data/camorama-gtk4.ui:945 data/camorama-gtk4.ui:1289
 msgid "Append time to filename"
 msgstr "ファイル名の末尾に時刻を付与する"
 
 #: data/camorama-gtk2.ui:445 data/camorama-gtk2.ui:833
-#: data/camorama-gtk3.ui:1074 data/camorama-gtk3.ui:1456
+#: data/camorama-gtk3.ui:1159 data/camorama-gtk3.ui:1541
 #: data/camorama-gtk4.ui:960 data/camorama-gtk4.ui:1303
 msgid "Add a timestamp to captured images"
 msgstr "キャプチャした画像にタイムスタンプを追加する"
 
 #: data/camorama-gtk2.ui:504 data/camorama-gtk2.ui:892
-#: data/camorama-gtk3.ui:1133 data/camorama-gtk3.ui:1515
+#: data/camorama-gtk3.ui:1218 data/camorama-gtk3.ui:1600
 #: data/camorama-gtk4.ui:1007 data/camorama-gtk4.ui:1350
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">画像の種類</span>"
 
 #: data/camorama-gtk2.ui:535 data/camorama-gtk2.ui:923
-#: data/camorama-gtk3.ui:1166 data/camorama-gtk3.ui:1548
+#: data/camorama-gtk3.ui:1251 data/camorama-gtk3.ui:1633
 #: data/camorama-gtk4.ui:1036 data/camorama-gtk4.ui:1379
 msgid "Save files in jpeg format"
 msgstr "JPEG 形式で保存する"
 
 #: data/camorama-gtk2.ui:552 data/camorama-gtk2.ui:940
-#: data/camorama-gtk3.ui:1183 data/camorama-gtk3.ui:1565
+#: data/camorama-gtk3.ui:1268 data/camorama-gtk3.ui:1650
 #: data/camorama-gtk4.ui:1051 data/camorama-gtk4.ui:1394
 msgid "Save files in png format"
 msgstr "PNG 形式で保存する"
 
-#: data/camorama-gtk2.ui:597 data/camorama-gtk3.ui:1228
+#: data/camorama-gtk2.ui:597 data/camorama-gtk3.ui:1313
 #: data/camorama-gtk4.ui:1088
 msgid "Local Capture"
 msgstr "ローカル・キャプチャ"
 
-#: data/camorama-gtk2.ui:620 data/camorama-gtk3.ui:1252
+#: data/camorama-gtk2.ui:620 data/camorama-gtk3.ui:1337
 #: data/camorama-gtk4.ui:1111
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">リモート・キャプチャ</span>"
 
-#: data/camorama-gtk2.ui:652 data/camorama-gtk3.ui:1286
+#: data/camorama-gtk2.ui:652 data/camorama-gtk3.ui:1371
 #: data/camorama-gtk4.ui:1141
 msgid "_Enable remote capture"
 msgstr "リモート・キャプチャを有効にする(_E)"
 
-#: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
+#: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1419
 #: data/camorama-gtk4.ui:1185
 msgid "Server:"
 msgstr "サーバー:"
 
-#: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
+#: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1431
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
 msgstr "タイプ:"
 
-#: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
+#: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1443
 #: data/camorama-gtk4.ui:1209
 msgid "Save directory:"
 msgstr "保存先のフォルダ:"
 
-#: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
+#: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1455
 #: data/camorama-gtk4.ui:1221
 msgid "Filename:"
 msgstr "ファイル名:"
 
-#: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
+#: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1468
 #: data/camorama-gtk4.ui:1234
 msgid "ftp.yourdomain.org"
 msgstr "使用する FTP ドメイン"
 
-#: data/camorama-gtk2.ui:794 data/camorama-gtk3.ui:1422
+#: data/camorama-gtk2.ui:794 data/camorama-gtk3.ui:1507
 #: data/camorama-gtk4.ui:1273
 msgid "webcamshot"
 msgstr "webcamshot"
 
-#: data/camorama-gtk2.ui:985 data/camorama-gtk3.ui:1610
+#: data/camorama-gtk2.ui:985 data/camorama-gtk3.ui:1695
 #: data/camorama-gtk4.ui:1431
 msgid "Remote Capture"
 msgstr "リモート・キャプチャ"
 
-#: data/camorama-gtk2.ui:1008 data/camorama-gtk3.ui:1634
+#: data/camorama-gtk2.ui:1008 data/camorama-gtk3.ui:1719
 #: data/camorama-gtk4.ui:1454
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">タイムスタンプ</span>"
 
-#: data/camorama-gtk2.ui:1040 data/camorama-gtk3.ui:1668
+#: data/camorama-gtk2.ui:1040 data/camorama-gtk3.ui:1753
 #: data/camorama-gtk4.ui:1484
 msgid "Use custom string"
 msgstr "タイムスタンプの文字列を指定する"
 
-#: data/camorama-gtk2.ui:1084 data/camorama-gtk3.ui:1713
+#: data/camorama-gtk2.ui:1084 data/camorama-gtk3.ui:1798
 #: data/camorama-gtk4.ui:1525
 msgid "String:"
 msgstr "文字列:"
 
-#: data/camorama-gtk2.ui:1130 data/camorama-gtk3.ui:1758
+#: data/camorama-gtk2.ui:1130 data/camorama-gtk3.ui:1843
 #: data/camorama-gtk4.ui:1560
 msgid "Draw date and time"
 msgstr "日付と時刻を付与する"
 
-#: data/camorama-gtk2.ui:1174 data/camorama-gtk3.ui:1802
+#: data/camorama-gtk2.ui:1174 data/camorama-gtk3.ui:1887
 #: data/camorama-gtk4.ui:1596
 msgid "Timestamp"
 msgstr "タイムスタンプ"
 
-#: data/camorama-gtk2.ui:1202 data/camorama-gtk3.ui:44 data/camorama-gtk4.ui:32
+#: data/camorama-gtk2.ui:1202 data/camorama-gtk3.ui:49 data/camorama-gtk4.ui:32
 msgid "Camorama-libglade"
 msgstr "camorama.glade"
 
@@ -232,7 +225,7 @@ msgid "_File"
 msgstr "ファイル(_F)"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
-#: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
+#: data/camorama-gtk3.ui:463 data/camorama-gtk4.ui:315
 msgid "Take Picture"
 msgstr "写真撮影"
 
@@ -240,28 +233,28 @@ msgstr "写真撮影"
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
+#: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:144
 #: data/camorama-gtk4.ui:107
 msgid "_View"
 msgstr "表示(_V)"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
-#: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
+#: data/camorama-gtk3.ui:153 data/camorama-gtk3.ui:342
 #: data/camorama-gtk4.ui:116 data/camorama-gtk4.ui:274
 msgid "Show Adjustments"
 msgstr "調整エントリ"
 
-#: data/camorama-gtk2.ui:1304 data/camorama-gtk3.ui:144
+#: data/camorama-gtk2.ui:1304 data/camorama-gtk3.ui:163
 #: data/camorama-gtk4.ui:126
 msgid "Show Effects"
 msgstr "画像の効果"
 
-#: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
+#: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:172
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
 msgstr "カメラの変更(_C)"
 
-#: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
+#: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:187
 #: data/camorama-gtk4.ui:151
 msgid "Small"
 msgstr "小さい"
@@ -270,44 +263,54 @@ msgstr "小さい"
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
+#: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:562
 #: data/camorama-gtk4.ui:403
 msgid "Contrast:"
 msgstr "コントラスト:"
 
-#: data/camorama-gtk2.ui:1681 data/camorama-gtk3.ui:489
+#: data/camorama-gtk2.ui:1681 data/camorama-gtk3.ui:574
 #: data/camorama-gtk4.ui:415
 msgid "Brightness:"
 msgstr "明るさ:"
 
-#: data/camorama-gtk2.ui:1697 data/camorama-gtk3.ui:501
+#: data/camorama-gtk2.ui:1697 data/camorama-gtk3.ui:586
 #: data/camorama-gtk4.ui:427
 msgid "Color:"
 msgstr "色:"
 
-#: data/camorama-gtk2.ui:1713 data/camorama-gtk3.ui:513
+#: data/camorama-gtk2.ui:1713 data/camorama-gtk3.ui:598
 #: data/camorama-gtk4.ui:439
 msgid "Hue:"
 msgstr "色相:"
 
-#: data/camorama-gtk2.ui:1729 data/camorama-gtk3.ui:525
+#: data/camorama-gtk2.ui:1729 data/camorama-gtk3.ui:610
 #: data/camorama-gtk4.ui:451
 msgid "White Balance:"
 msgstr "ホワイト・バランス:"
 
-#: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
+#: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:692
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
 msgstr "ズーム:"
 
-#: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
+#: data/camorama-gtk2.ui:1909 data/camorama-gtk3.ui:1960
 #: data/camorama-gtk4.ui:1663
 msgid "Select a video device to be used"
 msgstr "使用するビデオのデバイスを選択"
 
-#: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
+#: data/camorama-gtk3.ui:78 data/camorama-gtk4.ui:59
 msgid "_Take Picture"
 msgstr "写真撮影(_T)"
+
+#: data/camorama-gtk3.ui:89
+#, fuzzy
+#| msgid "Toggles local capture"
+msgid "Toggle _Full Screen"
+msgstr "ローカル・キャプチャの切り替え"
+
+#: data/camorama-gtk3.ui:404
+msgid "Full Screen"
+msgstr ""
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -405,7 +408,8 @@ msgstr "リモート・キャプチャ用のプロトコル"
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
-msgstr "リモートサーバーへの接続に使用するプロトコルのURI名。ftp, sftp, smbなど"
+msgstr ""
+"リモートサーバーへの接続に使用するプロトコルのURI名。ftp, sftp, smbなど"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
@@ -415,7 +419,9 @@ msgstr "イメージスナップショットの保存に使用する完全なURI
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
-msgstr "リモートサーバーへの最終の成功アクセスの完全なURIで、プロトコル、ホスト、リモートディレクトリを含みます"
+msgstr ""
+"リモートサーバーへの最終の成功アクセスの完全なURIで、プロトコル、ホスト、リ"
+"モートディレクトリを含みます"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -534,7 +540,7 @@ msgstr "イメージの幅"
 msgid "Image width used by the camera. Zero means autoselect"
 msgstr "カメラが利用するイメージの幅。ゼロは自動選択を意味します"
 
-#: src/callbacks.c:465
+#: src/callbacks.c:583
 msgid "translator_credits"
 msgstr ""
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
@@ -542,25 +548,25 @@ msgstr ""
 "\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: src/callbacks.c:693
+#: src/callbacks.c:803
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr "%.2f fps - 現在     %.2f fps - 平均"
 
-#: src/callbacks.c:827
+#: src/callbacks.c:932
 msgid "Can't allocate memory to store devices"
 msgstr "デバイスを保存するためのメモリーを割り当てられません"
 
-#: src/callbacks.c:939
+#: src/callbacks.c:1044
 msgid "Didn't find any camera"
 msgstr "カメラが見つかりません"
 
-#: src/callbacks.c:1063
+#: src/callbacks.c:1168
 #, c-format
 msgid "%dx%d (max %.1f fps)"
 msgstr "%dx%d (最大 %.1f fps)"
 
-#: src/callbacks.c:1067
+#: src/callbacks.c:1172
 #, c-format
 msgid "%dx%d"
 msgstr "%dx%d"
@@ -587,36 +593,36 @@ msgstr "フィルタの追加(_A)"
 msgid "Effects"
 msgstr "画像の効果"
 
-#: src/fileio.c:111 src/fileio.c:257
+#: src/fileio.c:112 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "/tmp に画像ファイルを一時的に保存しました。"
 
-#: src/fileio.c:121
+#: src/fileio.c:123
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "画像ファイル '%s' を作成できませんでした。"
 
-#: src/fileio.c:129 src/fileio.c:407
+#: src/fileio.c:134 src/fileio.c:415
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "画像ファイル '%s/%s' を保存できませんでした。"
 
-#: src/fileio.c:139
+#: src/fileio.c:145
 #, c-format
 msgid "Could not create a thread to save image '%s/%s'."
 msgstr "画像ファイル '%s/%s' を保存するためのスレッドを作成できませんでした。"
 
-#: src/fileio.c:172
+#: src/fileio.c:180
 #, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "%s:%s をマウントする際にエラーが発生しました。"
 
-#: src/fileio.c:212
+#: src/fileio.c:220
 #, c-format
 msgid "An error occurred accessing %s."
 msgstr "%s にアクセスする際にエラーが発生しました。"
 
-#: src/fileio.c:263
+#: src/fileio.c:272
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -625,110 +631,122 @@ msgstr ""
 "一時的な画像ファイル '%s' を開けません。\n"
 "画像をアップロードできません。"
 
-#: src/fileio.c:292
+#: src/fileio.c:301
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "%s をオープンする際にエラーが発生しました。"
 
-#: src/fileio.c:303
+#: src/fileio.c:312
 #, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "%s をオープンし書き込み: %s の際にエラーが発生しました。"
 
-#: src/fileio.c:313
+#: src/fileio.c:322
 #, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "%s: %s に書き込む際にエラーが発生しました。"
 
-#: src/fileio.c:320
+#: src/fileio.c:328
 #, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "%s: %s をクローズする際にエラーが発生しました。"
 
-#: src/fileio.c:385
+#: src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "フォルダ '%s' を作成できませんでした。"
 
-#: src/fileio.c:394
+#: src/fileio.c:402
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "フォルダ '%s' に移動できませんでした。"
 
-#: src/filter.c:187
-msgid "Color Correction"
-msgstr "色の補正"
-
-#: src/filter.c:216
+#: src/filter.c:70
 msgid "Invert"
 msgstr "反転"
 
-#: src/filter.c:260
+#: src/filter.c:114
 msgid "Threshold (Overall)"
 msgstr "境界値変動 (全体)"
 
-#: src/filter.c:310
+#: src/filter.c:164
 msgid "Threshold (Per Channel)"
 msgstr "境界値変動 (チャンネル単位)"
 
-#: src/filter.c:388
+#: src/filter.c:242
 msgid "Wacky"
 msgstr "ワッキー効果"
 
-#: src/filter.c:494
+#: src/filter.c:348
 msgid "Smooth"
 msgstr "平滑化"
 
-#: src/filter.c:530
+#: src/filter.c:384
 msgid "Monochrome"
 msgstr "モノクロ"
 
-#: src/filter.c:568
+#: src/filter.c:422
 msgid "Monochrome (Weight)"
 msgstr "モノクロ (ウェイト)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:625
+#: src/filter.c:479
 msgid "Sobel"
 msgstr "ゾーベル・フィルタ"
 
-#: src/main.c:28
+#: src/main.c:31
 msgid "show version and exit"
 msgstr "バージョンを表示して終了する"
 
-#: src/main.c:30
+#: src/main.c:33
 msgid "v4l device to use"
 msgstr "v41 (Video for Linux) デバイスを利用する"
 
-#: src/main.c:32
+#: src/main.c:35
 msgid "enable debugging code"
 msgstr "デバッグ・モードを有効にする"
 
-#: src/main.c:34
+#: src/main.c:37
 msgid "capture width"
 msgstr "キャプチャする幅"
 
-#: src/main.c:36
+#: src/main.c:39
 msgid "capture height"
 msgstr "キャプチャする高さ"
 
-#: src/main.c:38
+#: src/main.c:41
 msgid "maximum capture size"
 msgstr "最大サイズ"
 
-#: src/main.c:40
+#: src/main.c:43
 msgid "minimum capture size"
 msgstr "最小サイズ"
 
-#: src/main.c:42
+#: src/main.c:45
 msgid "middle capture size"
 msgstr "中くらいのサイズ"
 
-#: src/main.c:44
+#: src/main.c:47
 msgid "use read() rather than mmap()"
 msgstr "mmap() ではなく read() を使う"
 
-#: src/main.c:136
+#: src/main.c:49
+msgid "disable video scaler"
+msgstr ""
+
+#: src/main.c:51 src/main.c:53
+#, fuzzy
+#| msgid "use read() rather than mmap()"
+msgid "use userptr pointer rather than mmap()"
+msgstr "mmap() ではなく read() を使う"
+
+#: src/main.c:55
+#, fuzzy
+#| msgid "v4l device to use"
+msgid "v4l device input to use"
+msgstr "v41 (Video for Linux) デバイスを利用する"
+
+#: src/main.c:133
 #, c-format
 msgid ""
 "\n"
@@ -740,21 +758,25 @@ msgstr ""
 "\n"
 "Camorama のバージョン %s\n"
 
-#: src/main.c:158
+#: src/main.c:167
 msgid "Couldn't load builder file"
 msgstr "ビルダーファイルをロードできませんでした"
 
-#: src/main.c:187
+#: src/main.c:196
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr "%s が見つかりません。 %s にフォールバックします"
 
-#: src/main.c:190
+#: src/main.c:199
 #, c-format
 msgid "%s not found."
 msgstr "%s が見つかりません。"
 
-#: src/main.c:299
+#: src/main.c:306
+msgid "camorama"
+msgstr "camorama"
+
+#: src/main.c:308
 #, c-format
 msgid ""
 "Invalid argument\n"
@@ -763,7 +785,7 @@ msgstr ""
 "無効な引数\n"
 "'%s --help' を実行してください\n"
 
-#: src/v4l.c:148
+#: src/v4l.c:722
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -772,12 +794,12 @@ msgstr ""
 "ビデオのデバイス (%s) に接続できませんでした。\n"
 "接続を確認して下さい。エラー: %d"
 
-#: src/v4l.c:251
+#: src/v4l.c:731
 #, c-format
 msgid "Device %s is not a video capture device."
 msgstr "デバイス %s はビデオキャプチャーデバイスではありません。"
 
-#: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
+#: src/v4l.c:913 src/v4l.c:983
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -786,37 +808,89 @@ msgstr ""
 "ビデオ・デバイス (%s) に接続できませんでした。\n"
 "接続を確認して下さい。"
 
-#: src/v4l.c:503
+#: src/v4l.c:991
+msgid "Device video formats are incompatible with camorama."
+msgstr ""
+
+#: src/v4l.c:1007
+#, fuzzy, c-format
+#| msgid ""
+#| "Could not connect to video device (%s).\n"
+#| "Please check connection."
+msgid ""
+"Could not set window info on video device (%s).\n"
+"Please check connection."
+msgstr ""
+"ビデオ・デバイス (%s) に接続できませんでした。\n"
+"接続を確認して下さい。"
+
+#: src/v4l.c:1028
+#, c-format
+msgid "Could not set format to %c%c%c%c on video device (%s)."
+msgstr ""
+
+#: src/v4l.c:1047
+#, c-format
+msgid "Returned width is zero on video device (%s)!"
+msgstr ""
+
+#: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr "VIDIOC_REQBUFS  --  バッファ (%s) にリクエストできませんでした、終了しています...."
+msgstr ""
+"VIDIOC_REQBUFS  --  バッファ (%s) にリクエストできませんでした、終了していま"
+"す...."
 
-#: src/v4l.c:521
+#: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
+#, fuzzy
+#| msgid "failed to memory map buffers (%s), exiting...."
+msgid "could not allocate memory for video buffers, exiting...."
+msgstr "メモリーバッファ (%s) にマップできませんでした、終了しています...."
+
+#: src/v4l.c:1096
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF  --  バッファ (%s) に問合せできませんでした、終了しています...."
+msgstr ""
+"VIDIOC_QUERYBUF  --  バッファ (%s) に問合せできませんでした、終了していま"
+"す...."
 
-#: src/v4l.c:536
+#: src/v4l.c:1111
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr "メモリーバッファ (%s) にマップできませんでした、終了しています...."
 
-#: src/v4l.c:550
+#: src/v4l.c:1125
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
-msgstr "VIDIOC_QBUF  --  バッファ (%s) にエンキューできませんでした、終了しています...."
+msgstr ""
+"VIDIOC_QBUF  --  バッファ (%s) にエンキューできませんでした、終了していま"
+"す...."
 
-#: src/v4l.c:560
+#: src/v4l.c:1135 src/v4l.c:1202
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr "ストリーミング (%s) を開始できませんでした、終了しています...."
 
-#: src/v4l.c:590
+#: src/v4l.c:1191
+#, fuzzy, c-format
+#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
+msgstr ""
+"VIDIOC_QUERYBUF  --  バッファ (%s) に問合せできませんでした、終了していま"
+"す...."
+
+#: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr "フレーム (%s) の待機中にタイムアウト"
 
-#: src/v4l.c:652
+#: src/v4l.c:1346 src/v4l.c:1405
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr "ストリーミング (%s) を停止できませんでした、終了しています...."
+
+#~ msgid "webcam-capture"
+#~ msgstr "WebCam キャプチャ"
+
+#~ msgid "Color Correction"
+#~ msgstr "色の補正"
