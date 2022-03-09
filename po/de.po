@@ -3,20 +3,24 @@
 # This file is distributed under the same license as the camorama package.
 # Christian Neumair <chris@gnome-de.org>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Jens Maucher <jens.maucher@online.de>, 2020.
+# Fabian Affolter <mail@fabian-affolter.ch>, 2020.
+# Ettore Atalan <atalanttore@googlemail.com>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2018-09-21 05:47+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"PO-Revision-Date: 2022-02-14 13:16+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"Language-Team: German <https://translate.fedoraproject.org/projects/camorama/"
+"master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -31,6 +35,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama ist ein einfacher Webkamera-Betrachter, mit der Möglichkeit, einige "
+"Videoeffekte anzuwenden."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
@@ -42,7 +48,7 @@ msgstr "Camorama"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;viewer;video-effects;"
 
 #: data/camorama-gtk2.ui:39 data/camorama-gtk4.ui:596
 msgid "Preferences"
@@ -112,9 +118,8 @@ msgstr "webcam-mitschneiden"
 
 #: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1027
 #: data/camorama-gtk4.ui:917
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Speicherverzeichnis:"
+msgstr "Speicherverzeichnis wählen"
 
 #: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 #: data/camorama-gtk3.ui:1057 data/camorama-gtk3.ui:1440
@@ -163,14 +168,13 @@ msgstr "Entfernt _mitschneiden"
 
 #: data/camorama-gtk2.ui:700 data/camorama-gtk3.ui:1334
 #: data/camorama-gtk4.ui:1185
-#, fuzzy
 msgid "Server:"
-msgstr "FTP-Server:"
+msgstr "Server:"
 
 #: data/camorama-gtk2.ui:712 data/camorama-gtk3.ui:1346
 #: data/camorama-gtk4.ui:1197
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: data/camorama-gtk2.ui:724 data/camorama-gtk3.ui:1358
 #: data/camorama-gtk4.ui:1209
@@ -179,9 +183,8 @@ msgstr "Speicherverzeichnis:"
 
 #: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1370
 #: data/camorama-gtk4.ui:1221
-#, fuzzy
 msgid "Filename:"
-msgstr "Dateiname"
+msgstr "Dateiname:"
 
 #: data/camorama-gtk2.ui:749 data/camorama-gtk3.ui:1383
 #: data/camorama-gtk4.ui:1234
@@ -228,9 +231,8 @@ msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk2.ui:1219 data/camorama-gtk4.ui:50
-#, fuzzy
 msgid "_File"
-msgstr "Dateiname"
+msgstr "_Dateiname"
 
 #: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 #: data/camorama-gtk3.ui:378 data/camorama-gtk4.ui:315
@@ -239,12 +241,12 @@ msgstr "Bild aufnehmen"
 
 #: data/camorama-gtk2.ui:1261 data/camorama-gtk4.ui:86
 msgid "_Edit"
-msgstr ""
+msgstr "_Bearbeiten"
 
 #: data/camorama-gtk2.ui:1285 data/camorama-gtk3.ui:125
 #: data/camorama-gtk4.ui:107
 msgid "_View"
-msgstr ""
+msgstr "_Ansicht"
 
 #: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 #: data/camorama-gtk3.ui:134 data/camorama-gtk3.ui:319
@@ -260,7 +262,7 @@ msgstr "Effekte anzeigen"
 #: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:154
 #: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
-msgstr ""
+msgstr "Kamera _ändern"
 
 #: data/camorama-gtk2.ui:1329 data/camorama-gtk3.ui:169
 #: data/camorama-gtk4.ui:151
@@ -269,7 +271,7 @@ msgstr "Klein"
 
 #: data/camorama-gtk2.ui:1342 data/camorama-gtk4.ui:164
 msgid "_Help"
-msgstr ""
+msgstr "_Hilfe"
 
 #: data/camorama-gtk2.ui:1667 data/camorama-gtk3.ui:477
 #: data/camorama-gtk4.ui:403
@@ -299,31 +301,28 @@ msgstr "Weißbalance:"
 #: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:607
 #: data/camorama-gtk4.ui:533
 msgid "Zoom:"
-msgstr ""
+msgstr "Vergrösserung:"
 
 #: data/camorama-gtk2.ui:1910 data/camorama-gtk3.ui:1875
 #: data/camorama-gtk4.ui:1663
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "Zu verwendendes v4l-Gerät"
+msgstr "Zu verwendendes Video-Gerät"
 
 #: data/camorama-gtk3.ui:70 data/camorama-gtk4.ui:59
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Bild aufnehmen"
+msgstr "Bild _aufnehmen"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
-msgstr ""
+msgstr "_Beenden"
 
 #: data/camorama-gtk4.ui:95
-#, fuzzy
 msgid "_Preferences"
-msgstr "Einstellungen"
+msgstr "_Einstellungen"
 
 #: data/camorama-gtk4.ui:173
 msgid "_About"
-msgstr ""
+msgstr "_Über"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -335,11 +334,11 @@ msgstr "Hängt einen Zeitstempel im UNIX-Zeitformat an das Ende der Dateinamen"
 
 #: data/org.gnome.camorama.gschema.xml.in:11
 msgid "Toggles auto-capture"
-msgstr "Auto-Mitschneiden?"
+msgstr "Schaltet die automatische Erfassung um"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr "Sollen Bilder automatisch mitgeschnitten werden?"
+msgstr "Schaltet die automatische Aufnahme von Bildern um."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
@@ -373,30 +372,28 @@ msgstr "Bildformat lokaler Mitschnitte"
 #: data/org.gnome.camorama.gschema.xml.in:32
 msgid "Specifies the image format to be used for locally saved pictures"
 msgstr ""
-"Welches Bildformat soll für lokal gespeicherte Bilder verwendet werden?"
+"Gibt das Bildformat an, das für lokal gespeicherte Bilder verwendet werden "
+"soll"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "Mittschnitthöhe"
+msgstr "Bildhöhe"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Von der Kamera verwendete Bildhöhe. Null bedeutet automatische Auswahl"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Rechnername des FTP-Servers"
+msgstr "Rechnername des Servers"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Der Rechnername des FTP-Servers für entfernte Mitschnitte."
+msgstr "Der Rechnername des Servers für entfernte Mitschnitte."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
-msgstr "Lokal mitschneiden?"
+msgstr "Schaltet die lokale Erfassung um"
 
 #: data/org.gnome.camorama.gschema.xml.in:47
 msgid ""
@@ -408,19 +405,20 @@ msgstr ""
 "gespeichert werden."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Ordner für entfernte Mitschnitte"
+msgstr "Für den Fernzugriff zu verwendendes Protokoll"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"Der URI-Name des Protokolls, das für die Verbindung mit einem entfernten "
+"Server verwendet wird. Kann ftp, sftp oder smb sein"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Vollständiger URI für die Fernspeicherung von Bildschnappschüssen"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
@@ -440,7 +438,7 @@ msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:66
 msgid "Toggles remote capture"
-msgstr "Entfernt mitschneiden?"
+msgstr "Schaltet die Fernerfassung um"
 
 #: data/org.gnome.camorama.gschema.xml.in:67
 msgid ""
@@ -458,7 +456,8 @@ msgstr "Bildformat ntfernter Mitschnitte"
 #: data/org.gnome.camorama.gschema.xml.in:72
 msgid "Specifies the image format to be used for remotely saved pictures"
 msgstr ""
-"Welches Bildformat soll für entfernt gespeicherte Bilder verwendet werden?"
+"Gibt das Bildformat an, das für remote gespeicherte Bilder verwendet werden "
+"soll"
 
 #: data/org.gnome.camorama.gschema.xml.in:76
 msgid "Folder for remote captures"
@@ -478,7 +477,7 @@ msgstr "Ein Name für die Datei hochgeladener Bilder."
 
 #: data/org.gnome.camorama.gschema.xml.in:86
 msgid "Toggles timestamp for remote captures"
-msgstr "Zeitstempel für entfernte Mitschnitte?"
+msgstr "Schaltet den Zeitstempel für Fernaufnahmen um"
 
 #: data/org.gnome.camorama.gschema.xml.in:87
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
@@ -503,7 +502,7 @@ msgstr "Dateiname für das lokale Speichern mitgeschnittener Bilder"
 
 #: data/org.gnome.camorama.gschema.xml.in:101
 msgid "Toggles timestamp for local captures"
-msgstr "Zeitstempel für lokale Mitschnitte?"
+msgstr "Schaltet den Zeitstempel für lokale Aufnahmen um"
 
 #: data/org.gnome.camorama.gschema.xml.in:102
 msgid "Toggles the insertion of a timestamp into local images"
@@ -547,13 +546,13 @@ msgstr ""
 "Die Knöpfe zum Anpassen der Video-Eigenschaften verwenden/nicht verwenden"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "Mittschnittbreite"
+msgstr "Bildbreite"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
 msgstr ""
+"Von der Kamera verwendete Bildbreite. Null bedeutet automatische Auswahl"
 
 #: src/callbacks.c:465
 msgid "translator_credits"
@@ -562,7 +561,7 @@ msgstr "Christian Neumair <chris@gnome-de.org>"
 #: src/callbacks.c:693
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f BpS - aktuell     %.2f BpS - durchschnittlich"
 
 #: src/callbacks.c:827
 msgid "Can't allocate memory to store devices"
@@ -570,41 +569,39 @@ msgstr ""
 
 #: src/callbacks.c:939
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Keine Kamera gefunden"
 
 #: src/callbacks.c:1063
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (max. %.1f BpS)"
 
 #: src/callbacks.c:1067
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "Laplace (4 Nachbarn)"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
-#, fuzzy
 msgid "Mirror"
-msgstr "Bild spiegeln"
+msgstr "Spiegel"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:124
 msgid "_Add Filter"
-msgstr ""
+msgstr "Filter _hinzufügen"
 
 #: src/camorama-window.c:221
-#, fuzzy
 msgid "Effects"
-msgstr "Effekte anzeigen"
+msgstr "Effekte"
 
 #: src/fileio.c:111 src/fileio.c:257
 msgid "Could save temporary image file in /tmp."
@@ -621,19 +618,19 @@ msgid "Could not save image '%s/%s'."
 msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
 
 #: src/fileio.c:139
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
+msgstr "Es konnte kein Thread zum Speichern des Bildes »%s/%s« erstellt werden."
 
 #: src/fileio.c:172
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Einhängen von %s:%s ist ein Fehler aufgetreten."
 
 #: src/fileio.c:212
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Zugriff auf %s ist ein Fehler aufgetreten."
 
 #: src/fileio.c:263
 #, c-format
@@ -650,19 +647,19 @@ msgid "An error occurred opening %s."
 msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
 
 #: src/fileio.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Öffnen von %s zum Schreiben ist ein Fehler aufgetreten: %s."
 
 #: src/fileio.c:313
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "Beim Schreiben nach %s ist ein Fehler aufgetreten."
+msgstr "Beim Schreiben nach %s ist ein Fehler aufgetreten: %s."
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Beim Öffnen von %s ist ein Fehler aufgetreten."
+msgstr "Beim Schließen von %s ist ein Fehler aufgetreten: %s."
 
 #: src/fileio.c:385
 #, c-format
@@ -672,25 +669,23 @@ msgstr "Verzeichnis »%s« konnte nicht angelegt werden."
 #: src/fileio.c:394
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr "Wechseln in's Verzeichnis »%s« fehlgeschlagen."
+msgstr "Wechseln in's Verzeichnis '%s' fehlgeschlagen."
 
 #: src/filter.c:187
-#, fuzzy
 msgid "Color Correction"
 msgstr "Farbkorrektur"
 
 #: src/filter.c:216
 msgid "Invert"
-msgstr ""
+msgstr "Invertieren"
 
 #: src/filter.c:260
-#, fuzzy
 msgid "Threshold (Overall)"
-msgstr "Schwellwert:"
+msgstr "Schwellwert (Total)"
 
 #: src/filter.c:310
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "Schwellenwert (pro Kanal)"
 
 #: src/filter.c:388
 msgid "Wacky"
@@ -703,11 +698,11 @@ msgstr "Glättung"
 
 #: src/filter.c:530
 msgid "Monochrome"
-msgstr ""
+msgstr "Monochrome"
 
 #: src/filter.c:568
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "Schwarzweiß (Gewichtung)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:625
@@ -764,19 +759,18 @@ msgstr ""
 "\n"
 
 #: src/main.c:158
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Pixmap-Datei »%s« konnte nicht gefunden werden"
+msgstr ""
 
 #: src/main.c:187
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s nicht gefunden. Rückgriff auf %s"
 
 #: src/main.c:190
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s nicht gefunden."
 
 #: src/main.c:299
 #, c-format
@@ -786,18 +780,18 @@ msgid ""
 msgstr ""
 
 #: src/v4l.c:148
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
 "Verbindung zum Videogerät (%s) konnte nicht hergestellt werden.\n"
-"Bitte überprüfen Sie die Verbindung."
+"Bitte Verbindung überprüfen. Fehler: %d"
 
 #: src/v4l.c:251
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Gerät %s ist kein Videoaufnahmegerät."
 
 #: src/v4l.c:365 src/v4l.c:434 src/v4l.c:453 src/v4l.c:474
 #, c-format
@@ -811,12 +805,12 @@ msgstr ""
 #: src/v4l.c:503
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS -- konnte Puffer (%s) nicht anfordern, wird beendet ...."
 
 #: src/v4l.c:521
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF -- konnte Puffer (%s) nicht abfragen, wird beendet ...."
 
 #: src/v4l.c:536
 #, c-format
@@ -827,6 +821,8 @@ msgstr ""
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF -- konnte Puffer nicht in die Warteschlange einreihen (%s), wird "
+"beendet ...."
 
 #: src/v4l.c:560
 #, c-format
@@ -836,7 +832,7 @@ msgstr ""
 #: src/v4l.c:590
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Zeitüberschreitung beim Warten auf Einzelbilder (%s)"
 
 #: src/v4l.c:652
 #, c-format
