@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the camorama package.
 # Luis Matos <gass@otiliamatos.ath.cx>, 2006
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2003, 2004.
-# Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata, 2022.
 # Manuela Silva <mmsrs@sky.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2020-03-13 08:42+0100\n"
-"PO-Revision-Date: 2020-05-07 11:40+0000\n"
-"Last-Translator: Manuela Silva <mmsrs@sky.com>\n"
+"PO-Revision-Date: 2022-03-09 19:38+0000\n"
+"Last-Translator: Mauro Carvalho Chehab <mchehab@infradead.org>\n"
 "Language-Team: Portuguese <https://translate.fedoraproject.org/projects/"
 "camorama/master/pt/>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0.3\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -34,8 +34,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
-"Camorama é um visualizador de câmara da Web simples, com a capacidade para "
-"aplicar alguns efeitos de vídeo."
+"Camorama é um visualizador de câmara da Web simplificado, com a capacidade "
+"para aplicar alguns efeitos de vídeo."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
