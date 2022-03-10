@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the Camorama package.
 # Yuriy Syrota <rasta renome.rovno.ua>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-09 21:04+0100\n"
-"PO-Revision-Date: 2020-02-08 08:16+0000\n"
+"PO-Revision-Date: 2022-03-10 06:51+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
 "camorama/master/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -304,14 +304,12 @@ msgid "_Take Picture"
 msgstr "З_робити знімок"
 
 #: data/camorama-gtk3.ui:89
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Перемикнути локальну зйомку"
+msgstr "Перемкнути _повноекранний режим"
 
 #: data/camorama-gtk3.ui:404
 msgid "Full Screen"
-msgstr ""
+msgstr "На увесь екран"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -742,19 +740,15 @@ msgstr "використовувати read() замість mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "вимкнути засіб масштабування відео"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "використовувати read() замість mmap()"
+msgstr "використовувати вказівник userptr замість mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "пристрій Video4Linux"
+msgstr "пристрій вхідних даних Video4Linux"
 
 #: src/main.c:133
 #, c-format
@@ -821,29 +815,26 @@ msgstr ""
 
 #: src/v4l.c:991
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Формати відео пристрою є несумісними з camorama."
 
 #: src/v4l.c:1007
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Не вдалося встановити з'єднання з відеопристроєм (%s).\n"
+"Не вдалося встановити дані вікна на відеопристрої (%s).\n"
 "Будь ласка, перевірте з'єднання."
 
 #: src/v4l.c:1028
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Не вдалося встановити формат %c%c%c%c на відеопристрої (%s)."
 
 #: src/v4l.c:1047
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Відеопристроєм повернуто нульову ширину (%s)!"
 
 #: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
@@ -853,11 +844,8 @@ msgstr ""
 "роботу...."
 
 #: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr ""
-"не вдалося пов'язати буфери із областями пам'яті (%s), завершуємо роботу...."
+msgstr "не вдалося отримати пам'ять під відеобуфери, завершуємо роботу...."
 
 #: src/v4l.c:1096
 #, c-format
@@ -885,11 +873,9 @@ msgstr ""
 "не вдалося запустити потік передавання даних (%s), завершуємо роботу...."
 
 #: src/v4l.c:1191
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
-"VIDIOC_QUERYBUF  --  не вдалося опитати буфери (%s), завершуємо роботу...."
+msgstr "VIDIOC_QBUF  --  не вдалося опитати буфери (%s), завершуємо роботу...."
 
 #: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
