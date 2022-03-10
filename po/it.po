@@ -32,8 +32,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
-"Camorama è un semplice visualizzatore di webcam, con la possibilità di applicare alcuni effetti"
-"video".
+"Camorama è un semplice visualizzatore di webcam, con la possibilità di applicare alcuni effetti "
+"video."
 
 #: camorama.desktop.in:5 src/callbacks.c:464
 msgid "View, alter and save images from a webcam"
