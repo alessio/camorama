@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2022-03-09 21:04+0100\n"
-"PO-Revision-Date: 2020-02-08 08:16+0000\n"
+"POT-Creation-Date: 2022-03-10 23:05+0100\n"
+"PO-Revision-Date: 2022-03-10 23:13+0100\n"
 "Last-Translator: Mauro Carvalho Chehab <mchehab@infradead.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.fedoraproject.org/"
 "projects/camorama/master/pt_BR/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -304,14 +304,12 @@ msgid "_Take Picture"
 msgstr "_Tirar Fotografia"
 
 #: data/camorama-gtk3.ui:89
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Alterna captura local"
+msgstr "Alterna _Tela Cheia"
 
 #: data/camorama-gtk3.ui:404
 msgid "Full Screen"
-msgstr ""
+msgstr "Tela cheia"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -740,17 +738,13 @@ msgstr "usar read() em vez de mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "desabilita auto-escala de vídeo"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "usar read() em vez de mmap()"
+msgstr "usando userptr em vez de mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
 msgstr "dispositivo v4l a ser utilizado"
 
@@ -819,29 +813,27 @@ msgstr ""
 
 #: src/v4l.c:991
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Formatos de vídeo do dispositivo são incompatíveis com o camorama."
 
 #: src/v4l.c:1007
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Impossível conectar ao dispositivo de vídeo (%s).\n"
+"Impossível ajustar formato no dispositivo de vídeo (%s).\n"
 "Verifique a conexão."
 
 #: src/v4l.c:1028
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
 msgstr ""
+"Falha ao tentar configurar formato %c%c%c%c no dispositivo de vídeo (%s)."
 
 #: src/v4l.c:1047
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Retornado com tamanho zero no dispositivo de vídeo (%s)!"
 
 #: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
@@ -850,10 +842,8 @@ msgstr ""
 "VIDIOC_REQBUFS  --  não foi possível requisitar buffers (%s), encerrando...."
 
 #: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "falha ao mapear os buffers na memória (%s), encerrando..."
+msgstr "falha ao alocar memória para os buffers de vídeo, encerrando..."
 
 #: src/v4l.c:1096
 #, c-format
@@ -879,12 +869,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "falha ao iniciar o fluxo de vídeo (%s), encerrando..."
 
 #: src/v4l.c:1191
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
-"VIDIOC_QUERYBUF  --  não foi possível obter informações sobre buffers (%s), "
-"encerrando...."
+msgstr "VIDIOC_QBUF  --  não foi possível empilhar buffer (%s), encerrando...."
 
 #: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
