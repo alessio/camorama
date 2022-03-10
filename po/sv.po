@@ -5,6 +5,7 @@
 # Christian Rose <menthos@menthos.com>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Göran Uddeborg <goeran@uddeborg.se>, 2020.
+# Luna Jernberg <bittin@reimu.nl>, 2022.
 #
 # $Id: sv.po,v 1.13 2006/11/18 22:34:25 dnylande Exp $
 msgid ""
@@ -12,8 +13,8 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-09 21:04+0100\n"
-"PO-Revision-Date: 2020-09-12 15:29+0000\n"
-"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"PO-Revision-Date: 2022-03-10 12:36+0000\n"
+"Last-Translator: Luna Jernberg <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "camorama/master/sv/>\n"
 "Language: sv\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2.2\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -305,14 +306,12 @@ msgid "_Take Picture"
 msgstr "_Ta bild"
 
 #: data/camorama-gtk3.ui:89
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Växlar lokal tagning"
+msgstr "Växla _Helskärm"
 
 #: data/camorama-gtk3.ui:404
 msgid "Full Screen"
-msgstr ""
+msgstr "Helskärm"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -737,13 +736,11 @@ msgstr "använd read() istället för mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "inaktivera videoskalare"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "använd read() istället för mmap()"
+msgstr "använd userptr pekare istället för mmap()"
 
 #: src/main.c:55
 #, fuzzy
@@ -816,7 +813,7 @@ msgstr ""
 
 #: src/v4l.c:991
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Enhetens videoformat är inkompatibla med camorama."
 
 #: src/v4l.c:1007
 #, fuzzy, c-format
@@ -833,12 +830,12 @@ msgstr ""
 #: src/v4l.c:1028
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Kunde inte sätta format till %c%c%c%c på videoenheten (%s)."
 
 #: src/v4l.c:1047
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Returnerad bredd är noll på videoenheten (%s)!"
 
 #: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
@@ -846,10 +843,8 @@ msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS  —  kunde inte begära buffertar (%s), avslutar …"
 
 #: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "misslyckades att minnesmappa buffertar (%s), avslutar …"
+msgstr "kunde inte allokera minne för videobuffertar, avslutar …"
 
 #: src/v4l.c:1096
 #, c-format
@@ -872,10 +867,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "misslyckades att börja strömma (%s), avslutar …"
 
 #: src/v4l.c:1191
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF  —  kunde inte fråga buffertar (%s), avslutar …"
+msgstr "VIDIOC_QBUF  —  kunde inte fråga buffertar (%s), avslutar …"
 
 #: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
