@@ -4,13 +4,14 @@
 # Tamer Sezgin <tamer_sezgin@yahoo.com>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Oğuz Ersen <oguzersen@protonmail.com>, 2020.
+# Oğuz Ersen <oguz@ersen.moe>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-09 21:04+0100\n"
-"PO-Revision-Date: 2020-04-21 18:40+0000\n"
-"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"PO-Revision-Date: 2022-03-10 17:55+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "camorama/master/tr/>\n"
 "Language: tr\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
-"X-Generator: Weblate 4.0.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -302,14 +303,12 @@ msgid "_Take Picture"
 msgstr "_Resim Çek"
 
 #: data/camorama-gtk3.ui:89
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Yerel yakalamayı açar/kapatır"
+msgstr "Tam _Ekranı Değiştir"
 
 #: data/camorama-gtk3.ui:404
 msgid "Full Screen"
-msgstr ""
+msgstr "Tam Ekran"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -734,23 +733,19 @@ msgstr "orta yakalama boyutları"
 
 #: src/main.c:47
 msgid "use read() rather than mmap()"
-msgstr "mmap() yerine read() kullanın"
+msgstr "mmap() yerine read() kullan"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "video ölçekleyiciyi devre dışı bırak"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "mmap() yerine read() kullanın"
+msgstr "mmap() yerine userptr işaretçisi kullan"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "kullanılacak v4l aygıtı"
+msgstr "kullanılacak v4l aygıtı girişi"
 
 #: src/main.c:133
 #, c-format
@@ -817,29 +812,26 @@ msgstr ""
 
 #: src/v4l.c:991
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Aygıt video biçimleri camorama ile uyumlu değil."
 
 #: src/v4l.c:1007
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"(%s) video aygıtına bağlanamadı.\n"
+"(%s) video aygıtında pencere bilgisi ayarlanamadı.\n"
 "Lütfen bağlantıyı gözden geçirin."
 
 #: src/v4l.c:1028
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Video aygıtında biçim %c%c%c%c olarak ayarlanamadı (%s)."
 
 #: src/v4l.c:1047
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Video aygıtında alınan genişlik sıfır (%s)!"
 
 #: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
@@ -847,10 +839,8 @@ msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS  --  arabellek istenemedi (%s), sonlandırılıyor...."
 
 #: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "arabellekler belleğe alınamadı (%s), sonlandırılıyor...."
+msgstr "video arabellekleri için bellek ayrılamadı, sonlandırılıyor...."
 
 #: src/v4l.c:1096
 #, c-format
@@ -875,11 +865,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "video akışı başlatılamadı (%s), sonlandırılıyor...."
 
 #: src/v4l.c:1191
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
-"VIDIOC_QUERYBUF  --  arabellekler sorgulanamadı (%s), sonlandırılıyor...."
+msgstr "VIDIOC_QBUF  --  arabellekler sorgulanamadı (%s), sonlandırılıyor...."
 
 #: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
