@@ -1,3 +1,122 @@
+2022-03-10  Mauro Carvalho Chehab <mchehab@kernel.org>
+
+	* Add a dialog to optionally select the video device
+	* Add an item to allow switching cameras in realtime
+	* Add backward support for gtk2
+	* Add extra distribution files
+	* Add format conversion for several YUV and RGB formats
+	* Add --input cmdline option to select v4l device input
+	* Add logic to install the camorama's man page
+	* add support for full screen mode
+	* add support for gtk4 on configure.ac (experimental)
+	* add support for scaling the image with cairo
+	* Add support for userptr
+	* add the compatibility bits needed to build it with gtk 4
+	* Add zoom control
+	* Allow disabling libv4l2
+	* Allow expanding the window with Gtk3
+	* Allow having different UIs depending on Gtk version
+	* Archive the GSettings schema
+	* autogen.sh: be smarter with regards to gettext version
+	* Avoid a tmp buffer when not using read()
+	* Better handle V4L2 device names
+	* Better order video devices
+	* callbacks: Fix some issues at the about dialog
+	* callbacks: allow disabling cairo scaler
+	* callbacks: Avoid leaking memory
+	* callbacks: avoid leaving an unused value
+	* callbacks: don't print resolution by default
+	* callbacks: fix apply_filters() logic
+	* callbacks: fix scale with gtk3
+	* callbacks: fix the notification functions
+	* callbacks: get rid of a warning
+	* callbacks: get rid of some dead code
+	* callbacks: get rid of unsused GconfClient
+	* callbacks: Give more scale flexibility with Gtk3
+	* callbacks: move get_geometry and fix it
+	* callbacks: Optimize cairo logic for Gtk 3
+	* callbacks: prepare to support gtk 4 render
+	* callbacks: prevent destroying the preferences widget
+	* callbacks: use a callback to draw at GtkDrawingArea
+	* camorama-gtk3: explicitly use the obsoleted GtkImageMenuItem
+	* camorama-gtk4.ui: Get rid of everything that gtk4-builder-tool complains
+	* camorama.schemas: update schema file
+	* camorama-window: ensure that windows will be resized after controls code
+	* camorama-window: fix handler for Take Picture menu/control
+	* camorama-window: fix tray icon
+	* Change default to build with Gtk3
+	* Change GtkHScale to GtkScale
+	* configure.ac: add minimum required gettext version logic
+	* configure.ac: check if libv4l is present
+	* configure.ac: use "foreign" flavor
+	* configure.ac: show what Gtk version will be used
+	* Copy data/camorama-gtk3.ui into data/camorama-gtk4.ui
+	* Do more fixes at Camorama's schema
+	* Don't use gdk-pixbuf-xlib-2.0 anymore
+	* Do some code cleanups
+	* Enable warnings when building Camorama
+	* fileio: don't leak resources at remote_save()
+	* fileio: don't try to mount if remote update is disabled
+	* fileio: fix some issues pointed by Coverity
+	* Fix compilation with gcc10 / -fno-commo
+	* Fix "Could not create directory '~/Webcam_Pictures'." error
+	* Fix maximum resolution on scalable cameras
+	* Fix some gcc warnings
+	* Fix typo "installl" with 3 L's
+	* Get rid of a duplicated timeout function
+	* get rid of glib-helpers.h
+	* Get rid of obsolete Gtk3 widgets
+	* get rid of the unused xpm_label_box() function
+	* glib-helpers.h: cleanup a warning with clang 7
+	* gtk2: remove a non-existing gtk2 property
+	* gtk_menu_popup() is deprecated on gtk 3.22
+	* interface.h: rename Gconf2 keys
+	* main: add some g_free() in order to reduce memleak warnings
+	* main: disable libv4l for USERPTR
+	* main: get rid of GCC specific pragmas
+	* main: make it use gtk_application_new() & friends
+	* main: Store camera device
+	* main: use gdk_monitor_get_geometry() on newer Gtk 3
+	* Move the select device dialog logit to callbacks.c
+	* Optimize global widgets
+	* Place the new "Change Camera" option before resolution settings
+	* preserve last used resolution if not changed via command line
+	* README.md: update a broken link
+	* Remove (autogen.sh) generated files from git
+	* Remove auto-tools generated files
+	* Remove BGR -> RGB filter
+	* Remove the gettext version
+	* Remove the tray icon
+	* Rename camera struct typedef from cam to cam_t
+	* Rename README to README.md
+	* Replace tabs by whitespaces
+	* Reset frame counters when the camera changes
+	* Rework camorama images
+	* Set the scale and window name when switching to a camera
+	* Unify coding style
+	* Translations: lots of updates and new languages were added
+	* Update autotools file to version 1.16.1
+	* Update README.md
+	* Update to gettext-0.20
+	* Use g_list_free_full() convenience function
+	* Use GSettings instead of Gconf-2
+	* v4l: fix control availability check
+	* v4l: add a preferred order when selecting a format
+	* v4l: autodetect userptr mode
+	* v4l: avoid de-referencing a NULL value
+	* v4l: fix depth order when using without libv4l2
+	* v4l: fix some troubles due to unsigned int on resolutions
+	* v4l: get maximum fps for each resolution and display
+	* v4l: improve colorspace handling logic
+	* v4l: make zoom logic more complete
+	* v4l: place depth properties inside an array
+	* v4l: prevent a division by zero
+	* v4l: remove uneeded debug messages
+	* v4l: show all supported resolutions when debug is enabled
+	* v4l: use depth when selecting the video format
+	* v4l: use device_caps instead of capabilities
+	* Video devices: improve the detection logic
+
 2020-01-19  gettextize  <bug-gnu-gettext@gnu.org>
 
 	* m4/gettext.m4: Upgrade to gettext-0.20.1.
