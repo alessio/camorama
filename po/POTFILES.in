@@ -2,7 +2,6 @@
 # Please keep this file sorted alphabetically.
 camorama.appdata.xml.in
 camorama.desktop.in
-data/camorama-gtk2.ui
 data/camorama-gtk3.ui
 data/camorama-gtk4.ui
 data/org.gnome.camorama.gschema.xml.in
