@@ -1,6 +1,10 @@
 2022-03-19 Mauro Carvalho Chehab <mchehab@kernel.org>
 
 	* Fix a regression at take picture logic
+	* Add mutexes to protect remote capture
+	* Place a backgroud at the timestamp
+	* Allow multiple snapshots with different names per second
+	* Improve file timestamp
 	* Finnish translation updated
 	* Dropped old NEWS file and updated TODO
 	* Updated README.md file
