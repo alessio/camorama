@@ -139,11 +139,11 @@ The buttons below the image and effects are:
 The `Edit/Preferences` menu allows to setup several properties related
 to image capture:
 
-- General:
+- `General`:
   - Automatic capture: enables periodic screen shots.
     When selected, allows to select the capture interval.
 
-- local capture: adjust the parameters for local capture/screen shots.
+- `Local Capture`: adjust the parameters for local capture/screen shots.
    - directory - dir where captures will be saved
    - filename - filename for captures
    - append time to filename - should camorama append the time
@@ -156,24 +156,24 @@ to image capture:
      corner of the image. The format of such timestamp is defined via
      timestamp properties (see below).
    - image type - what to save the image as.
- - remote capture: capture and upload capture image to a remote server.
+ - `Remote Capture`: capture and upload capture image to a remote server.
    Please notice that the credentials are maintained by Gnome;
-  - server: IP or domain for remote capture;
-  - type: type of capture. Can be ftp, scp or smb;
-  - save directory - where to save the file on the server.
-    Using the full pathname seems to work better.
-  - filename - filename for captures
-  - append time to filename - should camorama append the time
-    to the filename.  When enabled, the file name will use this format:
-    %Y-%m-%d %H:%M:%S. It will also append a 3-digit number in order to
-    allow capturing more than one frame per second.
-    If not selected, a newly captured image will overwrite the last
-    image if it has the same name.
-  - add a timestamp to captured images - put a timestamp in the lower left
-    corner of the image. The format of such timestamp is defined via
-    timestamp properties (see below).
-  - image type - what to save the image as.
-- timestamp:  you can use the date/time, a custom string,
+   - server: IP or domain for remote capture;
+   - type: type of capture. Can be ftp, scp or smb;
+   - save directory - where to save the file on the server.
+     Using the full pathname seems to work better.
+   - filename - filename for captures
+   - append time to filename - should camorama append the time
+     to the filename.  When enabled, the file name will use this format:
+     %Y-%m-%d %H:%M:%S. It will also append a 3-digit number in order to
+     allow capturing more than one frame per second.
+     If not selected, a newly captured image will overwrite the last
+     image if it has the same name.
+   - add a timestamp to captured images - put a timestamp in the lower left
+     corner of the image. The format of such timestamp is defined via
+     timestamp properties (see below).
+   - image type - what to save the image as.
+- `Timestamp`:  you can use the date/time, a custom string,
   or both together.
   - use custom string - use a custom string in the timestamp
   - custom string - string you want to use in the timestamp
