@@ -1,26 +1,31 @@
 
 [![Translation status](https://translate.fedoraproject.org/widgets/camorama/-/svg-badge.svg)](https://translate.fedoraproject.org/engage/camorama/)
 
-# camorama - view, alter and save images from a webcam
-
-This branch of camorama has been adapted to try out various computer-vision
-filters, starting with a Reichardt motion detection filter.
-
-These filters are added in addition to the ones already in camorama.
-
-Adrian Bowyer
-12 September 2016
-
-----------------------------
-
-
 # Build
 
+The build dependencies vary along distributions.
+
+On Fedora:
+
 ```
-./configure
+sudo dnf install gcc make gettext-devel libv4l-devel gtk3-devel cairo-devel \
+	gdk-pixbuf2-devel gnome-common
+```
+
+On Ubuntu/Debian:
+
+```
+sudo apt-get install gcc make gettext libv4l-dev libgtk-3-dev libcairo2-dev \
+	libgdk-pixbuf2.0-dev gnome-common
+```
+
+Once the dependencies are installed, building and installing camorama can
+be done with:
+
+```
+./autogen.sh
 make
-su
-make install
+sudo make install
 ```
 
 # Run
@@ -28,97 +33,165 @@ make install
 ```
 camorama (options)
 
-options:
+Help Options:
+  -h, --help                 Show help options
+  --help-all                 Show all help options
+  --help-gapplication        Show GApplication options
+  --help-gtk                 Show GTK+ Options
 
- -h  usage
- -V  version info
- -D  debugging info
- -d  <video_device> use <video_device> instead of the default (/dev/video0)
- -M  use maximum capture size (depends on camera)
- -m  use minimum capture size (depends on camera)
- -H  use middle capture size (depends on camera)
- -x  <width> width of capture
- -y  <height> height of capture
+Application Options:
+  -V, --version              show version and exit
+  -d, --device               v4l device to use
+  -D, --debug                enable debugging code
+  -x, --width                capture width
+  -y, --height               capture height
+  -M, --max                  maximum capture size
+  -m, --min                  minimum capture size
+  -H, --half                 middle capture size
+  -R, --read                 use read() rather than mmap()
+  -S, --disable-scaler       disable video scaler
+  -U, --userptr              use userptr pointer rather than mmap()
+  --dont-use-libv4l2         use userptr pointer rather than mmap()
+  -i, --input                v4l device input to use
+  --display=DISPLAY          X display to use
+```
 
-gui:
-   
-   sliders for various image properties.  if something doesn't work, it is not supported by your camera/driver.
+# GUI:
 
-   buttons turn on various filters
-     fix colour:  bgr->rgb conversion
-     wacky:       started out as an edge detection function, turned into, um, this ;-)
-     threshold:      any pixel with an averave value < x turns black or > x turns white.  x is adjustable with the dither slider
-     channel threshold:   same as above, but does it for each channel, red, green and blue.
-     sobel:       didn't turn out right, but i thought this looked cool too :).
-     edge detect: shoddy laplace edge detection function
-     negative:    makes picture negative
-     mirror:      mirror image
-     colour:      colour or bw
-     smooth:      smooths image
+That's the Camorama GUI:
 
-    other buttons:  capture - capture image - see prefs. 
+```
++---------------------------------------------------------------+
+|     Camorama - HD Pro Webcam C920 - 800x6-- (scale: 75%)      |
+| File   Edit   View   Help                                     |
++------------------------------------------+--------------------+
+|                                          |  Effects           |
+|                    .~.                   |                    |
+|                    /V\                   |                    |
+|                   // \\                  |                    |
+|                  /(   )\                 |                    |
+|                   ^`~'^                  |                    |
+|                                          |                    |
++------------------------------------------+--------------------+
+| [Show Adjustments]        [Full Screen]        [Take Picture] |
+| Contrast:   128 ++++++++++++++++++|-------------------------- |
+| Brightness: 128 ++++++++++++++++++|-------------------------- |
+| Zoom:         0 |-------------------------------------------- |
+| Color:      128 ++++++++++++++++++|-------------------------- |
+|                                                               |
+| 30.00 fps - current   30.24 fps - average                     |
++---------------------------------------------------------------+
+```
 
-preferences:
+The menu contains:
+- `File` option has 3 items:
+  - `Take Picture`: Takes an instant shot;
+  - `Toggle Full Screen`: Toggles between full screen and normal mode;
+  - `Quit`: quits Camorama.
+- `Edit`: Has a preferences menu that allows to setup periodic screen shots.
+  See more details below.
+- `View`: Allows disabling/enabling the Effects view and the sliders. It
+   also allows selecting the video resolution, which also affects the frame
+   rate.
+- `Help`: Has an `About` button that show Camorama version, credits and
+   license.
 
-	general:
-	
-		- local capture - capture to hard drive
-		- remote capture - capture and upload via ftp
-		- automatic capture - capture images automatically
-		- capture interval - time between captures, in minutes
-		
-	local capture:
-	
-		- directory - dir where captures will be saved
-		- filename - filename for captures
-		- append time to filename - should camorama append the time to the filename.  if not, it will overwrite the last image if it has the same name.
-		- image type - what to save the image as.
-		- add timestamp - put a timestamp in the lower left corner of the image (can be customized)
-		
-	remote capture:
-	
-		- ftp host - where you want to upload your image
-		- username - username on ftp server
-		- password - password on server.  this will be stored by gconf, in ~/.gconf/apps/camorama/preferences, so if you are concerned about security, don't use this feature.
-		- save directory - where to save the file on the server.  using the full pathname seems to work better.
-		- filename - filename for captures
-		- append time to filename - should camorama append the time to the filename.  if not, it will overwrite the last image if it has the same name.
-		- image type - what to save the image as.
-		- add timestamp - put a timestamp in the lower left corner of the image (can be customized)
-		
-	timestamp:  you can use the date/time, a custom string, or both together.
-		
-		- use custom string - use a custom string in the timestamp
-		- custom string - string you want to use in the timestamp
-		- draw date/time - add date/time in the timestamp
-		
-```		
+The camera image is shown at the top left, just below the menu.
+Its dispayed image can be affected by several optional effects.
 
+The slides cover some image controls that are supported by your camera.
 
-# Known issues
+When there's no effects applied, the "Effects" part of the window
+will be empty. Right-clicking with the mouse should open an small menu
+that allows adding/removing efect filters to the image.
 
-- runs slow on quickcam and when the capture size is large - getting much better....
+The supported effect filters are:
 
-please email me if you have any problems building or running camorama or if you have any comments/questions <greg@fixedgear.org>.
+- Invert:
+  - invert image colors, making it a picture negative.
+- Threshold (Overall):
+  - any pixel with an average value `< x` turns black or `> x` turns white.
+ `x` is adjustable with the dither slider.
+- Threshold (Per Channel):
+  - same as above, but does it for each channel, red, green and blue.
+- Mirror:
+  - mirror image
+- Wacky:
+  - started out as an edge detection function, turned into, um, this ;-)
+- Reichardt:
+  - Hassenstein-Reichardt movement detection filter
+- Smooth:
+  - smooths image
+- Laplace:
+  - shoddy Laplace edge detection function
+- Monochrome:
+  - Remove colors from the image
+- Monochrome (Weight):
+  - Remove colors from the image
+- Sobel:
+  - didn't turn out right, but i thought this looked cool too :).
 
-tested cams:
+The buttons below the image and effects are:
+    - `Show Adjustments` show/hide the sliders
+    - `Full Screen`: Shows camorama in full screen mode;
+    - `Take Picture` capture image
 
-- creative webcam 3
-- quickcam express
-- 3com homeconnect camera - using the 3comhc driver, not the default kernel driver
+- The `Edit/Preferences` menu allows to setup several properties related
+  to image capture:
 
-# Requirements
+  - General:
+    - Automatic capture: enables periodic screen shots.
+      When selected, allows to select the capture interval.
 
-- a working version of gnome 2 (http://www.gnome.org)
-- video for linux (http://www.exploits.org/v4l)
+  - local capture: adjust the parameters for local capture/screen shots.
+     - directory - dir where captures will be saved
+     - filename - filename for captures
+     - append time to filename - should camorama append the time
+       to the filename.  When enabled, the file name will use this format:
+       %Y-%m-%d %H:%M:%S. It will also append a 3-digit number in order to
+       allow capturing more than one frame per second.
+       If not selected, a newly captured image will overwrite the last
+       image if it has the same name.
+     - add a timestamp to captured images - put a timestamp in the lower left
+       corner of the image. The format of such timestamp is defined via
+       timestamp properties (see below).
+     - image type - what to save the image as.
+
+  - remote capture: capture and upload capture image to a remote server.
+    Please notice that the credentials are maintained by Gnome;
+    - server: IP or domain for remote capture;
+    - type: type of capture. Can be ftp, scp or smb;
+    - save directory - where to save the file on the server.
+      Using the full pathname seems to work better.
+    - filename - filename for captures
+    - append time to filename - should camorama append the time
+      to the filename.  When enabled, the file name will use this format:
+      %Y-%m-%d %H:%M:%S. It will also append a 3-digit number in order to
+      allow capturing more than one frame per second.
+      If not selected, a newly captured image will overwrite the last
+      image if it has the same name.
+    - add a timestamp to captured images - put a timestamp in the lower left
+      corner of the image. The format of such timestamp is defined via
+      timestamp properties (see below).
+    - image type - what to save the image as.
+  - timestamp:  you can use the date/time, a custom string,
+    or both together.
+    - use custom string - use a custom string in the timestamp
+    - custom string - string you want to use in the timestamp
+    - draw date/time - add date/time in the timestamp
+
+Please add an issue at https://github.com/alessio/camorama if you
+have any problems building or running camorama or if you have any
+comments/questions.
 
 # Credits
 
-these are projects that i looked at when creating camorama:
+These are projects that the original author looked at when
+creating Camorama:
 
 - gspy (gspy.sourceforge.net) - gnome/v4l stuff, code for image timestamp
 - gqcam  - gnome/v4l stuff  -  the more i work on camorama, the more it becomes gqcam2 ;)
 - xawtv - v4l stuff
 - metacity-setup (https://help.ubuntu.com/community/Metacity) - configure scripts and gnome2 stuff
 - Mark McClelland for the code for YUV->RGB conversion
-- gnomemeeting for the eggtray icon stuff (system tray applet). 
+- gnomemeeting for the eggtray icon stuff (system tray applet).
