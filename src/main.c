@@ -91,16 +91,9 @@ static void close_app(GtkWidget* widget, cam_t *cam)
     g_object_unref (G_OBJECT (cam->xml));
     g_object_unref (G_OBJECT (cam->gc));
 
-#if GTK_MAJOR_VERSION < 3
-    gtk_main_quit();
-#endif
 }
 
-#if GTK_MAJOR_VERSION < 3
-static void activate(void)
-#else
 static void activate(GtkApplication *app)
-#endif
 {
     cam_t *cam = g_new0(cam_t, 1);
     GtkWidget *widget, *window;
@@ -111,9 +104,7 @@ static void activate(GtkApplication *app)
     cam->scale = 1.f;
     cam->dev = -1;
     cam->input = input;
-#if GTK_MAJOR_VERSION >= 3
     cam->app = app;
-#endif
     g_mutex_init(&cam->remote_save_mutex);
     g_mutex_init(&cam->pixbuf_mutex);
 
@@ -258,9 +249,7 @@ static void activate(GtkApplication *app)
 
     widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
 
-#if GTK_MAJOR_VERSION >= 3
     g_signal_connect(G_OBJECT(widget), "draw", G_CALLBACK(draw_callback), cam);
-#endif
 
     window = GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"));
 
@@ -274,18 +263,13 @@ static void activate(GtkApplication *app)
 
 int main(int argc, char *argv[])
 {
-#if GTK_MAJOR_VERSION >= 3
     GtkApplication *app;
     gint status;
-#else
-    GError *error = NULL;
-#endif
 
     bindtextdomain(PACKAGE_NAME, PACKAGE_LOCALE_DIR);
     bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
     textdomain(PACKAGE_NAME);
 
-#if GTK_MAJOR_VERSION >= 3
     app = gtk_application_new(NULL, G_APPLICATION_FLAGS_NONE);
     g_application_add_main_option_entries(G_APPLICATION(app), options);
     g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
@@ -295,16 +279,4 @@ int main(int argc, char *argv[])
     g_object_unref(app);
 
     return status;
-#else
-    if (!gtk_init_with_args(&argc, &argv, _("camorama"), options,
-                            PACKAGE_NAME, &error) || error) {
-        g_printerr(_("Invalid argument\nRun '%s --help'\n"), argv[0]);
-        return 1;
-    }
-    activate();
-
-    gtk_main();
-
-    return 0;
-#endif
 }

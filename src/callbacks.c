@@ -323,11 +323,7 @@ gboolean delete_event_prefs_window(GtkWidget *widget, GdkEvent *event,
 
 void on_quit_activate(GtkMenuItem *menuitem, cam_t *cam)
 {
-#if GTK_MAJOR_VERSION >= 3
     g_application_quit(G_APPLICATION(cam->app));
-#else
-    gtk_main_quit();
-#endif
 }
 
 void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data)
@@ -337,7 +333,6 @@ void on_preferences1_activate(GtkMenuItem *menuitem, gpointer user_data)
 
 static void get_geometry(cam_t *cam, unsigned int *width, unsigned int *height)
 {
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
     GdkRectangle geo;
     GdkWindow *win = gdk_screen_get_root_window(gdk_screen_get_default());
 
@@ -347,15 +342,10 @@ static void get_geometry(cam_t *cam, unsigned int *width, unsigned int *height)
 
     *width  = geo.width;
     *height = geo.height;
-#else
-    *width  = gdk_screen_width();
-    *height = gdk_screen_height();
-#endif
 }
 
 gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
 {
-#if GTK_MAJOR_VERSION >= 3
     GtkWidget *da = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
     gint width, height;
     gchar *title;
@@ -385,7 +375,6 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
     gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                          title);
     g_free(title);
-#endif
 
     return FALSE;
 }
@@ -393,7 +382,6 @@ gboolean on_configure_event(GtkMenuItem *menuitem, GdkEvent *event, cam_t *cam)
 gboolean on_window_state_event(GtkMenuItem *menuitem,
                                GdkEventWindowState *event, cam_t *cam)
 {
-#if GTK_MAJOR_VERSION >= 3
     if (event->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem3")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml, "menuitem4")));
@@ -405,7 +393,6 @@ gboolean on_window_state_event(GtkMenuItem *menuitem,
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml, "hbox31")));
         gtk_widget_show(cam->status);
     }
-#endif
 
     return GDK_EVENT_PROPAGATE;
 }
@@ -428,54 +415,15 @@ void toggle_fullscreen(GtkWidget *widget, cam_t *cam)
 
 void set_image_scale(cam_t *cam)
 {
-#if GTK_MAJOR_VERSION < 3
-    float scale, f;
-#endif
     unsigned int width, height;
 
     get_geometry(cam, &width, &height);
 
-#if GTK_MAJOR_VERSION >= 3
     gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
                                 320,
                                 (320 * cam->height) / cam->width);
     gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
                       width, height);
-#else
-    if (cam->scale > 0) {
-	if (cam->width > 0.66 * width || cam->height > 0.66 * height) {
-	    cam->scale = (0.66 * width) / cam->width;
-	    f = (0.66 * height) / cam->height;
-
-	    if (f < cam->scale)
-		cam->scale = f;
-	    if (cam->scale < 0.1f)
-	    cam->scale = 0.1f;
-	} else {
-	    cam->scale = 1.f;
-	}
-	scale = cam->scale;
-    } else {
-	scale = 1.f;
-    }
-
-    gtk_widget_set_size_request(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
-                                cam->width * scale,
-                                cam->height * scale);
-
-    gtk_window_resize(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
-                      320, 240);
-
-    if (scale == 1.f)
-        title = g_strdup_printf("Camorama - %s - %dx%d", cam->name,
-                                cam->width, cam->height);
-    else
-        title = g_strdup_printf("Camorama - %s - %dx%d (scale: %d%%)", cam->name,
-                                cam->width, cam->height, (int)(scale * 100.f));
-    gtk_window_set_title(GTK_WINDOW(GTK_WIDGET(gtk_builder_get_object(cam->xml, "main_window"))),
-                         title);
-    g_free(title);
-#endif
 
     g_settings_set_int(cam->gc, CAM_SETTINGS_WIDTH, cam->width);
     g_settings_set_int(cam->gc, CAM_SETTINGS_HEIGHT, cam->height);
@@ -617,116 +565,7 @@ static void apply_filters(cam_t *cam, unsigned char *pic_buf)
 
 #define MULT(d, c, a, t) G_STMT_START { t = c * a + 0x7f; d = ((t >> 8) + t) >> 8; } G_STMT_END
 
-/*
- * As GTK+2 doesn't have gdk_cairo_surface_create_from_pixbuf, we
- * Borrowed its implementation from
- *    https://github.com/bratsche/gtk-/blob/master/gdk/gdkcairo.c
- * With a small backport.
- */
-#if GTK_MAJOR_VERSION < 3
-static cairo_surface_t *create_from_pixbuf(const GdkPixbuf *pixbuf,
-                                           GdkWindow *for_window)
-{
-    gint width = gdk_pixbuf_get_width(pixbuf);
-    gint height = gdk_pixbuf_get_height(pixbuf);
-    guchar *gdk_pixels = gdk_pixbuf_get_pixels(pixbuf);
-    int gdk_rowstride = gdk_pixbuf_get_rowstride(pixbuf);
-    int n_channels = gdk_pixbuf_get_n_channels(pixbuf);
-    int cairo_stride;
-    guchar *cairo_pixels;
-    cairo_surface_t *surface;
-    int j;
-
-    surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24,
-                                         width, height);
-    cairo_stride = cairo_image_surface_get_stride(surface);
-    cairo_pixels = cairo_image_surface_get_data(surface);
-
-    for (j = height; j; j--) {
-        guchar *p = gdk_pixels;
-        guchar *q = cairo_pixels;
-
-        if (n_channels == 3) {
-            guchar *end = p + 3 * width;
-
-            while (p < end) {
-#if G_BYTE_ORDER == G_LITTLE_ENDIAN
-                q[0] = p[2];
-                q[1] = p[1];
-                q[2] = p[0];
-#else
-                q[1] = p[0];
-                q[2] = p[1];
-                q[3] = p[2];
-#endif
-                p += 3;
-                q += 4;
-            }
-        } else {
-            guchar *end = p + 4 * width;
-            guint t1, t2, t3;
-
-            while (p < end) {
-#if G_BYTE_ORDER == G_LITTLE_ENDIAN
-                MULT(q[0], p[2], p[3], t1);
-                MULT(q[1], p[1], p[3], t2);
-                MULT(q[2], p[0], p[3], t3);
-                q[3] = p[3];
-#else
-                q[0] = p[3];
-                MULT(q[1], p[0], p[3], t1);
-                MULT(q[2], p[1], p[3], t2);
-                MULT(q[3], p[2], p[3], t3);
-#endif
-
-                p += 4;
-                q += 4;
-            }
-#undef MULT
-        }
-
-        gdk_pixels += gdk_rowstride;
-        cairo_pixels += cairo_stride;
-    }
-
-    cairo_surface_mark_dirty(surface);
-    return surface;
-}
-
-static void show_buffer(cam_t *cam)
-{
-    GtkWidget *widget;
-    GdkWindow *window;
-    cairo_surface_t *surface;
-    cairo_t *cr;
-    const GdkRectangle rect = {
-        .x = 0, .y = 0,
-        .width = cam->width, .height = cam->height
-    };
-
-    if (!cam->pb)
-        return;
-
-    widget = GTK_WIDGET(gtk_builder_get_object(cam->xml, "da"));
-    window = gtk_widget_get_window(widget);
-
-    surface = create_from_pixbuf(cam->pb, window);
-    cr = gdk_cairo_create(window);
-    cairo_set_source_surface(cr, surface, 0, 0);
-
-    gdk_cairo_rectangle(cr, &rect);
-
-    if (cam->scale > 0 && cam->scale != 1.f)
-        cairo_scale(cr, cam->scale, cam->scale);
-
-    cairo_fill(cr);
-    cairo_destroy(cr);
-    cairo_surface_destroy(surface);
-
-    frames++;
-    frames2++;
-}
-#elif GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION < 94
+#if GTK_MAJOR_VERSION == 3
 /*
  * GTK 3 way: use a drawing callback
  */
@@ -1076,10 +915,6 @@ int select_video_dev(cam_t *cam)
 {
     GtkWidget *window, *widget;
     int ret;
-#if GTK_MAJOR_VERSION < 3
-    unsigned int i;
-    int index, last_minor = -1, p = 0;
-#endif
 
     /* Only ask if there are multiple cameras */
     if (n_valid_devices == 1) {
@@ -1098,32 +933,7 @@ int select_video_dev(cam_t *cam)
 
     ret = gtk_dialog_run(GTK_DIALOG(window));
 
-#if GTK_MAJOR_VERSION >= 3
     cam->video_dev = gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(widget));
-#else
-    /*
-     * For whatever weird reason, gtk_combo_box_text_get_active_text()
-     * is not work with Gtk 2.24. We might implement a map, but, as we'll
-     * probably drop support for it in the future, better to use the more
-     * optimized way for Gtk 3 and Gtk 4.
-     */
-
-    index = gtk_combo_box_get_active(GTK_COMBO_BOX(widget));
-
-    /* Should be aligned with the similar logic at retrieve_video_dev() */
-    for (i = 0; i < n_devices; i++) {
-        if (devices[i].is_valid) {
-            if (devices[i].minor == last_minor)
-                continue;
-            if (p == index)
-                break;
-            last_minor = devices[i].minor;
-            p++;
-        }
-    }
-    if (i < n_devices)
-        cam->video_dev = devices[i].fname;
-#endif
 
     gtk_widget_hide(window);
     return ret;

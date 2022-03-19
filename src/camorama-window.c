@@ -84,21 +84,6 @@ static void delete_filter_clicked(GtkTreeSelection *sel,
     g_list_free_full(paths, (GDestroyNotify) gtk_tree_path_free);
 }
 
-#if !(GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22)
-static void menu_position_func(GtkMenu *menu, gint *x, gint *y,
-                               gboolean *push_in, gpointer user_data)
-{
-    if (user_data) {
-        GdkEventButton *ev = (GdkEventButton *) user_data;
-
-        *x = ev->x;
-        *y = ev->y;
-    } else {
-        // find the selected row and open the popup there
-    }
-}
-#endif
-
 static void show_popup(cam_t *cam, GtkTreeView *treeview,
                        GdkEventButton *ev)
 {
@@ -143,20 +128,12 @@ static void show_popup(cam_t *cam, GtkTreeView *treeview,
     }
     g_free(filters);
 
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 90
+#if GTK_MAJOR_VERSION > 3
     gtk_widget_show(GTK_WIDGET(menu));
 #else
     gtk_widget_show_all(GTK_WIDGET(menu));
 #endif
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 22
     gtk_menu_popup_at_pointer(menu, NULL);
-#else
-    gtk_menu_popup(menu,
-                   NULL, NULL,
-                   menu_position_func, ev,
-                   ev ? ev->button : 0,
-                   ev ? ev->time : gtk_get_current_event_time());
-#endif
 }
 
 static void treeview_popup_menu_cb(cam_t *cam, GtkTreeView *treeview)
@@ -164,7 +141,7 @@ static void treeview_popup_menu_cb(cam_t *cam, GtkTreeView *treeview)
     show_popup(cam, treeview, NULL);
 }
 
-#if GTK_MAJOR_VERSION >= 3 && GTK_MINOR_VERSION >= 90
+#if GTK_MAJOR_VERSION > 3
 static gboolean treeview_clicked_cb(cam_t *cam, GtkButton *button)
 {
     GtkTreeView *treeview;
@@ -201,9 +178,7 @@ void load_interface(cam_t *cam)
                                                           "main_window"));
     GtkTreeView *treeview;
 
-#if GTK_MAJOR_VERSION >= 3
     gtk_application_add_window(cam->app, GTK_WINDOW(window));
-#endif
 
     gtk_widget_show(window);
 
@@ -512,7 +487,6 @@ void load_interface(cam_t *cam)
     gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(cam->xml, "string_entry")),
                              cam->usestring);
 
-#if GTK_MAJOR_VERSION >= 3
     // Detect window resize calls
     g_signal_connect(GTK_WIDGET(gtk_builder_get_object(cam->xml, "da")),
                      "configure-event", G_CALLBACK(on_configure_event), cam);
@@ -523,5 +497,4 @@ void load_interface(cam_t *cam)
                      "clicked", G_CALLBACK(toggle_fullscreen), cam);
     g_signal_connect(gtk_builder_get_object(cam->xml, "imagemenuitem2"),
                      "activate", G_CALLBACK(toggle_fullscreen), cam);
-#endif
 }

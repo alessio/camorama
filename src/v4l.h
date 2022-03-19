@@ -100,9 +100,7 @@ typedef struct camera {
     GtkBuilder *xml;
     GdkPixbuf *pb;
 
-#if GTK_MAJOR_VERSION >= 3
     GtkApplication *app;
-#endif
 
     CamoramaFilterChain *filter_chain;
 
