@@ -1,3 +1,10 @@
+2022-03-19 Mauro Carvalho Chehab <mchehab@kernel.org>
+
+	* Fix a regression at take picture logic
+	* Finnish translation updated
+	* Dropped old NEWS file and updated TODO
+	* Updated README.md file
+
 2022-03-10  Mauro Carvalho Chehab <mchehab@kernel.org>
 
 	* Add a dialog to optionally select the video device
