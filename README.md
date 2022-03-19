@@ -132,9 +132,9 @@ The supported effect filters are:
   - didn't turn out right, but i thought this looked cool too :).
 
 The buttons below the image and effects are:
-    - `Show Adjustments` show/hide the sliders
-    - `Full Screen`: Shows camorama in full screen mode;
-    - `Take Picture` capture image
+- `Show Adjustments` show/hide the sliders
+- `Full Screen`: Shows camorama in full screen mode;
+- `Take Picture` capture image
 
 - The `Edit/Preferences` menu allows to setup several properties related
   to image capture:
