@@ -308,9 +308,9 @@ gpointer save_thread(gpointer data)
         timenow[0] = '\0';
 
     if (cam->rtimefn == TRUE) {
-        output_uri_string = g_strdup_printf("%s/%s-%s.%s", cam->uri,
+        output_uri_string = g_strdup_printf("%s/%s-%s-%03d.%s", cam->uri,
                                             cam->capturefile,
-                                            timenow, ext);
+                                            timenow, cam->frame_number % 1000, ext);
     } else {
         output_uri_string = g_strdup_printf("%s/%s.%s", cam->uri,
                                             cam->capturefile, ext);
@@ -394,7 +394,9 @@ int local_save(cam_t *cam)
         fprintf(stderr, "time = %s\n", timenow);
 
     if (cam->timefn == TRUE)
-        filename = g_strdup_printf("%s-%s.%s", cam->capturefile, timenow, ext);
+        filename = g_strdup_printf("%s-%s-%03d.%s",
+                                   cam->capturefile, timenow,
+                                   cam->frame_number % 1000, ext);
     else
         filename = g_strdup_printf("%s.%s", cam->capturefile, ext);
 

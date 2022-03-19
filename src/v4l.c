@@ -408,6 +408,7 @@ unsigned char *cam_read(cam_t *cam)
     }
     if (ret)
         return NULL;
+    cam->frame_number++;
     g_mutex_unlock(cam->pixbuf_mutex);
 
     return pic_buf;
