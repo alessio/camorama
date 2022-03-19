@@ -4,13 +4,13 @@
 # Ilkka Tuohela <hile@iki.fi> 2004-2005.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2020.
-# Jan Kuparinen <copper_fin@hotmail.com>, 2020.
+# Jan Kuparinen <copper_fin@hotmail.com>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-10 23:05+0100\n"
-"PO-Revision-Date: 2020-11-23 20:35+0000\n"
+"PO-Revision-Date: 2022-03-16 19:17+0000\n"
 "Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "camorama/master/fi/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -303,14 +303,12 @@ msgid "_Take Picture"
 msgstr "_Ota kuva"
 
 #: data/camorama-gtk3.ui:89
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Vaihtelee paikallista kuvankaappausta"
+msgstr "Vaihda _koko näyttö"
 
 #: data/camorama-gtk3.ui:404
 msgid "Full Screen"
-msgstr ""
+msgstr "Koko näytön tila"
 
 #: data/camorama-gtk4.ui:74
 msgid "_Quit"
@@ -737,19 +735,15 @@ msgstr "käytä read():ia mmap():in sijasta"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "poista videoskaalaus käytöstä"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "käytä read():ia mmap():in sijasta"
+msgstr "käytä userptr pointer:ia mmap():in sijasta"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "v4l-laite on käytössä"
+msgstr "käytettävä v4l-laitetulo"
 
 #: src/main.c:133
 #, c-format
@@ -816,29 +810,26 @@ msgstr ""
 
 #: src/v4l.c:991
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Laitteen videoformaatit eivät ole yhteensopivia camoraman kanssa."
 
 #: src/v4l.c:1007
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Videolaitteeseen %s ei saatu yhteyttä.\n"
-"Tarkista yhteys kameraan."
+"Ikkunan tietoja ei voitu asettaa videolaitteeseen (%s).\n"
+"Tarkista yhteys."
 
 #: src/v4l.c:1028
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Ei voitu asettaa muotoa %c%c%c%c videolaitteessa (%s)."
 
 #: src/v4l.c:1047
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Palautettu leveys on nolla videolaitteessa (%s)!"
 
 #: src/v4l.c:1071 src/v4l.c:1154
 #, c-format
@@ -847,10 +838,8 @@ msgstr ""
 "VIDIOC_REQBUFS  --  ei pystynyt pyytämään buffereita (%s), lopetetaan...."
 
 #: src/v4l.c:1080 src/v4l.c:1163 src/v4l.c:1178
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "buffereiden (%s) muistikartoitus epäonnistui, lopetetaan..."
+msgstr "ei voitu varata muistia videopuskureille, poistutaan...."
 
 #: src/v4l.c:1096
 #, c-format
@@ -874,11 +863,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "suoratoiston (%s) aloittaminen epäonnistui, lopetetaan..."
 
 #: src/v4l.c:1191
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
-"VIDIOC_QUERYBUF  --  ei pystynyt kyselemään buffereita (%s), lopetetaan...."
+msgstr "VIDIOC_QBUF  --  ei pystynyt kyselemään buffereita (%s), lopetetaan...."
 
 #: src/v4l.c:1232 src/v4l.c:1283
 #, c-format
