@@ -1946,9 +1946,6 @@
             <property name="can-focus">False</property>
             <property name="layout-style">end</property>
             <child>
-              <placeholder/>
-            </child>
-            <child>
               <object class="GtkButton" id="videodev_ok">
                 <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
@@ -1959,7 +1956,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">0</property>
               </packing>
             </child>
           </object>
