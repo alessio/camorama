@@ -261,6 +261,7 @@ gpointer save_thread(gpointer data)
     char timenow[64], *ext;
     struct tm *tm;
     GError *error = NULL;
+    int len;
 
     /* Check if it is ready to mount */
     if (!cam->rdir_ok)
@@ -302,7 +303,10 @@ gpointer save_thread(gpointer data)
 
     time(&t);
     tm = localtime(&t);
-    strftime(timenow, sizeof(timenow) - 1, "%s", tm);
+    len = strftime(timenow, sizeof(timenow) - 1, "%Y%m%d-%H:%M:%S", tm);
+    if (len < 0)
+        timenow[0] = '\0';
+
     if (cam->rtimefn == TRUE) {
         output_uri_string = g_strdup_printf("%s/%s-%s.%s", cam->uri,
                                             cam->capturefile,
@@ -382,7 +386,7 @@ int local_save(cam_t *cam)
 
     time(&t);
     tm = localtime(&t);
-    len = strftime(timenow, sizeof(timenow) - 1, "%s", tm);
+    len = strftime(timenow, sizeof(timenow) - 1, "%Y%m%d-%H:%M:%S", tm);
     if (len < 0)
         timenow[0] = '\0';
 
