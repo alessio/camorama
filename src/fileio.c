@@ -104,7 +104,7 @@ void remote_save(cam_t *cam)
     }
 
     if (cam->rtimestamp == TRUE) {
-        add_rgb_text(cam->tmp, cam->width, cam->height, cam->ts_string,
+        add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
                      cam->date_format, cam->usestring, cam->usedate);
     }
 
@@ -115,7 +115,7 @@ void remote_save(cam_t *cam)
     }
 
     filename = g_strdup_printf("camorama.%s", ext);
-    pb = gdk_pixbuf_new_from_data(cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
+    pb = gdk_pixbuf_new_from_data(cam->pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                   cam->width, cam->height,
                                   cam->width * cam->bpp / 8, NULL, NULL);
 
@@ -364,7 +364,7 @@ int local_save(cam_t *cam)
     }
 
     if (cam->timestamp == TRUE)
-        add_rgb_text(cam->tmp, cam->width, cam->height, cam->ts_string,
+        add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
                      cam->date_format, cam->usestring, cam->usedate);
 
     time(&t);
@@ -407,7 +407,7 @@ int local_save(cam_t *cam)
         return -1;
     }
 
-    pb = gdk_pixbuf_new_from_data(cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8,
+    pb = gdk_pixbuf_new_from_data(cam->pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                   cam->width, cam->height,
                                   (cam->width * cam->bpp / 8), NULL, NULL);
     pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
