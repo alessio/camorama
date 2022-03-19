@@ -62,7 +62,7 @@ That's the Camorama GUI:
 
 ```
 +---------------------------------------------------------------+
-|     Camorama - HD Pro Webcam C920 - 800x6-- (scale: 75%)      |
+|     Camorama - HD Pro Webcam C920 - 800x600 (scale: 75%)      |
 | File   Edit   View   Help                                     |
 +------------------------------------------+--------------------+
 |                                          |  Effects           |
