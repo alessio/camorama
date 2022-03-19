@@ -96,36 +96,26 @@ static void close_app(GtkWidget* widget, cam_t *cam)
 #endif
 }
 
-static cam_t cam_object = { 0 };
-
 #if GTK_MAJOR_VERSION < 3
 static void activate(void)
 #else
 static void activate(GtkApplication *app)
 #endif
 {
-    cam_t *cam = &cam_object;
+    cam_t *cam = g_new0(cam_t, 1);
     GtkWidget *widget, *window;
     unsigned int i;
 
-    /* set some default values */
-    cam->frame_number = 0;
+    /* set non-zero default values */
     cam->size = PICHALF;
-    cam->video_dev = NULL;
-    cam->read = FALSE;
-    cam->width = 0;
-    cam->height = 0;
-    cam->res = NULL;
-    cam->n_res = 0;
     cam->scale = 1.f;
     cam->dev = -1;
     cam->input = input;
 #if GTK_MAJOR_VERSION >= 3
     cam->app = app;
 #endif
-
-    cam->remote_save_mutex = g_mutex_new();
-    cam->pixbuf_mutex = g_mutex_new();
+    g_mutex_init(&cam->remote_save_mutex);
+    g_mutex_init(&cam->pixbuf_mutex);
 
     /* gtk is initialized now */
     camorama_filters_init();

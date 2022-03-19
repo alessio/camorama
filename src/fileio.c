@@ -92,13 +92,13 @@ void remote_save(cam_t *cam)
     GdkPixbuf *pb;
 
     /* Don't allow multiple threads to save image at the same time */
-    g_mutex_lock(cam->remote_save_mutex);
+    g_mutex_lock(&cam->remote_save_mutex);
     if (cam->n_threads) {
-        g_mutex_unlock(cam->remote_save_mutex);
+        g_mutex_unlock(&cam->remote_save_mutex);
         return;
     }
     cam->n_threads++;
-    g_mutex_unlock(cam->remote_save_mutex);
+    g_mutex_unlock(&cam->remote_save_mutex);
 
     switch (cam->rsavetype) {
     case JPEG:
@@ -116,7 +116,7 @@ void remote_save(cam_t *cam)
         goto ret;
     }
 
-    g_mutex_lock(cam->pixbuf_mutex);
+    g_mutex_lock(&cam->pixbuf_mutex);
     if (cam->rtimestamp == TRUE) {
         add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
                      cam->date_format, cam->usestring, cam->usedate);
@@ -125,7 +125,7 @@ void remote_save(cam_t *cam)
     pb = gdk_pixbuf_new_from_data(cam->pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                   cam->width, cam->height,
                                   cam->width * cam->bpp / 8, NULL, NULL);
-    g_mutex_unlock(cam->pixbuf_mutex);
+    g_mutex_unlock(&cam->pixbuf_mutex);
 
     filename = g_strdup_printf("camorama.%s", ext);
     if (pb == NULL) {
@@ -160,9 +160,9 @@ void remote_save(cam_t *cam)
     g_free(filename);
 
 ret:
-    g_mutex_lock(cam->remote_save_mutex);
+    g_mutex_lock(&cam->remote_save_mutex);
     cam->n_threads--;
-    g_mutex_unlock(cam->remote_save_mutex);
+    g_mutex_unlock(&cam->remote_save_mutex);
 
     g_free(ext);
 }
@@ -425,7 +425,7 @@ int local_save(cam_t *cam)
         return -1;
     }
 
-    g_mutex_lock(cam->pixbuf_mutex);
+    g_mutex_lock(&cam->pixbuf_mutex);
     if (cam->timestamp == TRUE)
         add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
                      cam->date_format, cam->usestring, cam->usedate);
@@ -433,7 +433,7 @@ int local_save(cam_t *cam)
     pb = gdk_pixbuf_new_from_data(cam->pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                   cam->width, cam->height,
                                   (cam->width * cam->bpp / 8), NULL, NULL);
-    g_mutex_unlock(cam->pixbuf_mutex);
+    g_mutex_unlock(&cam->pixbuf_mutex);
 
     pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
     if (pbs == FALSE) {

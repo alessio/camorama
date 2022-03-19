@@ -72,8 +72,8 @@ typedef struct camera {
 
     int n_threads;
 
-    GMutex *remote_save_mutex;      /* Protects n_threads */
-    GMutex *pixbuf_mutex;           /* Protects pic_buf */
+    GMutex remote_save_mutex;      /* Protects n_threads */
+    GMutex pixbuf_mutex;           /* Protects pic_buf */
 
     unsigned int min_width, min_height, max_width, max_height;
     struct colorspace_parms colorspc;
