@@ -782,12 +782,14 @@ gint timeout_func(cam_t *cam)
     if (!pic_buf)
         return TRUE;
 
+    g_mutex_lock(cam->pixbuf_mutex);
     apply_filters(cam, pic_buf);
 
     cam->pb = gdk_pixbuf_new_from_data(pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                        cam->width, cam->height,
                                        (cam->width * 3),
                                        NULL, NULL);
+    g_mutex_unlock(cam->pixbuf_mutex);
 
     show_buffer(cam);
 

@@ -92,6 +92,15 @@ void remote_save(cam_t *cam)
     gboolean pbs;
     GdkPixbuf *pb;
 
+    /* Don't allow multiple threads to save image at the same time */
+    g_mutex_lock(cam->remote_save_mutex);
+    if (cam->n_threads) {
+        g_mutex_unlock(cam->remote_save_mutex);
+        return;
+    }
+    cam->n_threads++;
+    g_mutex_unlock(cam->remote_save_mutex);
+
     switch (cam->rsavetype) {
     case JPEG:
         ext = g_strdup((gchar *) "jpeg");
@@ -103,30 +112,31 @@ void remote_save(cam_t *cam)
         ext = g_strdup((gchar *) "jpeg");
     }
 
+    if (chdir("/tmp") != 0) {
+        error_dialog(_("Could save temporary image file in /tmp."));
+        goto ret;
+    }
+
+    g_mutex_lock(cam->pixbuf_mutex);
     if (cam->rtimestamp == TRUE) {
         add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
                      cam->date_format, cam->usestring, cam->usedate);
     }
 
-    if (chdir("/tmp") != 0) {
-        error_dialog(_("Could save temporary image file in /tmp."));
-        g_free(ext);
-        return;
-    }
-
-    filename = g_strdup_printf("camorama.%s", ext);
     pb = gdk_pixbuf_new_from_data(cam->pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                   cam->width, cam->height,
                                   cam->width * cam->bpp / 8, NULL, NULL);
+    g_mutex_unlock(cam->pixbuf_mutex);
 
+    filename = g_strdup_printf("camorama.%s", ext);
     if (pb == NULL) {
         error_message = g_strdup_printf(_("Unable to create image '%s'."),
                                         filename);
         error_dialog(error_message);
         g_free(error_message);
         g_free(filename);
-        g_free(ext);
-        return;
+
+        goto ret;
     }
 
     pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
@@ -136,8 +146,8 @@ void remote_save(cam_t *cam)
         error_dialog(error_message);
         g_free(error_message);
         g_free(filename);
-        g_free(ext);
-        return;
+
+        goto ret;
     }
 
     remote_thread = g_thread_new("remote", &save_thread, cam);
@@ -149,6 +159,12 @@ void remote_save(cam_t *cam)
     }
 
     g_free(filename);
+
+ret:
+    g_mutex_lock(cam->remote_save_mutex);
+    cam->n_threads--;
+    g_mutex_unlock(cam->remote_save_mutex);
+
     g_free(ext);
 }
 
@@ -319,6 +335,7 @@ gpointer save_thread(gpointer data)
     /*  write the data */
     ret = g_output_stream_write(G_OUTPUT_STREAM(fout), tmp, bytes, NULL, &error);
     if (ret < 0) {
+        g_output_stream_close(G_OUTPUT_STREAM(fout), NULL, &error);
         error_message = g_strdup_printf(_("An error occurred writing to %s: %s."),
                                         output_uri_string, error->message);
         error_dialog(error_message);
@@ -363,10 +380,6 @@ int local_save(cam_t *cam)
         ext = g_strdup((gchar *) "jpeg");
     }
 
-    if (cam->timestamp == TRUE)
-        add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
-                     cam->date_format, cam->usestring, cam->usedate);
-
     time(&t);
     tm = localtime(&t);
     len = strftime(timenow, sizeof(timenow) - 1, "%s", tm);
@@ -407,9 +420,16 @@ int local_save(cam_t *cam)
         return -1;
     }
 
+    g_mutex_lock(cam->pixbuf_mutex);
+    if (cam->timestamp == TRUE)
+        add_rgb_text(cam->pic_buf, cam->width, cam->height, cam->ts_string,
+                     cam->date_format, cam->usestring, cam->usedate);
+
     pb = gdk_pixbuf_new_from_data(cam->pic_buf, GDK_COLORSPACE_RGB, FALSE, 8,
                                   cam->width, cam->height,
                                   (cam->width * cam->bpp / 8), NULL, NULL);
+    g_mutex_unlock(cam->pixbuf_mutex);
+
     pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
     if (pbs == FALSE) {
         error_message = g_strdup_printf(_("Could not save image '%s/%s'."),

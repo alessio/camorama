@@ -390,6 +390,7 @@ unsigned char *cam_read(cam_t *cam)
     unsigned char *pic_buf = cam->pic_buf;
     int ret = 0;
 
+    g_mutex_lock(cam->pixbuf_mutex);
     if (cam->read) {
         if (cam->use_libv4l)
             ret = v4l2_read(cam->dev, cam->pic_buf,
@@ -407,6 +408,7 @@ unsigned char *cam_read(cam_t *cam)
     }
     if (ret)
         return NULL;
+    g_mutex_unlock(cam->pixbuf_mutex);
 
     return pic_buf;
 }
