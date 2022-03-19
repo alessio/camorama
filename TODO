@@ -1,16 +1,12 @@
 camorama todo
 
 - FIX THREADS IN REMOTE CAPTURE!
-- put read() back in - done
-- allow resize on the fly - kind of done
 - allow configuration of format of timestamp (image and filename)
 - better documentation - ongoing ;)
 - better/more filters  - ongoing...
-- fullscreen mode ala xawtv
 - look at having filters as plugins
 - recording of video
 - add support for gnome system tray? - almost done
-- disable adjustment sliders for cams that don't support certain features (color, white balance, etc)
 - put timestamp into its own dialog with an "Edit" menu entry? 
 - make the status bar report the time until the next auto-capture
 - include options for font, font color, background color, etc in timestame editor?  This might qualify as too much hassle and/or too many prefs...
