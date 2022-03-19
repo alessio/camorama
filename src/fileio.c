@@ -59,11 +59,10 @@ add_rgb_text(guchar *image, int width, int height, char *cstring,
 
             /* loop for each column of font data */
         for (i = CHAR_WIDTH - 1; i >= 0; i--) {
-                /* write a black background under text
-                 * comment out the following block to get white letters on picture background */
-                /* ptr[0] = 0;
-                 * ptr[1] = 0;
-                 * ptr[2] = 0; */
+                /* write a black background under text */
+                ptr[0] = 0;
+                ptr[1] = 0;
+                ptr[2] = 0;
                 if (f & (CHAR_START << i)) {
                     /* white text */
                     total = ptr[0] + ptr[1] + ptr[2];
