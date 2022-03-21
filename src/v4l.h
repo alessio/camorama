@@ -57,6 +57,27 @@ struct colorspace_parms {
     enum v4l2_quantization   quantization;
 };
 
+typedef struct  {
+    char *name;
+    gint64 value;
+} video_control_menu_t;
+
+typedef struct {
+    char *name;
+    char *group;
+
+    enum v4l2_ctrl_type type;
+    guint32 id;
+    gint32 min, max, def;
+    gint32 step;
+
+    unsigned int menu_size;
+    video_control_menu_t *menu;
+
+    void *next;
+
+} video_controls_t;
+
 typedef struct camera {
     int dev;
     unsigned int width, height;
@@ -64,6 +85,9 @@ typedef struct camera {
     float scale;
     CamoImageSize size;
     char name[32];
+
+    video_controls_t *controls;
+
     int contrast, brightness, whiteness, colour, hue, zoom, zoom_cid;
     unsigned int bytesperline, sizeimage;
     unsigned int pixformat;
@@ -121,8 +145,11 @@ int cam_open(cam_t *cam, int oflag);
 int cam_close(cam_t *cam);
 unsigned char *cam_read(cam_t *cam);
 int cam_ioctl(cam_t *cam, unsigned long cmd, void *arg);
-int cam_set_control(cam_t *cam, int cid, int value);
-int cam_get_control(cam_t *cam, int cid);
+int cam_query_controls(cam_t *cam);
+void cam_free_controls(cam_t *cam);
+video_controls_t *cam_find_control_per_id(cam_t *cam, guint32 id);
+int cam_set_control(cam_t *cam, guint32 id, void *value);
+int cam_get_control(cam_t *cam, guint32 id, void *value);
 
 int camera_cap(cam_t *);
 void print_cam(cam_t *);

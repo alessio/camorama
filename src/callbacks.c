@@ -698,42 +698,42 @@ void contrast_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->contrast = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    cam_set_control(cam, V4L2_CID_CONTRAST, cam->contrast);
+    cam_set_control(cam, V4L2_CID_CONTRAST, &cam->contrast);
 }
 
 void brightness_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->brightness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    cam_set_control(cam, V4L2_CID_BRIGHTNESS, cam->brightness);
+    cam_set_control(cam, V4L2_CID_BRIGHTNESS, &cam->brightness);
 }
 
 void zoom_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->zoom = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    cam_set_control(cam, cam->zoom_cid, cam->zoom);
+    cam_set_control(cam, cam->zoom_cid, &cam->zoom);
 }
 
 void colour_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->colour = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    cam_set_control(cam, V4L2_CID_SATURATION, cam->colour);
+    cam_set_control(cam, V4L2_CID_SATURATION, &cam->colour);
 }
 
 void hue_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->hue = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    cam_set_control(cam, V4L2_CID_HUE, cam->hue);
+    cam_set_control(cam, V4L2_CID_HUE, &cam->hue);
 }
 
 void wb_change(GtkScale *sc1, cam_t *cam)
 {
 
     cam->whiteness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
-    cam_set_control(cam, V4L2_CID_WHITENESS, cam->whiteness);
+    cam_set_control(cam, V4L2_CID_WHITENESS, &cam->whiteness);
 }
 
 /*
@@ -1069,6 +1069,8 @@ void start_camera(cam_t *cam)
         free(cam->tmp);
         cam->tmp = NULL;
     }
+
+    cam_free_controls(cam);
 
     /* Reset also frame counts, as the new camera can use a different fps */
     frames = 0;

@@ -422,55 +422,411 @@ int cam_ioctl(cam_t *cam, unsigned long cmd, void *arg)
         return ioctl(cam->dev, cmd, arg);
 }
 
-int cam_set_control(cam_t *cam, int cid, int value)
+video_controls_t *cam_find_control_per_id(cam_t *cam, guint32 id)
 {
-    struct v4l2_queryctrl qctrl = { .id = cid };
-    struct v4l2_control ctrl = { .id = cid };
-    int ret;
+    video_controls_t *p = cam->controls;
 
-    if (cam->use_libv4l)
-        return v4l2_set_control(cam->dev, cid, value);
-
-    ret = cam_ioctl(cam, VIDIOC_QUERYCTRL, &qctrl);
-    if (ret)
-            return ret;
-
-    if ((qctrl.flags & V4L2_CTRL_FLAG_DISABLED) ||
-        (qctrl.flags & V4L2_CTRL_FLAG_GRABBED))
-            return 0;
-
-    if (qctrl.type == V4L2_CTRL_TYPE_BOOLEAN)
-        ctrl.value = value ? 1 : 0;
-    else
-        ctrl.value = ((long long) value * (qctrl.maximum - qctrl.minimum) +
-                      32767) / 65535 + qctrl.minimum;
-
-    ret = cam_ioctl(cam, VIDIOC_S_CTRL, &ctrl);
-
-    return ret;
-}
-
-int cam_get_control(cam_t *cam, int cid)
-{
-        struct v4l2_queryctrl qctrl = { .id = cid };
-        struct v4l2_control ctrl = { .id = cid };
-
-    if (cam->use_libv4l)
-        return v4l2_get_control(cam->dev, cid);
-
-    if (cam_ioctl(cam, VIDIOC_QUERYCTRL, &qctrl))
-        return -1;
-    if (qctrl.flags & V4L2_CTRL_FLAG_DISABLED) {
-        errno = EINVAL;
-        return -1;
+    while (p) {
+	if (p->id == id)
+	    return p;
+	p = p->next;
     }
 
-    if (cam_ioctl(cam, VIDIOC_G_CTRL, &ctrl))
-            return -1;
+    return NULL;
+}
 
-    return (((long long) ctrl.value - qctrl.minimum) * 65535 +
-                        (qctrl.maximum - qctrl.minimum) / 2) /
-            (qctrl.maximum - qctrl.minimum);
+void cam_free_controls(cam_t *cam)
+{
+    guint32 i;
+
+    if (cam->controls) {
+	video_controls_t *p = cam->controls;
+	while (p) {
+	    free(p->name);
+	    free(p->group);
+	    if (p->menu) {
+		for (i = 0; i < p->menu_size; i++)
+		    free(p->menu[i].name);
+		free(p->menu);
+	    }
+	    p = p->next;
+	}
+	free(cam->controls);
+    }
+    cam->controls = NULL;
+}
+
+static const char *cam_ctrl_type(uint32_t type)
+{
+    switch (type) {
+    /* All controls below are available since, at least, Kernel 3.16 */
+    case V4L2_CTRL_TYPE_INTEGER:
+	return "int32";
+    case V4L2_CTRL_TYPE_BOOLEAN:
+	return "bool";
+    case V4L2_CTRL_TYPE_MENU:
+	return "menu";
+    case V4L2_CTRL_TYPE_BUTTON:
+	return "button";
+    case V4L2_CTRL_TYPE_INTEGER64:
+	return "int64";
+    case V4L2_CTRL_TYPE_CTRL_CLASS:
+	return "ctrl class";
+    case V4L2_CTRL_TYPE_STRING:
+	return "string";
+    case V4L2_CTRL_TYPE_INTEGER_MENU:
+	return "int menu";
+    case V4L2_CTRL_TYPE_BITMASK:
+	return "bitmask";
+    case V4L2_CTRL_TYPE_U8:
+	return "compound u8";
+    case V4L2_CTRL_TYPE_U16:
+	return "compound u16";
+    case V4L2_CTRL_TYPE_U32:
+	return "compound 32";
+
+    /* Kernel v5.4 and upper, so test them to avoid build issues */
+#ifdef V4L2_CTRL_TYPE_AREA
+    case V4L2_CTRL_TYPE_AREA:
+	return "area";
+#endif
+#ifdef V4L2_CTRL_TYPE_HDR10_CLL_INFO
+    case V4L2_CTRL_TYPE_HDR10_CLL_INFO:
+	return"HDR10 CLL_INFO";
+#endif
+#ifdef V4L2_CTRL_TYPE_HDR10_MASTERING_DISPLAY
+    case V4L2_CTRL_TYPE_HDR10_MASTERING_DISPLAY:
+	return"HDR10 MASTERING_DISPLAY";
+#endif
+#ifdef V4L2_CTRL_TYPE_H264_SPS
+    case V4L2_CTRL_TYPE_H264_SPS:
+	return"H264 SPS";
+#endif
+#ifdef V4L2_CTRL_TYPE_H264_PPS
+    case V4L2_CTRL_TYPE_H264_PPS:
+	return"H264 PPS";
+#endif
+#ifdef V4L2_CTRL_TYPE_H264_SCALING_MATRIX
+    case V4L2_CTRL_TYPE_H264_SCALING_MATRIX:
+	return"H264 SCALING_MATRIX";
+#endif
+#ifdef V4L2_CTRL_TYPE_H264_SLICE_PARAMS
+    case V4L2_CTRL_TYPE_H264_SLICE_PARAMS:
+	return"H264 SLICE_PARAMS";
+#endif
+#ifdef V4L2_CTRL_TYPE_H264_DECODE_PARAMS
+    case V4L2_CTRL_TYPE_H264_DECODE_PARAMS:
+	return"H264 DECODE_PARAMS";
+#endif
+#ifdef V4L2_CTRL_TYPE_H264_PRED_WEIGHTS
+    case V4L2_CTRL_TYPE_H264_PRED_WEIGHTS:
+	return"H264 PRED_WEIGHTS";
+#endif
+#ifdef V4L2_CTRL_TYPE_FWHT_PARAMS
+    case V4L2_CTRL_TYPE_FWHT_PARAMS:
+	return"FWHT PARAMS";
+#endif
+#ifdef V4L2_CTRL_TYPE_VP8_FRAME
+    case V4L2_CTRL_TYPE_VP8_FRAME:
+	return"VP8 FRAME";
+#endif
+#ifdef V4L2_CTRL_TYPE_MPEG2_QUANTISATION
+    case V4L2_CTRL_TYPE_MPEG2_QUANTISATION:
+	return"MPEG2 QUANTISATION";
+#endif
+#ifdef V4L2_CTRL_TYPE_MPEG2_SEQUENCE
+    case V4L2_CTRL_TYPE_MPEG2_SEQUENCE:
+	return"MPEG2 SEQUENCE";
+#endif
+#ifdef V4L2_CTRL_TYPE_MPEG2_PICTURE
+    case V4L2_CTRL_TYPE_MPEG2_PICTURE:
+	return"MPEG2 PICTURE";
+#endif
+#ifdef V4L2_CTRL_TYPE_VP9_COMPRESSED_HDR
+    case V4L2_CTRL_TYPE_VP9_COMPRESSED_HDR:
+	return"VP9 COMPRESSED_HDR";
+#endif
+#ifdef V4L2_CTRL_TYPE_VP9_FRAME
+    case V4L2_CTRL_TYPE_VP9_FRAME:
+	return"VP9 FRAME";
+#endif
+    default:
+	return "unknown";
+    }
+}
+
+static const char *cam_ctrl_class(uint32_t class)
+{
+    switch (class) {
+    /* All controls below are available since, at least, Kernel 3.16 */
+    case V4L2_CTRL_CLASS_USER:
+	return "User";
+    case V4L2_CTRL_CLASS_CODEC:
+	return "Codec";
+    case V4L2_CTRL_CLASS_CAMERA:
+	return "Camera";
+    case V4L2_CTRL_CLASS_FM_TX:
+	return "FM Modulator";
+    case V4L2_CTRL_CLASS_FLASH:
+	return "Camera flash";
+    case V4L2_CTRL_CLASS_JPEG:
+	return "JPEG-compression";
+    case V4L2_CTRL_CLASS_IMAGE_SOURCE:
+	return "Image source";
+    case V4L2_CTRL_CLASS_IMAGE_PROC:
+	return "Image processing";
+    case V4L2_CTRL_CLASS_DV:
+	return "Digital Video";
+    case V4L2_CTRL_CLASS_FM_RX:
+	return "FM Receiver";
+    case V4L2_CTRL_CLASS_RF_TUNER:
+	return "RF tuner";
+    case V4L2_CTRL_CLASS_DETECT:
+	return "Detection";
+    /* Control classes for Kernel v5.10 and upper */
+#ifdef V4L2_CTRL_CLASS_CODEC_STATELESS
+    case V4L2_CTRL_CLASS_CODEC_STATELESS:
+	return "Stateless Codec";
+#endif
+#ifdef V4L2_CTRL_CLASS_COLORIMETRY
+    case V4L2_CTRL_CLASS_COLORIMETRY:
+	return "Colorimetry";
+#endif
+    default:
+	return "Unknown";
+    }
+}
+
+// return values: 1: ignore, 0: added, -1: silently ignore
+static int cam_add_ctrl(cam_t *cam,
+                        struct v4l2_query_ext_ctrl *query,
+                        video_controls_t **ptr)
+{
+    // Control is disabled, ignore it. Please notice that disabled controls
+    // can be re-enabled. The right thing here would be to get those too,
+    // and add a logic to
+    if (query->flags & V4L2_CTRL_FLAG_DISABLED)
+	return 1;
+
+    /* Silently ignore control classes */
+    if (query->type == V4L2_CTRL_TYPE_CTRL_CLASS)
+	return -1;
+
+    // There's not much sense on displaying permanent read-only controls
+    if (query->flags & V4L2_CTRL_FLAG_READ_ONLY)
+	return 1;
+
+    // Allocate a new element on the linked list
+    if (!cam->controls) {
+	*ptr	      = g_new0(video_controls_t, 1);
+	cam->controls = (void *)*ptr;
+    } else {
+	(*ptr)->next = g_new0(video_controls_t, 1);;
+	*ptr	       = (*ptr)->next;
+    }
+
+    // Fill control data
+    (*ptr)->id	  = query->id;
+    (*ptr)->name  = strdup((const char *)query->name);
+    (*ptr)->group = strdup(cam_ctrl_class(V4L2_CTRL_ID2CLASS(query->id)));
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wswitch-enum"
+    switch (query->type) {
+    case V4L2_CTRL_TYPE_INTEGER:
+	(*ptr)->type = V4L2_CTRL_TYPE_INTEGER;
+	(*ptr)->min  = query->minimum;
+	(*ptr)->max  = query->maximum;
+	(*ptr)->def  = query->default_value;
+	(*ptr)->step = query->step;
+	return (0);
+    case V4L2_CTRL_TYPE_INTEGER64:
+	(*ptr)->type = V4L2_CTRL_TYPE_INTEGER64;
+	(*ptr)->min  = query->minimum;
+	(*ptr)->max  = query->maximum;
+	(*ptr)->def  = query->default_value;
+	(*ptr)->step = query->step;
+	return (0);
+    case V4L2_CTRL_TYPE_BOOLEAN:
+	(*ptr)->type = V4L2_CTRL_TYPE_BOOLEAN;
+	return (0);
+    case V4L2_CTRL_TYPE_BUTTON:
+	(*ptr)->type = V4L2_CTRL_TYPE_BUTTON;
+	return (0);
+    case V4L2_CTRL_TYPE_STRING:
+	(*ptr)->type = V4L2_CTRL_TYPE_STRING;
+	return (0);
+    case V4L2_CTRL_TYPE_INTEGER_MENU:
+    case V4L2_CTRL_TYPE_MENU: {
+	struct v4l2_querymenu menu = { 0 };
+	video_control_menu_t *first = NULL, *p;
+	int n_menu = 0;
+
+	menu.id = query->id;
+
+	for (menu.index = query->minimum; menu.index <= query->maximum;
+	     menu.index++) {
+	    if (!ioctl(cam->dev, VIDIOC_QUERYMENU, &menu)) {
+		first = g_realloc(first, (n_menu + 1) * sizeof(*(*ptr)->menu));
+
+		p	 = &first[n_menu];
+		p->value = menu.index;
+
+		if (query->type == V4L2_CTRL_TYPE_INTEGER_MENU)
+                   p->name = g_strdup_printf("%lli", menu.value);
+		else
+		    p->name = g_strdup((const char *)menu.name);
+
+		n_menu++;
+	    }
+	}
+	(*ptr)->menu	    = first;
+	(*ptr)->menu_size   = n_menu;
+	(*ptr)->min	    = query->minimum;
+	(*ptr)->max	    = query->maximum;
+	(*ptr)->def	    = query->default_value;
+	(*ptr)->type	    = V4L2_CTRL_TYPE_MENU;
+	return (0);
+    }
+    default:
+	return (1);
+    }
+    #pragma GCC diagnostic pop
+}
+
+int cam_query_controls(cam_t *cam)
+{
+    video_controls_t *ptr = NULL;
+    struct v4l2_query_ext_ctrl query = { 0 };
+    int ignore;
+    const char *old_class = NULL;
+
+    // Free controls list if not NULL
+    cam_free_controls(cam);
+
+    query.id = V4L2_CTRL_FLAG_NEXT_CTRL;
+    while (!v4l2_ioctl(cam->dev, VIDIOC_QUERY_EXT_CTRL, &query)) {
+	ignore = cam_add_ctrl(cam, &query, &ptr);
+
+	if (ignore >= 0 && cam->debug == TRUE) {
+	    unsigned int i;
+	    const char *class = cam_ctrl_class(V4L2_CTRL_ID2CLASS(query.id));
+	    if (class != old_class)
+		printf("Control class %s:\n", class);
+
+	    printf("  %s (%s)%s\n", query.name, cam_ctrl_type(query.type),
+		   ignore ? " - Ignored" : "");
+
+	    for (i = 0; i < ptr->menu_size; i++)
+		printf("    %" G_GINT64_FORMAT ": %s\n",
+                       ptr->menu[i].value, ptr->menu[i].name);
+
+	    old_class = class;
+	}
+
+	query.id |= V4L2_CTRL_FLAG_NEXT_CTRL;
+    }
+
+    return (0);
+}
+
+int cam_set_control(cam_t *cam, guint32 id, void *value)
+{
+    struct v4l2_ext_controls ctrls;
+    struct v4l2_ext_control c;
+    video_controls_t *p;
+    int ret;
+
+    p = cam_find_control_per_id(cam, id);
+    if (!p)
+	return -1; // we have no such a control on the list
+
+    memset(&ctrls, 0, sizeof(ctrls));
+    ctrls.count = 1;
+    /* Added on Kernel v4.4. Let's use it without testing */
+    ctrls.which = V4L2_CTRL_ID2WHICH(p->id);
+    ctrls.controls = &c;
+
+    memset(&c, 0, sizeof(c));
+    c.id = p->id;
+
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wswitch-enum"
+    switch (p->type) {
+    case V4L2_CTRL_TYPE_INTEGER:
+	c.value = p->min + ((long long)(*(int *)value) * (p->max - p->min)) /
+                  65535;
+		break;
+    case V4L2_CTRL_TYPE_BOOLEAN:
+    case V4L2_CTRL_TYPE_BUTTON:
+    case V4L2_CTRL_TYPE_MENU:
+	c.value = *(int *)value;
+	break;
+
+    /* TODO: add support for V4L2_CTRL_TYPE_INTEGER64 */
+
+    default:
+	return -1;
+    }
+    #pragma GCC diagnostic pop
+
+    ret = v4l2_ioctl(cam->dev, VIDIOC_S_EXT_CTRLS, &ctrls);
+    if (ret)
+	printf("v4l2 set user control \"%s\" returned %d\n", p->name, ret);
+
+    if (cam->debug == TRUE)
+        printf("  %s set to value %d\n", p->name, c.value);
+
+    return 0;
+}
+
+int cam_get_control(cam_t *cam, guint32 id, void *value)
+{
+    struct v4l2_ext_controls ctrls;
+    struct v4l2_ext_control c;
+    video_controls_t *p;
+    int ret;
+
+    p = cam_find_control_per_id(cam, id);
+    if (!p)
+	return -1;
+
+    memset(&ctrls, 0, sizeof(ctrls));
+    ctrls.count = 1;
+    ctrls.which = V4L2_CTRL_ID2WHICH(p->id);
+    ctrls.controls = &c;
+
+    memset(&c, 0, sizeof(c));
+    c.id = p->id;
+
+    ret = v4l2_ioctl(cam->dev, VIDIOC_G_EXT_CTRLS, &ctrls);
+    if (ret) {
+	printf("v4l2 get user control \"%s\" returned %d\n", p->name, ret);
+	return -1;
+    }
+
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wswitch-enum"
+    switch (p->type) {
+    case V4L2_CTRL_TYPE_INTEGER:
+        if (cam->debug == TRUE)
+            printf("  %s = %d (min: %d, max: %d, default: %d, step: %d)\n",
+                   p->name, c.value, p->min, p->max, p->def, p->step);
+        *(int *)value = (((long long)c.value - p->min) * 65535) / (p->max - p->min);
+
+	return (0);
+    case V4L2_CTRL_TYPE_BOOLEAN:
+    case V4L2_CTRL_TYPE_BUTTON:
+    case V4L2_CTRL_TYPE_MENU:
+	*(int *)value = c.value;
+        if (cam->debug == TRUE)
+            printf("  %s = %d\n", p->name, c.value);
+	return (0);
+
+    /* TODO: add support for V4L2_CTRL_TYPE_INTEGER64 */
+    default:
+	return -1;
+    }
+    #pragma GCC diagnostic pop
 }
 
 void print_cam(cam_t *cam)
@@ -825,81 +1181,73 @@ int camera_cap(cam_t *cam)
     return 0;
 }
 
-static int v4l_get_zoom(cam_t *cam)
+static int v4l_get_zoom(cam_t *cam, int *value)
 {
-    int i;
+    int ret;
 
     cam->zoom_cid = V4L2_CID_ZOOM_ABSOLUTE;
-    i = cam_get_control(cam, cam->zoom_cid);
-    if (i >= 0)
-        return i;
+    ret = cam_get_control(cam, cam->zoom_cid, value);
+    if (!ret)
+        return 0;
 
     cam->zoom_cid = V4L2_CID_ZOOM_RELATIVE;
-    i = cam_get_control(cam, cam->zoom_cid);
-    if (i >= 0)
-        return i;
+    ret = cam_get_control(cam, cam->zoom_cid, value);
+    if (!ret)
+        return 0;
 
     cam->zoom_cid = V4L2_CID_ZOOM_CONTINUOUS;
-    i = cam_get_control(cam, cam->zoom_cid);
-    if (i >= 0)
-        return i;
+    ret = cam_get_control(cam, cam->zoom_cid,value);
+    if (!ret)
+        return 0;
 
-    cam->zoom_cid = -1;
+    cam->zoom_cid = 0;
+
     return -1;
 }
 
 void get_pic_info(cam_t *cam)
 {
-    int i;
+    int i, ret;
+
+    cam_query_controls(cam);
 
     if (cam->debug == TRUE)
         printf("\nVideo control settings:\n");
 
-    i = cam_get_control(cam, V4L2_CID_HUE);
-    if (i >= 0) {
+    ret = cam_get_control(cam, V4L2_CID_HUE, &i);
+    if (!ret) {
         cam->hue = i;
-        if (cam->debug == TRUE)
-            printf("hue = %d\n", cam->hue);
     } else {
         cam->hue = -1;
     }
-    i = cam_get_control(cam, V4L2_CID_SATURATION);
-    if (i >= 0) {
+    ret = cam_get_control(cam, V4L2_CID_SATURATION, &i);
+    if (!ret) {
         cam->colour = i;
-        if (cam->debug == TRUE)
-            printf("colour = %d\n", cam->colour);
     } else {
         cam->colour = -1;
     }
-    i = v4l_get_zoom(cam);
-    if (cam->zoom_cid) {
+    ret = v4l_get_zoom(cam, &i);
+    if (!ret) {
         cam->zoom = i;
-        if (cam->debug == TRUE)
-            printf("zoom = %d\n", cam->zoom);
     } else {
         cam->zoom = -1;
     }
-    i = cam_get_control(cam, V4L2_CID_CONTRAST);
-    if (i >= 0) {
+
+    ret = cam_get_control(cam, V4L2_CID_CONTRAST, &i);
+    if (!ret) {
         cam->contrast = i;
-        if (cam->debug == TRUE)
-            printf("contrast = %d\n", cam->contrast);
     } else {
         cam->contrast = -1;
     }
-    i = cam_get_control(cam, V4L2_CID_WHITENESS);
-    if (i >= 0) {
+    ret = cam_get_control(cam, V4L2_CID_WHITENESS, &i);
+    if (!ret) {
         cam->whiteness = i;
-        if (cam->debug == TRUE)
-            printf("whiteness = %d\n", cam->whiteness);
     } else {
         cam->whiteness = -1;
     }
-    i = cam_get_control(cam, V4L2_CID_BRIGHTNESS);
-    if (i >= 0) {
+    ret = cam_get_control(cam, V4L2_CID_BRIGHTNESS, &i);
+    if (!ret) {
         cam->brightness = i;
-        if (cam->debug == TRUE)
-            printf("brightness = %d\n", cam->brightness);
     } else {
         cam->brightness = -1;
     }
