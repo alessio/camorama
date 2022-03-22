@@ -561,8 +561,13 @@ static const char *cam_ctrl_class(uint32_t class)
     /* All controls below are available since, at least, Kernel 3.16 */
     case V4L2_CTRL_CLASS_USER:
 	return "User";
+#if defined(V4L2_CTRL_CLASS_CODEC)
     case V4L2_CTRL_CLASS_CODEC:
 	return "Codec";
+#elif defined(V4L2_CTRL_CLASS_MPEG)
+    case V4L2_CTRL_CLASS_MPEG:
+	return "MPEG-compression";
+#endif
     case V4L2_CTRL_CLASS_CAMERA:
 	return "Camera";
     case V4L2_CTRL_CLASS_FM_TX:
