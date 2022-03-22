@@ -753,9 +753,6 @@ int cam_set_control(cam_t *cam, guint32 id, void *value)
     #pragma GCC diagnostic ignored "-Wswitch-enum"
     switch (p->type) {
     case V4L2_CTRL_TYPE_INTEGER:
-	c.value = p->min + ((long long)(*(int *)value) * (p->max - p->min)) /
-                  65535;
-		break;
     case V4L2_CTRL_TYPE_BOOLEAN:
     case V4L2_CTRL_TYPE_BUTTON:
     case V4L2_CTRL_TYPE_MENU:
@@ -808,11 +805,10 @@ int cam_get_control(cam_t *cam, guint32 id, void *value)
     #pragma GCC diagnostic ignored "-Wswitch-enum"
     switch (p->type) {
     case V4L2_CTRL_TYPE_INTEGER:
+        *(int *)value = c.value;
         if (cam->debug == TRUE)
             printf("  %s = %d (min: %d, max: %d, default: %d, step: %d)\n",
                    p->name, c.value, p->min, p->max, p->def, p->step);
-        *(int *)value = (((long long)c.value - p->min) * 65535) / (p->max - p->min);
-
 	return (0);
     case V4L2_CTRL_TYPE_BOOLEAN:
     case V4L2_CTRL_TYPE_BUTTON:

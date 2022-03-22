@@ -696,7 +696,10 @@ gint timeout_capture_func(cam_t *cam)
 
 void update_sliders(cam_t *cam)
 {
-    if (!cam_find_control_per_id(cam, V4L2_CID_CONTRAST)) {
+   video_controls_t *p;
+
+    p = cam_find_control_per_id(cam, V4L2_CID_CONTRAST);
+    if (!p) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "contrast_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -706,8 +709,13 @@ void update_sliders(cam_t *cam)
     } else {
         g_signal_connect(gtk_builder_get_object(cam->xml, "contrast_slider"),
                          "value-changed", G_CALLBACK(contrast_change), cam);
+
+        gtk_range_set_range((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "contrast_slider")),
+                            p->min, p->max);
+        gtk_range_set_increments((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "contrast_slider")),
+                                 p->step, p->step * 5);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "contrast_slider")),
-                            (int)(cam->contrast / 256));
+                            cam->contrast);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "contrast_icon")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -715,7 +723,9 @@ void update_sliders(cam_t *cam)
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "contrast_slider")));
     }
-    if (!cam_find_control_per_id(cam, V4L2_CID_BRIGHTNESS)) {
+
+    p = cam_find_control_per_id(cam, V4L2_CID_BRIGHTNESS);
+    if (!p) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "brightness_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -725,8 +735,12 @@ void update_sliders(cam_t *cam)
     } else {
         g_signal_connect(gtk_builder_get_object(cam->xml, "brightness_slider"),
                          "value-changed", G_CALLBACK(brightness_change), cam);
+        gtk_range_set_range((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "brightness_slider")),
+                            p->min, p->max);
+        gtk_range_set_increments((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "brightness_slider")),
+                                 p->step, p->step * 5);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "brightness_slider")),
-                            (int)(cam->brightness / 256));
+                            cam->brightness);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "brightness_icon")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -734,7 +748,9 @@ void update_sliders(cam_t *cam)
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "brightness_slider")));
     }
-    if (!cam_find_control_per_id(cam, V4L2_CID_SATURATION)) {
+
+    p = cam_find_control_per_id(cam, V4L2_CID_SATURATION);
+    if (!p) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "color_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -744,8 +760,12 @@ void update_sliders(cam_t *cam)
     } else {
         g_signal_connect(gtk_builder_get_object(cam->xml, "color_slider"),
                          "value-changed", G_CALLBACK(colour_change), cam);
+        gtk_range_set_range((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "color_slider")),
+                            p->min, p->max);
+        gtk_range_set_increments((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "color_slider")),
+                                 p->step, p->step * 5);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "color_slider")),
-                            (int)(cam->colour / 256));
+                            cam->colour);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "color_icon")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -753,7 +773,9 @@ void update_sliders(cam_t *cam)
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "color_slider")));
     }
-    if (!cam->zoom_cid) {
+
+    p = cam_find_control_per_id(cam, cam->zoom_cid);
+    if (!p) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "zoom_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -763,8 +785,12 @@ void update_sliders(cam_t *cam)
     } else {
         g_signal_connect(gtk_builder_get_object(cam->xml, "zoom_slider"),
                          "value-changed", G_CALLBACK(zoom_change), cam);
+        gtk_range_set_range((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "zoom_slider")),
+                            p->min, p->max);
+        gtk_range_set_increments((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "zoom_slider")),
+                                 p->step, p->step * 5);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "zoom_slider")),
-                            (int)(cam->zoom / 256));
+                            cam->zoom);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "zoom_icon")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -772,7 +798,9 @@ void update_sliders(cam_t *cam)
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "zoom_slider")));
     }
-    if (!cam_find_control_per_id(cam, V4L2_CID_HUE)) {
+
+    p = cam_find_control_per_id(cam, V4L2_CID_HUE);
+    if (!p) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "hue_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -782,8 +810,12 @@ void update_sliders(cam_t *cam)
     } else {
         g_signal_connect(gtk_builder_get_object(cam->xml, "hue_slider"),
                          "value-changed", G_CALLBACK(hue_change), cam);
+        gtk_range_set_range((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "hue_slider")),
+                            p->min, p->max);
+        gtk_range_set_increments((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "hue_slider")),
+                                 p->step, p->step * 5);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "hue_slider")),
-                            (int)(cam->hue / 256));
+                            cam->hue);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "hue_icon")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -791,7 +823,9 @@ void update_sliders(cam_t *cam)
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "hue_slider")));
     }
-    if (!cam_find_control_per_id(cam, V4L2_CID_WHITENESS)) {
+
+    p = cam_find_control_per_id(cam, V4L2_CID_WHITENESS);
+    if (!p) {
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "balance_icon")));
         gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -801,8 +835,12 @@ void update_sliders(cam_t *cam)
     } else {
         g_signal_connect(gtk_builder_get_object(cam->xml, "balance_slider"),
                          "value-changed", G_CALLBACK(wb_change), cam);
+        gtk_range_set_range((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "balance_slider")),
+                            p->min, p->max);
+        gtk_range_set_increments((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "balance_slider")),
+                                 p->step, p->step * 5);
         gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "balance_slider")),
-                            (int)(cam->whiteness / 256));
+                            cam->whiteness);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
                                                           "balance_icon")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
@@ -815,42 +853,42 @@ void update_sliders(cam_t *cam)
 void contrast_change(GtkScale *sc1, cam_t *cam)
 {
 
-    cam->contrast = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    cam->contrast = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_CONTRAST, &cam->contrast);
 }
 
 void brightness_change(GtkScale *sc1, cam_t *cam)
 {
 
-    cam->brightness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    cam->brightness = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_BRIGHTNESS, &cam->brightness);
 }
 
 void zoom_change(GtkScale *sc1, cam_t *cam)
 {
 
-    cam->zoom = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    cam->zoom = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, cam->zoom_cid, &cam->zoom);
 }
 
 void colour_change(GtkScale *sc1, cam_t *cam)
 {
 
-    cam->colour = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    cam->colour = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_SATURATION, &cam->colour);
 }
 
 void hue_change(GtkScale *sc1, cam_t *cam)
 {
 
-    cam->hue = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    cam->hue = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_HUE, &cam->hue);
 }
 
 void wb_change(GtkScale *sc1, cam_t *cam)
 {
 
-    cam->whiteness = 256 * (int)gtk_range_get_value((GtkRange *) sc1);
+    cam->whiteness = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_WHITENESS, &cam->whiteness);
 }
 
