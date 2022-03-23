@@ -67,6 +67,8 @@ void camorama_filters_init(void);
 gchar const *camorama_filter_get_name(CamoramaFilter * self);
 void camorama_filter_apply(CamoramaFilter *self, guchar *image,
                            gint width, gint height, gint depth);
+void camorama_filter_show(CamoramaFilter *filter, gpointer user_data);
+void camorama_filter_hide(CamoramaFilter *self);
 
 struct _CamoramaFilter {
     GObject base_instance;
@@ -74,11 +76,15 @@ struct _CamoramaFilter {
 
 struct _CamoramaFilterClass {
     GObjectClass base_class;
+    void *data;
 
     gchar const *name;
+    int showed;
 
     void (*filter)(void *self,
                     guchar *image, gint width, gint height, gint depth);
+    void (*show)(void *self, gpointer user_data);
+    void (*hide)(void *self);
 };
 
 G_END_DECLS

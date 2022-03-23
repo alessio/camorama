@@ -24,6 +24,32 @@ camorama_filter_apply(CamoramaFilter *self, guchar *image, gint width,
                                             depth);
 }
 
+void camorama_filter_show(CamoramaFilter *self, gpointer user_data)
+{
+    g_return_if_fail(CAMORAMA_FILTER_GET_CLASS(self)->show);
+
+    if (CAMORAMA_FILTER_GET_CLASS(self)->showed)
+        return;
+
+    CAMORAMA_FILTER_GET_CLASS(self)->showed--;
+
+    CAMORAMA_FILTER_GET_CLASS(self)->show(self, user_data);
+}
+
+void
+camorama_filter_hide(CamoramaFilter *self)
+{
+    if (!CAMORAMA_FILTER_GET_CLASS(self)->hide)
+        return;
+
+    if (!(CAMORAMA_FILTER_GET_CLASS(self)->showed))
+        return;
+
+    CAMORAMA_FILTER_GET_CLASS(self)->showed--;
+
+    CAMORAMA_FILTER_GET_CLASS(self)->hide(self);
+}
+
 /* GType stuff ifor CamoramaFilter */
 G_DEFINE_ABSTRACT_TYPE(CamoramaFilter, camorama_filter, G_TYPE_OBJECT);
 

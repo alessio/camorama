@@ -65,8 +65,15 @@ static void delete_filter(GtkTreeRowReference *ref, GtkTreeModel *model)
 {
     GtkTreeIter iter;
     GtkTreePath *path = gtk_tree_row_reference_get_path(ref);
+    CamoramaFilter *filter = NULL;
 
     gtk_tree_model_get_iter(model, &iter, path);
+
+    gtk_tree_model_get(model, &iter,
+                       CAMORAMA_FILTER_CHAIN_COL_FILTER, &filter, -1);
+
+    camorama_filter_chain_hide(model, path, &iter);
+
     gtk_list_store_remove(GTK_LIST_STORE(model), &iter);
 }
 
@@ -198,6 +205,8 @@ void load_interface(cam_t *cam)
                                                 CAMORAMA_FILTER_CHAIN_COL_NAME,
                                                 NULL);
     cam->filter_chain = camorama_filter_chain_new();
+    camorama_filter_chain_set_data(cam->filter_chain, cam);
+
     gtk_tree_view_set_model(treeview, GTK_TREE_MODEL(cam->filter_chain));
     g_object_unref(cam->filter_chain);
     g_signal_connect_swapped(treeview, "button-press-event",
