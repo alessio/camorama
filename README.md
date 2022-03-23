@@ -111,9 +111,10 @@ The supported effect filters are:
   - invert image colors, making it a picture negative.
 - Threshold (Overall):
   - any pixel with an average value `< x` turns black or `> x` turns white.
- `x` is adjustable with the dither slider.
+ `x` is currently fixed, being equal to 127.
 - Threshold (Per Channel):
-  - same as above, but does it for each channel, red, green and blue.
+  - same as above, but sets threshold per each each color channel,
+    e.g. red, green and blue. Such Threshold is also fixed to 127.
 - Mirror:
   - mirror image
 - Wacky:
