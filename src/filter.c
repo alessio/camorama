@@ -111,6 +111,47 @@ static void camorama_filter_threshold_init(CamoramaFilterThreshold *self)
     self->threshold = 127;
 }
 
+static void threshold_change(GtkScale *sc1, CamoramaFilterThreshold *self)
+{
+
+    self->threshold = gtk_range_get_value((GtkRange *) sc1);
+}
+
+static void camorama_filter_threshold_show(void *filter,
+                                           gpointer data)
+{
+    CamoramaFilterThreshold *self = filter;
+    cam_t *cam = data;
+
+    CAMORAMA_FILTER_GET_CLASS(self)->data = data;
+
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                      "threshold_icon")));
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                      "threshold_label")));
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                      "threshold_slider")));
+
+    gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "threshold_slider")),
+                        self->threshold);
+
+    g_signal_connect(gtk_builder_get_object(cam->xml, "threshold_slider"),
+                         "value-changed", G_CALLBACK(threshold_change), self);
+}
+
+static void camorama_filter_threshold_hide(void *filter)
+{
+    CamoramaFilterThreshold *self = filter;
+
+    cam_t *cam = CAMORAMA_FILTER_GET_CLASS(self)->data;
+    gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                     "threshold_icon")));
+    gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                     "threshold_slider")));
+    gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                     "threshold_label")));
+}
+
 static void
 camorama_filter_threshold_filter(void *filter, guchar *image, int x,
                                  int y, int depth)
@@ -136,7 +177,10 @@ static void
 camorama_filter_threshold_class_init(CamoramaFilterThresholdClass *
                                      self_class)
 {
+    self_class->show = camorama_filter_threshold_show;
+    self_class->hide = camorama_filter_threshold_hide;
     self_class->filter = camorama_filter_threshold_filter;
+
     self_class->name = _("Threshold (Overall)");
 }
 
