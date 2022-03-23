@@ -198,6 +198,47 @@ camorama_filter_threshold_channel_init(CamoramaFilterThresholdChannel *
     self->threshold = 127;
 }
 
+static void ch_threshold_change(GtkScale *sc1, CamoramaFilterThreshold *self)
+{
+
+    self->threshold = gtk_range_get_value((GtkRange *) sc1);
+}
+
+static void camorama_filter_threshold_channel_show(void *filter,
+                                           gpointer data)
+{
+    CamoramaFilterThreshold *self = filter;
+    cam_t *cam = data;
+
+    CAMORAMA_FILTER_GET_CLASS(self)->data = data;
+
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                      "ch_threshold_icon")));
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                      "ch_threshold_label")));
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                      "ch_threshold_slider")));
+
+    gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "ch_threshold_slider")),
+                        self->threshold);
+
+    g_signal_connect(gtk_builder_get_object(cam->xml, "ch_threshold_slider"),
+                         "value-changed", G_CALLBACK(ch_threshold_change), self);
+}
+
+static void camorama_filter_threshold_channel_hide(void *filter)
+{
+    CamoramaFilterThreshold *self = filter;
+
+    cam_t *cam = CAMORAMA_FILTER_GET_CLASS(self)->data;
+    gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                     "ch_threshold_icon")));
+    gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                     "ch_threshold_slider")));
+    gtk_widget_hide(GTK_WIDGET(gtk_builder_get_object(cam->xml,
+                                                     "ch_threshold_label")));
+}
+
 static void
 camorama_filter_threshold_channel_filter(void *filter,
                                          unsigned char *image, int x,
@@ -230,6 +271,8 @@ static void
 camorama_filter_threshold_channel_class_init
 (CamoramaFilterThresholdChannelClass *self_class)
 {
+    self_class->show = camorama_filter_threshold_channel_show;
+    self_class->hide = camorama_filter_threshold_channel_hide;
     self_class->filter = camorama_filter_threshold_channel_filter;
     self_class->name = _("Threshold (Per Channel)");
 }
