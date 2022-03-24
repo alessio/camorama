@@ -5,3 +5,4 @@ camorama todo
 - recording of video
 - add support for gnome system tray? - almost done
 - include options for font, font color, background color, etc in timestame editor?  This might qualify as too much hassle and/or too many prefs...
+- add support for control events
