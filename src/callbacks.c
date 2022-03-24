@@ -694,6 +694,42 @@ gint timeout_capture_func(cam_t *cam)
     return 1;
 }
 
+static void update_slider_value(video_controls_t *ctrl, cam_t *cam, gint32 value)
+{
+    switch(ctrl->id) {
+    case V4L2_CID_CONTRAST:
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "contrast_slider")),
+                            value);
+        break;
+    case V4L2_CID_BRIGHTNESS:
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "brightness_slider")),
+                            value);
+        break;
+    case V4L2_CID_SATURATION:
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "color_slider")),
+                            value);
+        break;
+    case V4L2_CID_ZOOM_ABSOLUTE:
+    case V4L2_CID_ZOOM_RELATIVE:
+    case V4L2_CID_ZOOM_CONTINUOUS:
+        if (cam->zoom_cid != ctrl->id)
+            break;
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "zoom_slider")),
+                            value);
+        break;
+    case V4L2_CID_HUE:
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "hue_slider")),
+                            value);
+        break;
+    case V4L2_CID_WHITENESS:
+        gtk_range_set_value((GtkRange *)GTK_WIDGET(gtk_builder_get_object(cam->xml, "balance_slider")),
+                            value);
+        break;
+    default:
+        break;
+    }
+}
+
 static void change_ctrl_value(GtkScale *sc1, video_controls_t *ctrl)
 {
     cam_t *cam = ctrl->cam;
@@ -708,6 +744,7 @@ static void change_ctrl_value(GtkScale *sc1, video_controls_t *ctrl)
             return;
         gtk_range_set_value((GtkRange *) sc1, value);
     }
+    update_slider_value(ctrl, cam, value);
 }
 
 static void change_ctrl_button(GtkToggleButton *tgl, video_controls_t *ctrl)
@@ -724,6 +761,7 @@ static void change_ctrl_button(GtkToggleButton *tgl, video_controls_t *ctrl)
             return;
         gtk_toggle_button_set_active(tgl, value);
     }
+    update_slider_value(ctrl, cam, value);
 }
 
 void show_controls(GtkWidget *widget, cam_t *cam)
