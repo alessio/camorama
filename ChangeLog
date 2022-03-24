@@ -1,3 +1,15 @@
+2022-03-24 Mauro Carvalho Chehab <mchehab@kernel.org>
+
+	* Add support for reset all controls
+	* Add support for showing detected v4l controls
+	* Add sliders to adjust threshold filter level
+	* Make sliders reflect min/max/step values
+	* Use the newer V4L2 control functions
+	* Update po files and exclude the gtk2 data file from it
+	* drop gtk2 and legacy gtk3 support
+	* Embed mutexes inside struct camera
+	* Update README.md to reflect latest changes
+
 2022-03-19 Mauro Carvalho Chehab <mchehab@kernel.org>
 
 	* Fix a regression at take picture logic
