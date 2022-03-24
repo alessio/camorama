@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2022-03-24 15:31+0100\n"
+"POT-Creation-Date: 2022-03-24 15:36+0100\n"
 "PO-Revision-Date: 2021-07-10 09:04+0000\n"
 "Last-Translator: Charles Lee <lchopn@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
@@ -32,7 +32,7 @@ msgstr "Camorama 摄像头查看器"
 msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
-msgstr ""
+msgstr "Camorama 是一个简单的摄像头查看器，其带有应用一些视频特效的功能。"
 
 #: camorama.desktop.in:5 src/callbacks.c:530
 msgid "View, alter and save images from a webcam"
@@ -40,7 +40,7 @@ msgstr "查看、控制并保存摄像头的图像"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;webcam;viewer;video-effects;摄像头;查看器;视频特效"
 
 #: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49
 msgid "Camorama-libglade"
@@ -48,17 +48,15 @@ msgstr "Camorama-libglade"
 
 #: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
 msgid "_Take Picture"
-msgstr "照相（_T）"
+msgstr "拍照 (_T)"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "切换本地抓取"
+msgstr "切换全屏 (_F)"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
-msgstr "查看（_V）"
+msgstr "查看 (_V)"
 
 #: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
 #: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
@@ -71,7 +69,7 @@ msgstr "显示特效"
 
 #: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
 msgid "_Change Camera"
-msgstr ""
+msgstr "变更摄像头 (_C)"
 
 #: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
 msgid "Small"
@@ -83,11 +81,11 @@ msgstr ""
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "全屏"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
-msgstr "照相"
+msgstr "拍照"
 
 #: data/camorama-gtk3.ui:536 data/camorama-gtk4.ui:523
 msgid "Contrast:"
@@ -103,7 +101,7 @@ msgstr "颜色："
 
 #: data/camorama-gtk3.ui:572 data/camorama-gtk4.ui:559
 msgid "Hue:"
-msgstr ""
+msgstr "色调："
 
 #: data/camorama-gtk3.ui:584 data/camorama-gtk4.ui:571
 msgid "White Balance:"
@@ -111,12 +109,13 @@ msgstr "白平衡："
 
 #: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
 msgid "Zoom:"
-msgstr ""
+msgstr "缩放："
 
 #: data/camorama-gtk3.ui:714
 #, fuzzy
+#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "阀值："
+msgstr "阈值（总）"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
@@ -167,9 +166,8 @@ msgid "_Filename for pictures:"
 msgstr "图片的文件名(_F)："
 
 #: data/camorama-gtk3.ui:1152 data/camorama-gtk4.ui:1071
-#, fuzzy
 msgid "Select a Directory"
-msgstr "保存目录："
+msgstr "选择一个目录"
 
 #: data/camorama-gtk3.ui:1197 data/camorama-gtk3.ui:1593
 #: data/camorama-gtk4.ui:1116 data/camorama-gtk4.ui:1512
@@ -221,9 +219,8 @@ msgid "Save directory:"
 msgstr "保存目录："
 
 #: data/camorama-gtk3.ui:1511 data/camorama-gtk4.ui:1430
-#, fuzzy
 msgid "Filename:"
-msgstr "文件名"
+msgstr "文件名："
 
 #: data/camorama-gtk3.ui:1524 data/camorama-gtk4.ui:1443
 msgid "ftp.yourdomain.org"
@@ -258,9 +255,8 @@ msgid "Timestamp"
 msgstr "时间戳"
 
 #: data/camorama-gtk3.ui:2022 data/camorama-gtk4.ui:1941
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "要使用的 v4l 设备"
+msgstr "选择要使用的视频设备"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -292,16 +288,15 @@ msgstr "视频设备"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr ""
+msgstr "分配给您摄像头设备的 Unix 文件系统路径。"
 
 #: data/org.gnome.camorama.gschema.xml.in:26
 msgid "Toggles the datestamp in captures"
 msgstr "切换抓取中的时间戳"
 
 #: data/org.gnome.camorama.gschema.xml.in:27
-#, fuzzy
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "切换抓取中的时间戳"
+msgstr "切换是否在抓取图片中绘制时间戳"
 
 #: data/org.gnome.camorama.gschema.xml.in:31
 msgid "Local capture image format"
@@ -312,22 +307,20 @@ msgid "Specifies the image format to be used for locally saved pictures"
 msgstr "指定在本地保存图片时所用的图像格式"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "抓取高度"
+msgstr "图像高度"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "由摄像头使用的图像高度。零表示自动选取"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
 msgstr "该服务器的主机名"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "远程抓取的 FTP 服务器主机名。"
+msgstr "远程抓取的服务器主机名。"
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -338,27 +331,31 @@ msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
+"当通过“拍照”按钮抓取图片，或使用自动抓取时，此键值控制是否在本地保存图片。"
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "远程抓取的文件夹"
+msgstr "远程访问所使用的协议"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"用于连接远程服务器的协议的统一资源标志符（URI）名称。可以是 ftp、sftp 或者 "
+"smb"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "用于远程保存图片的完整的统一资源标志符（URI）"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"最后一次成功访问服务器所使用的完整的统一资源标志符（URI），包括协议、主机名和"
+"远程目录"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -377,6 +374,8 @@ msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
+"当通过“拍照”按钮抓取图片，或使用自动抓取时，此键值控制是否将图片保存到远程服"
+"务器。"
 
 #: data/org.gnome.camorama.gschema.xml.in:71
 msgid "Remote capture image format"
@@ -403,13 +402,12 @@ msgid "Name for the filename of uploaded images."
 msgstr "上传图像的名称。"
 
 #: data/org.gnome.camorama.gschema.xml.in:86
-#, fuzzy
 msgid "Toggles timestamp for remote captures"
-msgstr "切换远程抓取"
+msgstr "切换远程抓取的时间戳"
 
 #: data/org.gnome.camorama.gschema.xml.in:87
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr ""
+msgstr "切换在 FTP 上传的时候是否将时间戳插入图片。"
 
 #: data/org.gnome.camorama.gschema.xml.in:91
 msgid "Folder for local captures"
@@ -428,14 +426,12 @@ msgid "Filename for saving captured pictures to locally"
 msgstr "将抓取的图片保存到本地时所用文件名"
 
 #: data/org.gnome.camorama.gschema.xml.in:101
-#, fuzzy
 msgid "Toggles timestamp for local captures"
-msgstr "切换本地抓取"
+msgstr "切换本地抓取的时间戳"
 
 #: data/org.gnome.camorama.gschema.xml.in:102
-#, fuzzy
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr "切换抓取中的时间戳"
+msgstr "切换是否将时间戳插入本地图片"
 
 #: data/org.gnome.camorama.gschema.xml.in:106
 msgid "Custom text for the timestamp"
@@ -451,62 +447,58 @@ msgstr "切换自定义字符串"
 
 #: data/org.gnome.camorama.gschema.xml.in:112
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr ""
+msgstr "切换是否在图片的时间戳中使用自定义字符串。"
 
 #: data/org.gnome.camorama.gschema.xml.in:116
-#, fuzzy
 msgid "Toggles the video adjustment sliders"
-msgstr "切换自定义字符串"
+msgstr "切换视频调节滑块"
 
 #: data/org.gnome.camorama.gschema.xml.in:117
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
+msgstr "切换是否使用滑块来调节视频属性"
 
 #: data/org.gnome.camorama.gschema.xml.in:121
 msgid "Toggles the video effects buttons"
-msgstr ""
+msgstr "切换视频特效按钮"
 
 #: data/org.gnome.camorama.gschema.xml.in:122
 msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr ""
+msgstr "切换是否使用按钮以调节视频滤镜"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "抓取宽度"
+msgstr "图像宽度"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "由摄像头使用的图像宽度。零表示自动选取"
 
 #: src/callbacks.c:531
 msgid "translator_credits"
-msgstr ""
-"开源软件国际化之 GNOME 简体中文组\n"
-"\thttp://i18n.linux.net.cn"
+msgstr "Fedora 项目本地化（L10）团队"
 
 #: src/callbacks.c:644
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f fps - 当前     %.2f fps - 平均"
 
 #: src/callbacks.c:1241
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "无法为存储设备分配内存"
 
 #: src/callbacks.c:1353
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "未找到任何摄像头"
 
 #: src/callbacks.c:1449
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (最大 %.1f fps)"
 
 #: src/callbacks.c:1453
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -524,16 +516,15 @@ msgstr ""
 
 #: src/camorama-window.c:116
 msgid "_Add Filter"
-msgstr ""
+msgstr "添加滤镜 (_A)"
 
 #: src/camorama-window.c:203
-#, fuzzy
 msgid "Effects"
-msgstr "显示特效"
+msgstr "特效"
 
 #: src/fileio.c:115 src/fileio.c:282
 msgid "Could save temporary image file in /tmp."
-msgstr "将临时图像文件保存到 /tmp。"
+msgstr "可以将临时图像文件保存到 /tmp。"
 
 #: src/fileio.c:132
 #, c-format
@@ -546,19 +537,19 @@ msgid "Could not save image '%s/%s'."
 msgstr "无法保存图像“%s/%s”。"
 
 #: src/fileio.c:154
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "无法保存图像“%s/%s”。"
+msgstr "无法创建线程以保存图像“%s/%s”。"
 
 #: src/fileio.c:195
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "打开 %s 时发生了错误。"
+msgstr "挂载 %s 时候发生了错误：%s。"
 
 #: src/fileio.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "打开 %s 时发生了错误。"
+msgstr "访问 %s 时发生了错误。"
 
 #: src/fileio.c:288
 #, c-format
@@ -570,24 +561,24 @@ msgstr ""
 "无法上传图像。"
 
 #: src/fileio.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s."
 msgstr "打开 %s 时发生了错误。"
 
 #: src/fileio.c:331
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "打开 %s 时发生了错误。"
+msgstr "打开 %s 以写入时发生了错误：%s。"
 
 #: src/fileio.c:342
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "写入 %s 时发生了错误。"
+msgstr "向 %s 写入时发生了错误：%s。"
 
 #: src/fileio.c:348
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "打开 %s 时发生了错误。"
+msgstr "关闭 %s 时发生了错误：%s。"
 
 #: src/fileio.c:411
 #, c-format
@@ -597,33 +588,31 @@ msgstr "无法创建目录“%s”。"
 #: src/fileio.c:420
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr "无法更改为目录“%s”。"
+msgstr "无法更改至目录“%s”。"
 
 #: src/filter.c:96
 msgid "Invert"
-msgstr ""
+msgstr "反转"
 
 #: src/filter.c:184
-#, fuzzy
 msgid "Threshold (Overall)"
-msgstr "阀值："
+msgstr "阈值（总）"
 
 #: src/filter.c:277
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "阈值（每个通道）"
 
 #: src/filter.c:355
 msgid "Wacky"
 msgstr ""
 
 #: src/filter.c:461
-#, fuzzy
 msgid "Smooth"
 msgstr "平滑"
 
 #: src/filter.c:497
 msgid "Monochrome"
-msgstr ""
+msgstr "黑白"
 
 #: src/filter.c:535
 msgid "Monochrome (Weight)"
@@ -643,7 +632,6 @@ msgid "v4l device to use"
 msgstr "要使用的 v4l 设备"
 
 #: src/main.c:35
-#, fuzzy
 msgid "enable debugging code"
 msgstr "启用调试代码"
 
@@ -673,19 +661,15 @@ msgstr "使用 read() 而非 nmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "关闭视频缩放"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "使用 read() 而非 nmap()"
+msgstr "使用 userptr 指针而非 mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "要使用的 v4l 设备"
+msgstr "输入所使用的 v4l 设备"
 
 #: src/main.c:117
 #, c-format
@@ -701,19 +685,18 @@ msgstr ""
 "\n"
 
 #: src/main.c:151
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "找不到像素图文件：%s"
+msgstr "无法加载构建文件"
 
 #: src/main.c:180
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s 未找到。回退至 %s"
 
 #: src/main.c:183
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s 未找到。"
 
 #: src/v4l.c:1087
 #, c-format
@@ -727,7 +710,7 @@ msgstr ""
 #: src/v4l.c:1096
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "设备 %s 不是一个视频采集设备。"
 
 #: src/v4l.c:1270 src/v4l.c:1340
 #, c-format
@@ -740,79 +723,76 @@ msgstr ""
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Camorama 不支持设备视频格式。"
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"无法连接到视频设备(%s)。\n"
+"无法在视频设备上设置窗口信息 (%s).\n"
 "请检查连接。"
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "无法在视频设备上将格式设置为 %c%c%c%c（%s）。"
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "视频设备上返回的图像宽度为零（%s）！"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS  --  不能请求缓冲（%s），正在退出……"
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr ""
+msgstr "无法为视频缓冲分配内存，正在退出……"
 
 #: src/v4l.c:1453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF  --  不能查询缓冲（%s），正在退出……"
 
 #: src/v4l.c:1468
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "内存映射缓冲失败（%s），正在退出……"
 
 #: src/v4l.c:1482
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QBUF  --  无法队列缓冲（%s），正在退出……"
 
 #: src/v4l.c:1492 src/v4l.c:1559
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "启动串流失败（%s），正在退出……"
 
 #: src/v4l.c:1548
 #, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QBUF  --  无法查询缓冲（%s），正在退出……"
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "等待帧时超时（%s）"
 
 #: src/v4l.c:1703 src/v4l.c:1762
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "停止串流失败（%s），正在退出……"
 
 #~ msgid "_File"
-#~ msgstr "文件（_F）"
+#~ msgstr "文件 (_F)"
 
 #~ msgid "_Quit"
-#~ msgstr "退出（_Q）"
+#~ msgstr "退出 (_Q)"
 
 #~ msgid "_Edit"
 #~ msgstr "编辑(_E)"
@@ -821,7 +801,7 @@ msgstr ""
 #~ msgstr "首选项(_P)"
 
 #~ msgid "_Help"
-#~ msgstr "帮助（_H）"
+#~ msgstr "帮助 (_H)"
 
 #~ msgid "_About"
 #~ msgstr "关于(_A)"
@@ -831,6 +811,14 @@ msgstr ""
 
 #~ msgid "camorama"
 #~ msgstr "camorama"
+
+#, c-format
+#~ msgid ""
+#~ "Invalid argument\n"
+#~ "Run '%s --help'\n"
+#~ msgstr ""
+#~ "无效参数\n"
+#~ "执行 '%s --help'\n"
 
 #~ msgid "webcam-capture"
 #~ msgstr "webcam-capture"
