@@ -730,6 +730,20 @@ static void update_slider_value(video_controls_t *ctrl, cam_t *cam, gint32 value
     }
 }
 
+static void update_ctrl_value(GtkScale *sc1, video_controls_t *ctrl)
+{
+    cam_t *cam = ctrl->cam;
+    gint32 value;
+    int ret;
+
+    ret = cam_get_control(cam, ctrl->id, &value);
+    if (ret)
+        return;
+
+    gtk_range_set_value((GtkRange *) sc1, value);
+    update_slider_value(ctrl, cam, value);
+}
+
 static void change_ctrl_value(GtkScale *sc1, video_controls_t *ctrl)
 {
     cam_t *cam = ctrl->cam;
@@ -744,6 +758,20 @@ static void change_ctrl_value(GtkScale *sc1, video_controls_t *ctrl)
             return;
         gtk_range_set_value((GtkRange *) sc1, value);
     }
+    update_slider_value(ctrl, cam, value);
+}
+
+static void update_ctrl_button(GtkToggleButton *tgl, video_controls_t *ctrl)
+{
+    cam_t *cam = ctrl->cam;
+    gint32 value;
+    int ret;
+
+    ret = cam_get_control(cam, ctrl->id, &value);
+    if (ret)
+        return;
+
+    gtk_toggle_button_set_active(tgl, value);
     update_slider_value(ctrl, cam, value);
 }
 
@@ -764,10 +792,25 @@ static void change_ctrl_button(GtkToggleButton *tgl, video_controls_t *ctrl)
     update_slider_value(ctrl, cam, value);
 }
 
-static void change_ctrl_menu(GtkComboBox *combo, video_controls_t *ctrl)
+static void update_ctrl_menu(GtkComboBox *combo, video_controls_t *ctrl)
 {
     cam_t *cam = ctrl->cam;
     unsigned int i;
+    gint32 value;
+    int ret;
+
+    ret = cam_get_control(cam, ctrl->id, &value);
+    if (ret)
+        return;
+    for (i = 0; i < ctrl->menu_size; i++) {
+        if (ctrl->menu[i].value == value)
+            gtk_combo_box_set_active(combo, i);
+    }
+}
+
+static void change_ctrl_menu(GtkComboBox *combo, video_controls_t *ctrl)
+{
+    cam_t *cam = ctrl->cam;
     gint32 value;
     int ret;
     int pos;
@@ -778,27 +821,60 @@ static void change_ctrl_menu(GtkComboBox *combo, video_controls_t *ctrl)
 
     value = ctrl->menu[pos].value;
 
-printf("Setting combo to %s\n", ctrl->menu[pos].name);
-
     ret = cam_set_control(cam, ctrl->id, &value);
     if (ret) {
         ret = cam_get_control(cam, ctrl->id, &value);
         if (ret)
             return;
-        for (i = 0; i < ctrl->menu_size; i++) {
-            if (ctrl->menu[i].value == value)
-                gtk_combo_box_set_active(combo, i);
-        }
+
+        update_ctrl_menu(combo, ctrl);
     }
+}
+
+static void send_update_signal(GtkWidget *widget, gpointer user_data)
+{
+    g_signal_emit_by_name(G_OBJECT(widget), "control_update", user_data);
+
+    /* Propagate to child containers */
+    if (GTK_IS_CONTAINER(widget))
+        gtk_container_forall(GTK_CONTAINER(widget), send_update_signal, 0);
+}
+
+static void reset_ctrls(GtkButton *btn, cam_t *cam)
+{
+    GtkWidget *toplevel = gtk_widget_get_toplevel(GTK_WIDGET(btn));
+    video_controls_t *ctrl = cam->controls;
+    gint32 value;
+
+    while (ctrl) {
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wswitch-enum"
+        switch (ctrl->type) {
+        case V4L2_CTRL_TYPE_INTEGER:
+        case V4L2_CTRL_TYPE_BOOLEAN:
+        case V4L2_CTRL_TYPE_BUTTON:
+        case V4L2_CTRL_TYPE_INTEGER_MENU:
+        case V4L2_CTRL_TYPE_MENU:
+            value = ctrl->def;
+            cam_set_control(cam, ctrl->id, &value);
+        default:
+            break;
+        }
+        #pragma GCC diagnostic pop
+
+        ctrl = ctrl->next;
+    }
+
+    gtk_container_forall(GTK_CONTAINER(toplevel), send_update_signal, 0);
 }
 
 void show_controls(GtkWidget *widget, cam_t *cam)
 {
-    GtkWidget *window, *grid, *button, *slider, *label, *combo;
+    GtkWidget *window, *vbox, *grid, *button, *slider, *label, *combo, *btn;
     video_controls_t *ctrl;
     char *last_group = NULL;
-    unsigned int i;
     gint32 value;
+    unsigned int i;
     int row = 0;
     int ret;
 
@@ -806,9 +882,14 @@ void show_controls(GtkWidget *widget, cam_t *cam)
     gtk_window_set_title(GTK_WINDOW(window), "Camera controls");
     gtk_window_set_default_size(GTK_WINDOW(window), 80, 60);
 
-    grid = gtk_grid_new ();
+    g_signal_new("control_update", GTK_TYPE_WIDGET,
+                 G_SIGNAL_RUN_LAST, 0, NULL, NULL,
+                 g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
 
-    gtk_container_add (GTK_CONTAINER (window), grid);
+    vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 2);
+    grid = gtk_grid_new();
+    gtk_container_add (GTK_CONTAINER (window), vbox);
+    gtk_container_add (GTK_CONTAINER (vbox), grid);
 
     #pragma GCC diagnostic push
     #pragma GCC diagnostic ignored "-Wswitch-enum"
@@ -842,6 +923,8 @@ void show_controls(GtkWidget *widget, cam_t *cam)
 
             g_signal_connect(slider, "value-changed",
                              G_CALLBACK(change_ctrl_value), ctrl);
+            g_signal_connect(slider, "control_update",
+                             G_CALLBACK(update_ctrl_value), ctrl);
             break;
         case V4L2_CTRL_TYPE_BOOLEAN:
         case V4L2_CTRL_TYPE_BUTTON:
@@ -851,9 +934,11 @@ void show_controls(GtkWidget *widget, cam_t *cam)
 
             button = gtk_check_button_new_with_label(ctrl->name);
             gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), value);
+            gtk_grid_attach(GTK_GRID(grid), button, 1, row++, 1, 1);
             g_signal_connect(button, "clicked",
                              G_CALLBACK (change_ctrl_button), ctrl);
-            gtk_grid_attach(GTK_GRID(grid), button, 1, row++, 1, 1);
+            g_signal_connect(button, "control_update",
+                             G_CALLBACK(update_ctrl_button), ctrl);
             break;
         case V4L2_CTRL_TYPE_INTEGER_MENU:
         case V4L2_CTRL_TYPE_MENU:
@@ -871,9 +956,11 @@ void show_controls(GtkWidget *widget, cam_t *cam)
                 if (ctrl->menu[i].value == value)
                     gtk_combo_box_set_active(GTK_COMBO_BOX(combo), i);
             }
+            gtk_grid_attach(GTK_GRID(grid), combo, 1, row++, 1, 1);
             g_signal_connect(combo, "changed",
                              G_CALLBACK (change_ctrl_menu), ctrl);
-            gtk_grid_attach(GTK_GRID(grid), combo, 1, row++, 1, 1);
+            g_signal_connect(combo, "control_update",
+                             G_CALLBACK(update_ctrl_menu), ctrl);
             break;
         default:
             break;
@@ -881,6 +968,11 @@ void show_controls(GtkWidget *widget, cam_t *cam)
         ctrl = ctrl->next;
     }
     #pragma GCC diagnostic pop
+
+    btn = gtk_button_new_with_label("Reset to default");
+    gtk_container_add(GTK_CONTAINER (vbox),btn);
+    g_signal_connect(GTK_BUTTON(btn),
+                     "clicked", G_CALLBACK(reset_ctrls), cam);
 
     gtk_widget_show_all(window);
 }

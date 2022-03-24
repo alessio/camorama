@@ -654,6 +654,7 @@ static int cam_add_ctrl(cam_t *cam,
 	break;
     case V4L2_CTRL_TYPE_BOOLEAN:
 	(*ptr)->type = V4L2_CTRL_TYPE_BOOLEAN;
+	(*ptr)->def  = query->default_value;
 	break;
     case V4L2_CTRL_TYPE_BUTTON:
 	(*ptr)->type = V4L2_CTRL_TYPE_BUTTON;
