@@ -560,45 +560,45 @@ static const char *cam_ctrl_class(uint32_t class)
     switch (class) {
     /* All controls below are available since, at least, Kernel 3.16 */
     case V4L2_CTRL_CLASS_USER:
-	return "User";
+	return "User controls";
 #if defined(V4L2_CTRL_CLASS_CODEC)
     case V4L2_CTRL_CLASS_CODEC:
-	return "Codec";
+	return "Codec controls ";
 #elif defined(V4L2_CTRL_CLASS_MPEG)
     case V4L2_CTRL_CLASS_MPEG:
-	return "MPEG-compression";
+	return "MPEG controls";
 #endif
     case V4L2_CTRL_CLASS_CAMERA:
-	return "Camera";
+	return "Camera controls";
     case V4L2_CTRL_CLASS_FM_TX:
-	return "FM Modulator";
+	return "FM Modulator controls";
     case V4L2_CTRL_CLASS_FLASH:
-	return "Camera flash";
+	return "Camera flash controls";
     case V4L2_CTRL_CLASS_JPEG:
-	return "JPEG-compression";
+	return "JPEG controls";
     case V4L2_CTRL_CLASS_IMAGE_SOURCE:
-	return "Image source";
+	return "Image source controls";
     case V4L2_CTRL_CLASS_IMAGE_PROC:
-	return "Image processing";
+	return "Image processing controls";
     case V4L2_CTRL_CLASS_DV:
-	return "Digital Video";
+	return "Digital Video controls";
     case V4L2_CTRL_CLASS_FM_RX:
-	return "FM Receiver";
+	return "FM Receiver controls";
     case V4L2_CTRL_CLASS_RF_TUNER:
-	return "RF tuner";
+	return "RF tuner controls";
     case V4L2_CTRL_CLASS_DETECT:
-	return "Detection";
+	return "Detection controls";
     /* Control classes for Kernel v5.10 and upper */
 #ifdef V4L2_CTRL_CLASS_CODEC_STATELESS
     case V4L2_CTRL_CLASS_CODEC_STATELESS:
-	return "Stateless Codec";
+	return "Stateless Codec controls";
 #endif
 #ifdef V4L2_CTRL_CLASS_COLORIMETRY
     case V4L2_CTRL_CLASS_COLORIMETRY:
-	return "Colorimetry";
+	return "Colorimetry controls";
 #endif
     default:
-	return "Unknown";
+	return "Other controls";
     }
 }
 

@@ -769,6 +769,7 @@ void show_controls(GtkWidget *widget, cam_t *cam)
     GtkWidget *window, *grid, *button, *slider, *label;
     video_controls_t *ctrl;
     gint32 value;
+    char *last_group = NULL;
     int row = 0;
     int ret;
 
@@ -785,6 +786,16 @@ void show_controls(GtkWidget *widget, cam_t *cam)
 
     ctrl = cam->controls;
     while (ctrl) {
+        if (!last_group || strcmp(last_group, ctrl->group)) {
+            if (last_group) {
+                label = gtk_label_new("");
+                gtk_grid_attach(GTK_GRID(grid), label, 0, row++, 2, 1);
+            }
+            label = gtk_label_new(ctrl->group);
+            gtk_grid_attach(GTK_GRID(grid), label, 0, row++, 2, 1);
+
+            last_group = ctrl->group;
+        }
         switch (ctrl->type) {
         case V4L2_CTRL_TYPE_INTEGER:
             ret = cam_get_control(cam, ctrl->id, &value);
