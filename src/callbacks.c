@@ -764,12 +764,41 @@ static void change_ctrl_button(GtkToggleButton *tgl, video_controls_t *ctrl)
     update_slider_value(ctrl, cam, value);
 }
 
+static void change_ctrl_menu(GtkComboBox *combo, video_controls_t *ctrl)
+{
+    cam_t *cam = ctrl->cam;
+    unsigned int i;
+    gint32 value;
+    int ret;
+    int pos;
+
+    pos = gtk_combo_box_get_active(combo);
+    if (pos < 0)
+        return;
+
+    value = ctrl->menu[pos].value;
+
+printf("Setting combo to %s\n", ctrl->menu[pos].name);
+
+    ret = cam_set_control(cam, ctrl->id, &value);
+    if (ret) {
+        ret = cam_get_control(cam, ctrl->id, &value);
+        if (ret)
+            return;
+        for (i = 0; i < ctrl->menu_size; i++) {
+            if (ctrl->menu[i].value == value)
+                gtk_combo_box_set_active(combo, i);
+        }
+    }
+}
+
 void show_controls(GtkWidget *widget, cam_t *cam)
 {
-    GtkWidget *window, *grid, *button, *slider, *label;
+    GtkWidget *window, *grid, *button, *slider, *label, *combo;
     video_controls_t *ctrl;
-    gint32 value;
     char *last_group = NULL;
+    unsigned int i;
+    gint32 value;
     int row = 0;
     int ret;
 
@@ -826,17 +855,26 @@ void show_controls(GtkWidget *widget, cam_t *cam)
                              G_CALLBACK (change_ctrl_button), ctrl);
             gtk_grid_attach(GTK_GRID(grid), button, 1, row++, 1, 1);
             break;
-#if 0
         case V4L2_CTRL_TYPE_INTEGER_MENU:
         case V4L2_CTRL_TYPE_MENU:
             ret = cam_get_control(cam, ctrl->id, &value);
             if (ret)
                 break;
 
-            /* TODO */
+            label = gtk_label_new(ctrl->name);
+            gtk_grid_attach(GTK_GRID(grid), label, 0, row, 1, 1);
 
+            combo = gtk_combo_box_text_new();
+            for (i = 0; i < ctrl->menu_size; i++) {
+                gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(combo),
+                                               ctrl->menu[i].name);
+                if (ctrl->menu[i].value == value)
+                    gtk_combo_box_set_active(GTK_COMBO_BOX(combo), i);
+            }
+            g_signal_connect(combo, "changed",
+                             G_CALLBACK (change_ctrl_menu), ctrl);
+            gtk_grid_attach(GTK_GRID(grid), combo, 1, row++, 1, 1);
             break;
-#endif
         default:
             break;
         }

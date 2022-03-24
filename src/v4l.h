@@ -92,7 +92,8 @@ typedef struct camera {
 
     video_controls_t *controls;
 
-    int contrast, brightness, whiteness, colour, hue, zoom, zoom_cid;
+    int contrast, brightness, whiteness, colour, hue, zoom;
+    guint32 zoom_cid;
     unsigned int bytesperline, sizeimage;
     unsigned int pixformat;
     int input;
