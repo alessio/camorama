@@ -61,26 +61,26 @@ Application Options:
 That's the Camorama GUI:
 
 ```
-+---------------------------------------------------------------+
-|     Camorama - HD Pro Webcam C920 - 800x600 (scale: 75%)      |
-| File   Edit   View   Help                                     |
-+------------------------------------------+--------------------+
-|                                          |  Effects           |
-|                    .~.                   |                    |
-|                    /V\                   |                    |
-|                   // \\                  |                    |
-|                  /(   )\                 |                    |
-|                   ^`~'^                  |                    |
-|                                          |                    |
-+------------------------------------------+--------------------+
-| [Show Adjustments]        [Full Screen]        [Take Picture] |
-| Contrast:   128 ++++++++++++++++++|-------------------------- |
-| Brightness: 128 ++++++++++++++++++|-------------------------- |
-| Zoom:         0 |-------------------------------------------- |
-| Color:      128 ++++++++++++++++++|-------------------------- |
-|                                                               |
-| 30.00 fps - current   30.24 fps - average                     |
-+---------------------------------------------------------------+
++-----------------------------------------------------------------+
+|     Camorama - HD Pro Webcam C920 - 800x600 (scale: 75%)        |
+| File   Edit   View   Help                                       |
++------------------------------------------+----------------------+
+|                                          |  Effects             |
+|                    .~.                   |                      |
+|                    /V\                   |                      |
+|                   // \\                  |                      |
+|                  /(   )\                 |                      |
+|                   ^`~'^                  |                      |
+|                                          |                      |
++------------------------------------------+----------------------+
+| [Show Adjustments] [Show Controls] [Full Screen] [Take Picture] |
+| Contrast:   128 ++++++++++++++++++++++|------------------------ |
+| Brightness: 128 ++++++++++++++++++++++|------------------------ |
+| Zoom:       100 |---------------------------------------------- |
+| Color:      128 ++++++++++++++++++++++|------------------------ |
+|                                                                 |
+| 30.00 fps - current   30.24 fps - average                       |
++-----------------------------------------------------------------+
 ```
 
 The menu contains:
@@ -133,7 +133,12 @@ The supported effect filters are:
   - didn't turn out right, but i thought this looked cool too :).
 
 The buttons below the image and effects are:
-- `Show Adjustments` show/hide the sliders
+- `Show Adjustments` show/hide the sliders for main controls and filter
+   sliders
+- `Show Controls` opens a window that allows adjusting the controls
+   exposed by the driver. Those include the ones at `Show Adjustments`,
+   but using the English names of each control, as exposed by the
+   Linux Kernel and/or by libv4l.
 - `Full Screen`: Shows camorama in full screen mode;
 - `Take Picture` capture image
 
