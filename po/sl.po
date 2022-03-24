@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
-"POT-Creation-Date: 2022-03-19 19:58+0100\n"
+"POT-Creation-Date: 2022-03-24 15:31+0100\n"
 "PO-Revision-Date: 2018-09-21 05:47+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -45,244 +45,226 @@ msgstr "Poglej, spremeni in shrani slike preko spletne kamere"
 msgid "camorama;webcam;viewer;video-effects;"
 msgstr ""
 
-#: data/camorama-gtk3.ui:49 data/camorama-gtk4.ui:32
+#: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: data/camorama-gtk3.ui:78 data/camorama-gtk4.ui:59
+#: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
 #, fuzzy
 msgid "_Take Picture"
 msgstr "Zajem slike"
 
-#: data/camorama-gtk3.ui:89
+#: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
 #, fuzzy
 #| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
 msgstr "Preklop lokalnega zajemanja"
 
-#: data/camorama-gtk3.ui:144 data/camorama-gtk4.ui:107
+#: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
 msgstr ""
 
-#: data/camorama-gtk3.ui:153 data/camorama-gtk3.ui:342
-#: data/camorama-gtk4.ui:116 data/camorama-gtk4.ui:274
+#: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
+#: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
 msgid "Show Adjustments"
 msgstr "Pokaži spremembe"
 
-#: data/camorama-gtk3.ui:163 data/camorama-gtk4.ui:126
+#: data/camorama-gtk3.ui:168 data/camorama-gtk4.ui:160
 msgid "Show Effects"
 msgstr "Prikaži efekte"
 
-#: data/camorama-gtk3.ui:172 data/camorama-gtk4.ui:136
+#: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
 msgid "_Change Camera"
 msgstr ""
 
-#: data/camorama-gtk3.ui:187 data/camorama-gtk4.ui:151
+#: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
 msgid "Small"
 msgstr "Majhno"
 
-#: data/camorama-gtk3.ui:404
+#: data/camorama-gtk3.ui:357
+msgid "Show Controls"
+msgstr ""
+
+#: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
 msgstr ""
 
-#: data/camorama-gtk3.ui:463 data/camorama-gtk4.ui:315
+#: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
 msgstr "Zajem slike"
 
-#: data/camorama-gtk3.ui:562 data/camorama-gtk4.ui:403
+#: data/camorama-gtk3.ui:536 data/camorama-gtk4.ui:523
 msgid "Contrast:"
 msgstr "Kontrast:"
 
-#: data/camorama-gtk3.ui:574 data/camorama-gtk4.ui:415
+#: data/camorama-gtk3.ui:548 data/camorama-gtk4.ui:535
 msgid "Brightness:"
 msgstr "Svetlost:"
 
-#: data/camorama-gtk3.ui:586 data/camorama-gtk4.ui:427
+#: data/camorama-gtk3.ui:560 data/camorama-gtk4.ui:547
 msgid "Color:"
 msgstr "Barva:"
 
-#: data/camorama-gtk3.ui:598 data/camorama-gtk4.ui:439
+#: data/camorama-gtk3.ui:572 data/camorama-gtk4.ui:559
 msgid "Hue:"
 msgstr "Odtenek:"
 
-#: data/camorama-gtk3.ui:610 data/camorama-gtk4.ui:451
+#: data/camorama-gtk3.ui:584 data/camorama-gtk4.ui:571
 msgid "White Balance:"
 msgstr "Ravnotežje beline:"
 
-#: data/camorama-gtk3.ui:692 data/camorama-gtk4.ui:533
+#: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
 msgid "Zoom:"
 msgstr ""
 
-#: data/camorama-gtk3.ui:826 data/camorama-gtk4.ui:666
+#: data/camorama-gtk3.ui:714
+msgid "Threshold:"
+msgstr ""
+
+#: data/camorama-gtk3.ui:748
+msgid "Channel Threshold:"
+msgstr ""
+
+#: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Splošno</span>"
 
-#: data/camorama-gtk3.ui:860 data/camorama-gtk4.ui:696
+#: data/camorama-gtk3.ui:899 data/camorama-gtk4.ui:818
 msgid "Automatic Capture"
 msgstr "Samodejno zajemanje"
 
-#: data/camorama-gtk3.ui:882 data/camorama-gtk3.ui:1020
-#: data/camorama-gtk3.ui:1059 data/camorama-gtk3.ui:1236
-#: data/camorama-gtk3.ui:1355 data/camorama-gtk3.ui:1393
-#: data/camorama-gtk3.ui:1618 data/camorama-gtk3.ui:1737
-#: data/camorama-gtk3.ui:1775 data/camorama-gtk4.ui:716
-#: data/camorama-gtk4.ui:831 data/camorama-gtk4.ui:866
-#: data/camorama-gtk4.ui:1023 data/camorama-gtk4.ui:1127
-#: data/camorama-gtk4.ui:1161 data/camorama-gtk4.ui:1366
-#: data/camorama-gtk4.ui:1470 data/camorama-gtk4.ui:1504
+#: data/camorama-gtk3.ui:921 data/camorama-gtk3.ui:1059
+#: data/camorama-gtk3.ui:1098 data/camorama-gtk3.ui:1291
+#: data/camorama-gtk3.ui:1410 data/camorama-gtk3.ui:1448
+#: data/camorama-gtk3.ui:1686 data/camorama-gtk3.ui:1805
+#: data/camorama-gtk3.ui:1843 data/camorama-gtk4.ui:840
+#: data/camorama-gtk4.ui:978 data/camorama-gtk4.ui:1017
+#: data/camorama-gtk4.ui:1210 data/camorama-gtk4.ui:1329
+#: data/camorama-gtk4.ui:1367 data/camorama-gtk4.ui:1605
+#: data/camorama-gtk4.ui:1724 data/camorama-gtk4.ui:1762
 msgid "     "
 msgstr "     "
 
-#: data/camorama-gtk3.ui:905 data/camorama-gtk4.ui:737
+#: data/camorama-gtk3.ui:944 data/camorama-gtk4.ui:863
 msgid "Capture Interval (in minutes):"
 msgstr "Interval zajemanja (v minutah)"
 
-#: data/camorama-gtk3.ui:977 data/camorama-gtk4.ui:791
+#: data/camorama-gtk3.ui:1016 data/camorama-gtk4.ui:935
 msgid "General"
 msgstr "Splošno"
 
-#: data/camorama-gtk3.ui:1002 data/camorama-gtk4.ui:815
+#: data/camorama-gtk3.ui:1041 data/camorama-gtk4.ui:960
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">Lokalni zajem</span>"
 
-#: data/camorama-gtk3.ui:1036 data/camorama-gtk4.ui:845
+#: data/camorama-gtk3.ui:1075 data/camorama-gtk4.ui:994
 msgid "_Enable local capture"
 msgstr "_Omogoči lokalno zajemanje"
 
-#: data/camorama-gtk3.ui:1083 data/camorama-gtk4.ui:888
+#: data/camorama-gtk3.ui:1123 data/camorama-gtk4.ui:1042
 msgid "_Directory for captured pics:"
 msgstr "_Mapa za zajete slike:"
 
-#: data/camorama-gtk3.ui:1096 data/camorama-gtk4.ui:901
+#: data/camorama-gtk3.ui:1136 data/camorama-gtk4.ui:1055
 msgid "_Filename for pictures:"
 msgstr "_Imena slikovnih datotek:"
 
-#: data/camorama-gtk3.ui:1112 data/camorama-gtk4.ui:917
+#: data/camorama-gtk3.ui:1152 data/camorama-gtk4.ui:1071
 #, fuzzy
 msgid "Select a Directory"
 msgstr "Mapa za shranjevanje:"
 
-#: data/camorama-gtk3.ui:1142 data/camorama-gtk3.ui:1525
-#: data/camorama-gtk4.ui:945 data/camorama-gtk4.ui:1289
+#: data/camorama-gtk3.ui:1197 data/camorama-gtk3.ui:1593
+#: data/camorama-gtk4.ui:1116 data/camorama-gtk4.ui:1512
 msgid "Append time to filename"
 msgstr "Pripni čas imenu datoteke"
 
-#: data/camorama-gtk3.ui:1159 data/camorama-gtk3.ui:1541
-#: data/camorama-gtk4.ui:960 data/camorama-gtk4.ui:1303
+#: data/camorama-gtk3.ui:1214 data/camorama-gtk3.ui:1609
+#: data/camorama-gtk4.ui:1133 data/camorama-gtk4.ui:1528
 msgid "Add a timestamp to captured images"
 msgstr "Dodaj časovni žig zajetim slikam"
 
-#: data/camorama-gtk3.ui:1218 data/camorama-gtk3.ui:1600
-#: data/camorama-gtk4.ui:1007 data/camorama-gtk4.ui:1350
+#: data/camorama-gtk3.ui:1273 data/camorama-gtk3.ui:1668
+#: data/camorama-gtk4.ui:1192 data/camorama-gtk4.ui:1587
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Tip slike</span>"
 
-#: data/camorama-gtk3.ui:1251 data/camorama-gtk3.ui:1633
-#: data/camorama-gtk4.ui:1036 data/camorama-gtk4.ui:1379
+#: data/camorama-gtk3.ui:1306 data/camorama-gtk3.ui:1701
+#: data/camorama-gtk4.ui:1225 data/camorama-gtk4.ui:1620
 msgid "Save files in jpeg format"
 msgstr "Shrani datoteke v jpeg formatu"
 
-#: data/camorama-gtk3.ui:1268 data/camorama-gtk3.ui:1650
-#: data/camorama-gtk4.ui:1051 data/camorama-gtk4.ui:1394
+#: data/camorama-gtk3.ui:1323 data/camorama-gtk3.ui:1718
+#: data/camorama-gtk4.ui:1242 data/camorama-gtk4.ui:1637
 msgid "Save files in png format"
 msgstr "Shrani datoteke v png formatu"
 
-#: data/camorama-gtk3.ui:1313 data/camorama-gtk4.ui:1088
+#: data/camorama-gtk3.ui:1368 data/camorama-gtk4.ui:1287
 msgid "Local Capture"
 msgstr "Lokalno zajemanje"
 
-#: data/camorama-gtk3.ui:1337 data/camorama-gtk4.ui:1111
+#: data/camorama-gtk3.ui:1392 data/camorama-gtk4.ui:1311
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">Oddaljeni zajem</span>"
 
-#: data/camorama-gtk3.ui:1371 data/camorama-gtk4.ui:1141
+#: data/camorama-gtk3.ui:1426 data/camorama-gtk4.ui:1345
 msgid "_Enable remote capture"
 msgstr "_Omogoči oddaljeno zajemanje"
 
-#: data/camorama-gtk3.ui:1419 data/camorama-gtk4.ui:1185
+#: data/camorama-gtk3.ui:1475 data/camorama-gtk4.ui:1394
 #, fuzzy
 msgid "Server:"
 msgstr "FTP strežnik: "
 
-#: data/camorama-gtk3.ui:1431 data/camorama-gtk4.ui:1197
+#: data/camorama-gtk3.ui:1487 data/camorama-gtk4.ui:1406
 msgid "Type:"
 msgstr ""
 
-#: data/camorama-gtk3.ui:1443 data/camorama-gtk4.ui:1209
+#: data/camorama-gtk3.ui:1499 data/camorama-gtk4.ui:1418
 msgid "Save directory:"
 msgstr "Mapa za shranjevanje:"
 
-#: data/camorama-gtk3.ui:1455 data/camorama-gtk4.ui:1221
+#: data/camorama-gtk3.ui:1511 data/camorama-gtk4.ui:1430
 #, fuzzy
 msgid "Filename:"
 msgstr "Ime Datoteke"
 
-#: data/camorama-gtk3.ui:1468 data/camorama-gtk4.ui:1234
+#: data/camorama-gtk3.ui:1524 data/camorama-gtk4.ui:1443
 msgid "ftp.yourdomain.org"
 msgstr "ftp.domena.org"
 
-#: data/camorama-gtk3.ui:1507 data/camorama-gtk4.ui:1273
+#: data/camorama-gtk3.ui:1563 data/camorama-gtk4.ui:1482
 msgid "webcamshot"
 msgstr "spletni posnetek"
 
-#: data/camorama-gtk3.ui:1695 data/camorama-gtk4.ui:1431
+#: data/camorama-gtk3.ui:1763 data/camorama-gtk4.ui:1682
 msgid "Remote Capture"
 msgstr "Oddaljeno zajemanje"
 
-#: data/camorama-gtk3.ui:1719 data/camorama-gtk4.ui:1454
+#: data/camorama-gtk3.ui:1787 data/camorama-gtk4.ui:1706
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">Časovni žig</span>"
 
-#: data/camorama-gtk3.ui:1753 data/camorama-gtk4.ui:1484
+#: data/camorama-gtk3.ui:1821 data/camorama-gtk4.ui:1740
 msgid "Use custom string"
 msgstr "Uporabi prilagojen izraz"
 
-#: data/camorama-gtk3.ui:1798 data/camorama-gtk4.ui:1525
+#: data/camorama-gtk3.ui:1866 data/camorama-gtk4.ui:1785
 msgid "String:"
 msgstr "Izraz:"
 
-#: data/camorama-gtk3.ui:1843 data/camorama-gtk4.ui:1560
+#: data/camorama-gtk3.ui:1911 data/camorama-gtk4.ui:1830
 msgid "Draw date and time"
 msgstr "Izriši datum in čas"
 
-#: data/camorama-gtk3.ui:1887 data/camorama-gtk4.ui:1596
+#: data/camorama-gtk3.ui:1955 data/camorama-gtk4.ui:1874
 msgid "Timestamp"
 msgstr "Časovni žig"
 
-#: data/camorama-gtk3.ui:1960 data/camorama-gtk4.ui:1663
+#: data/camorama-gtk3.ui:2022 data/camorama-gtk4.ui:1941
 #, fuzzy
 msgid "Select a video device to be used"
 msgstr "v4l naprava za uporabo"
-
-#: data/camorama-gtk4.ui:50
-#, fuzzy
-msgid "_File"
-msgstr "Ime Datoteke"
-
-#: data/camorama-gtk4.ui:74
-msgid "_Quit"
-msgstr ""
-
-#: data/camorama-gtk4.ui:86
-msgid "_Edit"
-msgstr ""
-
-#: data/camorama-gtk4.ui:95
-#, fuzzy
-msgid "_Preferences"
-msgstr "Lastnosti"
-
-#: data/camorama-gtk4.ui:164
-msgid "_Help"
-msgstr ""
-
-#: data/camorama-gtk4.ui:173
-msgid "_About"
-msgstr ""
-
-#: data/camorama-gtk4.ui:596
-msgid "Preferences"
-msgstr "Lastnosti"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -510,20 +492,20 @@ msgstr "Matej Urbančič <matej.urban@gmail.com>"
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr ""
 
-#: src/callbacks.c:773
+#: src/callbacks.c:1241
 msgid "Can't allocate memory to store devices"
 msgstr ""
 
-#: src/callbacks.c:885
+#: src/callbacks.c:1353
 msgid "Didn't find any camera"
 msgstr ""
 
-#: src/callbacks.c:980
+#: src/callbacks.c:1449
 #, c-format
 msgid "%dx%d (max %.1f fps)"
 msgstr ""
 
-#: src/callbacks.c:984
+#: src/callbacks.c:1453
 #, c-format
 msgid "%dx%d"
 msgstr ""
@@ -542,11 +524,11 @@ msgstr ""
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-window.c:109
+#: src/camorama-window.c:116
 msgid "_Add Filter"
 msgstr ""
 
-#: src/camorama-window.c:196
+#: src/camorama-window.c:203
 #, fuzzy
 msgid "Effects"
 msgstr "Prikaži efekte"
@@ -619,36 +601,36 @@ msgstr "Ni mogoče ustvariti mape '%s'."
 msgid "Could not change to directory '%s'."
 msgstr "Ni mogoče zamenjati mape '%s'."
 
-#: src/filter.c:70
+#: src/filter.c:96
 msgid "Invert"
 msgstr ""
 
-#: src/filter.c:114
+#: src/filter.c:184
 msgid "Threshold (Overall)"
 msgstr ""
 
-#: src/filter.c:164
+#: src/filter.c:277
 msgid "Threshold (Per Channel)"
 msgstr ""
 
-#: src/filter.c:242
+#: src/filter.c:355
 msgid "Wacky"
 msgstr ""
 
-#: src/filter.c:348
+#: src/filter.c:461
 msgid "Smooth"
 msgstr ""
 
-#: src/filter.c:384
+#: src/filter.c:497
 msgid "Monochrome"
 msgstr ""
 
-#: src/filter.c:422
+#: src/filter.c:535
 msgid "Monochrome (Weight)"
 msgstr ""
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:479
+#: src/filter.c:592
 msgid "Sobel"
 msgstr ""
 
@@ -732,7 +714,7 @@ msgstr ""
 msgid "%s not found."
 msgstr ""
 
-#: src/v4l.c:725
+#: src/v4l.c:1087
 #, fuzzy, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -741,12 +723,12 @@ msgstr ""
 "Povezava z video napravo (%s) ni mogoča.\n"
 "Prosim, preverite povezavo."
 
-#: src/v4l.c:734
+#: src/v4l.c:1096
 #, c-format
 msgid "Device %s is not a video capture device."
 msgstr ""
 
-#: src/v4l.c:916 src/v4l.c:986
+#: src/v4l.c:1270 src/v4l.c:1340
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -755,11 +737,11 @@ msgstr ""
 "Povezava z video napravo (%s) ni mogoča.\n"
 "Prosim, preverite povezavo."
 
-#: src/v4l.c:994
+#: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
 msgstr ""
 
-#: src/v4l.c:1010
+#: src/v4l.c:1364
 #, fuzzy, c-format
 #| msgid ""
 #| "Could not connect to video device (%s).\n"
@@ -771,59 +753,70 @@ msgstr ""
 "Povezava z video napravo (%s) ni mogoča.\n"
 "Prosim, preverite povezavo."
 
-#: src/v4l.c:1031
+#: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
 msgstr ""
 
-#: src/v4l.c:1050
+#: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
 msgstr ""
 
-#: src/v4l.c:1074 src/v4l.c:1157
+#: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:1083 src/v4l.c:1166 src/v4l.c:1181
+#: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
 msgid "could not allocate memory for video buffers, exiting...."
 msgstr ""
 
-#: src/v4l.c:1099
+#: src/v4l.c:1453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:1114
+#: src/v4l.c:1468
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:1128
+#: src/v4l.c:1482
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:1138 src/v4l.c:1205
+#: src/v4l.c:1492 src/v4l.c:1559
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:1194
+#: src/v4l.c:1548
 #, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 
-#: src/v4l.c:1235 src/v4l.c:1286
+#: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr ""
 
-#: src/v4l.c:1349 src/v4l.c:1408
+#: src/v4l.c:1703 src/v4l.c:1762
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr ""
+
+#, fuzzy
+#~ msgid "_File"
+#~ msgstr "Ime Datoteke"
+
+#, fuzzy
+#~ msgid "_Preferences"
+#~ msgstr "Lastnosti"
+
+#~ msgid "Preferences"
+#~ msgstr "Lastnosti"
 
 #~ msgid "camorama"
 #~ msgstr "camorama"
