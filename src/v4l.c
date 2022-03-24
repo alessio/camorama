@@ -712,7 +712,7 @@ int cam_query_controls(cam_t *cam)
     cam_free_controls(cam);
 
     query.id = V4L2_CTRL_FLAG_NEXT_CTRL;
-    while (!v4l2_ioctl(cam->dev, VIDIOC_QUERY_EXT_CTRL, &query)) {
+    while (!cam_ioctl(cam, VIDIOC_QUERY_EXT_CTRL, &query)) {
 	ignore = cam_add_ctrl(cam, &query, &ptr);
 
 	if (ignore >= 0 && cam->debug == TRUE) {
@@ -774,9 +774,10 @@ int cam_set_control(cam_t *cam, guint32 id, void *value)
     }
     #pragma GCC diagnostic pop
 
-    ret = v4l2_ioctl(cam->dev, VIDIOC_S_EXT_CTRLS, &ctrls);
+    ret = cam_ioctl(cam, VIDIOC_S_EXT_CTRLS, &ctrls);
     if (ret)
-	printf("v4l2 set user control \"%s\" returned %d\n", p->name, ret);
+	printf("v4l2 set user control \"%s\" to %d returned %d\n", p->name,
+               c.value, errno);
 
     if (cam->debug == TRUE)
         printf("  %s set to value %d\n", p->name, c.value);
@@ -803,7 +804,7 @@ int cam_get_control(cam_t *cam, guint32 id, void *value)
     memset(&c, 0, sizeof(c));
     c.id = p->id;
 
-    ret = v4l2_ioctl(cam->dev, VIDIOC_G_EXT_CTRLS, &ctrls);
+    ret = cam_ioctl(cam, VIDIOC_G_EXT_CTRLS, &ctrls);
     if (ret) {
 	printf("v4l2 get user control \"%s\" returned %d\n", p->name, ret);
 	return -1;
