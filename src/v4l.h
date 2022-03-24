@@ -62,6 +62,8 @@ typedef struct  {
     gint64 value;
 } video_control_menu_t;
 
+struct camera;
+
 typedef struct {
     char *name;
     char *group;
@@ -73,6 +75,8 @@ typedef struct {
 
     unsigned int menu_size;
     video_control_menu_t *menu;
+
+    struct camera *cam;
 
     void *next;
 

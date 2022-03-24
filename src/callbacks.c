@@ -694,6 +694,110 @@ gint timeout_capture_func(cam_t *cam)
     return 1;
 }
 
+static void change_ctrl_value(GtkScale *sc1, video_controls_t *ctrl)
+{
+    cam_t *cam = ctrl->cam;
+    gint32 value;
+    int ret;
+
+    value = gtk_range_get_value((GtkRange *) sc1);
+    ret = cam_set_control(cam, ctrl->id, &value);
+    if (ret) {
+        ret = cam_get_control(cam, ctrl->id, &value);
+        if (ret)
+            return;
+        gtk_range_set_value((GtkRange *) sc1, value);
+    }
+}
+
+static void change_ctrl_button(GtkToggleButton *tgl, video_controls_t *ctrl)
+{
+    cam_t *cam = ctrl->cam;
+    gint32 value;
+    int ret;
+
+    value = gtk_toggle_button_get_active(tgl) ? 1 : 0;
+    ret = cam_set_control(cam, ctrl->id, &value);
+    if (ret) {
+        ret = cam_get_control(cam, ctrl->id, &value);
+        if (ret)
+            return;
+        gtk_toggle_button_set_active(tgl, value);
+    }
+}
+
+void show_controls(GtkWidget *widget, cam_t *cam)
+{
+    GtkWidget *window, *grid, *button, *slider, *label;
+    video_controls_t *ctrl;
+    gint32 value;
+    int row = 0;
+    int ret;
+
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title(GTK_WINDOW(window), "Camera controls");
+    gtk_window_set_default_size(GTK_WINDOW(window), 80, 60);
+
+    grid = gtk_grid_new ();
+
+    gtk_container_add (GTK_CONTAINER (window), grid);
+
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wswitch-enum"
+
+    ctrl = cam->controls;
+    while (ctrl) {
+        switch (ctrl->type) {
+        case V4L2_CTRL_TYPE_INTEGER:
+            ret = cam_get_control(cam, ctrl->id, &value);
+            if (ret)
+                break;
+
+            label = gtk_label_new(ctrl->name);
+            gtk_grid_attach(GTK_GRID(grid), label, 0, row, 1, 1);
+
+            slider = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL,
+                                              ctrl->min, ctrl->max, ctrl->step);
+
+            gtk_range_set_value((GtkRange *)slider, value);
+            gtk_grid_attach (GTK_GRID(grid), slider, 1, row++, 1, 1);
+
+            g_signal_connect(slider, "value-changed",
+                             G_CALLBACK(change_ctrl_value), ctrl);
+            break;
+        case V4L2_CTRL_TYPE_BOOLEAN:
+        case V4L2_CTRL_TYPE_BUTTON:
+            ret = cam_get_control(cam, ctrl->id, &value);
+            if (ret)
+                break;
+
+            button = gtk_check_button_new_with_label(ctrl->name);
+            gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), value);
+            g_signal_connect(button, "clicked",
+                             G_CALLBACK (change_ctrl_button), ctrl);
+            gtk_grid_attach(GTK_GRID(grid), button, 1, row++, 1, 1);
+            break;
+#if 0
+        case V4L2_CTRL_TYPE_INTEGER_MENU:
+        case V4L2_CTRL_TYPE_MENU:
+            ret = cam_get_control(cam, ctrl->id, &value);
+            if (ret)
+                break;
+
+            /* TODO */
+
+            break;
+#endif
+        default:
+            break;
+        }
+        ctrl = ctrl->next;
+    }
+    #pragma GCC diagnostic pop
+
+    gtk_widget_show_all(window);
+}
+
 void update_sliders(cam_t *cam)
 {
    video_controls_t *p;

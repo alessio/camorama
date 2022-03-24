@@ -634,6 +634,7 @@ static int cam_add_ctrl(cam_t *cam,
     (*ptr)->id	  = query->id;
     (*ptr)->name  = strdup((const char *)query->name);
     (*ptr)->group = strdup(cam_ctrl_class(V4L2_CTRL_ID2CLASS(query->id)));
+    (*ptr)->cam   = cam;
     #pragma GCC diagnostic push
     #pragma GCC diagnostic ignored "-Wswitch-enum"
     switch (query->type) {
@@ -643,23 +644,23 @@ static int cam_add_ctrl(cam_t *cam,
 	(*ptr)->max  = query->maximum;
 	(*ptr)->def  = query->default_value;
 	(*ptr)->step = query->step;
-	return (0);
+	break;
     case V4L2_CTRL_TYPE_INTEGER64:
 	(*ptr)->type = V4L2_CTRL_TYPE_INTEGER64;
 	(*ptr)->min  = query->minimum;
 	(*ptr)->max  = query->maximum;
 	(*ptr)->def  = query->default_value;
 	(*ptr)->step = query->step;
-	return (0);
+	break;
     case V4L2_CTRL_TYPE_BOOLEAN:
 	(*ptr)->type = V4L2_CTRL_TYPE_BOOLEAN;
-	return (0);
+	break;
     case V4L2_CTRL_TYPE_BUTTON:
 	(*ptr)->type = V4L2_CTRL_TYPE_BUTTON;
-	return (0);
+	break;
     case V4L2_CTRL_TYPE_STRING:
 	(*ptr)->type = V4L2_CTRL_TYPE_STRING;
-	return (0);
+	break;
     case V4L2_CTRL_TYPE_INTEGER_MENU:
     case V4L2_CTRL_TYPE_MENU: {
 	struct v4l2_querymenu menu = { 0 };
@@ -690,12 +691,14 @@ static int cam_add_ctrl(cam_t *cam,
 	(*ptr)->max	    = query->maximum;
 	(*ptr)->def	    = query->default_value;
 	(*ptr)->type	    = V4L2_CTRL_TYPE_MENU;
-	return (0);
+	break;
     }
     default:
 	return (1);
     }
     #pragma GCC diagnostic pop
+
+    return (0);
 }
 
 int cam_query_controls(cam_t *cam)

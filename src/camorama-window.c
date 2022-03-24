@@ -258,6 +258,9 @@ void load_interface(cam_t *cam)
     g_signal_connect(gtk_builder_get_object(cam->xml, "button1"),
                      "clicked", G_CALLBACK(capture_func), cam);
 
+    g_signal_connect(gtk_builder_get_object(cam->xml, "show_ctrls"),
+                     "clicked", G_CALLBACK(show_controls), cam);
+
     update_sliders(cam);
 
     if (cam->show_adjustments == FALSE)

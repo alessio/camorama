@@ -67,6 +67,7 @@ void smooth_func(GtkToggleButton *, gpointer);
 void negative_func(GtkToggleButton *, gpointer);
 void on_scale1_drag_data_received(GtkScale *, cam_t *);
 void on_status_show(GtkWidget *, cam_t *);
+void show_controls(GtkWidget *widget, cam_t *cam);
 void update_sliders(cam_t *cam);
 void contrast_change(GtkScale *, cam_t *);
 void brightness_change(GtkScale *, cam_t *);
