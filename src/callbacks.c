@@ -870,7 +870,9 @@ static void reset_ctrls(GtkButton *btn, cam_t *cam)
 
 static void close_controls(GtkWidget* widget, cam_t *cam)
 {
+    g_mutex_lock(&cam->control_win_mutex);
     cam->controls_window = NULL;
+    g_mutex_unlock(&cam->control_win_mutex);
 }
 
 void show_controls(GtkWidget *widget, cam_t *cam)
@@ -982,7 +984,9 @@ void show_controls(GtkWidget *widget, cam_t *cam)
     g_signal_connect(G_OBJECT(window), "destroy",
                      G_CALLBACK (close_controls), cam);
 
+    g_mutex_lock(&cam->control_win_mutex);
     cam->controls_window = window;
+    g_mutex_unlock(&cam->control_win_mutex);
 
     gtk_widget_show_all(window);
 }
@@ -1150,8 +1154,10 @@ void contrast_change(GtkScale *sc1, cam_t *cam)
     cam->contrast = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_CONTRAST, &cam->contrast);
 
+    g_mutex_lock(&cam->control_win_mutex);
     if (cam->controls_window)
         gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
+    g_mutex_unlock(&cam->control_win_mutex);
 }
 
 void brightness_change(GtkScale *sc1, cam_t *cam)
@@ -1160,8 +1166,10 @@ void brightness_change(GtkScale *sc1, cam_t *cam)
     cam->brightness = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_BRIGHTNESS, &cam->brightness);
 
+    g_mutex_lock(&cam->control_win_mutex);
     if (cam->controls_window)
         gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
+    g_mutex_unlock(&cam->control_win_mutex);
 }
 
 void zoom_change(GtkScale *sc1, cam_t *cam)
@@ -1180,8 +1188,10 @@ void colour_change(GtkScale *sc1, cam_t *cam)
     cam->colour = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_SATURATION, &cam->colour);
 
+    g_mutex_lock(&cam->control_win_mutex);
     if (cam->controls_window)
         gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
+    g_mutex_unlock(&cam->control_win_mutex);
 }
 
 void hue_change(GtkScale *sc1, cam_t *cam)
@@ -1190,8 +1200,10 @@ void hue_change(GtkScale *sc1, cam_t *cam)
     cam->hue = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_HUE, &cam->hue);
 
+    g_mutex_lock(&cam->control_win_mutex);
     if (cam->controls_window)
         gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
+    g_mutex_unlock(&cam->control_win_mutex);
 }
 
 void wb_change(GtkScale *sc1, cam_t *cam)
@@ -1200,8 +1212,10 @@ void wb_change(GtkScale *sc1, cam_t *cam)
     cam->whiteness = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_WHITENESS, &cam->whiteness);
 
+    g_mutex_lock(&cam->control_win_mutex);
     if (cam->controls_window)
         gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
+    g_mutex_unlock(&cam->control_win_mutex);
 }
 
 /*
@@ -1409,6 +1423,7 @@ int select_video_dev(cam_t *cam)
 
 void on_change_camera(GtkWidget *widget, cam_t *cam)
 {
+    GtkWidget *window;
     gchar *old_cam;
 
     old_cam = g_strdup(cam->video_dev);
@@ -1420,6 +1435,16 @@ void on_change_camera(GtkWidget *widget, cam_t *cam)
         return;
     }
     g_free(old_cam);
+
+    g_mutex_lock(&cam->control_win_mutex);
+    if (cam->controls_window) {
+        window = cam->controls_window;
+        cam->controls_window = NULL;
+        g_mutex_unlock(&cam->control_win_mutex);
+        gtk_window_close(GTK_WINDOW(window));
+    } else {
+        g_mutex_unlock(&cam->control_win_mutex);
+    }
 
     start_camera(cam);
     update_sliders(cam);

@@ -107,6 +107,7 @@ static void activate(GtkApplication *app)
     cam->app = app;
     g_mutex_init(&cam->remote_save_mutex);
     g_mutex_init(&cam->pixbuf_mutex);
+    g_mutex_init(&cam->control_win_mutex);
 
     /* gtk is initialized now */
     camorama_filters_init();

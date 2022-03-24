@@ -103,6 +103,7 @@ typedef struct camera {
 
     GMutex remote_save_mutex;      /* Protects n_threads */
     GMutex pixbuf_mutex;           /* Protects pic_buf */
+    GMutex control_win_mutex;      /* Protects controls_window */
 
     unsigned int min_width, min_height, max_width, max_height;
     struct colorspace_parms colorspc;
