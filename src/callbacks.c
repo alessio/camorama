@@ -868,6 +868,11 @@ static void reset_ctrls(GtkButton *btn, cam_t *cam)
     gtk_container_forall(GTK_CONTAINER(toplevel), send_update_signal, 0);
 }
 
+static void close_controls(GtkWidget* widget, cam_t *cam)
+{
+    cam->controls_window = NULL;
+}
+
 void show_controls(GtkWidget *widget, cam_t *cam)
 {
     GtkWidget *window, *vbox, *grid, *button, *slider, *label, *combo, *btn;
@@ -888,8 +893,8 @@ void show_controls(GtkWidget *widget, cam_t *cam)
 
     vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 2);
     grid = gtk_grid_new();
-    gtk_container_add (GTK_CONTAINER (window), vbox);
-    gtk_container_add (GTK_CONTAINER (vbox), grid);
+    gtk_container_add (GTK_CONTAINER(window), vbox);
+    gtk_container_add (GTK_CONTAINER(vbox), grid);
 
     #pragma GCC diagnostic push
     #pragma GCC diagnostic ignored "-Wswitch-enum"
@@ -974,8 +979,14 @@ void show_controls(GtkWidget *widget, cam_t *cam)
     g_signal_connect(GTK_BUTTON(btn),
                      "clicked", G_CALLBACK(reset_ctrls), cam);
 
+    g_signal_connect(G_OBJECT(window), "destroy",
+                     G_CALLBACK (close_controls), cam);
+
+    cam->controls_window = window;
+
     gtk_widget_show_all(window);
 }
+
 
 void update_sliders(cam_t *cam)
 {
@@ -1138,6 +1149,9 @@ void contrast_change(GtkScale *sc1, cam_t *cam)
 
     cam->contrast = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_CONTRAST, &cam->contrast);
+
+    if (cam->controls_window)
+        gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
 }
 
 void brightness_change(GtkScale *sc1, cam_t *cam)
@@ -1145,6 +1159,9 @@ void brightness_change(GtkScale *sc1, cam_t *cam)
 
     cam->brightness = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_BRIGHTNESS, &cam->brightness);
+
+    if (cam->controls_window)
+        gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
 }
 
 void zoom_change(GtkScale *sc1, cam_t *cam)
@@ -1152,6 +1169,9 @@ void zoom_change(GtkScale *sc1, cam_t *cam)
 
     cam->zoom = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, cam->zoom_cid, &cam->zoom);
+
+    if (cam->controls_window)
+        gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
 }
 
 void colour_change(GtkScale *sc1, cam_t *cam)
@@ -1159,6 +1179,9 @@ void colour_change(GtkScale *sc1, cam_t *cam)
 
     cam->colour = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_SATURATION, &cam->colour);
+
+    if (cam->controls_window)
+        gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
 }
 
 void hue_change(GtkScale *sc1, cam_t *cam)
@@ -1166,6 +1189,9 @@ void hue_change(GtkScale *sc1, cam_t *cam)
 
     cam->hue = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_HUE, &cam->hue);
+
+    if (cam->controls_window)
+        gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
 }
 
 void wb_change(GtkScale *sc1, cam_t *cam)
@@ -1173,6 +1199,9 @@ void wb_change(GtkScale *sc1, cam_t *cam)
 
     cam->whiteness = gtk_range_get_value((GtkRange *) sc1);
     cam_set_control(cam, V4L2_CID_WHITENESS, &cam->whiteness);
+
+    if (cam->controls_window)
+        gtk_container_forall(GTK_CONTAINER(cam->controls_window), send_update_signal, 0);
 }
 
 /*

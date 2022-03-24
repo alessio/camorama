@@ -130,6 +130,7 @@ typedef struct camera {
     GdkPixbuf *pb;
 
     GtkApplication *app;
+    GtkWidget *controls_window;
 
     CamoramaFilterChain *filter_chain;
 
