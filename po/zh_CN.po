@@ -34,7 +34,7 @@ msgid ""
 "effects."
 msgstr "Camorama 是一个简单的摄像头查看器，其带有应用一些视频特效的功能。"
 
-#: camorama.desktop.in:5 src/callbacks.c:530
+#: camorama.desktop.in:5 src/callbacks.c:530 src/callbacks.c:582
 msgid "View, alter and save images from a webcam"
 msgstr "查看、控制并保存摄像头的图像"
 
@@ -42,36 +42,49 @@ msgstr "查看、控制并保存摄像头的图像"
 msgid "camorama;webcam;viewer;video-effects;"
 msgstr "camorama;webcam;viewer;video-effects;摄像头;查看器;视频特效"
 
-#: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49
+#: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49 data/camorama-gtk3.ui:49
+#: data/camorama-gtk4.ui:32 data/camorama-gtk2.ui:1202
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
+#: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75 data/camorama-gtk3.ui:78
+#: data/camorama-gtk4.ui:59
 msgid "_Take Picture"
 msgstr "拍照 (_T)"
 
-#: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
+#: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86 data/camorama-gtk3.ui:89
 msgid "Toggle _Full Screen"
 msgstr "切换全屏 (_F)"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
+#: data/camorama-gtk3.ui:144 data/camorama-gtk4.ui:107
+#: data/camorama-gtk2.ui:1285
 msgid "_View"
 msgstr "查看 (_V)"
 
 #: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
 #: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
+#: data/camorama-gtk3.ui:153 data/camorama-gtk3.ui:342
+#: data/camorama-gtk4.ui:116 data/camorama-gtk4.ui:274
+#: data/camorama-gtk2.ui:1294 data/camorama-gtk2.ui:1477
 msgid "Show Adjustments"
 msgstr "显示调整"
 
 #: data/camorama-gtk3.ui:168 data/camorama-gtk4.ui:160
+#: data/camorama-gtk3.ui:163 data/camorama-gtk4.ui:126
+#: data/camorama-gtk2.ui:1304
 msgid "Show Effects"
 msgstr "显示特效"
 
 #: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
+#: data/camorama-gtk2.ui:1314 data/camorama-gtk3.ui:172
+#: data/camorama-gtk4.ui:136
 msgid "_Change Camera"
 msgstr "变更摄像头 (_C)"
 
 #: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
+#: data/camorama-gtk3.ui:187 data/camorama-gtk4.ui:151
+#: data/camorama-gtk2.ui:1329
 msgid "Small"
 msgstr "小"
 
@@ -80,40 +93,54 @@ msgid "Show Controls"
 msgstr ""
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
+#: data/camorama-gtk3.ui:404
 msgid "Full Screen"
 msgstr "全屏"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
+#: data/camorama-gtk3.ui:463 data/camorama-gtk4.ui:315
+#: data/camorama-gtk2.ui:1226 data/camorama-gtk2.ui:1536
 msgid "Take Picture"
 msgstr "拍照"
 
 #: data/camorama-gtk3.ui:536 data/camorama-gtk4.ui:523
+#: data/camorama-gtk3.ui:562 data/camorama-gtk4.ui:403
+#: data/camorama-gtk2.ui:1667
 msgid "Contrast:"
 msgstr "对比度："
 
 #: data/camorama-gtk3.ui:548 data/camorama-gtk4.ui:535
+#: data/camorama-gtk3.ui:574 data/camorama-gtk4.ui:415
+#: data/camorama-gtk2.ui:1681
 msgid "Brightness:"
 msgstr "亮度："
 
 #: data/camorama-gtk3.ui:560 data/camorama-gtk4.ui:547
+#: data/camorama-gtk3.ui:586 data/camorama-gtk4.ui:427
+#: data/camorama-gtk2.ui:1697
 msgid "Color:"
 msgstr "颜色："
 
 #: data/camorama-gtk3.ui:572 data/camorama-gtk4.ui:559
+#: data/camorama-gtk2.ui:1713 data/camorama-gtk3.ui:598
+#: data/camorama-gtk4.ui:439
 msgid "Hue:"
 msgstr "色调："
 
 #: data/camorama-gtk3.ui:584 data/camorama-gtk4.ui:571
+#: data/camorama-gtk3.ui:610 data/camorama-gtk4.ui:451
+#: data/camorama-gtk2.ui:1729
 msgid "White Balance:"
 msgstr "白平衡："
 
 #: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
+#: data/camorama-gtk2.ui:1807 data/camorama-gtk3.ui:692
+#: data/camorama-gtk4.ui:533
 msgid "Zoom:"
 msgstr "缩放："
 
 #: data/camorama-gtk3.ui:714
 #, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
 msgstr "阈值（总）"
 
@@ -122,10 +149,14 @@ msgid "Channel Threshold:"
 msgstr ""
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
+#: data/camorama-gtk3.ui:826 data/camorama-gtk4.ui:666
+#: data/camorama-gtk2.ui:111
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">常规</span>"
 
 #: data/camorama-gtk3.ui:899 data/camorama-gtk4.ui:818
+#: data/camorama-gtk3.ui:860 data/camorama-gtk4.ui:696
+#: data/camorama-gtk2.ui:143
 msgid "Automatic Capture"
 msgstr "自动抓取"
 
@@ -138,123 +169,197 @@ msgstr "自动抓取"
 #: data/camorama-gtk4.ui:1210 data/camorama-gtk4.ui:1329
 #: data/camorama-gtk4.ui:1367 data/camorama-gtk4.ui:1605
 #: data/camorama-gtk4.ui:1724 data/camorama-gtk4.ui:1762
+#: data/camorama-gtk3.ui:882 data/camorama-gtk3.ui:1020
+#: data/camorama-gtk3.ui:1236 data/camorama-gtk3.ui:1355
+#: data/camorama-gtk3.ui:1393 data/camorama-gtk3.ui:1618
+#: data/camorama-gtk3.ui:1737 data/camorama-gtk3.ui:1775
+#: data/camorama-gtk4.ui:716 data/camorama-gtk4.ui:831
+#: data/camorama-gtk4.ui:866 data/camorama-gtk4.ui:1023
+#: data/camorama-gtk4.ui:1127 data/camorama-gtk4.ui:1161
+#: data/camorama-gtk4.ui:1366 data/camorama-gtk4.ui:1470
+#: data/camorama-gtk4.ui:1504 data/camorama-gtk2.ui:165
+#: data/camorama-gtk2.ui:300 data/camorama-gtk2.ui:338
+#: data/camorama-gtk2.ui:521 data/camorama-gtk2.ui:637
+#: data/camorama-gtk2.ui:674 data/camorama-gtk2.ui:909
+#: data/camorama-gtk2.ui:1025 data/camorama-gtk2.ui:1062
 msgid "     "
 msgstr "     "
 
 #: data/camorama-gtk3.ui:944 data/camorama-gtk4.ui:863
+#: data/camorama-gtk3.ui:905 data/camorama-gtk4.ui:737
+#: data/camorama-gtk2.ui:187
 msgid "Capture Interval (in minutes):"
 msgstr "抓取间隔(分钟)："
 
 #: data/camorama-gtk3.ui:1016 data/camorama-gtk4.ui:935
+#: data/camorama-gtk3.ui:977 data/camorama-gtk4.ui:791
+#: data/camorama-gtk2.ui:261
 msgid "General"
 msgstr "常规"
 
 #: data/camorama-gtk3.ui:1041 data/camorama-gtk4.ui:960
+#: data/camorama-gtk3.ui:1002 data/camorama-gtk4.ui:815
+#: data/camorama-gtk2.ui:283
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">本地抓取</span>"
 
 #: data/camorama-gtk3.ui:1075 data/camorama-gtk4.ui:994
+#: data/camorama-gtk3.ui:1036 data/camorama-gtk4.ui:845
+#: data/camorama-gtk2.ui:315
 msgid "_Enable local capture"
 msgstr "启用本地抓取(_E)"
 
 #: data/camorama-gtk3.ui:1123 data/camorama-gtk4.ui:1042
+#: data/camorama-gtk3.ui:1083 data/camorama-gtk4.ui:888
+#: data/camorama-gtk2.ui:364
 msgid "_Directory for captured pics:"
 msgstr "抓取的图片所在目录(_D)："
 
 #: data/camorama-gtk3.ui:1136 data/camorama-gtk4.ui:1055
+#: data/camorama-gtk3.ui:1096 data/camorama-gtk4.ui:901
+#: data/camorama-gtk2.ui:377
 msgid "_Filename for pictures:"
 msgstr "图片的文件名(_F)："
 
 #: data/camorama-gtk3.ui:1152 data/camorama-gtk4.ui:1071
+#: data/camorama-gtk2.ui:411 data/camorama-gtk3.ui:1112
+#: data/camorama-gtk4.ui:917
 msgid "Select a Directory"
 msgstr "选择一个目录"
 
 #: data/camorama-gtk3.ui:1197 data/camorama-gtk3.ui:1593
 #: data/camorama-gtk4.ui:1116 data/camorama-gtk4.ui:1512
+#: data/camorama-gtk3.ui:1142 data/camorama-gtk3.ui:1525
+#: data/camorama-gtk4.ui:945 data/camorama-gtk4.ui:1289
+#: data/camorama-gtk2.ui:428 data/camorama-gtk2.ui:817
 msgid "Append time to filename"
 msgstr "在文件名后追加时间"
 
 #: data/camorama-gtk3.ui:1214 data/camorama-gtk3.ui:1609
 #: data/camorama-gtk4.ui:1133 data/camorama-gtk4.ui:1528
+#: data/camorama-gtk3.ui:1159 data/camorama-gtk3.ui:1541
+#: data/camorama-gtk4.ui:960 data/camorama-gtk4.ui:1303
+#: data/camorama-gtk2.ui:445 data/camorama-gtk2.ui:833
 msgid "Add a timestamp to captured images"
 msgstr "在抓取的图像上添加时间戳"
 
 #: data/camorama-gtk3.ui:1273 data/camorama-gtk3.ui:1668
 #: data/camorama-gtk4.ui:1192 data/camorama-gtk4.ui:1587
+#: data/camorama-gtk3.ui:1218 data/camorama-gtk3.ui:1600
+#: data/camorama-gtk4.ui:1007 data/camorama-gtk4.ui:1350
+#: data/camorama-gtk2.ui:504 data/camorama-gtk2.ui:892
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">图像类型</span>"
 
 #: data/camorama-gtk3.ui:1306 data/camorama-gtk3.ui:1701
 #: data/camorama-gtk4.ui:1225 data/camorama-gtk4.ui:1620
+#: data/camorama-gtk3.ui:1251 data/camorama-gtk3.ui:1633
+#: data/camorama-gtk4.ui:1036 data/camorama-gtk4.ui:1379
+#: data/camorama-gtk2.ui:535 data/camorama-gtk2.ui:923
 msgid "Save files in jpeg format"
 msgstr "以 jpeg 格式保存文件"
 
 #: data/camorama-gtk3.ui:1323 data/camorama-gtk3.ui:1718
 #: data/camorama-gtk4.ui:1242 data/camorama-gtk4.ui:1637
+#: data/camorama-gtk3.ui:1268 data/camorama-gtk3.ui:1650
+#: data/camorama-gtk4.ui:1051 data/camorama-gtk4.ui:1394
+#: data/camorama-gtk2.ui:552 data/camorama-gtk2.ui:940
 msgid "Save files in png format"
 msgstr "以 png 格式保存文件"
 
 #: data/camorama-gtk3.ui:1368 data/camorama-gtk4.ui:1287
+#: data/camorama-gtk3.ui:1313 data/camorama-gtk4.ui:1088
+#: data/camorama-gtk2.ui:597
 msgid "Local Capture"
 msgstr "本地抓取"
 
 #: data/camorama-gtk3.ui:1392 data/camorama-gtk4.ui:1311
+#: data/camorama-gtk3.ui:1337 data/camorama-gtk4.ui:1111
+#: data/camorama-gtk2.ui:620
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">远程抓取</span>"
 
 #: data/camorama-gtk3.ui:1426 data/camorama-gtk4.ui:1345
+#: data/camorama-gtk3.ui:1371 data/camorama-gtk4.ui:1141
+#: data/camorama-gtk2.ui:652
 msgid "_Enable remote capture"
 msgstr "启用远程抓取(_E)"
 
 #: data/camorama-gtk3.ui:1475 data/camorama-gtk4.ui:1394
+#: data/camorama-gtk3.ui:1419 data/camorama-gtk4.ui:1185
+#: data/camorama-gtk2.ui:700
 msgid "Server:"
 msgstr "服务器："
 
 #: data/camorama-gtk3.ui:1487 data/camorama-gtk4.ui:1406
+#: data/camorama-gtk3.ui:1431 data/camorama-gtk4.ui:1197
+#: data/camorama-gtk2.ui:712
 msgid "Type:"
 msgstr "类型："
 
 #: data/camorama-gtk3.ui:1499 data/camorama-gtk4.ui:1418
+#: data/camorama-gtk3.ui:1443 data/camorama-gtk4.ui:1209
+#: data/camorama-gtk2.ui:724
 msgid "Save directory:"
 msgstr "保存目录："
 
 #: data/camorama-gtk3.ui:1511 data/camorama-gtk4.ui:1430
+#: data/camorama-gtk2.ui:736 data/camorama-gtk3.ui:1455
+#: data/camorama-gtk4.ui:1221
 msgid "Filename:"
 msgstr "文件名："
 
 #: data/camorama-gtk3.ui:1524 data/camorama-gtk4.ui:1443
+#: data/camorama-gtk3.ui:1468 data/camorama-gtk4.ui:1234
+#: data/camorama-gtk2.ui:749
 msgid "ftp.yourdomain.org"
 msgstr "ftp.yourdomain.org"
 
 #: data/camorama-gtk3.ui:1563 data/camorama-gtk4.ui:1482
+#: data/camorama-gtk3.ui:1507 data/camorama-gtk4.ui:1273
+#: data/camorama-gtk2.ui:794
 msgid "webcamshot"
 msgstr "webcamshot"
 
 #: data/camorama-gtk3.ui:1763 data/camorama-gtk4.ui:1682
+#: data/camorama-gtk3.ui:1695 data/camorama-gtk4.ui:1431
+#: data/camorama-gtk2.ui:985
 msgid "Remote Capture"
 msgstr "远程抓取"
 
 #: data/camorama-gtk3.ui:1787 data/camorama-gtk4.ui:1706
+#: data/camorama-gtk3.ui:1719 data/camorama-gtk4.ui:1454
+#: data/camorama-gtk2.ui:1008
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">时间戳</span>"
 
 #: data/camorama-gtk3.ui:1821 data/camorama-gtk4.ui:1740
+#: data/camorama-gtk3.ui:1753 data/camorama-gtk4.ui:1484
+#: data/camorama-gtk2.ui:1040
 msgid "Use custom string"
 msgstr "使用自定义字符串"
 
 #: data/camorama-gtk3.ui:1866 data/camorama-gtk4.ui:1785
+#: data/camorama-gtk3.ui:1798 data/camorama-gtk4.ui:1525
+#: data/camorama-gtk2.ui:1084
 msgid "String:"
 msgstr "字符串："
 
 #: data/camorama-gtk3.ui:1911 data/camorama-gtk4.ui:1830
+#: data/camorama-gtk3.ui:1843 data/camorama-gtk4.ui:1560
+#: data/camorama-gtk2.ui:1130
 msgid "Draw date and time"
 msgstr "绘制日期和时间"
 
 #: data/camorama-gtk3.ui:1955 data/camorama-gtk4.ui:1874
+#: data/camorama-gtk3.ui:1887 data/camorama-gtk4.ui:1596
+#: data/camorama-gtk2.ui:1174
 msgid "Timestamp"
 msgstr "时间戳"
 
 #: data/camorama-gtk3.ui:2022 data/camorama-gtk4.ui:1941
+#: data/camorama-gtk2.ui:1909 data/camorama-gtk3.ui:1960
+#: data/camorama-gtk4.ui:1663
 msgid "Select a video device to be used"
 msgstr "选择要使用的视频设备"
 
@@ -473,29 +578,29 @@ msgstr "图像宽度"
 msgid "Image width used by the camera. Zero means autoselect"
 msgstr "由摄像头使用的图像宽度。零表示自动选取"
 
-#: src/callbacks.c:531
+#: src/callbacks.c:531 src/callbacks.c:583
 msgid "translator_credits"
 msgstr "Fedora 项目本地化（L10）团队"
 
-#: src/callbacks.c:644
+#: src/callbacks.c:644 src/callbacks.c:803
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
 msgstr "%.2f fps - 当前     %.2f fps - 平均"
 
-#: src/callbacks.c:1241
+#: src/callbacks.c:1241 src/callbacks.c:932
 msgid "Can't allocate memory to store devices"
 msgstr "无法为存储设备分配内存"
 
-#: src/callbacks.c:1353
+#: src/callbacks.c:1353 src/callbacks.c:1044
 msgid "Didn't find any camera"
 msgstr "未找到任何摄像头"
 
-#: src/callbacks.c:1449
+#: src/callbacks.c:1449 src/callbacks.c:1168
 #, c-format
 msgid "%dx%d (max %.1f fps)"
 msgstr "%dx%d (最大 %.1f fps)"
 
-#: src/callbacks.c:1453
+#: src/callbacks.c:1453 src/callbacks.c:1172
 #, c-format
 msgid "%dx%d"
 msgstr "%dx%d"
@@ -514,44 +619,44 @@ msgstr "镜像"
 msgid "Reichardt"
 msgstr ""
 
-#: src/camorama-window.c:116
+#: src/camorama-window.c:116 src/camorama-window.c:124
 msgid "_Add Filter"
 msgstr "添加滤镜 (_A)"
 
-#: src/camorama-window.c:203
+#: src/camorama-window.c:203 src/camorama-window.c:221
 msgid "Effects"
 msgstr "特效"
 
-#: src/fileio.c:115 src/fileio.c:282
+#: src/fileio.c:115 src/fileio.c:282 src/fileio.c:112 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "可以将临时图像文件保存到 /tmp。"
 
-#: src/fileio.c:132
+#: src/fileio.c:132 src/fileio.c:123
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "无法创建图像“%s”。"
 
-#: src/fileio.c:143 src/fileio.c:440
+#: src/fileio.c:143 src/fileio.c:440 src/fileio.c:134 src/fileio.c:415
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "无法保存图像“%s/%s”。"
 
-#: src/fileio.c:154
+#: src/fileio.c:154 src/fileio.c:145
 #, c-format
 msgid "Could not create a thread to save image '%s/%s'."
 msgstr "无法创建线程以保存图像“%s/%s”。"
 
-#: src/fileio.c:195
+#: src/fileio.c:195 src/fileio.c:180
 #, c-format
 msgid "An error occurred mounting %s:%s."
 msgstr "挂载 %s 时候发生了错误：%s。"
 
-#: src/fileio.c:235
+#: src/fileio.c:235 src/fileio.c:220
 #, c-format
 msgid "An error occurred accessing %s."
 msgstr "访问 %s 时发生了错误。"
 
-#: src/fileio.c:288
+#: src/fileio.c:288 src/fileio.c:272
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -560,66 +665,66 @@ msgstr ""
 "无法打开临时图像文件“%s”。\n"
 "无法上传图像。"
 
-#: src/fileio.c:320
+#: src/fileio.c:320 src/fileio.c:301
 #, c-format
 msgid "An error occurred opening %s."
 msgstr "打开 %s 时发生了错误。"
 
-#: src/fileio.c:331
+#: src/fileio.c:331 src/fileio.c:312
 #, c-format
 msgid "An error occurred opening %s for write: %s."
 msgstr "打开 %s 以写入时发生了错误：%s。"
 
-#: src/fileio.c:342
+#: src/fileio.c:342 src/fileio.c:322
 #, c-format
 msgid "An error occurred writing to %s: %s."
 msgstr "向 %s 写入时发生了错误：%s。"
 
-#: src/fileio.c:348
+#: src/fileio.c:348 src/fileio.c:328
 #, c-format
 msgid "An error occurred closing %s: %s."
 msgstr "关闭 %s 时发生了错误：%s。"
 
-#: src/fileio.c:411
+#: src/fileio.c:411 src/fileio.c:393
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "无法创建目录“%s”。"
 
-#: src/fileio.c:420
+#: src/fileio.c:420 src/fileio.c:402
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "无法更改至目录“%s”。"
 
-#: src/filter.c:96
+#: src/filter.c:96 src/filter.c:70
 msgid "Invert"
 msgstr "反转"
 
-#: src/filter.c:184
+#: src/filter.c:184 src/filter.c:114
 msgid "Threshold (Overall)"
 msgstr "阈值（总）"
 
-#: src/filter.c:277
+#: src/filter.c:277 src/filter.c:164
 msgid "Threshold (Per Channel)"
 msgstr "阈值（每个通道）"
 
-#: src/filter.c:355
+#: src/filter.c:355 src/filter.c:242
 msgid "Wacky"
 msgstr ""
 
-#: src/filter.c:461
+#: src/filter.c:461 src/filter.c:348
 msgid "Smooth"
 msgstr "平滑"
 
-#: src/filter.c:497
+#: src/filter.c:497 src/filter.c:384
 msgid "Monochrome"
 msgstr "黑白"
 
-#: src/filter.c:535
+#: src/filter.c:535 src/filter.c:422
 msgid "Monochrome (Weight)"
 msgstr ""
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
-#: src/filter.c:592
+#: src/filter.c:592 src/filter.c:479
 msgid "Sobel"
 msgstr ""
 
@@ -671,7 +776,7 @@ msgstr "使用 userptr 指针而非 mmap()"
 msgid "v4l device input to use"
 msgstr "输入所使用的 v4l 设备"
 
-#: src/main.c:117
+#: src/main.c:117 src/main.c:133
 #, c-format
 msgid ""
 "\n"
@@ -684,21 +789,21 @@ msgstr ""
 "Camorama 版本 %s\n"
 "\n"
 
-#: src/main.c:151
+#: src/main.c:151 src/main.c:167
 msgid "Couldn't load builder file"
 msgstr "无法加载构建文件"
 
-#: src/main.c:180
+#: src/main.c:180 src/main.c:196
 #, c-format
 msgid "%s not found. Falling back to %s"
 msgstr "%s 未找到。回退至 %s"
 
-#: src/main.c:183
+#: src/main.c:183 src/main.c:199
 #, c-format
 msgid "%s not found."
 msgstr "%s 未找到。"
 
-#: src/v4l.c:1087
+#: src/v4l.c:1087 src/v4l.c:725 src/v4l.c:722
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -707,12 +812,13 @@ msgstr ""
 "无法连接到视频设备(%s)。\n"
 "请检查连接。错误：%d"
 
-#: src/v4l.c:1096
+#: src/v4l.c:1096 src/v4l.c:731
 #, c-format
 msgid "Device %s is not a video capture device."
 msgstr "设备 %s 不是一个视频采集设备。"
 
-#: src/v4l.c:1270 src/v4l.c:1340
+#: src/v4l.c:1270 src/v4l.c:1340 src/v4l.c:916 src/v4l.c:986 src/v4l.c:913
+#: src/v4l.c:983
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -721,11 +827,11 @@ msgstr ""
 "无法连接到视频设备(%s)。\n"
 "请检查连接。"
 
-#: src/v4l.c:1348
+#: src/v4l.c:1348 src/v4l.c:991
 msgid "Device video formats are incompatible with camorama."
 msgstr "Camorama 不支持设备视频格式。"
 
-#: src/v4l.c:1364
+#: src/v4l.c:1364 src/v4l.c:1007
 #, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
@@ -734,91 +840,101 @@ msgstr ""
 "无法在视频设备上设置窗口信息 (%s).\n"
 "请检查连接。"
 
-#: src/v4l.c:1385
+#: src/v4l.c:1385 src/v4l.c:1028
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
 msgstr "无法在视频设备上将格式设置为 %c%c%c%c（%s）。"
 
-#: src/v4l.c:1404
+#: src/v4l.c:1404 src/v4l.c:1047
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
 msgstr "视频设备上返回的图像宽度为零（%s）！"
 
-#: src/v4l.c:1428 src/v4l.c:1511
+#: src/v4l.c:1428 src/v4l.c:1511 src/v4l.c:1071 src/v4l.c:1154
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS  --  不能请求缓冲（%s），正在退出……"
 
-#: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
+#: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535 src/v4l.c:1080 src/v4l.c:1163
+#: src/v4l.c:1178
 msgid "could not allocate memory for video buffers, exiting...."
 msgstr "无法为视频缓冲分配内存，正在退出……"
 
-#: src/v4l.c:1453
+#: src/v4l.c:1453 src/v4l.c:1096
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr "VIDIOC_QUERYBUF  --  不能查询缓冲（%s），正在退出……"
 
-#: src/v4l.c:1468
+#: src/v4l.c:1468 src/v4l.c:1111
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
 msgstr "内存映射缓冲失败（%s），正在退出……"
 
-#: src/v4l.c:1482
+#: src/v4l.c:1482 src/v4l.c:1125
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr "VIDIOC_QBUF  --  无法队列缓冲（%s），正在退出……"
 
-#: src/v4l.c:1492 src/v4l.c:1559
+#: src/v4l.c:1492 src/v4l.c:1559 src/v4l.c:1135 src/v4l.c:1202
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
 msgstr "启动串流失败（%s），正在退出……"
 
-#: src/v4l.c:1548
+#: src/v4l.c:1548 src/v4l.c:1191
 #, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
 msgstr "VIDIOC_QBUF  --  无法查询缓冲（%s），正在退出……"
 
-#: src/v4l.c:1589 src/v4l.c:1640
+#: src/v4l.c:1589 src/v4l.c:1640 src/v4l.c:1232 src/v4l.c:1283
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
 msgstr "等待帧时超时（%s）"
 
-#: src/v4l.c:1703 src/v4l.c:1762
+#: src/v4l.c:1703 src/v4l.c:1762 src/v4l.c:1346 src/v4l.c:1405
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
 msgstr "停止串流失败（%s），正在退出……"
 
-#~ msgid "_File"
-#~ msgstr "文件 (_F)"
+#: data/camorama-gtk4.ui:50 data/camorama-gtk2.ui:1219
+msgid "_File"
+msgstr "文件 (_F)"
 
-#~ msgid "_Quit"
-#~ msgstr "退出 (_Q)"
+#: data/camorama-gtk4.ui:74
+msgid "_Quit"
+msgstr "退出 (_Q)"
 
-#~ msgid "_Edit"
-#~ msgstr "编辑(_E)"
+#: data/camorama-gtk4.ui:86 data/camorama-gtk2.ui:1261
+msgid "_Edit"
+msgstr "编辑(_E)"
 
-#~ msgid "_Preferences"
-#~ msgstr "首选项(_P)"
+#: data/camorama-gtk4.ui:95
+msgid "_Preferences"
+msgstr "首选项(_P)"
 
-#~ msgid "_Help"
-#~ msgstr "帮助 (_H)"
+#: data/camorama-gtk4.ui:164 data/camorama-gtk2.ui:1342
+msgid "_Help"
+msgstr "帮助 (_H)"
 
-#~ msgid "_About"
-#~ msgstr "关于(_A)"
+#: data/camorama-gtk4.ui:173
+msgid "_About"
+msgstr "关于(_A)"
 
-#~ msgid "Preferences"
-#~ msgstr "首选项"
+#: data/camorama-gtk4.ui:596 data/camorama-gtk2.ui:39
+msgid "Preferences"
+msgstr "首选项"
 
-#~ msgid "camorama"
-#~ msgstr "camorama"
+#: src/main.c:306
+msgid "camorama"
+msgstr "camorama"
 
+#: src/main.c:308
 #, c-format
-#~ msgid ""
-#~ "Invalid argument\n"
-#~ "Run '%s --help'\n"
-#~ msgstr ""
-#~ "无效参数\n"
-#~ "执行 '%s --help'\n"
+msgid ""
+"Invalid argument\n"
+"Run '%s --help'\n"
+msgstr ""
+"无效参数\n"
+"执行 '%s --help'\n"
 
 #~ msgid "webcam-capture"
 #~ msgstr "webcam-capture"
