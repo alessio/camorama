@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-03-10 06:51+0000\n"
+"PO-Revision-Date: 2022-03-26 21:21+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
 "camorama/master/uk/>\n"
@@ -81,7 +81,7 @@ msgstr "Малий"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Показати засоби керування"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
@@ -116,14 +116,12 @@ msgid "Zoom:"
 msgstr "Масштаб:"
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "Поріг (загальний)"
+msgstr "Поріг:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Поріг каналу:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
