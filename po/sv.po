@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
 "PO-Revision-Date: 2022-05-17 10:18+0000\n"
-"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"Last-Translator: Luna Jernberg <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "camorama/master/sv/>\n"
 "Language: sv\n"
@@ -738,15 +738,12 @@ msgid "Device video formats are incompatible with camorama."
 msgstr "Enhetens videoformat är inkompatibla med camorama."
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Kunde inte ansluta till videoenheten (%s).\n"
+"Kunde inte ansluta till ställ in fönsterinformation på videoenheten (%s).\n"
 "Kontrollera anslutningen."
 
 #: src/v4l.c:1385
