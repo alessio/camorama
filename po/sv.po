@@ -4,7 +4,7 @@
 # Daniel Nylander <po@danielnylander.se>, 2006.
 # Christian Rose <menthos@menthos.com>, 2003.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Göran Uddeborg <goeran@uddeborg.se>, 2020.
+# Göran Uddeborg <goeran@uddeborg.se>, 2020, 2022.
 # Luna Jernberg <bittin@reimu.nl>, 2022.
 #
 # $Id: sv.po,v 1.13 2006/11/18 22:34:25 dnylande Exp $
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-05-10 08:18+0000\n"
-"Last-Translator: Luna Jernberg <bittin@reimu.nl>\n"
+"PO-Revision-Date: 2022-05-17 10:18+0000\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "camorama/master/sv/>\n"
 "Language: sv\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.12.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -123,7 +123,7 @@ msgstr "Tröskelvärde:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Kanaltröskelvärde:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -680,10 +680,8 @@ msgid "use userptr pointer rather than mmap()"
 msgstr "använd userptr pekare istället för mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "v4l-enhet att använda"
+msgstr "v4l-enhets ingång att använda"
 
 #: src/main.c:117
 #, c-format
