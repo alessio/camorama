@@ -2,13 +2,13 @@
 # Copyright (C) Croatiann team
 # Translators: Automatski Prijevod <>,Denis Lackovic <delacko@fly.srk.fer.hr>,
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Gogo Gogsi <linux.hr@protonmail.com>, 2021.
+# Gogo Gogsi <linux.hr@protonmail.com>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2021-10-21 15:05+0000\n"
+"PO-Revision-Date: 2022-08-22 20:19+0000\n"
 "Last-Translator: Gogo Gogsi <linux.hr@protonmail.com>\n"
 "Language-Team: Croatian <https://translate.fedoraproject.org/projects/"
 "camorama/master/hr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 4.13\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -53,10 +53,8 @@ msgid "_Take Picture"
 msgstr "_Uslikaj"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Uklj/Isklj lokalno slikanje"
+msgstr "Uklj/Isklj cjelozaslonski prikaz"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -81,11 +79,11 @@ msgstr "Malen"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Prikaži upravljanja"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "Cijeli zaslon"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
@@ -116,14 +114,12 @@ msgid "Zoom:"
 msgstr "Uvećanje:"
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "Prag (ukupno)"
+msgstr "Prag:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Prag kanala:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -669,19 +665,15 @@ msgstr "koristi read() radije nego mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "onemogući video pretvarača"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "koristi read() radije nego mmap()"
+msgstr "koristi userptr radije nego mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "v4l device koji se koristi"
+msgstr "Ulaz v4l uređaja koji se koristi"
 
 #: src/main.c:117
 #, c-format
@@ -735,29 +727,26 @@ msgstr ""
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Format video uređaja je nekompatibilan s camoramom."
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Neuspjelo povezivanje s video uređajem (%s).\n"
+"Neuspjelo postavljanje prozora informacija s video uređajem (%s).\n"
 "Provjerite povezivanje."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Nemoguće postavljanje formata u %c%c%c%c na video uređaju (%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Vraćena širina je nula na video uređaju (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
@@ -765,10 +754,8 @@ msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS  --  nemoguć zahtjev međuspremanja (%s), zatvaram...."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "neuspjelo međuspremanje memorijske mape (%s), zatvaram...."
+msgstr "neuspjelo premještanje memorije za video međuspremnik, zatvaram...."
 
 #: src/v4l.c:1453
 #, c-format
@@ -792,10 +779,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "neuspjelo pokretanje streamanja (%s), zatvaram...."
 
 #: src/v4l.c:1548
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF  --  nemogući upiti međuspremanja (%s), zatvaram...."
+msgstr "VIDIOC_QBUF  --  nemogući upiti međuspremanja (%s), zatvaram...."
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
