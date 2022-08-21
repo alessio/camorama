@@ -1497,6 +1497,10 @@ void start_streaming(cam_t *cam)
     }
 }
 
+#define PAGE_SIZE 4096
+#define PAGE_MASK (~(PAGE_SIZE - 1))
+#define PAGE_ALIGN(x) ((typeof(x))(((unsigned long)(x) + PAGE_SIZE - 1) & PAGE_MASK))
+
 void start_streaming_userptr(cam_t *cam)
 {
     char *msg;
@@ -1528,8 +1532,15 @@ void start_streaming_userptr(cam_t *cam)
          ++cam->n_buffers) {
         memset(&buf, 0, sizeof(buf));
 
-        cam->buffers[cam->n_buffers].length = cam->sizeimage;
-        cam->buffers[cam->n_buffers].start = calloc(1, cam->sizeimage);
+        /*
+         * The userptr buffer pages must not be used by anything else
+         * so round up the size to pagesize; and align the pointer
+         * returned by calloc to start at a page (which requires
+         * allocating an extra page)
+         */
+        cam->buffers[cam->n_buffers].length = PAGE_ALIGN(cam->sizeimage);
+        cam->buffers[cam->n_buffers].start = PAGE_ALIGN(
+                calloc(1, cam->buffers[cam->n_buffers].length + PAGE_SIZE));
 
         if (!cam->buffers[cam->n_buffers].start) {
             msg = g_strdup_printf(_("could not allocate memory for video buffers, exiting...."));
