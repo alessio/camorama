@@ -12,13 +12,14 @@
 # Mateusz Stomski <zbytatencyjny@gmail.com>, 2020.
 # Szymon Scholz <szymonscholz@gmail.com>, 2020.
 # Michał Smyk <fedora@smyk.it>, 2020.
+# Bartlomiej Konecki <bartekkonecki97@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2020-09-27 18:29+0000\n"
-"Last-Translator: Michał Smyk <fedora@smyk.it>\n"
+"PO-Revision-Date: 2022-09-06 14:19+0000\n"
+"Last-Translator: Bartlomiej Konecki <bartekkonecki97@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -27,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.2.2\n"
+"X-Generator: Weblate 4.14\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -62,10 +63,8 @@ msgid "_Take Picture"
 msgstr "_Zrób zdjęcie"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Przechwytywanie lokalne"
+msgstr "Przechwytywanie pełnoekranowe"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -94,7 +93,7 @@ msgstr ""
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "Pełny _ekran"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
@@ -125,14 +124,12 @@ msgid "Zoom:"
 msgstr "Zbliżenie:"
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "Próg (Łącznie)"
+msgstr "Próg:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Próg Kanału:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -684,19 +681,15 @@ msgstr "użycie read() zamiast nmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "wyłącz skalowanie wideo"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "użycie read() zamiast nmap()"
+msgstr "użyj wskaźnika userptr zamiast mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "używane urządzenie v4l"
+msgstr "używane urządzenie wejściowe v4l"
 
 #: src/main.c:117
 #, c-format
