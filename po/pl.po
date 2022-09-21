@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-09-06 14:19+0000\n"
+"PO-Revision-Date: 2022-09-22 09:19+0000\n"
 "Last-Translator: Bartlomiej Konecki <bartekkonecki97@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -743,29 +743,26 @@ msgstr ""
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Format wideo urządzenia jest niekompatybilny z camorama."
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Nie można przyłączyć się do urządzenia wideo (%s).\n"
+"Nie udało się ustawić informacji okna dla urządzenia wideo (%s).\n"
 "Sprawdź czy jest prawidłowo podłączone."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Nie udało się ustawić formatu do %c%c%c%c dla urządzenia wideo(%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Zwrócona szerokość wynosi zero dla urządzenia wideo (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
@@ -773,10 +770,8 @@ msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS  --  nie mogę pobrać bufora (%s), wychodzę...."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "błąd przy mapowaniu bufora (%s), wychodzę...."
+msgstr "nie udało się alokować pamięci dla bufora wideo, wychodzę...."
 
 #: src/v4l.c:1453
 #, c-format
@@ -799,10 +794,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "błąd przy rozpoczęciu strumieniowania (%s), wychodzę...."
 
 #: src/v4l.c:1548
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF  --  nie mogę pobrać bufora (%s), wychodzę...."
+msgstr "VIDIOC_QBUF  --  nie mogę zakolejkować bufora (%s), wychodzę...."
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
