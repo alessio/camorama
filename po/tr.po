@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-03-26 21:21+0000\n"
+"PO-Revision-Date: 2022-09-24 15:19+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "camorama/master/tr/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -488,7 +488,7 @@ msgstr ""
 msgid "translator_credits"
 msgstr ""
 "Tamer Sezgin <tamer_se<gin@yahoo.com>\n"
-"Oğuz Ersen <oguzersen@protonmail.com>"
+"Oğuz Ersen <oguz@ersen.moe>"
 
 #: src/callbacks.c:644
 #, c-format
