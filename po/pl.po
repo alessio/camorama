@@ -13,13 +13,14 @@
 # Szymon Scholz <szymonscholz@gmail.com>, 2020.
 # Michał Smyk <fedora@smyk.it>, 2020.
 # Bartlomiej Konecki <bartekkonecki97@gmail.com>, 2022.
+# Piotr Drąg <piotrdrag@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-09-22 09:19+0000\n"
-"Last-Translator: Bartlomiej Konecki <bartekkonecki97@gmail.com>\n"
+"PO-Revision-Date: 2022-09-26 13:19+0000\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -36,19 +37,19 @@ msgstr "Camorama"
 
 #: camorama.appdata.xml.in:7 camorama.desktop.in:4
 msgid "Camorama Webcam Viewer"
-msgstr "Camorama - kamera internetowa"
+msgstr "Kamera internetowa Camorama"
 
 #: camorama.appdata.xml.in:9
 msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
-"Camorama to prosta przeglądarka kamer internetowych, z możliwością "
+"Camorama to prosta przeglądarka kamer internetowych z możliwością "
 "zastosowania niektórych efektów wideo."
 
 #: camorama.desktop.in:5 src/callbacks.c:530
 msgid "View, alter and save images from a webcam"
-msgstr "Wyświetla, modyfikuje i zapisuje obrazy z kamery internetowej"
+msgstr "Wyświetlanie, modyfikowanie i zapisywanie obrazów z kamery internetowej"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
@@ -64,7 +65,7 @@ msgstr "_Zrób zdjęcie"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
 msgid "Toggle _Full Screen"
-msgstr "Przechwytywanie pełnoekranowe"
+msgstr "_Pełny ekran"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -73,15 +74,15 @@ msgstr "_Widok"
 #: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
 #: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
 msgid "Show Adjustments"
-msgstr "Wyświetlenie nastaw"
+msgstr "Korektor"
 
 #: data/camorama-gtk3.ui:168 data/camorama-gtk4.ui:160
 msgid "Show Effects"
-msgstr "Wyświetlanie efektów"
+msgstr "Efekty"
 
 #: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
 msgid "_Change Camera"
-msgstr "_Zmiana kamery"
+msgstr "_Zmień kamerę"
 
 #: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
 msgid "Small"
@@ -89,11 +90,11 @@ msgstr "Małe"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Sterowanie"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr "Pełny _ekran"
+msgstr "Pełny ekran"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
@@ -129,7 +130,7 @@ msgstr "Próg:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr "Próg Kanału:"
+msgstr "Próg kanału:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -137,7 +138,7 @@ msgstr "<span weight=\"bold\">Ogólne</span>"
 
 #: data/camorama-gtk3.ui:899 data/camorama-gtk4.ui:818
 msgid "Automatic Capture"
-msgstr "Przechwytywanie automatyczne"
+msgstr "Automatyczne przechwytywanie"
 
 #: data/camorama-gtk3.ui:921 data/camorama-gtk3.ui:1059
 #: data/camorama-gtk3.ui:1098 data/camorama-gtk3.ui:1291
@@ -153,7 +154,7 @@ msgstr "     "
 
 #: data/camorama-gtk3.ui:944 data/camorama-gtk4.ui:863
 msgid "Capture Interval (in minutes):"
-msgstr "Okres przechwytywania (w minutach):"
+msgstr "Czas między przechwytywaniem (w minutach):"
 
 #: data/camorama-gtk3.ui:1016 data/camorama-gtk4.ui:935
 msgid "General"
@@ -169,11 +170,11 @@ msgstr "Prz_echwytywanie lokalne"
 
 #: data/camorama-gtk3.ui:1123 data/camorama-gtk4.ui:1042
 msgid "_Directory for captured pics:"
-msgstr "Katalog _dla przechwyconych obrazów:"
+msgstr "_Katalog dla przechwyconych obrazów:"
 
 #: data/camorama-gtk3.ui:1136 data/camorama-gtk4.ui:1055
 msgid "_Filename for pictures:"
-msgstr "_Nazwa pliku obrazów:"
+msgstr "_Nazwy plików obrazów:"
 
 #: data/camorama-gtk3.ui:1152 data/camorama-gtk4.ui:1071
 msgid "Select a Directory"
@@ -182,12 +183,12 @@ msgstr "Wybierz katalog"
 #: data/camorama-gtk3.ui:1197 data/camorama-gtk3.ui:1593
 #: data/camorama-gtk4.ui:1116 data/camorama-gtk4.ui:1512
 msgid "Append time to filename"
-msgstr "Dodanie czasu do nazwy pliku"
+msgstr "Dodawanie czasu do nazw plików"
 
 #: data/camorama-gtk3.ui:1214 data/camorama-gtk3.ui:1609
 #: data/camorama-gtk4.ui:1133 data/camorama-gtk4.ui:1528
 msgid "Add a timestamp to captured images"
-msgstr "Dodanie daty do przechwyconych obrazów"
+msgstr "Dodawanie daty i czasu do przechwyconych obrazów"
 
 #: data/camorama-gtk3.ui:1273 data/camorama-gtk3.ui:1668
 #: data/camorama-gtk4.ui:1192 data/camorama-gtk4.ui:1587
@@ -197,12 +198,12 @@ msgstr "<span weight=\"bold\">Typ obrazu</span>"
 #: data/camorama-gtk3.ui:1306 data/camorama-gtk3.ui:1701
 #: data/camorama-gtk4.ui:1225 data/camorama-gtk4.ui:1620
 msgid "Save files in jpeg format"
-msgstr "Zapis plików w formacie jpeg"
+msgstr "Zapisywanie plików w formacie JPEG"
 
 #: data/camorama-gtk3.ui:1323 data/camorama-gtk3.ui:1718
 #: data/camorama-gtk4.ui:1242 data/camorama-gtk4.ui:1637
 msgid "Save files in png format"
-msgstr "Zapis plików w formacie png"
+msgstr "Zapisywanie plików w formacie PNG"
 
 #: data/camorama-gtk3.ui:1368 data/camorama-gtk4.ui:1287
 msgid "Local Capture"
@@ -234,7 +235,7 @@ msgstr "Nazwa pliku:"
 
 #: data/camorama-gtk3.ui:1524 data/camorama-gtk4.ui:1443
 msgid "ftp.yourdomain.org"
-msgstr "ftp.twojadomena.org"
+msgstr "ftp.example.com"
 
 # Domyślna nazwa pliku dla przechwyconego obrazu z 
 # kamery zdalnej
@@ -256,11 +257,11 @@ msgstr "Dowolny ciąg znaków"
 
 #: data/camorama-gtk3.ui:1866 data/camorama-gtk4.ui:1785
 msgid "String:"
-msgstr "Napis:"
+msgstr "Ciąg znaków:"
 
 #: data/camorama-gtk3.ui:1911 data/camorama-gtk4.ui:1830
 msgid "Draw date and time"
-msgstr "Data i czas"
+msgstr "Data i czas na obrazie"
 
 #: data/camorama-gtk3.ui:1955 data/camorama-gtk4.ui:1874
 msgid "Timestamp"
@@ -268,15 +269,15 @@ msgstr "Datownik"
 
 #: data/camorama-gtk3.ui:2022 data/camorama-gtk4.ui:1941
 msgid "Select a video device to be used"
-msgstr "Wybierz urządzenie wideo, które ma być używane"
+msgstr "Wybierz urządzenie wideo do użycia"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
-msgstr "Dodanie datownika do nazwy pliku"
+msgstr "Dodawanie daty i czasu do nazw plików"
 
 #: data/org.gnome.camorama.gschema.xml.in:7
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Dodaje na końcu nazwy pliku datownik, w formacie czasu UNIX"
+msgstr "Dodaje na końcu nazw plików datę i czas w formacie uniksowym"
 
 #: data/org.gnome.camorama.gschema.xml.in:11
 msgid "Toggles auto-capture"
@@ -284,15 +285,15 @@ msgstr "Przechwytywanie automatyczne"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr "Określa, czy jest aktywne automatyczne przechwytywanie obrazów."
+msgstr "Włącza automatyczne przechwytywanie obrazów."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
-msgstr "Okres czasu automatycznego przechwytywania"
+msgstr "Czas między automatycznym przechwytywaniem"
 
 #: data/org.gnome.camorama.gschema.xml.in:17
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Określa okres czasu automatycznego przechwytywania obrazów."
+msgstr "Określa czas między automatycznym przechwytywaniem obrazów."
 
 #: data/org.gnome.camorama.gschema.xml.in:21
 msgid "Video device"
@@ -300,19 +301,20 @@ msgstr "Urządzenie wideo"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "Ścieżka do pliku wskazującego na twoją kamerę w systemie unix."
+msgstr ""
+"Ścieżka do urządzenia w uniksowym systemie plików przydzielonego do kamery."
 
 #: data/org.gnome.camorama.gschema.xml.in:26
 msgid "Toggles the datestamp in captures"
-msgstr "Data w przechwyconych obrazach"
+msgstr "Data i czas w przechwyconych obrazach"
 
 #: data/org.gnome.camorama.gschema.xml.in:27
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Określa, czy na przechwyconych obrazach ma być umieszczona data"
+msgstr "Włącza umieszczanie daty i czasu na przechwyconych obrazach"
 
 #: data/org.gnome.camorama.gschema.xml.in:31
 msgid "Local capture image format"
-msgstr "Format lokalnego przechwyconego obrazu"
+msgstr "Format obrazu przechwyconego lokalnie"
 
 #: data/org.gnome.camorama.gschema.xml.in:32
 msgid "Specifies the image format to be used for locally saved pictures"
@@ -328,11 +330,11 @@ msgstr "Wysokość obrazu używana przez kamerę. Zero oznacza wybór automatycz
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
-msgstr "Nazwa serwera FTP"
+msgstr "Nazwa serwera"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
 msgid "Hostname for the server used for remote captures."
-msgstr "Nazwa serwera przechwytującego zdalnie obrazy."
+msgstr "Nazwa serwera dla obrazów przechwyconych zdalnie."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -508,7 +510,7 @@ msgstr "Nie można przydzielić pamięci do przechowywania urządzeń"
 
 #: src/callbacks.c:1353
 msgid "Didn't find any camera"
-msgstr "Nie znaleziono żadnej kamery"
+msgstr "Nie odnaleziono żadnej kamery"
 
 #: src/callbacks.c:1449
 #, c-format
@@ -724,8 +726,8 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Nie można połączyć z urządzeniem video (%s).\n"
-"Sprawdź połączenie. Błąd: %d"
+"Nie można połączyć się z urządzeniem wideo (%s).\n"
+"Proszę sprawdzić poprawność połączenia. Błąd: %d"
 
 #: src/v4l.c:1096
 #, c-format
@@ -738,12 +740,12 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Nie można przyłączyć się do urządzenia wideo (%s).\n"
-"Sprawdź czy jest prawidłowo podłączone."
+"Nie można połączyć się z urządzeniem wideo (%s).\n"
+"Proszę sprawdzić poprawność połączenia."
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr "Format wideo urządzenia jest niekompatybilny z camorama."
+msgstr "Format wideo urządzenia jest niezgodny z camorama."
 
 #: src/v4l.c:1364
 #, c-format
@@ -751,18 +753,18 @@ msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Nie udało się ustawić informacji okna dla urządzenia wideo (%s).\n"
-"Sprawdź czy jest prawidłowo podłączone."
+"Nie można ustawić informacji o oknie dla urządzenia wideo (%s).\n"
+"Proszę sprawdzić poprawność połączenia."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr "Nie udało się ustawić formatu do %c%c%c%c dla urządzenia wideo(%s)."
+msgstr "Nie można ustawić formatu na %c%c%c%c dla urządzenia wideo (%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr "Zwrócona szerokość wynosi zero dla urządzenia wideo (%s)!"
+msgstr "Zwrócona szerokość wynosi zero dla urządzenia wideo (%s)."
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
@@ -771,12 +773,14 @@ msgstr "VIDIOC_REQBUFS  --  nie mogę pobrać bufora (%s), wychodzę...."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "nie udało się alokować pamięci dla bufora wideo, wychodzę...."
+msgstr "nie można przydzielić pamięci dla buforów wideo, kończenie działania…"
 
 #: src/v4l.c:1453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF  --  nie mogę pobrać bufora (%s), wychodzę...."
+msgstr ""
+"VIDIOC_QUERYBUF  —  nie można dodać buforów do kolejki (%s), kończenie "
+"działania…"
 
 #: src/v4l.c:1468
 #, c-format
@@ -796,7 +800,8 @@ msgstr "błąd przy rozpoczęciu strumieniowania (%s), wychodzę...."
 #: src/v4l.c:1548
 #, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QBUF  --  nie mogę zakolejkować bufora (%s), wychodzę...."
+msgstr ""
+"VIDIOC_QBUF  —  nie można dodać buforów do kolejki (%s), kończenie działania…"
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
