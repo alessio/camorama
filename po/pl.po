@@ -7,7 +7,7 @@
 # translators@gnome.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Michal Biesiada <biesiadmichal@gmail.com>, 2020.
+# Michal Biesiada <biesiadmichal@gmail.com>, 2020, 2022.
 # Anonymous <noreply@weblate.org>, 2020.
 # Mateusz Stomski <zbytatencyjny@gmail.com>, 2020.
 # Szymon Scholz <szymonscholz@gmail.com>, 2020.
@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
 "PO-Revision-Date: 2022-09-26 13:19+0000\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Last-Translator: Michal Biesiada <biesiadmichal@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/camorama/"
 "master/pl/>\n"
 "Language: pl\n"
@@ -122,7 +122,7 @@ msgstr "Balans bieli:"
 
 #: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
 msgid "Zoom:"
-msgstr "Zbliżenie:"
+msgstr "Powiększenie:"
 
 #: data/camorama-gtk3.ui:714
 msgid "Threshold:"
