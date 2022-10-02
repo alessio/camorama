@@ -4,13 +4,14 @@
 # Wouter Bolsterlee <uws+gnome@xs4all.nl>, 2006.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Geert Warrink <geert.warrink@onsnet.nu>, 2020.
+# Vanhoorne Michael <michaeltjevanhoorne@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2020-02-08 08:16+0000\n"
-"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"PO-Revision-Date: 2022-10-03 18:19+0000\n"
+"Last-Translator: Vanhoorne Michael <michaeltjevanhoorne@gmail.com>\n"
 "Language-Team: Dutch <https://translate.fedoraproject.org/projects/camorama/"
 "master/nl/>\n"
 "Language: nl\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -85,7 +86,7 @@ msgstr ""
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "Volledig scherm"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
@@ -116,10 +117,8 @@ msgid "Zoom:"
 msgstr "Zoomen:"
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "Drempelwaarde (totaal)"
+msgstr "Drempelwaarde:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
@@ -807,10 +806,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "kon niet beginnen met streamen (%s), afsluiten...."
 
 #: src/v4l.c:1548
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF  --  kon geen buffers (%s) ondervragen, afsluiten...."
+msgstr "VIDIOC_QBUF  --  kon geen buffers (%s) ondervragen, afsluiten...."
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
