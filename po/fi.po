@@ -5,13 +5,14 @@
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2020.
 # Jan Kuparinen <copper_fin@hotmail.com>, 2020, 2022.
+# Ricky Tigg <ricky.tigg@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-03-26 21:21+0000\n"
-"Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
+"PO-Revision-Date: 2022-11-10 19:19+0000\n"
+"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "camorama/master/fi/>\n"
 "Language: fi\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -320,11 +321,11 @@ msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
-msgstr "Palvelimen isäntänimi"
+msgstr "Palvelimen konenimi"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
 msgid "Hostname for the server used for remote captures."
-msgstr "Isäntänimi palvelimelle, johon etäkuvankaappaukset tallennetaan."
+msgstr "Konenimi palvelimelle, johon etäkuvankaappaukset tallennetaan."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
