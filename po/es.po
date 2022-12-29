@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-11-01 23:19+0000\n"
+"PO-Revision-Date: 2022-12-30 18:20+0000\n"
 "Last-Translator: Emilio Herrera <ehespinosa57@gmail.com>\n"
 "Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
 "camorama/master/es/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.15\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -328,14 +328,12 @@ msgstr ""
 "Altura de la imagen usada por la cámara. Cero significa selección automática"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Nombre de equipo para el servidor FTP"
+msgstr "Nombre de host para el servidor"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Nombre de equipo para el servidor FTP para las capturas remotas."
+msgstr "Nombre de host para el servidor usado para las capturas remotas."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -350,9 +348,8 @@ msgstr ""
 "captura automática, esta clave activa el guardado de las imágenes localmente."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Carpeta para las capturas remotas"
+msgstr "Protocolo ha ser usado para acceso remoto"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
