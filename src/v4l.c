@@ -13,35 +13,38 @@ extern int frame_number;
 struct video_formats {
     unsigned int pixformat;
     unsigned int depth;
-    unsigned int y_decimation;
-    unsigned int x_decimation;
+    int y_decimation;
+    int x_decimation;
 
     unsigned int is_rgb:1;
 };
 
 /* Formats that are natively supported */
 static const struct video_formats supported_formats[] = {
-    { V4L2_PIX_FMT_RGB24,   24, 0, 0, 1},
-    { V4L2_PIX_FMT_BGR24,   24, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB24,   24, -1, -1, 1},
+    { V4L2_PIX_FMT_BGR24,   24, -1, -1, 1},
 
-    { V4L2_PIX_FMT_YUYV,    16, 0, 0, 0},
-    { V4L2_PIX_FMT_UYVY,    16, 0, 0, 0},
-    { V4L2_PIX_FMT_YVYU,    16, 0, 0, 0},
-    { V4L2_PIX_FMT_VYUY,    16, 0, 0, 0},
-    { V4L2_PIX_FMT_NV12,     8, 1, 0, 0},
-    { V4L2_PIX_FMT_NV21,     8, 1, 0, 0},
-    { V4L2_PIX_FMT_YUV420,   8, 1, 1, 0},
-    { V4L2_PIX_FMT_YVU420,   8, 1, 1, 0},
+    { V4L2_PIX_FMT_YUYV,    16, -1, -1, -1},
+    { V4L2_PIX_FMT_UYVY,    16, -1, -1, -1},
+    { V4L2_PIX_FMT_YVYU,    16, -1, -1, -1},
+    { V4L2_PIX_FMT_VYUY,    16, -1, -1, -1},
+    { V4L2_PIX_FMT_NV12,     8, 1, -1, -1},
+    { V4L2_PIX_FMT_NV21,     8, 1, -1, -1},
+    { V4L2_PIX_FMT_NV16,     8, 0, -1, -1},
+    { V4L2_PIX_FMT_NV61,     8, 0, -1, -1},
+    { V4L2_PIX_FMT_YUV420,   8, 1, 1, -1},
+    { V4L2_PIX_FMT_YVU420,   8, 1, 1, -1},
+    { V4L2_PIX_FMT_YUV422P,  8, 0, 1, 0},
 
-    { V4L2_PIX_FMT_RGB565,  16, 0, 0, 1},
-    { V4L2_PIX_FMT_RGB565X, 16, 0, 0, 1},
+    { V4L2_PIX_FMT_RGB565,  16, -1, -1, 1},
+    { V4L2_PIX_FMT_RGB565X, 16, -1, -1, 1},
 
-    { V4L2_PIX_FMT_BGR32,   32, 0, 0, 1},
-    { V4L2_PIX_FMT_ABGR32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_XBGR32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_RGB32,   32, 0, 0, 1},
-    { V4L2_PIX_FMT_ARGB32,  32, 0, 0, 1},
-    { V4L2_PIX_FMT_XRGB32,  32, 0, 0, 1},
+    { V4L2_PIX_FMT_BGR32,   32, -1, -1, 1},
+    { V4L2_PIX_FMT_ABGR32,  32, -1, -1, 1},
+    { V4L2_PIX_FMT_XBGR32,  32, -1, -1, 1},
+    { V4L2_PIX_FMT_RGB32,   32, -1, -1, 1},
+    { V4L2_PIX_FMT_ARGB32,  32, -1, -1, 1},
+    { V4L2_PIX_FMT_XRGB32,  32, -1, -1, 1},
 };
 
 #define ARRAY_SIZE(a)  (sizeof(a)/sizeof(*a))
@@ -176,28 +179,35 @@ static void copy_two_pixels(cam_t *cam,
 
         break;
     case V4L2_PIX_FMT_NV12:
+    case V4L2_PIX_FMT_NV16:
+        u = plane1[0];
+        v = plane1[1];
+
+        for (i = 0; i < 2; i++)
+            convert_yuv(c, plane0[i], u, v, dst);
+
+        break;
     case V4L2_PIX_FMT_NV21:
-        if (fourcc == V4L2_PIX_FMT_NV12) {
-            u = plane1[0];
-            v = plane1[1];
-        } else {
-            u = plane1[1];
-            v = plane1[0];
-        }
+    case V4L2_PIX_FMT_NV61:
+        v = plane1[0];
+        u = plane1[1];
 
         for (i = 0; i < 2; i++)
             convert_yuv(c, plane0[i], u, v, dst);
 
         break;
     case V4L2_PIX_FMT_YUV420:
+    case V4L2_PIX_FMT_YUV422P:
+        u = plane1[0];
+        v = plane2[0];
+
+        for (i = 0; i < 2; i++)
+            convert_yuv(c, plane0[i], u, v, dst);
+
+        break;
     case V4L2_PIX_FMT_YVU420:
-        if (fourcc == V4L2_PIX_FMT_YUV420) {
-            u = plane1[0];
-            v = plane2[0];
-        } else {
-            u = plane2[0];
-            v = plane1[0];
-        }
+        v = plane1[0];
+        u = plane2[0];
 
         for (i = 0; i < 2; i++)
             convert_yuv(c, plane0[i], u, v, dst);
@@ -255,22 +265,24 @@ static unsigned int convert_to_rgb24(cam_t *cam, unsigned char *inbuf)
     uint32_t num_planes = 1;
     unsigned char *p_start;
     uint32_t plane0_size;
-    uint32_t w_dec;
-    uint32_t h_dec;
+    uint32_t w_dec = 0;
+    uint32_t h_dec = 0;
 
     video_fmt = video_fmt_props(cam->pixformat);
     if (!video_fmt)
         return 0;
 
     depth = video_fmt->depth;
-    h_dec = video_fmt->y_decimation;
-    w_dec = video_fmt->x_decimation;
 
-    if (h_dec)
+    if (video_fmt->y_decimation >= 0) {
         num_planes++;
+        h_dec = video_fmt->y_decimation;
+    }
 
-    if (w_dec)
+    if (video_fmt->x_decimation >= 0) {
         num_planes++;
+        w_dec = video_fmt->x_decimation;
+    }
 
     p_start = p_out;
 
