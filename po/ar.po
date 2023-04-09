@@ -5,13 +5,14 @@
 # Djihed Afifi <djihed@gmail.com>, 2007
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # ButterflyOfFire <butterflyoffire@protonmail.com>, 2020.
+# Amro Hatem <amro_hatem_1@outlook.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2020-03-05 09:38+0000\n"
-"Last-Translator: ButterflyOfFire <butterflyoffire@protonmail.com>\n"
+"PO-Revision-Date: 2023-01-14 18:20+0000\n"
+"Last-Translator: Amro Hatem <amro_hatem_1@outlook.com>\n"
 "Language-Team: Arabic <https://translate.fedoraproject.org/projects/camorama/"
 "master/ar/>\n"
 "Language: ar\n"
@@ -20,63 +21,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.11.2\n"
+"X-Generator: Weblate 4.15\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
 msgstr "كاموراما"
 
 #: camorama.appdata.xml.in:7 camorama.desktop.in:4
-#, fuzzy
 msgid "Camorama Webcam Viewer"
-msgstr "عارض المعارِف"
+msgstr "عارض كاميرا الويب كاموراما"
 
 #: camorama.appdata.xml.in:9
 msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"كاموراما هو عارض كاميرا ويب مبسط، مع القدرة على تطبيق بعض تأثيرات الفيديو."
 
 #: camorama.desktop.in:5 src/callbacks.c:530
 msgid "View, alter and save images from a webcam"
-msgstr ""
+msgstr "عرض وتعديل وحفظ الصور من كاميرا الويب"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "كاموراما;كاميرا ويب;عارض;تأثيرات-الفيديو;"
 
 #: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49
 msgid "Camorama-libglade"
-msgstr ""
+msgstr "Camorama-libglade"
 
 #: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
-#, fuzzy
 msgid "_Take Picture"
-msgstr "_صورة"
+msgstr "_خذ صورة"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
 msgid "Toggle _Full Screen"
-msgstr "بدّل ملأ الشاشة"
+msgstr "تبديل _لوضع ملأ الشاشة"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
-msgstr ""
+msgstr "_عرض"
 
 #: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
 #: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
-#, fuzzy
 msgid "Show Adjustments"
-msgstr "اظهر المُرفقات"
+msgstr "إظهار التعديلات"
 
 #: data/camorama-gtk3.ui:168 data/camorama-gtk4.ui:160
-#, fuzzy
 msgid "Show Effects"
-msgstr "مؤ_ثرات"
+msgstr "إظهار التأثيرات"
 
 #: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
 msgid "_Change Camera"
-msgstr ""
+msgstr "_غير الكاميرا"
 
 #: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
 msgid "Small"
