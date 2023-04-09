@@ -4,21 +4,23 @@
 #
 # Matej Urbančič <matej.urban@gmail.com>, 2006.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Martin Srebotnjak <miles@filmsi.net>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2018-09-21 05:47+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Slovenian <sl@li.org>\n"
+"PO-Revision-Date: 2023-02-20 19:20+0000\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
+"Language-Team: Slovenian <https://translate.fedoraproject.org/projects/"
+"camorama/master/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 4.15.2\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -29,7 +31,7 @@ msgstr "Camorama"
 
 #: camorama.appdata.xml.in:7 camorama.desktop.in:4
 msgid "Camorama Webcam Viewer"
-msgstr "Camorama pregledovalnik spletne kamere"
+msgstr "Ogledovalnik spletne kamere Camorama"
 
 #: camorama.appdata.xml.in:9
 msgid ""
@@ -39,20 +41,19 @@ msgstr ""
 
 #: camorama.desktop.in:5 src/callbacks.c:530
 msgid "View, alter and save images from a webcam"
-msgstr "Poglej, spremeni in shrani slike preko spletne kamere"
+msgstr "Poglejte, spremenite in shranite slike preko spletne kamere"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "camorama;spletna kamera;webcam;video-učinki;"
 
 #: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
 #: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
-#, fuzzy
 msgid "_Take Picture"
-msgstr "Zajem slike"
+msgstr "_Zajemi sliko"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
 #, fuzzy
@@ -62,20 +63,20 @@ msgstr "Preklop lokalnega zajemanja"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
-msgstr ""
+msgstr "Po_gled"
 
 #: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
 #: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
 msgid "Show Adjustments"
-msgstr "Pokaži spremembe"
+msgstr "Pokaži prilagoditve"
 
 #: data/camorama-gtk3.ui:168 data/camorama-gtk4.ui:160
 msgid "Show Effects"
-msgstr "Prikaži efekte"
+msgstr "Prikaži učinke"
 
 #: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
 msgid "_Change Camera"
-msgstr ""
+msgstr "_Spremeni kamero"
 
 #: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
 msgid "Small"
@@ -83,15 +84,15 @@ msgstr "Majhno"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Pokaži kontrolnike"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "Celozaslonski način"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
-msgstr "Zajem slike"
+msgstr "Zajemi sliko"
 
 #: data/camorama-gtk3.ui:536 data/camorama-gtk4.ui:523
 msgid "Contrast:"
@@ -115,15 +116,15 @@ msgstr "Ravnotežje beline:"
 
 #: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
 msgid "Zoom:"
-msgstr ""
+msgstr "Povečava:"
 
 #: data/camorama-gtk3.ui:714
 msgid "Threshold:"
-msgstr ""
+msgstr "Prag:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Prag kanala:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -147,7 +148,7 @@ msgstr "     "
 
 #: data/camorama-gtk3.ui:944 data/camorama-gtk4.ui:863
 msgid "Capture Interval (in minutes):"
-msgstr "Interval zajemanja (v minutah)"
+msgstr "Interval zajemanja (v minutah):"
 
 #: data/camorama-gtk3.ui:1016 data/camorama-gtk4.ui:935
 msgid "General"
@@ -170,9 +171,8 @@ msgid "_Filename for pictures:"
 msgstr "_Imena slikovnih datotek:"
 
 #: data/camorama-gtk3.ui:1152 data/camorama-gtk4.ui:1071
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Mapa za shranjevanje:"
+msgstr "Izberite mapo"
 
 #: data/camorama-gtk3.ui:1197 data/camorama-gtk3.ui:1593
 #: data/camorama-gtk4.ui:1116 data/camorama-gtk4.ui:1512
@@ -212,22 +212,20 @@ msgid "_Enable remote capture"
 msgstr "_Omogoči oddaljeno zajemanje"
 
 #: data/camorama-gtk3.ui:1475 data/camorama-gtk4.ui:1394
-#, fuzzy
 msgid "Server:"
-msgstr "FTP strežnik: "
+msgstr "Strežnik:"
 
 #: data/camorama-gtk3.ui:1487 data/camorama-gtk4.ui:1406
 msgid "Type:"
-msgstr ""
+msgstr "Vrsta:"
 
 #: data/camorama-gtk3.ui:1499 data/camorama-gtk4.ui:1418
 msgid "Save directory:"
 msgstr "Mapa za shranjevanje:"
 
 #: data/camorama-gtk3.ui:1511 data/camorama-gtk4.ui:1430
-#, fuzzy
 msgid "Filename:"
-msgstr "Ime Datoteke"
+msgstr "Ime datoteke:"
 
 #: data/camorama-gtk3.ui:1524 data/camorama-gtk4.ui:1443
 msgid "ftp.yourdomain.org"
