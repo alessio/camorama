@@ -3,15 +3,15 @@
 # Huib Kleinhout <huib@stack.nl>, 2003
 # Wouter Bolsterlee <uws+gnome@xs4all.nl>, 2006.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Geert Warrink <geert.warrink@onsnet.nu>, 2020.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2020, 2023.
 # Vanhoorne Michael <michaeltjevanhoorne@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-10-03 18:19+0000\n"
-"Last-Translator: Vanhoorne Michael <michaeltjevanhoorne@gmail.com>\n"
+"PO-Revision-Date: 2023-06-11 13:20+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch <https://translate.fedoraproject.org/projects/camorama/"
 "master/nl/>\n"
 "Language: nl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -54,10 +54,8 @@ msgid "_Take Picture"
 msgstr "_Foto maken"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Schakelt lokale opname in/uit"
+msgstr "_Volledig scherm activeren"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -82,7 +80,7 @@ msgstr "Klein"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Bediening tonen"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
@@ -122,7 +120,7 @@ msgstr "Drempelwaarde:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Kanaaldrempel:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -683,19 +681,15 @@ msgstr "Gebruik read() in plaats van mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "videoschaler uitschakelen"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "Gebruik read() in plaats van mmap()"
+msgstr "gebruik de userptr-aanwijzer in plaats van mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "v4l-apparaat dat gebruikt dient te worden"
+msgstr "v4l-apparaatinvoer om te gebruiken"
 
 #: src/main.c:117
 #, c-format
@@ -749,29 +743,26 @@ msgstr ""
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Video-indelingen van apparaten zijn niet compatibel met camorama."
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Kan geen verbinding maken met video-apparaat (%s).\n"
+"Kan vensterinfo niet instellen op videoapparaat (%s).\n"
 "Controleer de verbinding."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Kan formaat niet instellen naar %c%c%c%c op videoapparaat (%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Geretourneerde breedte is nul op videoapparaat (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
@@ -779,10 +770,8 @@ msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS  --  kon geen buffers (%s) aanvragen, afsluiten...."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "kon geen map buffers opslaan (%s), afsluiten...."
+msgstr "kon geen geheugen toewijzen voor videobuffers, afsluiten...."
 
 #: src/v4l.c:1453
 #, c-format
