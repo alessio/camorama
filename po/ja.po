@@ -5,13 +5,14 @@
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003,2007.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Casey Jones <nahareport@yahoo.com>, 2020.
+# Yūtenji <yuta@59ry.jp>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2020-05-02 07:40+0000\n"
-"Last-Translator: Casey Jones <nahareport@yahoo.com>\n"
+"PO-Revision-Date: 2023-12-13 11:44+0000\n"
+"Last-Translator: Yūtenji <yuta@59ry.jp>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
 "camorama/master/ja/>\n"
 "Language: ja\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.0.1\n"
+"X-Generator: Weblate 5.2.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -54,10 +55,8 @@ msgid "_Take Picture"
 msgstr "写真撮影(_T)"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "ローカル・キャプチャの切り替え"
+msgstr "フルスクリーンの切り替え(_F)"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -82,11 +81,11 @@ msgstr "小さい"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "コントロールの表示"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "フルスクリーン"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
@@ -117,10 +116,8 @@ msgid "Zoom:"
 msgstr "ズーム:"
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "境界値変動 (全体)"
+msgstr "境界値変動:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
@@ -680,10 +677,8 @@ msgid "use userptr pointer rather than mmap()"
 msgstr "mmap() ではなく read() を使う"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "v41 (Video for Linux) デバイスを利用する"
+msgstr "v4l (Video for Linux) デバイスインプットを利用する"
 
 #: src/main.c:117
 #, c-format
