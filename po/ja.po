@@ -121,7 +121,7 @@ msgstr "境界値変動:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "チャンネル境界値:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -672,7 +672,6 @@ msgstr ""
 
 #: src/main.c:51 src/main.c:53
 #, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
 msgstr "mmap() ではなく read() を使う"
 
@@ -691,6 +690,7 @@ msgstr ""
 "\n"
 "\n"
 "Camorama のバージョン %s\n"
+"\n"
 
 #: src/main.c:151
 msgid "Couldn't load builder file"
@@ -735,9 +735,6 @@ msgstr ""
 
 #: src/v4l.c:1364
 #, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
@@ -751,9 +748,9 @@ msgid "Could not set format to %c%c%c%c on video device (%s)."
 msgstr ""
 
 #: src/v4l.c:1404
-#, c-format
+#, fuzzy, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "ビデオ・デバイスに返された横幅はゼロです (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
@@ -764,7 +761,6 @@ msgstr ""
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
 #, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
 msgstr "メモリーバッファ (%s) にマップできませんでした、終了しています...."
 
@@ -794,7 +790,6 @@ msgstr "ストリーミング (%s) を開始できませんでした、終了し
 
 #: src/v4l.c:1548
 #, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
 "VIDIOC_QUERYBUF  --  バッファ (%s) に問合せできませんでした、終了していま"
