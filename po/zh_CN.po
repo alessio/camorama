@@ -4,13 +4,14 @@
 # Funda Wang <fundawang@linux.net.cn>, 2004.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Charles Lee <lchopn@gmail.com>, 2020, 2021.
+# Jingge Chen <mariocanfly@hotmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:36+0100\n"
-"PO-Revision-Date: 2021-07-10 09:04+0000\n"
-"Last-Translator: Charles Lee <lchopn@gmail.com>\n"
+"PO-Revision-Date: 2023-12-11 01:44+0000\n"
+"Last-Translator: Jingge Chen <mariocanfly@hotmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
 "projects/camorama/master/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.7.1\n"
+"X-Generator: Weblate 5.2.1\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -617,7 +618,7 @@ msgstr "镜像"
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:116 src/camorama-window.c:124
 msgid "_Add Filter"
