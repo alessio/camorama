@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2023-02-20 19:20+0000\n"
+"PO-Revision-Date: 2023-12-22 22:37+0000\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <https://translate.fedoraproject.org/projects/"
 "camorama/master/sl/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 4.15.2\n"
+"X-Generator: Weblate 5.3\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -38,6 +38,8 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Camorama je enostaven ogledovalnik spletnih kamer z možnostjo uveljavljanja "
+"nekaterih video učinkov."
 
 #: camorama.desktop.in:5 src/callbacks.c:530
 msgid "View, alter and save images from a webcam"
@@ -56,10 +58,8 @@ msgid "_Take Picture"
 msgstr "_Zajemi sliko"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Preklop lokalnega zajemanja"
+msgstr "Preklopi _celozaslonski način"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -260,9 +260,8 @@ msgid "Timestamp"
 msgstr "Časovni žig"
 
 #: data/camorama-gtk3.ui:2022 data/camorama-gtk4.ui:1941
-#, fuzzy
 msgid "Select a video device to be used"
-msgstr "v4l naprava za uporabo"
+msgstr "Izberite video napravo za uporabo"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
@@ -313,23 +312,20 @@ msgid "Specifies the image format to be used for locally saved pictures"
 msgstr "Določi format slik za lokalno shranjene slike"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
-#, fuzzy
 msgid "Image height"
-msgstr "višina zajemanja"
+msgstr "Višina slike"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
 msgstr ""
 
 #: data/org.gnome.camorama.gschema.xml.in:41
-#, fuzzy
 msgid "Hostname for the server"
-msgstr "Ime gostitelja za FTP strežnik"
+msgstr "Ime gostitelja za strežnik"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
-#, fuzzy
 msgid "Hostname for the server used for remote captures."
-msgstr "Ime gostitelja za FTP strežnik za oddaljeno zajemanje"
+msgstr "Ime gostitelja strežnika za oddaljeno zajemanje."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
@@ -344,9 +340,8 @@ msgstr ""
 "ta možnost dovoli preklop shranjevanja na lokalni disk."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
-#, fuzzy
 msgid "Protocol to use for remote access"
-msgstr "Mapa za oddaljeno zajemanje"
+msgstr "Protokol za oddaljeni dostop"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
@@ -473,9 +468,8 @@ msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Preklop uporabe gumbov za ureditev video filtrov"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
-#, fuzzy
 msgid "Image width"
-msgstr "širina zajemanja"
+msgstr "Širina slike"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
@@ -515,21 +509,20 @@ msgstr ""
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
 msgid "Mirror"
-msgstr ""
+msgstr "Zrcali"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:116
 msgid "_Add Filter"
-msgstr ""
+msgstr "_Dodaj filter"
 
 #: src/camorama-window.c:203
-#, fuzzy
 msgid "Effects"
-msgstr "Prikaži efekte"
+msgstr "Učinki"
 
 #: src/fileio.c:115 src/fileio.c:282
 msgid "Could save temporary image file in /tmp."
