@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Funda Wang <fundawang@linux.net.cn>, 2004.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Charles Lee <lchopn@gmail.com>, 2020, 2021.
+# Charles Lee <lchopn@gmail.com>, 2020, 2021, 2023.
 # Jingge Chen <mariocanfly@hotmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:36+0100\n"
-"PO-Revision-Date: 2023-12-11 01:44+0000\n"
-"Last-Translator: Jingge Chen <mariocanfly@hotmail.com>\n"
+"PO-Revision-Date: 2023-12-22 22:37+0000\n"
+"Last-Translator: Charles Lee <lchopn@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
 "projects/camorama/master/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.2.1\n"
+"X-Generator: Weblate 5.3\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -91,7 +91,7 @@ msgstr "小"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "显示控制"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 #: data/camorama-gtk3.ui:404
@@ -141,13 +141,12 @@ msgid "Zoom:"
 msgstr "缩放："
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
 msgid "Threshold:"
-msgstr "阈值（总）"
+msgstr "阈值："
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "通道阈值："
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 #: data/camorama-gtk3.ui:826 data/camorama-gtk4.ui:666
@@ -608,7 +607,7 @@ msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "拉普拉斯（4近邻）"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
@@ -722,12 +721,12 @@ msgstr "黑白"
 
 #: src/filter.c:535 src/filter.c:422
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "黑白（权重）"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:592 src/filter.c:479
 msgid "Sobel"
-msgstr ""
+msgstr "Sobel 描边"
 
 #: src/main.c:31
 msgid "show version and exit"
