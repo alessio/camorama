@@ -3,21 +3,23 @@
 # This file is distributed under the same license as the camorama package.
 # Alastair McKinstry <mckinstry@computer.org>, 2004.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
+# Aindriu Mac Giolla Eoin <aindriu80@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2018-09-21 05:46+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2024-08-12 01:54+0000\n"
+"Last-Translator: Aindriu Mac Giolla Eoin <aindriu80@gmail.com>\n"
+"Language-Team: Irish <https://translate.fedoraproject.org/projects/camorama/"
+"master/ga/>\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
-"4\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4);\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -32,43 +34,45 @@ msgid ""
 "Camorama is a simple webcam viewer, with the ability to apply some video "
 "effects."
 msgstr ""
+"Is camorama breathnóir ceamara gréasáin simplí, leis an gcumas a chur i "
+"bhfeidhm ar roinnt éifeachtaí físe."
 
 #: camorama.desktop.in:5 src/callbacks.c:530
 msgid "View, alter and save images from a webcam"
-msgstr ""
+msgstr "Amharc ar íomhánna ó cheamara gréasáin, iad a athrú agus a shábháil"
 
 #: camorama.desktop.in:10
 msgid "camorama;webcam;viewer;video-effects;"
-msgstr ""
+msgstr "Camorama; ceamara gréasáin; breathnóir; éifeachtaí físe;"
 
 #: data/camorama-gtk3.ui:57 data/camorama-gtk4.ui:49
 msgid "Camorama-libglade"
-msgstr ""
+msgstr "Camorama-libglade"
 
 #: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
 msgid "_Take Picture"
-msgstr ""
+msgstr "_Take Pictiúr"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
 msgid "Toggle _Full Screen"
-msgstr ""
+msgstr "Scoránaigh _Full Scáileán"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
-msgstr ""
+msgstr "_View"
 
 #: data/camorama-gtk3.ui:158 data/camorama-gtk3.ui:337
 #: data/camorama-gtk4.ui:150 data/camorama-gtk4.ui:329
 msgid "Show Adjustments"
-msgstr ""
+msgstr "Taispeáin Coigeartuithe"
 
 #: data/camorama-gtk3.ui:168 data/camorama-gtk4.ui:160
 msgid "Show Effects"
-msgstr ""
+msgstr "Taispeáin Maisíochtaí"
 
 #: data/camorama-gtk3.ui:177 data/camorama-gtk4.ui:169
 msgid "_Change Camera"
-msgstr ""
+msgstr "_Change Ceamara"
 
 #: data/camorama-gtk3.ui:192 data/camorama-gtk4.ui:184
 msgid "Small"
@@ -76,23 +80,23 @@ msgstr "Beag"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Taispeáin Rialtáin"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "Scáileán Iomlán"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
-msgstr ""
+msgstr "Tóg Pictiúr"
 
 #: data/camorama-gtk3.ui:536 data/camorama-gtk4.ui:523
 msgid "Contrast:"
-msgstr ""
+msgstr "Codarsnacht:"
 
 #: data/camorama-gtk3.ui:548 data/camorama-gtk4.ui:535
 msgid "Brightness:"
-msgstr ""
+msgstr "Gile:"
 
 #: data/camorama-gtk3.ui:560 data/camorama-gtk4.ui:547
 msgid "Color:"
@@ -100,31 +104,31 @@ msgstr "Dath:"
 
 #: data/camorama-gtk3.ui:572 data/camorama-gtk4.ui:559
 msgid "Hue:"
-msgstr ""
+msgstr "Lí:"
 
 #: data/camorama-gtk3.ui:584 data/camorama-gtk4.ui:571
 msgid "White Balance:"
-msgstr ""
+msgstr "Iarmhéid Bán:"
 
 #: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
 msgid "Zoom:"
-msgstr ""
+msgstr "Súmáil:"
 
 #: data/camorama-gtk3.ui:714
 msgid "Threshold:"
-msgstr ""
+msgstr "Tairseach:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Tairseach Cainéil:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weigth=\"bold\">Gineréal</span>"
+msgstr "<span weight=\"bold\">Ginearálta</span>"
 
 #: data/camorama-gtk3.ui:899 data/camorama-gtk4.ui:818
 msgid "Automatic Capture"
-msgstr ""
+msgstr "Gabháil Uathoibríoch"
 
 #: data/camorama-gtk3.ui:921 data/camorama-gtk3.ui:1059
 #: data/camorama-gtk3.ui:1098 data/camorama-gtk3.ui:1291
@@ -140,7 +144,7 @@ msgstr "     "
 
 #: data/camorama-gtk3.ui:944 data/camorama-gtk4.ui:863
 msgid "Capture Interval (in minutes):"
-msgstr ""
+msgstr "Eatramh Gabhála (i nóiméid):"
 
 #: data/camorama-gtk3.ui:1016 data/camorama-gtk4.ui:935
 msgid "General"
@@ -148,34 +152,33 @@ msgstr "Gineréal"
 
 #: data/camorama-gtk3.ui:1041 data/camorama-gtk4.ui:960
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Gabháil Áitiúil</span>"
 
 #: data/camorama-gtk3.ui:1075 data/camorama-gtk4.ui:994
 msgid "_Enable local capture"
-msgstr ""
+msgstr "_Enable ghabháil áitiúil"
 
 #: data/camorama-gtk3.ui:1123 data/camorama-gtk4.ui:1042
 msgid "_Directory for captured pics:"
-msgstr ""
+msgstr "_Directory do phictiúir a gabhadh:"
 
 #: data/camorama-gtk3.ui:1136 data/camorama-gtk4.ui:1055
 msgid "_Filename for pictures:"
-msgstr ""
+msgstr "_Filename do phictiúir:"
 
 #: data/camorama-gtk3.ui:1152 data/camorama-gtk4.ui:1071
-#, fuzzy
 msgid "Select a Directory"
-msgstr "Eolaire a Sábháilte:"
+msgstr "Roghnaigh Comhadlann"
 
 #: data/camorama-gtk3.ui:1197 data/camorama-gtk3.ui:1593
 #: data/camorama-gtk4.ui:1116 data/camorama-gtk4.ui:1512
 msgid "Append time to filename"
-msgstr ""
+msgstr "Iarcheangail am le hainm comhaid"
 
 #: data/camorama-gtk3.ui:1214 data/camorama-gtk3.ui:1609
 #: data/camorama-gtk4.ui:1133 data/camorama-gtk4.ui:1528
 msgid "Add a timestamp to captured images"
-msgstr ""
+msgstr "Cuir stampa ama le híomhánna a gabhadh"
 
 #: data/camorama-gtk3.ui:1273 data/camorama-gtk3.ui:1668
 #: data/camorama-gtk4.ui:1192 data/camorama-gtk4.ui:1587
@@ -185,286 +188,299 @@ msgstr "<span weight=\"bold\">Saghas Íomha</span>"
 #: data/camorama-gtk3.ui:1306 data/camorama-gtk3.ui:1701
 #: data/camorama-gtk4.ui:1225 data/camorama-gtk4.ui:1620
 msgid "Save files in jpeg format"
-msgstr ""
+msgstr "Sábháil comhaid i bhformáid jpeg"
 
 #: data/camorama-gtk3.ui:1323 data/camorama-gtk3.ui:1718
 #: data/camorama-gtk4.ui:1242 data/camorama-gtk4.ui:1637
 msgid "Save files in png format"
-msgstr ""
+msgstr "Sábháil comhaid i bhformáid png"
 
 #: data/camorama-gtk3.ui:1368 data/camorama-gtk4.ui:1287
 msgid "Local Capture"
-msgstr ""
+msgstr "Gabháil Áitiúil"
 
 #: data/camorama-gtk3.ui:1392 data/camorama-gtk4.ui:1311
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Cianghabháil</span>"
 
 #: data/camorama-gtk3.ui:1426 data/camorama-gtk4.ui:1345
 msgid "_Enable remote capture"
-msgstr ""
+msgstr "_Enable cianghabháil"
 
 #: data/camorama-gtk3.ui:1475 data/camorama-gtk4.ui:1394
-#, fuzzy
 msgid "Server:"
-msgstr "Freastalaí FTP: "
+msgstr "Freastalaí:"
 
 #: data/camorama-gtk3.ui:1487 data/camorama-gtk4.ui:1406
 msgid "Type:"
-msgstr ""
+msgstr "Cineál:"
 
 #: data/camorama-gtk3.ui:1499 data/camorama-gtk4.ui:1418
 msgid "Save directory:"
 msgstr "Eolaire a Sábháilte:"
 
 #: data/camorama-gtk3.ui:1511 data/camorama-gtk4.ui:1430
-#, fuzzy
 msgid "Filename:"
-msgstr "Ainm comhad"
+msgstr "Ainm comhaid:"
 
 #: data/camorama-gtk3.ui:1524 data/camorama-gtk4.ui:1443
 msgid "ftp.yourdomain.org"
-msgstr ""
+msgstr "ftp.yourdomain.org"
 
 #: data/camorama-gtk3.ui:1563 data/camorama-gtk4.ui:1482
 msgid "webcamshot"
-msgstr ""
+msgstr "ceamara gréasáin"
 
 #: data/camorama-gtk3.ui:1763 data/camorama-gtk4.ui:1682
 msgid "Remote Capture"
-msgstr ""
+msgstr "Gabháil Chianda"
 
 #: data/camorama-gtk3.ui:1787 data/camorama-gtk4.ui:1706
 msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Stampa ama</span>"
 
 #: data/camorama-gtk3.ui:1821 data/camorama-gtk4.ui:1740
 msgid "Use custom string"
-msgstr ""
+msgstr "Úsáid teaghrán saincheaptha"
 
 #: data/camorama-gtk3.ui:1866 data/camorama-gtk4.ui:1785
 msgid "String:"
-msgstr ""
+msgstr "Teaghrán:"
 
 #: data/camorama-gtk3.ui:1911 data/camorama-gtk4.ui:1830
 msgid "Draw date and time"
-msgstr ""
+msgstr "Tarraing dáta agus am"
 
 #: data/camorama-gtk3.ui:1955 data/camorama-gtk4.ui:1874
 msgid "Timestamp"
-msgstr ""
+msgstr "Stampa Ama"
 
 #: data/camorama-gtk3.ui:2022 data/camorama-gtk4.ui:1941
 msgid "Select a video device to be used"
-msgstr ""
+msgstr "Roghnaigh gléas físe le húsáid"
 
 #: data/org.gnome.camorama.gschema.xml.in:6
 msgid "Append timestamp to filename"
-msgstr ""
+msgstr "Iarcheangail stampa ama le hainm comhaid"
 
 #: data/org.gnome.camorama.gschema.xml.in:7
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr ""
+msgstr "Iarcheangail stampa ama, in am UNIX, le foircinn ainmneacha comhaid"
 
 #: data/org.gnome.camorama.gschema.xml.in:11
 msgid "Toggles auto-capture"
-msgstr ""
+msgstr "Scoránaigh gabháil uathoibríoch"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr ""
+msgstr "Scoránaigh gabháil uathoibríoch de phictiúir."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
-msgstr ""
+msgstr "Eatramh le haghaidh uathghabhála"
 
 #: data/org.gnome.camorama.gschema.xml.in:17
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr ""
+msgstr "Sonraíonn seo an t-eatramh chun pictiúir a ghabháil go huathoibríoch."
 
 #: data/org.gnome.camorama.gschema.xml.in:21
 msgid "Video device"
-msgstr ""
+msgstr "Gléas físe"
 
 #: data/org.gnome.camorama.gschema.xml.in:22
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr ""
+msgstr "Cosán an chórais comhad unix chuig an ngléas a shanntar le do cheamara."
 
 #: data/org.gnome.camorama.gschema.xml.in:26
 msgid "Toggles the datestamp in captures"
-msgstr ""
+msgstr "Scoránaigh an datestamp i ngabhálacha"
 
 #: data/org.gnome.camorama.gschema.xml.in:27
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr ""
+msgstr "Scoránaigh an líníocht de datestamp laistigh de na pictiúir a gabhadh"
 
 #: data/org.gnome.camorama.gschema.xml.in:31
 msgid "Local capture image format"
-msgstr ""
+msgstr "Formáid íomhá gabhála logánta"
 
 #: data/org.gnome.camorama.gschema.xml.in:32
 msgid "Specifies the image format to be used for locally saved pictures"
 msgstr ""
+"Sonraíonn seo an fhormáid íomhá atá le húsáid le haghaidh pictiúir a "
+"shábháiltear go háitiúil"
 
 #: data/org.gnome.camorama.gschema.xml.in:36
 msgid "Image height"
-msgstr ""
+msgstr "Airde na híomhá"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Airde íomhá a úsáideann an ceamara. Ciallaíonn nialas uathroghnú"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
-msgstr ""
+msgstr "Óstainm don fhreastalaí"
 
 #: data/org.gnome.camorama.gschema.xml.in:42
 msgid "Hostname for the server used for remote captures."
-msgstr ""
+msgstr "Óstainm don fhreastalaí a úsáidtear le haghaidh gabhálacha cianda."
 
 #: data/org.gnome.camorama.gschema.xml.in:46
 msgid "Toggles local capture"
-msgstr ""
+msgstr "Scoránaigh gabháil logánta"
 
 #: data/org.gnome.camorama.gschema.xml.in:47
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
+"Agus pictiúir á ngabháil tríd an gcnaipe \"Tóg Pictiúr\", nó le gabháil "
+"uathoibríoch, scoránaigh an eochair seo sábháil pictiúr go háitiúil."
 
 #: data/org.gnome.camorama.gschema.xml.in:51
 msgid "Protocol to use for remote access"
-msgstr ""
+msgstr "Prótacal le húsáid le haghaidh cianrochtana"
 
 #: data/org.gnome.camorama.gschema.xml.in:52
 msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"Ainm URI an phrótacail a úsáidfear chun ceangal le freastalaí iargúlta. Is "
+"féidir a bheith ftp, sftp nó smb"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Comhlánaigh URI a úsáidtear chun seatanna íomhá a stóráil go cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"URI iomlán na rochtana rathúla deiridh ar fhreastalaí iargúlta, lena n-"
+"áirítear prótacal, óstach agus eolaire iargúlta"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
-msgstr ""
+msgstr "Iarcheangail stampa ama le hainm comhaid cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:62
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
 msgstr ""
+"Iarcheangail stampa ama, in am UNIX, le foircinn ainmneacha comhaid cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:66
 msgid "Toggles remote capture"
-msgstr ""
+msgstr "Scoránaigh gabháil chianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:67
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
+"Agus pictiúir á ngabháil tríd an gcnaipe \"Tóg Pictiúr\", nó le gabháil "
+"uathoibríoch, scoránaigh an eochair seo sábháil pictiúr chuig freastalaí "
+"iargúlta."
 
 #: data/org.gnome.camorama.gschema.xml.in:71
 msgid "Remote capture image format"
-msgstr ""
+msgstr "Formáid íomhá gabhála cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:72
 msgid "Specifies the image format to be used for remotely saved pictures"
 msgstr ""
+"Sonraíonn seo an fhormáid íomhá atá le húsáid le haghaidh pictiúir a "
+"shábháil go cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:76
 msgid "Folder for remote captures"
-msgstr ""
+msgstr "Fillteán le haghaidh gabhálacha cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:77
 msgid "Folder for saving captured pictures remotely"
-msgstr ""
+msgstr "Fillteán chun pictiúir a gabhadh a shábháil go cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:81
 msgid "Remote save filename"
-msgstr ""
+msgstr "Ainm comhaid sábhála cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:82
 msgid "Name for the filename of uploaded images."
-msgstr ""
+msgstr "Ainm comhaid na n-íomhánna uaslódáilte."
 
 #: data/org.gnome.camorama.gschema.xml.in:86
 msgid "Toggles timestamp for remote captures"
-msgstr ""
+msgstr "Scoránaigh stampa ama le haghaidh gabhálacha cianda"
 
 #: data/org.gnome.camorama.gschema.xml.in:87
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr ""
+"Scoránaigh stampa ama a chur isteach sna híomhánna le haghaidh uaslódáil FTP."
 
 #: data/org.gnome.camorama.gschema.xml.in:91
 msgid "Folder for local captures"
-msgstr ""
+msgstr "Fillteán le haghaidh gabhálacha logánta"
 
 #: data/org.gnome.camorama.gschema.xml.in:92
 msgid "Folder for saving captured pictures to locally"
-msgstr ""
+msgstr "Fillteán chun pictiúir a gabhadh a shábháil go háitiúil"
 
 #: data/org.gnome.camorama.gschema.xml.in:96
 msgid "Filename for local captures"
-msgstr ""
+msgstr "Ainm comhaid le haghaidh gabhálacha logánta"
 
 #: data/org.gnome.camorama.gschema.xml.in:97
 msgid "Filename for saving captured pictures to locally"
-msgstr ""
+msgstr "Ainm comhaid chun pictiúir a gabhadh a shábháil go háitiúil"
 
 #: data/org.gnome.camorama.gschema.xml.in:101
 msgid "Toggles timestamp for local captures"
-msgstr ""
+msgstr "Scoránaigh stampa ama le haghaidh gabhálacha áitiúla"
 
 #: data/org.gnome.camorama.gschema.xml.in:102
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr ""
+msgstr "Scoránaigh stampa ama a chur isteach in íomhánna logánta"
 
 #: data/org.gnome.camorama.gschema.xml.in:106
 msgid "Custom text for the timestamp"
-msgstr ""
+msgstr "Téacs saincheaptha don stampa ama"
 
 #: data/org.gnome.camorama.gschema.xml.in:107
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr ""
+msgstr "Sainmhíníonn seo teaghrán téacs saincheaptha le cur isteach san íomhá."
 
 #: data/org.gnome.camorama.gschema.xml.in:111
 msgid "Toggles the custom string"
-msgstr ""
+msgstr "Scoránaigh an teaghrán saincheaptha"
 
 #: data/org.gnome.camorama.gschema.xml.in:112
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr ""
+msgstr "Scoránaigh úsáid na sreinge saincheaptha don stampa ama in íomhánna."
 
 #: data/org.gnome.camorama.gschema.xml.in:116
 msgid "Toggles the video adjustment sliders"
-msgstr ""
+msgstr "Scoránaigh na barraí sleamhnáin coigeartaithe físe"
 
 #: data/org.gnome.camorama.gschema.xml.in:117
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
+msgstr "Scoránaigh úsáid na sleamhnán chun airíonna an fhíseáin a choigeartú"
 
 #: data/org.gnome.camorama.gschema.xml.in:121
 msgid "Toggles the video effects buttons"
-msgstr ""
+msgstr "Scoránaigh na cnaipí maisíochtaí físe"
 
 #: data/org.gnome.camorama.gschema.xml.in:122
 msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr ""
+msgstr "Scoránaigh úsáid na gcnaipí chun na scagairí físe a choigeartú"
 
 #: data/org.gnome.camorama.gschema.xml.in:126
 msgid "Image width"
-msgstr ""
+msgstr "Leithead na híomhá"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Leithead íomhá a úsáideann an ceamara. Ciallaíonn nialas uathroghnú"
 
 #: src/callbacks.c:531
 msgid "translator_credits"
@@ -473,76 +489,76 @@ msgstr "Alastair McKinstry <mckinstry@computer.org>"
 #: src/callbacks.c:644
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f fps - fps reatha %.2f - meán"
 
 #: src/callbacks.c:1241
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Ní féidir cuimhne a leithdháileadh chun gléasanna a stóráil"
 
 #: src/callbacks.c:1353
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Níor aimsigh ceamara ar bith"
 
 #: src/callbacks.c:1449
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (uasmhéid %.1f fps)"
 
 #: src/callbacks.c:1453
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "Laplace (4 Chomharsa)"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
 msgid "Mirror"
-msgstr ""
+msgstr "Scáthán"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-reichardt.c:274
 msgid "Reichardt"
-msgstr ""
+msgstr "Reichardt"
 
 #: src/camorama-window.c:116
 msgid "_Add Filter"
-msgstr ""
+msgstr "Scagaire _Add"
 
 #: src/camorama-window.c:203
 msgid "Effects"
-msgstr ""
+msgstr "Éifeachtaí"
 
 #: src/fileio.c:115 src/fileio.c:282
 msgid "Could save temporary image file in /tmp."
-msgstr ""
+msgstr "Níorbh fhéidir comhad íomhá sealadach a shábháil i / tmp."
 
 #: src/fileio.c:132
 #, c-format
 msgid "Unable to create image '%s'."
-msgstr ""
+msgstr "Ní féidir íomhá '%s' a chruthú."
 
 #: src/fileio.c:143 src/fileio.c:440
 #, c-format
 msgid "Could not save image '%s/%s'."
-msgstr ""
+msgstr "Níorbh fhéidir íomhá '%s/%s' a shábháil."
 
 #: src/fileio.c:154
 #, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr ""
+msgstr "Níorbh fhéidir snáithe a chruthú chun íomhá '%s/%s' a shábháil."
 
 #: src/fileio.c:195
 #, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr ""
+msgstr "Tharla earráid agus %s á fheistiú:%s."
 
 #: src/fileio.c:235
 #, c-format
 msgid "An error occurred accessing %s."
-msgstr ""
+msgstr "Tharla earráid agus %s á rochtain."
 
 #: src/fileio.c:288
 #, c-format
@@ -550,64 +566,66 @@ msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr ""
+"Ní féidir comhad íomhá sealadach '%s' a oscailt.\n"
+"Ní féidir íomhá a uaslódáil."
 
 #: src/fileio.c:320
 #, c-format
 msgid "An error occurred opening %s."
-msgstr ""
+msgstr "Tharla earráid agus %s á oscailt."
 
 #: src/fileio.c:331
 #, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr ""
+msgstr "Tharla earráid agus %s á oscailt: %s."
 
 #: src/fileio.c:342
 #, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr ""
+msgstr "Tharla earráid agus %s á scríobh: %s."
 
 #: src/fileio.c:348
 #, c-format
 msgid "An error occurred closing %s: %s."
-msgstr ""
+msgstr "Tharla earráid agus %s á dhúnadh: %s."
 
 #: src/fileio.c:411
 #, c-format
 msgid "Could not create directory '%s'."
-msgstr ""
+msgstr "Níorbh fhéidir comhadlann '%s' a chruthú."
 
 #: src/fileio.c:420
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr ""
+msgstr "Níorbh fhéidir athrú go comhadlann '%s'."
 
 #: src/filter.c:96
 msgid "Invert"
-msgstr ""
+msgstr "Inbhéartaigh"
 
 #: src/filter.c:184
 msgid "Threshold (Overall)"
-msgstr ""
+msgstr "Tairseach (Ar an iomlán)"
 
 #: src/filter.c:277
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "Tairseach (in aghaidh an chainéil)"
 
 #: src/filter.c:355
 msgid "Wacky"
-msgstr ""
+msgstr "WackyName"
 
 #: src/filter.c:461
 msgid "Smooth"
-msgstr ""
+msgstr "Mín"
 
 #: src/filter.c:497
 msgid "Monochrome"
-msgstr ""
+msgstr "Monacrómach"
 
 #: src/filter.c:535
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "Monacrómach (Meáchan)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:592
@@ -620,47 +638,47 @@ msgstr "taispeán leagan agus éirigh as"
 
 #: src/main.c:33
 msgid "v4l device to use"
-msgstr ""
+msgstr "gléas v4l le húsáid"
 
 #: src/main.c:35
 msgid "enable debugging code"
-msgstr ""
+msgstr "Cumasaigh cód dífhabhtaithe"
 
 #: src/main.c:37
 msgid "capture width"
-msgstr ""
+msgstr "leithead gabhála"
 
 #: src/main.c:39
 msgid "capture height"
-msgstr ""
+msgstr "airde gabhála"
 
 #: src/main.c:41
 msgid "maximum capture size"
-msgstr ""
+msgstr "uasmhéid gabhála"
 
 #: src/main.c:43
 msgid "minimum capture size"
-msgstr ""
+msgstr "íosmhéid gabhála"
 
 #: src/main.c:45
 msgid "middle capture size"
-msgstr ""
+msgstr "méid gabhála lár"
 
 #: src/main.c:47
 msgid "use read() rather than mmap()"
-msgstr ""
+msgstr "úsáid léamh() seachas mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "Díchumasaigh scálaí físe"
 
 #: src/main.c:51 src/main.c:53
 msgid "use userptr pointer rather than mmap()"
-msgstr ""
+msgstr "úsáid pointeoir userptr seachas mmap()"
 
 #: src/main.c:55
 msgid "v4l device input to use"
-msgstr ""
+msgstr "Ionchur gléis V4L le húsáid"
 
 #: src/main.c:117
 #, c-format
@@ -677,17 +695,17 @@ msgstr ""
 
 #: src/main.c:151
 msgid "Couldn't load builder file"
-msgstr ""
+msgstr "Níorbh fhéidir comhad tógálaí a luchtú"
 
 #: src/main.c:180
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "Níor aimsíodh %s. Ag titim siar go %s"
 
 #: src/main.c:183
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "Níor aimsíodh %s."
 
 #: src/v4l.c:1087
 #, c-format
@@ -695,11 +713,13 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
+"Níorbh fhéidir ceangal le gléas físe (%s).\n"
+"Seiceáil an nasc le do thoil. Earráid: %d"
 
 #: src/v4l.c:1096
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Ní gléas físghabhála é an gléas %s."
 
 #: src/v4l.c:1270 src/v4l.c:1340
 #, c-format
@@ -707,10 +727,12 @@ msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
 msgstr ""
+"Níorbh fhéidir ceangal le gléas físe (%s).\n"
+"Seiceáil an nasc le do thoil."
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Níl formáidí físe gléis comhoiriúnach le camorama."
 
 #: src/v4l.c:1364
 #, c-format
@@ -718,60 +740,64 @@ msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
+"Níorbh fhéidir faisnéis fuinneoige a shocrú ar ghléas físe (%s).\n"
+"Seiceáil an nasc le do thoil."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Níorbh fhéidir formáid a shocrú go %c%c%c%c ar ghléas físe (%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Is é nialas an leithead fillte ar ghléas físe (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_REQBUFS -- níorbh fhéidir maoláin (%s) a iarraidh, ag scor...."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
 msgid "could not allocate memory for video buffers, exiting...."
 msgstr ""
+"Níorbh fhéidir cuimhne a leithdháileadh le haghaidh maoláin físe, ag scor...."
 
 #: src/v4l.c:1453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QUERYBUF -- níorbh fhéidir maoláin (%s) a chuardach, ag scor...."
 
 #: src/v4l.c:1468
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "theip ar mhaoláin léarscáile cuimhne (%s), ag scor...."
 
 #: src/v4l.c:1482
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF -- níorbh fhéidir maoláin (%s) a chur isteach, ag imeacht...."
 
 #: src/v4l.c:1492 src/v4l.c:1559
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "theip ar thosú ag sruthú (%s), ag scor...."
 
 #: src/v4l.c:1548
 #, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr ""
+msgstr "VIDIOC_QBUF -- níorbh fhéidir maoláin (%s) a chuardach, ag scor...."
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Teorainn ama agus tú ag fanacht le frámaí (%s)"
 
 #: src/v4l.c:1703 src/v4l.c:1762
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "theip ar stopadh ag sruthú (%s), ag scor...."
 
 #, fuzzy
 #~ msgid "_File"
