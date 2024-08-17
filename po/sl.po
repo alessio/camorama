@@ -4,13 +4,13 @@
 #
 # Matej Urbančič <matej.urban@gmail.com>, 2006.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
-# Martin Srebotnjak <miles@filmsi.net>, 2023.
+# Martin Srebotnjak <miles@filmsi.net>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2023-12-22 22:37+0000\n"
+"PO-Revision-Date: 2024-08-17 17:38+0000\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <https://translate.fedoraproject.org/projects/"
 "camorama/master/sl/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 5.3\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -55,7 +55,7 @@ msgstr "Camorama-libglade"
 
 #: data/camorama-gtk3.ui:83 data/camorama-gtk4.ui:75
 msgid "_Take Picture"
-msgstr "_Zajemi sliko"
+msgstr "Zajem slike"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
 msgid "Toggle _Full Screen"
@@ -277,7 +277,7 @@ msgstr "Preklop samodejnega zajemanja"
 
 #: data/org.gnome.camorama.gschema.xml.in:12
 msgid "Toggles automatic capturing of pictures."
-msgstr "Preklaplja samodejno zajemanje slik"
+msgstr "Preklaplja samodejno zajemanje slik."
 
 #: data/org.gnome.camorama.gschema.xml.in:16
 msgid "Interval for auto-capture"
@@ -317,7 +317,7 @@ msgstr "Višina slike"
 
 #: data/org.gnome.camorama.gschema.xml.in:37
 msgid "Image height used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Višina slike, ki jo uporablja kamera. Nič pomeni samodejni izbor"
 
 #: data/org.gnome.camorama.gschema.xml.in:41
 msgid "Hostname for the server"
@@ -348,16 +348,20 @@ msgid ""
 "The URI name of the protocol that will be used to connect to a remote "
 "server. Can be ftp, sftp or smb"
 msgstr ""
+"Ime URI protokola, ki bo uporabljen za povezovanje z oddaljenim strežnikom. "
+"Lahko je ftp, sftp ali smb"
 
 #: data/org.gnome.camorama.gschema.xml.in:56
 msgid "Complete URI used to store image snapshots remotely"
-msgstr ""
+msgstr "Celoten URI za oddaljeno hrambo posnetkov slik"
 
 #: data/org.gnome.camorama.gschema.xml.in:57
 msgid ""
 "The complete URI of the last successful access to a remote server, including "
 "protocol, host and remote directory"
 msgstr ""
+"Celoten URI zadnjega uspešnega dostopa do oddaljenega strežnika, vključno s "
+"protokolom, gostiteljem in oddaljeno mapo"
 
 #: data/org.gnome.camorama.gschema.xml.in:61
 msgid "Append timestamp to remote filename"
@@ -473,7 +477,7 @@ msgstr "Širina slike"
 
 #: data/org.gnome.camorama.gschema.xml.in:127
 msgid "Image width used by the camera. Zero means autoselect"
-msgstr ""
+msgstr "Širina slike, ki jo uporablja kamera. Nič pomeni samodejni izbor"
 
 #: src/callbacks.c:531
 msgid "translator_credits"
@@ -482,29 +486,29 @@ msgstr "Matej Urbančič <matej.urban@gmail.com>"
 #: src/callbacks.c:644
 #, c-format
 msgid "%.2f fps - current     %.2f fps - average"
-msgstr ""
+msgstr "%.2f sl/s - trenutno.    %.2f sl/s - povprečje"
 
 #: src/callbacks.c:1241
 msgid "Can't allocate memory to store devices"
-msgstr ""
+msgstr "Ni možno alocirati pomnilnika za hrambo naprav"
 
 #: src/callbacks.c:1353
 msgid "Didn't find any camera"
-msgstr ""
+msgstr "Kamere ni mogoče najti"
 
 #: src/callbacks.c:1449
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (največ %.1f sl/s)"
 
 #: src/callbacks.c:1453
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
-msgstr ""
+msgstr "Laplace (4 sosedje)"
 
 #. TRANSLATORS: This is a noun
 #: src/camorama-filter-mirror.c:75
@@ -539,19 +543,19 @@ msgid "Could not save image '%s/%s'."
 msgstr "Ni mogoče shraniti slike '%s/%s'."
 
 #: src/fileio.c:154
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create a thread to save image '%s/%s'."
-msgstr "Ni mogoče shraniti slike '%s/%s'."
+msgstr "Ni mogoče ustvariti niti za shranjevanje slike '%s/%s'."
 
 #: src/fileio.c:195
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred mounting %s:%s."
-msgstr "Prišlo je do napake med odpiranjem %s."
+msgstr "Prišlo je do napake pri priklopu %s:%s."
 
 #: src/fileio.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred accessing %s."
-msgstr "Prišlo je do napake med odpiranjem %s."
+msgstr "Prišlo je do napake pri dostopu do %s."
 
 #: src/fileio.c:288
 #, c-format
@@ -568,19 +572,19 @@ msgid "An error occurred opening %s."
 msgstr "Prišlo je do napake med odpiranjem %s."
 
 #: src/fileio.c:331
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred opening %s for write: %s."
-msgstr "Prišlo je do napake med odpiranjem %s."
+msgstr "Prišlo je do napake med odpiranjem %s za pisanje: %s."
 
 #: src/fileio.c:342
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred writing to %s: %s."
-msgstr "Prišlo je do napake pri pisanju na %s."
+msgstr "Prišlo je do napake pri pisanju na %s: %s."
 
 #: src/fileio.c:348
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred closing %s: %s."
-msgstr "Prišlo je do napake med odpiranjem %s."
+msgstr "Prišlo je do napake pri zapiranju %s: %s."
 
 #: src/fileio.c:411
 #, c-format
@@ -594,36 +598,36 @@ msgstr "Ni mogoče zamenjati mape '%s'."
 
 #: src/filter.c:96
 msgid "Invert"
-msgstr ""
+msgstr "Preobrni"
 
 #: src/filter.c:184
 msgid "Threshold (Overall)"
-msgstr ""
+msgstr "Prag (skupno)"
 
 #: src/filter.c:277
 msgid "Threshold (Per Channel)"
-msgstr ""
+msgstr "Prag (na kanal)"
 
 #: src/filter.c:355
 msgid "Wacky"
-msgstr ""
+msgstr "Čudno"
 
 #: src/filter.c:461
 msgid "Smooth"
-msgstr ""
+msgstr "Gladko"
 
 #: src/filter.c:497
 msgid "Monochrome"
-msgstr ""
+msgstr "Črno-belo"
 
 #: src/filter.c:535
 msgid "Monochrome (Weight)"
-msgstr ""
+msgstr "Črno-belo (utež)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: src/filter.c:592
 msgid "Sobel"
-msgstr ""
+msgstr "Sobel"
 
 #: src/main.c:31
 msgid "show version and exit"
@@ -663,19 +667,15 @@ msgstr "uporabi read() namesto mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "Onemogoči skalirnik videa"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "uporabi read() namesto mmap()"
+msgstr "uporabi kazalec userptr namesto mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "v4l naprava za uporabo"
+msgstr "vhod naprave v4l za uporabo"
 
 #: src/main.c:117
 #, c-format
@@ -691,33 +691,32 @@ msgstr ""
 "\n"
 
 #: src/main.c:151
-#, fuzzy
 msgid "Couldn't load builder file"
-msgstr "Ni mogoče najti slikovne datoteke: %s"
+msgstr "Ni mogoče naložiti datoteke nalagalnika"
 
 #: src/main.c:180
 #, c-format
 msgid "%s not found. Falling back to %s"
-msgstr ""
+msgstr "%s ni mogoče najti. Povrnitev na %s"
 
 #: src/main.c:183
 #, c-format
 msgid "%s not found."
-msgstr ""
+msgstr "%s ni mogoče najti."
 
 #: src/v4l.c:1087
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Povezava z video napravo (%s) ni mogoča.\n"
-"Prosim, preverite povezavo."
+"Povezava z video napravo (%s) ni možna.\n"
+"Preverite povezavo. Napaka: %d"
 
 #: src/v4l.c:1096
 #, c-format
 msgid "Device %s is not a video capture device."
-msgstr ""
+msgstr "Naprava %s ni naprava za zajem videa."
 
 #: src/v4l.c:1270 src/v4l.c:1340
 #, c-format
@@ -730,73 +729,77 @@ msgstr ""
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "Zapisi videa na napravi niso združljivi s programom camorama."
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Povezava z video napravo (%s) ni mogoča.\n"
-"Prosim, preverite povezavo."
+"Podatkov o oknu na video napravi (%s) ni možno nastaviti.\n"
+"Preverite povezavo."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
-msgstr ""
+msgstr "Ni možno nastaviti zapisa na %c%c%c%c na videonapravi (%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "Vrnjena širina je ničelna na video napravi (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
 msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_REQBUFS  --  ni možno zahtevati medpomnilnikov (%s), sledi izhod ..."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr ""
+msgstr "ni možno alocirati pomnilnika za medpomnilnike videa, sledi izhod ..."
 
 #: src/v4l.c:1453
 #, c-format
 msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QUERYBUF  --  ni možno poizvedovati po medpomnilnikih (%s), sledi "
+"izhod ..."
 
 #: src/v4l.c:1468
 #, c-format
 msgid "failed to memory map buffers (%s), exiting...."
-msgstr ""
+msgstr "ni možno preslikati v pomnilnik medpomnilnikov (%s), sledi izhod ..."
 
 #: src/v4l.c:1482
 #, c-format
 msgid "VIDIOC_QBUF  --  could not enqueue buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF  --  medpomnilnikov ni možno postaviti v vrsto (%s), sledi izhod "
+"..."
 
 #: src/v4l.c:1492 src/v4l.c:1559
 #, c-format
 msgid "failed to start streaming (%s), exiting...."
-msgstr ""
+msgstr "ni možno začeti s pretakanjem (%s), sledi izhod ..."
 
 #: src/v4l.c:1548
 #, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
 msgstr ""
+"VIDIOC_QBUF  --  ni možno poizvedovati po medpomnilnikih (%s), sledi izhod "
+"..."
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
 msgid "Timeout while waiting for frames (%s)"
-msgstr ""
+msgstr "Časovna prekoračitev med čakanjem na sličice (%s)"
 
 #: src/v4l.c:1703 src/v4l.c:1762
 #, c-format
 msgid "failed to stop streaming (%s), exiting...."
-msgstr ""
+msgstr "neuspelo ustavljanje pretakanja (%s), sledi izhod ..."
 
 #, fuzzy
 #~ msgid "_File"
