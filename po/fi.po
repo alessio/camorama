@@ -5,13 +5,13 @@
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2020.
 # Jan Kuparinen <copper_fin@hotmail.com>, 2020, 2022.
-# Ricky Tigg <ricky.tigg@gmail.com>, 2022.
+# Ricky Tigg <ricky.tigg@gmail.com>, 2022, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2022-11-10 19:19+0000\n"
+"PO-Revision-Date: 2025-01-11 02:35+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "camorama/master/fi/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -484,10 +484,7 @@ msgstr "Kameran käyttämä kuvan leveys. Nolla tarkoittaa automaattista valinta
 
 #: src/callbacks.c:531
 msgid "translator_credits"
-msgstr ""
-"Ilkka Tuohela, 2004-2005\n"
-"Jan Kuparinen\n"
-"http://gnome.fi/"
+msgstr "kääntäjän _krediitit"
 
 #: src/callbacks.c:644
 #, c-format

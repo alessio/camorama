@@ -4,20 +4,22 @@
 # Alessio Dessì <alkex@inwind.it>, 2004.
 # Mauro Carvalho Chehab <mchehab@infradead.org>, 2018. #zanata
 # Albano Battistella <albano_battistella@hotmail.com>, 2021.
+# Salvatore Cocuzza <info@salvatorecocuzza.it>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.20.6\n"
 "Report-Msgid-Bugs-To: https://github.com/alessio/camorama\n"
 "POT-Creation-Date: 2022-03-24 15:31+0100\n"
-"PO-Revision-Date: 2021-05-22 09:46+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
-"Language-Team: IT <tp@lists.linux.it>\n"
+"PO-Revision-Date: 2025-01-11 02:35+0000\n"
+"Last-Translator: Salvatore Cocuzza <info@salvatorecocuzza.it>\n"
+"Language-Team: Italian <https://translate.fedoraproject.org/projects/"
+"camorama/master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: camorama.appdata.xml.in:6
 msgid "Camorama"
@@ -52,10 +54,8 @@ msgid "_Take Picture"
 msgstr "_Scatta foto"
 
 #: data/camorama-gtk3.ui:94 data/camorama-gtk4.ui:86
-#, fuzzy
-#| msgid "Toggles local capture"
 msgid "Toggle _Full Screen"
-msgstr "Abilita l'acquisizione da locale"
+msgstr "Attiva/disattiva _Schermo intero"
 
 #: data/camorama-gtk3.ui:149 data/camorama-gtk4.ui:141
 msgid "_View"
@@ -80,11 +80,11 @@ msgstr "Piccolo"
 
 #: data/camorama-gtk3.ui:357
 msgid "Show Controls"
-msgstr ""
+msgstr "Mostra controlli"
 
 #: data/camorama-gtk3.ui:396 data/camorama-gtk4.ui:381
 msgid "Full Screen"
-msgstr ""
+msgstr "Schermo intero"
 
 #: data/camorama-gtk3.ui:441 data/camorama-gtk4.ui:428
 msgid "Take Picture"
@@ -112,17 +112,15 @@ msgstr "Bilanciamento del bianco:"
 
 #: data/camorama-gtk3.ui:666 data/camorama-gtk4.ui:653
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoom:"
 
 #: data/camorama-gtk3.ui:714
-#, fuzzy
-#| msgid "Threshold (Overall)"
 msgid "Threshold:"
-msgstr "Soglia (ComplessivA)"
+msgstr "Soglia:"
 
 #: data/camorama-gtk3.ui:748
 msgid "Channel Threshold:"
-msgstr ""
+msgstr "Soglia canale:"
 
 #: data/camorama-gtk3.ui:865 data/camorama-gtk4.ui:784
 msgid "<span weight=\"bold\">General</span>"
@@ -515,12 +513,12 @@ msgstr "Nessuna fotocamera trovata"
 #: src/callbacks.c:1449
 #, c-format
 msgid "%dx%d (max %.1f fps)"
-msgstr ""
+msgstr "%dx%d (massimo %.1f fps)"
 
 #: src/callbacks.c:1453
 #, c-format
 msgid "%dx%d"
-msgstr ""
+msgstr "%dx%d"
 
 #: src/camorama-filter-laplace.c:134
 msgid "Laplace (4 Neighbours)"
@@ -630,7 +628,6 @@ msgid "Wacky"
 msgstr "Wacky"
 
 #: src/filter.c:461
-#, fuzzy
 msgid "Smooth"
 msgstr "Sfumatura"
 
@@ -685,19 +682,15 @@ msgstr "usare read() piuttosto che mmap()"
 
 #: src/main.c:49
 msgid "disable video scaler"
-msgstr ""
+msgstr "disabilita lo scaler video"
 
 #: src/main.c:51 src/main.c:53
-#, fuzzy
-#| msgid "use read() rather than mmap()"
 msgid "use userptr pointer rather than mmap()"
-msgstr "usare read() piuttosto che mmap()"
+msgstr "usa il puntatore userptr anziché mmap()"
 
 #: src/main.c:55
-#, fuzzy
-#| msgid "v4l device to use"
 msgid "v4l device input to use"
-msgstr "device v4l da utilizzare"
+msgstr "Ingresso del dispositivo v4l da utilizzare"
 
 #: src/main.c:117
 #, c-format
@@ -727,13 +720,13 @@ msgid "%s not found."
 msgstr "%s non trovato."
 
 #: src/v4l.c:1087
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection. Error: %d"
 msgstr ""
-"Impossibile connettersi al dispositivo video (% s).\n"
-"Controlla la connessione. Errore: %d"
+"Impossibile connettersi al dispositivo video (%s).\n"
+"Si prega di verificare la connessione. Errore: %d"
 
 #: src/v4l.c:1096
 #, c-format
@@ -751,29 +744,28 @@ msgstr ""
 
 #: src/v4l.c:1348
 msgid "Device video formats are incompatible with camorama."
-msgstr ""
+msgstr "I formati video del dispositivo non sono compatibili con Camorama."
 
 #: src/v4l.c:1364
-#, fuzzy, c-format
-#| msgid ""
-#| "Could not connect to video device (%s).\n"
-#| "Please check connection."
+#, c-format
 msgid ""
 "Could not set window info on video device (%s).\n"
 "Please check connection."
 msgstr ""
-"Impossibile collegarsi al device video (%s).\n"
-"Controllare la connessione."
+"Impossibile impostare le informazioni sulla finestra sul dispositivo video "
+"(%s).\n"
+"Si prega di verificare la connessione."
 
 #: src/v4l.c:1385
 #, c-format
 msgid "Could not set format to %c%c%c%c on video device (%s)."
 msgstr ""
+"Impossibile impostare il formato su %c%c%c%c sul dispositivo video (%s)."
 
 #: src/v4l.c:1404
 #, c-format
 msgid "Returned width is zero on video device (%s)!"
-msgstr ""
+msgstr "La larghezza restituita è zero sul dispositivo video (%s)!"
 
 #: src/v4l.c:1428 src/v4l.c:1511
 #, c-format
@@ -781,10 +773,8 @@ msgid "VIDIOC_REQBUFS  --  could not request buffers (%s), exiting...."
 msgstr "VIDIOC_REQBUFS -- impossibile richiedere buffer (% s), chiusura...."
 
 #: src/v4l.c:1437 src/v4l.c:1520 src/v4l.c:1535
-#, fuzzy
-#| msgid "failed to memory map buffers (%s), exiting...."
 msgid "could not allocate memory for video buffers, exiting...."
-msgstr "impossibile memorizzare i buffer della mappa (%s), chiusura...."
+msgstr "impossibile allocare memoria per i buffer video, in uscita...."
 
 #: src/v4l.c:1453
 #, c-format
@@ -807,10 +797,9 @@ msgid "failed to start streaming (%s), exiting...."
 msgstr "impossibile avviare lo streaming (%s), chiusura...."
 
 #: src/v4l.c:1548
-#, fuzzy, c-format
-#| msgid "VIDIOC_QUERYBUF  --  could not query buffers (%s), exiting...."
+#, c-format
 msgid "VIDIOC_QBUF  --  could not query buffers (%s), exiting...."
-msgstr "VIDIOC_QUERYBUF -- impossibile interrogare i buffer (%s), chiusura...."
+msgstr "VIDIOC_QBUF -- impossibile interrogare i buffer (%s), in uscita...."
 
 #: src/v4l.c:1589 src/v4l.c:1640
 #, c-format
